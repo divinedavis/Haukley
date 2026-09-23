@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="MainScene" extends="Scene">
+    <script type="text/brightscript" uri="MainScene.brs" />
+    <script type="text/brightscript" uri="Content.brs" />
+    <children>
+        <Rectangle width="1920" height="1080" color="0x000000FF" />
+
+        <Group id="home">
+            <!-- Two stacked backdrops crossfade as focus moves between titles. -->
+            <Poster id="heroBack" width="1920" height="1080" loadDisplayMode="scaleToFill" />
+            <Poster id="heroFront" width="1920" height="1080" loadDisplayMode="scaleToFill" opacity="0" />
+            <Animation id="heroFade" duration="0.45" easeFunction="linear">
+                <FloatFieldInterpolator key="[0.0, 1.0]" keyValue="[0.0, 1.0]" fieldToInterp="heroFront.opacity" />
+            </Animation>
+
+            <Label text="StreamTV" translation="[90, 48]" color="0xFFFFFFFF">
+                <Font role="font" uri="pkg:/fonts/Poppins-Bold.ttf" size="32" />
+            </Label>
+
+            <Group id="heroInfo" translation="[90, 150]">
+                <Label id="heroEyebrow" color="0xFFFFFF9E">
+                    <Font role="font" uri="pkg:/fonts/Poppins-Bold.ttf" size="22" />
+                </Label>
+                <Label id="heroTitle" translation="[0, 34]" width="1100" color="0xFFFFFFFF">
+                    <Font role="font" uri="pkg:/fonts/Poppins-Bold.ttf" size="88" />
+                </Label>
+                <Label id="heroMeta" translation="[0, 150]" color="0xFFFFFF9E">
+                    <Font role="font" uri="pkg:/fonts/Poppins-Bold.ttf" size="26" />
+                </Label>
+                <Label id="heroDesc" translation="[0, 196]" width="900" wrap="true" maxLines="2" lineSpacing="6" color="0xFFFFFFE6">
+                    <Font role="font" uri="pkg:/fonts/Poppins-Regular.ttf" size="28" />
+                </Label>
+            </Group>
+
+            <RowList
+                id="rows"
+                translation="[0, 520]"
+                itemComponentName="TitleItem"
+                itemSize="[1920, 480]"
+                numRows="3"
+                focusXOffset="[90]"
+                rowItemSpacing="[[36, 0]]"
+                showRowLabel="[true]"
+                rowLabelOffset="[[90, 24]]"
+                rowLabelColor="0xFFFFFFFF"
+                drawFocusFeedback="false"
+                vertFocusAnimationStyle="fixedFocus"
+                rowFocusAnimationStyle="floatingFocus">
+                <Font role="rowLabelFont" uri="pkg:/fonts/Poppins-Bold.ttf" size="32" />
+            </RowList>
+        </Group>
+
+        <DetailsView id="details" visible="false" />
+
+        <Video id="video" visible="false" width="1920" height="1080" enableUI="true" />
+    </children>
+</component>

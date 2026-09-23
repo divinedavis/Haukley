@@ -1,0 +1,10 @@
+title=StreamTV
+major_version=0
+minor_version=1
+build_version=1
+mm_icon_focus_fhd=pkg:/images/icon_fhd.png
+mm_icon_focus_hd=pkg:/images/icon_hd.png
+splash_screen_fhd=pkg:/images/splash_fhd.jpg
+splash_color=#000000
+splash_min_time=800
+ui_resolutions=fhd

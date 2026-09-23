@@ -79,3 +79,5 @@ yarn-error.log
 vendor/bundle/
 scripts/.photo-cache/
 ios/build/
+roku/dist/
+roku/out/

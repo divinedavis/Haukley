@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Title page: backdrop, info, Play/Trailer pills, and an episodes or
+     More Like This shelf. Emits `action` for MainScene to act on. -->
+<component name="DetailsView" extends="Group">
+    <interface>
+        <field id="data" type="assocarray" onChange="onData" />
+        <field id="action" type="assocarray" alwaysNotify="true" />
+    </interface>
+    <script type="text/brightscript" uri="DetailsView.brs" />
+    <script type="text/brightscript" uri="Content.brs" />
+    <children>
+        <Poster id="backdrop" width="1920" height="1080" loadDisplayMode="scaleToFill" />
+        <Rectangle width="1920" height="1080" color="0x00000066" />
+
+        <Group translation="[90, 130]">
+            <Label id="eyebrow" color="0xFFFFFF9E">
+                <Font role="font" uri="pkg:/fonts/Poppins-Bold.ttf" size="22" />
+            </Label>
+            <Label id="title" translation="[0, 32]" width="1200" color="0xFFFFFFFF">
+                <Font role="font" uri="pkg:/fonts/Poppins-Bold.ttf" size="96" />
+            </Label>
+            <Label id="meta" translation="[0, 156]" color="0xFFFFFF9E">
+                <Font role="font" uri="pkg:/fonts/Poppins-Bold.ttf" size="26" />
+            </Label>
+            <Label id="tagline" translation="[0, 214]" width="1100" color="0xFFFFFFFF">
+                <Font role="font" uri="pkg:/fonts/Poppins-Bold.ttf" size="30" />
+            </Label>
+            <Label id="desc" translation="[0, 260]" width="1000" wrap="true" maxLines="2" lineSpacing="6" color="0xFFFFFFE6">
+                <Font role="font" uri="pkg:/fonts/Poppins-Regular.ttf" size="28" />
+            </Label>
+            <Label id="credits" translation="[0, 372]" width="1100" color="0xFFFFFF9E">
+                <Font role="font" uri="pkg:/fonts/Poppins-Regular.ttf" size="24" />
+            </Label>
+            <Group id="buttons" translation="[0, 430]" />
+        </Group>
+
+        <RowList
+            id="shelf"
+            translation="[0, 690]"
+            itemComponentName="TitleItem"
+            itemSize="[1920, 330]"
+            numRows="1"
+            focusXOffset="[90]"
+            rowItemSpacing="[[36, 0]]"
+            showRowLabel="[true]"
+            rowLabelOffset="[[90, 16]]"
+            rowLabelColor="0xFFFFFFFF"
+            drawFocusFeedback="false"
+            rowFocusAnimationStyle="floatingFocus">
+            <Font role="rowLabelFont" uri="pkg:/fonts/Poppins-Bold.ttf" size="32" />
+        </RowList>
+    </children>
+</component>
