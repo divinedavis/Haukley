@@ -24,6 +24,23 @@ xcodebuild -workspace ios/StreamTV.xcworkspace -scheme StreamTV -configuration R
   -sdk appletvsimulator -derivedDataPath ios/build CODE_SIGNING_ALLOWED=NO build
 ```
 
+## iPhone (Netflix-style)
+
+Native SwiftUI app in `iphone/` (XcodeGen), bundle `com.haukley.app`, iOS 18+.
+Home (hero card, filter chips, Top 10 rows, Continue Watching), Clips (vertical preview feed),
+Search, My Haukley (profile switcher, My List), title sheet with episodes, and an AVPlayer
+with Google IMA ads logged per film as platform `ios`.
+
+```bash
+.venv/bin/python scripts/make_ios.py                 # bundle catalog + art
+cd iphone && xcodegen generate
+SIM_UDID=<iPhone sim> scripts/smoke_test.sh          # cold-launch check
+SIM_UDID=<iPhone sim> scripts/ship.sh                # UI tests, archive, TestFlight upload
+```
+
+**TestFlight only** — `ship.sh` never creates an App Store version or submits for review.
+App Store Connect secrets live in `iphone/scripts/asc-config.env` (gitignored).
+
 ## Roku
 
 ```bash

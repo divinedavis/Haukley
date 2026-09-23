@@ -82,3 +82,7 @@ ios/build/
 roku/dist/
 roku/out/
 __pycache__/
+
+# App Store Connect secrets
+iphone/scripts/asc-config.env
+iphone/build/

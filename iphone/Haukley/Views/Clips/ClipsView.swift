@@ -1,0 +1,151 @@
+import AVFoundation
+import SwiftUI
+import UIKit
+
+/// Full-screen vertical feed of muted previews, one title per page (Netflix Clips).
+struct ClipsView: View {
+    let active: Bool
+    @State private var current: String?
+    @State private var muted = true
+
+    private let clips: [Title] = {
+        let c = Catalog.shared
+        let lead = c.featured
+        return lead + c.titles.filter { t in !lead.contains(t) }
+    }()
+
+    var body: some View {
+        ScrollView(.vertical) {
+            LazyVStack(spacing: 0) {
+                ForEach(clips) { t in
+                    ClipPage(title: t, isActive: active && current == t.id, muted: $muted)
+                        .containerRelativeFrame([.horizontal, .vertical])
+                        .id(t.id)
+                }
+            }
+            .scrollTargetLayout()
+        }
+        .scrollTargetBehavior(.paging)
+        .scrollPosition(id: $current)
+        .scrollIndicators(.hidden)
+        .ignoresSafeArea(edges: .top)
+        .background(Color.black)
+        .onAppear { if current == nil { current = clips.first?.id } }
+        .accessibilityIdentifier("clips.feed")
+    }
+}
+
+private struct ClipPage: View {
+    let title: Title
+    let isActive: Bool
+    @Binding var muted: Bool
+    @EnvironmentObject private var library: Library
+    @EnvironmentObject private var router: Router
+
+    var body: some View {
+        ZStack(alignment: .bottom) {
+            GeometryReader { g in
+                // Backdrop (no baked-in title text) under the full-bleed video, like Netflix Clips.
+                BundleImage(url: title.backdrop)
+                    .frame(width: g.size.width, height: g.size.height)
+                    .blur(radius: 18)
+                    .overlay(Color.black.opacity(0.35))
+                    .clipped()
+                    .overlay {
+                        if isActive {
+                            LoopingVideo(url: URL(string: title.stream), muted: muted)
+                                .frame(width: g.size.width, height: g.size.height)
+                        }
+                    }
+            }
+            LinearGradient(colors: [.clear, .black.opacity(0.92)], startPoint: UnitPoint(x: 0.5, y: 0.45), endPoint: .bottom)
+                .allowsHitTesting(false)
+
+            HStack(alignment: .bottom, spacing: 14) {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(title.title).font(.system(size: 24, weight: .bold)).lineLimit(2)
+                    Text("\(title.genre) • \(String(title.year)) • \(title.rating)")
+                        .font(.system(size: 13, weight: .semibold)).foregroundStyle(.white.opacity(0.85))
+                    Text(title.description).font(.system(size: 14)).foregroundStyle(.white.opacity(0.85)).lineLimit(3)
+                }
+                Spacer(minLength: 0)
+                VStack(spacing: 20) {
+                    SideButton(systemImage: muted ? "speaker.slash.fill" : "speaker.wave.2.fill",
+                               label: muted ? "Unmute" : "Mute") { muted.toggle() }
+                    SideButton(systemImage: library.isInMyList(title) ? "checkmark" : "plus", label: "My List") {
+                        withAnimation(.snappy) { library.toggleMyList(title) }
+                    }
+                    ShareLink(item: URL(string: "https://haukley.com")!, message: Text("Watch \(title.title) free on Haukley")) {
+                        Image(systemName: "paperplane.fill").font(.system(size: 20))
+                            .frame(width: 46, height: 46).background(.white.opacity(0.18), in: Circle())
+                    }
+                    .accessibilityLabel("Share")
+                    Button { router.detail = title } label: {
+                        BundleImage(url: title.poster).frame(width: 46, height: 46).clipShape(Circle())
+                            .overlay(Circle().stroke(.white, lineWidth: 1.5))
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("Details for \(title.title)")
+                    .accessibilityIdentifier("clip.details.\(title.id)")
+                }
+                .foregroundStyle(.white)
+            }
+            .padding(.horizontal, 16)
+            .padding(.bottom, 110)
+        }
+        .background(Color.black)
+    }
+}
+
+private struct SideButton: View {
+    let systemImage: String
+    let label: String
+    let action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            Image(systemName: systemImage).font(.system(size: 20))
+                .frame(width: 46, height: 46).background(.white.opacity(0.18), in: Circle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(label)
+    }
+}
+
+/// A muted, looping AVPlayerLayer. Created only for the visible page and torn down after.
+private struct LoopingVideo: UIViewRepresentable {
+    let url: URL?
+    let muted: Bool
+
+    final class PlayerView: UIView {
+        override static var layerClass: AnyClass { AVPlayerLayer.self }
+        var playerLayer: AVPlayerLayer { layer as! AVPlayerLayer }
+        var looper: NSObjectProtocol?
+    }
+
+    func makeUIView(context: Context) -> PlayerView {
+        let v = PlayerView()
+        guard let url else { return v }
+        let player = AVPlayer(url: url)
+        player.isMuted = muted
+        v.playerLayer.player = player
+        v.playerLayer.videoGravity = .resizeAspectFill
+        v.looper = NotificationCenter.default.addObserver(
+            forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main
+        ) { _ in
+            player.seek(to: .zero)
+            player.play()
+        }
+        player.play()
+        return v
+    }
+
+    func updateUIView(_ v: PlayerView, context: Context) {
+        v.playerLayer.player?.isMuted = muted
+    }
+
+    static func dismantleUIView(_ v: PlayerView, coordinator: ()) {
+        v.playerLayer.player?.pause()
+        v.playerLayer.player = nil
+        if let looper = v.looper { NotificationCenter.default.removeObserver(looper) }
+    }
+}
