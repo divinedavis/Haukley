@@ -42,7 +42,7 @@ function App() {
     <View style={styles.root}>
       <StatusBar hidden />
       <View style={[styles.fill, top.name !== 'home' && styles.hidden]}>
-        <HomeScreen onOpen={openDetail} onPlay={play} />
+        <HomeScreen active={top.name === 'home'} onOpen={openDetail} onPlay={play} />
       </View>
       {stack.slice(1).map((r, i) => {
         const isTop = i === stack.length - 2;

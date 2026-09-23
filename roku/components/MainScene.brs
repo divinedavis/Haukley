@@ -47,7 +47,7 @@ sub buildRows()
                     url = t.episodes[it.episode - 1].stream
                     playTitle = t.title + " · Episode " + it.episode.ToStr()
                 end if
-                addTile(row, t.card, { titleId: t.id, label: t.title, subLabel: it.label, progress: it.progress, action: "play", url: url, playTitle: playTitle })
+                addTile(row, t.card, { titleId: t.id, label: t.title, subLabel: it.label, progress: it.progress, action: "play", url: url, playTitle: playTitle, episode: it.episode })
             else if r.type = "ranked"
                 addTile(row, t.poster, { titleId: t.id, label: t.title, subLabel: t.genre, rank: rank })
             else if landscape
@@ -109,7 +109,7 @@ sub onRowItemSelected()
     tile = tileAt(m.rows.rowItemSelected)
     if tile = invalid then return
     if tile.action = "play"
-        playVideo(tile.url, tile.playTitle)
+        playVideo(tile.url, tile.playTitle, tile.titleId, tile.episode, true)
     else
         openDetails(tile.titleId, true)
     end if
@@ -121,7 +121,7 @@ sub openDetails(id as string, push as boolean)
     shelf = []
     if t.kind = "show"
         for each ep in t.episodes
-            shelf.push({ poster: ep.still, label: ep.number.ToStr() + ". " + ep.name, subLabel: ep.minutes.ToStr() + " min", action: "play", url: ep.stream, playTitle: t.title + " · Episode " + ep.number.ToStr() })
+            shelf.push({ poster: ep.still, label: ep.number.ToStr() + ". " + ep.name, subLabel: ep.minutes.ToStr() + " min", action: "play", url: ep.stream, playTitle: t.title + " · Episode " + ep.number.ToStr(), titleId: t.id, episode: ep.number })
         end for
     else
         for each key in m.titles
@@ -141,21 +141,36 @@ sub onDetailsAction()
     a = m.details.action
     if a = invalid then return
     if a.type = "play"
-        playVideo(a.url, a.title)
+        playVideo(a.url, a.title, a.id, a.episode, a.ads)
     else if a.type = "open"
         openDetails(a.id, true)
     end if
 end sub
 
-sub playVideo(url as string, title as string)
+sub playVideo(url as string, title as string, titleId as string, episode as integer, withAds as boolean)
     c = CreateObject("roSGNode", "ContentNode")
     c.url = url
     c.title = title
     c.streamFormat = "hls"
     m.video.content = c
-    m.video.visible = true
-    m.video.control = "play"
-    m.video.setFocus(true)
+
+    t = m.titles[titleId]
+    adUrl = ""
+    if withAds
+        ' title_id rides in the ad request so the ad server can report revenue per film.
+        adUrl = m.catalog.ads.adTagTemplate.Replace("{TITLE_ID}", titleId).Replace("{KIND}", t.kind)
+        adUrl = adUrl.Replace("{CORRELATOR}", CreateObject("roDateTime").AsSeconds().ToStr())
+    end if
+    m.player = CreateObject("roSGNode", "PlayerTask")
+    m.player.video = m.video
+    m.player.adUrl = adUrl
+    m.player.titleId = titleId
+    m.player.genre = t.genre
+    m.player.episode = episode
+    m.player.trackingUrl = m.catalog.ads.trackingUrl
+    m.player.apiKey = m.catalog.ads.publishableKey
+    m.player.observeField("done", "onPlayerDone")
+    m.player.control = "RUN"
 end sub
 
 sub closeVideo()
@@ -168,18 +183,20 @@ sub closeVideo()
     end if
 end sub
 
+' The task ends on content end, a Back press during ads, or an error.
+sub onPlayerDone()
+    closeVideo()
+end sub
+
 sub onVideoState()
-    s = m.video.state
-    if s = "finished" or s = "error"
-        if s = "error" then print "Video error: "; m.video.errorMsg
-        closeVideo()
-    end if
+    if m.video.state = "error" then print "Video error: "; m.video.errorMsg
 end sub
 
 function onKeyEvent(key as string, press as boolean) as boolean
     if not press or key <> "back" then return false
     if m.video.visible
-        closeVideo()
+        ' Stopping the video lets PlayerTask exit; it reports done and closeVideo runs.
+        m.video.control = "stop"
         return true
     end if
     if m.details.visible

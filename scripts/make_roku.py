@@ -69,6 +69,7 @@ def make_pill():
 def main():
     cat = json.loads((ROOT / "scripts" / "catalog.json").read_text())
     rows = json.loads((ROOT / "scripts" / "rows.json").read_text())
+    ads = json.loads((ROOT / "scripts" / "ads.json").read_text())
     streams = rows["streams"]
 
     titles = {}
@@ -108,7 +109,7 @@ def main():
               "items": [{"id": i} for i in r["ids"]]} for r in rows["home"]]
 
     (ROKU / "data").mkdir(parents=True, exist_ok=True)
-    (ROKU / "data" / "catalog.json").write_text(json.dumps({"titles": titles, "rows": home}, separators=(",", ":")))
+    (ROKU / "data" / "catalog.json").write_text(json.dumps({"titles": titles, "rows": home, "ads": {k: ads[k] for k in ("adTagTemplate", "trackingUrl", "publishableKey")}}, separators=(",", ":")))
 
     make_pill().save(ROKU / "images" / "pill.9.png")
 

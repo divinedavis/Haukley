@@ -33,14 +33,17 @@ sub onData()
     playLabel = "Play"
     playUrl = t.stream
     playTitle = t.title
+    playEpisode = 0
     if t.kind = "show"
         playLabel = "Play S1, E1"
         playUrl = t.episodes[0].stream
         playTitle = t.title + " · Episode 1"
+        playEpisode = 1
     end if
+    ' Trailers play without ads.
     m.actions = [
-        { type: "play", url: playUrl, title: playTitle }
-        { type: "play", url: t.stream, title: t.title + " · Trailer" }
+        { type: "play", url: playUrl, title: playTitle, id: t.id, episode: playEpisode, ads: true }
+        { type: "play", url: t.stream, title: t.title + " · Trailer", id: t.id, episode: 0, ads: false }
     ]
     buildButtons([playLabel, "Trailer"])
 
@@ -58,6 +61,7 @@ sub onData()
         if s.url <> invalid then f.url = s.url
         if s.playTitle <> invalid then f.playTitle = s.playTitle
         if s.titleId <> invalid then f.titleId = s.titleId
+        if s.episode <> invalid then f.episode = s.episode
         addTile(row, s.poster, f)
     end for
     m.shelf.content = root
@@ -113,7 +117,7 @@ sub onShelfSelected()
     rc = m.shelf.rowItemSelected
     tile = m.shelf.content.getChild(rc[0]).getChild(rc[1])
     if tile.action = "play"
-        m.top.action = { type: "play", url: tile.url, title: tile.playTitle }
+        m.top.action = { type: "play", url: tile.url, title: tile.playTitle, id: tile.titleId, episode: tile.episode, ads: true }
     else
         m.top.action = { type: "open", id: tile.titleId }
     end if

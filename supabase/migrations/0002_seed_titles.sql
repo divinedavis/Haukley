@@ -1,0 +1,27 @@
+-- Generated from scripts/catalog.json.
+insert into public.titles (id, kind, title) values
+  ('night-line', 'movie', 'Night Line'),
+  ('the-long-quiet', 'movie', 'The Long Quiet'),
+  ('iron-meridian', 'movie', 'Iron Meridian'),
+  ('salt-and-sand', 'movie', 'Salt & Sand'),
+  ('last-train-to-halden', 'movie', 'Last Train to Halden'),
+  ('ghost-light', 'movie', 'Ghost Light'),
+  ('glass-city', 'movie', 'Glass City'),
+  ('paper-kites', 'movie', 'Paper Kites'),
+  ('the-cartographer', 'movie', 'The Cartographer'),
+  ('headlights', 'movie', 'Headlights'),
+  ('northbound', 'movie', 'Northbound'),
+  ('saltwater-hymn', 'movie', 'Saltwater Hymn'),
+  ('harbor-nine', 'movie', 'Harbor Nine'),
+  ('sparks', 'movie', 'Sparks'),
+  ('borough', 'show', 'Borough'),
+  ('lighthouse-row', 'show', 'Lighthouse Row'),
+  ('wildwood', 'show', 'Wildwood'),
+  ('high-altitude', 'show', 'High Altitude'),
+  ('after-hours', 'show', 'After Hours'),
+  ('signal', 'show', 'Signal'),
+  ('slow-roads', 'show', 'Slow Roads'),
+  ('commonwealth', 'show', 'Commonwealth'),
+  ('tidewater', 'show', 'Tidewater'),
+  ('chrome', 'show', 'Chrome')
+on conflict (id) do update set kind = excluded.kind, title = excluded.title;

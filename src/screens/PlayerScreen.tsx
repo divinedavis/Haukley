@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import Video from 'react-native-video';
+import { TRAILER, adTagFor, logAdEvent, newSessionId } from '../ads';
 import { getTitle, streamFor } from '../catalog';
 import { colors, layout, s } from '../theme';
 
@@ -10,17 +11,45 @@ export function PlayerScreen({ id, episode, onDone }: Props) {
   const t = getTitle(id);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const subtitle = episode === 99 ? 'Official Trailer' : episode ? `Season 1, Episode ${episode}` : t.genre;
+  const isTrailer = episode === TRAILER;
+  // One session per playback groups its ad events; the ad tag carries title_id for the ad server's report.
+  const sessionId = useMemo(newSessionId, []);
+  const adCounted = useRef(false);
+  const source = useMemo(
+    () => ({
+      uri: streamFor(id, episode),
+      ...(isTrailer ? {} : { ad: { type: 'csai' as const, adTagUrl: adTagFor(t) } }),
+    }),
+    [id, episode, isTrailer, t],
+  );
+  const subtitle = isTrailer ? 'Official Trailer' : episode ? `Season 1, Episode ${episode}` : t.genre;
 
   return (
     <View style={styles.screen}>
       {!error && (
         <Video
-          source={{ uri: streamFor(id, episode) }}
+          source={source}
           style={StyleSheet.absoluteFill}
           resizeMode="contain"
           controls
           onLoad={() => setLoading(false)}
+          onReceiveAdEvent={e => {
+            const ep = episode ?? 0;
+            if (e.event === 'CONTENT_PAUSE_REQUESTED') {
+              setLoading(false);
+            } else if (e.event === 'STARTED' || e.event === 'FIRST_QUARTILE') {
+              // Android drops STARTED for the first ad after a cold start, so FIRST_QUARTILE backs it up.
+              if (!adCounted.current) {
+                adCounted.current = true;
+                logAdEvent(id, ep, 'ad_started', sessionId);
+              }
+            } else if (e.event === 'COMPLETED') {
+              adCounted.current = false;
+              logAdEvent(id, ep, 'ad_completed', sessionId);
+            } else if (e.event === 'SKIPPED') {
+              adCounted.current = false;
+            }
+          }}
           onError={e => setError(JSON.stringify(e.error?.errorString ?? e.error ?? e).slice(0, 200))}
           onEnd={onDone}
         />

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Plays one title with RAF-rendered pre/mid/post-roll ads and logs ad events
+     for the filmmaker revenue split. RAF must run on a Task thread. -->
+<component name="PlayerTask" extends="Task">
+    <interface>
+        <field id="video" type="node" />
+        <field id="adUrl" type="string" />
+        <field id="titleId" type="string" />
+        <field id="genre" type="string" />
+        <field id="episode" type="integer" />
+        <field id="trackingUrl" type="string" />
+        <field id="apiKey" type="string" />
+        <field id="done" type="boolean" alwaysNotify="true" />
+    </interface>
+    <script type="text/brightscript" uri="PlayerTask.brs" />
+</component>

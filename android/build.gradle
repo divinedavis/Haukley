@@ -4,6 +4,8 @@ buildscript {
         minSdkVersion = 24
         compileSdkVersion = 36
         targetSdkVersion = 36
+        // react-native-video: build with the Google IMA ads extension.
+        useExoplayerIMA = true
         ndkVersion = "27.1.12297006"
         kotlinVersion = "2.1.20"
     }

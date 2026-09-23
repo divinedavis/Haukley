@@ -6,6 +6,9 @@ require Pod::Executable.execute_command('node', ['-p',
   )', __dir__]).strip
 
 platform :tvos, min_ios_version_supported
+
+# react-native-video: pull in the Google IMA SDK (tvOS flavor) for ads.
+$RNVideoUseGoogleIMA = true
 prepare_react_native_project!
 
 linkage = ENV['USE_FRAMEWORKS']

@@ -7,14 +7,18 @@ import { Tab, TopNav } from '../components/TopNav';
 import { colors, s } from '../theme';
 
 type Props = {
+  active: boolean;
   onOpen: (id: string) => void;
   onPlay: (id: string, episode?: number) => void;
 };
 
-export function HomeScreen({ onOpen, onPlay }: Props) {
+export function HomeScreen({ active, onOpen, onPlay }: Props) {
   const [tab, setTab] = useState<Tab>('home');
   const scroll = useRef<ScrollView>(null);
   const rowY = useRef<Record<string, number>>({});
+  // Where focus was when we left, so coming back from the hero lands on Play again
+  // (rows restore focus on their own).
+  const [focusArea, setFocusArea] = useState<'hero' | 'rows'>('hero');
 
   const hero = useMemo(
     () => (tab === 'movies' ? MOVIES.slice(0, 5) : tab === 'shows' ? SHOWS.slice(0, 5) : FEATURED),
@@ -22,9 +26,13 @@ export function HomeScreen({ onOpen, onPlay }: Props) {
   );
   const rows = ROWS[tab];
 
-  const toTop = useCallback(() => scroll.current?.scrollTo({ y: 0, animated: true }), []);
+  const toTop = useCallback(() => {
+    setFocusArea('hero');
+    scroll.current?.scrollTo({ y: 0, animated: true });
+  }, []);
   // Keep the focused shelf pinned near the top of the screen, as tvOS does.
   const toRow = useCallback((key: string) => {
+    setFocusArea('rows');
     const y = rowY.current[key];
     if (y !== undefined) {
       scroll.current?.scrollTo({ y: Math.max(0, y - s(70)), animated: true });
@@ -34,7 +42,7 @@ export function HomeScreen({ onOpen, onPlay }: Props) {
   return (
     <View style={styles.screen}>
       <ScrollView ref={scroll} showsVerticalScrollIndicator={false} scrollEnabled={false}>
-        <Hero items={hero} onPlay={id => onPlay(id)} onInfo={onOpen} onFocus={toTop} preferredFocus />
+        <Hero items={hero} onPlay={id => onPlay(id)} onInfo={onOpen} onFocus={toTop} preferredFocus={active && focusArea === 'hero'} />
         {/* Inside the scroll view so it scrolls away with the hero, like the Apple TV app. */}
         <TopNav tab={tab} onChange={setTab} onFocus={toTop} />
         <View style={styles.rows}>

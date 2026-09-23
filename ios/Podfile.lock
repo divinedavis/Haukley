@@ -5,6 +5,7 @@ PODS:
   - FBLazyVector (0.83.0-0)
   - fmt (11.0.2)
   - glog (0.3.5)
+  - GoogleAds-IMA-tvOS-SDK (4.17.0)
   - hermes-engine (0.14.0):
     - hermes-engine/Pre-built (= 0.14.0)
   - hermes-engine/Pre-built (0.14.0)
@@ -2041,6 +2042,8 @@ PODS:
     - fast_float
     - fmt
     - glog
+    - GoogleAds-IMA-iOS-SDK (~> 3.22.1)
+    - GoogleAds-IMA-tvOS-SDK (~> 4.2)
     - hermes-engine
     - RCT-Folly
     - RCT-Folly/Fabric
@@ -2709,6 +2712,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - GoogleAds-IMA-tvOS-SDK
     - SocketRocket
 
 EXTERNAL SOURCES:
@@ -2879,6 +2883,7 @@ SPEC CHECKSUMS:
   FBLazyVector: d5832d4eba2d6e2bc1eda519f0a14c540ae5d6e9
   fmt: c358e29b79c2957a8958c4169de5ad5cdd458216
   glog: 2777ae82f2611bf0a9ed50bcd30b0eea7e7b7f05
+  GoogleAds-IMA-tvOS-SDK: e43d2ddd224b04b910e42aeb5655380af56976eb
   hermes-engine: 06c4338feba2d05d9d7bb850d5afd2a293a3388c
   RCT-Folly: 3fc78fcbfe96ce79e811d19ad0d5e4c70c812c8c
   RCTDeprecation: f83cf0a38288a4c19e0271700ac9e0d1aaed0448
@@ -2917,7 +2922,7 @@ SPEC CHECKSUMS:
   React-Mapbuffer: 4172cd23034c511aa49ba8b3926ca1f163f0e211
   React-microtasksnativemodule: ca20b73872176429650208f20901c2b7474544d9
   react-native-safe-area-context: 0ade8b4166102f76fbd42b64255f606cd37489d5
-  react-native-video: 61841250a61ed594812b0bd4ce3f03549d574efc
+  react-native-video: 2def73e2de6bac36eeebd2a81d735c41703318f0
   React-NativeModulesApple: cd87c5a8208424af7e835a3a8782005d67024130
   React-networking: ddedc176b55cdae1f4ea6c7ba9cccbd166cedfc1
   React-oscompat: 081f741ebb7be931893d818c2b99ebbd13e63030
@@ -2954,6 +2959,6 @@ SPEC CHECKSUMS:
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: 214d4f53966125066c432e63bd203821bed9b58a
 
-PODFILE CHECKSUM: 891f8fc45afa420ff805c570b71c473ee21444e1
+PODFILE CHECKSUM: c2bfe4153d354b867ef7254285d6a1941b68a57b
 
 COCOAPODS: 1.15.2

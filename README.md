@@ -44,6 +44,26 @@ and takes ECP key presses. It has no video output, so playback only shows on a r
 Roku gotchas: the emulator ignores `font:BoldSystemFontFile` at custom sizes, so the app bundles Poppins
 (OFL) in `roku/fonts`; `scaleToZoom` crops the pre-faded backdrops, so posters use `scaleToFill`.
 
+## Ads and the filmmaker revenue split
+
+- `scripts/ads.json` holds the ad tag and tracking endpoint for every platform. The tag is
+  Google's public IMA test VMAP (pre-, mid- and post-roll); replace it with the Google Ad
+  Manager tag once the account exists. Each request carries `title_id`, so the ad server can
+  report revenue per film. Trailers play without ads.
+- Fire TV / Android TV / Apple TV use Google IMA via react-native-video
+  (`useExoplayerIMA` in `android/build.gradle`, `$RNVideoUseGoogleIMA` in the Podfile, plus a
+  `patches/` fix for a tvOS-only PiP compile error). Roku uses RAF in `roku/components/PlayerTask`.
+- Every ad start/completion is logged to Supabase project `axgxpwgbpgcqjxoqwtnv` (free org
+  "StreamTV") in `ad_events`. Apps can only insert; reads and payout math need the secret key
+  (macOS Keychain `supabase-secret-streamtv`). Schema: `supabase/migrations/`.
+- Monthly report: `GET /rest/v1/monthly_ad_counts`; estimated payouts:
+  `POST /rest/v1/rpc/estimated_payouts {"p_month":"2026-09-01","p_net_cpm":10}`.
+- Android drops the IMA `STARTED` event for the first ad after a cold start, so
+  `FIRST_QUARTILE` backs it up (counted once per ad).
+
+Content acquisition drafts (Filmhub outreach, FilmFreeway call, license term sheet) are in
+`docs/content/`.
+
 ## Art
 
 `scripts/catalog.json` is the source of truth for titles. Regenerate posters, cards,
