@@ -1,0 +1,31 @@
+import type { ImageSourcePropType } from 'react-native';
+
+export type Title = {
+  kind: 'movie' | 'show';
+  id: string;
+  title: string;
+  genre: string;
+  year: number;
+  rating: string;
+  tagline: string;
+  description: string;
+  credits: string;
+  runtime?: string | null;
+  seasons?: number;
+  poster: ImageSourcePropType;
+  card: ImageSourcePropType;
+  backdrop: ImageSourcePropType;
+  stills?: ImageSourcePropType[];
+};
+
+export type Episode = {
+  number: number;
+  name: string;
+  minutes: number;
+  summary: string;
+};
+
+export type Route =
+  | { name: 'home' }
+  | { name: 'detail'; id: string }
+  | { name: 'player'; id: string; episode?: number };
