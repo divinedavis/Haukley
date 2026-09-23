@@ -20,9 +20,9 @@ sub onData()
     m.t = t
     m.backdrop.uri = t.backdrop
     if t.kind = "show"
-        m.eyebrow.text = "STREAMTV ORIGINAL SERIES"
+        m.eyebrow.text = "HAUKLEY ORIGINAL SERIES"
     else
-        m.eyebrow.text = "STREAMTV ORIGINAL FILM"
+        m.eyebrow.text = "HAUKLEY ORIGINAL FILM"
     end if
     m.title.text = t.title
     m.meta.text = metaLine(t) + "  ·  4K  ·  HDR  ·  CC"

@@ -11,5 +11,5 @@ export ANDROID_HOME="${ANDROID_HOME:-$HOME/Library/Android/sdk}"
 adb connect "$IP:5555" >/dev/null
 adb -s "$IP:5555" install -r android/app/build/outputs/apk/release/app-release.apk
 adb -s "$IP:5555" shell input keyevent KEYCODE_WAKEUP
-adb -s "$IP:5555" shell am force-stop com.streamtv
-adb -s "$IP:5555" shell am start -n com.streamtv/.MainActivity
+adb -s "$IP:5555" shell am force-stop com.haukley.tv
+adb -s "$IP:5555" shell am start -n com.haukley.tv/com.streamtv.MainActivity

@@ -13,9 +13,7 @@
                 <FloatFieldInterpolator key="[0.0, 1.0]" keyValue="[0.0, 1.0]" fieldToInterp="heroFront.opacity" />
             </Animation>
 
-            <Label text="StreamTV" translation="[90, 48]" color="0xFFFFFFFF">
-                <Font role="font" uri="pkg:/fonts/Poppins-Bold.ttf" size="32" />
-            </Label>
+            <Poster uri="pkg:/images/wordmark.png" translation="[90, 44]" />
 
             <Group id="heroInfo" translation="[90, 150]">
                 <Label id="heroEyebrow" color="0xFFFFFF9E">

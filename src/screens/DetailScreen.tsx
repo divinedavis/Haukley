@@ -25,7 +25,7 @@ export function DetailScreen({ id, onPlay, onOpen }: Props) {
 
       <ScrollView ref={scroll} scrollEnabled={false} showsVerticalScrollIndicator={false}>
         <View style={styles.top}>
-          <Text style={styles.eyebrow}>{isShow ? 'STREAMTV ORIGINAL SERIES' : 'STREAMTV ORIGINAL FILM'}</Text>
+          <Text style={styles.eyebrow}>{isShow ? 'HAUKLEY ORIGINAL SERIES' : 'HAUKLEY ORIGINAL FILM'}</Text>
           <Text style={styles.title}>{t.title}</Text>
           <View style={styles.metaRow}>
             <Badge text={t.rating} />

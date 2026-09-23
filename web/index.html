@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Haukley — Free movies and shows on every TV</title>
+  <meta name="description" content="Haukley is a free, ad-supported streaming service for independent movies and series, coming to Roku, Fire TV, Google TV and Apple TV.">
+  <meta property="og:title" content="Haukley — Free movies and shows on every TV">
+  <meta property="og:description" content="Independent film and series, free with ads. Coming to Roku, Fire TV, Google TV and Apple TV.">
+  <meta property="og:image" content="https://haukley.com/og.jpg">
+  <meta property="og:url" content="https://haukley.com/">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="/favicon.png">
+  <link rel="canonical" href="https://haukley.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #000;
+      --text: #fff;
+      --dim: rgba(255, 255, 255, 0.64);
+      --faint: rgba(255, 255, 255, 0.4);
+      --pill: rgba(255, 255, 255, 0.14);
+      --accent: #8b6cff;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+
+    header {
+      position: absolute; top: 0; left: 0; right: 0; z-index: 3;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 28px clamp(16px, 5vw, 72px);
+    }
+    .wordmark { font-weight: 800; font-size: 26px; letter-spacing: -0.5px; text-decoration: none; }
+    .wordmark span { color: var(--accent); }
+    .nav-link {
+      font-size: 15px; font-weight: 600; text-decoration: none;
+      padding: 10px 18px; border-radius: 999px; background: var(--pill);
+    }
+
+    .hero { position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; }
+    .wall {
+      position: absolute; inset: -10% -5%;
+      display: grid; grid-template-columns: repeat(9, 1fr); gap: 14px;
+      transform: rotate(-8deg) scale(1.15);
+      opacity: 0.55;
+    }
+    .wall img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 10px; display: block; }
+    .wall .col { display: flex; flex-direction: column; gap: 14px; }
+    .wall .col:nth-child(even) { transform: translateY(-18%); }
+    .shade {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.2) 100%),
+        linear-gradient(0deg, #000 0%, rgba(0,0,0,0) 45%);
+    }
+    .hero-copy { position: relative; z-index: 2; min-width: 0; width: 100%; padding: 0 clamp(16px, 5vw, 72px) clamp(56px, 10vh, 120px); max-width: 760px; }
+    .eyebrow { color: var(--dim); font-size: 13px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 14px; }
+    h1 { font-size: clamp(40px, 7vw, 84px); line-height: 1.02; letter-spacing: -2px; font-weight: 800; }
+    .lede { color: var(--dim); font-size: clamp(17px, 2vw, 21px); line-height: 1.5; margin-top: 20px; max-width: 560px; }
+    .platforms { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+    .platform { font-size: 14px; font-weight: 600; padding: 10px 16px; border-radius: 999px; background: var(--pill); }
+    .soon { color: var(--faint); font-size: 14px; margin-top: 14px; }
+
+    section.band { padding: clamp(64px, 10vw, 120px) clamp(16px, 5vw, 72px); border-top: 1px solid rgba(255,255,255,0.08); }
+    .band-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: center; max-width: 1200px; }
+    h2 { font-size: clamp(30px, 4.5vw, 52px); line-height: 1.08; letter-spacing: -1.2px; font-weight: 800; }
+    .band p { color: var(--dim); font-size: 18px; line-height: 1.6; margin-top: 18px; }
+    .terms { list-style: none; padding: 0; display: grid; gap: 14px; }
+    .terms li { background: rgba(255,255,255,0.06); border-radius: 16px; padding: 20px 22px; }
+    .terms b { display: block; font-size: 20px; margin-bottom: 4px; }
+    .terms span { color: var(--dim); font-size: 15px; line-height: 1.5; }
+
+    footer { padding: 36px clamp(16px, 5vw, 72px); color: var(--faint); font-size: 14px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 1px solid rgba(255,255,255,0.08); }
+
+    @media (max-width: 800px) {
+      .wall { grid-template-columns: repeat(5, 1fr); }
+      .band-grid { grid-template-columns: 1fr; }
+      header { padding-top: 20px; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .wall { animation: drift 60s linear infinite alternate; }
+      @keyframes drift { from { transform: rotate(-8deg) scale(1.15) translateY(0); } to { transform: rotate(-8deg) scale(1.15) translateY(-6%); } }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="wordmark" href="/">Haukley<span>.</span></a>
+    <a class="nav-link" href="#filmmakers">For filmmakers</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wall" aria-hidden="true" id="wall"></div>
+      <div class="shade" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">Free streaming · Coming soon</p>
+        <h1>Great independent movies and shows. Free, on every TV.</h1>
+        <p class="lede">Haukley brings hand-picked indie films, documentaries and series to your living room — no subscription, just press play.</p>
+        <div class="platforms" aria-label="Platforms">
+          <span class="platform">Roku</span>
+          <span class="platform">Fire TV</span>
+          <span class="platform">Google TV</span>
+          <span class="platform">Apple TV</span>
+        </div>
+        <p class="soon">Launching soon on all four.</p>
+      </div>
+    </section>
+
+    <section class="band" id="filmmakers">
+      <div class="band-grid">
+        <div>
+          <p class="eyebrow">For filmmakers</p>
+          <h2>Your film deserves an audience. Keep your rights and half the revenue.</h2>
+          <p>Haukley is free for viewers and paid for by ads. Every ad is tracked to the film it ran in, so you see exactly what your film earns — and 50% of it is yours.</p>
+          <p>Filmmaker submissions open soon.</p>
+        </div>
+        <ul class="terms">
+          <li><b>No fees. Ever.</b><span>Free to submit, free to be distributed.</span></li>
+          <li><b>50% of ad revenue</b><span>Reported per title and paid monthly.</span></li>
+          <li><b>Non-exclusive</b><span>Stay on Tubi, Prime Video, YouTube or anywhere else.</span></li>
+          <li><b>Leave anytime</b><span>Take your film down with 30 days' notice.</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Haukley</span>
+    <span>All titles shown are placeholders.</span>
+  </footer>
+
+  <script>
+    // Poster wall: 9 columns of the sample catalog, reshuffled per column.
+    const titles = ["night-line","glass-city","borough","signal","harbor-nine","ghost-light","the-long-quiet","headlights","after-hours","tidewater","iron-meridian","paper-kites","lighthouse-row","saltwater-hymn","wildwood","sparks","commonwealth","northbound"];
+    const wall = document.getElementById("wall");
+    for (let c = 0; c < 9; c++) {
+      const col = document.createElement("div");
+      col.className = "col";
+      for (let r = 0; r < 9; r++) {
+        const img = document.createElement("img");
+        img.src = "/img/" + titles[(c * 5 + r * 7) % titles.length] + ".jpg";
+        img.alt = "";
+        img.loading = c < 5 ? "eager" : "lazy";
+        col.appendChild(img);
+      }
+      wall.appendChild(col);
+    }
+  </script>
+</body>
+</html>

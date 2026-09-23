@@ -10,6 +10,7 @@ export const s = (n: number) => Math.round(n * factor * 100) / 100;
 export const colors = {
   bg: '#000000',
   text: '#FFFFFF',
+  accent: '#8B6CFF',
   textDim: 'rgba(255,255,255,0.62)',
   textFaint: 'rgba(255,255,255,0.4)',
   pill: 'rgba(255,255,255,0.16)',

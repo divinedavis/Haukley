@@ -29,7 +29,9 @@ export function TopNav({ tab, onChange, onFocus }: Props) {
           />
         ))}
       </View>
-      <Text style={styles.brand}>StreamTV</Text>
+      <Text style={styles.brand}>
+        Haukley<Text style={styles.dot}>.</Text>
+      </Text>
     </View>
   );
 }
@@ -64,6 +66,7 @@ const styles = StyleSheet.create({
   label: { color: colors.textDim, fontSize: s(26), fontWeight: '600' },
   labelSelected: { color: colors.text },
   labelFocused: { color: colors.onPillFocused },
+  dot: { color: colors.accent },
   brand: {
     position: 'absolute',
     left: s(90),

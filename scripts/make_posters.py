@@ -151,7 +151,7 @@ def make_poster(t, kind):
         cred_f = font("LeagueGothic", int(22 * w * 0.9 / cw), "Regular")
         cw = d.textlength(cred, font=cred_f)
     d.text(((w - cw) / 2, h - 96), cred, font=cred_f, fill=(215, 215, 215))
-    rel = f"{'NOW STREAMING' if kind == 'movie' else 'NEW SEASON'}  ·  ONLY ON STREAMTV"
+    rel = f"{'NOW STREAMING' if kind == 'movie' else 'NEW SEASON'}  ·  ONLY ON HAUKLEY"
     rf = body_font(15, "Bold")
     rw = d.textlength(rel, font=rf)
     d.text(((w - rw) / 2, h - 58), rel, font=rf, fill=(255, 255, 255))
@@ -217,21 +217,43 @@ def make_episode_stills(t):
         yield i, src.crop((int(x), int(y), int(x + w), int(y + h))).resize(EPISODE, Image.LANCZOS)
 
 
+ACCENT = (139, 108, 255)
+
+
+def draw_wordmark(d, x, y, size, fill="white"):
+    """'Haukley' plus the purple brand dot. Returns the drawn width."""
+    f = font("Montserrat", size, "ExtraBold")
+    d.text((x, y), "Haukley", font=f, fill=fill)
+    w = d.textlength("Haukley", font=f)
+    asc, _ = f.getmetrics()
+    r = size * 0.11
+    cx, cy = x + w + size * 0.16, y + asc - r * 1.1
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=ACCENT)
+    return w + size * 0.3
+
+
+def wordmark_width(size):
+    f = font("Montserrat", size, "ExtraBold")
+    probe = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+    return probe.textlength("Haukley", font=f) + size * 0.3
+
+
+def brand_card(size, text_size):
+    """Dark card with a purple glow and the centered wordmark (banners, icons, splash)."""
+    w, h = size
+    img = Image.new("RGB", size, (12, 12, 16))
+    glow = Image.new("RGB", size, (0, 0, 0))
+    ImageDraw.Draw(glow).ellipse([-w * 0.2, -h * 0.6, w * 0.8, h * 1.2], fill=(70, 40, 140))
+    img = Image.blend(img, glow.filter(ImageFilter.GaussianBlur(max(1, w // 8))), 0.8)
+    d = ImageDraw.Draw(img)
+    tw = wordmark_width(text_size)
+    draw_wordmark(d, (w - tw) / 2, h / 2 - text_size * 0.62, text_size)
+    return img
+
+
 def make_banner():
     """Android TV launcher banner (320x180 xhdpi)."""
-    w, h = 640, 360
-    img = Image.new("RGB", (w, h), (12, 12, 16))
-    glow = Image.new("RGB", (w, h), (0, 0, 0))
-    gd = ImageDraw.Draw(glow)
-    gd.ellipse([-120, -200, 520, 420], fill=(70, 40, 140))
-    glow = glow.filter(ImageFilter.GaussianBlur(90))
-    img = Image.blend(img, glow, 0.8)
-    d = ImageDraw.Draw(img)
-    f = font("Montserrat", 92, "ExtraBold")
-    txt = "StreamTV"
-    tw = d.textlength(txt, font=f)
-    d.text(((w - tw) / 2, h / 2 - 60), txt, font=f, fill="white")
-    return img.resize((320, 180), Image.LANCZOS)
+    return brand_card((640, 360), 92).resize((320, 180), Image.LANCZOS)
 
 
 def main():
