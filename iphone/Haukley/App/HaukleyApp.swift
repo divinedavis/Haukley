@@ -112,6 +112,10 @@ struct SplashView: View {
                                            startPoint: .leading, endPoint: .trailing)
                                 .frame(width: barWidth * 0.28)
                                 .offset(x: barWidth * (Self.glintStart + glint * (Self.glintEnd - Self.glintStart)))
+                                // Lay the band out across the whole bar before masking; masking the
+                                // bare band shrank the letters into its middle-of-the-word frame,
+                                // so the shine only ever showed over "UKL".
+                                .frame(width: barWidth, height: barHeight)
                                 .mask(Image("SplashLetters").resizable())
                                 .blendMode(.screen)
                         }
