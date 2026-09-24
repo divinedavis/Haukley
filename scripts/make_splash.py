@@ -4,7 +4,7 @@ The effect (maze resolving into a word inside a framed bar) follows the owner's
 reference clip; the lettering and maze are our own. Two transparent layers:
   SplashMaze.png     maze segments + frame rules (the part that recedes)
   SplashLetters.png  engraved silver letterforms (the part that emerges)
-Prints the purple period's position as fractions of the image for SplashView.
+Also prints where a period would sit (SplashView no longer draws one).
 
 Usage: .venv/bin/python scripts/make_splash.py
 """

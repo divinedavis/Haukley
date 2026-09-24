@@ -75,18 +75,13 @@ struct RootView: View {
 
 /// Cold-launch splash, after the owner's reference clip: HAUKLEY sits hidden in a maze of
 /// silver lines inside a framed bar; the maze recedes as the engraved letters surface, a
-/// glint crosses them, then the purple period appears and opens into a circular window that
-/// grows until the app fills the screen (the letters are swallowed, never faded).
+/// glint crosses them, then the splash fades into the app.
 /// Art: scripts/make_splash.py. No prompt, no interaction.
 struct SplashView: View {
     let onFinish: () -> Void
 
-    // SplashMaze/SplashLetters are 1500x420; the period's center and radius are fractions of
-    // that image, printed by scripts/make_splash.py. Keep in sync if the art is regenerated.
+    // SplashMaze/SplashLetters are 1500x420 (scripts/make_splash.py).
     private static let imageAspect: CGFloat = 1500.0 / 420.0
-    private static let dotX: CGFloat = 0.9107
-    private static let dotY: CGFloat = 0.7571
-    private static let dotR: CGFloat = 0.0160
     private static let background = Color(red: 13 / 255, green: 10 / 255, blue: 20 / 255)
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -94,8 +89,6 @@ struct SplashView: View {
     @State private var lettersOpacity = 0.0
     @State private var push: CGFloat = 1.06
     @State private var glint: CGFloat = -1
-    @State private var dotScale: CGFloat = 0
-    @State private var hole: CGFloat = 0
     @State private var fade = 1.0
 
     var body: some View {
@@ -103,55 +96,30 @@ struct SplashView: View {
             let barWidth = min(g.size.width - 60, 360)
             let barHeight = barWidth / Self.imageAspect
             let barCenter = CGPoint(x: g.size.width / 2, y: g.size.height / 2)
-            let center = CGPoint(x: barCenter.x - barWidth / 2 + barWidth * Self.dotX,
-                                 y: barCenter.y - barHeight / 2 + barHeight * Self.dotY)
-            let dotDiameter = barWidth * Self.dotR * 2
-            // Far enough to clear the farthest corner from the period.
-            let cover = 2.2 * hypot(max(center.x, g.size.width - center.x), max(center.y, g.size.height - center.y))
-
             ZStack {
-                // Curtain + art, with a circular hole punched at the period so the opening
-                // window cuts through the letters and maze instead of fading them.
+                Self.background
                 ZStack {
-                    Self.background
-                    ZStack {
-                        Image("SplashMaze").resizable().opacity(mazeOpacity)
-                        Image("SplashLetters").resizable()
-                            .overlay {
-                                // A band of light sliding across the silver, clipped to the letters.
-                                LinearGradient(colors: [.clear, .white.opacity(0.75), .clear],
-                                               startPoint: .leading, endPoint: .trailing)
-                                    .frame(width: barWidth * 0.28)
-                                    .offset(x: glint * barWidth * 0.7)
-                                    .mask(Image("SplashLetters").resizable())
-                                    .blendMode(.screen)
-                            }
-                            .opacity(lettersOpacity)
-                    }
-                    .frame(width: barWidth, height: barHeight)
-                    .scaleEffect(push)
-                    .position(barCenter)
-                }
-                .mask {
-                    Rectangle()
+                    Image("SplashMaze").resizable().opacity(mazeOpacity)
+                    Image("SplashLetters").resizable()
                         .overlay {
-                            Circle()
-                                .frame(width: hole * cover, height: hole * cover)
-                                .position(center)
-                                .blendMode(.destinationOut)
+                            // A band of light sliding across the silver, clipped to the letters.
+                            LinearGradient(colors: [.clear, .white.opacity(0.75), .clear],
+                                           startPoint: .leading, endPoint: .trailing)
+                                .frame(width: barWidth * 0.28)
+                                .offset(x: glint * barWidth * 0.7)
+                                .mask(Image("SplashLetters").resizable())
+                                .blendMode(.screen)
                         }
-                        .compositingGroup()
+                        .opacity(lettersOpacity)
                 }
-                Circle()
-                    .fill(Color.brand)
-                    .frame(width: dotDiameter, height: dotDiameter)
-                    .scaleEffect(dotScale)
-                    .position(center)
+                .frame(width: barWidth, height: barHeight)
+                .scaleEffect(push)
+                .position(barCenter)
             }
             .opacity(fade)
         }
         .ignoresSafeArea()
-        .allowsHitTesting(hole < 0.3)
+        .allowsHitTesting(fade > 0.5)
         .accessibilityIdentifier("splash")
         .task { await run() }
     }
@@ -160,7 +128,7 @@ struct SplashView: View {
 
     private func run() async {
         if reduceMotion {
-            withAnimation(.easeOut(duration: 0.3)) { lettersOpacity = 1; mazeOpacity = 0.22; dotScale = 1 }
+            withAnimation(.easeOut(duration: 0.3)) { lettersOpacity = 1; mazeOpacity = 0.22 }
             await pause(900)
             withAnimation(.easeOut(duration: 0.3)) { fade = 0 }
             await pause(300)
@@ -177,17 +145,10 @@ struct SplashView: View {
         }
         await pause(500)
         withAnimation(.easeInOut(duration: 0.55)) { glint = 1 }
-        await pause(420)
-        // The period arrives, pulls in, then opens into the app.
-        withAnimation(.spring(duration: 0.22, bounce: 0.35)) { dotScale = 1 }
-        await pause(260)
-        withAnimation(.easeInOut(duration: 0.14)) { dotScale = 0.72 }
-        await pause(140)
-        withAnimation(.timingCurve(0.6, 0, 0.9, 0.6, duration: 0.55)) {
-            hole = 1
-            dotScale = 0
-        }
-        await pause(560)
+        // Hold on the finished word, then fade into the app.
+        await pause(720)
+        withAnimation(.easeOut(duration: 0.35)) { fade = 0 }
+        await pause(350)
         onFinish()
     }
 }
