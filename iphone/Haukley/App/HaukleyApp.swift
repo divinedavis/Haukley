@@ -73,48 +73,64 @@ struct RootView: View {
     }
 }
 
-/// Cold-launch wordmark in the style of X's launch: "Haukley." sits on black, the purple
-/// period pulls in, then opens into a circular window that grows until the app underneath
-/// fills the screen. The letters stay put and are swallowed by the window as it passes over
-/// them (owner asked for no fade). No prompt, no interaction.
+/// Cold-launch splash, after the owner's reference clip: HAUKLEY sits hidden in a maze of
+/// silver lines inside a framed bar; the maze recedes as the engraved letters surface, a
+/// glint crosses them, then the purple period appears and opens into a circular window that
+/// grows until the app fills the screen (the letters are swallowed, never faded).
+/// Art: scripts/make_splash.py. No prompt, no interaction.
 struct SplashView: View {
     let onFinish: () -> Void
 
-    // Where the period sits inside WordmarkText.png (from scripts: dot center / radius as
-    // fractions of the 461x130 image). Keep in sync if the wordmark is regenerated.
-    private static let imageAspect: CGFloat = 461.0 / 130.0
-    private static let dotX: CGFloat = 0.9451
-    private static let dotY: CGFloat = 0.6260
-    private static let dotR: CGFloat = 0.0229
-
-    private let wordmarkWidth: CGFloat = 200
+    // SplashMaze/SplashLetters are 1500x420; the period's center and radius are fractions of
+    // that image, printed by scripts/make_splash.py. Keep in sync if the art is regenerated.
+    private static let imageAspect: CGFloat = 1500.0 / 420.0
+    private static let dotX: CGFloat = 0.9107
+    private static let dotY: CGFloat = 0.7571
+    private static let dotR: CGFloat = 0.0160
+    private static let background = Color(red: 13 / 255, green: 10 / 255, blue: 20 / 255)
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @State private var textOpacity = 0.0
-    @State private var dotScale: CGFloat = 1
-    @State private var dotOpacity = 1.0
+    @State private var mazeOpacity = 0.0
+    @State private var lettersOpacity = 0.0
+    @State private var push: CGFloat = 1.06
+    @State private var glint: CGFloat = -1
+    @State private var dotScale: CGFloat = 0
     @State private var hole: CGFloat = 0
     @State private var fade = 1.0
 
     var body: some View {
         GeometryReader { g in
-            let dotDiameter = wordmarkWidth * Self.dotR * 2
-            let wordHeight = wordmarkWidth / Self.imageAspect
-            let origin = CGPoint(x: (g.size.width - wordmarkWidth) / 2, y: (g.size.height - wordHeight) / 2)
-            let center = CGPoint(x: origin.x + wordmarkWidth * Self.dotX, y: origin.y + wordHeight * Self.dotY)
-            // Far enough to clear the farthest corner from the dot.
+            let barWidth = min(g.size.width - 60, 360)
+            let barHeight = barWidth / Self.imageAspect
+            let barCenter = CGPoint(x: g.size.width / 2, y: g.size.height / 2)
+            let center = CGPoint(x: barCenter.x - barWidth / 2 + barWidth * Self.dotX,
+                                 y: barCenter.y - barHeight / 2 + barHeight * Self.dotY)
+            let dotDiameter = barWidth * Self.dotR * 2
+            // Far enough to clear the farthest corner from the period.
             let cover = 2.2 * hypot(max(center.x, g.size.width - center.x), max(center.y, g.size.height - center.y))
 
             ZStack {
-                // Black curtain + letters, with a circular hole punched where the period is,
-                // so the opening window cuts through the letters instead of fading them.
+                // Curtain + art, with a circular hole punched at the period so the opening
+                // window cuts through the letters and maze instead of fading them.
                 ZStack {
-                    Color.black
-                    Image("WordmarkText")
-                        .resizable()
-                        .frame(width: wordmarkWidth, height: wordHeight)
-                        .position(x: g.size.width / 2, y: g.size.height / 2)
-                        .opacity(textOpacity)
+                    Self.background
+                    ZStack {
+                        Image("SplashMaze").resizable().opacity(mazeOpacity)
+                        Image("SplashLetters").resizable()
+                            .overlay {
+                                // A band of light sliding across the silver, clipped to the letters.
+                                LinearGradient(colors: [.clear, .white.opacity(0.75), .clear],
+                                               startPoint: .leading, endPoint: .trailing)
+                                    .frame(width: barWidth * 0.28)
+                                    .offset(x: glint * barWidth * 0.7)
+                                    .mask(Image("SplashLetters").resizable())
+                                    .blendMode(.screen)
+                            }
+                            .opacity(lettersOpacity)
+                    }
+                    .frame(width: barWidth, height: barHeight)
+                    .scaleEffect(push)
+                    .position(barCenter)
                 }
                 .mask {
                     Rectangle()
@@ -130,7 +146,6 @@ struct SplashView: View {
                     .fill(Color.brand)
                     .frame(width: dotDiameter, height: dotDiameter)
                     .scaleEffect(dotScale)
-                    .opacity(dotOpacity)
                     .position(center)
             }
             .opacity(fade)
@@ -141,25 +156,38 @@ struct SplashView: View {
         .task { await run() }
     }
 
+    private func pause(_ ms: Int) async { try? await Task.sleep(for: .milliseconds(ms)) }
+
     private func run() async {
-        withAnimation(.easeOut(duration: 0.35)) { textOpacity = 1 }
         if reduceMotion {
-            try? await Task.sleep(for: .milliseconds(700))
+            withAnimation(.easeOut(duration: 0.3)) { lettersOpacity = 1; mazeOpacity = 0.22; dotScale = 1 }
+            await pause(900)
             withAnimation(.easeOut(duration: 0.3)) { fade = 0 }
-            try? await Task.sleep(for: .milliseconds(300))
+            await pause(300)
             return onFinish()
         }
-        try? await Task.sleep(for: .milliseconds(650))
-        // Anticipation: the period pulls in; the letters stay.
-        withAnimation(.easeInOut(duration: 0.18)) { dotScale = 0.72 }
-        try? await Task.sleep(for: .milliseconds(180))
-        // The period becomes a window and rushes outward.
-        withAnimation(.easeIn(duration: 0.12)) { dotOpacity = 0 }
+        // The maze fades up while the camera settles in.
+        withAnimation(.easeOut(duration: 0.55)) { mazeOpacity = 1 }
+        withAnimation(.easeOut(duration: 1.6)) { push = 1 }
+        await pause(450)
+        // The word surfaces out of the maze; the maze recedes behind it.
+        withAnimation(.easeInOut(duration: 0.6)) {
+            lettersOpacity = 1
+            mazeOpacity = 0.22
+        }
+        await pause(500)
+        withAnimation(.easeInOut(duration: 0.55)) { glint = 1 }
+        await pause(420)
+        // The period arrives, pulls in, then opens into the app.
+        withAnimation(.spring(duration: 0.22, bounce: 0.35)) { dotScale = 1 }
+        await pause(260)
+        withAnimation(.easeInOut(duration: 0.14)) { dotScale = 0.72 }
+        await pause(140)
         withAnimation(.timingCurve(0.6, 0, 0.9, 0.6, duration: 0.55)) {
             hole = 1
-            dotScale = 3
+            dotScale = 0
         }
-        try? await Task.sleep(for: .milliseconds(560))
+        await pause(560)
         onFinish()
     }
 }
