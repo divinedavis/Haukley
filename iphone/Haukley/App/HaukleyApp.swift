@@ -73,9 +73,10 @@ struct RootView: View {
     }
 }
 
-/// Cold-launch wordmark in the style of X's launch: "Haukley." sits on black, the letters
-/// fade as the purple period pulls in, then the period opens into a circular window that
-/// grows until the app underneath fills the screen. No prompt, no interaction.
+/// Cold-launch wordmark in the style of X's launch: "Haukley." sits on black, the purple
+/// period pulls in, then opens into a circular window that grows until the app underneath
+/// fills the screen. The letters stay put and are swallowed by the window as it passes over
+/// them (owner asked for no fade). No prompt, no interaction.
 struct SplashView: View {
     let onFinish: () -> Void
 
@@ -105,23 +106,26 @@ struct SplashView: View {
             let cover = 2.2 * hypot(max(center.x, g.size.width - center.x), max(center.y, g.size.height - center.y))
 
             ZStack {
-                // Black curtain with a circular hole punched where the period is.
-                Color.black
-                    .mask {
-                        Rectangle()
-                            .overlay {
-                                Circle()
-                                    .frame(width: hole * cover, height: hole * cover)
-                                    .position(center)
-                                    .blendMode(.destinationOut)
-                            }
-                            .compositingGroup()
-                    }
-                Image("WordmarkText")
-                    .resizable()
-                    .frame(width: wordmarkWidth, height: wordHeight)
-                    .position(x: g.size.width / 2, y: g.size.height / 2)
-                    .opacity(textOpacity)
+                // Black curtain + letters, with a circular hole punched where the period is,
+                // so the opening window cuts through the letters instead of fading them.
+                ZStack {
+                    Color.black
+                    Image("WordmarkText")
+                        .resizable()
+                        .frame(width: wordmarkWidth, height: wordHeight)
+                        .position(x: g.size.width / 2, y: g.size.height / 2)
+                        .opacity(textOpacity)
+                }
+                .mask {
+                    Rectangle()
+                        .overlay {
+                            Circle()
+                                .frame(width: hole * cover, height: hole * cover)
+                                .position(center)
+                                .blendMode(.destinationOut)
+                        }
+                        .compositingGroup()
+                }
                 Circle()
                     .fill(Color.brand)
                     .frame(width: dotDiameter, height: dotDiameter)
@@ -146,11 +150,8 @@ struct SplashView: View {
             return onFinish()
         }
         try? await Task.sleep(for: .milliseconds(650))
-        // Anticipation: letters go, the period pulls in.
-        withAnimation(.easeInOut(duration: 0.18)) {
-            textOpacity = 0
-            dotScale = 0.72
-        }
+        // Anticipation: the period pulls in; the letters stay.
+        withAnimation(.easeInOut(duration: 0.18)) { dotScale = 0.72 }
         try? await Task.sleep(for: .milliseconds(180))
         // The period becomes a window and rushes outward.
         withAnimation(.easeIn(duration: 0.12)) { dotOpacity = 0 }
