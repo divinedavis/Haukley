@@ -82,13 +82,18 @@ struct SplashView: View {
 
     // SplashMaze/SplashLetters are 1500x420 (scripts/make_splash.py).
     private static let imageAspect: CGFloat = 1500.0 / 420.0
+    // Glint path, as bar-width offsets of the band's center from the bar's center: it enters
+    // just touching the H (letters span x 70...1330 of 1500) and leaves just clearing the Y.
+    // The band is 0.28 wide, so each end sits half a band outside the lettering.
+    private static let glintStart: CGFloat = 70.0 / 1500 - 0.5 - 0.14
+    private static let glintEnd: CGFloat = 1330.0 / 1500 - 0.5 + 0.14
     private static let background = Color(red: 13 / 255, green: 10 / 255, blue: 20 / 255)
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var mazeOpacity = 0.0
     @State private var lettersOpacity = 0.0
     @State private var push: CGFloat = 1.06
-    @State private var glint: CGFloat = -1
+    @State private var glint: CGFloat = 0
     @State private var fade = 1.0
 
     var body: some View {
@@ -106,7 +111,7 @@ struct SplashView: View {
                             LinearGradient(colors: [.clear, .white.opacity(0.75), .clear],
                                            startPoint: .leading, endPoint: .trailing)
                                 .frame(width: barWidth * 0.28)
-                                .offset(x: glint * barWidth * 0.7)
+                                .offset(x: barWidth * (Self.glintStart + glint * (Self.glintEnd - Self.glintStart)))
                                 .mask(Image("SplashLetters").resizable())
                                 .blendMode(.screen)
                         }
@@ -144,7 +149,9 @@ struct SplashView: View {
             mazeOpacity = 0.22
         }
         await pause(500)
-        withAnimation(.easeInOut(duration: 0.55)) { glint = 1 }
+        // Same speed as the old off-screen-to-off-screen sweep (1.4 bar widths in 0.55s)
+        // over the shorter letter-to-letter path (1.12 bar widths).
+        withAnimation(.easeInOut(duration: 0.44)) { glint = 1 }
         // Hold on the finished word, then fade into the app.
         await pause(720)
         withAnimation(.easeOut(duration: 0.35)) { fade = 0 }
