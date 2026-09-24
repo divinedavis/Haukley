@@ -36,7 +36,7 @@ function App() {
 
   const top = stack[stack.length - 1];
   const openDetail = (id: string) => push({ name: 'detail', id });
-  const play = (id: string, episode?: number) => push({ name: 'player', id, episode });
+  const play = (id: string, episode?: number, startAt?: number) => push({ name: 'player', id, episode, startAt });
 
   return (
     <View style={styles.root}>
@@ -49,7 +49,7 @@ function App() {
         return (
           <View key={`${r.name}-${i}`} style={[styles.fill, !isTop && styles.hidden]}>
             {r.name === 'detail' && <DetailScreen id={r.id} onPlay={play} onOpen={openDetail} />}
-            {r.name === 'player' && <PlayerScreen id={r.id} episode={r.episode} onDone={pop} />}
+            {r.name === 'player' && <PlayerScreen id={r.id} episode={r.episode} startAt={r.startAt} onDone={pop} />}
           </View>
         );
       })}

@@ -1,13 +1,18 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
-import Video from 'react-native-video';
+import Video, { type VideoRef } from 'react-native-video';
 import { TRAILER, adTagFor, logAdEvent, newSessionId } from '../ads';
 import { getTitle, streamFor } from '../catalog';
+import { recordWatch } from '../history';
 import { colors, layout, s } from '../theme';
 
-type Props = { id: string; episode?: number; onDone: () => void };
+type Props = { id: string; episode?: number; startAt?: number; onDone: () => void };
 
-export function PlayerScreen({ id, episode, onDone }: Props) {
+export function PlayerScreen({ id, episode, startAt, onDone }: Props) {
+  const video = useRef<VideoRef>(null);
+  // Last content position and duration, saved on the way out for Continue Watching.
+  const progress = useRef({ position: 0, duration: 0 });
+  const resumed = useRef(false);
   const t = getTitle(id);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -22,6 +27,16 @@ export function PlayerScreen({ id, episode, onDone }: Props) {
     }),
     [id, episode, isTrailer, t],
   );
+  useEffect(() => {
+    // The ref object itself is stable; read its latest value when the player closes.
+    const last = progress;
+    return () => {
+      if (!isTrailer) {
+        recordWatch(id, episode ?? 0, last.current.position, last.current.duration);
+      }
+    };
+  }, [id, episode, isTrailer]);
+
   const subtitle = isTrailer ? 'Official Trailer' : episode ? `Season 1, Episode ${episode}` : t.genre;
 
   return (
@@ -32,7 +47,25 @@ export function PlayerScreen({ id, episode, onDone }: Props) {
           style={StyleSheet.absoluteFill}
           resizeMode="contain"
           controls
-          onLoad={() => setLoading(false)}
+          ref={video}
+          onLoad={e => {
+            setLoading(false);
+            if (e.duration > 0) {
+              progress.current.duration = e.duration;
+            }
+          }}
+          // With IMA ads on Android, onLoad never fires for the content, so duration and the
+          // resume seek both come from progress events, which do arrive once content plays.
+          onProgress={e => {
+            progress.current.position = e.currentTime;
+            if (e.seekableDuration > 0) {
+              progress.current.duration = e.seekableDuration;
+            }
+            if (startAt && startAt > 0 && !resumed.current) {
+              resumed.current = true;
+              video.current?.seek(startAt);
+            }
+          }}
           onReceiveAdEvent={e => {
             const ep = episode ?? 0;
             if (e.event === 'CONTENT_PAUSE_REQUESTED') {

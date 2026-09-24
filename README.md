@@ -93,6 +93,20 @@ Roku gotchas: the emulator ignores `font:BoldSystemFontFile` at custom sizes, so
 - Android drops the IMA `STARTED` event for the first ad after a cold start, so
   `FIRST_QUARTILE` backs it up (counted once per ad).
 
+## haukley.com
+
+Static site in `web/` (home, /filmmakers/, /privacy/, /terms/, /support/), shared `site.css` + `site.js`.
+Subpages are assembled from `web/_src/` with `python3 web/_src/build.py`. Deploy:
+`rsync -az --exclude _src --exclude beta web/ root@104.236.120.144:/var/www/haukley/`.
+The launch-list forms insert into Supabase `waitlist` (insert-only for the public key).
+Email forwards (Namecheap) to the owner's Gmail: hello@, support@, films@, privacy@, ads@haukley.com.
+
+## Roku Search feed
+
+`.venv/bin/python scripts/make_roku_feed.py` -> `web/roku/search-feed.json` (+ `web/img/feed/`),
+validated against Roku's schema (`scripts/roku/search-feed.schema.json`). Ids match the Roku app's
+deep links. Placeholder content: don't register it with Roku until real titles are in.
+
 Content acquisition drafts (Filmhub outreach, FilmFreeway call, license term sheet) are in
 `docs/content/`.
 

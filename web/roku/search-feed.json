@@ -1,0 +1,5652 @@
+{
+ "version": "1",
+ "defaultLanguage": "en",
+ "defaultAvailabilityCountries": [
+  "us"
+ ],
+ "assets": [
+  {
+   "id": "night-line",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Night Line",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The last train leaves at midnight. Not everyone gets off.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A night-shift conductor discovers a passenger who boards every night at a station that closed twenty years ago.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "thriller"
+   ],
+   "credits": [
+    {
+     "name": "Maya Okafor",
+     "role": "actor"
+    },
+    {
+     "name": "Daniel Reyes",
+     "role": "actor"
+    },
+    {
+     "name": "Ines Lindqvist",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "R"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/night-line-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/night-line-background.jpg"
+    }
+   ],
+   "durationInSeconds": 7080,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "night-line"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-long-quiet",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Long Quiet",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Some silences say everything.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "After her father's death, a marine biologist returns to the island town she swore she'd never see again.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Clara Voss",
+     "role": "actor"
+    },
+    {
+     "name": "Tomas Hale",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "PG-13"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-long-quiet-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-long-quiet-background.jpg"
+    }
+   ],
+   "durationInSeconds": 7560,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "the-long-quiet"
+     }
+    ]
+   }
+  },
+  {
+   "id": "iron-meridian",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Iron Meridian",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "One station. One hour. No way out.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A former transit cop has sixty minutes to stop a hijacking inside the city's busiest rail terminal.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "action"
+   ],
+   "credits": [
+    {
+     "name": "Marcus Bell",
+     "role": "actor"
+    },
+    {
+     "name": "Ana Castell",
+     "role": "actor"
+    },
+    {
+     "name": "Jun Park",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "PG-13"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/iron-meridian-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/iron-meridian-background.jpg"
+    }
+   ],
+   "durationInSeconds": 8040,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "iron-meridian"
+     }
+    ]
+   }
+  },
+  {
+   "id": "salt-and-sand",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Salt & Sand",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Cross the desert. Find the sea.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Two estranged brothers race across the Namib to fulfill their grandfather's final wish.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "adventure"
+   ],
+   "credits": [
+    {
+     "name": "Kofi Mensah",
+     "role": "actor"
+    },
+    {
+     "name": "Idris Nwosu",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "PG"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/salt-and-sand-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/salt-and-sand-background.jpg"
+    }
+   ],
+   "durationInSeconds": 6540,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "salt-and-sand"
+     }
+    ]
+   }
+  },
+  {
+   "id": "last-train-to-halden",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Last Train to Halden",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Everyone on board has a secret.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A snowbound train, a missing heiress, and a detective who can't trust her own memory.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "credits": [
+    {
+     "name": "Greta Holm",
+     "role": "actor"
+    },
+    {
+     "name": "Samuel Achebe",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "PG-13"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/last-train-to-halden-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/last-train-to-halden-background.jpg"
+    }
+   ],
+   "durationInSeconds": 6720,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "last-train-to-halden"
+     }
+    ]
+   }
+  },
+  {
+   "id": "ghost-light",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Ghost Light",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Leave it on. Always.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A theater troupe rehearsing in an abandoned forest lodge learns why the lights must never go out.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "horror"
+   ],
+   "credits": [
+    {
+     "name": "Rosa Delgado",
+     "role": "actor"
+    },
+    {
+     "name": "Finn Carter",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "R"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/ghost-light-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/ghost-light-background.jpg"
+    }
+   ],
+   "durationInSeconds": 6060,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "ghost-light"
+     }
+    ]
+   }
+  },
+  {
+   "id": "glass-city",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Glass City",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The city sees everything.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "In a metropolis run by a predictive AI, one engineer finds the crime it hasn't predicted yet.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2027-01-01",
+   "genres": [
+    "science fiction"
+   ],
+   "credits": [
+    {
+     "name": "Aiko Tanaka",
+     "role": "actor"
+    },
+    {
+     "name": "Leon Brandt",
+     "role": "actor"
+    },
+    {
+     "name": "Zara Quinn",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "PG-13"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/glass-city-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/glass-city-background.jpg"
+    }
+   ],
+   "durationInSeconds": 8460,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "glass-city"
+     }
+    ]
+   }
+  },
+  {
+   "id": "paper-kites",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Paper Kites",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The best summer of their lives. Probably.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Four best friends have one last summer before college to pull off the prank of the century.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "credits": [
+    {
+     "name": "Jaylen Brooks",
+     "role": "actor"
+    },
+    {
+     "name": "Mia Chen",
+     "role": "actor"
+    },
+    {
+     "name": "Ollie Grant",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "PG-13"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/paper-kites-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/paper-kites-background.jpg"
+    }
+   ],
+   "durationInSeconds": 6240,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "paper-kites"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-cartographer",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Cartographer",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "She mapped the world. They erased her name.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "The untold story of the woman who drew the maps that built an empire.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "drama",
+    "historical drama"
+   ],
+   "credits": [
+    {
+     "name": "Eleanor Price",
+     "role": "actor"
+    },
+    {
+     "name": "Henri Duval",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "PG"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-cartographer-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-cartographer-background.jpg"
+    }
+   ],
+   "durationInSeconds": 7920,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "the-cartographer"
+     }
+    ]
+   }
+  },
+  {
+   "id": "headlights",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Headlights",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Drive fast. Don't look back.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A getaway driver's last job goes sideways on the longest night of the year.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "crime"
+   ],
+   "credits": [
+    {
+     "name": "Dante Cruz",
+     "role": "actor"
+    },
+    {
+     "name": "Lena Park",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "R"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/headlights-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/headlights-background.jpg"
+    }
+   ],
+   "durationInSeconds": 6900,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "headlights"
+     }
+    ]
+   }
+  },
+  {
+   "id": "northbound",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Northbound",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "2,000 miles. One promise.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A grieving hiker walks the length of a mountain range carrying her sister's ashes.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "adventure"
+   ],
+   "credits": [
+    {
+     "name": "Harper Lane",
+     "role": "actor"
+    },
+    {
+     "name": "Noah Whitfield",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "PG"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/northbound-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/northbound-background.jpg"
+    }
+   ],
+   "durationInSeconds": 7080,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "northbound"
+     }
+    ]
+   }
+  },
+  {
+   "id": "saltwater-hymn",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Saltwater Hymn",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The sea keeps what it takes.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A fishing crew pulls something out of the North Atlantic that should have stayed buried.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "thriller"
+   ],
+   "credits": [
+    {
+     "name": "Erik Solberg",
+     "role": "actor"
+    },
+    {
+     "name": "Nadia Farah",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "R"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/saltwater-hymn-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/saltwater-hymn-background.jpg"
+    }
+   ],
+   "durationInSeconds": 6420,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "saltwater-hymn"
+     }
+    ]
+   }
+  },
+  {
+   "id": "harbor-nine",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Harbor Nine",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Nine thieves. One bridge. Zero margin.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A crew of specialists plans to rob a shipping container in the four minutes the bridge is up.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "crime",
+    "action"
+   ],
+   "credits": [
+    {
+     "name": "Olivia Grant",
+     "role": "actor"
+    },
+    {
+     "name": "Rafael Moreno",
+     "role": "actor"
+    },
+    {
+     "name": "Sun Li",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "PG-13"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/harbor-nine-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/harbor-nine-background.jpg"
+    }
+   ],
+   "durationInSeconds": 7380,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "harbor-nine"
+     }
+    ]
+   }
+  },
+  {
+   "id": "sparks",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Sparks",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "One night. Every New Year's Eve after.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Two strangers meet at midnight and promise to find each other there every year.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "romance"
+   ],
+   "credits": [
+    {
+     "name": "Ava Moreau",
+     "role": "actor"
+    },
+    {
+     "name": "Caleb Hunt",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "PG-13"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/sparks-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/sparks-background.jpg"
+    }
+   ],
+   "durationInSeconds": 5940,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "sparks"
+     }
+    ]
+   }
+  },
+  {
+   "id": "borough",
+   "type": "series",
+   "titles": [
+    {
+     "value": "Borough",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Every block has a price.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Detectives, cab drivers and city councilmen collide in a sprawling story of one New York borough.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "crime drama"
+   ],
+   "credits": [
+    {
+     "name": "Andre Holloway",
+     "role": "actor"
+    },
+    {
+     "name": "Sofia Ruiz",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/borough-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/borough-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "borough-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Pilot",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Borough, episode 1.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "crime drama"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/borough-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "borough",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 2940,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "borough-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "borough-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Long Way Home",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Borough, episode 2.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "crime drama"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/borough-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "borough",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 2520,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "borough-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "borough-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Undercurrent",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Borough, episode 3.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "crime drama"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/borough-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "borough",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 2940,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "borough-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "borough-e4",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Second Chances",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Borough, episode 4.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "crime drama"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/borough-e4.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "borough",
+    "seasonNumber": 1,
+    "episodeNumber": 4
+   },
+   "durationInSeconds": 2520,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "borough-e4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "borough-e5",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Low Tide",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Borough, episode 5.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "crime drama"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/borough-e5.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "borough",
+    "seasonNumber": 1,
+    "episodeNumber": 5
+   },
+   "durationInSeconds": 2940,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "borough-e5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "borough-e6",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "What We Keep",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Borough, episode 6.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "crime drama"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/borough-e6.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "borough",
+    "seasonNumber": 1,
+    "episodeNumber": 6
+   },
+   "durationInSeconds": 2520,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "borough-e6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "borough-e7",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Crossing Lines",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Borough, episode 7.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "crime drama"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/borough-e7.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "borough",
+    "seasonNumber": 1,
+    "episodeNumber": 7
+   },
+   "durationInSeconds": 2940,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "borough-e7"
+     }
+    ]
+   }
+  },
+  {
+   "id": "borough-e8",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Reckoning",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Borough, episode 8.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "crime drama"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/borough-e8.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "borough",
+    "seasonNumber": 1,
+    "episodeNumber": 8
+   },
+   "durationInSeconds": 2520,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "borough-e8"
+     }
+    ]
+   }
+  },
+  {
+   "id": "lighthouse-row",
+   "type": "series",
+   "titles": [
+    {
+     "value": "Lighthouse Row",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The keeper saw everything.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "When a lighthouse keeper vanishes, a small coastal town starts telling on itself.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "credits": [
+    {
+     "name": "Moira Kent",
+     "role": "actor"
+    },
+    {
+     "name": "James Adebayo",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/lighthouse-row-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/lighthouse-row-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "lighthouse-row-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Pilot",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Lighthouse Row, episode 1.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/lighthouse-row-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "lighthouse-row",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 2520,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "lighthouse-row-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "lighthouse-row-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Long Way Home",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Lighthouse Row, episode 2.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/lighthouse-row-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "lighthouse-row",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 2940,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "lighthouse-row-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "lighthouse-row-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Undercurrent",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Lighthouse Row, episode 3.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/lighthouse-row-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "lighthouse-row",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 2520,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "lighthouse-row-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "lighthouse-row-e4",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Second Chances",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Lighthouse Row, episode 4.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/lighthouse-row-e4.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "lighthouse-row",
+    "seasonNumber": 1,
+    "episodeNumber": 4
+   },
+   "durationInSeconds": 2940,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "lighthouse-row-e4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "lighthouse-row-e5",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Low Tide",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Lighthouse Row, episode 5.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/lighthouse-row-e5.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "lighthouse-row",
+    "seasonNumber": 1,
+    "episodeNumber": 5
+   },
+   "durationInSeconds": 2520,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "lighthouse-row-e5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "lighthouse-row-e6",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "What We Keep",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Lighthouse Row, episode 6.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/lighthouse-row-e6.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "lighthouse-row",
+    "seasonNumber": 1,
+    "episodeNumber": 6
+   },
+   "durationInSeconds": 2940,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "lighthouse-row-e6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "lighthouse-row-e7",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Crossing Lines",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Lighthouse Row, episode 7.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/lighthouse-row-e7.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "lighthouse-row",
+    "seasonNumber": 1,
+    "episodeNumber": 7
+   },
+   "durationInSeconds": 2520,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "lighthouse-row-e7"
+     }
+    ]
+   }
+  },
+  {
+   "id": "lighthouse-row-e8",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Reckoning",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Lighthouse Row, episode 8.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/lighthouse-row-e8.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "lighthouse-row",
+    "seasonNumber": 1,
+    "episodeNumber": 8
+   },
+   "durationInSeconds": 2940,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "lighthouse-row-e8"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wildwood",
+   "type": "series",
+   "titles": [
+    {
+     "value": "Wildwood",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Go back to where it started.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Three siblings inherit a failing summer camp deep in the Oregon woods.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Lily Harmon",
+     "role": "actor"
+    },
+    {
+     "name": "Ben Okoro",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wildwood-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/wildwood-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "wildwood-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Pilot",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Wildwood, episode 1.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "drama"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wildwood-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "wildwood",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 3000,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "wildwood-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wildwood-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Long Way Home",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Wildwood, episode 2.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "drama"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wildwood-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "wildwood",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 2580,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "wildwood-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wildwood-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Undercurrent",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Wildwood, episode 3.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "drama"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wildwood-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "wildwood",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 3000,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "wildwood-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wildwood-e4",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Second Chances",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Wildwood, episode 4.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "drama"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wildwood-e4.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "wildwood",
+    "seasonNumber": 1,
+    "episodeNumber": 4
+   },
+   "durationInSeconds": 2580,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "wildwood-e4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wildwood-e5",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Low Tide",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Wildwood, episode 5.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "drama"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wildwood-e5.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "wildwood",
+    "seasonNumber": 1,
+    "episodeNumber": 5
+   },
+   "durationInSeconds": 3000,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "wildwood-e5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wildwood-e6",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "What We Keep",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Wildwood, episode 6.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "drama"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wildwood-e6.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "wildwood",
+    "seasonNumber": 1,
+    "episodeNumber": 6
+   },
+   "durationInSeconds": 2580,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "wildwood-e6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wildwood-e7",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Crossing Lines",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Wildwood, episode 7.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "drama"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wildwood-e7.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "wildwood",
+    "seasonNumber": 1,
+    "episodeNumber": 7
+   },
+   "durationInSeconds": 3000,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "wildwood-e7"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wildwood-e8",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Reckoning",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Wildwood, episode 8.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "drama"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wildwood-e8.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "wildwood",
+    "seasonNumber": 1,
+    "episodeNumber": 8
+   },
+   "durationInSeconds": 2580,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "wildwood-e8"
+     }
+    ]
+   }
+  },
+  {
+   "id": "high-altitude",
+   "type": "series",
+   "titles": [
+    {
+     "value": "High Altitude",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Life above 8,000 meters.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Follow the climbers, sherpas and scientists who live on the edge of the world's highest peaks.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "credits": [
+    {
+     "name": "Grace Whitmore",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-PG"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/high-altitude-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/high-altitude-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "high-altitude-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Pilot",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "High Altitude, episode 1.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-PG"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/high-altitude-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "high-altitude",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 3300,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "high-altitude-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "high-altitude-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Long Way Home",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "High Altitude, episode 2.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-PG"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/high-altitude-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "high-altitude",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 2880,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "high-altitude-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "high-altitude-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Undercurrent",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "High Altitude, episode 3.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-PG"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/high-altitude-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "high-altitude",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 3300,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "high-altitude-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "high-altitude-e4",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Second Chances",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "High Altitude, episode 4.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-PG"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/high-altitude-e4.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "high-altitude",
+    "seasonNumber": 1,
+    "episodeNumber": 4
+   },
+   "durationInSeconds": 2880,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "high-altitude-e4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "high-altitude-e5",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Low Tide",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "High Altitude, episode 5.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-PG"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/high-altitude-e5.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "high-altitude",
+    "seasonNumber": 1,
+    "episodeNumber": 5
+   },
+   "durationInSeconds": 3300,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "high-altitude-e5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "high-altitude-e6",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "What We Keep",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "High Altitude, episode 6.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-PG"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/high-altitude-e6.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "high-altitude",
+    "seasonNumber": 1,
+    "episodeNumber": 6
+   },
+   "durationInSeconds": 2880,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "high-altitude-e6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "high-altitude-e7",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Crossing Lines",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "High Altitude, episode 7.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-PG"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/high-altitude-e7.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "high-altitude",
+    "seasonNumber": 1,
+    "episodeNumber": 7
+   },
+   "durationInSeconds": 3300,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "high-altitude-e7"
+     }
+    ]
+   }
+  },
+  {
+   "id": "high-altitude-e8",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Reckoning",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "High Altitude, episode 8.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-PG"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/high-altitude-e8.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "high-altitude",
+    "seasonNumber": 1,
+    "episodeNumber": 8
+   },
+   "durationInSeconds": 2880,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "high-altitude-e8"
+     }
+    ]
+   }
+  },
+  {
+   "id": "after-hours",
+   "type": "series",
+   "titles": [
+    {
+     "value": "After Hours",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Last call is just the beginning.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "The staff of a failing neighborhood bar try everything to keep the lights on.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "credits": [
+    {
+     "name": "Rico Vance",
+     "role": "actor"
+    },
+    {
+     "name": "Priya Shah",
+     "role": "actor"
+    },
+    {
+     "name": "Kenny Lowe",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/after-hours-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/after-hours-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "after-hours-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Pilot",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "After Hours, episode 1.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/after-hours-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "after-hours",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 3180,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "after-hours-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "after-hours-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Long Way Home",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "After Hours, episode 2.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/after-hours-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "after-hours",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 2760,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "after-hours-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "after-hours-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Undercurrent",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "After Hours, episode 3.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/after-hours-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "after-hours",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 3180,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "after-hours-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "after-hours-e4",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Second Chances",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "After Hours, episode 4.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/after-hours-e4.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "after-hours",
+    "seasonNumber": 1,
+    "episodeNumber": 4
+   },
+   "durationInSeconds": 2760,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "after-hours-e4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "after-hours-e5",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Low Tide",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "After Hours, episode 5.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/after-hours-e5.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "after-hours",
+    "seasonNumber": 1,
+    "episodeNumber": 5
+   },
+   "durationInSeconds": 3180,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "after-hours-e5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "after-hours-e6",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "What We Keep",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "After Hours, episode 6.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/after-hours-e6.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "after-hours",
+    "seasonNumber": 1,
+    "episodeNumber": 6
+   },
+   "durationInSeconds": 2760,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "after-hours-e6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "after-hours-e7",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Crossing Lines",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "After Hours, episode 7.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/after-hours-e7.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "after-hours",
+    "seasonNumber": 1,
+    "episodeNumber": 7
+   },
+   "durationInSeconds": 3180,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "after-hours-e7"
+     }
+    ]
+   }
+  },
+  {
+   "id": "after-hours-e8",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Reckoning",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "After Hours, episode 8.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/after-hours-e8.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "after-hours",
+    "seasonNumber": 1,
+    "episodeNumber": 8
+   },
+   "durationInSeconds": 2760,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "after-hours-e8"
+     }
+    ]
+   }
+  },
+  {
+   "id": "signal",
+   "type": "series",
+   "titles": [
+    {
+     "value": "Signal",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Something answered.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A radio astronomer receives a message from space that knows her name.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "science fiction"
+   ],
+   "credits": [
+    {
+     "name": "Hana Sato",
+     "role": "actor"
+    },
+    {
+     "name": "Marcus Webb",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/signal-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/signal-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "signal-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Pilot",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Signal, episode 1.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "science fiction"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/signal-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "signal",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 2880,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "signal-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "signal-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Long Way Home",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Signal, episode 2.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "science fiction"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/signal-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "signal",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 3300,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "signal-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "signal-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Undercurrent",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Signal, episode 3.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "science fiction"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/signal-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "signal",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 2880,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "signal-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "signal-e4",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Second Chances",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Signal, episode 4.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "science fiction"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/signal-e4.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "signal",
+    "seasonNumber": 1,
+    "episodeNumber": 4
+   },
+   "durationInSeconds": 3300,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "signal-e4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "signal-e5",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Low Tide",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Signal, episode 5.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "science fiction"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/signal-e5.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "signal",
+    "seasonNumber": 1,
+    "episodeNumber": 5
+   },
+   "durationInSeconds": 2880,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "signal-e5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "signal-e6",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "What We Keep",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Signal, episode 6.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "science fiction"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/signal-e6.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "signal",
+    "seasonNumber": 1,
+    "episodeNumber": 6
+   },
+   "durationInSeconds": 3300,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "signal-e6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "signal-e7",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Crossing Lines",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Signal, episode 7.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "science fiction"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/signal-e7.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "signal",
+    "seasonNumber": 1,
+    "episodeNumber": 7
+   },
+   "durationInSeconds": 2880,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "signal-e7"
+     }
+    ]
+   }
+  },
+  {
+   "id": "signal-e8",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Reckoning",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Signal, episode 8.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "science fiction"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/signal-e8.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "signal",
+    "seasonNumber": 1,
+    "episodeNumber": 8
+   },
+   "durationInSeconds": 3300,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "signal-e8"
+     }
+    ]
+   }
+  },
+  {
+   "id": "slow-roads",
+   "type": "series",
+   "titles": [
+    {
+     "value": "Slow Roads",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "No highways allowed.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A chef and a comedian drive across continents using only back roads.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "travel"
+   ],
+   "credits": [
+    {
+     "name": "Tia Morgan",
+     "role": "actor"
+    },
+    {
+     "name": "Sam Oduya",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-G"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/slow-roads-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/slow-roads-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "slow-roads-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Pilot",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Slow Roads, episode 1.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "travel"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-G"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/slow-roads-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "slow-roads",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 3120,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "slow-roads-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "slow-roads-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Long Way Home",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Slow Roads, episode 2.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "travel"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-G"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/slow-roads-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "slow-roads",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 2700,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "slow-roads-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "slow-roads-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Undercurrent",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Slow Roads, episode 3.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "travel"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-G"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/slow-roads-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "slow-roads",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 3120,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "slow-roads-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "slow-roads-e4",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Second Chances",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Slow Roads, episode 4.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "travel"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-G"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/slow-roads-e4.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "slow-roads",
+    "seasonNumber": 1,
+    "episodeNumber": 4
+   },
+   "durationInSeconds": 2700,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "slow-roads-e4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "slow-roads-e5",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Low Tide",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Slow Roads, episode 5.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "travel"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-G"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/slow-roads-e5.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "slow-roads",
+    "seasonNumber": 1,
+    "episodeNumber": 5
+   },
+   "durationInSeconds": 3120,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "slow-roads-e5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "slow-roads-e6",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "What We Keep",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Slow Roads, episode 6.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "travel"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-G"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/slow-roads-e6.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "slow-roads",
+    "seasonNumber": 1,
+    "episodeNumber": 6
+   },
+   "durationInSeconds": 2700,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "slow-roads-e6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "slow-roads-e7",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Crossing Lines",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Slow Roads, episode 7.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "travel"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-G"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/slow-roads-e7.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "slow-roads",
+    "seasonNumber": 1,
+    "episodeNumber": 7
+   },
+   "durationInSeconds": 3120,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "slow-roads-e7"
+     }
+    ]
+   }
+  },
+  {
+   "id": "slow-roads-e8",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Reckoning",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Slow Roads, episode 8.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2025-01-01",
+   "genres": [
+    "travel"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-G"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/slow-roads-e8.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "slow-roads",
+    "seasonNumber": 1,
+    "episodeNumber": 8
+   },
+   "durationInSeconds": 2700,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "slow-roads-e8"
+     }
+    ]
+   }
+  },
+  {
+   "id": "commonwealth",
+   "type": "series",
+   "titles": [
+    {
+     "value": "Commonwealth",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Power is inherited. Or taken.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Heirs to an old-money dynasty fight over a governor's seat and a family secret.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "drama",
+    "politics"
+   ],
+   "credits": [
+    {
+     "name": "Victoria Lang",
+     "role": "actor"
+    },
+    {
+     "name": "Oscar Reid",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/commonwealth-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/commonwealth-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "commonwealth-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Pilot",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Commonwealth, episode 1.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "drama",
+    "politics"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/commonwealth-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "commonwealth",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 3240,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "commonwealth-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "commonwealth-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Long Way Home",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Commonwealth, episode 2.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "drama",
+    "politics"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/commonwealth-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "commonwealth",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 2820,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "commonwealth-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "commonwealth-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Undercurrent",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Commonwealth, episode 3.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "drama",
+    "politics"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/commonwealth-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "commonwealth",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 3240,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "commonwealth-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "commonwealth-e4",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Second Chances",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Commonwealth, episode 4.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "drama",
+    "politics"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/commonwealth-e4.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "commonwealth",
+    "seasonNumber": 1,
+    "episodeNumber": 4
+   },
+   "durationInSeconds": 2820,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "commonwealth-e4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "commonwealth-e5",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Low Tide",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Commonwealth, episode 5.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "drama",
+    "politics"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/commonwealth-e5.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "commonwealth",
+    "seasonNumber": 1,
+    "episodeNumber": 5
+   },
+   "durationInSeconds": 3240,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "commonwealth-e5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "commonwealth-e6",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "What We Keep",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Commonwealth, episode 6.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "drama",
+    "politics"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/commonwealth-e6.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "commonwealth",
+    "seasonNumber": 1,
+    "episodeNumber": 6
+   },
+   "durationInSeconds": 2820,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "commonwealth-e6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "commonwealth-e7",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Crossing Lines",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Commonwealth, episode 7.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "drama",
+    "politics"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/commonwealth-e7.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "commonwealth",
+    "seasonNumber": 1,
+    "episodeNumber": 7
+   },
+   "durationInSeconds": 3240,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "commonwealth-e7"
+     }
+    ]
+   }
+  },
+  {
+   "id": "commonwealth-e8",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Reckoning",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Commonwealth, episode 8.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "drama",
+    "politics"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/commonwealth-e8.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "commonwealth",
+    "seasonNumber": 1,
+    "episodeNumber": 8
+   },
+   "durationInSeconds": 2820,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "commonwealth-e8"
+     }
+    ]
+   }
+  },
+  {
+   "id": "tidewater",
+   "type": "series",
+   "titles": [
+    {
+     "value": "Tidewater",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The storm washed up the truth.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A hurricane reveals a body \u2014 and a cover-up \u2014 in a wealthy coastal enclave.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "thriller"
+   ],
+   "credits": [
+    {
+     "name": "Nora Blake",
+     "role": "actor"
+    },
+    {
+     "name": "Isaiah Grant",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/tidewater-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/tidewater-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "tidewater-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Pilot",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Tidewater, episode 1.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "thriller"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/tidewater-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "tidewater",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 3060,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "tidewater-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "tidewater-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Long Way Home",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Tidewater, episode 2.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "thriller"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/tidewater-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "tidewater",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 2640,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "tidewater-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "tidewater-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Undercurrent",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Tidewater, episode 3.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "thriller"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/tidewater-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "tidewater",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 3060,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "tidewater-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "tidewater-e4",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Second Chances",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Tidewater, episode 4.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "thriller"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/tidewater-e4.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "tidewater",
+    "seasonNumber": 1,
+    "episodeNumber": 4
+   },
+   "durationInSeconds": 2640,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "tidewater-e4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "tidewater-e5",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Low Tide",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Tidewater, episode 5.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "thriller"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/tidewater-e5.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "tidewater",
+    "seasonNumber": 1,
+    "episodeNumber": 5
+   },
+   "durationInSeconds": 3060,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "tidewater-e5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "tidewater-e6",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "What We Keep",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Tidewater, episode 6.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "thriller"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/tidewater-e6.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "tidewater",
+    "seasonNumber": 1,
+    "episodeNumber": 6
+   },
+   "durationInSeconds": 2640,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "tidewater-e6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "tidewater-e7",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Crossing Lines",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Tidewater, episode 7.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "thriller"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/tidewater-e7.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "tidewater",
+    "seasonNumber": 1,
+    "episodeNumber": 7
+   },
+   "durationInSeconds": 3060,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "tidewater-e7"
+     }
+    ]
+   }
+  },
+  {
+   "id": "tidewater-e8",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Reckoning",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Tidewater, episode 8.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2024-01-01",
+   "genres": [
+    "thriller"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-MA"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/tidewater-e8.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "tidewater",
+    "seasonNumber": 1,
+    "episodeNumber": 8
+   },
+   "durationInSeconds": 2640,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "tidewater-e8"
+     }
+    ]
+   }
+  },
+  {
+   "id": "chrome",
+   "type": "series",
+   "titles": [
+    {
+     "value": "Chrome",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Two cars. One garage. Zero chill.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Rival classic-car restorers are forced to share one garage \u2014 and one very big contract.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "credits": [
+    {
+     "name": "Gus Ferreira",
+     "role": "actor"
+    },
+    {
+     "name": "Dee Walters",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/chrome-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/chrome-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "chrome-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Pilot",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Chrome, episode 1.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/chrome-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "chrome",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 2880,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "chrome-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "chrome-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Long Way Home",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Chrome, episode 2.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/chrome-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "chrome",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 3300,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "chrome-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "chrome-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Undercurrent",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Chrome, episode 3.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/chrome-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "chrome",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 2880,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "chrome-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "chrome-e4",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Second Chances",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Chrome, episode 4.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/chrome-e4.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "chrome",
+    "seasonNumber": 1,
+    "episodeNumber": 4
+   },
+   "durationInSeconds": 3300,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "chrome-e4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "chrome-e5",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Low Tide",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Chrome, episode 5.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/chrome-e5.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "chrome",
+    "seasonNumber": 1,
+    "episodeNumber": 5
+   },
+   "durationInSeconds": 2880,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "chrome-e5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "chrome-e6",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "What We Keep",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Chrome, episode 6.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/chrome-e6.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "chrome",
+    "seasonNumber": 1,
+    "episodeNumber": 6
+   },
+   "durationInSeconds": 3300,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "chrome-e6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "chrome-e7",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Crossing Lines",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Chrome, episode 7.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/chrome-e7.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "chrome",
+    "seasonNumber": 1,
+    "episodeNumber": 7
+   },
+   "durationInSeconds": 2880,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "chrome-e7"
+     }
+    ]
+   }
+  },
+  {
+   "id": "chrome-e8",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Reckoning",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Chrome, episode 8.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2026-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "TV-14"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/chrome-e8.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "chrome",
+    "seasonNumber": 1,
+    "episodeNumber": 8
+   },
+   "durationInSeconds": 3300,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "chrome-e8"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,15 +1,16 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { FEATURED, MOVIES, ROWS, SHOWS } from '../catalog';
+import { FEATURED, MOVIES, ROWS, SHOWS, getTitle, type Row } from '../catalog';
 import { Hero, HERO_HEIGHT, HERO_OVERLAP } from '../components/Hero';
 import { Shelf } from '../components/Shelf';
 import { Tab, TopNav } from '../components/TopNav';
+import { resumeAt, timeLeftLabel, useContinueWatching } from '../history';
 import { colors, s } from '../theme';
 
 type Props = {
   active: boolean;
   onOpen: (id: string) => void;
-  onPlay: (id: string, episode?: number) => void;
+  onPlay: (id: string, episode?: number, startAt?: number) => void;
 };
 
 export function HomeScreen({ active, onOpen, onPlay }: Props) {
@@ -24,7 +25,24 @@ export function HomeScreen({ active, onOpen, onPlay }: Props) {
     () => (tab === 'movies' ? MOVIES.slice(0, 5) : tab === 'shows' ? SHOWS.slice(0, 5) : FEATURED),
     [tab],
   );
-  const rows = ROWS[tab];
+  const watching = useContinueWatching();
+  // Up Next comes from what this TV has actually been watching (seeded on first run).
+  const rows = useMemo<Row[]>(
+    () =>
+      ROWS[tab].flatMap((r): Row[] => {
+        if (r.type !== 'upNext') {
+          return [r];
+        }
+        const items = watching.map(w => ({
+          title: getTitle(w.id),
+          label: timeLeftLabel(w),
+          progress: w.duration > 0 ? w.position / w.duration : 0,
+          episode: w.episode || undefined,
+        }));
+        return items.length ? [{ ...r, items }] : [];
+      }),
+    [tab, watching],
+  );
 
   const toTop = useCallback(() => {
     setFocusArea('hero');
@@ -56,7 +74,7 @@ export function HomeScreen({ active, onOpen, onPlay }: Props) {
               <Shelf
                 row={row}
                 onFocusRow={() => toRow(row.key)}
-                onSelect={(id, ep) => (row.type === 'upNext' ? onPlay(id, ep) : onOpen(id))}
+                onSelect={(id, ep) => (row.type === 'upNext' ? onPlay(id, ep, resumeAt(id, ep ?? 0)) : onOpen(id))}
               />
             </View>
           ))}

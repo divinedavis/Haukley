@@ -28,4 +28,4 @@ export type Episode = {
 export type Route =
   | { name: 'home' }
   | { name: 'detail'; id: string }
-  | { name: 'player'; id: string; episode?: number };
+  | { name: 'player'; id: string; episode?: number; startAt?: number };

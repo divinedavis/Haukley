@@ -2,12 +2,13 @@ import React, { useRef } from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { episodesFor, getTitle, moreLike } from '../catalog';
 import { Button } from '../components/Button';
+import { clock, lastEpisode, resumeAt, useContinueWatching } from '../history';
 import { FocusCard } from '../components/FocusCard';
 import { colors, layout, s } from '../theme';
 
 type Props = {
   id: string;
-  onPlay: (id: string, episode?: number) => void;
+  onPlay: (id: string, episode?: number, startAt?: number) => void;
   onOpen: (id: string) => void;
 };
 
@@ -15,6 +16,12 @@ export function DetailScreen({ id, onPlay, onOpen }: Props) {
   const t = getTitle(id);
   const scroll = useRef<ScrollView>(null);
   const isShow = t.kind === 'show';
+  useContinueWatching(); // re-render when progress changes
+  const resume = isShow
+    ? lastEpisode(t.id)
+    : resumeAt(t.id) > 0
+      ? { episode: 0, position: resumeAt(t.id) }
+      : undefined;
   const toTop = () => scroll.current?.scrollTo({ y: 0, animated: true });
   const toShelf = () => scroll.current?.scrollToEnd({ animated: true });
 
@@ -40,13 +47,31 @@ export function DetailScreen({ id, onPlay, onOpen }: Props) {
           <Text style={styles.desc}>{t.description}</Text>
           <Text style={styles.credits}>{t.credits}</Text>
           <View style={styles.buttons}>
-            <Button
-              label={isShow ? 'Play S1, E1' : 'Play'}
-              icon="▶"
-              hasTVPreferredFocus
-              onFocus={toTop}
-              onPress={() => onPlay(t.id, isShow ? 1 : undefined)}
-            />
+            {resume ? (
+              <>
+                <Button
+                  label={`Resume${resume.episode ? ` E${resume.episode}` : ''} · ${clock(resume.position)}`}
+                  icon="▶"
+                  hasTVPreferredFocus
+                  onFocus={toTop}
+                  onPress={() => onPlay(t.id, resume.episode || undefined, resume.position)}
+                />
+                <Button
+                  label="From Beginning"
+                  icon="↺"
+                  onFocus={toTop}
+                  onPress={() => onPlay(t.id, resume.episode || undefined)}
+                />
+              </>
+            ) : (
+              <Button
+                label={isShow ? 'Play S1, E1' : 'Play'}
+                icon="▶"
+                hasTVPreferredFocus
+                onFocus={toTop}
+                onPress={() => onPlay(t.id, isShow ? 1 : undefined)}
+              />
+            )}
             <Button label="Trailer" icon="▶" onFocus={toTop} onPress={() => onPlay(t.id, 99)} />
             <Button label="Up Next" icon="+" round onFocus={toTop} onPress={() => {}} />
           </View>
@@ -64,7 +89,7 @@ export function DetailScreen({ id, onPlay, onOpen }: Props) {
                     label={`${ep.number}. ${ep.name}`}
                     sublabel={`${ep.minutes} min`}
                     onFocus={toShelf}
-                    onPress={() => onPlay(t.id, ep.number)}
+                    onPress={() => onPlay(t.id, ep.number, resumeAt(t.id, ep.number))}
                   />
                 </View>
               ))
