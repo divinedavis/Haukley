@@ -11,7 +11,7 @@ final class HaukleyUITests: XCTestCase {
         // The splash folds away on its own; test the outcome, not the decoration.
         let splash = app.descendants(matching: .any).matching(identifier: "splash").firstMatch
         expectation(for: NSPredicate(format: "exists == false"), evaluatedWith: splash)
-        waitForExpectations(timeout: 5)
+        waitForExpectations(timeout: 8)
     }
 
     private func element(_ id: String) -> XCUIElement {

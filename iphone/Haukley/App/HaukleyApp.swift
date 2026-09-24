@@ -133,32 +133,38 @@ struct SplashView: View {
         .task { await run() }
     }
 
-    private func pause(_ ms: Int) async { try? await Task.sleep(for: .milliseconds(ms)) }
+    /// Every splash duration and pause is stretched by this (1.3 = 30% slower than the
+    /// timings written below).
+    private static let pace = 1.3
+    private func t(_ seconds: Double) -> Double { seconds * Self.pace }
+    private func pause(_ ms: Int) async {
+        try? await Task.sleep(for: .milliseconds(Int(Double(ms) * Self.pace)))
+    }
 
     private func run() async {
         if reduceMotion {
-            withAnimation(.easeOut(duration: 0.3)) { lettersOpacity = 1; mazeOpacity = 0.22 }
+            withAnimation(.easeOut(duration: t(0.3))) { lettersOpacity = 1; mazeOpacity = 0.22 }
             await pause(900)
-            withAnimation(.easeOut(duration: 0.3)) { fade = 0 }
+            withAnimation(.easeOut(duration: t(0.3))) { fade = 0 }
             await pause(300)
             return onFinish()
         }
         // The maze fades up while the camera settles in.
-        withAnimation(.easeOut(duration: 0.55)) { mazeOpacity = 1 }
-        withAnimation(.easeOut(duration: 1.6)) { push = 1 }
+        withAnimation(.easeOut(duration: t(0.55))) { mazeOpacity = 1 }
+        withAnimation(.easeOut(duration: t(1.6))) { push = 1 }
         await pause(450)
         // The word surfaces out of the maze; the maze recedes behind it.
-        withAnimation(.easeInOut(duration: 0.6)) {
+        withAnimation(.easeInOut(duration: t(0.6))) {
             lettersOpacity = 1
             mazeOpacity = 0.22
         }
         await pause(500)
-        // Same speed as the old off-screen-to-off-screen sweep (1.4 bar widths in 0.55s)
-        // over the shorter letter-to-letter path (1.12 bar widths).
-        withAnimation(.easeInOut(duration: 0.44)) { glint = 1 }
+        // Base timing matches the old off-screen-to-off-screen sweep (1.4 bar widths in 0.55s)
+        // over the shorter letter-to-letter path (1.12 bar widths); pace then slows it 30%.
+        withAnimation(.easeInOut(duration: t(0.44))) { glint = 1 }
         // Hold on the finished word, then fade into the app.
         await pause(720)
-        withAnimation(.easeOut(duration: 0.35)) { fade = 0 }
+        withAnimation(.easeOut(duration: t(0.35))) { fade = 0 }
         await pause(350)
         onFinish()
     }
