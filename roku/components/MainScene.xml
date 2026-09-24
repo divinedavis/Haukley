@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <component name="MainScene" extends="Scene">
+    <interface>
+        <!-- Set by Main() from launch args and roInput events: { contentId, mediaType } -->
+        <field id="deepLink" type="assocarray" alwaysNotify="true" />
+    </interface>
     <script type="text/brightscript" uri="MainScene.brs" />
     <script type="text/brightscript" uri="Content.brs" />
     <children>

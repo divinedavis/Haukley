@@ -8,16 +8,24 @@ sub playWithAds()
     video = m.top.video
     view = video.getParent()
     m.pending = []
+    m.lastPosition = 0
     m.session = CreateObject("roDeviceInfo").GetRandomUUID()
 
     adIface = invalid
     if m.top.adUrl <> ""
-        adIface = Roku_Ads()
-        adIface.setAdUrl(m.top.adUrl)
-        adIface.setContentId(m.top.titleId)
-        adIface.setContentGenre(m.top.genre)
-        adIface.enableAdMeasurements(true)
-        adIface.setTrackingCallback(onAdTracking, m)
+        ' If RAF can't start (or isn't present, as in desktop emulators), play without ads
+        ' rather than failing the title.
+        try
+            adIface = Roku_Ads()
+            adIface.setAdUrl(m.top.adUrl)
+            adIface.setContentId(m.top.titleId)
+            adIface.setContentGenre(m.top.genre)
+            adIface.enableAdMeasurements(true)
+            adIface.setTrackingCallback(onAdTracking, m)
+        catch e
+            print "RAF unavailable, playing without ads: "; e.message
+            adIface = invalid
+        end try
     end if
 
     keepPlaying = true
@@ -26,6 +34,11 @@ sub playWithAds()
     end if
     if keepPlaying then playContent(adIface, video, view)
 
+    ' Remember where the viewer stopped (cleared automatically near the end).
+    if m.top.bookmark
+        ' The last position seen while playing; after "stop" the node may already report 0.
+        saveBookmark(m.top.titleId, m.top.episode, Int(m.lastPosition), Int(video.duration))
+    end if
     flushEvents()
     m.top.done = true
 end sub
@@ -48,6 +61,7 @@ sub playContent(adIface as dynamic, video as object, view as object)
             field = msg.getField()
             if field = "position"
                 position = msg.getData()
+                m.lastPosition = position
                 if adIface <> invalid
                     pods = adIface.getAds(msg)
                     ' Stopping the video hands the break to the "stopped" branch below.

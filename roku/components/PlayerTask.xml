@@ -8,9 +8,11 @@
         <field id="titleId" type="string" />
         <field id="genre" type="string" />
         <field id="episode" type="integer" />
+        <field id="bookmark" type="boolean" value="true" />
         <field id="trackingUrl" type="string" />
         <field id="apiKey" type="string" />
         <field id="done" type="boolean" alwaysNotify="true" />
     </interface>
     <script type="text/brightscript" uri="PlayerTask.brs" />
+    <script type="text/brightscript" uri="Content.brs" />
 </component>

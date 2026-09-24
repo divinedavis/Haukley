@@ -23,6 +23,7 @@ sub init()
     m.heroFade.observeField("state", "onHeroFadeState")
     m.details.observeField("action", "onDetailsAction")
     m.video.observeField("state", "onVideoState")
+    m.top.observeField("deepLink", "onDeepLink")
 
     showHero(m.catalog.rows[0].items[0].id)
     m.rows.setFocus(true)
@@ -109,7 +110,7 @@ sub onRowItemSelected()
     tile = tileAt(m.rows.rowItemSelected)
     if tile = invalid then return
     if tile.action = "play"
-        playVideo(tile.url, tile.playTitle, tile.titleId, tile.episode, true)
+        playVideo(tile.url, tile.playTitle, tile.titleId, tile.episode, true, bookmarkFor(tile.titleId, tile.episode))
     else
         openDetails(tile.titleId, true)
     end if
@@ -131,7 +132,7 @@ sub openDetails(id as string, push as boolean)
             end if
         end for
     end if
-    m.details.data = { title: t, shelf: shelf }
+    m.details.data = { title: t, shelf: shelf, resume: resumeTarget(t) }
     m.home.visible = false
     m.details.visible = true
     m.details.setFocus(true)
@@ -141,20 +142,46 @@ sub onDetailsAction()
     a = m.details.action
     if a = invalid then return
     if a.type = "play"
-        playVideo(a.url, a.title, a.id, a.episode, a.ads)
+        playVideo(a.url, a.title, a.id, a.episode, a.ads, a.startAt)
     else if a.type = "open"
         openDetails(a.id, true)
     end if
 end sub
 
-sub playVideo(url as string, title as string, titleId as string, episode as integer, withAds as boolean)
+' The details page offers "Resume" for the most recently bookmarked movie or episode.
+function resumeTarget(t as object) as dynamic
+    if t.kind <> "show"
+        at = bookmarkFor(t.id, 0)
+        if at > 0 then return { episode: 0, at: at, url: t.stream, title: t.title }
+        return invalid
+    end if
+    marks = loadBookmarks()
+    best = invalid
+    for each ep in t.episodes
+        mark = marks[bookmarkKey(t.id, ep.number)]
+        if mark <> invalid and (best = invalid or mark.t > best.t)
+            best = { episode: ep.number, at: mark.p, url: ep.stream, title: t.title + " · Episode " + ep.number.ToStr(), t: mark.t }
+        end if
+    end for
+    return best
+end function
+
+sub playVideo(url as string, title as string, titleId as string, episode as integer, withAds as boolean, startAt = 0 as integer)
+    t = m.titles[titleId]
     c = CreateObject("roSGNode", "ContentNode")
     c.url = url
     c.title = title
     c.streamFormat = "hls"
+    ' Bookmark resume (Roku certification: long-form VOD resumes where the viewer stopped).
+    if startAt > 0 then c.PlayStart = startAt
+    ' Side-loaded captions when the catalog has them; HLS-embedded captions are picked up by
+    ' the Video node, which also applies the viewer's global caption settings and exposes
+    ' On / Off / On replay / On mute in its options (*) menu.
+    if t.captions <> invalid and t.captions <> ""
+        c.SubtitleTracks = [{ Language: "eng", TrackName: t.captions, Description: "English" }]
+    end if
     m.video.content = c
 
-    t = m.titles[titleId]
     adUrl = ""
     if withAds
         ' title_id rides in the ad request so the ad server can report revenue per film.
@@ -167,10 +194,60 @@ sub playVideo(url as string, title as string, titleId as string, episode as inte
     m.player.titleId = titleId
     m.player.genre = t.genre
     m.player.episode = episode
+    ' Trailers don't leave a bookmark.
+    m.player.bookmark = withAds
     m.player.trackingUrl = m.catalog.ads.trackingUrl
     m.player.apiKey = m.catalog.ads.publishableKey
     m.player.observeField("done", "onPlayerDone")
     m.player.control = "RUN"
+end sub
+
+' ---- Deep linking ----------------------------------------------------------------------
+' contentId is a title id ("night-line") or an episode id ("borough-e3"), the same ids the
+' Roku Search feed will publish. Playable media types go straight to playback (Direct to
+' Play, resuming from any bookmark); series/season open the title page. Unknown ids leave
+' the viewer on Home.
+sub onDeepLink()
+    link = m.top.deepLink
+    if link = invalid then return
+    ' A deep link can arrive mid-playback (roInput); finish closing the player first.
+    if m.video.visible
+        m.pendingLink = link
+        m.video.control = "stop"
+        return
+    end if
+    handleDeepLink(link)
+end sub
+
+sub handleDeepLink(link as object)
+    id = link.contentId
+    mediaType = ""
+    if link.mediaType <> invalid then mediaType = LCase(link.mediaType)
+    episode = 0
+    parts = CreateObject("roRegex", "^(.+)-e([0-9]+)$", "").Match(id)
+    if parts.Count() = 3 and m.titles[parts[1]] <> invalid
+        id = parts[1]
+        episode = parts[2].ToInt()
+    end if
+    t = m.titles[id]
+    if t = invalid
+        print "deep link: unknown contentId "; link.contentId
+        return
+    end if
+
+    m.history = []
+    if mediaType = "series" or mediaType = "season" or (t.kind = "show" and episode = 0 and mediaType <> "episode")
+        openDetails(t.id, true)
+        return
+    end if
+
+    if t.kind = "show"
+        if episode < 1 or episode > t.episodes.Count() then episode = 1
+        ep = t.episodes[episode - 1]
+        playVideo(ep.stream, t.title + " · Episode " + episode.ToStr(), t.id, episode, true, bookmarkFor(t.id, episode))
+    else
+        playVideo(t.stream, t.title, t.id, 0, true, bookmarkFor(t.id, 0))
+    end if
 end sub
 
 sub closeVideo()
@@ -186,6 +263,11 @@ end sub
 ' The task ends on content end, a Back press during ads, or an error.
 sub onPlayerDone()
     closeVideo()
+    if m.pendingLink <> invalid
+        link = m.pendingLink
+        m.pendingLink = invalid
+        handleDeepLink(link)
+    end if
 end sub
 
 sub onVideoState()

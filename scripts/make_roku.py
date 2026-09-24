@@ -77,6 +77,8 @@ def main():
                 "card": f"pkg:/images/titles/{tid}/card.jpg",
                 "backdrop": f"pkg:/images/titles/{tid}/backdrop.jpg",
                 "stream": stream_for(streams, tid),
+                # Side-loaded caption file (WebVTT/SRT URL) once real titles ship with one.
+                "captions": t.get("captions", ""),
             }
             if kind == "show":
                 eps = []

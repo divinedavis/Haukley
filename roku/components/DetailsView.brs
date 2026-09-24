@@ -40,12 +40,26 @@ sub onData()
         playTitle = t.title + " · Episode 1"
         playEpisode = 1
     end if
-    ' Trailers play without ads.
-    m.actions = [
-        { type: "play", url: playUrl, title: playTitle, id: t.id, episode: playEpisode, ads: true }
-        { type: "play", url: t.stream, title: t.title + " · Trailer", id: t.id, episode: 0, ads: false }
-    ]
-    buildButtons([playLabel, "Trailer"])
+    ' Trailers play without ads (and leave no bookmark).
+    trailer = { type: "play", url: t.stream, title: t.title + " · Trailer", id: t.id, episode: 0, ads: false, startAt: 0 }
+    r = d.resume
+    if r <> invalid
+        ' Bookmarked: Resume first, then start over from the same item.
+        resumeLabel = "Resume " + formatClock(r.at)
+        if r.episode > 0 then resumeLabel = "Resume E" + r.episode.ToStr() + " · " + formatClock(r.at)
+        m.actions = [
+            { type: "play", url: r.url, title: r.title, id: t.id, episode: r.episode, ads: true, startAt: r.at }
+            { type: "play", url: r.url, title: r.title, id: t.id, episode: r.episode, ads: true, startAt: 0 }
+            trailer
+        ]
+        buildButtons([resumeLabel, "Play from Beginning", "Trailer"])
+    else
+        m.actions = [
+            { type: "play", url: playUrl, title: playTitle, id: t.id, episode: playEpisode, ads: true, startAt: 0 }
+            trailer
+        ]
+        buildButtons([playLabel, "Trailer"])
+    end if
 
     root = CreateObject("roSGNode", "ContentNode")
     row = root.createChild("ContentNode")
@@ -117,7 +131,7 @@ sub onShelfSelected()
     rc = m.shelf.rowItemSelected
     tile = m.shelf.content.getChild(rc[0]).getChild(rc[1])
     if tile.action = "play"
-        m.top.action = { type: "play", url: tile.url, title: tile.playTitle, id: tile.titleId, episode: tile.episode, ads: true }
+        m.top.action = { type: "play", url: tile.url, title: tile.playTitle, id: tile.titleId, episode: tile.episode, ads: true, startAt: bookmarkFor(tile.titleId, tile.episode) }
     else
         m.top.action = { type: "open", id: tile.titleId }
     end if

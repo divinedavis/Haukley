@@ -17,3 +17,70 @@ end function
 function metaLine(t as object) as string
     return t.genre + "  ·  " + t.year.ToStr() + "  ·  " + t.rating + "  ·  " + t.length
 end function
+
+' ---- Bookmarks (resume position) -------------------------------------------------------
+' Roku certification: long-form VOD must resume where the viewer stopped, and bookmarks must
+' be kept at least 30 days. Stored in the registry as one JSON map keyed "<titleId>|<episode>".
+
+function bookmarkKey(titleId as string, episode as integer) as string
+    return titleId + "|" + episode.ToStr()
+end function
+
+function loadBookmarks() as object
+    raw = CreateObject("roRegistrySection", "bookmarks").Read("all")
+    if raw = "" then return {}
+    marks = ParseJson(raw)
+    if marks = invalid then return {}
+    return marks
+end function
+
+' Seconds to resume from, or 0 when there is nothing worth resuming.
+function bookmarkFor(titleId as string, episode as integer) as integer
+    mark = loadBookmarks()[bookmarkKey(titleId, episode)]
+    if mark = invalid then return 0
+    return mark.p
+end function
+
+sub saveBookmark(titleId as string, episode as integer, position as integer, duration as integer)
+    marks = loadBookmarks()
+    key = bookmarkKey(titleId, episode)
+    ' Finished (or barely started) titles start over next time.
+    if position < 10 or (duration > 0 and position > duration * 0.95)
+        marks.Delete(key)
+    else
+        marks[key] = { p: position, d: duration, t: CreateObject("roDateTime").AsSeconds() }
+    end if
+    ' Roku requires at least 30 days: drop only marks older than 60 days, and past 150 entries
+    ' (registry space is limited) the oldest one.
+    now = CreateObject("roDateTime").AsSeconds()
+    for each k in marks.Keys()
+        if now - marks[k].t > 60 * 86400 then marks.Delete(k)
+    end for
+    if marks.Count() > 150
+        oldestKey = ""
+        oldest = now
+        for each k in marks
+            if marks[k].t < oldest
+                oldest = marks[k].t
+                oldestKey = k
+            end if
+        end for
+        marks.Delete(oldestKey)
+    end if
+    sec = CreateObject("roRegistrySection", "bookmarks")
+    sec.Write("all", FormatJson(marks))
+    sec.Flush()
+end sub
+
+function twoDigits(n as integer) as string
+    if n < 10 then return "0" + n.ToStr()
+    return n.ToStr()
+end function
+
+function formatClock(seconds as integer) as string
+    h = seconds \ 3600
+    mnt = (seconds mod 3600) \ 60
+    s = seconds mod 60
+    if h > 0 then return h.ToStr() + ":" + twoDigits(mnt) + ":" + twoDigits(s)
+    return mnt.ToStr() + ":" + twoDigits(s)
+end function
