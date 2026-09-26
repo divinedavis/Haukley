@@ -10,3 +10,10 @@
   scp web/img/*.jpg root@104.236.120.144:/var/www/haukley/img/
   ```
 - `nginx-haukley.conf` is a copy of the live config (certbot-managed lines included).
+- Deploy the web player (haukley.com/watch/, sign-in required; nginx has its own CSP for it):
+  ```bash
+  .venv/bin/python scripts/make_web.py            # catalog + art -> web/watch/catalog/
+  rsync -a --delete web/watch/ root@104.236.120.144:/var/www/haukley/watch/
+  ssh root@104.236.120.144 'chown -R root:root /var/www/haukley'
+  ```
+  Bump the `?v=` on app.css/app.js in web/watch/index.html when they change.

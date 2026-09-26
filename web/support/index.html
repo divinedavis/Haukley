@@ -23,7 +23,7 @@
       <nav class="nav" aria-label="Main">
         <a class="hide-sm" href="/#browse">Browse</a>
         <a href="/filmmakers/">For filmmakers</a>
-        <a class="cta" href="/#notify">Get notified</a>
+        <a class="cta" href="/watch/">Watch now</a>
       </nav>
     </div>
   </header>

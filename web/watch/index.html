@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Watch — Haukley</title>
+  <meta name="description" content="Watch free movies and shows on Haukley.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0b0a10">
+  <link rel="icon" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css?v=3">
+</head>
+<body>
+  <div id="app" aria-live="polite"></div>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-scrim" data-close></div>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title"></div>
+  </div>
+
+  <div id="player" class="player" hidden>
+    <video id="video" playsinline preload="auto"></video>
+    <div id="ad-layer" class="ad-layer"></div>
+    <div class="player-top">
+      <button class="icon-btn" id="player-back" aria-label="Back">
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="player-title" id="player-title"></div>
+    </div>
+    <p class="player-error" id="player-error" hidden></p>
+  </div>
+
+  <script src="vendor/supabase.js"></script>
+  <script src="vendor/hls.light.min.js"></script>
+  <script src="app.js?v=2"></script>
+</body>
+</html>

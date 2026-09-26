@@ -94,6 +94,10 @@ h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.2px; }
 .faq details[open] summary::after { content: "−"; }
 .faq details p { color: var(--dim); margin-top: 10px; max-width: 720px; }
 
+/* Hero watch button */
+.hero-watch { margin-top: 28px; }
+.hero-watch + .signup { margin-top: 16px; }
+
 /* Waitlist form */
 .signup { display: flex; gap: 10px; margin-top: 28px; max-width: 520px; flex-wrap: wrap; }
 .signup input {

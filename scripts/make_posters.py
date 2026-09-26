@@ -1,4 +1,4 @@
-"""Generate fake posters, cards and backdrops for every title in catalog.json.
+"""Generate posters, cards and backdrops for every title in catalog.json.
 
 Photos come from Picsum (Unsplash License, free to use) by id; titles are
 typeset with open-license Google Fonts in scripts/fonts. Output goes to
@@ -11,7 +11,7 @@ import json
 import pathlib
 
 import requests
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageOps
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FONTS = ROOT / "scripts" / "fonts"
@@ -44,6 +44,14 @@ def photo(pid, size):
         r.raise_for_status()
         path.write_bytes(r.content)
     return Image.open(path).convert("RGB")
+
+
+def photo_for(t, size):
+    """A title's source image: its own still (real films, a frame from the film itself) when
+    it has one, otherwise a Picsum photo by id."""
+    if t.get("still"):
+        return ImageOps.fit(Image.open(ROOT / t["still"]).convert("RGB"), size, Image.LANCZOS)
+    return photo(t["photo"], size)
 
 
 def grade(img, tint, strength=0.28):
@@ -113,7 +121,7 @@ def uses_upper(t):
 
 def make_poster(t, kind):
     w, h = POSTER
-    img = grade(photo(t["photo"], (w * 2, h * 2)).resize(POSTER, Image.LANCZOS), t["tint"])
+    img = grade(photo_for(t, (w * 2, h * 2)).resize(POSTER, Image.LANCZOS), t["tint"])
     layout = t["layout"]
     if layout == "top":
         img = darken(img, vertical_gradient(POSTER, 200, 0, 0).point(lambda v: v))
@@ -174,7 +182,7 @@ def wrap_fit_body(draw, text, max_w, size):
 
 def make_card(t):
     w, h = CARD
-    img = grade(photo(t["photo"], (w * 2, h * 2)).resize(CARD, Image.LANCZOS), t["tint"], 0.22)
+    img = grade(photo_for(t, (w * 2, h * 2)).resize(CARD, Image.LANCZOS), t["tint"], 0.22)
     img = darken(img, vertical_gradient(CARD, 0, 210, 0.4))
     d = ImageDraw.Draw(img, "RGBA")
     f, lines = wrap_fit(d, t["title"], t["font"], w * 0.8, 96, 2, uses_upper(t))
@@ -195,7 +203,7 @@ def horizontal_fade(size, left_alpha, span, power):
 
 def make_backdrop(t):
     # Fades are baked in: gradient overlay PNGs don't render reliably on Fire OS.
-    img = grade(photo(t["photo"], BACKDROP), t["tint"], 0.18)
+    img = grade(photo_for(t, BACKDROP), t["tint"], 0.18)
     img = darken(img, horizontal_fade(BACKDROP, 235, 0.7, 1.5))
     bottom = vertical_gradient(BACKDROP, 0, 255, 0.45).point(lambda v: int(255 * (v / 255) ** 1.4))
     return darken(img, bottom)
@@ -208,7 +216,7 @@ EPISODE = (640, 360)
 
 
 def make_episode_stills(t):
-    src = grade(photo(t["photo"], BACKDROP), t["tint"], 0.15)
+    src = grade(photo_for(t, BACKDROP), t["tint"], 0.15)
     W, H = src.size
     for i, (zoom, cx, cy) in enumerate(EPISODE_CROPS, start=1):
         w, h = W / zoom, H / zoom

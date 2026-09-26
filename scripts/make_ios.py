@@ -71,7 +71,7 @@ def main():
                 "id": tid, "kind": kind, "title": t["title"], "genre": t["genre"], "year": t["year"],
                 "rating": t["rating"], "tagline": t["tagline"], "description": t["description"],
                 "credits": t["credits"], "runtime": t.get("runtime"), "seasons": t.get("seasons"),
-                "stream": stream_for(streams, tid), "badge": badge_for(t, kind),
+                "stream": t.get("stream") or stream_for(streams, tid), "badge": badge_for(t, kind),
                 "heroColor": hero_color(src / "poster@2x.jpg"),
                 "episodes": [],
             }

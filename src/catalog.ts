@@ -1,3 +1,4 @@
+import catalog from '../scripts/catalog.json';
 import rows from '../scripts/rows.json';
 import { TITLES } from './catalog.generated';
 import type { Episode, Title } from './types';
@@ -17,10 +18,20 @@ const pick = (ids: string[]) => ids.map(getTitle);
 export const MOVIES = TITLES.filter(t => t.kind === 'movie');
 export const SHOWS = TITLES.filter(t => t.kind === 'show');
 
-// Public test streams (HLS) standing in for licensed content until DRM is wired up.
-// Same hash as scripts/make_roku.py so every platform plays the same stream per title.
+// Titles with real video (public-domain / CC films) carry their own HLS `stream` in
+// catalog.json. The rest fall back to public test streams, picked by the same hash as
+// scripts/make_roku.py so every platform plays the same stream per title.
 const STREAMS = rows.streams;
+const OWN_STREAM = new Map<string, string>(
+  [...catalog.movies, ...catalog.shows].flatMap(t =>
+    'stream' in t && typeof t.stream === 'string' ? [[t.id, t.stream] as [string, string]] : [],
+  ),
+);
 export const streamFor = (id: string, episode = 0) => {
+  const own = OWN_STREAM.get(id);
+  if (own) {
+    return own;
+  }
   let h = episode;
   for (const c of id) {
     h = (h * 31 + c.charCodeAt(0)) % 1000003;
