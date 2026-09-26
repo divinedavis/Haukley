@@ -116,8 +116,17 @@ def main():
               "items": [{"id": i} for i in r["ids"] if i in titles]} for r in rows["home"]]
     home = [r for r in home if r["items"]]
 
+    catalog = {"titles": titles, "rows": home, "ads": {k: ads[k] for k in ("adTagTemplate", "trackingUrl", "publishableKey")}}
     (ROKU / "data").mkdir(parents=True, exist_ok=True)
-    (ROKU / "data" / "catalog.json").write_text(json.dumps({"titles": titles, "rows": home, "ads": {k: ads[k] for k in ("adTagTemplate", "trackingUrl", "publishableKey")}}, separators=(",", ":")))
+    (ROKU / "data" / "catalog.json").write_text(json.dumps(catalog, separators=(",", ":")))
+
+    # Live copy for the app to fetch at launch (haukley.com/roku/catalog.json): same data with
+    # artwork served from haukley.com, so new films reach Roku without a new package.
+    web_img = ROOT / "web" / "roku" / "img"
+    shutil.rmtree(web_img, ignore_errors=True)
+    shutil.copytree(IMG, web_img)
+    live_cat = json.loads(json.dumps(catalog).replace("pkg:/images/titles/", "https://haukley.com/roku/img/"))
+    (ROOT / "web" / "roku" / "catalog.json").write_text(json.dumps(live_cat, separators=(",", ":")))
 
     make_pill().save(ROKU / "images" / "pill.9.png")
 

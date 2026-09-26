@@ -1,6 +1,12 @@
 ' Helpers shared by MainScene and DetailsView for building RowList content.
 
+' main.brs saves the live catalog (haukley.com/roku/catalog.json) to cachefs: before the scene
+' starts; fall back to the copy in the package when there isn't one or it doesn't parse.
 function loadCatalog() as object
+    live = ParseJson(ReadAsciiFile("cachefs:/catalog.json"))
+    if live <> invalid and live.titles <> invalid and live.rows <> invalid and live.rows.Count() > 0
+        return live
+    end if
     return ParseJson(ReadAsciiFile("pkg:/data/catalog.json"))
 end function
 
