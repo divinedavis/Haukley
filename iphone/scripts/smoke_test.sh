@@ -14,7 +14,9 @@ xcrun simctl install "$SIM_UDID" build/smoke/Build/Products/Debug-iphonesimulato
 xcrun simctl terminate "$SIM_UDID" com.haukley.app 2>/dev/null || true
 xcrun simctl launch "$SIM_UDID" com.haukley.app >/dev/null
 sleep 6
-if ! xcrun simctl spawn "$SIM_UDID" launchctl list | grep -q com.haukley.app; then
+# Capture first: `cmd | grep -q` under pipefail fails with SIGPIPE when grep exits early.
+running=$(xcrun simctl spawn "$SIM_UDID" launchctl list)
+if ! grep -q com.haukley.app <<<"$running"; then
     echo "smoke: Haukley is not running 6s after launch" >&2; exit 1
 fi
 after=$(ls ~/Library/Logs/DiagnosticReports 2>/dev/null | grep -c '^Haukley' || true)
