@@ -64,6 +64,8 @@ def main():
         for t in cat[key]:
             tid = t["id"]
             src = ART / tid
+            if not (src / "poster@2x.jpg").exists():
+                continue  # art not generated yet (film still ingesting)
             save(src / "poster@2x.jpg", OUT / tid / "poster.jpg", POSTER, 82)
             save(src / "card@2x.jpg", OUT / tid / "card.jpg", CARD, 78)
             save(src / "backdrop@2x.jpg", OUT / tid / "backdrop.jpg", BACKDROP, 70)

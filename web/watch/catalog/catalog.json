@@ -1,1145 +1,343 @@
 {
  "titles": [
   {
-   "id": "night-line",
+   "id": "the-general",
    "kind": "movie",
-   "title": "Night Line",
-   "genre": "Thriller",
-   "year": 2026,
-   "rating": "R",
-   "tagline": "The last train leaves at midnight. Not everyone gets off.",
-   "description": "A night-shift conductor discovers a passenger who boards every night at a station that closed twenty years ago.",
-   "credits": "Starring Maya Okafor \u00b7 Daniel Reyes \u00b7 Ines Lindqvist",
-   "runtime": "1 hr 58 min",
-   "seasons": null,
-   "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-   "badge": "Recently Added",
-   "heroColor": "#69395C",
-   "episodes": [],
-   "font": "BebasNeue"
-  },
-  {
-   "id": "the-long-quiet",
-   "kind": "movie",
-   "title": "The Long Quiet",
-   "genre": "Drama",
-   "year": 2025,
-   "rating": "PG-13",
-   "tagline": "Some silences say everything.",
-   "description": "After her father's death, a marine biologist returns to the island town she swore she'd never see again.",
-   "credits": "Starring Clara Voss \u00b7 Tomas Hale",
-   "runtime": "2 hr 6 min",
-   "seasons": null,
-   "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-   "badge": null,
-   "heroColor": "#3B5367",
-   "episodes": [],
-   "font": "PlayfairDisplay"
-  },
-  {
-   "id": "iron-meridian",
-   "kind": "movie",
-   "title": "Iron Meridian",
-   "genre": "Action",
-   "year": 2026,
-   "rating": "PG-13",
-   "tagline": "One station. One hour. No way out.",
-   "description": "A former transit cop has sixty minutes to stop a hijacking inside the city's busiest rail terminal.",
-   "credits": "Starring Marcus Bell \u00b7 Ana Castell \u00b7 Jun Park",
-   "runtime": "2 hr 14 min",
-   "seasons": null,
-   "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8",
-   "badge": "Recently Added",
-   "heroColor": "#3D5365",
-   "episodes": [],
-   "font": "Anton"
-  },
-  {
-   "id": "salt-and-sand",
-   "kind": "movie",
-   "title": "Salt & Sand",
-   "genre": "Adventure",
-   "year": 2024,
-   "rating": "PG",
-   "tagline": "Cross the desert. Find the sea.",
-   "description": "Two estranged brothers race across the Namib to fulfill their grandfather's final wish.",
-   "credits": "Starring Kofi Mensah \u00b7 Idris Nwosu",
-   "runtime": "1 hr 49 min",
-   "seasons": null,
-   "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8",
-   "badge": null,
-   "heroColor": "#77372B",
-   "episodes": [],
-   "font": "Cinzel"
-  },
-  {
-   "id": "last-train-to-halden",
-   "kind": "movie",
-   "title": "Last Train to Halden",
-   "genre": "Mystery",
-   "year": 2025,
-   "rating": "PG-13",
-   "tagline": "Everyone on board has a secret.",
-   "description": "A snowbound train, a missing heiress, and a detective who can't trust her own memory.",
-   "credits": "Starring Greta Holm \u00b7 Samuel Achebe",
-   "runtime": "1 hr 52 min",
-   "seasons": null,
-   "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-   "badge": null,
-   "heroColor": "#486141",
-   "episodes": [],
-   "font": "PlayfairDisplay"
-  },
-  {
-   "id": "ghost-light",
-   "kind": "movie",
-   "title": "Ghost Light",
-   "genre": "Horror",
-   "year": 2026,
-   "rating": "R",
-   "tagline": "Leave it on. Always.",
-   "description": "A theater troupe rehearsing in an abandoned forest lodge learns why the lights must never go out.",
-   "credits": "Starring Rosa Delgado \u00b7 Finn Carter",
-   "runtime": "1 hr 41 min",
-   "seasons": null,
-   "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-   "badge": "Recently Added",
-   "heroColor": "#3D6666",
-   "episodes": [],
-   "font": "Monoton"
-  },
-  {
-   "id": "glass-city",
-   "kind": "movie",
-   "title": "Glass City",
-   "genre": "Sci-Fi",
-   "year": 2027,
-   "rating": "PG-13",
-   "tagline": "The city sees everything.",
-   "description": "In a metropolis run by a predictive AI, one engineer finds the crime it hasn't predicted yet.",
-   "credits": "Starring Aiko Tanaka \u00b7 Leon Brandt \u00b7 Zara Quinn",
-   "runtime": "2 hr 21 min",
-   "seasons": null,
-   "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8",
-   "badge": "Recently Added",
-   "heroColor": "#34456E",
-   "episodes": [],
-   "font": "Montserrat"
-  },
-  {
-   "id": "paper-kites",
-   "kind": "movie",
-   "title": "Paper Kites",
+   "title": "The General",
    "genre": "Comedy",
-   "year": 2025,
-   "rating": "PG-13",
-   "tagline": "The best summer of their lives. Probably.",
-   "description": "Four best friends have one last summer before college to pull off the prank of the century.",
-   "credits": "Starring Jaylen Brooks \u00b7 Mia Chen \u00b7 Ollie Grant",
-   "runtime": "1 hr 44 min",
+   "year": 1926,
+   "rating": "NR",
+   "tagline": "He loves two things: his train and his girl.",
+   "description": "When Union spies steal his beloved locomotive, a Southern train engineer chases it deep behind enemy lines in one of the great chase comedies.",
+   "credits": "Directed by Buster Keaton \u00b7 Clyde Bruckman \u00b7 Starring Buster Keaton \u00b7 Marion Mack",
+   "runtime": "1 hr 19 min",
    "seasons": null,
-   "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-general/master.m3u8",
    "badge": null,
-   "heroColor": "#633F51",
+   "heroColor": "#715C31",
    "episodes": [],
-   "font": "Pacifico"
+   "font": "Cinzel",
+   "kids": true,
+   "license": "Public domain in the United States",
+   "silent": true
   },
   {
-   "id": "the-cartographer",
+   "id": "sherlock-jr",
    "kind": "movie",
-   "title": "The Cartographer",
-   "genre": "Period Drama",
-   "year": 2024,
-   "rating": "PG",
-   "tagline": "She mapped the world. They erased her name.",
-   "description": "The untold story of the woman who drew the maps that built an empire.",
-   "credits": "Starring Eleanor Price \u00b7 Henri Duval",
-   "runtime": "2 hr 12 min",
+   "title": "Sherlock Jr.",
+   "genre": "Comedy",
+   "year": 1924,
+   "rating": "NR",
+   "tagline": "A projectionist dreams his way into the movies.",
+   "description": "A small-town projectionist who dreams of being a detective falls asleep on the job and walks straight into the movie on screen.",
+   "credits": "Directed by Buster Keaton \u00b7 Starring Buster Keaton \u00b7 Kathryn McGuire \u00b7 Joe Keaton",
+   "runtime": "46 min",
    "seasons": null,
-   "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/sherlock-jr/master.m3u8",
    "badge": null,
-   "heroColor": "#695C39",
+   "heroColor": "#434360",
    "episodes": [],
-   "font": "Cinzel"
+   "font": "PlayfairDisplay",
+   "kids": true,
+   "license": "Public domain in the United States",
+   "silent": true
   },
   {
-   "id": "headlights",
+   "id": "safety-last",
    "kind": "movie",
-   "title": "Headlights",
-   "genre": "Crime",
-   "year": 2026,
-   "rating": "R",
-   "tagline": "Drive fast. Don't look back.",
-   "description": "A getaway driver's last job goes sideways on the longest night of the year.",
-   "credits": "Starring Dante Cruz \u00b7 Lena Park",
-   "runtime": "1 hr 55 min",
+   "title": "Safety Last!",
+   "genre": "Comedy",
+   "year": 1923,
+   "rating": "NR",
+   "tagline": "One man. Twelve stories. No net.",
+   "description": "A small-town go-getter promises his sweetheart he has made it big in the city, then has to climb the outside of a skyscraper to prove it.",
+   "credits": "Directed by Fred C. Newmeyer \u00b7 Sam Taylor \u00b7 Starring Harold Lloyd \u00b7 Mildred Davis",
+   "runtime": "1 hr 14 min",
    "seasons": null,
-   "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-   "badge": "Recently Added",
-   "heroColor": "#6D364C",
-   "episodes": [],
-   "font": "ArchivoBlack"
-  },
-  {
-   "id": "northbound",
-   "kind": "movie",
-   "title": "Northbound",
-   "genre": "Adventure",
-   "year": 2025,
-   "rating": "PG",
-   "tagline": "2,000 miles. One promise.",
-   "description": "A grieving hiker walks the length of a mountain range carrying her sister's ashes.",
-   "credits": "Starring Harper Lane \u00b7 Noah Whitfield",
-   "runtime": "1 hr 58 min",
-   "seasons": null,
-   "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/safety-last/master.m3u8",
    "badge": null,
-   "heroColor": "#6B5D37",
+   "heroColor": "#605142",
    "episodes": [],
-   "font": "Oswald"
+   "font": "AbrilFatface",
+   "kids": true,
+   "license": "Public domain in the United States",
+   "silent": true
   },
   {
-   "id": "saltwater-hymn",
+   "id": "the-freshman",
    "kind": "movie",
-   "title": "Saltwater Hymn",
-   "genre": "Thriller",
-   "year": 2026,
-   "rating": "R",
-   "tagline": "The sea keeps what it takes.",
-   "description": "A fishing crew pulls something out of the North Atlantic that should have stayed buried.",
-   "credits": "Starring Erik Solberg \u00b7 Nadia Farah",
-   "runtime": "1 hr 47 min",
+   "title": "The Freshman",
+   "genre": "Comedy",
+   "year": 1925,
+   "rating": "NR",
+   "tagline": "The most popular man on campus \u2014 in his own mind.",
+   "description": "An eager college newcomer tries to become the most popular man on campus and ends up the tackling dummy of the football team.",
+   "credits": "Directed by Fred C. Newmeyer \u00b7 Sam Taylor \u00b7 Starring Harold Lloyd \u00b7 Jobyna Ralston",
+   "runtime": "1 hr 17 min",
    "seasons": null,
-   "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-   "badge": "Recently Added",
-   "heroColor": "#3C5566",
-   "episodes": [],
-   "font": "AbrilFatface"
-  },
-  {
-   "id": "harbor-nine",
-   "kind": "movie",
-   "title": "Harbor Nine",
-   "genre": "Heist",
-   "year": 2026,
-   "rating": "PG-13",
-   "tagline": "Nine thieves. One bridge. Zero margin.",
-   "description": "A crew of specialists plans to rob a shipping container in the four minutes the bridge is up.",
-   "credits": "Starring Olivia Grant \u00b7 Rafael Moreno \u00b7 Sun Li",
-   "runtime": "2 hr 3 min",
-   "seasons": null,
-   "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-   "badge": "Recently Added",
-   "heroColor": "#583172",
-   "episodes": [],
-   "font": "BebasNeue"
-  },
-  {
-   "id": "sparks",
-   "kind": "movie",
-   "title": "Sparks",
-   "genre": "Romance",
-   "year": 2025,
-   "rating": "PG-13",
-   "tagline": "One night. Every New Year's Eve after.",
-   "description": "Two strangers meet at midnight and promise to find each other there every year.",
-   "credits": "Starring Ava Moreau \u00b7 Caleb Hunt",
-   "runtime": "1 hr 39 min",
-   "seasons": null,
-   "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-freshman/master.m3u8",
    "badge": null,
-   "heroColor": "#714C31",
+   "heroColor": "#625A40",
    "episodes": [],
-   "font": "Pacifico"
+   "font": "Oswald",
+   "kids": true,
+   "license": "Public domain in the United States",
+   "silent": true
   },
   {
-   "id": "borough",
-   "kind": "show",
-   "title": "Borough",
-   "genre": "Crime Drama",
-   "year": 2025,
-   "rating": "TV-MA",
-   "tagline": "Every block has a price.",
-   "description": "Detectives, cab drivers and city councilmen collide in a sprawling story of one New York borough.",
-   "credits": "Starring Andre Holloway \u00b7 Sofia Ruiz",
-   "runtime": null,
-   "seasons": 3,
-   "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8",
-   "badge": "New Season",
-   "heroColor": "#596141",
-   "episodes": [
-    {
-     "number": 1,
-     "name": "Pilot",
-     "minutes": 49,
-     "summary": "Detectives, cab drivers and city councilmen collide in a sprawling story of one New York borough.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 2,
-     "name": "The Long Way Home",
-     "minutes": 42,
-     "summary": "The fallout from last week's discovery forces everyone in Borough to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 3,
-     "name": "Undercurrent",
-     "minutes": 49,
-     "summary": "The fallout from last week's discovery forces everyone in Borough to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 4,
-     "name": "Second Chances",
-     "minutes": 42,
-     "summary": "The fallout from last week's discovery forces everyone in Borough to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 5,
-     "name": "Low Tide",
-     "minutes": 49,
-     "summary": "The fallout from last week's discovery forces everyone in Borough to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 6,
-     "name": "What We Keep",
-     "minutes": 42,
-     "summary": "The fallout from last week's discovery forces everyone in Borough to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 7,
-     "name": "Crossing Lines",
-     "minutes": 49,
-     "summary": "The fallout from last week's discovery forces everyone in Borough to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 8,
-     "name": "The Reckoning",
-     "minutes": 42,
-     "summary": "The fallout from last week's discovery forces everyone in Borough to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    }
-   ],
-   "font": "Anton"
+   "id": "one-week",
+   "kind": "movie",
+   "title": "One Week",
+   "genre": "Comedy",
+   "year": 1920,
+   "rating": "NR",
+   "tagline": "Newlyweds. A build-it-yourself house. What could go wrong?",
+   "description": "Newlyweds try to assemble a build-it-yourself house in seven days, not knowing a jealous rival has swapped the numbers on the boxes.",
+   "credits": "Directed by Buster Keaton \u00b7 Edward F. Cline \u00b7 Starring Buster Keaton \u00b7 Sybil Seely",
+   "runtime": "25 min",
+   "seasons": null,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/one-week/master.m3u8",
+   "badge": null,
+   "heroColor": "#5D4545",
+   "episodes": [],
+   "font": "Pacifico",
+   "kids": true,
+   "license": "Public domain in the United States",
+   "silent": true
   },
   {
-   "id": "lighthouse-row",
-   "kind": "show",
-   "title": "Lighthouse Row",
-   "genre": "Mystery",
-   "year": 2026,
-   "rating": "TV-14",
-   "tagline": "The keeper saw everything.",
-   "description": "When a lighthouse keeper vanishes, a small coastal town starts telling on itself.",
-   "credits": "Starring Moira Kent \u00b7 James Adebayo",
-   "runtime": null,
-   "seasons": 1,
-   "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-   "badge": "Recently Added",
+   "id": "his-girl-friday",
+   "kind": "movie",
+   "title": "His Girl Friday",
+   "genre": "Comedy",
+   "year": 1940,
+   "rating": "NR",
+   "tagline": "The fastest-talking newsroom ever filmed.",
+   "description": "A fast-talking newspaper editor schemes to stop his star reporter, who is also his ex-wife, from quitting and remarrying by handing her one last big story.",
+   "credits": "Directed by Howard Hawks \u00b7 Starring Cary Grant \u00b7 Rosalind Russell \u00b7 Ralph Bellamy",
+   "runtime": "1 hr 32 min",
+   "seasons": null,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/his-girl-friday/master.m3u8",
+   "badge": null,
    "heroColor": "#44445E",
-   "episodes": [
-    {
-     "number": 1,
-     "name": "Pilot",
-     "minutes": 42,
-     "summary": "When a lighthouse keeper vanishes, a small coastal town starts telling on itself.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 2,
-     "name": "The Long Way Home",
-     "minutes": 49,
-     "summary": "The fallout from last week's discovery forces everyone in Lighthouse Row to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 3,
-     "name": "Undercurrent",
-     "minutes": 42,
-     "summary": "The fallout from last week's discovery forces everyone in Lighthouse Row to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 4,
-     "name": "Second Chances",
-     "minutes": 49,
-     "summary": "The fallout from last week's discovery forces everyone in Lighthouse Row to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 5,
-     "name": "Low Tide",
-     "minutes": 42,
-     "summary": "The fallout from last week's discovery forces everyone in Lighthouse Row to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 6,
-     "name": "What We Keep",
-     "minutes": 49,
-     "summary": "The fallout from last week's discovery forces everyone in Lighthouse Row to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 7,
-     "name": "Crossing Lines",
-     "minutes": 42,
-     "summary": "The fallout from last week's discovery forces everyone in Lighthouse Row to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 8,
-     "name": "The Reckoning",
-     "minutes": 49,
-     "summary": "The fallout from last week's discovery forces everyone in Lighthouse Row to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    }
-   ],
-   "font": "PlayfairDisplay"
+   "episodes": [],
+   "font": "PlayfairDisplay",
+   "license": "Public domain in the United States"
   },
   {
-   "id": "wildwood",
-   "kind": "show",
-   "title": "Wildwood",
-   "genre": "Drama",
-   "year": 2024,
-   "rating": "TV-14",
-   "tagline": "Go back to where it started.",
-   "description": "Three siblings inherit a failing summer camp deep in the Oregon woods.",
-   "credits": "Starring Lily Harmon \u00b7 Ben Okoro",
-   "runtime": null,
-   "seasons": 2,
-   "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8",
-   "badge": "New Season",
-   "heroColor": "#608320",
-   "episodes": [
-    {
-     "number": 1,
-     "name": "Pilot",
-     "minutes": 50,
-     "summary": "Three siblings inherit a failing summer camp deep in the Oregon woods.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 2,
-     "name": "The Long Way Home",
-     "minutes": 43,
-     "summary": "The fallout from last week's discovery forces everyone in Wildwood to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 3,
-     "name": "Undercurrent",
-     "minutes": 50,
-     "summary": "The fallout from last week's discovery forces everyone in Wildwood to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 4,
-     "name": "Second Chances",
-     "minutes": 43,
-     "summary": "The fallout from last week's discovery forces everyone in Wildwood to choose a side.",
-     "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-    },
-    {
-     "number": 5,
-     "name": "Low Tide",
-     "minutes": 50,
-     "summary": "The fallout from last week's discovery forces everyone in Wildwood to choose a side.",
-     "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-    },
-    {
-     "number": 6,
-     "name": "What We Keep",
-     "minutes": 43,
-     "summary": "The fallout from last week's discovery forces everyone in Wildwood to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 7,
-     "name": "Crossing Lines",
-     "minutes": 50,
-     "summary": "The fallout from last week's discovery forces everyone in Wildwood to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 8,
-     "name": "The Reckoning",
-     "minutes": 43,
-     "summary": "The fallout from last week's discovery forces everyone in Wildwood to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    }
-   ],
-   "font": "Cinzel"
+   "id": "nosferatu",
+   "kind": "movie",
+   "title": "Nosferatu",
+   "genre": "Horror",
+   "year": 1922,
+   "rating": "NR",
+   "tagline": "The original vampire. Still the scariest.",
+   "description": "A real-estate clerk travels to the Carpathians to close a sale with the reclusive Count, who then follows him home bringing plague and death.",
+   "credits": "Directed by F. W. Murnau \u00b7 Starring Max Schreck \u00b7 Gustav von Wangenheim \u00b7 Greta Schr\u00f6der",
+   "runtime": "1 hr 3 min",
+   "seasons": null,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/nosferatu/master.m3u8",
+   "badge": null,
+   "heroColor": "#406262",
+   "episodes": [],
+   "font": "Monoton",
+   "license": "Public domain in the United States",
+   "silent": true
   },
   {
-   "id": "high-altitude",
-   "kind": "show",
-   "title": "High Altitude",
-   "genre": "Docuseries",
-   "year": 2026,
-   "rating": "TV-PG",
-   "tagline": "Life above 8,000 meters.",
-   "description": "Follow the climbers, sherpas and scientists who live on the edge of the world's highest peaks.",
-   "credits": "Narrated by Grace Whitmore",
-   "runtime": null,
-   "seasons": 1,
-   "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8",
-   "badge": "Recently Added",
-   "heroColor": "#256E7D",
-   "episodes": [
-    {
-     "number": 1,
-     "name": "Pilot",
-     "minutes": 55,
-     "summary": "Follow the climbers, sherpas and scientists who live on the edge of the world's highest peaks.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 2,
-     "name": "The Long Way Home",
-     "minutes": 48,
-     "summary": "The fallout from last week's discovery forces everyone in High Altitude to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 3,
-     "name": "Undercurrent",
-     "minutes": 55,
-     "summary": "The fallout from last week's discovery forces everyone in High Altitude to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 4,
-     "name": "Second Chances",
-     "minutes": 48,
-     "summary": "The fallout from last week's discovery forces everyone in High Altitude to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 5,
-     "name": "Low Tide",
-     "minutes": 55,
-     "summary": "The fallout from last week's discovery forces everyone in High Altitude to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 6,
-     "name": "What We Keep",
-     "minutes": 48,
-     "summary": "The fallout from last week's discovery forces everyone in High Altitude to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 7,
-     "name": "Crossing Lines",
-     "minutes": 55,
-     "summary": "The fallout from last week's discovery forces everyone in High Altitude to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 8,
-     "name": "The Reckoning",
-     "minutes": 48,
-     "summary": "The fallout from last week's discovery forces everyone in High Altitude to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    }
-   ],
-   "font": "Montserrat"
+   "id": "phantom-of-the-opera",
+   "kind": "movie",
+   "title": "The Phantom of the Opera",
+   "genre": "Horror",
+   "year": 1925,
+   "rating": "NR",
+   "tagline": "Beneath the opera house, someone is listening.",
+   "description": "A disfigured genius haunting the cellars beneath the Paris Opera grooms a young singer for stardom, and will kill anyone who stands in his way.",
+   "credits": "Directed by Rupert Julian \u00b7 Starring Lon Chaney \u00b7 Mary Philbin \u00b7 Norman Kerry",
+   "runtime": "1 hr 32 min",
+   "seasons": null,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/phantom-of-the-opera/master.m3u8",
+   "badge": null,
+   "heroColor": "#843C1F",
+   "episodes": [],
+   "font": "Cinzel",
+   "license": "Public domain in the United States",
+   "silent": true
   },
   {
-   "id": "after-hours",
-   "kind": "show",
-   "title": "After Hours",
-   "genre": "Comedy",
-   "year": 2025,
-   "rating": "TV-MA",
-   "tagline": "Last call is just the beginning.",
-   "description": "The staff of a failing neighborhood bar try everything to keep the lights on.",
-   "credits": "Starring Rico Vance \u00b7 Priya Shah \u00b7 Kenny Lowe",
-   "runtime": null,
-   "seasons": 4,
-   "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
-   "badge": "New Season",
-   "heroColor": "#6A3E38",
-   "episodes": [
-    {
-     "number": 1,
-     "name": "Pilot",
-     "minutes": 53,
-     "summary": "The staff of a failing neighborhood bar try everything to keep the lights on.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 2,
-     "name": "The Long Way Home",
-     "minutes": 46,
-     "summary": "The fallout from last week's discovery forces everyone in After Hours to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 3,
-     "name": "Undercurrent",
-     "minutes": 53,
-     "summary": "The fallout from last week's discovery forces everyone in After Hours to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 4,
-     "name": "Second Chances",
-     "minutes": 46,
-     "summary": "The fallout from last week's discovery forces everyone in After Hours to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 5,
-     "name": "Low Tide",
-     "minutes": 53,
-     "summary": "The fallout from last week's discovery forces everyone in After Hours to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 6,
-     "name": "What We Keep",
-     "minutes": 46,
-     "summary": "The fallout from last week's discovery forces everyone in After Hours to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 7,
-     "name": "Crossing Lines",
-     "minutes": 53,
-     "summary": "The fallout from last week's discovery forces everyone in After Hours to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 8,
-     "name": "The Reckoning",
-     "minutes": 46,
-     "summary": "The fallout from last week's discovery forces everyone in After Hours to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    }
-   ],
-   "font": "Pacifico"
+   "id": "night-of-the-living-dead",
+   "kind": "movie",
+   "title": "Night of the Living Dead",
+   "genre": "Horror",
+   "year": 1968,
+   "rating": "NR",
+   "tagline": "They won't stay dead.",
+   "description": "Strangers barricade themselves inside a Pennsylvania farmhouse as the recently dead rise and close in through the night.",
+   "credits": "Directed by George A. Romero \u00b7 Starring Duane Jones \u00b7 Judith O'Dea \u00b7 Karl Hardman",
+   "runtime": "1 hr 36 min",
+   "seasons": null,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/night-of-the-living-dead/master.m3u8",
+   "badge": null,
+   "heroColor": "#604C42",
+   "episodes": [],
+   "font": "BebasNeue",
+   "license": "Public domain in the United States"
   },
   {
-   "id": "signal",
-   "kind": "show",
-   "title": "Signal",
-   "genre": "Sci-Fi",
-   "year": 2026,
-   "rating": "TV-14",
-   "tagline": "Something answered.",
-   "description": "A radio astronomer receives a message from space that knows her name.",
-   "credits": "Starring Hana Sato \u00b7 Marcus Webb",
-   "runtime": null,
-   "seasons": 2,
-   "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
-   "badge": "New Season",
-   "heroColor": "#185E8B",
-   "episodes": [
-    {
-     "number": 1,
-     "name": "Pilot",
-     "minutes": 48,
-     "summary": "A radio astronomer receives a message from space that knows her name.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 2,
-     "name": "The Long Way Home",
-     "minutes": 55,
-     "summary": "The fallout from last week's discovery forces everyone in Signal to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 3,
-     "name": "Undercurrent",
-     "minutes": 48,
-     "summary": "The fallout from last week's discovery forces everyone in Signal to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 4,
-     "name": "Second Chances",
-     "minutes": 55,
-     "summary": "The fallout from last week's discovery forces everyone in Signal to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 5,
-     "name": "Low Tide",
-     "minutes": 48,
-     "summary": "The fallout from last week's discovery forces everyone in Signal to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 6,
-     "name": "What We Keep",
-     "minutes": 55,
-     "summary": "The fallout from last week's discovery forces everyone in Signal to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 7,
-     "name": "Crossing Lines",
-     "minutes": 48,
-     "summary": "The fallout from last week's discovery forces everyone in Signal to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 8,
-     "name": "The Reckoning",
-     "minutes": 55,
-     "summary": "The fallout from last week's discovery forces everyone in Signal to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    }
-   ],
-   "font": "Monoton"
+   "id": "the-little-shop-of-horrors",
+   "kind": "movie",
+   "title": "The Little Shop of Horrors",
+   "genre": "Horror",
+   "year": 1960,
+   "rating": "NR",
+   "tagline": "Feed me.",
+   "description": "A hapless florist's assistant breeds a strange plant that makes the shop famous, but it only thrives on human blood.",
+   "credits": "Directed by Roger Corman \u00b7 Starring Jonathan Haze \u00b7 Jackie Joseph \u00b7 Mel Welles",
+   "runtime": "1 hr 11 min",
+   "seasons": null,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-little-shop-of-horrors/master.m3u8",
+   "badge": null,
+   "heroColor": "#3F6348",
+   "episodes": [],
+   "font": "ArchivoBlack",
+   "license": "Public domain in the United States"
   },
   {
-   "id": "slow-roads",
-   "kind": "show",
-   "title": "Slow Roads",
-   "genre": "Travel",
-   "year": 2025,
-   "rating": "TV-G",
-   "tagline": "No highways allowed.",
-   "description": "A chef and a comedian drive across continents using only back roads.",
-   "credits": "With Tia Morgan \u00b7 Sam Oduya",
-   "runtime": null,
-   "seasons": 3,
-   "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-   "badge": "New Season",
-   "heroColor": "#675E3C",
-   "episodes": [
-    {
-     "number": 1,
-     "name": "Pilot",
-     "minutes": 52,
-     "summary": "A chef and a comedian drive across continents using only back roads.",
-     "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-    },
-    {
-     "number": 2,
-     "name": "The Long Way Home",
-     "minutes": 45,
-     "summary": "The fallout from last week's discovery forces everyone in Slow Roads to choose a side.",
-     "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-    },
-    {
-     "number": 3,
-     "name": "Undercurrent",
-     "minutes": 52,
-     "summary": "The fallout from last week's discovery forces everyone in Slow Roads to choose a side.",
-     "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-    },
-    {
-     "number": 4,
-     "name": "Second Chances",
-     "minutes": 45,
-     "summary": "The fallout from last week's discovery forces everyone in Slow Roads to choose a side.",
-     "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-    },
-    {
-     "number": 5,
-     "name": "Low Tide",
-     "minutes": 52,
-     "summary": "The fallout from last week's discovery forces everyone in Slow Roads to choose a side.",
-     "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-    },
-    {
-     "number": 6,
-     "name": "What We Keep",
-     "minutes": 45,
-     "summary": "The fallout from last week's discovery forces everyone in Slow Roads to choose a side.",
-     "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-    },
-    {
-     "number": 7,
-     "name": "Crossing Lines",
-     "minutes": 52,
-     "summary": "The fallout from last week's discovery forces everyone in Slow Roads to choose a side.",
-     "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-    },
-    {
-     "number": 8,
-     "name": "The Reckoning",
-     "minutes": 45,
-     "summary": "The fallout from last week's discovery forces everyone in Slow Roads to choose a side.",
-     "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-    }
-   ],
-   "font": "Oswald"
-  },
-  {
-   "id": "commonwealth",
-   "kind": "show",
-   "title": "Commonwealth",
-   "genre": "Political Drama",
-   "year": 2026,
-   "rating": "TV-MA",
-   "tagline": "Power is inherited. Or taken.",
-   "description": "Heirs to an old-money dynasty fight over a governor's seat and a family secret.",
-   "credits": "Starring Victoria Lang \u00b7 Oscar Reid",
-   "runtime": null,
-   "seasons": 1,
-   "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-   "badge": "Recently Added",
-   "heroColor": "#415161",
-   "episodes": [
-    {
-     "number": 1,
-     "name": "Pilot",
-     "minutes": 54,
-     "summary": "Heirs to an old-money dynasty fight over a governor's seat and a family secret.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 2,
-     "name": "The Long Way Home",
-     "minutes": 47,
-     "summary": "The fallout from last week's discovery forces everyone in Commonwealth to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 3,
-     "name": "Undercurrent",
-     "minutes": 54,
-     "summary": "The fallout from last week's discovery forces everyone in Commonwealth to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 4,
-     "name": "Second Chances",
-     "minutes": 47,
-     "summary": "The fallout from last week's discovery forces everyone in Commonwealth to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 5,
-     "name": "Low Tide",
-     "minutes": 54,
-     "summary": "The fallout from last week's discovery forces everyone in Commonwealth to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 6,
-     "name": "What We Keep",
-     "minutes": 47,
-     "summary": "The fallout from last week's discovery forces everyone in Commonwealth to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 7,
-     "name": "Crossing Lines",
-     "minutes": 54,
-     "summary": "The fallout from last week's discovery forces everyone in Commonwealth to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 8,
-     "name": "The Reckoning",
-     "minutes": 47,
-     "summary": "The fallout from last week's discovery forces everyone in Commonwealth to choose a side.",
-     "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-    }
-   ],
-   "font": "Cinzel"
-  },
-  {
-   "id": "tidewater",
-   "kind": "show",
-   "title": "Tidewater",
-   "genre": "Thriller",
-   "year": 2024,
-   "rating": "TV-MA",
-   "tagline": "The storm washed up the truth.",
-   "description": "A hurricane reveals a body \u2014 and a cover-up \u2014 in a wealthy coastal enclave.",
-   "credits": "Starring Nora Blake \u00b7 Isaiah Grant",
-   "runtime": null,
-   "seasons": 2,
-   "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-   "badge": "New Season",
-   "heroColor": "#3B5E67",
-   "episodes": [
-    {
-     "number": 1,
-     "name": "Pilot",
-     "minutes": 51,
-     "summary": "A hurricane reveals a body \u2014 and a cover-up \u2014 in a wealthy coastal enclave.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 2,
-     "name": "The Long Way Home",
-     "minutes": 44,
-     "summary": "The fallout from last week's discovery forces everyone in Tidewater to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 3,
-     "name": "Undercurrent",
-     "minutes": 51,
-     "summary": "The fallout from last week's discovery forces everyone in Tidewater to choose a side.",
-     "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-    },
-    {
-     "number": 4,
-     "name": "Second Chances",
-     "minutes": 44,
-     "summary": "The fallout from last week's discovery forces everyone in Tidewater to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 5,
-     "name": "Low Tide",
-     "minutes": 51,
-     "summary": "The fallout from last week's discovery forces everyone in Tidewater to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 6,
-     "name": "What We Keep",
-     "minutes": 44,
-     "summary": "The fallout from last week's discovery forces everyone in Tidewater to choose a side.",
-     "stream": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
-    },
-    {
-     "number": 7,
-     "name": "Crossing Lines",
-     "minutes": 51,
-     "summary": "The fallout from last week's discovery forces everyone in Tidewater to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 8,
-     "name": "The Reckoning",
-     "minutes": 44,
-     "summary": "The fallout from last week's discovery forces everyone in Tidewater to choose a side.",
-     "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-    }
-   ],
-   "font": "BebasNeue"
-  },
-  {
-   "id": "chrome",
-   "kind": "show",
-   "title": "Chrome",
-   "genre": "Comedy",
-   "year": 2026,
-   "rating": "TV-14",
-   "tagline": "Two cars. One garage. Zero chill.",
-   "description": "Rival classic-car restorers are forced to share one garage \u2014 and one very big contract.",
-   "credits": "Starring Gus Ferreira \u00b7 Dee Walters",
-   "runtime": null,
-   "seasons": 1,
-   "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
-   "badge": "Recently Added",
-   "heroColor": "#6D6635",
-   "episodes": [
-    {
-     "number": 1,
-     "name": "Pilot",
-     "minutes": 48,
-     "summary": "Rival classic-car restorers are forced to share one garage \u2014 and one very big contract.",
-     "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-    },
-    {
-     "number": 2,
-     "name": "The Long Way Home",
-     "minutes": 55,
-     "summary": "The fallout from last week's discovery forces everyone in Chrome to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 3,
-     "name": "Undercurrent",
-     "minutes": 48,
-     "summary": "The fallout from last week's discovery forces everyone in Chrome to choose a side.",
-     "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-    },
-    {
-     "number": 4,
-     "name": "Second Chances",
-     "minutes": 55,
-     "summary": "The fallout from last week's discovery forces everyone in Chrome to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 5,
-     "name": "Low Tide",
-     "minutes": 48,
-     "summary": "The fallout from last week's discovery forces everyone in Chrome to choose a side.",
-     "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-    },
-    {
-     "number": 6,
-     "name": "What We Keep",
-     "minutes": 55,
-     "summary": "The fallout from last week's discovery forces everyone in Chrome to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-     "number": 7,
-     "name": "Crossing Lines",
-     "minutes": 48,
-     "summary": "The fallout from last week's discovery forces everyone in Chrome to choose a side.",
-     "stream": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-    },
-    {
-     "number": 8,
-     "name": "The Reckoning",
-     "minutes": 55,
-     "summary": "The fallout from last week's discovery forces everyone in Chrome to choose a side.",
-     "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    }
-   ],
-   "font": "ArchivoBlack"
+   "id": "big-buck-bunny",
+   "kind": "movie",
+   "title": "Big Buck Bunny",
+   "genre": "Animation",
+   "year": 2008,
+   "rating": "NR",
+   "tagline": "A gentle giant. Three very rude rodents.",
+   "description": "A gentle giant rabbit's sunny day is ruined by three bullying rodents, so he plans an elaborate cartoon revenge.",
+   "credits": "Directed by Sacha Goedegebure \u00b7 Produced by Blender Foundation",
+   "runtime": "11 min",
+   "seasons": null,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/big-buck-bunny/master.m3u8",
+   "badge": null,
+   "heroColor": "#626240",
+   "episodes": [],
+   "font": "ArchivoBlack",
+   "kids": true,
+   "license": "(c) copyright 2008, Blender Foundation / www.bigbuckbunny.org \u00b7 https://creativecommons.org/licenses/by/3.0/"
   }
  ],
  "featured": [
-  "glass-city",
-  "borough",
-  "night-line",
-  "signal",
-  "harbor-nine"
+  "nosferatu",
+  "the-general",
+  "night-of-the-living-dead",
+  "his-girl-friday"
  ],
- "upNext": [
-  {
-   "id": "borough",
-   "label": "S3, E4 \u00b7 22 min left",
-   "progress": 0.58,
-   "episode": 4
-  },
-  {
-   "id": "the-long-quiet",
-   "label": "48 min left",
-   "progress": 0.62
-  },
-  {
-   "id": "after-hours",
-   "label": "S4, E1 \u00b7 Next Episode",
-   "progress": 0.02,
-   "episode": 1
-  },
-  {
-   "id": "lighthouse-row",
-   "label": "S1, E6 \u00b7 9 min left",
-   "progress": 0.83,
-   "episode": 6
-  },
-  {
-   "id": "headlights",
-   "label": "1 hr 12 min left",
-   "progress": 0.31
-  }
- ],
+ "upNext": [],
  "rows": [
   {
-   "key": "top-movies",
-   "title": "Top 10 Movies",
+   "key": "picks",
+   "title": "Haukley's Top 10 Picks",
    "type": "ranked",
    "ids": [
-    "night-line",
-    "glass-city",
-    "iron-meridian",
-    "harbor-nine",
-    "ghost-light",
-    "headlights",
-    "saltwater-hymn",
-    "last-train-to-halden",
-    "paper-kites",
-    "sparks"
+    "metropolis",
+    "the-general",
+    "nosferatu",
+    "night-of-the-living-dead",
+    "his-girl-friday",
+    "safety-last",
+    "sherlock-jr",
+    "sintel",
+    "phantom-of-the-opera",
+    "carnival-of-souls"
    ]
   },
   {
-   "key": "new-shows",
-   "title": "New & Noteworthy Shows",
+   "key": "silent-comedy",
+   "title": "Silent Comedy Legends",
    "type": "card",
    "ids": [
-    "signal",
-    "commonwealth",
-    "chrome",
-    "high-altitude",
-    "lighthouse-row",
-    "tidewater"
+    "the-general",
+    "sherlock-jr",
+    "safety-last",
+    "the-freshman",
+    "one-week"
    ]
   },
   {
-   "key": "top-shows",
-   "title": "Top 10 TV Shows",
-   "type": "ranked",
-   "ids": [
-    "borough",
-    "signal",
-    "after-hours",
-    "tidewater",
-    "wildwood",
-    "commonwealth",
-    "lighthouse-row",
-    "slow-roads",
-    "chrome",
-    "high-altitude"
-   ]
-  },
-  {
-   "key": "because",
-   "title": "Because You Watched Night Line",
+   "key": "horror",
+   "title": "Classic Horror",
    "type": "card",
    "ids": [
-    "headlights",
-    "last-train-to-halden",
-    "saltwater-hymn",
-    "iron-meridian",
-    "tidewater",
-    "ghost-light"
+    "nosferatu",
+    "night-of-the-living-dead",
+    "phantom-of-the-opera",
+    "carnival-of-souls",
+    "the-little-shop-of-horrors",
+    "sprite-fright"
    ]
   },
   {
-   "key": "new-movies",
-   "title": "New Releases",
+   "key": "scifi",
+   "title": "Sci-Fi & Fantasy",
+   "type": "card",
+   "ids": [
+    "metropolis",
+    "a-trip-to-the-moon",
+    "sintel",
+    "tears-of-steel",
+    "elephants-dream",
+    "spring",
+    "cosmos-laundromat"
+   ]
+  },
+  {
+   "key": "shorts",
+   "title": "Animated Shorts",
    "type": "poster",
    "ids": [
-    "glass-city",
-    "ghost-light",
-    "headlights",
-    "harbor-nine",
-    "saltwater-hymn",
-    "iron-meridian",
-    "night-line"
+    "big-buck-bunny",
+    "sintel",
+    "spring",
+    "sprite-fright",
+    "cosmos-laundromat",
+    "charge",
+    "elephants-dream"
    ]
   },
   {
-   "key": "escape",
-   "title": "Get Away From It All",
+   "key": "noir",
+   "title": "Crime, Noir & Screwball",
    "type": "card",
    "ids": [
-    "salt-and-sand",
-    "northbound",
-    "slow-roads",
-    "high-altitude",
-    "wildwood",
-    "the-cartographer"
+    "d-o-a",
+    "his-girl-friday",
+    "carnival-of-souls"
    ]
   },
   {
-   "key": "feel-good",
-   "title": "Feel-Good Favorites",
+   "key": "history",
+   "title": "Landmarks of Cinema",
+   "type": "card",
+   "ids": [
+    "man-with-a-movie-camera",
+    "all-quiet-on-the-western-front",
+    "a-trip-to-the-moon",
+    "metropolis",
+    "nosferatu"
+   ]
+  },
+  {
+   "key": "quick",
+   "title": "Under 30 Minutes",
    "type": "poster",
    "ids": [
-    "paper-kites",
-    "sparks",
-    "after-hours",
-    "chrome",
-    "salt-and-sand",
-    "slow-roads",
-    "wildwood"
+    "charge",
+    "spring",
+    "big-buck-bunny",
+    "sprite-fright",
+    "one-week",
+    "a-trip-to-the-moon",
+    "elephants-dream",
+    "tears-of-steel",
+    "cosmos-laundromat",
+    "sintel"
    ]
   }
  ]

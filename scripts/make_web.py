@@ -28,6 +28,18 @@ if __name__ == "__main__":
     src = {t["id"]: t for key in ("movies", "shows") for t in cat[key]}
     fonts = {i: t["font"] for i, t in src.items()}
     out = json.loads((OUT / "catalog.json").read_text())
+    # Only publish titles whose stream is actually on the CDN (the rest are still ingesting).
+    import urllib.request
+    def live(url):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, method="HEAD"), timeout=15) as r:
+                return r.status == 200
+        except Exception:
+            return False
+    out["titles"] = [t for t in out["titles"] if live(t["stream"])]
+    ids = {t["id"] for t in out["titles"]}
+    out["featured"] = [i for i in out["featured"] if i in ids]
+    print("live on CDN:", len(ids))
     for t in out["titles"]:
         s = src[t["id"]]
         t["font"] = s["font"]

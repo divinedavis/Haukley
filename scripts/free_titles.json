@@ -211,7 +211,8 @@
    "height": 480,
    "has_added_score": false,
    "notes": "Item description: 'with the pre-composed music track removed'. The AAC track is digital silence (-91 dB). Uses the classic English-intertitle print ('Count Dracula' names; 'Acquired through the courtesy of La Cinémathèque Française'). Very high bitrate (3.9 GB for 63 min), so transcode on ingest.",
-   "silent_audio": true
+   "silent_audio": true,
+   "still_at": 0.23753596030510174
   }
  },
  {

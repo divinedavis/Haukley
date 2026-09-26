@@ -653,7 +653,7 @@ function cwRow(kind) {
 function catalogRows(filter = () => true) {
   return state.catalog.rows.map(r => {
     const ts = r.ids.map(id => state.byId.get(id)).filter(t => visible(t) && filter(t));
-    if (r.type === "ranked") return row(r.title.replace(/Top 10 (TV )?(\w+)/, "Top 10 $2 on Haukley Today"),
+    if (r.type === "ranked") return row(r.title,
       ts.map((t, i) => rankedCard(t, i + 1)));
     return row(r.title, ts.map(t => card(t)));
   });
@@ -735,7 +735,7 @@ function renderNew() {
     <div class="page-head"><h1>New &amp; Popular</h1></div>
     <div class="rows">
       ${row("Just Added to Haukley", newest.map(t => card(t)))}
-      ${ranked.map(r => row(r.title.replace(/Top 10 (TV )?(\w+)/, "Top 10 $2 on Haukley Today"),
+      ${ranked.map(r => row(r.title,
         r.ids.map(id => state.byId.get(id)).filter(visible).map((t, i) => rankedCard(t, i + 1)))).join("")}
     </div>`;
   wireHeader();

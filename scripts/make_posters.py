@@ -165,7 +165,7 @@ def make_poster(t, kind):
         cred_f = font("LeagueGothic", int(22 * w * 0.9 / cw), "Regular")
         cw = d.textlength(cred, font=cred_f)
     d.text(((w - cw) / 2, h - 96), cred, font=cred_f, fill=(215, 215, 215))
-    rel = f"{'NOW STREAMING' if kind == 'movie' else 'NEW SEASON'}  ·  ONLY ON HAUKLEY"
+    rel = f"{'STREAMING FREE' if kind == 'movie' else 'NEW SEASON'}  ·  ON HAUKLEY"
     rf = body_font(15, "Bold")
     rw = d.textlength(rel, font=rf)
     d.text(((w - rw) / 2, h - 58), rel, font=rf, fill=(255, 255, 255))
@@ -278,6 +278,9 @@ def main():
     # drawable-mdpi and get upscaled 2x on 320dpi Fire TVs (a 33 MB bitmap per backdrop).
     for kind, key in (("movie", "movies"), ("show", "shows")):
         for t in cat[key]:
+            if t.get("still") and not (ROOT / t["still"]).exists():
+                print("skip (no still yet)", t["id"])
+                continue
             d = OUT / t["id"]
             d.mkdir(exist_ok=True)
             make_poster(t, kind).save(d / "poster@2x.jpg", quality=86, optimize=True, progressive=True)
