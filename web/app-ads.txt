@@ -1,0 +1,5 @@
+# app-ads.txt for Haukley (Roku channel 884208, apps com.haukley.tv / com.haukley.app)
+# Haukley does not authorize programmatic sellers.
+# IAB placeholder meaning "no authorized sellers" until the Google Ad Manager account exists;
+# then replace it with the google.com, pub-..., DIRECT line Ad Manager provides.
+placeholder.example.com, placeholder, DIRECT, placeholder
