@@ -369,3 +369,30 @@ svg { display: block; }
   .p-vol input, .p-title { display: none; }
   .p-row { justify-content: space-between; }
 }
+
+/* Sign-up extras: Google, show-password, strength meter, match */
+.btn-google { width: 100%; background: #fff; color: #1f1f1f; border-radius: 8px; padding: 13px; font-weight: 600; margin-top: 26px; }
+.btn-google:hover { background: #f1f1f1; }
+.or { display: flex; align-items: center; gap: 12px; color: var(--faint); font-size: 13px; margin: 20px 0 -8px; }
+.or::before, .or::after { content: ""; flex: 1; height: 1px; background: rgba(255, 255, 255, 0.18); }
+.pw { position: relative; display: block; }
+.pw input { padding-right: 48px; }
+.pw-eye { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); width: 36px; height: 36px; display: grid; place-items: center; color: var(--faint); border-radius: 6px; }
+.pw-eye:hover, .pw-eye[aria-pressed="true"] { color: #fff; }
+.meter { display: flex; align-items: center; gap: 12px; margin-top: -4px; }
+.meter .bars { flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+.meter .bars i { height: 4px; border-radius: 2px; background: rgba(255, 255, 255, 0.15); transition: background 0.2s; }
+.meter .bars[data-score="1"] i:nth-child(-n+1) { background: #ff6b6b; }
+.meter .bars[data-score="2"] i:nth-child(-n+2) { background: #ffb547; }
+.meter .bars[data-score="3"] i:nth-child(-n+3) { background: #9be7b4; }
+.meter .bars[data-score="4"] i { background: #35d07f; }
+.meter-label { font-size: 13px; font-weight: 600; min-width: 64px; text-align: right; color: var(--dim); }
+.reqs { list-style: none; padding: 0; display: grid; gap: 4px; font-size: 13px; color: var(--faint); margin-top: -4px; }
+.reqs li::before { content: "○"; display: inline-block; width: 18px; }
+.reqs li.ok { color: var(--ok); }
+.reqs li.ok::before { content: "✓"; }
+.reqs li.bad { color: var(--err); }
+.reqs li.bad::before { content: "✕"; }
+.match { font-size: 13px; min-height: 18px; margin-top: -8px; color: var(--faint); }
+.match.ok { color: var(--ok); }
+.match.err { color: var(--err); }

@@ -178,24 +178,77 @@ function resumeFor(t) {
 
 // ---------- auth screen ----------
 
+// Sign-in providers the auth server has switched on (public endpoint). Google's button only
+// renders once the provider is enabled in Supabase, so it can't appear half-configured.
+let providersPromise = null;
+const providers = () => (providersPromise ||= fetch(`${SUPABASE_URL}/auth/v1/settings`, { headers: { apikey: SUPABASE_KEY } })
+  .then(r => r.json()).then(s => s.external || {}).catch(() => ({})));
+
+const COMMON_PASSWORDS = new Set(["password", "password1", "password123", "12345678", "123456789", "1234567890", "qwerty123",
+  "qwertyuiop", "iloveyou", "11111111", "00000000", "abc12345", "abcd1234", "letmein1", "welcome1", "football", "baseball",
+  "sunshine", "princess", "dragon12", "monkey12", "passw0rd", "p@ssw0rd", "trustno1", "starwars", "whatever", "superman",
+  "1q2w3e4r", "zaq12wsx", "haukley1", "haukley123", "netflix1"]);
+
+// 0 too short, 1 weak, 2 fair, 3 good, 4 strong. Sign-up needs 2+.
+function passwordStrength(pw, email = "") {
+  const lower = pw.toLowerCase();
+  const local = email.split("@")[0].toLowerCase();
+  const kinds = [/[a-z]/, /[A-Z]/, /\d/, /[^A-Za-z0-9]/].filter(r => r.test(pw)).length;
+  const common = COMMON_PASSWORDS.has(lower) || /^(.)\1+$/.test(pw) || /^(0123|1234|abcd|qwer|asdf|pass)/i.test(pw);
+  const personal = local.length >= 3 && lower.includes(local);
+  const checks = { length: pw.length >= 8, mix: kinds >= 2, unique: pw.length > 0 && !common && !personal };
+  let score = 0;
+  if (checks.length) {
+    score = 1 + (pw.length >= 12) + (pw.length >= 16) + (kinds >= 2) + (kinds >= 3);
+    if (!checks.unique) score = 1;
+    else if (!checks.mix) score = Math.min(score, pw.length >= 14 ? 2 : 1);
+    score = Math.min(4, score);
+  }
+  return { score, checks, label: ["Too short", "Weak", "Fair", "Good", "Strong"][score] };
+}
+
+const GOOGLE_G = `<svg viewBox="0 0 48 48" width="20" height="20" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.5 30.3 0 24 0 14.6 0 6.6 5.4 2.7 13.3l7.9 6.1C12.5 13.6 17.8 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.4c-.5 2.9-2.1 5.3-4.6 6.9l7.4 5.7c4.3-4 6.9-9.9 6.9-16.6z"/><path fill="#FBBC05" d="M10.6 28.6c-.5-1.4-.8-3-.8-4.6s.3-3.2.8-4.6l-7.9-6.1C1 16.6 0 20.2 0 24s1 7.4 2.7 10.7l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.4-5.7c-2.1 1.4-4.8 2.3-8.5 2.3-6.2 0-11.5-4.1-13.4-9.9l-7.9 6.1C6.6 42.6 14.6 48 24 48z"/></svg>`;
+const EYE = `<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>`;
+
+function pwField(name, label, autocomplete) {
+  return `<label>${label}<span class="pw"><input type="password" name="${name}" minlength="8" required autocomplete="${autocomplete}">
+    <button type="button" class="pw-eye" aria-label="Show password" aria-pressed="false">${EYE}</button></span></label>`;
+}
+
 function renderAuth(mode = "signin", message = "") {
   document.title = "Sign in — Haukley";
   const copy = {
     signin: ["Sign in to watch", "Free movies and shows. No credit card, ever.", "Sign in"],
-    signup: ["Create your free account", "Just an email and a password. No credit card, ever.", "Create account"],
+    signup: ["Create your free account", "Free forever. No credit card, ever.", "Create account"],
     forgot: ["Reset your password", "We'll email you a link to set a new one.", "Send reset link"],
-    recover: ["Set a new password", "Choose a password with at least 8 characters.", "Save password"],
+    recover: ["Set a new password", "Choose a strong password you don't use anywhere else.", "Save password"],
   }[mode];
+  const newPw = mode === "signup" || mode === "recover";
+  const oauth = mode === "signin" || mode === "signup";
   app.innerHTML = `
     <main class="auth">
       <div class="auth-box">
         <a class="wordmark" href="/">Haukley<span>.</span></a>
         <h1>${copy[0]}</h1>
         <p class="sub">${copy[1]}</p>
+        ${oauth ? `<div class="oauth" id="oauth" hidden>
+          <button type="button" class="btn btn-google" id="google">${GOOGLE_G} ${mode === "signup" ? "Sign up" : "Continue"} with Google</button>
+          <div class="or"><span>or</span></div></div>` : ""}
         <form id="auth-form" novalidate>
           ${mode === "recover" ? "" : `<label>Email<input type="email" name="email" autocomplete="email" required></label>`}
-          ${mode === "forgot" ? "" : `<label>Password<input type="password" name="password" minlength="8" required
-              autocomplete="${mode === "signin" ? "current-password" : "new-password"}"></label>`}
+          ${mode === "forgot" ? "" : pwField("password", newPw ? "Password" : "Password", mode === "signin" ? "current-password" : "new-password")}
+          ${newPw ? `
+            <div class="meter" id="meter" aria-live="polite" hidden>
+              <div class="bars" data-score="0"><i></i><i></i><i></i><i></i></div>
+              <span class="meter-label"></span>
+            </div>
+            <ul class="reqs" id="reqs">
+              <li data-req="length">At least 8 characters</li>
+              <li data-req="mix">A mix of letters, numbers or symbols</li>
+              <li data-req="unique">Not a common password or your email</li>
+            </ul>
+            ${pwField("confirm", "Confirm password", "new-password")}
+            <p class="match" id="match" aria-live="polite"></p>` : ""}
           <button class="btn btn-primary" type="submit">${copy[2]}</button>
           <p class="note" role="status">${esc(message)}</p>
         </form>
@@ -210,15 +263,68 @@ function renderAuth(mode = "signin", message = "") {
   const note = $(".note", form);
   const say = (t, cls = "") => { note.textContent = t; note.className = "note " + cls; };
   app.querySelectorAll("[data-mode]").forEach(b => b.addEventListener("click", () => renderAuth(b.dataset.mode)));
+  app.querySelectorAll(".pw-eye").forEach(b => b.addEventListener("click", () => {
+    const input = b.previousElementSibling;
+    const show = input.type === "password";
+    input.type = show ? "text" : "password";
+    b.setAttribute("aria-pressed", String(show));
+    b.setAttribute("aria-label", show ? "Hide password" : "Show password");
+  }));
   const first = $("input", form);
   if (first && hoverable.matches) first.focus();
+
+  if (oauth) {
+    providers().then(p => { if (p.google && $("#oauth")) $("#oauth").hidden = false; });
+    $("#google").addEventListener("click", async () => {
+      say("Opening Google…");
+      const { error } = await sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: location.origin + "/watch/" } });
+      if (error) say("Couldn't open Google sign-in. Try again or use email.", "err");
+    });
+  }
+
+  // Live password feedback: strength meter, requirement checklist, and confirm match.
+  const pw = form.password;
+  const confirmInput = form.confirm;
+  let confirmTouched = false;
+  const check = () => {
+    if (!newPw) return true;
+    const s = passwordStrength(pw.value, form.email?.value || state.user?.email || "");
+    $("#meter").hidden = !pw.value;
+    $("#meter .bars").dataset.score = String(s.score);
+    $("#meter .meter-label").textContent = pw.value ? s.label : "";
+    for (const [k, ok] of Object.entries(s.checks)) {
+      const li = $(`[data-req="${k}"]`);
+      li.classList.toggle("ok", ok);
+      li.classList.toggle("bad", !ok && pw.value.length > 0 && (k !== "length" || pw.value.length >= 1));
+    }
+    const m = $("#match");
+    const matches = confirmInput.value.length > 0 && confirmInput.value === pw.value;
+    if (!confirmInput.value) { m.textContent = ""; m.className = "match"; }
+    else if (matches) { m.textContent = "✓ Passwords match"; m.className = "match ok"; }
+    else if (confirmTouched || confirmInput.value.length >= pw.value.length) { m.textContent = "Passwords don't match"; m.className = "match err"; }
+    else { m.textContent = ""; m.className = "match"; }
+    return s.score >= 2 && matches;
+  };
+  if (newPw) {
+    pw.addEventListener("input", check);
+    form.email?.addEventListener("input", check);
+    confirmInput.addEventListener("input", check);
+    confirmInput.addEventListener("blur", () => { confirmTouched = true; check(); });
+  }
 
   form.addEventListener("submit", async e => {
     e.preventDefault();
     const email = (form.email?.value || "").trim();
-    const password = form.password?.value || "";
+    const password = pw?.value || "";
     if (mode !== "recover" && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return say("Enter a valid email address.", "err");
-    if (mode !== "forgot" && password.length < 8) return say("Passwords need at least 8 characters.", "err");
+    if (mode === "signin" && !password) return say("Enter your password.", "err");
+    if (newPw) {
+      confirmTouched = true;
+      const s = passwordStrength(password, email || state.user?.email || "");
+      check();
+      if (s.score < 2) return say(s.score === 0 ? "Passwords need at least 8 characters." : "That password is too easy to guess. Make it longer or mix in numbers and symbols.", "err");
+      if (confirmInput.value !== password) return say("The two passwords don't match.", "err");
+    }
     const button = $("button[type=submit]", form);
     button.disabled = true;
     say("One moment…");

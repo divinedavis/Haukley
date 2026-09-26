@@ -1,0 +1,743 @@
+[
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-general",
+  "title": "The General",
+  "year": 1926,
+  "genre": "Comedy",
+  "runtime": "1 hr 19 min",
+  "description": "When Union spies steal his beloved locomotive, a Southern train engineer chases it deep behind enemy lines in one of the great chase comedies.",
+  "credits": "Directed by Buster Keaton · Clyde Bruckman · Starring Buster Keaton · Marion Mack",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by United Artists in 1926.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/The_General_(1926_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "The_General_Buster_Keaton",
+   "url": "https://archive.org/download/The_General_Buster_Keaton/The_General.mp4",
+   "bytes": 412400222,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "No audio stream at all (ffprobe). Original 1926 main title and cast cards; no modern logos in the opening or closing frames sampled."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "sherlock-jr",
+  "title": "Sherlock Jr.",
+  "year": 1924,
+  "genre": "Comedy",
+  "runtime": "46 min",
+  "description": "A small-town projectionist who dreams of being a detective falls asleep on the job and walks straight into the movie on screen.",
+  "credits": "Directed by Buster Keaton · Starring Buster Keaton · Kathryn McGuire · Joe Keaton",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by Metro in 1924.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Sherlock_Jr."
+   ]
+  },
+  "source": {
+   "archive_identifier": "silent-sherlock-jr-",
+   "url": "https://archive.org/download/silent-sherlock-jr-/Sherlock%20Jr..mp4",
+   "bytes": 232158869,
+   "width": 854,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "No audio stream (Internet Archive's own silent-* series, score removed). The video is the 2015 Cohen Film Collection / Cineteca di Bologna restoration: the first ~45 s (film-leader animation, Cohen logo, restoration text card) and the last ~40 s (restoration card, Cohen logo) are modern additions. Trim both before publishing; the film itself is PD."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "safety-last",
+  "title": "Safety Last!",
+  "year": 1923,
+  "genre": "Comedy",
+  "runtime": "1 hr 14 min",
+  "description": "A small-town go-getter promises his sweetheart he has made it big in the city, then has to climb the outside of a skyscraper to prove it.",
+  "credits": "Directed by Fred C. Newmeyer · Sam Taylor · Starring Harold Lloyd · Mildred Davis",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by Pathé in 1923. Harold Lloyd's name, likeness and 'glasses' character are asserted as trademarks by Harold Lloyd Entertainment: use them to identify the film only, and never suggest endorsement in ads or artwork.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Safety_Last!"
+   ]
+  },
+  "source": {
+   "archive_identifier": "silent-safety-last",
+   "url": "https://archive.org/download/silent-safety-last/Safety%20Last!.mp4",
+   "bytes": 385048953,
+   "width": 854,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "No audio stream (score removed). The source is a Criterion Blu-ray: the first ~15 s carry Criterion Collection and Janus Films logos (trademarks), the tail sampled was black film with no added cards. Trim the opening logos before publishing."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-freshman",
+  "title": "The Freshman",
+  "year": 1925,
+  "genre": "Comedy",
+  "runtime": "1 hr 17 min",
+  "description": "An eager college newcomer tries to become the most popular man on campus and ends up the tackling dummy of the football team.",
+  "credits": "Directed by Fred C. Newmeyer · Sam Taylor · Starring Harold Lloyd · Jobyna Ralston",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by Pathé in 1925. Same Harold Lloyd trademark caution as Safety Last!.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/The_Freshman_(1925_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "silent-the-freshman",
+   "url": "https://archive.org/download/silent-the-freshman/The%20Freshman.mp4",
+   "bytes": 397742312,
+   "width": 854,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "No audio stream (score removed). The source is a Criterion Blu-ray: trim the first ~20 s (Criterion/Janus logos, 'Music composed by Carl Davis' card, UCLA preservation card) and the last ~30 s (Carl Davis music credits, Harold Lloyd signature logo)."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "one-week",
+  "title": "One Week",
+  "year": 1920,
+  "genre": "Comedy",
+  "runtime": "25 min",
+  "description": "Newlyweds try to assemble a build-it-yourself house in seven days, not knowing a jealous rival has swapped the numbers on the boxes.",
+  "credits": "Directed by Buster Keaton · Edward F. Cline · Starring Buster Keaton · Sybil Seely",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by Metro in 1920.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/One_Week_(1920_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "silent-one-week",
+   "url": "https://archive.org/download/silent-one-week/One%20Week.mp4",
+   "bytes": 129021452,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "No audio stream (score removed). The original 1920 Metro title card is intact. The final ~8 s is a modern 'Music composed and performed by Ben Model' card: trim it."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "his-girl-friday",
+  "title": "His Girl Friday",
+  "year": 1940,
+  "genre": "Comedy",
+  "runtime": "1 hr 32 min",
+  "description": "A fast-talking newspaper editor schemes to stop his star reporter, who is also his ex-wife, from quitting and remarrying by handing her one last big story.",
+  "credits": "Directed by Howard Hawks · Starring Cary Grant · Rosalind Russell · Ralph Bellamy",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Columbia did not renew the film's copyright. The underlying play, The Front Page (1928), was the remaining encumbrance and entered the public domain in 2024 (Wikipedia: 'fully releasing the film from remaining copyright'). The Columbia torch-lady logo at the head is an original part of the film, but Columbia's marks must not be used in Haukley marketing.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/His_Girl_Friday",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "his_girl_friday",
+   "url": "https://archive.org/download/his_girl_friday/his_girl_friday.mp4",
+   "bytes": 575274912,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Original 1940 soundtrack (a sound film). Internet Archive Feature Films collection copy. Opening and closing frames are the original Columbia titles and cast cards, with nothing added."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "nosferatu",
+  "title": "Nosferatu",
+  "year": 1922,
+  "genre": "Horror",
+  "runtime": "1 hr 3 min",
+  "description": "A real-estate clerk travels to the Carpathians to close a sale with the reclusive Count, who then follows him home bringing plague and death.",
+  "credits": "Directed by F. W. Murnau · Starring Max Schreck · Gustav von Wangenheim · Greta Schröder",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. German, 1922. Published before 1927, so it is PD in the US regardless of the URAA restoration. Wikipedia: 'entered the public domain worldwide in 2019.' The source novel Dracula (1897) is PD.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Nosferatu"
+   ]
+  },
+  "source": {
+   "archive_identifier": "NosferatuSilent",
+   "url": "https://archive.org/download/NosferatuSilent/Nosferatu%20(silent).ia.mp4",
+   "bytes": 3913653851,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Item description: 'with the pre-composed music track removed'. The AAC track is digital silence (-91 dB). Uses the classic English-intertitle print ('Count Dracula' names; 'Acquired through the courtesy of La Cinémathèque Française'). Very high bitrate (3.9 GB for 63 min), so transcode on ingest.",
+   "silent_audio": true
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "phantom-of-the-opera",
+  "title": "The Phantom of the Opera",
+  "year": 1925,
+  "genre": "Horror",
+  "runtime": "1 hr 32 min",
+  "description": "A disfigured genius haunting the cellars beneath the Paris Opera grooms a young singer for stardom, and will kill anyone who stands in his way.",
+  "credits": "Directed by Rupert Julian · Starring Lon Chaney · Mary Philbin · Norman Kerry",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Universal, 1925. Leroux's novel (1910) is PD.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/The_Phantom_of_the_Opera_(1925_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "silent-the-phantom-of-the-opera",
+   "url": "https://archive.org/download/silent-the-phantom-of-the-opera/The%20Phantom%20of%20the%20Opera.mp4",
+   "bytes": 479264454,
+   "width": 662,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "No audio stream (score removed). Original 1925 tinted titles ('Copyright MCMXXV by Universal'). The final ~10 s is a modern 'This Edition Produced by David Shepard / Associate Producer Bret Hampton' card (Film Preservation Associates edition): trim it."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "night-of-the-living-dead",
+  "title": "Night of the Living Dead",
+  "year": 1968,
+  "genre": "Horror",
+  "runtime": "1 hr 36 min",
+  "description": "Strangers barricade themselves inside a Pennsylvania farmhouse as the recently dead rise and close in through the night.",
+  "credits": "Directed by George A. Romero · Starring Duane Jones · Judith O'Dea · Karl Hardman",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "The film was released without a copyright notice after a title change, so it entered the US public domain on publication (pre-1978 notice rule), not by non-renewal. The score is Capitol Hi-Q library music synchronized into the film. It is not flagged as a problem by the sources, but do not reuse the music outside the film.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Night_of_the_Living_Dead",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "Night.Of.The.Living.Dead_1080p",
+   "url": "https://archive.org/download/Night.Of.The.Living.Dead_1080p/NightOfTheLivingDead_PS3.mp4",
+   "bytes": 1862510336,
+   "width": 1920,
+   "height": 1080,
+   "has_added_score": false,
+   "notes": "Original 1968 mono soundtrack. A 1080p H.264 file from an older Blu-ray rip. Opening and closing frames sampled are the original title and 'The End' with no distributor logos. Not the 2017 Criterion/MoMA 4K restoration."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-little-shop-of-horrors",
+  "title": "The Little Shop of Horrors",
+  "year": 1960,
+  "genre": "Horror",
+  "runtime": "1 hr 11 min",
+  "description": "A hapless florist's assistant breeds a strange plant that makes the shop famous, but it only thrives on human blood.",
+  "credits": "Directed by Roger Corman · Starring Jonathan Haze · Jackie Joseph · Mel Welles",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Corman never registered or protected the copyright, so the film entered the public domain (Wikipedia). It is an original screenplay (Charles B. Griffith), so there is no underlying-work problem. The 1982 stage musical and 1986 film are separate, copyrighted works: do not use their songs or artwork.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Little_Shop_of_Horrors",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "TheLittleShopOfHorrors1960_765",
+   "url": "https://archive.org/download/TheLittleShopOfHorrors1960_765/TheLittleShopOfHorrors1960.mp4",
+   "bytes": 421113798,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Original 1960 soundtrack. Opening animated credits and closing 'The End' sampled are original. Theatrical length about 72 min, so this is the complete film."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "carnival-of-souls",
+  "title": "Carnival of Souls",
+  "year": 1962,
+  "genre": "Horror",
+  "runtime": "1 hr 18 min",
+  "description": "After surviving a car crash into a river, a church organist starts a new life in Utah but is stalked by a ghoulish figure and drawn to an abandoned pavilion.",
+  "credits": "Directed by Herk Harvey · Starring Candace Hilligoss · Sidney Berger · Frances Feist",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "The US theatrical release lacked a valid copyright notice, so it is PD in the US (Wikipedia). Only the ~78-min 1962 THEATRICAL cut is PD. The 1989/1998 'Director's Cut' (~84 min) was separately copyrighted, so do NOT use an ~83-84 min copy.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Carnival_of_Souls",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "CarnivalOfSoulsVideoQualityUpgrade",
+   "url": "https://archive.org/download/CarnivalOfSoulsVideoQualityUpgrade/CarnivalOfSoulsVideoUpgrade.mp4",
+   "bytes": 673569830,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Original 1962 soundtrack. At 77.6 min with the original Herts-Lion International opening card, this is the PD theatrical cut. The popular 'CarnivalofSouls' item runs 83 min, which suggests the copyrighted director's cut, so it was deliberately not used."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "metropolis",
+  "title": "Metropolis",
+  "year": 1927,
+  "genre": "Sci-Fi",
+  "runtime": "2 hr 25 min",
+  "description": "In a towering future city split between idle rulers and underground workers, the ruler's son falls for a prophet of the workers, and an inventor builds a robot in her image.",
+  "credits": "Directed by Fritz Lang · Starring Brigitte Helm · Gustav Fröhlich · Alfred Abel",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. German, 1927. The US copyright lapsed in 1953, was restored by the URAA in 1996, and expired on 1 January 2023 (95 years), per Wikipedia. The source uses the 1927 US/Paramount 'Channing Pollock' English intertitles, which date from 1927 and are PD. It is NOT the 2010 Murnau-Stiftung 'Complete Metropolis' restoration, whose new English titles, reconstruction cards and Huppertz re-recording are claimed by the rights holders.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Metropolis_(1927_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "metropolis-channing-pollock-cut",
+   "url": "https://archive.org/download/metropolis-channing-pollock-cut/Metropolis%20(Channing%20Pollock%20Cut).mp4",
+   "bytes": 1542632449,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Item description: 'Has no audio'. The AAC track is near-silent hiss (mean -72 dB, max -48 dB): mute it on ingest. A print from the National Library of Australia (1928 Australian release of the US cut). The first ~15 s is a 'printed from preservation material in the National Film Archive, National Library of Australia' card: optional trim. Slow transfer speed, which accounts for the long runtime.",
+   "mute": true
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "a-trip-to-the-moon",
+  "title": "A Trip to the Moon",
+  "year": 1902,
+  "genre": "Sci-Fi",
+  "runtime": "13 min",
+  "description": "A congress of astronomers fires itself to the moon in a giant shell, lands in the Man in the Moon's eye, and escapes the moon's strange inhabitants.",
+  "credits": "Directed by Georges Méliès · Starring Georges Méliès · Bleuette Bernon",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. French, 1902. Do NOT substitute the 2011 hand-colored restoration (Lobster Films / Technicolor Foundation, with a score by Air), which carries modern claims.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/A_Trip_to_the_Moon"
+   ]
+  },
+  "source": {
+   "archive_identifier": "a-trip-to-the-moon-le-voyage-dans-la-lune-1902",
+   "url": "https://archive.org/download/a-trip-to-the-moon-le-voyage-dans-la-lune-1902/A%20Trip%20to%20the%20moon%20(Le%20voyage%20dans%20la%20lune)%20(1902).mp4",
+   "bytes": 51306229,
+   "width": 480,
+   "height": 360,
+   "has_added_score": false,
+   "notes": "Black-and-white print. The AAC track is digital silence (-91 dB). Low resolution (480x360), fine as a short but it will look soft on TV.",
+   "silent_audio": true
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "all-quiet-on-the-western-front",
+  "title": "All Quiet on the Western Front",
+  "year": 1930,
+  "genre": "War",
+  "runtime": "2 hr 13 min",
+  "description": "A class of German schoolboys enlists in the First World War full of patriotic fire and learns in the trenches what the war really costs.",
+  "credits": "Directed by Lewis Milestone · Starring Lew Ayres · Louis Wolheim · John Wray",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Universal, published 1930, so PD in the US from 2026-01-01. Duke CSPD lists it among 2026 entrants. Wikipedia: 'entered the public domain on January 1, 2026, following expiry of the copyright on the novel in 2024.' Use only the 1930 version, not the 1939 reissue (its added narration/prologue is a later work). The Universal globe logo must not be used in marketing.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/All_Quiet_on_the_Western_Front_(1930_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "all-quiet-on-the-western-front_1930_2026-01-01",
+   "url": "https://archive.org/download/all-quiet-on-the-western-front_1930_2026-01-01/All%20Quiet%20on%20the%20Western%20Front.mp4",
+   "bytes": 777631160,
+   "width": 854,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Original 1930 sound version (dialogue plus David Broekman's 1930 synchronized score, which is PD with the film). Source is the 2012 Universal/LoC restoration Blu-ray; the opening frames are the original 1930 title cards with no modern Universal logo. The item also holds a 1920x1080 MKV (31.3 GB): 'All%20Quiet%20on%20the%20Western%20Front.mkv'. Use it as the mezzanine for an HD encode."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "d-o-a",
+  "title": "D.O.A.",
+  "year": 1950,
+  "genre": "Thriller",
+  "runtime": "1 hr 23 min",
+  "description": "A small-town accountant learns he has been fatally poisoned and has only days left to find out who killed him, and why.",
+  "credits": "Directed by Rudolph Maté · Starring Edmond O'Brien · Pamela Britton · Luther Adler",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Due to a filing error the copyright was not renewed on time and the film fell into the public domain (Wikipedia). It is an original screenplay (Russell Rouse & Clarence Greene), with no underlying novel.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/D.O.A._(1949_film)",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "d.-o.-a.-1950",
+   "url": "https://archive.org/download/d.-o.-a.-1950/D.O.A.%20(1949).mp4",
+   "bytes": 929763951,
+   "width": 986,
+   "height": 720,
+   "has_added_score": false,
+   "notes": "Original 1950 soundtrack (Dimitri Tiomkin score, part of the PD film). A 720p copy. The opening is the original United Artists title and the end is the original cast roll, with no distributor card. The alternative 'D.o.a.VideoQualityUpgrade' copy ends with a 'Distributed by Questar, Inc.' card, so it was not used."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "man-with-a-movie-camera",
+  "title": "Man with a Movie Camera",
+  "year": 1929,
+  "genre": "Documentary",
+  "runtime": "1 hr 7 min",
+  "description": "A cameraman roams Soviet cities from dawn to dusk in a wordless, restlessly inventive portrait of modern life and of filmmaking itself.",
+  "credits": "Directed by Dziga Vertov · Edited by Elizaveta Svilova · Starring Mikhail Kaufman",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Soviet (VUFKU), 1929, so PD in the US as of 2025 under the 95-year rule regardless of URAA.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Man_with_a_Movie_Camera"
+   ]
+  },
+  "source": {
+   "archive_identifier": "ChelovekskinoapparatomManWithAMovieCamera",
+   "url": "https://archive.org/download/ChelovekskinoapparatomManWithAMovieCamera/Chelovek_s_kino-apparatom.MPEG",
+   "bytes": 2000887808,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "No audio stream at all. Only an MPEG-2 original at 640x480; the MP4 derivative 'Chelovek_s_kino-apparatom_512kb.mp4' (257,515,942 bytes) is just 320x240, so transcode the MPEG-2 on ingest. Original Russian titles with small English subtitles burned in. The final ~12 s is a card '...used by kind permission of the Russian State Archive For Documentary Film': trim it (the film is PD in the US)."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "steamboat-willie",
+  "title": "Steamboat Willie",
+  "year": 1928,
+  "genre": "Animation",
+  "runtime": "8 min",
+  "description": "A mischievous deckhand mouse turns a riverboat's cargo of animals into a barnyard orchestra while dodging his bullying captain.",
+  "credits": "Directed by Walt Disney · Ub Iwerks · Starring Walt Disney",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. CAUTION, TRADEMARK: the 1928 film's copyright expired 2024-01-01 (Wikipedia), but Disney holds live trademarks in Mickey Mouse and uses a Steamboat Willie clip in its Walt Disney Animation Studios logo. Stream the film as-is. Do NOT use Mickey or the Disney name in Haukley branding, row art, app-store screenshots or ads, and never imply Disney endorsement. Only the 1928 version is PD; later Mickey designs are not.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Steamboat_Willie"
+   ]
+  },
+  "source": {
+   "archive_identifier": "steamboat-willie_1928",
+   "url": "https://archive.org/download/steamboat-willie_1928/steamboat-willie_1928.ia.mp4",
+   "bytes": 593323557,
+   "width": 1300,
+   "height": 1080,
+   "has_added_score": false,
+   "notes": "Original 1928 Cinephone synchronized soundtrack (part of the PD film). Uploaded by Internet Archive staff on 2024-01-02. Original 'Disney Cartoons present' title and 'The End' cards, with no modern Disney logo. Alternative independent source: 'steamboat-willie-16mm-film-scan-4k-lossless' (Reel Revival 16mm scan; a scene is missing)."
+  },
+  "skip": "Disney trademark risk: opens with a 'Disney Cartoons present' card"
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "big-buck-bunny",
+  "title": "Big Buck Bunny",
+  "year": 2008,
+  "genre": "Animation",
+  "runtime": "11 min",
+  "description": "A gentle giant rabbit's sunny day is ruined by three bullying rodents, so he plans an elaborate cartoon revenge.",
+  "credits": "Directed by Sacha Goedegebure · Produced by Blender Foundation",
+  "rights": {
+   "basis": "cc-by",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "attribution": "(c) copyright 2008, Blender Foundation / www.bigbuckbunny.org",
+   "notes": "Peach license page: commercial use allowed. If you 'screen or broadcast the entire movie', include the entire end-credits roll, so do not cut the credits. Blender and CC logos and the DVD artwork are excluded from the license, so make your own poster. The standalone score was separately released under BY-NC-ND 3.0; it is covered inside the film, but do not reuse the music on its own. This file is the official 2013 60fps re-render released by the Blender Foundation.",
+   "sources": [
+    "https://peach.blender.org/about/",
+    "https://video.blender.org/w/6402b77c-b61f-4a06-96ca-c8420a2becf4"
+   ]
+  },
+  "source": {
+   "url": "https://video.blender.org/download/web-videos/6402b77c-b61f-4a06-96ca-c8420a2becf4-1080.mp4",
+   "bytes": 276266905,
+   "width": 1920,
+   "height": 1080,
+   "has_added_score": false,
+   "notes": "Official Blender Foundation PeerTube (video.blender.org). HEAD returns 403; a normal GET 302-redirects to signed object storage (verified with a ranged GET, 206 + full length). The original soundtrack is part of the licensed film. 1080p60 version."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "sintel",
+  "title": "Sintel",
+  "year": 2010,
+  "genre": "Fantasy",
+  "runtime": "15 min",
+  "description": "A lone young woman crosses a harsh fantasy world to find the baby dragon she rescued and raised, which was snatched away from her.",
+  "credits": "Directed by Colin Levy · Starring Halina Reijn · Thom Hoffman",
+  "rights": {
+   "basis": "cc-by",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "attribution": "© copyright Blender Foundation | durian.blender.org",
+   "notes": "Durian sharing page: CC BY 3.0, commercial use allowed. When showing the whole film, include the entire credits scroll; otherwise use the attribution line. Blender, Durian and CC logos are excluded.",
+   "sources": [
+    "https://durian.blender.org/sharing/",
+    "https://video.blender.org/w/0eb052d0-fd51-43e6-aa33-ecdbf77a5d40"
+   ]
+  },
+  "source": {
+   "url": "https://video.blender.org/download/web-videos/0eb052d0-fd51-43e6-aa33-ecdbf77a5d40-818.mp4",
+   "bytes": 239096915,
+   "width": 1920,
+   "height": 818,
+   "has_added_score": false,
+   "notes": "Official Blender Foundation PeerTube (video.blender.org). HEAD returns 403; a normal GET 302-redirects to signed object storage (verified with a ranged GET, 206 + full length). The original soundtrack is part of the licensed film. Alternative official master: https://download.blender.org/durian/movies/Sintel.2010.1080p.mkv (1,180,090,590 bytes, 200 OK, H.264/AC3 with SRT subtitles)."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "tears-of-steel",
+  "title": "Tears of Steel",
+  "year": 2012,
+  "genre": "Sci-Fi",
+  "runtime": "12 min",
+  "description": "In a future Amsterdam overrun by robots, a band of scientists stages a desperate experiment to rewrite a painful breakup that set the machines loose.",
+  "credits": "Directed by Ian Hubert · Starring Derek de Lint · Sergio Hasselbaink · Vanja Rukavina · Denise Rebergen",
+  "rights": {
+   "basis": "cc-by",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "attribution": "(CC) Blender Foundation | mango.blender.org",
+   "notes": "Mango sharing page: CC BY 3.0, commercial use allowed. RESTRICTION: per the 2013 release terms, images of the actors may not be used for commercials. Stream the film, but do not use actor faces in Haukley ads or marketing (use VFX or robot frames). The separately released OST is CC BY-ND 3.0 ('(C) Joram Letwory - www.tearsofsteel.org'), so do not remix the music. Mango, Blender, CC and sponsor logos are excluded.",
+   "sources": [
+    "https://mango.blender.org/sharing/",
+    "https://en.wikipedia.org/wiki/Tears_of_Steel",
+    "https://download.blender.org/demo/movies/ToS/copyright.txt"
+   ]
+  },
+  "source": {
+   "url": "https://video.blender.org/download/web-videos/8533ea43-4271-4a57-9694-e9d0b35e1aa1-800.mp4",
+   "bytes": 247686928,
+   "width": 1920,
+   "height": 800,
+   "has_added_score": false,
+   "notes": "Official Blender Foundation PeerTube (video.blender.org). HEAD returns 403; a normal GET 302-redirects to signed object storage (verified with a ranged GET, 206 + full length). The original soundtrack is part of the licensed film. Alternative official file: https://download.blender.org/demo/movies/ToS/tears_of_steel_720p.mov (372,178,639 bytes, 200 OK). Most other files in download.blender.org were re-packed as .zip in July 2026."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "elephants-dream",
+  "title": "Elephants Dream",
+  "year": 2006,
+  "genre": "Sci-Fi",
+  "runtime": "11 min",
+  "description": "Two men wander an endless, shifting machine world, the older one insisting he knows its rules while the younger begins to doubt him.",
+  "credits": "Directed by Bassam Kurdali · Starring Tygo Gernandt · Cas Jansen",
+  "rights": {
+   "basis": "cc-by",
+   "license_url": "https://creativecommons.org/licenses/by/2.5/",
+   "attribution": "(c) copyright 2006, Blender Foundation / Netherlands Media Art Institute / www.elephantsdream.org",
+   "notes": "Orange project site: released under Creative Commons Attribution 2.5, commercial use allowed. The world's first 'open movie'.",
+   "sources": [
+    "https://orange.blender.org/",
+    "https://en.wikipedia.org/wiki/Elephants_Dream"
+   ]
+  },
+  "source": {
+   "url": "https://video.blender.org/download/web-videos/cccc3e60-0291-4ecc-aa56-39b2e2c7d0d5-720.mp4",
+   "bytes": 117134159,
+   "width": 1280,
+   "height": 720,
+   "has_added_score": false,
+   "notes": "Official Blender Foundation PeerTube (video.blender.org). HEAD returns 403; a normal GET 302-redirects to signed object storage (verified with a ranged GET, 206 + full length). The original soundtrack is part of the licensed film. Alternative official file: https://download.blender.org/ED/elephantsdream-1024-h264-st-aac.mov (326,632,467 bytes, 1024x576, 200 OK)."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "cosmos-laundromat",
+  "title": "Cosmos Laundromat",
+  "year": 2015,
+  "genre": "Animation",
+  "runtime": "12 min",
+  "description": "On a desolate island, a despairing sheep named Franck meets a strange salesman who offers him the gift of a lifetime, with a catch.",
+  "credits": "Directed by Mathieu Auvray · Starring Pierre Bokma · Reinout Scholten van Aschat",
+  "rights": {
+   "basis": "cc-by",
+   "license_url": "https://creativecommons.org/licenses/by/3.0/",
+   "attribution": "(CC) Blender Foundation | gooseberry.blender.org",
+   "notes": "The official Gooseberry sharing page says CC BY 3.0, commercial use allowed. Wikimedia Commons lists the YouTube upload as CC BY-SA 3.0, and SA only binds adaptations, so unmodified streaming is fine either way. The creators give a target audience age of 13+ (suicide theme), so do not place it in a kids row.",
+   "sources": [
+    "https://gooseberry.blender.org/sharing/",
+    "https://en.wikipedia.org/wiki/Cosmos_Laundromat",
+    "https://studio.blender.org/remixing/"
+   ]
+  },
+  "source": {
+   "url": "https://video.blender.org/download/web-videos/f507dfdc-e73e-45a4-9778-d758cbe1ce96-804.mp4",
+   "bytes": 229615260,
+   "width": 1920,
+   "height": 804,
+   "has_added_score": false,
+   "notes": "Official Blender Foundation PeerTube (video.blender.org). HEAD returns 403; a normal GET 302-redirects to signed object storage (verified with a ranged GET, 206 + full length). The original soundtrack is part of the licensed film. "
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "spring",
+  "title": "Spring",
+  "year": 2019,
+  "genre": "Fantasy",
+  "runtime": "8 min",
+  "description": "A shepherd girl and her dog face the ancient mountain spirits in order to keep the cycle of life turning.",
+  "credits": "Directed by Andy Goralczyk · Music by Torin Borrowdale",
+  "rights": {
+   "basis": "cc-by",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "attribution": "Spring by Blender Animation Studio, © Blender Foundation | studio.blender.org, licensed CC BY 4.0",
+   "notes": "Blender's YouTube release is marked CC BY 4.0, confirmed by Wikimedia Commons license review. Blender's own PeerTube labels it 'Attribution - Share Alike', but both allow commercial use and SA only binds adaptations. Blender Studio's remixing page offers Spring's stems as 'FX without music', so do not reuse the music on its own. Confirm with Blender (cloudsupport@blender.org) if you want certainty on the exact license.",
+   "sources": [
+    "https://commons.wikimedia.org/wiki/File:Spring_-_Blender_Open_Movie.webm",
+    "https://studio.blender.org/remixing/",
+    "https://video.blender.org/w/3d95fb3d-c866-42c8-9db1-fe82f48ccb95"
+   ]
+  },
+  "source": {
+   "url": "https://video.blender.org/download/web-videos/3d95fb3d-c866-42c8-9db1-fe82f48ccb95-804.mp4",
+   "bytes": 110388897,
+   "width": 1920,
+   "height": 804,
+   "has_added_score": false,
+   "notes": "Official Blender Foundation PeerTube (video.blender.org). HEAD returns 403; a normal GET 302-redirects to signed object storage (verified with a ranged GET, 206 + full length). The original soundtrack is part of the licensed film. "
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "sprite-fright",
+  "title": "Sprite Fright",
+  "year": 2021,
+  "genre": "Horror",
+  "runtime": "10 min",
+  "description": "A group of rowdy teens on a woodland outing tangle with an eccentric nature lover and the adorable-looking mushroom sprites that guard the forest.",
+  "credits": "Directed by Matthew Luhn · Hjalti Hjálmarsson",
+  "rights": {
+   "basis": "cc-by",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "attribution": "Sprite Fright by Blender Studio, © Blender Foundation | studio.blender.org, licensed CC BY 4.0",
+   "notes": "Blender's YouTube release is marked CC BY 4.0, confirmed by Wikimedia Commons license review. Blender Studio's remixing page lists all music tracks as available. Blender describes it as 'Rated PG-13', which is self-applied and not an MPA rating, so it is kept as NR. It is comedic gore, so do not place it in a kids row.",
+   "sources": [
+    "https://commons.wikimedia.org/wiki/File:Sprite_Fright_-_Blender_Open_Movie-full_movie.webm",
+    "https://studio.blender.org/remixing/",
+    "https://video.blender.org/w/a69d68a5-a0e0-4a80-9d66-49f093c97aaf"
+   ]
+  },
+  "source": {
+   "url": "https://video.blender.org/download/web-videos/a69d68a5-a0e0-4a80-9d66-49f093c97aaf-804.mp4",
+   "bytes": 110581245,
+   "width": 1920,
+   "height": 804,
+   "has_added_score": false,
+   "notes": "Official Blender Foundation PeerTube (video.blender.org). HEAD returns 403; a normal GET 302-redirects to signed object storage (verified with a ranged GET, 206 + full length). The original soundtrack is part of the licensed film. "
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "charge",
+  "title": "Charge",
+  "year": 2022,
+  "genre": "Action",
+  "runtime": "4 min",
+  "description": "In an energy-starved dystopia, an old man breaks into a battery factory and finds himself trapped with a deadly security droid.",
+  "credits": "Directed by Hjalti Hjálmarsson",
+  "rights": {
+   "basis": "cc-by",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "attribution": "Charge by Blender Studio, © Blender Foundation | studio.blender.org, licensed CC BY 4.0",
+   "notes": "Blender's YouTube release is marked CC BY 4.0, confirmed by Wikimedia Commons license review. Blender Studio's remixing page lists all music tracks as available.",
+   "sources": [
+    "https://commons.wikimedia.org/wiki/File:Charge_-_Blender_Open_Movie-full_movie.webm",
+    "https://studio.blender.org/remixing/",
+    "https://video.blender.org/w/1AKMruUNPJQQQ4bvtHYVZQ"
+   ]
+  },
+  "source": {
+   "url": "https://video.blender.org/download/web-videos/04da454b-9893-4184-98f3-248d00625efe-1080.mp4",
+   "bytes": 100635721,
+   "width": 2580,
+   "height": 1080,
+   "has_added_score": false,
+   "notes": "Official Blender Foundation PeerTube (video.blender.org). HEAD returns 403; a normal GET 302-redirects to signed object storage (verified with a ranged GET, 206 + full length). The original soundtrack is part of the licensed film. Ultra-wide 2.39:1; a 2160p file is also offered."
+  }
+ }
+]
