@@ -68,16 +68,29 @@ def download(t):
 
 
 def sheets(t):
+    from PIL import Image, ImageDraw
+
     src = download(t)
     dur = float(probe(src)["format"]["duration"])
     out = WORK / "sheets"
+    tmp = WORK / "frames"
     out.mkdir(parents=True, exist_ok=True)
     for name, start in (("head", 0), ("tail", max(0, dur - 60))):
-        # One frame every 2 s over 60 s, 6x5 grid, timestamps burned in.
-        vf = (f"fps=0.5,scale=320:-2,drawtext=text='%{{pts\\:hms}}':x=6:y=6:fontsize=18:fontcolor=yellow:box=1:boxcolor=black@0.6,"
-              "tile=6x5")
-        run(["ffmpeg", "-v", "error", "-y", "-ss", str(start), "-t", "60", "-i", str(src), "-vf", vf,
-             "-frames:v", "1", str(out / f"{t['id']}-{name}.jpg")])
+        # One frame per second over 60 s, 10x6 grid, each labeled with its source timestamp.
+        shutil.rmtree(tmp, ignore_errors=True)
+        tmp.mkdir()
+        run(["ffmpeg", "-v", "error", "-y", "-ss", f"{start:.2f}", "-t", "60", "-i", str(src),
+             "-vf", "fps=1,scale=240:-2", str(tmp / "f%03d.jpg")])
+        frames = sorted(tmp.glob("*.jpg"))
+        w, h = Image.open(frames[0]).size
+        sheet = Image.new("RGB", (w * 10, (h + 18) * 6), "black")
+        d = ImageDraw.Draw(sheet)
+        for i, f in enumerate(frames[:60]):
+            x, y = (i % 10) * w, (i // 10) * (h + 18)
+            sheet.paste(Image.open(f), (x, y + 18))
+            d.text((x + 4, y + 3), f"{start + i:.0f}s", fill="yellow")
+        sheet.save(out / f"{t['id']}-{name}.jpg", quality=80)
+    shutil.rmtree(tmp, ignore_errors=True)
     print(f"  duration {dur:.1f}s; tail sheet starts at {max(0, dur - 60):.1f}s")
 
 
@@ -89,6 +102,12 @@ def has_real_audio(t, info):
 
 
 def encode(t, keep_source=False):
+    if (WORK / "hls" / t["id"] / "master.m3u8").exists():
+        print(f"encode {t['id']}: already done")
+        return
+    free = shutil.disk_usage(WORK).free / 1e9
+    if free < 6:
+        sys.exit(f"stopping before {t['id']}: only {free:.1f} GB free (upload + clear WORK/hls first)")
     src = download(t)
     info = probe(src)
     v = next(s for s in info["streams"] if s["codec_type"] == "video")

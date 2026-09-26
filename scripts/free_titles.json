@@ -56,7 +56,9 @@
    "width": 854,
    "height": 480,
    "has_added_score": false,
-   "notes": "No audio stream (Internet Archive's own silent-* series, score removed). The video is the 2015 Cohen Film Collection / Cineteca di Bologna restoration: the first ~45 s (film-leader animation, Cohen logo, restoration text card) and the last ~40 s (restoration card, Cohen logo) are modern additions. Trim both before publishing; the film itself is PD."
+   "notes": "No audio stream (Internet Archive's own silent-* series, score removed). The video is the 2015 Cohen Film Collection / Cineteca di Bologna restoration: the first ~45 s (film-leader animation, Cohen logo, restoration text card) and the last ~40 s (restoration card, Cohen logo) are modern additions. Trim both before publishing; the film itself is PD.",
+   "trim_start": 57.5,
+   "trim_end": 20.7
   }
  },
  {
@@ -86,7 +88,8 @@
    "width": 854,
    "height": 480,
    "has_added_score": false,
-   "notes": "No audio stream (score removed). The source is a Criterion Blu-ray: the first ~15 s carry Criterion Collection and Janus Films logos (trademarks), the tail sampled was black film with no added cards. Trim the opening logos before publishing."
+   "notes": "No audio stream (score removed). The source is a Criterion Blu-ray: the first ~15 s carry Criterion Collection and Janus Films logos (trademarks), the tail sampled was black film with no added cards. Trim the opening logos before publishing.",
+   "trim_start": 26.0
   }
  },
  {
@@ -116,7 +119,9 @@
    "width": 854,
    "height": 480,
    "has_added_score": false,
-   "notes": "No audio stream (score removed). The source is a Criterion Blu-ray: trim the first ~20 s (Criterion/Janus logos, 'Music composed by Carl Davis' card, UCLA preservation card) and the last ~30 s (Carl Davis music credits, Harold Lloyd signature logo)."
+   "notes": "No audio stream (score removed). The source is a Criterion Blu-ray: trim the first ~20 s (Criterion/Janus logos, 'Music composed by Carl Davis' card, UCLA preservation card) and the last ~30 s (Carl Davis music credits, Harold Lloyd signature logo).",
+   "trim_start": 77.5,
+   "trim_end": 15.4
   }
  },
  {
@@ -146,7 +151,8 @@
    "width": 640,
    "height": 480,
    "has_added_score": false,
-   "notes": "No audio stream (score removed). The original 1920 Metro title card is intact. The final ~8 s is a modern 'Music composed and performed by Ben Model' card: trim it."
+   "notes": "No audio stream (score removed). The original 1920 Metro title card is intact. The final ~8 s is a modern 'Music composed and performed by Ben Model' card: trim it.",
+   "trim_end": 10.3
   }
  },
  {
@@ -235,7 +241,8 @@
    "width": 662,
    "height": 480,
    "has_added_score": false,
-   "notes": "No audio stream (score removed). Original 1925 tinted titles ('Copyright MCMXXV by Universal'). The final ~10 s is a modern 'This Edition Produced by David Shepard / Associate Producer Bret Hampton' card (Film Preservation Associates edition): trim it."
+   "notes": "No audio stream (score removed). Original 1925 tinted titles ('Copyright MCMXXV by Universal'). The final ~10 s is a modern 'This Edition Produced by David Shepard / Associate Producer Bret Hampton' card (Film Preservation Associates edition): trim it.",
+   "trim_end": 22.4
   }
  },
  {
@@ -350,7 +357,8 @@
    "height": 480,
    "has_added_score": false,
    "notes": "Item description: 'Has no audio'. The AAC track is near-silent hiss (mean -72 dB, max -48 dB): mute it on ingest. A print from the National Library of Australia (1928 Australian release of the US cut). The first ~15 s is a 'printed from preservation material in the National Film Archive, National Library of Australia' card: optional trim. Slow transfer speed, which accounts for the long runtime.",
-   "mute": true
+   "mute": true,
+   "trim_start": 18.5
   }
  },
  {
@@ -469,7 +477,8 @@
    "width": 640,
    "height": 480,
    "has_added_score": false,
-   "notes": "No audio stream at all. Only an MPEG-2 original at 640x480; the MP4 derivative 'Chelovek_s_kino-apparatom_512kb.mp4' (257,515,942 bytes) is just 320x240, so transcode the MPEG-2 on ingest. Original Russian titles with small English subtitles burned in. The final ~12 s is a card '...used by kind permission of the Russian State Archive For Documentary Film': trim it (the film is PD in the US)."
+   "notes": "No audio stream at all. Only an MPEG-2 original at 640x480; the MP4 derivative 'Chelovek_s_kino-apparatom_512kb.mp4' (257,515,942 bytes) is just 320x240, so transcode the MPEG-2 on ingest. Original Russian titles with small English subtitles burned in. The final ~12 s is a card '...used by kind permission of the Russian State Archive For Documentary Film': trim it (the film is PD in the US).",
+   "trim_end": 7.4
   }
  },
  {
