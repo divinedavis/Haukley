@@ -30,8 +30,10 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
+#ifdef HAUKLEY_DEBUG
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
+#endif
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
