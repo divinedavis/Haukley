@@ -598,7 +598,8 @@
    "width": 1920,
    "height": 800,
    "has_added_score": false,
-   "notes": "Official Blender Foundation PeerTube (video.blender.org). HEAD returns 403; a normal GET 302-redirects to signed object storage (verified with a ranged GET, 206 + full length). The original soundtrack is part of the licensed film. Alternative official file: https://download.blender.org/demo/movies/ToS/tears_of_steel_720p.mov (372,178,639 bytes, 200 OK). Most other files in download.blender.org were re-packed as .zip in July 2026."
+   "notes": "Official Blender Foundation PeerTube (video.blender.org). HEAD returns 403; a normal GET 302-redirects to signed object storage (verified with a ranged GET, 206 + full length). The original soundtrack is part of the licensed film. Alternative official file: https://download.blender.org/demo/movies/ToS/tears_of_steel_720p.mov (372,178,639 bytes, 200 OK). Most other files in download.blender.org were re-packed as .zip in July 2026. Key art uses a frame with no actors (license: actor images not for commercial promotion).",
+   "still_at": 0.6403269754768393
   }
  },
  {
