@@ -19,13 +19,15 @@ sub onData()
     t = d.title
     m.t = t
     m.backdrop.uri = t.backdrop
+    ' These titles aren't exclusive, and they stream in HD/SD without captions yet: no
+    ' "Original", 4K, HDR or CC claims.
     if t.kind = "show"
-        m.eyebrow.text = "HAUKLEY ORIGINAL SERIES"
+        m.eyebrow.text = "STREAMING FREE · SERIES"
     else
-        m.eyebrow.text = "HAUKLEY ORIGINAL FILM"
+        m.eyebrow.text = "STREAMING FREE"
     end if
     m.title.text = t.title
-    m.meta.text = metaLine(t) + "  ·  4K  ·  HDR  ·  CC"
+    m.meta.text = metaLine(t)
     m.tagline.text = t.tagline
     m.desc.text = t.description
     m.credits.text = t.credits
@@ -40,8 +42,6 @@ sub onData()
         playTitle = t.title + " · Episode 1"
         playEpisode = 1
     end if
-    ' Trailers play without ads (and leave no bookmark).
-    trailer = { type: "play", url: t.stream, title: t.title + " · Trailer", id: t.id, episode: 0, ads: false, startAt: 0 }
     r = d.resume
     if r <> invalid
         ' Bookmarked: Resume first, then start over from the same item.
@@ -50,15 +50,13 @@ sub onData()
         m.actions = [
             { type: "play", url: r.url, title: r.title, id: t.id, episode: r.episode, ads: true, startAt: r.at }
             { type: "play", url: r.url, title: r.title, id: t.id, episode: r.episode, ads: true, startAt: 0 }
-            trailer
         ]
-        buildButtons([resumeLabel, "Play from Beginning", "Trailer"])
+        buildButtons([resumeLabel, "Play from Beginning"])
     else
         m.actions = [
             { type: "play", url: playUrl, title: playTitle, id: t.id, episode: playEpisode, ads: true, startAt: 0 }
-            trailer
         ]
-        buildButtons([playLabel, "Trailer"])
+        buildButtons([playLabel])
     end if
 
     root = CreateObject("roSGNode", "ContentNode")

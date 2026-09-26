@@ -32,16 +32,13 @@ export function DetailScreen({ id, onPlay, onOpen }: Props) {
 
       <ScrollView ref={scroll} scrollEnabled={false} showsVerticalScrollIndicator={false}>
         <View style={styles.top}>
-          <Text style={styles.eyebrow}>{isShow ? 'HAUKLEY ORIGINAL SERIES' : 'HAUKLEY ORIGINAL FILM'}</Text>
+          <Text style={styles.eyebrow}>{isShow ? 'STREAMING FREE · SERIES' : 'STREAMING FREE'}</Text>
           <Text style={styles.title}>{t.title}</Text>
           <View style={styles.metaRow}>
             <Badge text={t.rating} />
             <Text style={styles.meta}>
               {t.genre} · {t.year} · {isShow ? `${t.seasons} Season${t.seasons === 1 ? '' : 's'}` : t.runtime}
             </Text>
-            <Badge text="4K" />
-            <Badge text="HDR" />
-            <Badge text="CC" />
           </View>
           <Text style={styles.tagline}>{t.tagline}</Text>
           <Text style={styles.desc}>{t.description}</Text>
@@ -72,8 +69,6 @@ export function DetailScreen({ id, onPlay, onOpen }: Props) {
                 onPress={() => onPlay(t.id, isShow ? 1 : undefined)}
               />
             )}
-            <Button label="Trailer" icon="▶" onFocus={toTop} onPress={() => onPlay(t.id, 99)} />
-            <Button label="Up Next" icon="+" round onFocus={toTop} onPress={() => {}} />
           </View>
         </View>
 

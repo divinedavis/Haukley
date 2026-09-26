@@ -14,14 +14,6 @@ struct TitleDetailView: View {
                 ZStack {
                     BundleImage(url: title.backdrop)
                         .aspectRatio(16 / 9, contentMode: .fit)
-                    Button { play = PlayRequest(title: title, trailer: true) } label: {
-                        Image(systemName: "play.fill").font(.system(size: 22))
-                            .frame(width: 56, height: 56)
-                            .background(.black.opacity(0.5), in: Circle())
-                            .overlay(Circle().stroke(.white, lineWidth: 1.5))
-                    }
-                    .buttonStyle(.plain)
-                    .accessibilityLabel("Play trailer")
                 }
                 .overlay(alignment: .topTrailing) {
                     Button { dismiss() } label: {
@@ -72,9 +64,6 @@ struct TitleDetailView: View {
                                 Text("Share").font(.system(size: 11))
                             }
                             .foregroundStyle(.white)
-                        }
-                        ActionButton(label: "Trailer", systemImage: "film") {
-                            play = PlayRequest(title: title, trailer: true)
                         }
                     }
                     .padding(.top, 4)

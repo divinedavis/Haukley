@@ -129,10 +129,11 @@ struct HomeView: View {
                     PosterRow(title: spec.title, titles: titles)
                 }
             }
-            // "Only on Haukley" sits after the second row, like Netflix's tall originals row.
+            // A tall "Haukley Picks" row sits after the second row (these films aren't exclusive,
+            // so no "Only on Haukley").
             if i == 1 {
                 let originals = catalog.featured.filter(keep)
-                if !originals.isEmpty { PosterRow(title: "Only on Haukley", titles: originals, tall: true) }
+                if !originals.isEmpty { PosterRow(title: "Haukley Picks", titles: originals, tall: true) }
             }
         }
         if !library.myList.filter(keep).isEmpty {
