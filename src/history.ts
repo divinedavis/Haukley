@@ -15,7 +15,7 @@ const listeners = new Set<(w: Watch[]) => void>();
 // (same as the iPhone app). Real viewing replaces these as it happens.
 function seed(): Watch[] {
   const now = Date.now();
-  return rows.upNext.map((u, i) => {
+  return (rows.upNext as { id: string; episode?: number; progress: number }[]).map((u, i) => {
     const duration = 45 * 60;
     return { id: u.id, episode: u.episode ?? 0, position: Math.round(u.progress * duration), duration, updatedAt: now - i * 3600_000 };
   });

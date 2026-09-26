@@ -1027,7 +1027,7 @@ function startAds(t) {
     m.addEventListener(E.CONTENT_RESUME_REQUESTED, playContent);
     m.addEventListener(E.STARTED, () => logAdEvent("ad_started"));
     m.addEventListener(E.COMPLETE, () => logAdEvent("ad_completed"));
-    m.addEventListener(ima.AdErrorEvent.Type.AD_ERROR, playContent);
+    m.addEventListener(ima.AdErrorEvent.Type.AD_ERROR, ev => { console.warn("IMA ad error:", ev.getError?.().toString()); playContent(); });
     try {
       m.init(player.el.clientWidth, player.el.clientHeight, ima.ViewMode.NORMAL);
       m.start();
@@ -1035,7 +1035,7 @@ function startAds(t) {
       playContent();
     }
   });
-  s.loader.addEventListener(ima.AdErrorEvent.Type.AD_ERROR, playContent);
+  s.loader.addEventListener(ima.AdErrorEvent.Type.AD_ERROR, ev => { console.warn("IMA ad error:", ev.getError?.().toString()); playContent(); });
   video.addEventListener("ended", s.onEnded = () => { s.contentDone = true; s.loader.contentComplete(); });
   const req = new ima.AdsRequest();
   req.adTagUrl = state.ads.adTagTemplate

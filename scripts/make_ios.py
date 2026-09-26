@@ -10,6 +10,7 @@ Usage: .venv/bin/python scripts/make_ios.py
 """
 import colorsys
 import json
+import shutil
 import pathlib
 
 from PIL import Image
@@ -58,6 +59,12 @@ def main():
     rows = json.loads((ROOT / "scripts" / "rows.json").read_text())
     ads = json.loads((ROOT / "scripts" / "ads.json").read_text())
     streams = rows["streams"]
+
+    # Drop art for titles no longer in the catalog so removed titles don't ship in the bundle.
+    keep = {t["id"] for key in ("movies", "shows") for t in cat[key]}
+    for d in OUT.glob("*/"):
+        if d.name not in keep:
+            shutil.rmtree(d)
 
     titles = []
     for kind, key in (("movie", "movies"), ("show", "shows")):

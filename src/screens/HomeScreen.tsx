@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { FEATURED, MOVIES, ROWS, SHOWS, getTitle, type Row } from '../catalog';
+import { FEATURED, MOVIES, ROWS, SHOWS, getTitle, hasTitle, type Row } from '../catalog';
 import { Hero, HERO_HEIGHT, HERO_OVERLAP } from '../components/Hero';
 import { Shelf } from '../components/Shelf';
 import { Tab, TopNav } from '../components/TopNav';
@@ -33,7 +33,8 @@ export function HomeScreen({ active, onOpen, onPlay }: Props) {
         if (r.type !== 'upNext') {
           return [r];
         }
-        const items = watching.map(w => ({
+        // History can name titles no longer in the catalog (older builds): skip those.
+        const items = watching.filter(w => hasTitle(w.id)).map(w => ({
           title: getTitle(w.id),
           label: timeLeftLabel(w),
           progress: w.duration > 0 ? w.position / w.duration : 0,

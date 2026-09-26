@@ -14,6 +14,7 @@ struct HaukleyApp: App {
                 .environmentObject(router)
                 .preferredColorScheme(.dark)
                 .tint(.white)
+                .task { await CatalogSync.refresh() }
         }
     }
 }

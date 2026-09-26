@@ -1,0 +1,1187 @@
+[
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "our-hospitality",
+  "title": "Our Hospitality",
+  "year": 1923,
+  "genre": "Comedy",
+  "runtime": "1 hr 14 min",
+  "description": "A young man travels South to claim his inheritance and falls for a girl whose family has sworn a blood feud against his, and they cannot shoot him while he is a guest in their house.",
+  "credits": "Directed by Buster Keaton · John G. Blystone · Starring Buster Keaton · Natalie Talmadge · Joe Roberts",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by Metro in 1923.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Our_Hospitality"
+   ]
+  },
+  "source": {
+   "archive_identifier": "MyMovie_201801",
+   "url": "https://archive.org/download/MyMovie_201801/My%20Movie.mp4",
+   "bytes": 669557570,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Silent Hall of Fame upload (silent_films collection). The AAC track is digital silence (-91 dB at 30% and 70%). Original Joseph M. Schenck / Metro main title and credit cards; ends on the original 'The End' card, with no added logos in the sampled head and tail frames. This is a different copy from the rejected 'OurHospitalityBusterKeatonsilent' (which has a music track).",
+   "silent_audio": true
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "seven-chances",
+  "title": "Seven Chances",
+  "year": 1925,
+  "genre": "Comedy",
+  "runtime": "56 min",
+  "description": "A broke young stockbroker learns he will inherit seven million dollars if he is married by 7 p.m. that day, and his one newspaper ad brings a stampede of would-be brides.",
+  "credits": "Directed by Buster Keaton · Starring Buster Keaton · T. Roy Barnes · Ruth Dwyer",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by Metro-Goldwyn in 1925. Based on the 1916 play by Roi Cooper Megrue, which is also PD.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Seven_Chances"
+   ]
+  },
+  "source": {
+   "archive_identifier": "my-movie_202208",
+   "url": "https://archive.org/download/my-movie_202208/My%20Movie.mp4",
+   "bytes": 497831434,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Silent Hall of Fame upload (silent_films collection). The AAC track is digital silence (-91 dB). Includes the original two-strip color opening; original Metro-Goldwyn titles at head and 'The End' card at tail. Runs 56 min.",
+   "silent_audio": true
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "steamboat-bill-jr",
+  "title": "Steamboat Bill, Jr.",
+  "year": 1928,
+  "genre": "Comedy",
+  "runtime": "1 hr 7 min",
+  "description": "A college dandy returns home to his gruff riverboat-captain father, falls for the daughter of Dad's rival, and ends up riding out a cyclone in one of the most famous stunts ever filmed.",
+  "credits": "Directed by Charles Reisner · Buster Keaton · Starring Buster Keaton · Ernest Torrence · Marion Byron",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by United Artists in 1928.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Steamboat_Bill,_Jr."
+   ]
+  },
+  "source": {
+   "archive_identifier": "SteamboatBillJr_201411",
+   "url": "https://archive.org/download/SteamboatBillJr_201411/Steamboat-Bill-Jr-v2.mp4",
+   "bytes": 612789376,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Silent Hall of Fame upload (silent_films collection). No audio stream at all (ffprobe). Original Joseph M. Schenck / United Artists main title and credits; ends on the original 'The End' card."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-navigator",
+  "title": "The Navigator",
+  "year": 1924,
+  "genre": "Comedy",
+  "runtime": "1 hr",
+  "description": "A spoiled millionaire and the heiress who turned him down end up alone, adrift on an enormous empty ocean liner.",
+  "credits": "Directed by Buster Keaton · Donald Crisp · Starring Buster Keaton · Kathryn McGuire",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by Metro-Goldwyn in 1924.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/The_Navigator_(1924_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "mymovie_202004",
+   "url": "https://archive.org/download/mymovie_202004/My%20Movie.mp4",
+   "bytes": 1033301465,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Silent Hall of Fame upload (silent_films collection). The AAC track is digital silence (-91 dB). Opens with the period Metro-Goldwyn-Mayer lion card, then the original Schenck/Metro-Goldwyn titles; it is part of the release print, but never use the MGM lion in Haukley marketing. The last ~3 s is a plain white-on-black 'The End' in a modern font (probably uploader-added): optional trim.",
+   "silent_audio": true
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "college",
+  "title": "College",
+  "year": 1927,
+  "genre": "Comedy",
+  "runtime": "1 hr 5 min",
+  "description": "A bookish high-school valedictorian who scorns sports goes to college and tries every athletic event on campus to win the girl.",
+  "credits": "Directed by James W. Horne · Buster Keaton · Starring Buster Keaton · Anne Cornwall · Harold Goodwin",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by United Artists in 1927.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/College_(1927_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "College_201405",
+   "url": "https://archive.org/download/College_201405/College-v2.mp4",
+   "bytes": 584562671,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Silent Hall of Fame upload (silent_films collection). No audio stream (ffprobe). Original Schenck / United Artists titles; ends on the original 'The End' card. The alternative 'college_1927' (976x720) ends with a 'Produced for video by Bret Wood' (Kino) card, so it was not used."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-cameraman",
+  "title": "The Cameraman",
+  "year": 1928,
+  "genre": "Comedy",
+  "runtime": "1 hr 10 min",
+  "description": "A tintype photographer buys a battered newsreel camera to impress a girl at MGM's newsreel office, and a runaway monkey helps him land the scoop of his life.",
+  "credits": "Directed by Edward Sedgwick · Buster Keaton · Starring Buster Keaton · Marceline Day",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by MGM in 1928.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/The_Cameraman"
+   ]
+  },
+  "source": {
+   "archive_identifier": "the-cameraman-28",
+   "url": "https://archive.org/download/the-cameraman-28/The%20Cameraman%20%281928%29.mp4",
+   "bytes": 1260059541,
+   "width": 1440,
+   "height": 1072,
+   "has_added_score": true,
+   "notes": "This is the 2016 Criterion Collection / Janus Films / Cineteca di Bologna / Warner Bros. 4K restoration (a Blu-ray encode). The first ~56 s is modern material: the Criterion logo animation, Janus Films logo and a restoration text card. Trim it; the film starts on the MGM lion at ~57 s. The tail ends on the original MGM \"The End\" card. The AAC track is the Criterion-commissioned score (copyrighted), so MUTE it. Never use Criterion or Janus marks.",
+   "mute": true,
+   "trim_start": 57.0
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "speedy",
+  "title": "Speedy",
+  "year": 1928,
+  "genre": "Comedy",
+  "runtime": "1 hr 25 min",
+  "description": "A baseball-mad New York soda jerk fights to save his girlfriend's grandfather's horse-drawn streetcar, the last in the city, with a cameo from Babe Ruth.",
+  "credits": "Directed by Ted Wilde · Starring Harold Lloyd · Ann Christy · Bert Woodruff · Babe Ruth",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by Paramount in 1928. CAUTION: Harold Lloyd Entertainment asserts trademarks in Lloyd's name, likeness and 'glasses' character; do not use them in Haukley marketing or row art.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Speedy_(film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "speedy_1928",
+   "url": "https://archive.org/download/speedy_1928/speedy_1928.mp4",
+   "bytes": 2481953915,
+   "width": 640,
+   "height": 480,
+   "has_added_score": true,
+   "notes": "The Harold Lloyd Trust / New Line DVD edition. The first ~13 s is modern: the Harold Lloyd Entertainment 'glasses' trademark logo and a 'Music Composed by Carl Davis' card. Trim it; the film starts on the Paramount Release card. The last ~36 s is modern: a UCLA restoration card, Carl Davis music credits and a '© Harold Lloyd Trust / Music © 1992 Carl Davis' card. Trim from ~5122 s. The MP3 track is the 1992 Carl Davis score (copyrighted), so MUTE it. The copy 'speedy_202306' has a burned-in freemake.com watermark and a Boensnes copyrighted score; not used.",
+   "mute": true,
+   "trim_start": 13.5,
+   "trim_end": 36.0
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "animal-crackers",
+  "title": "Animal Crackers",
+  "year": 1930,
+  "genre": "Comedy",
+  "runtime": "1 hr 38 min",
+  "description": "Captain Spaulding, the famous African explorer, crashes a Long Island society party where a priceless painting goes missing, with all four Marx Brothers at full throttle.",
+  "credits": "Directed by Victor Heerman · Starring Groucho Marx · Harpo Marx · Chico Marx · Zeppo Marx · Margaret Dumont",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by Paramount in August 1930, so PD as of 2026-01-01 (Duke CSPD 2026 class). Based on the 1928 Kaufman/Ryskind/Kalmar/Ruby stage musical, and its songs (e.g. 'Hooray for Captain Spaulding', 1928) are PD too; songs first published with the film in 1930 fall in the same 2026 class. Universal owns the Paramount pre-1950 library but has no copyright left in this film; do not use Universal or Paramount marks in marketing.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Animal_Crackers_(1930_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "animal-crackers-1930",
+   "url": "https://archive.org/download/animal-crackers-1930/Animal%20Crackers%201930.mp4",
+   "bytes": 923058487,
+   "width": 1456,
+   "height": 1072,
+   "has_added_score": false,
+   "notes": "A Universal Blu-ray encode. The first ~26 s is the modern Universal (Comcast) logo animation: trim it; the film starts on the original Paramount Picture card at ~28 s. The tail ends on the original Paramount card. Original 1930 soundtrack. A clean alternative with no modern logo is 'animal-crackers_1930/animal-crackers_1930.mp4' (768x576, 3.42 GB).",
+   "trim_start": 26.0
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "it",
+  "title": "It",
+  "year": 1927,
+  "genre": "Romance",
+  "runtime": "1 hr 15 min",
+  "description": "A spirited department-store salesgirl with plenty of 'It' sets her sights on the store's handsome young owner.",
+  "credits": "Directed by Clarence G. Badger · Starring Clara Bow · Antonio Moreno · William Austin · Gary Cooper",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by Paramount in 1927. Based on Elinor Glyn's 1927 novella, which is also PD.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/It_(1927_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "it-1927_202510",
+   "url": "https://archive.org/download/it-1927_202510/It%20%281927%29.mp4",
+   "bytes": 808021714,
+   "width": 928,
+   "height": 720,
+   "has_added_score": true,
+   "notes": "Opens on the original Paramount Picture card and ends on the original 'The End / Paramount' card. No modern logos in the head or tail. The Opus track is a modern score of unknown provenance (the Carl Davis / Thames score is on other copies): MUTE it. The alternative 'it-comedy-1927' has Milestone / Photoplay / Thames Silents logos and a Killiam copyright card, so it was not used.",
+   "mute": true
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "sunrise",
+  "title": "Sunrise",
+  "year": 1927,
+  "genre": "Romance",
+  "runtime": "1 hr 34 min",
+  "description": "A farmer tempted by a woman from the city plots to drown his wife, then spends a long, redemptive day in the city falling in love with her again.",
+  "credits": "Directed by F. W. Murnau · Starring George O'Brien · Janet Gaynor · Margaret Livingston",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by Fox in 1927 (the film carries a 1927 Fox Film Corporation notice). Based on Hermann Sudermann's 1917 story 'Die Reise nach Tilsit', which is also PD.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Sunrise:_A_Song_of_Two_Humans"
+   ]
+  },
+  "source": {
+   "archive_identifier": "sunrise_1927",
+   "url": "https://archive.org/download/sunrise_1927/sunrise_1927.ia.mp4",
+   "bytes": 496750918,
+   "width": 568,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "No audio stream (ffprobe), so there is no score at all; the 1927 Movietone score is PD if you ever want to add it. Original William Fox titles at the head and 'Finis' at the tail, with no added cards. This is the IA-derived MP4 (.ia.mp4) of the item. The copy 'sunrise-a-song-of-two-humans-f.-w.-murnau-1927' has burned-in Spanish subtitles and was not used."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-hunchback-of-notre-dame",
+  "title": "The Hunchback of Notre Dame",
+  "year": 1923,
+  "genre": "Horror",
+  "runtime": "1 hr 56 min",
+  "description": "In 15th-century Paris, the deformed bell-ringer Quasimodo risks everything to protect the Gypsy dancer Esmeralda from a scheming nobleman and a mob.",
+  "credits": "Directed by Wallace Worsley · Starring Lon Chaney · Patsy Ruth Miller · Norman Kerry",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by Universal in 1923. Based on Victor Hugo's 1831 novel (PD).",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/The_Hunchback_of_Notre_Dame_(1923_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "TheHunchbackOfNotreDame1923_201312",
+   "url": "https://archive.org/download/TheHunchbackOfNotreDame1923_201312/The-Hunchback-of-Notre-Dame-v2.mp4",
+   "bytes": 1035524150,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Silent Hall of Fame upload (silent_films collection). No audio stream (ffprobe). Original Carl Laemmle / Universal main title and 'Finis' card. Runs 116 min (slower transfer speed than the 101-min Feature Films copy)."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "dr-jekyll-and-mr-hyde",
+  "title": "Dr. Jekyll and Mr. Hyde",
+  "year": 1920,
+  "genre": "Horror",
+  "runtime": "1 hr 23 min",
+  "description": "A saintly London doctor tests a potion that splits off his darker self, and the monstrous Mr. Hyde begins to take over.",
+  "credits": "Directed by John S. Robertson · Starring John Barrymore · Martha Mansfield · Nita Naldi",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by Paramount (Famous Players-Lasky) in 1920. Based on Stevenson's 1886 novella (PD).",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Dr._Jekyll_and_Mr._Hyde_(1920_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "Dr.JekyllAndMr.Hyde1920DirectorJohnS.Robertson",
+   "url": "https://archive.org/download/Dr.JekyllAndMr.Hyde1920DirectorJohnS.Robertson/Dr-Jekyll-and-Mr-Hyde-v2.mp4",
+   "bytes": 738788947,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Silent Hall of Fame upload (silent_films collection). No audio stream (ffprobe). Original Adolph Zukor / Paramount-Artcraft main title (with its 1920 copyright line); no added cards in the head or tail sampled."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "white-zombie",
+  "title": "White Zombie",
+  "year": 1932,
+  "genre": "Horror",
+  "runtime": "1 hr 5 min",
+  "description": "A young couple's wedding trip to Haiti turns to horror when a jealous planter enlists a voodoo master who commands an army of the walking dead.",
+  "credits": "Directed by Victor Halperin · Starring Bela Lugosi · Madge Bellamy · Joseph Cawthorn",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Copyright not renewed (Wikipedia list, citing Rhodes, 'White Zombie: Anatomy of a Horror Film', p. 280). Based on William Seabrook's 1929 book 'The Magic Island', which is PD by date. The music was new orchestral recordings made for the film (supervised by Abe Meyer) of existing, largely classical compositions (Wikipedia).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/White_Zombie_(film)",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "white_zombie",
+   "url": "https://archive.org/download/white_zombie/white_zombie.mp4",
+   "bytes": 407863437,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Internet Archive Feature Films copy. Original 1932 soundtrack. Opens on the original Halperin title and ends on the 'The End / Released by United Artists Corp.' card, with nothing added."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-terror",
+  "title": "The Terror",
+  "year": 1963,
+  "genre": "Horror",
+  "runtime": "1 hr 19 min",
+  "description": "A lost French officer follows a mysterious woman to the castle of a haunted baron, where a vengeful witch is waiting.",
+  "credits": "Directed by Roger Corman · Starring Boris Karloff · Jack Nicholson · Sandra Knight",
+  "rights": {
+   "basis": "public-domain-no-notice",
+   "notes": "PD from release: there is no copyright notice in the credits (Wikipedia, citing 'The New Poverty Row', p. 51). An original screenplay. Corman's 1990 re-edit 'The Return of the Terror' adds new copyrighted footage, so use only this 1963 cut.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Terror_(1963_film)",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "RogerCormansTheTerror720p",
+   "url": "https://archive.org/download/RogerCormansTheTerror720p/theterror720p.mkv",
+   "bytes": 3511294620,
+   "width": 1280,
+   "height": 720,
+   "has_added_score": false,
+   "notes": "A 720p widescreen color transfer (MKV, AC-3 audio; remux or transcode on ingest). Opens with the period American International Pictures logo and ends on the original 'The End / A Filmgroup Production' card. The 640x480 'TheTerror' copy is a clean fallback."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "dementia-13",
+  "title": "Dementia 13",
+  "year": 1963,
+  "genre": "Horror",
+  "runtime": "1 hr 15 min",
+  "description": "A scheming widow hides her husband's death from his wealthy Irish family, just as an axe murderer starts stalking their castle.",
+  "credits": "Directed by Francis Ford Coppola · Starring William Campbell · Luana Anders · Patrick Magee",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Listed as PD (Wikipedia film article and list of PD films). An original screenplay by Coppola. The 2017 remake is a separate copyrighted work.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Dementia_13",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "dementia-13-1963_202312",
+   "url": "https://archive.org/download/dementia-13-1963_202312/Dementia%2013%20%281963%29.mp4",
+   "bytes": 455937133,
+   "width": 854,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Opens with the period American International logo; ends on the original end credits ('Filmed at Ardmore Studios, Bray'). Original soundtrack. 854x480."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "night-tide",
+  "title": "Night Tide",
+  "year": 1961,
+  "genre": "Horror",
+  "runtime": "1 hr 25 min",
+  "description": "A lonely sailor on shore leave falls for a sideshow 'mermaid' who may be descended from sea creatures that kill by the full moon.",
+  "credits": "Directed by Curtis Harrington · Starring Dennis Hopper · Linda Lawson · Luana Anders",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Wikipedia: 'The film is in the public domain, as the copyright wasn't renewed.' An original script by Harrington; the Poe verse it quotes is PD.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Night_Tide",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "NightTide1961",
+   "url": "https://archive.org/download/NightTide1961/NightTide1961.mp4",
+   "bytes": 531961901,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Opens on the original 'A Phoenix Film' card; original David Raksin score. No added material seen in the head or tail. 640x480 (a 16:9 open-matte-ish transfer exists as 'NightTide16x9CorrectedAudio', but it is labeled CC BY 3.0 by the uploader, so it was not used)."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-bat",
+  "title": "The Bat",
+  "year": 1959,
+  "genre": "Horror",
+  "runtime": "1 hr 20 min",
+  "description": "A mystery writer rents a country mansion where a fortune is hidden in the walls, and a masked killer called The Bat wants it back.",
+  "credits": "Directed by Crane Wilbur · Starring Vincent Price · Agnes Moorehead · Gavin Gordon",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Wikipedia: 'Now in the public domain'; also on the Wikipedia list of PD films (TCM cite). Based on Mary Roberts Rinehart's 1908 novel 'The Circular Staircase' and the 1920 play 'The Bat', both PD by date.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Bat_(1959_film)",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "TheBat_201801",
+   "url": "https://archive.org/download/TheBat_201801/TheBat.MP4",
+   "bytes": 794387189,
+   "width": 1280,
+   "height": 720,
+   "has_added_score": false,
+   "notes": "A 1280x720 transfer. Opens on the original 'Liberty Pictures Corporation' card and ends on 'The End' with the Allied Artists logo, all period material. Original soundtrack."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-stranger",
+  "title": "The Stranger",
+  "year": 1946,
+  "genre": "Film Noir",
+  "runtime": "1 hr 34 min",
+  "description": "A war-crimes investigator tracks a Nazi fugitive to a sleepy Connecticut town, where he is posing as a respected teacher about to marry the judge's daughter.",
+  "credits": "Directed by Orson Welles · Starring Edward G. Robinson · Loretta Young · Orson Welles",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Wikipedia: 'the film is in the public domain because the producers did not renew the copyright in 1973.' An original story by Victor Trivas (a screen story).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Stranger_(1946_film)",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "Stranger1946HD",
+   "url": "https://archive.org/download/Stranger1946HD/The.Stranger.1946.REMASTERED.1080p.BluRay.H264.AAC-RARBG.mp4",
+   "bytes": 1925383170,
+   "width": 1488,
+   "height": 1080,
+   "has_added_score": false,
+   "notes": "A 1080p encode of the 2013 Kino Blu-ray, sourced from a Library of Congress 35mm print. Opens on the original International Pictures logo and ends on 'The End / An International Picture / Released through RKO Radio Pictures'. No Kino logo or restoration card in the head or tail frames. Original soundtrack."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "scarlet-street",
+  "title": "Scarlet Street",
+  "year": 1945,
+  "genre": "Film Noir",
+  "runtime": "1 hr 41 min",
+  "description": "A meek cashier and Sunday painter falls for a con woman who, with her brutal boyfriend, schemes to sell his paintings as her own.",
+  "credits": "Directed by Fritz Lang · Starring Edward G. Robinson · Joan Bennett · Dan Duryea",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Listed as PD on Wikipedia (film article and list of PD films). Based on Georges de La Fouchardière's French novel 'La Chienne' (1930), which is itself PD in the US as of 2026-01-01 (1930 publication, 95-year term), so the underlying-rights question is closed.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Scarlet_Street",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "ScarletStreetVideoQualityUpgrade",
+   "url": "https://archive.org/download/ScarletStreetVideoQualityUpgrade/ScarletStreetVideoQualityUpgrade.mp4",
+   "bytes": 887264605,
+   "width": 768,
+   "height": 576,
+   "has_added_score": false,
+   "notes": "The 'video quality upgrade' copy (768x576, sharper than the Feature Films copy). Starts on the Walter Wanger/Fritz Lang production title (the Universal globe is absent) and ends on the original 'The End / A Universal Release' card. Original soundtrack."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "kansas-city-confidential",
+  "title": "Kansas City Confidential",
+  "year": 1952,
+  "genre": "Film Noir",
+  "runtime": "1 hr 39 min",
+  "description": "A delivery driver framed for an armored-car robbery tracks the masked gang to a Mexican resort to clear his name.",
+  "credits": "Directed by Phil Karlson · Starring John Payne · Coleen Gray · Preston Foster · Lee Van Cleef",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Wikipedia: 'Because its copyright was not renewed in the 28th year after publication, the film entered the public domain in the United States in 1980.' An original screenplay.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Kansas_City_Confidential",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "Kansas_City_Confidential_1952",
+   "url": "https://archive.org/download/Kansas_City_Confidential_1952/Kansas_City_Confidential.mp4",
+   "bytes": 618699283,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Opens on the original 'Associated Players and Producers presents' card and ends on the cast roll, with nothing added. Original soundtrack. The 'kansascityconfidencial' copy skips the first card."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-hitch-hiker",
+  "title": "The Hitch-Hiker",
+  "year": 1953,
+  "genre": "Film Noir",
+  "runtime": "1 hr 11 min",
+  "description": "Two friends on a fishing trip pick up a hitchhiker who turns out to be a psychopathic killer, and he forces them to drive him across the Mexican desert.",
+  "credits": "Directed by Ida Lupino · Starring Edmond O'Brien · Frank Lovejoy · William Talman",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Wikipedia: 'The film is in the public domain in the United States'; National Film Registry title. Written by Lupino and Collier Young from a screen story by Daniel Mainwaring, based on the real 1950 Billy Cook killings (facts are not copyrightable).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Hitch-Hiker",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "Hitch_Hiker",
+   "url": "https://archive.org/download/Hitch_Hiker/Hitch-Hiker.mp4",
+   "bytes": 442543106,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Internet Archive Feature Films copy. Opens on the 'This is the true story…' card and the original RKO Radio logo, and ends on the RKO logo. Original soundtrack."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "suddenly",
+  "title": "Suddenly",
+  "year": 1954,
+  "genre": "Thriller",
+  "runtime": "1 hr 16 min",
+  "description": "Three hired gunmen take over a family's hilltop house in a small town to ambush the President's train, with Frank Sinatra as their cold-blooded leader.",
+  "credits": "Directed by Lewis Allen · Starring Frank Sinatra · Sterling Hayden · James Gleason",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Wikipedia: copyright not renewed in 1970 and the film entered the public domain (citing Santopietro, 'Sinatra in Hollywood', and American Film). An original screenplay by Richard Sale. Use the original B&W version only; the 1986 Hal Roach colorization is a separate claimed work.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Suddenly_(1954_film)",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "suddenly",
+   "url": "https://archive.org/download/suddenly/suddenly.mp4",
+   "bytes": 472229483,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Internet Archive Feature Films copy (the one Wikipedia links). Original UA title sequence and 'The End / A United Artists Release' card, then the cast roll. Original soundtrack."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-big-combo",
+  "title": "The Big Combo",
+  "year": 1955,
+  "genre": "Film Noir",
+  "runtime": "1 hr 27 min",
+  "description": "An obsessed police lieutenant goes after a sadistic mob boss, and the key may be the gangster's unhappy girlfriend.",
+  "credits": "Directed by Joseph H. Lewis · Starring Cornel Wilde · Richard Conte · Jean Wallace · Lee Van Cleef",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Wikipedia: 'While the film's title cards feature a copyright claim, a notice was not properly filed. In 2007 the United States Copyright Office ultimately rejected the notice, leaving the film in the public domain.' Based on an original story by Philip Yordan.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Big_Combo",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "The_Big_Combo_1955",
+   "url": "https://archive.org/download/The_Big_Combo_1955/Big_Combo_1955.mp4",
+   "bytes": 544653368,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Opens on the original Allied Artists card and ends on 'The End / A Security-Theodora Production'. Original soundtrack."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "blackmail",
+  "title": "Blackmail",
+  "year": 1929,
+  "genre": "Thriller",
+  "runtime": "1 hr 25 min",
+  "description": "A Scotland Yard detective's girlfriend kills an artist in self-defense, and a blackmailer who saw her starts squeezing the couple. It was Hitchcock's first talkie.",
+  "credits": "Directed by Alfred Hitchcock · Starring Anny Ondra · John Longden · Cyril Ritchard",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. British (British International Pictures, 1929). Any US copyright restored under URAA ran 95 years from 1929 publication and expired 2025-01-01. Based on Charles Bennett's 1928 play (PD). US-only conclusion: StudioCanal still controls it in the UK/EU, so geo-restrict. This is the 1929 sound version.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Blackmail_(1929_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "blackmail_1929",
+   "url": "https://archive.org/download/blackmail_1929/Blackmail%20-%20%281929%29.mp4",
+   "bytes": 1515625882,
+   "width": 1424,
+   "height": 1072,
+   "has_added_score": false,
+   "notes": "A StudioCanal Blu-ray encode (1424x1072). The first ~22 s is the modern StudioCanal logo animation: trim it; the film starts on the 1929 British Board of Film Censors certificate. The tail ends on the original British International Pictures 'The End'. Original soundtrack. The 'blackmail-1929' copy has burned-in Portuguese subtitles; not used. Never use StudioCanal marks.",
+   "trim_start": 22.0
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-woman-in-green",
+  "title": "The Woman in Green",
+  "year": 1945,
+  "genre": "Mystery",
+  "runtime": "1 hr 4 min",
+  "description": "Sherlock Holmes and Dr. Watson investigate a string of murders of young women in London, and the trail leads to hypnotism and Professor Moriarty.",
+  "credits": "Directed by Roy William Neill · Starring Basil Rathbone · Nigel Bruce · Hillary Brooke · Henry Daniell",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Wikipedia: 'The film is one of four films in the series which are in the public domain.' The Holmes and Watson characters are fully PD in the US (the last Conan Doyle stories entered the PD in 2023). A mostly original screenplay by Bertram Millhauser.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Woman_in_Green",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "TheWomanInGreen1945",
+   "url": "https://archive.org/download/TheWomanInGreen1945/TheWomanInGreen.mp4",
+   "bytes": 548925974,
+   "width": 720,
+   "height": 576,
+   "has_added_score": false,
+   "notes": "720x576 copy. Opens on the original title and ends on 'The End / A Universal Picture' and the original cast card; no added material. Original soundtrack. Do not use Universal marks in marketing."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-big-trail",
+  "title": "The Big Trail",
+  "year": 1930,
+  "genre": "Western",
+  "runtime": "1 hr 57 min",
+  "description": "A young trapper guides a wagon train of pioneers along the Oregon Trail while hunting the men who murdered his friend. This was John Wayne's first starring role.",
+  "credits": "Directed by Raoul Walsh · Starring John Wayne · Marguerite Churchill · El Brendel · Tyrone Power Sr.",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by Fox in October 1930 (copyright MCMXXX Fox Film Corporation), so PD as of 2026-01-01. This is the 70mm Fox Grandeur widescreen version.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/The_Big_Trail"
+   ]
+  },
+  "source": {
+   "archive_identifier": "the-big-trail-1930",
+   "url": "https://archive.org/download/the-big-trail-1930/The%20Big%20Trail%20%281930%29.mp4",
+   "bytes": 1025999368,
+   "width": 1920,
+   "height": 920,
+   "has_added_score": false,
+   "notes": "A wide 1920x920 transfer of the Grandeur widescreen version (about 2.09:1; keep the aspect ratio on ingest). Opens directly on the original 'Raoul Walsh's The Big Trail' title (no Fox logo) and ends on the original 'The End of the Big Trail' card. Original soundtrack. The 1008x480 'the-big-trail_1930' copy is identical content."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "angel-and-the-badman",
+  "title": "Angel and the Badman",
+  "year": 1947,
+  "genre": "Western",
+  "runtime": "1 hr 40 min",
+  "description": "A wounded gunslinger is nursed back to health by a Quaker family, and their daughter's faith starts to pull him away from his outlaw past.",
+  "credits": "Directed by James Edward Grant · Starring John Wayne · Gail Russell · Harry Carey",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Wikipedia: 'In 1975, the film entered the public domain in the United States because National Telefilm Associates did not renew its copyright registration in the 28th year after publication.' An original screenplay; a Republic release (not the Batjac-controlled McLintock! case).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Angel_and_the_Badman",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "angel_and_the_badman",
+   "url": "https://archive.org/download/angel_and_the_badman/angel_and_the_badman.mp4",
+   "bytes": 622377473,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Internet Archive Feature Films copy. Starts partway through the opening credits (the first title card appears to be missing, so the film opens on the supporting-cast card) and ends on 'The End' and the Republic Production card. Original soundtrack."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "santa-fe-trail",
+  "title": "Santa Fe Trail",
+  "year": 1940,
+  "genre": "Western",
+  "runtime": "1 hr 50 min",
+  "description": "West Point graduates Jeb Stuart and George Custer are posted to Bleeding Kansas and clash with abolitionist John Brown in the years before the Civil War.",
+  "credits": "Directed by Michael Curtiz · Starring Errol Flynn · Olivia de Havilland · Raymond Massey · Ronald Reagan",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Wikipedia: 'Santa Fe Trail entered the public domain in 1968 when United Artists Television … did not renew the copyright.' An original screenplay by Robert Buckner. Note: its portrayal of John Brown and slavery is historically slanted; consider a content note.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Santa_Fe_Trail_(film)",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "Santa_Fe_Trail_movie",
+   "url": "https://archive.org/download/Santa_Fe_Trail_movie/Santa_Fe_Trail.mp4",
+   "bytes": 684335863,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Opens on the original Warner Bros. shield and ends on the original cast roll. Original Max Steiner score. Do not use the WB shield in Haukley marketing."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-mark-of-zorro",
+  "title": "The Mark of Zorro",
+  "year": 1920,
+  "genre": "Adventure",
+  "runtime": "1 hr 14 min",
+  "description": "In Spanish California, a foppish young nobleman secretly rides as the masked swordsman Zorro to defend the people against a corrupt governor.",
+  "credits": "Directed by Fred Niblo · Starring Douglas Fairbanks · Marguerite De La Motte · Noah Beery",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Copyright 1920 Douglas Fairbanks Pictures Corporation. Based on Johnston McCulley's 1919 serial 'The Curse of Capistrano' (PD). CAUTION: Zorro Productions, Inc. asserts trademarks in the name ZORRO. The film itself is PD, but title the row with the full film title and avoid standalone 'Zorro' branding in ads and art.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/The_Mark_of_Zorro_(1920_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "markofzorro-1920",
+   "url": "https://archive.org/download/markofzorro-1920/markofzorro.mp4",
+   "bytes": 464620692,
+   "width": 640,
+   "height": 480,
+   "has_added_score": true,
+   "notes": "Internet Archive Feature Films copy (74 min, sound-speed transfer). Original title card with the 1920 copyright line, and no added logos at the head or tail. The AAC track is a loud added music score of unknown provenance (-7 dB mean), so MUTE it. The full scored alternatives 'the-mark-of-zorro-1920' and 'the-mark-of-zorro' have burned-in Portuguese subtitles and a Kino logo.",
+   "mute": true
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "robin-hood",
+  "title": "Robin Hood",
+  "year": 1922,
+  "genre": "Adventure",
+  "runtime": "2 hr 13 min",
+  "description": "The Earl of Huntingdon returns from the Crusades to find Prince John terrorizing England, and becomes the outlaw Robin Hood to fight back.",
+  "credits": "Directed by Allan Dwan · Starring Douglas Fairbanks · Wallace Beery · Enid Bennett",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Copyright 1922 Douglas Fairbanks Pictures Corporation.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Robin_Hood_(1922_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "RobinHood1922_201406",
+   "url": "https://archive.org/download/RobinHood1922_201406/Robin-Hood-v2.mp4",
+   "bytes": 1191032143,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Silent Hall of Fame upload (silent_films collection). No audio stream (ffprobe). Original titles with the 1922 copyright line, and it ends on the original 'The End' card. The 'silent-robin-hood' copy is a Kino edition with a Kino logo and 'Special contents © 1996, 2004 The Douris Corp.' end card; not used."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-thief-of-bagdad",
+  "title": "The Thief of Bagdad",
+  "year": 1924,
+  "genre": "Adventure",
+  "runtime": "2 hr 31 min",
+  "description": "A cocky Baghdad thief falls for the Caliph's daughter and sets out on a quest through monsters, magic and a flying carpet to win her.",
+  "credits": "Directed by Raoul Walsh · Starring Douglas Fairbanks · Julanne Johnston · Anna May Wong",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Copyright 1924 Douglas Fairbanks.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/The_Thief_of_Bagdad_(1924_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "vidtb",
+   "url": "https://archive.org/download/vidtb/vidtb.mp4",
+   "bytes": 834117161,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Silent Hall of Fame upload (silent_films collection). The AAC track is digital silence (-91 dB). Original main title with the 1924 copyright line, and it ends on the film's final shots. The last ~3 s is a plain modern-font 'The End' (probably uploader-added): optional trim. Runs 151 min.",
+   "silent_audio": true
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-black-pirate",
+  "title": "The Black Pirate",
+  "year": 1926,
+  "genre": "Adventure",
+  "runtime": "1 hr 23 min",
+  "description": "To avenge his father, a young nobleman joins the pirate crew that killed him, and must rescue a captive princess before the pirates claim her.",
+  "credits": "Directed by Albert Parker · Starring Douglas Fairbanks · Billie Dove · Donald Crisp",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by United Artists in 1926.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/The_Black_Pirate"
+   ]
+  },
+  "source": {
+   "archive_identifier": "TheBlackPirate720p1926",
+   "url": "https://archive.org/download/TheBlackPirate720p1926/TheBlackPirate720p.mp4",
+   "bytes": 785680749,
+   "width": 720,
+   "height": 480,
+   "has_added_score": true,
+   "notes": "This is a sepia/black-and-white print (720x480, 8:9 SAR), not the two-strip Technicolor version; the Technicolor copies on IA are recent Blu-ray rips. The original title and 'The End' cards are present, with no added logos. The AAC track is an added score of unknown provenance, so MUTE it.",
+   "mute": true
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-lost-world",
+  "title": "The Lost World",
+  "year": 1925,
+  "genre": "Sci-Fi",
+  "runtime": "1 hr 16 min",
+  "description": "Professor Challenger leads an expedition to a remote South American plateau where dinosaurs still roam, and brings a brontosaurus back to London.",
+  "credits": "Directed by Harry O. Hoyt · Starring Wallace Beery · Bessie Love · Lewis Stone · Lloyd Hughes",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by First National in 1925 (it was also PD earlier: never renewed). Based on Arthur Conan Doyle's 1912 novel, which is PD. This is the batch-1 fallback, now verified.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/The_Lost_World_(1925_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "TheLostWorldCompleteVideoQualityUpgrade",
+   "url": "https://archive.org/download/TheLostWorldCompleteVideoQualityUpgrade/TheLostWorldCompleteVideoQualityUpgrade.mp4",
+   "bytes": 608406853,
+   "width": 720,
+   "height": 540,
+   "has_added_score": true,
+   "notes": "The ~1998 George Eastman House reconstruction (NEA-funded), tinted. The first ~26 s is modern: 'This film is from the George Eastman House', NEA funding and reconstruction-source cards. Trim it; the film starts on the First National main title at ~28 s. The tail ends on the original 'The End / A First National Picture'. The AAC track is an added score, so MUTE it. The reconstruction may include a few bridging titles written for it: spot-check on ingest.",
+   "mute": true,
+   "trim_start": 26.0
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "wings",
+  "title": "Wings",
+  "year": 1927,
+  "genre": "War",
+  "runtime": "2 hr 20 min",
+  "description": "Two small-town rivals for the same girl become fighter pilots and best friends in the skies over WWI France. It won the first Academy Award for Best Picture.",
+  "credits": "Directed by William A. Wellman · Starring Clara Bow · Charles 'Buddy' Rogers · Richard Arlen · Gary Cooper",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by Paramount in 1927.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Wings_(1927_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "wings-silent-trimmed",
+   "url": "https://archive.org/download/wings-silent-trimmed/Wings%20-%20Silent%20-%20Trimmed.mp4",
+   "bytes": 909363925,
+   "width": 960,
+   "height": 720,
+   "has_added_score": false,
+   "notes": "Derived from Paramount's 2012 restoration, with the modern end credits already removed by the uploader ('Silent - Trimmed'). No audio stream, so the copyrighted 2012 score is gone. It opens on the original 1927 Paramount Picture card and ends on the original 'The End / Paramount' card; there is no 2012 Paramount logo or restoration card in the head or tail. The restoration is Paramount's, so never use Paramount marks. The alternative 'wings-1927' keeps the modern Paramount/Gulf+Western logo and restoration credits."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "hells-angels",
+  "title": "Hell's Angels",
+  "year": 1930,
+  "genre": "War",
+  "runtime": "2 hr 11 min",
+  "description": "Two very different English brothers join the Royal Flying Corps in WWI and are torn apart by war and by the same woman, with some of the most spectacular aerial combat ever filmed.",
+  "credits": "Directed by Howard Hughes · Starring Ben Lyon · James Hall · Jean Harlow",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by United Artists in 1930 (the film's own notice is 1930, The Caddo Company), so PD as of 2026-01-01.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Hell's_Angels_(film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "HellsAngels1930",
+   "url": "https://archive.org/download/HellsAngels1930/Hell%27s%20Angels%20%281930%29.mp4",
+   "bytes": 1971953205,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "The UCLA Film & Television Archive restoration. The first ~24 s is modern: 'restored by UCLA…Packard Foundation' and 'Special thanks to Universal…' cards. Trim it; the film starts on the 'Howard Hughes presents' title at ~28 s. The tail ends on the original 'The End'. Original soundtrack. The copy 'hells-angels_202509' also carries a modern Universal logo.",
+   "trim_start": 25.0
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-big-parade",
+  "title": "The Big Parade",
+  "year": 1925,
+  "genre": "War",
+  "runtime": "2 hr 30 min",
+  "description": "A pampered rich boy enlists after America enters WWI, finds comradeship and love in rural France, and then faces the horror of the front.",
+  "credits": "Directed by King Vidor · Starring John Gilbert · Renée Adorée · Karl Dane",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by MGM in 1925. Based on a story by Laurence Stallings (1925 or earlier, PD).",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/The_Big_Parade"
+   ]
+  },
+  "source": {
+   "archive_identifier": "silent-the-big-parade",
+   "url": "https://archive.org/download/silent-the-big-parade/The%20Big%20Parade.mp4",
+   "bytes": 791022032,
+   "width": 658,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "The Thames Television / Photoplay 1988 edition with the audio track removed ('silent-' series, no audio stream). It opens on the MGM lion and original titles. The last ~55 s is modern end credits: Carl Davis music credits, 'Presented by Thames Television in association with MGM' and 'Produced by David Gill and Kevin Brownlow'. Trim from ~9025 s, just after the original 'The End'.",
+   "trim_end": 55.0
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "meet-john-doe",
+  "title": "Meet John Doe",
+  "year": 1941,
+  "genre": "Drama",
+  "runtime": "2 hr 3 min",
+  "description": "A fired columnist invents a letter from a 'John Doe' threatening suicide in protest, then hires a drifter to play him, and a national movement spins out of control.",
+  "credits": "Directed by Frank Capra · Starring Gary Cooper · Barbara Stanwyck · Edward Arnold · Walter Brennan",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Wikipedia: 'In 1969, the film entered the public domain in the United States because the claimants did not renew its copyright registration in the 28th year after publication.' Based on Richard Connell's 1922 story 'A Reputation' (PD by date).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Meet_John_Doe",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "meet_john_doe",
+   "url": "https://archive.org/download/meet_john_doe/meet_john_doe.mp4",
+   "bytes": 769066604,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Internet Archive Feature Films copy. Opens on the original crowd montage and credits and ends on 'The End' and the original cast roll. Original soundtrack (Tiomkin score, part of the PD film). Audio is quiet (about -44 dB mean), so normalize it on ingest. 'mjd445878820' (964x720) has burned-in French subtitles; not used."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "a-star-is-born",
+  "title": "A Star Is Born",
+  "year": 1937,
+  "genre": "Drama",
+  "runtime": "1 hr 51 min",
+  "description": "A farm girl with dreams of Hollywood becomes a star with the help of a matinee idol, even as his own career and his drinking drag him down.",
+  "credits": "Directed by William A. Wellman · Starring Janet Gaynor · Fredric March · Adolphe Menjou",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Wikipedia: Warner Bros. bought the film's copyright 'including film, story, screenplay, and score' and 'in 1965, the film entered the public domain … because Warner did not renew.' Note: the plot resembles RKO's 'What Price Hollywood?' (1932, not yet PD), but it is not a credited adaptation and no claim was ever brought. Low risk; use only this 1937 version.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/A_Star_Is_Born_(1937_film)",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "AStarIsBorn1937FullHDMovie",
+   "url": "https://archive.org/download/AStarIsBorn1937FullHDMovie/AStarIsBorn%281937%29FullHDMovie.mp4",
+   "bytes": 757593493,
+   "width": 960,
+   "height": 720,
+   "has_added_score": false,
+   "notes": "A 960x720 Technicolor transfer. It opens on the original Selznick International gate/sign and credits and ends on the original final shots and the film's closing script-page shot. No modern logos seen. Original soundtrack."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-crowd",
+  "title": "The Crowd",
+  "year": 1928,
+  "genre": "Drama",
+  "runtime": "1 hr 33 min",
+  "description": "An ambitious young man arrives in New York sure he'll be somebody, then struggles through marriage, loss and a job as one more clerk in the crowd.",
+  "credits": "Directed by King Vidor · Starring Eleanor Boardman · James Murray · Bert Roach",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released by MGM in 1928.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://guides.library.cornell.edu/copyright/publicdomain",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/The_Crowd_(1928_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "TheCrowd1928",
+   "url": "https://archive.org/download/TheCrowd1928/The%20Crowd%20%281928%29.mp4",
+   "bytes": 644810998,
+   "width": 644,
+   "height": 480,
+   "has_added_score": true,
+   "notes": "Uploader: sourced from a TCM SD broadcast. No channel bug is visible in the head, tail or mid-film frames checked at full resolution, but spot-check on ingest. It opens on the MGM lion and original titles and ends on the original MGM 'The End'. The AAC track is Carl Davis's 1981 score (copyrighted), so MUTE it. 'the-crowd-1928-restored-movie-720p-hd' has a corner logo and burned-in French subtitles; not used.",
+   "mute": true
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "rain",
+  "title": "Rain",
+  "year": 1932,
+  "genre": "Drama",
+  "runtime": "1 hr 34 min",
+  "description": "Stranded by quarantine on a South Seas island, a defiant prostitute clashes with a fanatical missionary who is determined to reform her.",
+  "credits": "Directed by Lewis Milestone · Starring Joan Crawford · Walter Huston · William Gargan",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Wikipedia: 'In 1960, the film entered the public domain in the United States because the claimants did not renew its copyright registration in the 28th year after publication.' Based on W. Somerset Maugham's story 'Miss Thompson' (1921) and the 1922 Colton/Randolph play 'Rain', both PD by date.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Rain_(1932_film)",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "rain1932",
+   "url": "https://archive.org/download/rain1932/Rain.mp4",
+   "bytes": 585084957,
+   "width": 540,
+   "height": 360,
+   "has_added_score": false,
+   "notes": "Internet Archive Feature Films copy. It opens on the original Joseph M. Schenck / Joan Crawford title and ends on the original 'The End' card. Original soundtrack. Low resolution (540x360), so upscale on ingest or look for a better source later ('rain-with-joan-crawford-1932-1080p-hd-film', 1080x720, not verified)."
+  }
+ }
+]

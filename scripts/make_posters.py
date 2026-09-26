@@ -7,6 +7,7 @@ src/assets/titles/<id>/ and src/catalog.generated.ts (bundled, no network).
 Usage: .venv/bin/python scripts/make_posters.py
 """
 import io
+import urllib.request
 import json
 import pathlib
 
@@ -293,6 +294,16 @@ def main():
             print("ok", t["id"])
 
     make_banner().save(ROOT / "android/app/src/main/res/drawable/tv_banner.png")
+
+    # Only bundle films whose stream is already on the CDN (the rest are still ingesting).
+    def live(url):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, method="HEAD"), timeout=15) as r:
+                return r.status == 200
+        except Exception:
+            return False
+    entries = [(k, t) for k, t in entries if not t.get("stream") or live(t["stream"])]
+    print("bundled:", len(entries))
 
     fields = ("id", "title", "genre", "year", "rating", "tagline", "description", "credits")
     out = [

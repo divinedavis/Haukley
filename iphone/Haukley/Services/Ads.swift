@@ -9,7 +9,9 @@ enum Ads {
     }
 
     private static let config: Config? = {
-        guard let url = Bundle.main.url(forResource: "ads", withExtension: "json", subdirectory: "Catalog"),
+        let cached = CatalogSync.dir.appendingPathComponent("ads.json")
+        guard let url = FileManager.default.fileExists(atPath: cached.path)
+                ? cached : Bundle.main.url(forResource: "ads", withExtension: "json", subdirectory: "Catalog"),
               let data = try? Data(contentsOf: url) else { return nil }
         return try? JSONDecoder().decode(Config.self, from: data)
     }()

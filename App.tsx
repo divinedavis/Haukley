@@ -3,12 +3,20 @@ import { BackHandler, Platform, StatusBar, StyleSheet, TVEventControl, View } fr
 import { DetailScreen } from './src/screens/DetailScreen';
 import { HomeScreen } from './src/screens/HomeScreen';
 import { PlayerScreen } from './src/screens/PlayerScreen';
+import { loadCatalog, refreshCatalog } from './src/catalog';
 import type { Route } from './src/types';
 
 // Minimal stack navigator. Home stays mounted (hidden) under other screens so
 // its scroll position and focus survive a round trip to a detail page.
 function App() {
   const [stack, setStack] = useState<Route[]>([{ name: 'home' }]);
+  // Swap in the live catalog saved last launch before the first screen renders, then fetch
+  // the next one in the background (it applies on the following launch).
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    loadCatalog().finally(() => setReady(true));
+    refreshCatalog();
+  }, []);
   const push = useCallback((r: Route) => setStack(st => [...st, r]), []);
   const pop = useCallback(() => setStack(st => (st.length > 1 ? st.slice(0, -1) : st)), []);
 
@@ -35,6 +43,9 @@ function App() {
   }, [stack.length, pop]);
 
   const top = stack[stack.length - 1];
+  if (!ready) {
+    return <View style={styles.root} />;
+  }
   const openDetail = (id: string) => push({ name: 'detail', id });
   const play = (id: string, episode?: number, startAt?: number) => push({ name: 'player', id, episode, startAt });
 

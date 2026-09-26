@@ -16,6 +16,8 @@ export type Title = {
   card: ImageSourcePropType;
   backdrop: ImageSourcePropType;
   stills?: ImageSourcePropType[];
+  /** Real series carry their own episode list (with streams); placeholders don't. */
+  episodes?: (Episode & { stream: string })[];
 };
 
 export type Episode = {

@@ -7,6 +7,8 @@ re-encoded at Roku display size. Output: roku/dist/Haukley-roku.zip
 Usage: .venv/bin/python scripts/make_roku.py
 """
 import json
+import urllib.request
+import shutil
 import pathlib
 import zipfile
 
@@ -54,17 +56,31 @@ def make_pill():
     return out
 
 
+def live(url):
+    """True when the title's HLS master playlist is already on the CDN."""
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, method="HEAD"), timeout=15) as r:
+            return r.status == 200
+    except Exception:
+        return False
+
+
 def main():
     cat = json.loads((ROOT / "scripts" / "catalog.json").read_text())
     rows = json.loads((ROOT / "scripts" / "rows.json").read_text())
     ads = json.loads((ROOT / "scripts" / "ads.json").read_text())
     streams = rows["streams"]
 
+    # Start from a clean image folder: only titles packaged below ship (4 MB cap).
+    shutil.rmtree(IMG, ignore_errors=True)
+
     titles = {}
     for kind, key in (("movie", "movies"), ("show", "shows")):
         for t in cat[key]:
             tid = t["id"]
             src = ART / tid
+            if not (src / "poster@2x.jpg").exists() or (t.get("stream") and not live(t["stream"])):
+                continue  # art or video not ready yet (film still ingesting)
             save(src / "poster@2x.jpg", IMG / tid / "poster.jpg", POSTER, 70)
             save(src / "card@2x.jpg", IMG / tid / "card.jpg", CARD, 70)
             save(src / "backdrop@2x.jpg", IMG / tid / "backdrop.jpg", BACKDROP, 55)
@@ -92,11 +108,13 @@ def main():
                 entry["episodes"] = eps
             titles[tid] = entry
 
+    # Rows may name titles that aren't packaged (still ingesting): drop those, then empty rows.
     home = [{"key": "up-next", "title": "Up Next", "type": "upNext",
              "items": [{"id": u["id"], "label": u["label"], "progress": u["progress"], "episode": u.get("episode", 0)}
-                       for u in rows["upNext"]]}]
+                       for u in rows["upNext"] if u["id"] in titles]}]
     home += [{"key": r["key"], "title": r["title"], "type": r["type"],
-              "items": [{"id": i} for i in r["ids"]]} for r in rows["home"]]
+              "items": [{"id": i} for i in r["ids"] if i in titles]} for r in rows["home"]]
+    home = [r for r in home if r["items"]]
 
     (ROKU / "data").mkdir(parents=True, exist_ok=True)
     (ROKU / "data" / "catalog.json").write_text(json.dumps({"titles": titles, "rows": home, "ads": {k: ads[k] for k in ("adTagTemplate", "trackingUrl", "publishableKey")}}, separators=(",", ":")))

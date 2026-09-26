@@ -25,14 +25,25 @@ struct HomeView: View {
         catalog.featured.first(where: keep) ?? catalog.titles.first(where: keep) ?? catalog.titles[0]
     }
 
-    /// "#2 in Movies Today" when the hero is in a Top 10 row.
+    /// "#2 in Haukley's Top 10 Picks" when the hero is in a ranked (curated) row.
     private var heroRank: String? {
         for row in catalog.rows where row.type == "ranked" {
             if let i = row.ids.firstIndex(of: hero.id) {
-                return "#\(i + 1) in \(hero.isShow ? "Shows" : "Movies") Today"
+                return "#\(i + 1) in \(row.title)"
             }
         }
         return nil
+    }
+
+    /// Only offer filters that match something (no Shows chip until the catalog has series).
+    private var filters: [HomeFilter] {
+        HomeFilter.allCases.filter { f in
+            switch f {
+            case .shows: return !catalog.shows.isEmpty
+            case .movies: return !catalog.movies.isEmpty
+            case .new: return catalog.titles.contains { $0.badge != nil }
+            }
+        }
     }
 
     var body: some View {
@@ -86,7 +97,7 @@ struct HomeView: View {
                     .accessibilityLabel("Clear filter")
                     .accessibilityIdentifier("chip.clear")
                 }
-                ForEach(HomeFilter.allCases) { f in
+                ForEach(filters) { f in
                     if filter == nil || filter == f {
                         Button { withAnimation(.snappy) { filter = f } } label: {
                             Text(f.rawValue)
@@ -113,7 +124,7 @@ struct HomeView: View {
             let titles = catalog.titles(spec.ids).filter(keep)
             if !titles.isEmpty {
                 if spec.type == "ranked" {
-                    Top10Row(title: spec.title.replacingOccurrences(of: "Top 10", with: "Top 10") + " in the U.S. Today", titles: titles)
+                    Top10Row(title: spec.title, titles: titles)
                 } else {
                     PosterRow(title: spec.title, titles: titles)
                 }

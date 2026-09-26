@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import rows from '../scripts/rows.json';
 import { __resetHistoryForTests, clock, loadHistory, recordWatch, resumeAt, timeLeftLabel } from '../src/history';
 
 beforeEach(async () => {
@@ -6,9 +7,9 @@ beforeEach(async () => {
   __resetHistoryForTests();
 });
 
-test('first run seeds Up Next from rows.json', async () => {
-  await loadHistory();
-  expect(resumeAt('borough', 4)).toBeGreaterThan(0);
+test('first run seeds Up Next from rows.json (empty for the real catalog)', async () => {
+  const seeded = await loadHistory();
+  expect(seeded).toHaveLength(rows.upNext.length);
 });
 
 test('mid-film position is saved and resumable', async () => {

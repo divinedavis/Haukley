@@ -1,6 +1,6 @@
 {
-  "_note": "Shared ad config for React Native (src/ads.ts) and Roku (scripts/make_roku.py). The ad tag is Google's public IMA test VMAP (pre, mid and post-roll); swap in the Google Ad Manager tag when the account exists. {TITLE_ID}, {KIND} and {CORRELATOR} are filled per playback; title_id lets the ad server report revenue per film.",
-  "adTagTemplate": "https://pubads.g.doubleclick.net/gampad/ads?iu=/21775744923/external/vmap_ad_samples&sz=640x480&cust_params=sample_ar%3Dpremidpost%26title_id%3D{TITLE_ID}%26kind%3D{KIND}&ciu_szs=300x250&gdfp_req=1&ad_rule=1&output=vmap&unviewed_position_start=1&env=vp&cmsid=496&vid=short_onecue&correlator={CORRELATOR}",
-  "trackingUrl": "https://axgxpwgbpgcqjxoqwtnv.supabase.co/rest/v1/rpc/log_ad_events",
-  "publishableKey": "sb_publishable_9VpZfDWrMK3orLITxhWZJw_kbAFdw90"
+ "_note": "Shared ad config for every app. The ad tag is Haukley's own VMAP schedule per title (scripts/make_vmap.py -> haukley.com/ads/vmap/<id>.xml): a pre-roll plus one mid-roll at the halfway point for titles 20+ minutes. Each break currently points at Google's public sample VAST; swap VAST_TAG in make_vmap.py for the Google Ad Manager tag when the account exists.",
+ "adTagTemplate": "https://haukley.com/ads/vmap/{TITLE_ID}.xml?kind={KIND}&c={CORRELATOR}",
+ "trackingUrl": "https://axgxpwgbpgcqjxoqwtnv.supabase.co/rest/v1/rpc/log_ad_events",
+ "publishableKey": "sb_publishable_9VpZfDWrMK3orLITxhWZJw_kbAFdw90"
 }

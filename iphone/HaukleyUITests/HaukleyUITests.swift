@@ -83,17 +83,17 @@ final class HaukleyUITests: XCTestCase {
         return field
     }
 
-    func testShowDetailListsEpisodes() {
+    func testSearchOpensFilmDetail() {
         let field = openSearch()
         XCTAssertTrue(field.waitForExistence(timeout: 5))
         field.tap()
-        field.typeText("Borough")
-        let result = element("search.result.borough")
+        field.typeText("Nosferatu")
+        let result = element("search.result.nosferatu")
         XCTAssertTrue(result.waitForExistence(timeout: 5))
         snap("search")
         result.tap()
-        XCTAssertTrue(element("episode.1").waitForExistence(timeout: 5))
-        snap("show-detail")
+        XCTAssertTrue(element("detail.play").waitForExistence(timeout: 5))
+        snap("film-detail")
     }
 
     func testClipsFeedAppears() {
@@ -106,10 +106,11 @@ final class HaukleyUITests: XCTestCase {
     func testFilterChipNarrowsHome() {
         element("chip.movies").tap()
         XCTAssertTrue(app.staticTexts["Movies"].waitForExistence(timeout: 3))
-        XCTAssertFalse(element("chip.shows").exists)
+        XCTAssertTrue(element("chip.clear").exists)
         snap("home-movies")
         element("chip.clear").tap()
-        XCTAssertTrue(element("chip.shows").waitForExistence(timeout: 3))
+        XCTAssertFalse(element("chip.clear").waitForExistence(timeout: 2))
+        XCTAssertTrue(element("chip.movies").exists)
     }
 
     func testPlayerOpensAndCloses() {

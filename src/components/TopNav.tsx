@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { SHOWS } from '../catalog';
 import { colors, s } from '../theme';
 
 export type Tab = 'home' | 'movies' | 'shows';
-const TABS: { key: Tab; label: string }[] = [
+// The TV Shows tab only appears once the catalog has series (read at render: the catalog
+// can be swapped for the live copy before the first render).
+const tabs = (): { key: Tab; label: string }[] => [
   { key: 'home', label: 'Home' },
   { key: 'movies', label: 'Movies' },
-  { key: 'shows', label: 'TV Shows' },
+  ...(SHOWS.length ? [{ key: 'shows' as Tab, label: 'TV Shows' }] : []),
 ];
 
 type Props = { tab: Tab; onChange: (t: Tab) => void; onFocus: () => void };
@@ -16,7 +19,7 @@ export function TopNav({ tab, onChange, onFocus }: Props) {
   return (
     <View style={styles.wrap} pointerEvents="box-none">
       <View style={styles.bar}>
-        {TABS.map(t => (
+        {tabs().map(t => (
           <NavItem
             key={t.key}
             label={t.label}
