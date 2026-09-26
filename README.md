@@ -86,7 +86,9 @@ Roku gotchas: the emulator ignores `font:BoldSystemFontFile` at custom sizes, so
   (`useExoplayerIMA` in `android/build.gradle`, `$RNVideoUseGoogleIMA` in the Podfile, plus a
   `patches/` fix for a tvOS-only PiP compile error). Roku uses RAF in `roku/components/PlayerTask`.
 - Every ad start/completion is logged to Supabase project `axgxpwgbpgcqjxoqwtnv` (free org
-  "StreamTV") in `ad_events`. Apps can only insert; reads and payout math need the secret key
+  "StreamTV") in `ad_events`. Apps log via the rate-limited RPC `POST /rest/v1/rpc/log_ad_events`
+  (one event or an array; <=20/call, <=100/session, <=300/hour per IP) and cannot touch the
+  table directly; reads and payout math need the secret key
   (macOS Keychain `supabase-secret-streamtv`). Schema: `supabase/migrations/`.
 - Monthly report: `GET /rest/v1/monthly_ad_counts`; estimated payouts:
   `POST /rest/v1/rpc/estimated_payouts {"p_month":"2026-09-01","p_net_cpm":10}`.
