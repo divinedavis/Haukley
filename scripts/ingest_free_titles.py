@@ -9,6 +9,7 @@ Stages:
   sheets    contact sheets of the first/last 60 s (to pick exact trims), WORK/sheets/
   encode    HLS ladder into WORK/hls/<id>/ (+ scripts/stills/<id>.jpg), deletes the source
   upload    push WORK/hls/<id>/ to the Spaces bucket (needs SPACES_KEY/SPACES_SECRET env)
+  all       encode -> upload -> delete the local HLS, title by title (keeps disk use low)
 
 Usage: .venv/bin/python scripts/ingest_free_titles.py encode [--only id,id] [--keep-source]
 """
@@ -62,7 +63,16 @@ def download(t):
     dst.parent.mkdir(parents=True, exist_ok=True)
     tmp = dst.with_suffix(dst.suffix + ".part")
     print(f"download {t['id']} ({t['source']['bytes'] / 1e6:.0f} MB)", flush=True)
-    run(["curl", "-fL", "--retry", "5", "--retry-delay", "5", "-C", "-", "-A", UA, "-o", str(tmp), t["source"]["url"]])
+    # archive.org drops long transfers now and then; resume the .part file on any error.
+    for attempt in range(8):
+        try:
+            run(["curl", "-fL", "--retry", "5", "--retry-delay", "5", "--retry-all-errors", "-C", "-", "-A", UA,
+                 "-o", str(tmp), t["source"]["url"]])
+            break
+        except subprocess.CalledProcessError as e:
+            if attempt == 7:
+                raise
+            print(f"  download interrupted (curl {e.returncode}); resuming", flush=True)
     tmp.rename(dst)
     return dst
 
@@ -172,12 +182,14 @@ def upload(t):
             "ContentType": "application/vnd.apple.mpegurl" if playlist else (mimetypes.guess_type(p.name)[0] or "video/mp2t"),
             "CacheControl": "public, max-age=300" if playlist else "public, max-age=31536000, immutable",
         })
-    print(f"upload {t['id']}: {len(files)} files")
+    print(f"upload {t['id']}: {len(files)} files", flush=True)
+    (WORK / "uploaded").mkdir(exist_ok=True)
+    (WORK / "uploaded" / t["id"]).touch()
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("stage", choices=["download", "sheets", "encode", "upload"])
+    ap.add_argument("stage", choices=["download", "sheets", "encode", "upload", "all"])
     ap.add_argument("--only", default="")
     ap.add_argument("--keep-source", action="store_true")
     a = ap.parse_args()
@@ -189,5 +201,12 @@ if __name__ == "__main__":
             sheets(t)
         elif a.stage == "encode":
             encode(t, a.keep_source)
+        elif a.stage == "all":
+            if (WORK / "uploaded" / t["id"]).exists():
+                print(f"{t['id']}: already uploaded")
+                continue
+            encode(t, a.keep_source)
+            upload(t)
+            shutil.rmtree(WORK / "hls" / t["id"])
         else:
             upload(t)

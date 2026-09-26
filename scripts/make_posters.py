@@ -50,7 +50,13 @@ def photo_for(t, size):
     """A title's source image: its own still (real films, a frame from the film itself) when
     it has one, otherwise a Picsum photo by id."""
     if t.get("still"):
-        return ImageOps.fit(Image.open(ROOT / t["still"]).convert("RGB"), size, Image.LANCZOS)
+        img = Image.open(ROOT / t["still"]).convert("RGB")
+        # Old transfers often carry black pillar/letterbox bars inside the frame: crop them off.
+        mask = img.convert("L").point(lambda v: 255 if v > 24 else 0)
+        box = mask.getbbox()
+        if box and (box[2] - box[0]) * (box[3] - box[1]) > 0.4 * img.width * img.height:
+            img = img.crop(box)
+        return ImageOps.fit(img, size, Image.LANCZOS, centering=(0.5, 0.35))
     return photo(t["photo"], size)
 
 

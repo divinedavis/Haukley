@@ -90,8 +90,7 @@ async function loadCatalog() {
   state.ads = ads;
   state.byId = new Map(cat.titles.map(t => [t.id, t]));
   for (const r of cat.rows.filter(r => r.type === "ranked")) {
-    const label = /show/i.test(r.title) ? "Shows" : "Movies";
-    r.ids.forEach((id, i) => { if (!state.rank.has(id)) state.rank.set(id, { n: i + 1, label }); });
+    r.ids.forEach((id, i) => { if (!state.rank.has(id)) state.rank.set(id, { n: i + 1, label: r.title }); });
   }
 }
 
@@ -143,7 +142,7 @@ async function toggleList(id) {
   }
 }
 
-const visible = t => t && (!state.profile?.is_kids || KIDS_RATINGS.has(t.rating));
+const visible = t => t && (!state.profile?.is_kids || t.kids || KIDS_RATINGS.has(t.rating));
 const titles = () => state.catalog.titles.filter(visible);
 const pct = r => (r && r.duration_s ? r.position_s / r.duration_s : 0);
 const inProgress = r => pct(r) > 0.02 && pct(r) < 0.95;
@@ -412,7 +411,7 @@ function renderProfileForm(p) {
           <div class="avatar-pick" role="group" aria-label="Choose an icon">
             ${AVATAR_COLORS.map((_, i) => `<button type="button" data-av="${i}" aria-label="Icon ${i + 1}">${avatarSvg(i)}</button>`).join("")}
           </div>
-          <label class="check"><input type="checkbox" name="kids" ${kids ? "checked" : ""}> Kids profile — only shows titles rated G, PG, TV-G and TV-PG</label>
+          <label class="check"><input type="checkbox" name="kids" ${kids ? "checked" : ""}> Kids profile — only shows family-friendly titles</label>
           <p class="note" role="status"></p>
           <div class="form-actions">
             <button class="btn btn-primary" type="submit">Save</button>
@@ -607,7 +606,7 @@ function wireRows() {
 function metaLine(t, withKind = false) {
   const len = t.kind === "movie" ? t.runtime : `${t.seasons} Season${t.seasons === 1 ? "" : "s"}`;
   const parts = [withKind ? (t.kind === "movie" ? "Movie" : "Series") : null, withKind ? esc(t.genre) : null, t.year, esc(len),
-    `<span class="rating">${esc(t.rating)}</span>`].filter(Boolean);
+    `<span class="rating">${esc(t.rating)}</span>`, t.silent ? "Silent" : null].filter(Boolean);
   return parts.join(`<span class="dot" aria-hidden="true">•</span>`);
 }
 
@@ -615,7 +614,7 @@ function chipsFor(t) {
   const c = [];
   if (t.badge) c.push(`<span class="chip"><i>NEW</i>${esc(t.badge)}</span>`);
   const rk = state.rank.get(t.id);
-  if (rk) c.push(`<span class="chip"><i>TOP 10</i>#${rk.n} in ${rk.label} Today</span>`);
+  if (rk) c.push(`<span class="chip"><i>TOP 10</i>#${rk.n} in ${esc(rk.label)}</span>`);
   return c.join("");
 }
 
@@ -696,6 +695,12 @@ function renderKind(kind, genre) {
         ${genre ? `<button data-genre="">All ${label}</button>` : ""}
         ${genres.map(g => `<button data-genre="${esc(g)}">${esc(g)}</button>`).join("")}
       </div></div></div>`;
+  if (!pool.length) {
+    app.innerHTML = `${header(kind === "movie" ? "movies" : "shows")}
+      <main class="page"><h1>${label}</h1><p class="empty">${label} are on the way. In the meantime, every film on Haukley is free to watch now.</p>
+      <p style="margin-top:20px"><a class="btn btn-primary" href="#/movies">Browse movies</a></p></main>`;
+    return wireHeader();
+  }
   if (genre) {
     const hits = pool.filter(t => t.genre === genre);
     app.innerHTML = `${header(kind === "movie" ? "movies" : "shows")}${head}
@@ -729,10 +734,9 @@ function renderNew() {
   app.innerHTML = `${header("new")}
     <div class="page-head"><h1>New &amp; Popular</h1></div>
     <div class="rows">
-      ${row("New on Haukley", newest.filter(t => t.badge).map(t => card(t)))}
+      ${row("Just Added to Haukley", newest.map(t => card(t)))}
       ${ranked.map(r => row(r.title.replace(/Top 10 (TV )?(\w+)/, "Top 10 $2 on Haukley Today"),
         r.ids.map(id => state.byId.get(id)).filter(visible).map((t, i) => rankedCard(t, i + 1)))).join("")}
-      ${row("Worth the Wait", newest.filter(t => !t.badge).map(t => card(t)))}
     </div>`;
   wireHeader();
 }
@@ -792,7 +796,7 @@ function showPreview(tileEl) {
         <button class="circle push" data-title="${esc(t.id)}" aria-label="More info">${ICON.down}</button>
       </div>
       <div class="meta"><span class="rating">${esc(t.rating)}</span> ${esc(len)}</div>
-      <div class="tags"><span>${esc(t.genre)}</span><span>${t.year}</span>${state.rank.has(t.id) ? `<span>#${state.rank.get(t.id).n} in ${state.rank.get(t.id).label}</span>` : ""}</div>
+      <div class="tags"><span>${esc(t.genre)}</span><span>${t.year}</span>${t.silent ? "<span>Silent film</span>" : ""}${state.rank.has(t.id) ? `<span>Top 10 pick #${state.rank.get(t.id).n}</span>` : ""}</div>
       ${prog}
     </div>`;
   el.addEventListener("mouseleave", hidePreview);
@@ -858,14 +862,16 @@ function openTitle(id) {
       <div class="m-cols">
         <div>
           <div class="meta">${metaLine(t)}</div>
-          ${state.rank.has(t.id) ? `<div class="meta" style="margin-top:10px;color:#fff"><span class="chip"><i>TOP 10</i>#${state.rank.get(t.id).n} in ${state.rank.get(t.id).label} Today</span></div>` : ""}
+          ${state.rank.has(t.id) ? `<div class="meta" style="margin-top:10px;color:#fff"><span class="chip"><i>TOP 10</i>#${state.rank.get(t.id).n} in ${esc(state.rank.get(t.id).label)}</span></div>` : ""}
           <p class="tagline">${esc(t.tagline)}</p>
           <p class="desc">${esc(t.description)}</p>
         </div>
         <div class="m-side">
           <div><b>Cast:</b> ${esc(t.credits.replace(/^Starring\s*/, "").replace(/ · /g, ", "))}</div>
           <div><b>Genres:</b> ${esc(t.genre)}</div>
-          <div><b>Rating:</b> ${esc(t.rating)}</div>
+          <div><b>Rating:</b> ${t.rating === "NR" ? "Not rated" : esc(t.rating)}</div>
+          ${t.silent ? `<div><b>Sound:</b> Silent film (no soundtrack)</div>` : ""}
+          ${t.license ? `<div><b>License:</b> ${esc(t.license)}</div>` : ""}
         </div>
       </div>
       ${eps}
@@ -949,8 +955,8 @@ function startPlayback(id, episode) {
   stopPlayback(false);
   Object.assign(player, { id, episode, sessionId: crypto.randomUUID(), ratedShown: false });
   $("#p-title").innerHTML = e ? `${esc(t.title)}<span>E${e.number} “${esc(e.name)}”</span>` : esc(t.title);
-  $("#rated-label").textContent = t.kind === "show" ? `RATED ${t.rating}` : `RATED ${t.rating}`;
-  $("#rated-sub").textContent = t.genre;
+  $("#rated-label").textContent = t.rating === "NR" ? "NOT RATED" : `RATED ${t.rating}`;
+  $("#rated-sub").textContent = t.silent ? `${t.genre} · Silent film, no soundtrack` : t.genre;
   $("#p-error").hidden = true;
   player.el.hidden = false;
   player.el.classList.remove("ad");

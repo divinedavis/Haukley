@@ -5,22 +5,134 @@
     "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
     "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8"
   ],
-  "featured": ["glass-city", "borough", "night-line", "signal", "harbor-nine"],
-  "upNext": [
-    {"id": "borough", "label": "S3, E4 · 22 min left", "progress": 0.58, "episode": 4},
-    {"id": "the-long-quiet", "label": "48 min left", "progress": 0.62},
-    {"id": "after-hours", "label": "S4, E1 · Next Episode", "progress": 0.02, "episode": 1},
-    {"id": "lighthouse-row", "label": "S1, E6 · 9 min left", "progress": 0.83, "episode": 6},
-    {"id": "headlights", "label": "1 hr 12 min left", "progress": 0.31}
+  "featured": [
+    "metropolis",
+    "nosferatu",
+    "the-general",
+    "night-of-the-living-dead",
+    "sintel",
+    "his-girl-friday"
   ],
+  "upNext": [],
   "home": [
-    {"key": "top-movies", "title": "Top 10 Movies", "type": "ranked", "ids": ["night-line", "glass-city", "iron-meridian", "harbor-nine", "ghost-light", "headlights", "saltwater-hymn", "last-train-to-halden", "paper-kites", "sparks"]},
-    {"key": "new-shows", "title": "New & Noteworthy Shows", "type": "card", "ids": ["signal", "commonwealth", "chrome", "high-altitude", "lighthouse-row", "tidewater"]},
-    {"key": "top-shows", "title": "Top 10 TV Shows", "type": "ranked", "ids": ["borough", "signal", "after-hours", "tidewater", "wildwood", "commonwealth", "lighthouse-row", "slow-roads", "chrome", "high-altitude"]},
-    {"key": "because", "title": "Because You Watched Night Line", "type": "card", "ids": ["headlights", "last-train-to-halden", "saltwater-hymn", "iron-meridian", "tidewater", "ghost-light"]},
-    {"key": "new-movies", "title": "New Releases", "type": "poster", "ids": ["glass-city", "ghost-light", "headlights", "harbor-nine", "saltwater-hymn", "iron-meridian", "night-line"]},
-    {"key": "escape", "title": "Get Away From It All", "type": "card", "ids": ["salt-and-sand", "northbound", "slow-roads", "high-altitude", "wildwood", "the-cartographer"]},
-    {"key": "feel-good", "title": "Feel-Good Favorites", "type": "poster", "ids": ["paper-kites", "sparks", "after-hours", "chrome", "salt-and-sand", "slow-roads", "wildwood"]}
+    {
+      "key": "picks",
+      "title": "Haukley's Top 10 Picks",
+      "type": "ranked",
+      "ids": [
+        "metropolis",
+        "the-general",
+        "nosferatu",
+        "night-of-the-living-dead",
+        "his-girl-friday",
+        "safety-last",
+        "sherlock-jr",
+        "sintel",
+        "phantom-of-the-opera",
+        "carnival-of-souls"
+      ]
+    },
+    {
+      "key": "silent-comedy",
+      "title": "Silent Comedy Legends",
+      "type": "card",
+      "ids": [
+        "the-general",
+        "sherlock-jr",
+        "safety-last",
+        "the-freshman",
+        "one-week"
+      ]
+    },
+    {
+      "key": "horror",
+      "title": "Classic Horror",
+      "type": "card",
+      "ids": [
+        "nosferatu",
+        "night-of-the-living-dead",
+        "phantom-of-the-opera",
+        "carnival-of-souls",
+        "the-little-shop-of-horrors",
+        "sprite-fright"
+      ]
+    },
+    {
+      "key": "scifi",
+      "title": "Sci-Fi & Fantasy",
+      "type": "card",
+      "ids": [
+        "metropolis",
+        "a-trip-to-the-moon",
+        "sintel",
+        "tears-of-steel",
+        "elephants-dream",
+        "spring",
+        "cosmos-laundromat"
+      ]
+    },
+    {
+      "key": "shorts",
+      "title": "Animated Shorts",
+      "type": "poster",
+      "ids": [
+        "big-buck-bunny",
+        "sintel",
+        "spring",
+        "sprite-fright",
+        "cosmos-laundromat",
+        "charge",
+        "elephants-dream"
+      ]
+    },
+    {
+      "key": "noir",
+      "title": "Crime, Noir & Screwball",
+      "type": "card",
+      "ids": [
+        "d-o-a",
+        "his-girl-friday",
+        "carnival-of-souls"
+      ]
+    },
+    {
+      "key": "history",
+      "title": "Landmarks of Cinema",
+      "type": "card",
+      "ids": [
+        "man-with-a-movie-camera",
+        "all-quiet-on-the-western-front",
+        "a-trip-to-the-moon",
+        "metropolis",
+        "nosferatu"
+      ]
+    },
+    {
+      "key": "quick",
+      "title": "Under 30 Minutes",
+      "type": "poster",
+      "ids": [
+        "charge",
+        "spring",
+        "big-buck-bunny",
+        "sprite-fright",
+        "one-week",
+        "a-trip-to-the-moon",
+        "elephants-dream",
+        "tears-of-steel",
+        "cosmos-laundromat",
+        "sintel"
+      ]
+    }
   ],
-  "episodeNames": ["Pilot", "The Long Way Home", "Undercurrent", "Second Chances", "Low Tide", "What We Keep", "Crossing Lines", "The Reckoning"]
+  "episodeNames": [
+    "Pilot",
+    "The Long Way Home",
+    "Undercurrent",
+    "Second Chances",
+    "Low Tide",
+    "What We Keep",
+    "Crossing Lines",
+    "The Reckoning"
+  ]
 }
