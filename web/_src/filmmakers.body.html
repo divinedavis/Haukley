@@ -4,12 +4,8 @@
         <p class="eyebrow">For filmmakers</p>
         <h1 style="max-width:900px">Get your film seen — and paid — on every TV.</h1>
         <p class="lede">Haukley is a free, ad-supported streaming service for independent film and series on Roku, Fire TV, Google TV, Apple TV and iPhone. We split the ad revenue from your film with you, 50/50.</p>
-        <form class="signup" id="notify-films" novalidate>
-          <input type="email" name="email" placeholder="Your email" autocomplete="email" required aria-label="Email address">
-          <button class="btn btn-primary" type="submit">Tell me when submissions open</button>
-          <p class="note" role="status"></p>
-        </form>
-        <p class="muted" style="font-size:14px">Or write to <a href="mailto:films@haukley.com" style="color:var(--accent-2)">films@haukley.com</a> with a link to your film.</p>
+        <p><a class="btn btn-primary" href="#submit" style="margin-top:28px">Submit your film</a></p>
+        <p class="muted" style="font-size:14px;margin-top:14px">Or write to <a href="mailto:films@haukley.com" style="color:var(--accent-2)">films@haukley.com</a> with a link to your film.</p>
       </div>
     </section>
 
@@ -49,6 +45,37 @@
           <div class="card"><h3>Formats</h3><p>Features (60+ min), documentaries, series and pilots. Shorts under 40 minutes are grouped into collections.</p></div>
           <div class="card"><h3>Response time</h3><p>We reply to every submission within 30 days, whether or not it's a fit.</p></div>
         </div>
+      </div>
+    </section>
+
+
+    <section id="submit">
+      <div class="wrap">
+        <p class="eyebrow">Submit your film</p>
+        <h2>Send us a screener.</h2>
+        <p class="lede">Share a private link (Vimeo, YouTube unlisted, Google Drive or Dropbox). We reply to every submission within 30 days.</p>
+        <form class="submit-form" id="film-form" novalidate>
+          <label>Your name<input name="name" autocomplete="name" maxlength="120" required></label>
+          <label>Email<input type="email" name="email" autocomplete="email" maxlength="254" required></label>
+          <label class="full">Film title<input name="film_title" maxlength="200" required></label>
+          <label class="full">Screener link<input type="url" name="screener_url" placeholder="https://" maxlength="500" required></label>
+          <label><span>Screener password <i>(optional)</i></span><input name="screener_password" maxlength="100" autocomplete="off"></label>
+          <label>Format
+            <select name="format" required>
+              <option value="feature">Feature (60+ min)</option>
+              <option value="documentary">Documentary</option>
+              <option value="series">Series or pilot</option>
+              <option value="short">Short (under 40 min)</option>
+            </select>
+          </label>
+          <label><span>Genre <i>(optional)</i></span><input name="genre" maxlength="60"></label>
+          <label><span>Runtime in minutes <i>(optional)</i></span><input type="number" name="runtime_minutes" min="1" max="1000" inputmode="numeric"></label>
+          <label><span>Year <i>(optional)</i></span><input type="number" name="year" min="1890" max="2100" inputmode="numeric"></label>
+          <label class="full"><span>Anything else? <i>(optional)</i></span><textarea name="notes" rows="4" maxlength="2000" placeholder="Festivals, awards, where it streams today, captions available…"></textarea></label>
+          <label class="check full"><input type="checkbox" name="rights_confirmed" required> I own or control the U.S. digital distribution rights to this film, including all music, footage and talent releases.</label>
+          <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="full actions"><button class="btn btn-primary" type="submit">Submit film</button><p class="note" role="status"></p></div>
+        </form>
       </div>
     </section>
 

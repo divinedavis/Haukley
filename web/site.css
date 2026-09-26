@@ -106,6 +106,26 @@ h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.2px; }
 .signup .note.ok { color: #9be7b4; }
 .signup .note.err { color: #ff9a9a; }
 
+/* Film submission form */
+.submit-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; margin-top: 32px; max-width: 760px; }
+.submit-form label { display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600; color: var(--dim); }
+.submit-form label i { font-style: normal; font-weight: 400; color: var(--faint); }
+.submit-form .full { grid-column: 1 / -1; }
+.submit-form input, .submit-form select, .submit-form textarea {
+  font: inherit; font-size: 16px; color: var(--text); background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 12px; padding: 12px 14px; outline: none; width: 100%;
+}
+.submit-form select option { color: #000; }
+.submit-form input:focus, .submit-form select:focus, .submit-form textarea:focus { border-color: var(--accent); }
+.submit-form .check { flex-direction: row; align-items: flex-start; gap: 12px; font-weight: 400; color: var(--dim); }
+.submit-form .check input { width: 20px; height: 20px; flex: none; margin-top: 2px; accent-color: var(--accent); }
+.submit-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.submit-form .actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.submit-form .note { font-size: 14px; color: var(--faint); min-height: 20px; }
+.submit-form .note.ok { color: #9be7b4; }
+.submit-form .note.err { color: #ff9a9a; }
+@media (max-width: 640px) { .submit-form { grid-template-columns: 1fr; } }
+
 /* Legal / prose pages */
 .prose { max-width: 760px; margin: 0 auto; padding: 56px var(--gutter) 96px; }
 .prose h1 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -1px; }
