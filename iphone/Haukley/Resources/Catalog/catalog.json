@@ -16,7 +16,8 @@
    "badge": null,
    "heroColor": "#715C31",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "sherlock-jr",
@@ -34,7 +35,8 @@
    "badge": null,
    "heroColor": "#434360",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "safety-last",
@@ -52,7 +54,8 @@
    "badge": null,
    "heroColor": "#605142",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "the-freshman",
@@ -70,7 +73,8 @@
    "badge": null,
    "heroColor": "#625A40",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "one-week",
@@ -88,7 +92,8 @@
    "badge": null,
    "heroColor": "#5D4545",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "his-girl-friday",
@@ -106,7 +111,8 @@
    "badge": null,
    "heroColor": "#44445E",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "nosferatu",
@@ -124,7 +130,8 @@
    "badge": null,
    "heroColor": "#406262",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "phantom-of-the-opera",
@@ -142,7 +149,8 @@
    "badge": null,
    "heroColor": "#843C1F",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "night-of-the-living-dead",
@@ -160,7 +168,8 @@
    "badge": null,
    "heroColor": "#604C42",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "the-little-shop-of-horrors",
@@ -178,7 +187,8 @@
    "badge": null,
    "heroColor": "#3F6348",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "carnival-of-souls",
@@ -196,7 +206,8 @@
    "badge": null,
    "heroColor": "#494162",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "metropolis",
@@ -214,7 +225,8 @@
    "badge": null,
    "heroColor": "#765D2D",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "a-trip-to-the-moon",
@@ -232,7 +244,8 @@
    "badge": null,
    "heroColor": "#445E5E",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "all-quiet-on-the-western-front",
@@ -250,7 +263,8 @@
    "badge": null,
    "heroColor": "#606043",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "d-o-a",
@@ -268,7 +282,8 @@
    "badge": null,
    "heroColor": "#5D4545",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "man-with-a-movie-camera",
@@ -286,7 +301,8 @@
    "badge": null,
    "heroColor": "#445F44",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "big-buck-bunny",
@@ -304,7 +320,8 @@
    "badge": null,
    "heroColor": "#626240",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "(c) copyright 2008, Blender Foundation / www.bigbuckbunny.org \u00b7 https://creativecommons.org/licenses/by/3.0/"
   },
   {
    "id": "sintel",
@@ -322,7 +339,8 @@
    "badge": null,
    "heroColor": "#66453C",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "\u00a9 copyright Blender Foundation | durian.blender.org \u00b7 https://creativecommons.org/licenses/by/3.0/"
   },
   {
    "id": "tears-of-steel",
@@ -340,7 +358,8 @@
    "badge": null,
    "heroColor": "#67543B",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "(CC) Blender Foundation | mango.blender.org \u00b7 https://creativecommons.org/licenses/by/3.0/"
   },
   {
    "id": "elephants-dream",
@@ -358,7 +377,8 @@
    "badge": null,
    "heroColor": "#812821",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "(c) copyright 2006, Blender Foundation / Netherlands Media Art Institute / www.elephantsdream.org \u00b7 https://creativecommons.org/licenses/by/2.5/"
   },
   {
    "id": "cosmos-laundromat",
@@ -376,7 +396,8 @@
    "badge": null,
    "heroColor": "#643E57",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "(CC) Blender Foundation | gooseberry.blender.org \u00b7 https://creativecommons.org/licenses/by/3.0/"
   },
   {
    "id": "spring",
@@ -394,7 +415,8 @@
    "badge": null,
    "heroColor": "#396269",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Spring by Blender Animation Studio, \u00a9 Blender Foundation | studio.blender.org, licensed CC BY 4.0 \u00b7 https://creativecommons.org/licenses/by/4.0/"
   },
   {
    "id": "sprite-fright",
@@ -412,7 +434,8 @@
    "badge": null,
    "heroColor": "#6E6E34",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Sprite Fright by Blender Studio, \u00a9 Blender Foundation | studio.blender.org, licensed CC BY 4.0 \u00b7 https://creativecommons.org/licenses/by/4.0/"
   },
   {
    "id": "charge",
@@ -430,7 +453,8 @@
    "badge": null,
    "heroColor": "#5F663D",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Charge by Blender Studio, \u00a9 Blender Foundation | studio.blender.org, licensed CC BY 4.0 \u00b7 https://creativecommons.org/licenses/by/4.0/"
   },
   {
    "id": "our-hospitality",
@@ -448,7 +472,8 @@
    "badge": null,
    "heroColor": "#625A40",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "seven-chances",
@@ -466,7 +491,8 @@
    "badge": null,
    "heroColor": "#5F5143",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "steamboat-bill-jr",
@@ -484,7 +510,8 @@
    "badge": null,
    "heroColor": "#5F5F44",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "the-navigator",
@@ -502,7 +529,8 @@
    "badge": null,
    "heroColor": "#3B4D67",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "college",
@@ -520,7 +548,8 @@
    "badge": null,
    "heroColor": "#615642",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "the-cameraman",
@@ -538,7 +567,8 @@
    "badge": null,
    "heroColor": "#5D4545",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "speedy",
@@ -556,7 +586,8 @@
    "badge": null,
    "heroColor": "#635A3F",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "animal-crackers",
@@ -574,7 +605,8 @@
    "badge": null,
    "heroColor": "#64553E",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "it",
@@ -592,7 +624,8 @@
    "badge": null,
    "heroColor": "#624051",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "sunrise",
@@ -610,7 +643,8 @@
    "badge": null,
    "heroColor": "#3E4B64",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "the-hunchback-of-notre-dame",
@@ -628,7 +662,8 @@
    "badge": null,
    "heroColor": "#684D3A",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "dr-jekyll-and-mr-hyde",
@@ -646,7 +681,8 @@
    "badge": null,
    "heroColor": "#5A3E64",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "white-zombie",
@@ -664,7 +700,8 @@
    "badge": null,
    "heroColor": "#426042",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "the-terror",
@@ -682,7 +719,8 @@
    "badge": null,
    "heroColor": "#673B55",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "dementia-13",
@@ -700,7 +738,8 @@
    "badge": null,
    "heroColor": "#415762",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "night-tide",
@@ -718,7 +757,8 @@
    "badge": null,
    "heroColor": "#3A5968",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "the-bat",
@@ -736,7 +776,8 @@
    "badge": null,
    "heroColor": "#573F63",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "the-stranger",
@@ -754,7 +795,8 @@
    "badge": null,
    "heroColor": "#5D4545",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "scarlet-street",
@@ -772,7 +814,8 @@
    "badge": null,
    "heroColor": "#633F3F",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "kansas-city-confidential",
@@ -790,7 +833,8 @@
    "badge": null,
    "heroColor": "#425160",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "the-hitch-hiker",
@@ -808,7 +852,8 @@
    "badge": null,
    "heroColor": "#605642",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "suddenly",
@@ -826,7 +871,8 @@
    "badge": null,
    "heroColor": "#5F5F43",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "the-big-combo",
@@ -844,7 +890,8 @@
    "badge": null,
    "heroColor": "#43435F",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "blackmail",
@@ -862,7 +909,8 @@
    "badge": null,
    "heroColor": "#5D4545",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "the-woman-in-green",
@@ -880,7 +928,8 @@
    "badge": null,
    "heroColor": "#3E6447",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "the-big-trail",
@@ -898,7 +947,8 @@
    "badge": null,
    "heroColor": "#63553F",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "angel-and-the-badman",
@@ -916,7 +966,8 @@
    "badge": null,
    "heroColor": "#605642",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "santa-fe-trail",
@@ -934,7 +985,8 @@
    "badge": null,
    "heroColor": "#625441",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "the-mark-of-zorro",
@@ -952,7 +1004,8 @@
    "badge": null,
    "heroColor": "#44445E",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "robin-hood",
@@ -970,7 +1023,8 @@
    "badge": null,
    "heroColor": "#436043",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "the-thief-of-bagdad",
@@ -988,7 +1042,8 @@
    "badge": null,
    "heroColor": "#4C4260",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "the-black-pirate",
@@ -1006,7 +1061,8 @@
    "badge": null,
    "heroColor": "#65543E",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "the-lost-world",
@@ -1024,7 +1080,8 @@
    "badge": null,
    "heroColor": "#887D1B",
    "episodes": [],
-   "kids": true
+   "kids": true,
+   "license": "Public domain in the United States"
   },
   {
    "id": "wings",
@@ -1042,7 +1099,8 @@
    "badge": null,
    "heroColor": "#6A5F38",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "hells-angels",
@@ -1060,7 +1118,8 @@
    "badge": null,
    "heroColor": "#333A6F",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "the-big-parade",
@@ -1078,7 +1137,8 @@
    "badge": null,
    "heroColor": "#39416A",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "meet-john-doe",
@@ -1096,7 +1156,8 @@
    "badge": null,
    "heroColor": "#414C61",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "a-star-is-born",
@@ -1114,7 +1175,8 @@
    "badge": null,
    "heroColor": "#6D4835",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "the-crowd",
@@ -1132,7 +1194,8 @@
    "badge": null,
    "heroColor": "#5D4545",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   },
   {
    "id": "rain",
@@ -1150,7 +1213,8 @@
    "badge": null,
    "heroColor": "#415661",
    "episodes": [],
-   "kids": false
+   "kids": false,
+   "license": "Public domain in the United States"
   }
  ],
  "featured": [

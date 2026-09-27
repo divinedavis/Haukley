@@ -84,6 +84,7 @@ def main():
                 "heroColor": hero_color(src / "poster@2x.jpg"),
                 "episodes": [],
                 "kids": bool(t.get("kids")),
+                "license": t.get("license"),
             }
             if kind == "show":
                 for i, name in enumerate(rows["episodeNames"], start=1):

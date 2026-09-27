@@ -30,7 +30,12 @@ sub onData()
     m.meta.text = metaLine(t)
     m.tagline.text = t.tagline
     m.desc.text = t.description
-    m.credits.text = t.credits
+    ' Creative Commons titles must show their attribution; public domain ones don't need a line.
+    credits = t.credits
+    if t.license <> invalid and t.license <> "" and Instr(1, t.license, "Public domain") = 0
+        credits = credits + chr(10) + t.license
+    end if
+    m.credits.text = credits
 
     playLabel = "Play"
     playUrl = t.stream

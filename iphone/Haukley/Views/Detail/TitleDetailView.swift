@@ -52,6 +52,10 @@ struct TitleDetailView: View {
                     Text(title.tagline).font(.system(size: 15, weight: .semibold))
                     Text(title.description).font(.system(size: 15))
                     Text(title.credits).font(.system(size: 13)).foregroundStyle(.secondary)
+                    if let license = title.license {
+                        Text(license).font(.system(size: 12)).foregroundStyle(.tertiary)
+                            .accessibilityIdentifier("detail.license")
+                    }
 
                     HStack(spacing: 34) {
                         ActionButton(label: "My List", systemImage: library.isInMyList(title) ? "checkmark" : "plus") {

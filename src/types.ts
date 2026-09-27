@@ -10,6 +10,8 @@ export type Title = {
   tagline: string;
   description: string;
   credits: string;
+  /** Rights line: public domain, or the Creative Commons attribution the license requires. */
+  license?: string;
   runtime?: string | null;
   seasons?: number;
   poster: ImageSourcePropType;

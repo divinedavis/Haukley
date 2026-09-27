@@ -27,6 +27,8 @@ struct Title: Codable, Hashable, Identifiable {
     let episodes: [Episode]
     /// Family-friendly: the only titles a Kids profile sees (same flag the web app uses).
     let kids: Bool?
+    /// Rights line shown on the title page (public domain, or the Creative Commons attribution).
+    let license: String?
 
     var isShow: Bool { kind == "show" }
     var length: String {

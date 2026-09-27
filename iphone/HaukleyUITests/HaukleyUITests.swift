@@ -100,6 +100,8 @@ final class HaukleyUITests: XCTestCase {
         // Under load (several simulators at once) the sheet can take longer than 5 s to appear.
         result.tap()
         XCTAssertTrue(element("detail.play").waitForExistence(timeout: 12))
+        // Every title page carries its rights line (Creative Commons titles require attribution).
+        XCTAssertTrue(element("detail.license").exists)
         snap("film-detail")
     }
 

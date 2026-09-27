@@ -28,8 +28,8 @@
             <Label id="desc" translation="[0, 260]" width="1000" wrap="true" maxLines="2" lineSpacing="6" color="0xFFFFFFE6">
                 <Font role="font" uri="pkg:/fonts/Poppins-Regular.ttf" size="28" />
             </Label>
-            <Label id="credits" translation="[0, 372]" width="1100" color="0xFFFFFF9E">
-                <Font role="font" uri="pkg:/fonts/Poppins-Regular.ttf" size="24" />
+            <Label id="credits" translation="[0, 368]" width="1100" wrap="true" maxLines="2" color="0xFFFFFF9E">
+                <Font role="font" uri="pkg:/fonts/Poppins-Regular.ttf" size="20" />
             </Label>
             <Group id="buttons" translation="[0, 430]" />
         </Group>
