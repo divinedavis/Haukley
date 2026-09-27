@@ -117,8 +117,11 @@ def main():
     home = [r for r in home if r["items"]]
 
     catalog = {"titles": titles, "rows": home, "ads": {k: ads[k] for k in ("adTagTemplate", "trackingUrl", "publishableKey")}}
+    # Title artwork is served from haukley.com (the package has a 4 MB cap and the library keeps
+    # growing); playback needs the network anyway, so the packaged fallback catalog points there too.
+    remote = json.loads(json.dumps(catalog).replace("pkg:/images/titles/", "https://haukley.com/roku/img/"))
     (ROKU / "data").mkdir(parents=True, exist_ok=True)
-    (ROKU / "data" / "catalog.json").write_text(json.dumps(catalog, separators=(",", ":")))
+    (ROKU / "data" / "catalog.json").write_text(json.dumps(remote, separators=(",", ":")))
 
     # Live copy for the app to fetch at launch (haukley.com/roku/catalog.json): same data with
     # artwork served from haukley.com, so new films reach Roku without a new package.
@@ -145,6 +148,8 @@ def main():
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
         for p in sorted(ROKU.rglob("*")):
             rel = p.relative_to(ROKU)
+            if rel.parts[:2] == ("images", "titles"):
+                continue  # served from haukley.com/roku/img
             if p.is_file() and rel.parts[0] in ("manifest", "source", "components", "images", "data", "fonts"):
                 z.write(p, rel.as_posix())
     size = out.stat().st_size

@@ -1768,6 +1768,3106 @@
      }
     ]
    }
+  },
+  {
+   "id": "our-hospitality",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Our Hospitality",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "A feud, a family dinner, and a very long waterfall.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A young man travels South to claim his inheritance and falls for a girl whose family has sworn a blood feud against his, and they cannot shoot him while he is a guest in their house.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1923-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "credits": [
+    {
+     "name": "Buster Keaton",
+     "role": "director"
+    },
+    {
+     "name": "John G. Blystone",
+     "role": "director"
+    },
+    {
+     "name": "Buster Keaton",
+     "role": "actor"
+    },
+    {
+     "name": "Natalie Talmadge",
+     "role": "actor"
+    },
+    {
+     "name": "Joe Roberts",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/our-hospitality-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/our-hospitality-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4440,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "our-hospitality"
+     }
+    ]
+   }
+  },
+  {
+   "id": "seven-chances",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Seven Chances",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Marry by 7 p.m. or lose seven million dollars.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A broke young stockbroker learns he will inherit seven million dollars if he is married by 7 p.m. that day, and his one newspaper ad brings a stampede of would-be brides.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1925-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "credits": [
+    {
+     "name": "Buster Keaton",
+     "role": "director"
+    },
+    {
+     "name": "Buster Keaton",
+     "role": "actor"
+    },
+    {
+     "name": "T. Roy Barnes",
+     "role": "actor"
+    },
+    {
+     "name": "Ruth Dwyer",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/seven-chances-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/seven-chances-background.jpg"
+    }
+   ],
+   "durationInSeconds": 3360,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "seven-chances"
+     }
+    ]
+   }
+  },
+  {
+   "id": "steamboat-bill-jr",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Steamboat Bill, Jr.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "One cyclone. One falling house front. One Buster.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A college dandy returns home to his gruff riverboat-captain father, falls for the daughter of Dad's rival, and ends up riding out a cyclone in one of the most famous stunts ever filmed.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1928-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "credits": [
+    {
+     "name": "Charles Reisner",
+     "role": "director"
+    },
+    {
+     "name": "Buster Keaton",
+     "role": "director"
+    },
+    {
+     "name": "Buster Keaton",
+     "role": "actor"
+    },
+    {
+     "name": "Ernest Torrence",
+     "role": "actor"
+    },
+    {
+     "name": "Marion Byron",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/steamboat-bill-jr-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/steamboat-bill-jr-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4020,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "steamboat-bill-jr"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-navigator",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Navigator",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Two millionaires. One empty ocean liner.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A spoiled millionaire and the heiress who turned him down end up alone, adrift on an enormous empty ocean liner.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1924-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "credits": [
+    {
+     "name": "Buster Keaton",
+     "role": "director"
+    },
+    {
+     "name": "Donald Crisp",
+     "role": "director"
+    },
+    {
+     "name": "Buster Keaton",
+     "role": "actor"
+    },
+    {
+     "name": "Kathryn McGuire",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-navigator-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-navigator-background.jpg"
+    }
+   ],
+   "durationInSeconds": 3600,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "the-navigator"
+     }
+    ]
+   }
+  },
+  {
+   "id": "college",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "College",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The bookworm goes out for every sport.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A bookish high-school valedictorian who scorns sports goes to college and tries every athletic event on campus to win the girl.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1927-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "credits": [
+    {
+     "name": "James W. Horne",
+     "role": "director"
+    },
+    {
+     "name": "Buster Keaton",
+     "role": "director"
+    },
+    {
+     "name": "Buster Keaton",
+     "role": "actor"
+    },
+    {
+     "name": "Anne Cornwall",
+     "role": "actor"
+    },
+    {
+     "name": "Harold Goodwin",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/college-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/college-background.jpg"
+    }
+   ],
+   "durationInSeconds": 3900,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "college"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-cameraman",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Cameraman",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "He bought a newsreel camera to get the girl.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A tintype photographer buys a battered newsreel camera to impress a girl at MGM's newsreel office, and a runaway monkey helps him land the scoop of his life.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1928-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "credits": [
+    {
+     "name": "Edward Sedgwick",
+     "role": "director"
+    },
+    {
+     "name": "Buster Keaton",
+     "role": "director"
+    },
+    {
+     "name": "Buster Keaton",
+     "role": "actor"
+    },
+    {
+     "name": "Marceline Day",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-cameraman-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-cameraman-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4200,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "the-cameraman"
+     }
+    ]
+   }
+  },
+  {
+   "id": "speedy",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Speedy",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "New York's fastest soda jerk. And its last horse car.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A baseball-mad New York soda jerk fights to save his girlfriend's grandfather's horse-drawn streetcar, the last in the city, with a cameo from Babe Ruth.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1928-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "credits": [
+    {
+     "name": "Ted Wilde",
+     "role": "director"
+    },
+    {
+     "name": "Harold Lloyd",
+     "role": "actor"
+    },
+    {
+     "name": "Ann Christy",
+     "role": "actor"
+    },
+    {
+     "name": "Bert Woodruff",
+     "role": "actor"
+    },
+    {
+     "name": "Babe Ruth",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/speedy-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/speedy-background.jpg"
+    }
+   ],
+   "durationInSeconds": 5100,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "speedy"
+     }
+    ]
+   }
+  },
+  {
+   "id": "animal-crackers",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Animal Crackers",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Hooray for Captain Spaulding.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Captain Spaulding, the famous African explorer, crashes a Long Island society party where a priceless painting goes missing, with all four Marx Brothers at full throttle.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1930-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "credits": [
+    {
+     "name": "Victor Heerman",
+     "role": "director"
+    },
+    {
+     "name": "Groucho Marx",
+     "role": "actor"
+    },
+    {
+     "name": "Harpo Marx",
+     "role": "actor"
+    },
+    {
+     "name": "Chico Marx",
+     "role": "actor"
+    },
+    {
+     "name": "Zeppo Marx",
+     "role": "actor"
+    },
+    {
+     "name": "Margaret Dumont",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/animal-crackers-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/animal-crackers-background.jpg"
+    }
+   ],
+   "durationInSeconds": 5880,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "animal-crackers"
+     }
+    ]
+   }
+  },
+  {
+   "id": "it",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "It",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "She's got It.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A spirited department-store salesgirl with plenty of 'It' sets her sights on the store's handsome young owner.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1927-01-01",
+   "genres": [
+    "romance"
+   ],
+   "credits": [
+    {
+     "name": "Clarence G. Badger",
+     "role": "director"
+    },
+    {
+     "name": "Clara Bow",
+     "role": "actor"
+    },
+    {
+     "name": "Antonio Moreno",
+     "role": "actor"
+    },
+    {
+     "name": "William Austin",
+     "role": "actor"
+    },
+    {
+     "name": "Gary Cooper",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/it-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/it-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4500,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "it"
+     }
+    ]
+   }
+  },
+  {
+   "id": "sunrise",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Sunrise",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "A song of two humans.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A farmer tempted by a woman from the city plots to drown his wife, then spends a long, redemptive day in the city falling in love with her again.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1927-01-01",
+   "genres": [
+    "romance"
+   ],
+   "credits": [
+    {
+     "name": "F. W. Murnau",
+     "role": "director"
+    },
+    {
+     "name": "George O'Brien",
+     "role": "actor"
+    },
+    {
+     "name": "Janet Gaynor",
+     "role": "actor"
+    },
+    {
+     "name": "Margaret Livingston",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/sunrise-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/sunrise-background.jpg"
+    }
+   ],
+   "durationInSeconds": 5640,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "sunrise"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-hunchback-of-notre-dame",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Hunchback of Notre Dame",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Sanctuary.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "In 15th-century Paris, the deformed bell-ringer Quasimodo risks everything to protect the Gypsy dancer Esmeralda from a scheming nobleman and a mob.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1923-01-01",
+   "genres": [
+    "horror"
+   ],
+   "credits": [
+    {
+     "name": "Wallace Worsley",
+     "role": "director"
+    },
+    {
+     "name": "Lon Chaney",
+     "role": "actor"
+    },
+    {
+     "name": "Patsy Ruth Miller",
+     "role": "actor"
+    },
+    {
+     "name": "Norman Kerry",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-hunchback-of-notre-dame-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-hunchback-of-notre-dame-background.jpg"
+    }
+   ],
+   "durationInSeconds": 6960,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "the-hunchback-of-notre-dame"
+     }
+    ]
+   }
+  },
+  {
+   "id": "dr-jekyll-and-mr-hyde",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Dr. Jekyll and Mr. Hyde",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "One man. Two souls.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A saintly London doctor tests a potion that splits off his darker self, and the monstrous Mr. Hyde begins to take over.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1920-01-01",
+   "genres": [
+    "horror"
+   ],
+   "credits": [
+    {
+     "name": "John S. Robertson",
+     "role": "director"
+    },
+    {
+     "name": "John Barrymore",
+     "role": "actor"
+    },
+    {
+     "name": "Martha Mansfield",
+     "role": "actor"
+    },
+    {
+     "name": "Nita Naldi",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/dr-jekyll-and-mr-hyde-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/dr-jekyll-and-mr-hyde-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4980,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "dr-jekyll-and-mr-hyde"
+     }
+    ]
+   }
+  },
+  {
+   "id": "white-zombie",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "White Zombie",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The dead walk the sugar mill.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A young couple's wedding trip to Haiti turns to horror when a jealous planter enlists a voodoo master who commands an army of the walking dead.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1932-01-01",
+   "genres": [
+    "horror"
+   ],
+   "credits": [
+    {
+     "name": "Victor Halperin",
+     "role": "director"
+    },
+    {
+     "name": "Bela Lugosi",
+     "role": "actor"
+    },
+    {
+     "name": "Madge Bellamy",
+     "role": "actor"
+    },
+    {
+     "name": "Joseph Cawthorn",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/white-zombie-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/white-zombie-background.jpg"
+    }
+   ],
+   "durationInSeconds": 3900,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "white-zombie"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-terror",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Terror",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The castle remembers.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A lost French officer follows a mysterious woman to the castle of a haunted baron, where a vengeful witch is waiting.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1963-01-01",
+   "genres": [
+    "horror"
+   ],
+   "credits": [
+    {
+     "name": "Roger Corman",
+     "role": "director"
+    },
+    {
+     "name": "Boris Karloff",
+     "role": "actor"
+    },
+    {
+     "name": "Jack Nicholson",
+     "role": "actor"
+    },
+    {
+     "name": "Sandra Knight",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-terror-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-terror-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4740,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "the-terror"
+     }
+    ]
+   }
+  },
+  {
+   "id": "dementia-13",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Dementia 13",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The family has a secret at the bottom of the pond.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A scheming widow hides her husband's death from his wealthy Irish family, just as an axe murderer starts stalking their castle.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1963-01-01",
+   "genres": [
+    "horror"
+   ],
+   "credits": [
+    {
+     "name": "Francis Ford Coppola",
+     "role": "director"
+    },
+    {
+     "name": "William Campbell",
+     "role": "actor"
+    },
+    {
+     "name": "Luana Anders",
+     "role": "actor"
+    },
+    {
+     "name": "Patrick Magee",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/dementia-13-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/dementia-13-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4500,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "dementia-13"
+     }
+    ]
+   }
+  },
+  {
+   "id": "night-tide",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Night Tide",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Is she a mermaid, or something worse?",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A lonely sailor on shore leave falls for a sideshow 'mermaid' who may be descended from sea creatures that kill by the full moon.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1961-01-01",
+   "genres": [
+    "horror"
+   ],
+   "credits": [
+    {
+     "name": "Curtis Harrington",
+     "role": "director"
+    },
+    {
+     "name": "Dennis Hopper",
+     "role": "actor"
+    },
+    {
+     "name": "Linda Lawson",
+     "role": "actor"
+    },
+    {
+     "name": "Luana Anders",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/night-tide-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/night-tide-background.jpg"
+    }
+   ],
+   "durationInSeconds": 5100,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "night-tide"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-bat",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Bat",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "A killer in the mansion. A fortune in the walls.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A mystery writer rents a country mansion where a fortune is hidden in the walls, and a masked killer called The Bat wants it back.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1959-01-01",
+   "genres": [
+    "horror"
+   ],
+   "credits": [
+    {
+     "name": "Crane Wilbur",
+     "role": "director"
+    },
+    {
+     "name": "Vincent Price",
+     "role": "actor"
+    },
+    {
+     "name": "Agnes Moorehead",
+     "role": "actor"
+    },
+    {
+     "name": "Gavin Gordon",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-bat-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-bat-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4800,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "the-bat"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-stranger",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Stranger",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The quiet new professor has a past.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A war-crimes investigator tracks a Nazi fugitive to a sleepy Connecticut town, where he is posing as a respected teacher about to marry the judge's daughter.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1946-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Orson Welles",
+     "role": "director"
+    },
+    {
+     "name": "Edward G. Robinson",
+     "role": "actor"
+    },
+    {
+     "name": "Loretta Young",
+     "role": "actor"
+    },
+    {
+     "name": "Orson Welles",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-stranger-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-stranger-background.jpg"
+    }
+   ],
+   "durationInSeconds": 5640,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "the-stranger"
+     }
+    ]
+   }
+  },
+  {
+   "id": "scarlet-street",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Scarlet Street",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "He painted her. She ruined him.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A meek cashier and Sunday painter falls for a con woman who, with her brutal boyfriend, schemes to sell his paintings as her own.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1945-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Fritz Lang",
+     "role": "director"
+    },
+    {
+     "name": "Edward G. Robinson",
+     "role": "actor"
+    },
+    {
+     "name": "Joan Bennett",
+     "role": "actor"
+    },
+    {
+     "name": "Dan Duryea",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/scarlet-street-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/scarlet-street-background.jpg"
+    }
+   ],
+   "durationInSeconds": 6060,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "scarlet-street"
+     }
+    ]
+   }
+  },
+  {
+   "id": "kansas-city-confidential",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Kansas City Confidential",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Four masked men. One framed driver.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A delivery driver framed for an armored-car robbery tracks the masked gang to a Mexican resort to clear his name.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1952-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Phil Karlson",
+     "role": "director"
+    },
+    {
+     "name": "John Payne",
+     "role": "actor"
+    },
+    {
+     "name": "Coleen Gray",
+     "role": "actor"
+    },
+    {
+     "name": "Preston Foster",
+     "role": "actor"
+    },
+    {
+     "name": "Lee Van Cleef",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/kansas-city-confidential-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/kansas-city-confidential-background.jpg"
+    }
+   ],
+   "durationInSeconds": 5940,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "kansas-city-confidential"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-hitch-hiker",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Hitch-Hiker",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Don't pick him up.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Two friends on a fishing trip pick up a hitchhiker who turns out to be a psychopathic killer, and he forces them to drive him across the Mexican desert.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1953-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Ida Lupino",
+     "role": "director"
+    },
+    {
+     "name": "Edmond O'Brien",
+     "role": "actor"
+    },
+    {
+     "name": "Frank Lovejoy",
+     "role": "actor"
+    },
+    {
+     "name": "William Talman",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-hitch-hiker-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-hitch-hiker-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4260,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "the-hitch-hiker"
+     }
+    ]
+   }
+  },
+  {
+   "id": "suddenly",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Suddenly",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Three gunmen. One small town. One window.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Three hired gunmen take over a family's hilltop house in a small town to ambush the President's train, with Frank Sinatra as their cold-blooded leader.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1954-01-01",
+   "genres": [
+    "thriller"
+   ],
+   "credits": [
+    {
+     "name": "Lewis Allen",
+     "role": "director"
+    },
+    {
+     "name": "Frank Sinatra",
+     "role": "actor"
+    },
+    {
+     "name": "Sterling Hayden",
+     "role": "actor"
+    },
+    {
+     "name": "James Gleason",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/suddenly-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/suddenly-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4560,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "suddenly"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-big-combo",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Big Combo",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Cop versus mob, in the dark.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "An obsessed police lieutenant goes after a sadistic mob boss, and the key may be the gangster's unhappy girlfriend.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1955-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Joseph H. Lewis",
+     "role": "director"
+    },
+    {
+     "name": "Cornel Wilde",
+     "role": "actor"
+    },
+    {
+     "name": "Richard Conte",
+     "role": "actor"
+    },
+    {
+     "name": "Jean Wallace",
+     "role": "actor"
+    },
+    {
+     "name": "Lee Van Cleef",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-big-combo-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-big-combo-background.jpg"
+    }
+   ],
+   "durationInSeconds": 5220,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "the-big-combo"
+     }
+    ]
+   }
+  },
+  {
+   "id": "blackmail",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Blackmail",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Hitchcock's first talkie.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A Scotland Yard detective's girlfriend kills an artist in self-defense, and a blackmailer who saw her starts squeezing the couple. It was Hitchcock's first talkie.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1929-01-01",
+   "genres": [
+    "thriller"
+   ],
+   "credits": [
+    {
+     "name": "Alfred Hitchcock",
+     "role": "director"
+    },
+    {
+     "name": "Anny Ondra",
+     "role": "actor"
+    },
+    {
+     "name": "John Longden",
+     "role": "actor"
+    },
+    {
+     "name": "Cyril Ritchard",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/blackmail-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/blackmail-background.jpg"
+    }
+   ],
+   "durationInSeconds": 5100,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "blackmail"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-woman-in-green",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Woman in Green",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Holmes, Watson and a hypnotist.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Sherlock Holmes and Dr. Watson investigate a string of murders of young women in London, and the trail leads to hypnotism and Professor Moriarty.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1945-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "credits": [
+    {
+     "name": "Roy William Neill",
+     "role": "director"
+    },
+    {
+     "name": "Basil Rathbone",
+     "role": "actor"
+    },
+    {
+     "name": "Nigel Bruce",
+     "role": "actor"
+    },
+    {
+     "name": "Hillary Brooke",
+     "role": "actor"
+    },
+    {
+     "name": "Henry Daniell",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-woman-in-green-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-woman-in-green-background.jpg"
+    }
+   ],
+   "durationInSeconds": 3840,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "the-woman-in-green"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-big-trail",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Big Trail",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The Oregon Trail, in John Wayne's first starring role.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A young trapper guides a wagon train of pioneers along the Oregon Trail while hunting the men who murdered his friend. This was John Wayne's first starring role.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1930-01-01",
+   "genres": [
+    "western"
+   ],
+   "credits": [
+    {
+     "name": "Raoul Walsh",
+     "role": "director"
+    },
+    {
+     "name": "John Wayne",
+     "role": "actor"
+    },
+    {
+     "name": "Marguerite Churchill",
+     "role": "actor"
+    },
+    {
+     "name": "El Brendel",
+     "role": "actor"
+    },
+    {
+     "name": "Tyrone Power Sr.",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-big-trail-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-big-trail-background.jpg"
+    }
+   ],
+   "durationInSeconds": 7020,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "the-big-trail"
+     }
+    ]
+   }
+  },
+  {
+   "id": "angel-and-the-badman",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Angel and the Badman",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "A gunslinger meets a Quaker girl.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A wounded gunslinger is nursed back to health by a Quaker family, and their daughter's faith starts to pull him away from his outlaw past.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1947-01-01",
+   "genres": [
+    "western"
+   ],
+   "credits": [
+    {
+     "name": "James Edward Grant",
+     "role": "director"
+    },
+    {
+     "name": "John Wayne",
+     "role": "actor"
+    },
+    {
+     "name": "Gail Russell",
+     "role": "actor"
+    },
+    {
+     "name": "Harry Carey",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/angel-and-the-badman-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/angel-and-the-badman-background.jpg"
+    }
+   ],
+   "durationInSeconds": 6000,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "angel-and-the-badman"
+     }
+    ]
+   }
+  },
+  {
+   "id": "santa-fe-trail",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Santa Fe Trail",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Bleeding Kansas, on the eve of war.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "West Point graduates Jeb Stuart and George Custer are posted to Bleeding Kansas and clash with abolitionist John Brown in the years before the Civil War.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1940-01-01",
+   "genres": [
+    "western"
+   ],
+   "credits": [
+    {
+     "name": "Michael Curtiz",
+     "role": "director"
+    },
+    {
+     "name": "Errol Flynn",
+     "role": "actor"
+    },
+    {
+     "name": "Olivia de Havilland",
+     "role": "actor"
+    },
+    {
+     "name": "Raymond Massey",
+     "role": "actor"
+    },
+    {
+     "name": "Ronald Reagan",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/santa-fe-trail-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/santa-fe-trail-background.jpg"
+    }
+   ],
+   "durationInSeconds": 6600,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "santa-fe-trail"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-mark-of-zorro",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Mark of Zorro",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The fop by day. The fox by night.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "In Spanish California, a foppish young nobleman secretly rides as the masked swordsman Zorro to defend the people against a corrupt governor.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1920-01-01",
+   "genres": [
+    "adventure"
+   ],
+   "credits": [
+    {
+     "name": "Fred Niblo",
+     "role": "director"
+    },
+    {
+     "name": "Douglas Fairbanks",
+     "role": "actor"
+    },
+    {
+     "name": "Marguerite De La Motte",
+     "role": "actor"
+    },
+    {
+     "name": "Noah Beery",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-mark-of-zorro-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-mark-of-zorro-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4440,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "the-mark-of-zorro"
+     }
+    ]
+   }
+  },
+  {
+   "id": "robin-hood",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Robin Hood",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The original swashbuckler.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "The Earl of Huntingdon returns from the Crusades to find Prince John terrorizing England, and becomes the outlaw Robin Hood to fight back.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1922-01-01",
+   "genres": [
+    "adventure"
+   ],
+   "credits": [
+    {
+     "name": "Allan Dwan",
+     "role": "director"
+    },
+    {
+     "name": "Douglas Fairbanks",
+     "role": "actor"
+    },
+    {
+     "name": "Wallace Beery",
+     "role": "actor"
+    },
+    {
+     "name": "Enid Bennett",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/robin-hood-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/robin-hood-background.jpg"
+    }
+   ],
+   "durationInSeconds": 7980,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "robin-hood"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-thief-of-bagdad",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Thief of Bagdad",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Happiness must be earned.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A cocky Baghdad thief falls for the Caliph's daughter and sets out on a quest through monsters, magic and a flying carpet to win her.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1924-01-01",
+   "genres": [
+    "adventure"
+   ],
+   "credits": [
+    {
+     "name": "Raoul Walsh",
+     "role": "director"
+    },
+    {
+     "name": "Douglas Fairbanks",
+     "role": "actor"
+    },
+    {
+     "name": "Julanne Johnston",
+     "role": "actor"
+    },
+    {
+     "name": "Anna May Wong",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-thief-of-bagdad-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-thief-of-bagdad-background.jpg"
+    }
+   ],
+   "durationInSeconds": 9060,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "the-thief-of-bagdad"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-black-pirate",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Black Pirate",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "One man versus the pirate crew.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "To avenge his father, a young nobleman joins the pirate crew that killed him, and must rescue a captive princess before the pirates claim her.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1926-01-01",
+   "genres": [
+    "adventure"
+   ],
+   "credits": [
+    {
+     "name": "Albert Parker",
+     "role": "director"
+    },
+    {
+     "name": "Douglas Fairbanks",
+     "role": "actor"
+    },
+    {
+     "name": "Billie Dove",
+     "role": "actor"
+    },
+    {
+     "name": "Donald Crisp",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-black-pirate-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-black-pirate-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4980,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "the-black-pirate"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-lost-world",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Lost World",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Dinosaurs in London, 1925.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Professor Challenger leads an expedition to a remote South American plateau where dinosaurs still roam, and brings a brontosaurus back to London.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1925-01-01",
+   "genres": [
+    "science fiction"
+   ],
+   "credits": [
+    {
+     "name": "Harry O. Hoyt",
+     "role": "director"
+    },
+    {
+     "name": "Wallace Beery",
+     "role": "actor"
+    },
+    {
+     "name": "Bessie Love",
+     "role": "actor"
+    },
+    {
+     "name": "Lewis Stone",
+     "role": "actor"
+    },
+    {
+     "name": "Lloyd Hughes",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-lost-world-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-lost-world-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4560,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "the-lost-world"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wings",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Wings",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The first Best Picture. Still soaring.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Two small-town rivals for the same girl become fighter pilots and best friends in the skies over WWI France. It won the first Academy Award for Best Picture.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1927-01-01",
+   "genres": [
+    "war"
+   ],
+   "credits": [
+    {
+     "name": "William A. Wellman",
+     "role": "director"
+    },
+    {
+     "name": "Clara Bow",
+     "role": "actor"
+    },
+    {
+     "name": "Charles 'Buddy' Rogers",
+     "role": "actor"
+    },
+    {
+     "name": "Richard Arlen",
+     "role": "actor"
+    },
+    {
+     "name": "Gary Cooper",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wings-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/wings-background.jpg"
+    }
+   ],
+   "durationInSeconds": 8400,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "wings"
+     }
+    ]
+   }
+  },
+  {
+   "id": "hells-angels",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Hell's Angels",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Howard Hughes's war in the air.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Two very different English brothers join the Royal Flying Corps in WWI and are torn apart by war and by the same woman, with some of the most spectacular aerial combat ever filmed.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1930-01-01",
+   "genres": [
+    "war"
+   ],
+   "credits": [
+    {
+     "name": "Howard Hughes",
+     "role": "director"
+    },
+    {
+     "name": "Ben Lyon",
+     "role": "actor"
+    },
+    {
+     "name": "James Hall",
+     "role": "actor"
+    },
+    {
+     "name": "Jean Harlow",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/hells-angels-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/hells-angels-background.jpg"
+    }
+   ],
+   "durationInSeconds": 7860,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "hells-angels"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-big-parade",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Big Parade",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "He marched off to war a boy.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A pampered rich boy enlists after America enters WWI, finds comradeship and love in rural France, and then faces the horror of the front.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1925-01-01",
+   "genres": [
+    "war"
+   ],
+   "credits": [
+    {
+     "name": "King Vidor",
+     "role": "director"
+    },
+    {
+     "name": "John Gilbert",
+     "role": "actor"
+    },
+    {
+     "name": "Ren\u00e9e Ador\u00e9e",
+     "role": "actor"
+    },
+    {
+     "name": "Karl Dane",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-big-parade-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-big-parade-background.jpg"
+    }
+   ],
+   "durationInSeconds": 9000,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "the-big-parade"
+     }
+    ]
+   }
+  },
+  {
+   "id": "meet-john-doe",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Meet John Doe",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The man who never existed became a movement.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A fired columnist invents a letter from a 'John Doe' threatening suicide in protest, then hires a drifter to play him, and a national movement spins out of control.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1941-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Frank Capra",
+     "role": "director"
+    },
+    {
+     "name": "Gary Cooper",
+     "role": "actor"
+    },
+    {
+     "name": "Barbara Stanwyck",
+     "role": "actor"
+    },
+    {
+     "name": "Edward Arnold",
+     "role": "actor"
+    },
+    {
+     "name": "Walter Brennan",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/meet-john-doe-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/meet-john-doe-background.jpg"
+    }
+   ],
+   "durationInSeconds": 7380,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "meet-john-doe"
+     }
+    ]
+   }
+  },
+  {
+   "id": "a-star-is-born",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "A Star Is Born",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The original.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A farm girl with dreams of Hollywood becomes a star with the help of a matinee idol, even as his own career and his drinking drag him down.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1937-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "William A. Wellman",
+     "role": "director"
+    },
+    {
+     "name": "Janet Gaynor",
+     "role": "actor"
+    },
+    {
+     "name": "Fredric March",
+     "role": "actor"
+    },
+    {
+     "name": "Adolphe Menjou",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/a-star-is-born-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/a-star-is-born-background.jpg"
+    }
+   ],
+   "durationInSeconds": 6660,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "a-star-is-born"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-crowd",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Crowd",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "One man among millions.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "An ambitious young man arrives in New York sure he'll be somebody, then struggles through marriage, loss and a job as one more clerk in the crowd.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1928-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "King Vidor",
+     "role": "director"
+    },
+    {
+     "name": "Eleanor Boardman",
+     "role": "actor"
+    },
+    {
+     "name": "James Murray",
+     "role": "actor"
+    },
+    {
+     "name": "Bert Roach",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-crowd-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-crowd-background.jpg"
+    }
+   ],
+   "durationInSeconds": 5580,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "the-crowd"
+     }
+    ]
+   }
+  },
+  {
+   "id": "rain",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Rain",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "A storm, a quarantine and a sinner.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Stranded by quarantine on a South Seas island, a defiant prostitute clashes with a fanatical missionary who is determined to reform her.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1932-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Lewis Milestone",
+     "role": "director"
+    },
+    {
+     "name": "Joan Crawford",
+     "role": "actor"
+    },
+    {
+     "name": "Walter Huston",
+     "role": "actor"
+    },
+    {
+     "name": "William Gargan",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/rain-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/rain-background.jpg"
+    }
+   ],
+   "durationInSeconds": 5640,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "rain"
+     }
+    ]
+   }
   }
  ]
 }

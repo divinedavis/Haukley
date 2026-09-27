@@ -10,8 +10,10 @@
     "nosferatu",
     "the-general",
     "night-of-the-living-dead",
-    "sintel",
-    "his-girl-friday"
+    "sunrise",
+    "the-thief-of-bagdad",
+    "his-girl-friday",
+    "wings"
   ],
   "upNext": [],
   "home": [
@@ -41,7 +43,14 @@
         "sherlock-jr",
         "safety-last",
         "the-freshman",
-        "one-week"
+        "one-week",
+        "our-hospitality",
+        "steamboat-bill-jr",
+        "the-navigator",
+        "college",
+        "the-cameraman",
+        "speedy",
+        "seven-chances"
       ]
     },
     {
@@ -54,7 +63,42 @@
         "phantom-of-the-opera",
         "carnival-of-souls",
         "the-little-shop-of-horrors",
-        "sprite-fright"
+        "sprite-fright",
+        "the-hunchback-of-notre-dame",
+        "dr-jekyll-and-mr-hyde",
+        "white-zombie",
+        "the-bat",
+        "the-terror",
+        "dementia-13",
+        "night-tide"
+      ]
+    },
+    {
+      "key": "noir",
+      "title": "Film Noir & Crime",
+      "type": "card",
+      "ids": [
+        "the-stranger",
+        "scarlet-street",
+        "the-hitch-hiker",
+        "kansas-city-confidential",
+        "the-big-combo",
+        "d-o-a",
+        "suddenly",
+        "blackmail",
+        "the-woman-in-green"
+      ]
+    },
+    {
+      "key": "swash",
+      "title": "Swashbucklers & Adventure",
+      "type": "card",
+      "ids": [
+        "the-mark-of-zorro",
+        "robin-hood",
+        "the-thief-of-bagdad",
+        "the-black-pirate",
+        "the-lost-world"
       ]
     },
     {
@@ -68,7 +112,43 @@
         "tears-of-steel",
         "elephants-dream",
         "spring",
-        "cosmos-laundromat"
+        "cosmos-laundromat",
+        "the-lost-world"
+      ]
+    },
+    {
+      "key": "screwball",
+      "title": "Screwball, Romance & Drama",
+      "type": "card",
+      "ids": [
+        "his-girl-friday",
+        "animal-crackers",
+        "it",
+        "meet-john-doe",
+        "a-star-is-born",
+        "sunrise",
+        "rain"
+      ]
+    },
+    {
+      "key": "war",
+      "title": "War Epics",
+      "type": "card",
+      "ids": [
+        "wings",
+        "hells-angels",
+        "the-big-parade",
+        "all-quiet-on-the-western-front"
+      ]
+    },
+    {
+      "key": "westerns",
+      "title": "Westerns",
+      "type": "card",
+      "ids": [
+        "the-big-trail",
+        "angel-and-the-badman",
+        "santa-fe-trail"
       ]
     },
     {
@@ -86,16 +166,6 @@
       ]
     },
     {
-      "key": "noir",
-      "title": "Crime, Noir & Screwball",
-      "type": "card",
-      "ids": [
-        "d-o-a",
-        "his-girl-friday",
-        "carnival-of-souls"
-      ]
-    },
-    {
       "key": "history",
       "title": "Landmarks of Cinema",
       "type": "card",
@@ -104,7 +174,10 @@
         "all-quiet-on-the-western-front",
         "a-trip-to-the-moon",
         "metropolis",
-        "nosferatu"
+        "nosferatu",
+        "wings",
+        "sunrise",
+        "the-crowd"
       ]
     },
     {

@@ -1602,7 +1602,8 @@
    "height": 480,
    "has_added_score": true,
    "notes": "Internet Archive Feature Films copy (74 min, sound-speed transfer). Original title card with the 1920 copyright line, and no added logos at the head or tail. The AAC track is a loud added music score of unknown provenance (-7 dB mean), so MUTE it. The full scored alternatives 'the-mark-of-zorro-1920' and 'the-mark-of-zorro' have burned-in Portuguese subtitles and a Kino logo.",
-   "mute": true
+   "mute": true,
+   "still_at": 0.7
   }
  },
  {
@@ -1663,7 +1664,8 @@
    "height": 480,
    "has_added_score": false,
    "notes": "Silent Hall of Fame upload (silent_films collection). The AAC track is digital silence (-91 dB). Original main title with the 1924 copyright line, and it ends on the film's final shots. The last ~3 s is a plain modern-font 'The End' (probably uploader-added): optional trim. Runs 151 min.",
-   "silent_audio": true
+   "silent_audio": true,
+   "still_at": 0.2
   }
  },
  {
@@ -1726,7 +1728,8 @@
    "has_added_score": true,
    "notes": "The ~1998 George Eastman House reconstruction (NEA-funded), tinted. The first ~26 s is modern: 'This film is from the George Eastman House', NEA funding and reconstruction-source cards. Trim it; the film starts on the First National main title at ~28 s. The tail ends on the original 'The End / A First National Picture'. The AAC track is an added score, so MUTE it. The reconstruction may include a few bridging titles written for it: spot-check on ingest.",
    "mute": true,
-   "trim_start": 26.0
+   "trim_start": 26.0,
+   "still_at": 0.4
   }
  },
  {
