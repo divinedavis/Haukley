@@ -114,7 +114,7 @@ struct TitleDetailView: View {
         VStack(alignment: .leading, spacing: 12) {
             Text("More Like This").font(.system(size: 17, weight: .bold))
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 110, maximum: 170), spacing: 8)], spacing: 8) {
-                ForEach(Catalog.shared.moreLike(title).prefix(9)) { t in
+                ForEach(Catalog.shared.moreLike(title).filter(library.allows).prefix(9)) { t in
                     Button { router.detail = t } label: {
                         BundleImage(url: t.poster)
                             .aspectRatio(2 / 3, contentMode: .fill)

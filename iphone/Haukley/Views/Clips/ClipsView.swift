@@ -8,11 +8,13 @@ struct ClipsView: View {
     @State private var current: String?
     @State private var muted = true
 
-    private let clips: [Title] = {
+    @EnvironmentObject private var library: Library
+
+    private var clips: [Title] {
         let c = Catalog.shared
-        let lead = c.featured
-        return lead + c.titles.filter { t in !lead.contains(t) }
-    }()
+        let lead = c.featured.filter(library.allows)
+        return lead + c.titles.filter { t in library.allows(t) && !lead.contains(t) }
+    }
 
     var body: some View {
         ScrollView(.vertical) {

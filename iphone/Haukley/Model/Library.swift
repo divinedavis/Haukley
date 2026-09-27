@@ -8,6 +8,21 @@ final class Library: ObservableObject {
         let id: UUID
         var name: String
         var color: Int
+        /// Kids profiles only see family-friendly titles.
+        var kids: Bool
+
+        init(id: UUID, name: String, color: Int, kids: Bool = false) {
+            self.id = id; self.name = name; self.color = color; self.kids = kids
+        }
+
+        init(from decoder: Decoder) throws {
+            let c = try decoder.container(keyedBy: CodingKeys.self)
+            id = try c.decode(UUID.self, forKey: .id)
+            name = try c.decode(String.self, forKey: .name)
+            color = try c.decode(Int.self, forKey: .color)
+            // Builds before 1.0.1 (15) seeded a "Kids" profile without the flag.
+            kids = try c.decodeIfPresent(Bool.self, forKey: .kids) ?? (name == "Kids")
+        }
     }
 
     struct Watch: Codable, Hashable, Identifiable {
@@ -37,13 +52,9 @@ final class Library: ObservableObject {
             store = saved
         } else {
             let you = Profile(id: UUID(), name: "You", color: 0)
-            let kids = Profile(id: UUID(), name: "Kids", color: 2)
-            // Seed Continue Watching so a fresh install shows the row the way it will look in use.
-            let seeded = Catalog.shared.upNext.enumerated().map { i, u in
-                Watch(titleId: u.id, episode: u.episode ?? 0, progress: u.progress,
-                      date: Date().addingTimeInterval(Double(-i) * 3600))
-            }
-            store = Store(profiles: [you, kids], currentId: you.id, myList: [:], watched: [you.id: seeded])
+            let kids = Profile(id: UUID(), name: "Kids", color: 2, kids: true)
+            // A fresh install starts with an empty history: no made-up Continue Watching rows.
+            store = Store(profiles: [you, kids], currentId: you.id, myList: [:], watched: [:])
         }
     }
 
@@ -72,9 +83,12 @@ final class Library: ObservableObject {
         save()
     }
 
+    /// Whether the current profile may see a title (Kids profiles: family-friendly only).
+    func allows(_ t: Title) -> Bool { !current.kids || t.kids == true }
+
     // MARK: My List
 
-    var myList: [Title] { Catalog.shared.titles(store.myList[store.currentId] ?? []) }
+    var myList: [Title] { Catalog.shared.titles(store.myList[store.currentId] ?? []).filter(allows) }
 
     func isInMyList(_ t: Title) -> Bool { (store.myList[store.currentId] ?? []).contains(t.id) }
 

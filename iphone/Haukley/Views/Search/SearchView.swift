@@ -2,13 +2,17 @@ import SwiftUI
 
 struct SearchView: View {
     @EnvironmentObject private var router: Router
+    @EnvironmentObject private var library: Library
     @State private var query = ""
     @Environment(\.horizontalSizeClass) private var sizeClass
 
     private var results: [Title] {
-        let all = Catalog.shared.titles
+        let all = Catalog.shared.titles.filter(library.allows)
         let q = query.trimmingCharacters(in: .whitespaces)
-        guard !q.isEmpty else { return Catalog.shared.featured + all.filter { !Catalog.shared.featured.contains($0) } }
+        guard !q.isEmpty else {
+            let lead = Catalog.shared.featured.filter(library.allows)
+            return lead + all.filter { !lead.contains($0) }
+        }
         return all.filter {
             $0.title.localizedCaseInsensitiveContains(q) || $0.genre.localizedCaseInsensitiveContains(q)
                 || $0.credits.localizedCaseInsensitiveContains(q)

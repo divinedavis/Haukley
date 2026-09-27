@@ -14,6 +14,7 @@ struct HomeView: View {
     private let catalog = Catalog.shared
 
     private func keep(_ t: Title) -> Bool {
+        guard library.allows(t) else { return false }
         switch filter {
         case .shows: return t.isShow
         case .movies: return !t.isShow
@@ -23,7 +24,7 @@ struct HomeView: View {
     }
 
     private var hero: Title {
-        catalog.featured.first(where: keep) ?? catalog.titles.first(where: keep) ?? catalog.titles[0]
+        catalog.featured.first(where: keep) ?? catalog.titles.first(where: keep) ?? catalog.titles.first(where: library.allows) ?? catalog.titles[0]
     }
 
     /// "#2 in Haukley's Top 10 Picks" when the hero is in a ranked (curated) row.

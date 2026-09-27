@@ -103,6 +103,25 @@ final class HaukleyUITests: XCTestCase {
         snap("film-detail")
     }
 
+    func testKidsProfileOnlyShowsFamilyTitles() {
+        tapTab("My Haukley")
+        let profile = element("mine.profile")
+        XCTAssertTrue(profile.waitForExistence(timeout: 5))
+        profile.tap()
+        let kids = app.buttons["Kids"]
+        XCTAssertTrue(kids.waitForExistence(timeout: 5))
+        kids.tap()
+        let field = openSearch()
+        XCTAssertTrue(field.waitForExistence(timeout: 5))
+        field.tap()
+        field.typeText("Nosferatu")
+        XCTAssertFalse(element("search.result.nosferatu").waitForExistence(timeout: 3), "Kids profile must not see horror")
+        field.buttons["Clear text"].firstMatch.tap()
+        field.typeText("The General")
+        XCTAssertTrue(element("search.result.the-general").waitForExistence(timeout: 5))
+        snap("kids-search")
+    }
+
     func testClipsFeedAppears() {
         tapTab("Clips")
         XCTAssertTrue(element("clips.feed").waitForExistence(timeout: 5))

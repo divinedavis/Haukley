@@ -25,6 +25,8 @@ struct Title: Codable, Hashable, Identifiable {
     let badge: String?
     let heroColor: String
     let episodes: [Episode]
+    /// Family-friendly: the only titles a Kids profile sees (same flag the web app uses).
+    let kids: Bool?
 
     var isShow: Bool { kind == "show" }
     var length: String {

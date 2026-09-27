@@ -15,7 +15,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-general/master.m3u8",
    "badge": null,
    "heroColor": "#715C31",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "sherlock-jr",
@@ -32,7 +33,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/sherlock-jr/master.m3u8",
    "badge": null,
    "heroColor": "#434360",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "safety-last",
@@ -49,7 +51,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/safety-last/master.m3u8",
    "badge": null,
    "heroColor": "#605142",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "the-freshman",
@@ -66,7 +69,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-freshman/master.m3u8",
    "badge": null,
    "heroColor": "#625A40",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "one-week",
@@ -83,7 +87,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/one-week/master.m3u8",
    "badge": null,
    "heroColor": "#5D4545",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "his-girl-friday",
@@ -100,7 +105,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/his-girl-friday/master.m3u8",
    "badge": null,
    "heroColor": "#44445E",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "nosferatu",
@@ -117,7 +123,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/nosferatu/master.m3u8",
    "badge": null,
    "heroColor": "#406262",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "phantom-of-the-opera",
@@ -134,7 +141,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/phantom-of-the-opera/master.m3u8",
    "badge": null,
    "heroColor": "#843C1F",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "night-of-the-living-dead",
@@ -151,7 +159,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/night-of-the-living-dead/master.m3u8",
    "badge": null,
    "heroColor": "#604C42",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "the-little-shop-of-horrors",
@@ -168,7 +177,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-little-shop-of-horrors/master.m3u8",
    "badge": null,
    "heroColor": "#3F6348",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "carnival-of-souls",
@@ -185,7 +195,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/carnival-of-souls/master.m3u8",
    "badge": null,
    "heroColor": "#494162",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "metropolis",
@@ -202,7 +213,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/metropolis/master.m3u8",
    "badge": null,
    "heroColor": "#765D2D",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "a-trip-to-the-moon",
@@ -219,7 +231,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/a-trip-to-the-moon/master.m3u8",
    "badge": null,
    "heroColor": "#445E5E",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "all-quiet-on-the-western-front",
@@ -236,7 +249,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/all-quiet-on-the-western-front/master.m3u8",
    "badge": null,
    "heroColor": "#606043",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "d-o-a",
@@ -253,7 +267,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/d-o-a/master.m3u8",
    "badge": null,
    "heroColor": "#5D4545",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "man-with-a-movie-camera",
@@ -270,7 +285,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/man-with-a-movie-camera/master.m3u8",
    "badge": null,
    "heroColor": "#445F44",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "big-buck-bunny",
@@ -287,7 +303,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/big-buck-bunny/master.m3u8",
    "badge": null,
    "heroColor": "#626240",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "sintel",
@@ -304,7 +321,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/sintel/master.m3u8",
    "badge": null,
    "heroColor": "#66453C",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "tears-of-steel",
@@ -321,7 +339,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/tears-of-steel/master.m3u8",
    "badge": null,
    "heroColor": "#67543B",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "elephants-dream",
@@ -338,7 +357,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/elephants-dream/master.m3u8",
    "badge": null,
    "heroColor": "#812821",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "cosmos-laundromat",
@@ -355,7 +375,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/cosmos-laundromat/master.m3u8",
    "badge": null,
    "heroColor": "#643E57",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "spring",
@@ -372,7 +393,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/spring/master.m3u8",
    "badge": null,
    "heroColor": "#396269",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "sprite-fright",
@@ -389,7 +411,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/sprite-fright/master.m3u8",
    "badge": null,
    "heroColor": "#6E6E34",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "charge",
@@ -406,7 +429,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/charge/master.m3u8",
    "badge": null,
    "heroColor": "#5F663D",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "our-hospitality",
@@ -423,7 +447,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/our-hospitality/master.m3u8",
    "badge": null,
    "heroColor": "#625A40",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "seven-chances",
@@ -440,7 +465,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/seven-chances/master.m3u8",
    "badge": null,
    "heroColor": "#5F5143",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "steamboat-bill-jr",
@@ -457,7 +483,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/steamboat-bill-jr/master.m3u8",
    "badge": null,
    "heroColor": "#5F5F44",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "the-navigator",
@@ -474,7 +501,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-navigator/master.m3u8",
    "badge": null,
    "heroColor": "#3B4D67",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "college",
@@ -491,7 +519,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/college/master.m3u8",
    "badge": null,
    "heroColor": "#615642",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "the-cameraman",
@@ -508,7 +537,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-cameraman/master.m3u8",
    "badge": null,
    "heroColor": "#5D4545",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "speedy",
@@ -525,7 +555,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/speedy/master.m3u8",
    "badge": null,
    "heroColor": "#635A3F",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "animal-crackers",
@@ -542,7 +573,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/animal-crackers/master.m3u8",
    "badge": null,
    "heroColor": "#64553E",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "it",
@@ -559,7 +591,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/it/master.m3u8",
    "badge": null,
    "heroColor": "#624051",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "sunrise",
@@ -576,7 +609,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/sunrise/master.m3u8",
    "badge": null,
    "heroColor": "#3E4B64",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "the-hunchback-of-notre-dame",
@@ -593,7 +627,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-hunchback-of-notre-dame/master.m3u8",
    "badge": null,
    "heroColor": "#684D3A",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "dr-jekyll-and-mr-hyde",
@@ -610,7 +645,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/dr-jekyll-and-mr-hyde/master.m3u8",
    "badge": null,
    "heroColor": "#5A3E64",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "white-zombie",
@@ -627,7 +663,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/white-zombie/master.m3u8",
    "badge": null,
    "heroColor": "#426042",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "the-terror",
@@ -644,7 +681,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-terror/master.m3u8",
    "badge": null,
    "heroColor": "#673B55",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "dementia-13",
@@ -661,7 +699,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/dementia-13/master.m3u8",
    "badge": null,
    "heroColor": "#415762",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "night-tide",
@@ -678,7 +717,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/night-tide/master.m3u8",
    "badge": null,
    "heroColor": "#3A5968",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "the-bat",
@@ -695,7 +735,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-bat/master.m3u8",
    "badge": null,
    "heroColor": "#573F63",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "the-stranger",
@@ -712,7 +753,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-stranger/master.m3u8",
    "badge": null,
    "heroColor": "#5D4545",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "scarlet-street",
@@ -729,7 +771,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/scarlet-street/master.m3u8",
    "badge": null,
    "heroColor": "#633F3F",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "kansas-city-confidential",
@@ -746,7 +789,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/kansas-city-confidential/master.m3u8",
    "badge": null,
    "heroColor": "#425160",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "the-hitch-hiker",
@@ -763,7 +807,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-hitch-hiker/master.m3u8",
    "badge": null,
    "heroColor": "#605642",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "suddenly",
@@ -780,7 +825,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/suddenly/master.m3u8",
    "badge": null,
    "heroColor": "#5F5F43",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "the-big-combo",
@@ -797,7 +843,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-big-combo/master.m3u8",
    "badge": null,
    "heroColor": "#43435F",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "blackmail",
@@ -814,7 +861,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/blackmail/master.m3u8",
    "badge": null,
    "heroColor": "#5D4545",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "the-woman-in-green",
@@ -831,7 +879,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-woman-in-green/master.m3u8",
    "badge": null,
    "heroColor": "#3E6447",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "the-big-trail",
@@ -848,7 +897,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-big-trail/master.m3u8",
    "badge": null,
    "heroColor": "#63553F",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "angel-and-the-badman",
@@ -865,7 +915,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/angel-and-the-badman/master.m3u8",
    "badge": null,
    "heroColor": "#605642",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "santa-fe-trail",
@@ -882,7 +933,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/santa-fe-trail/master.m3u8",
    "badge": null,
    "heroColor": "#625441",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "the-mark-of-zorro",
@@ -899,7 +951,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-mark-of-zorro/master.m3u8",
    "badge": null,
    "heroColor": "#44445E",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "robin-hood",
@@ -916,7 +969,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/robin-hood/master.m3u8",
    "badge": null,
    "heroColor": "#436043",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "the-thief-of-bagdad",
@@ -933,7 +987,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-thief-of-bagdad/master.m3u8",
    "badge": null,
    "heroColor": "#4C4260",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "the-black-pirate",
@@ -950,7 +1005,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-black-pirate/master.m3u8",
    "badge": null,
    "heroColor": "#65543E",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "the-lost-world",
@@ -967,7 +1023,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-lost-world/master.m3u8",
    "badge": null,
    "heroColor": "#887D1B",
-   "episodes": []
+   "episodes": [],
+   "kids": true
   },
   {
    "id": "wings",
@@ -984,7 +1041,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/wings/master.m3u8",
    "badge": null,
    "heroColor": "#6A5F38",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "hells-angels",
@@ -1001,7 +1059,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/hells-angels/master.m3u8",
    "badge": null,
    "heroColor": "#333A6F",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "the-big-parade",
@@ -1018,7 +1077,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-big-parade/master.m3u8",
    "badge": null,
    "heroColor": "#39416A",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "meet-john-doe",
@@ -1035,7 +1095,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/meet-john-doe/master.m3u8",
    "badge": null,
    "heroColor": "#414C61",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "a-star-is-born",
@@ -1052,7 +1113,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/a-star-is-born/master.m3u8",
    "badge": null,
    "heroColor": "#6D4835",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "the-crowd",
@@ -1069,7 +1131,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-crowd/master.m3u8",
    "badge": null,
    "heroColor": "#5D4545",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   },
   {
    "id": "rain",
@@ -1086,7 +1149,8 @@
    "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/rain/master.m3u8",
    "badge": null,
    "heroColor": "#415661",
-   "episodes": []
+   "episodes": [],
+   "kids": false
   }
  ],
  "featured": [
