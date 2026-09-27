@@ -62,6 +62,9 @@ def main():
 
     adb(a.serial, "logcat", "-c")
     adb(a.serial, "shell", "am", "force-stop", PKG)
+    # Start from a fresh install's state: a leftover Up Next row takes the first focus and
+    # plays straight away, so "Select opens the title page" would really open the player.
+    adb(a.serial, "shell", "pm", "clear", PKG)
     adb(a.serial, "shell", "am", "start", "-n", ACTIVITY)
     time.sleep(12)
     home = shot(a.serial, out, "1-home")
