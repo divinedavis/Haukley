@@ -35,8 +35,9 @@ if [[ "${SHIP_SKIP_TESTS:-0}" != "1" ]]; then
     xcodebuild -project Haukley.xcodeproj -scheme Haukley \
         -destination "platform=iOS Simulator,id=$SIM_UDID" -derivedDataPath build/smoke \
         -retry-tests-on-failure -test-iterations 2 test 2>&1 | tee "$log" | grep -E "Test Case .*(passed|failed)|Executed" || true
-    # xcodebuild can "succeed" with zero tests run; require the count.
-    if ! grep -qE "Executed [1-9][0-9]* tests?, with 0 failures" "$log"; then
+    # xcodebuild can "succeed" with zero tests run; require the count. The opt-in screenshot
+    # test reports as skipped ("with 1 test skipped and 0 failures"), so allow that form.
+    if ! grep -qE "Executed [1-9][0-9]* tests?, with ([0-9]+ tests? skipped and )?0 failures" "$log"; then
         echo "error: UI tests failed or none ran" >&2; exit 1
     fi
     # The app is universal: run the same suite on an iPad (11-inch) too.
@@ -45,7 +46,7 @@ if [[ "${SHIP_SKIP_TESTS:-0}" != "1" ]]; then
     xcodebuild -project Haukley.xcodeproj -scheme Haukley \
         -destination "platform=iOS Simulator,id=$IPAD_UDID" -derivedDataPath build/smoke-ipad \
         -retry-tests-on-failure -test-iterations 2 test 2>&1 | tee "$log" | grep -E "Test Case .*(passed|failed)|Executed" || true
-    if ! grep -qE "Executed [1-9][0-9]* tests?, with 0 failures" "$log"; then
+    if ! grep -qE "Executed [1-9][0-9]* tests?, with ([0-9]+ tests? skipped and )?0 failures" "$log"; then
         echo "error: iPad UI tests failed or none ran" >&2; exit 1
     fi
 fi
