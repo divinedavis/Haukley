@@ -79,6 +79,14 @@ final class HaukleyUITests: XCTestCase {
     }
 
     /// iOS 26 floats the search tab as its own button beside the tab bar, not inside it.
+    /// Tap until the field really holds keyboard focus (iPad drops it after menus and Clear).
+    private func focus(_ field: XCUIElement) {
+        for _ in 0..<3 where (field.value(forKey: "hasKeyboardFocus") as? Bool) != true {
+            field.tap()
+            sleep(1)
+        }
+    }
+
     private func openSearch() -> XCUIElement {
         let button = app.buttons.matching(NSPredicate(format: "label == 'Search'")).firstMatch
         XCTAssertTrue(button.waitForExistence(timeout: 5), "search tab missing")
@@ -120,10 +128,12 @@ final class HaukleyUITests: XCTestCase {
         waitForExpectations(timeout: 10)
         let field = openSearch()
         XCTAssertTrue(field.waitForExistence(timeout: 5))
-        field.tap()
+        focus(field)
         field.typeText("Nosferatu")
         XCTAssertFalse(element("search.result.nosferatu").waitForExistence(timeout: 3), "Kids profile must not see horror")
         field.buttons["Clear text"].firstMatch.tap()
+        // On iPad, Clear text also drops keyboard focus.
+        focus(field)
         field.typeText("The General")
         XCTAssertTrue(element("search.result.the-general").waitForExistence(timeout: 5))
         snap("kids-search")
