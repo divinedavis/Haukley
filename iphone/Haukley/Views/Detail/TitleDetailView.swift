@@ -87,7 +87,7 @@ struct TitleDetailView: View {
 
     private var episodes: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Season 1").font(.system(size: 17, weight: .bold)).padding(.horizontal, 16)
+            Text("Episodes").font(.system(size: 17, weight: .bold)).padding(.horizontal, 16)
             ForEach(title.episodes) { ep in
                 Button { play = PlayRequest(title: title, episode: ep.number) } label: {
                     VStack(alignment: .leading, spacing: 8) {

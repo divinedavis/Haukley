@@ -73,7 +73,7 @@ export function DetailScreen({ id, onPlay, onOpen }: Props) {
           </View>
         </View>
 
-        <Text style={styles.shelfTitle}>{isShow ? 'Season 1' : 'More Like This'}</Text>
+        <Text style={styles.shelfTitle}>{isShow ? 'Episodes' : 'More Like This'}</Text>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.shelf} style={styles.visible}>
           {isShow
             ? episodesFor(t).map(ep => (

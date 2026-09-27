@@ -67,7 +67,7 @@ sub onData()
     root = CreateObject("roSGNode", "ContentNode")
     row = root.createChild("ContentNode")
     if t.kind = "show"
-        row.title = "Season 1"
+        row.title = "Episodes"
         m.shelf.rowItemSize = [[400, 225]]
     else
         row.title = "More Like This"

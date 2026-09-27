@@ -37,7 +37,7 @@ export function PlayerScreen({ id, episode, startAt, onDone }: Props) {
     };
   }, [id, episode, isTrailer]);
 
-  const subtitle = isTrailer ? 'Official Trailer' : episode ? `Season 1, Episode ${episode}` : t.genre;
+  const subtitle = isTrailer ? 'Official Trailer' : episode ? `Episode ${episode}` : t.genre;
 
   return (
     <View style={styles.screen}>
