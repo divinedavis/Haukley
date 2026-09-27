@@ -21,6 +21,7 @@
 		C9840625F349E2F2AD6E27CF /* MyHaukleyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179200D07C57283A90489669 /* MyHaukleyView.swift */; };
 		CCF0BFCB0B1DD5FBDA96CC0A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B1D05A34E3956A5DC5022B /* SearchView.swift */; };
 		DF8075C9BD174B29F3F9774F /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C0957A8ACDFF49E48D779F /* Library.swift */; };
+		F258DBC1E60FD1526FE0719F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7CB154E56F7B76889E007051 /* PrivacyInfo.xcprivacy */; };
 		F41ADA7235605A3FA7E99A69 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C840BEF3D3786B49DDFED20 /* Components.swift */; };
 		FFC703E3E1B42E611839D402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8A49C40600459E0CD691E1A /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,7 @@
 		53B1EE39728C356483245B88 /* HaukleyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaukleyApp.swift; sourceTree = "<group>"; };
 		70B1D05A34E3956A5DC5022B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		7162A2FC5388F0AA4D44C937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7CB154E56F7B76889E007051 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		9C840BEF3D3786B49DDFED20 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		ADDAD4C39E56E78D346B1F98 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		B8A49C40600459E0CD691E1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				B8A49C40600459E0CD691E1A /* Assets.xcassets */,
 				3AD53E6A9B9EE8DCE6F1F54A /* Catalog */,
+				7CB154E56F7B76889E007051 /* PrivacyInfo.xcprivacy */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			files = (
 				FFC703E3E1B42E611839D402 /* Assets.xcassets in Resources */,
 				B9BA8468B53B7B60E9FF3652 /* Catalog in Resources */,
+				F258DBC1E60FD1526FE0719F /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

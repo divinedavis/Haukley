@@ -1,24 +1,38 @@
   <main class="prose">
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated September 26, 2026</p>
+    <p class="updated">Last updated: September 27, 2026</p>
 
-    <p>Haukley ("Haukley", "we", "us") runs the haukley.com website and the Haukley apps for Roku, Amazon Fire TV, Google TV / Android TV, Apple TV and iPhone (together, the "Service"). This policy explains what we collect, why, and the choices you have. Haukley is free and ad-supported. The TV and iPhone apps need no account; watching on haukley.com needs a free account.</p>
+    <p>Haukley ("Haukley", "we", "us") runs the haukley.com website and the Haukley apps for Roku, Amazon Fire TV, Google TV / Android TV, Apple TV and iPhone (together, the "Service"). This policy explains what we collect, why, and the choices you have. Haukley is free and is meant to be supported by ads. The TV and iPhone apps need no account; watching on haukley.com needs a free account.</p>
 
     <h2>What we collect</h2>
     <table>
       <tr><th>Information</th><th>Why</th><th>Where it lives</th></tr>
       <tr><td>Your email address, if you join the launch list on haukley.com</td><td>To send you one launch announcement (and filmmaker updates if you signed up as a filmmaker)</td><td>Our database (Supabase), in the United States</td></tr>
-      <tr><td>Film submissions: your name, email, the film's details, the screener link and password you share, and a one-way hash of your IP address (to limit spam)</td><td>To review your film and reply to you about distribution</td><td>Our database (Supabase), in the United States</td></tr>
-      <tr><td>Your account on haukley.com/watch: email address and password (stored only as a secure hash by our authentication provider)</td><td>To sign you in</td><td>Our database (Supabase), in the United States</td></tr>
-      <tr><td>Watch progress and "My List" on haukley.com/watch</td><td>Continue Watching and resuming where you left off, on any browser you sign in to</td><td>Our database (Supabase), linked to your account and visible only to you</td></tr>
-      <tr><td>Watch progress and "My List" in the TV and iPhone apps</td><td>Continue Watching and resuming where you left off</td><td>Stored only on your device; not sent to us</td></tr>
-      <tr><td>Ad events: which title an ad played in, the app platform, a random per-viewing session ID, and a timestamp</td><td>To pay filmmakers their share of ad revenue for each title</td><td>Our database (Supabase). These events contain no name, email or device identifier</td></tr>
-      <tr><td>Information collected by our ad partners (see below)</td><td>To show ads, measure them and prevent fraud</td><td>Held by the ad partner under its own policy</td></tr>
+      <tr><td>Film submissions: your name, email, the film's details, the screener link and password you share, and a one-way hash of your IP address (to limit spam)</td><td>To review your film and reply to you about distribution</td><td>Our database (Supabase), in the United States. The IP hash sits in a daily counter that is deleted after two days</td></tr>
+      <tr><td>Your account on haukley.com/watch: your email address and password (the password is stored only as a one-way hash by our authentication provider). If you choose "Continue with Google" when it is offered, Google shares your name, email address and a link to your profile picture instead of a password</td><td>To sign you in</td><td>Our database (Supabase), in the United States</td></tr>
+      <tr><td>Viewer profiles on haukley.com/watch: each profile's name, which of our built-in avatar pictures it uses, and whether it is a Kids profile</td><td>"Who's watching?", and limiting a Kids profile to family titles</td><td>Our database (Supabase), linked to your account and visible only to you</td></tr>
+      <tr><td>Watch progress and "My List" on haukley.com/watch, per profile</td><td>Continue Watching and resuming where you left off, on any browser you sign in to</td><td>Our database (Supabase), linked to your account and visible only to you</td></tr>
+      <tr><td>Profiles, watch progress and "My List" in the TV and iPhone apps</td><td>Continue Watching and resuming where you left off</td><td>Stored only on your device; not sent to us</td></tr>
+      <tr><td>Ad events: which title an ad played in, the app platform, the ad's ID, a random per-viewing session ID, and a timestamp</td><td>To pay filmmakers their share of ad revenue for each title</td><td>Our database (Supabase). These events contain no name, email or device identifier</td></tr>
+      <tr><td>A one-way hash of your IP address, counted per hour when an app reports ad events</td><td>To stop anyone flooding the ad counts</td><td>Our database (Supabase), kept separately from the ad events and deleted after two days</td></tr>
+      <tr><td>Information collected by ad partners, if and when ads are shown (see below)</td><td>To show ads, measure them and prevent fraud</td><td>Held by the ad partner under its own policy</td></tr>
       <tr><td>Standard web server logs (IP address, browser, pages requested)</td><td>Security and keeping the site running</td><td>Our web server; kept for a limited time</td></tr>
     </table>
 
+    <h2>Stored in your browser</h2>
+    <p>When you sign in on haukley.com/watch, your browser keeps your login (a session token) in its local storage so you stay signed in; signing out or deleting your account removes it. The profile you picked is remembered in session storage for that browser tab only. We don't set any advertising or analytics cookies of our own.</p>
+
+    <h2>Service providers</h2>
+    <ul>
+      <li><strong>Supabase</strong> hosts our database and sign-in, in the United States (<a href="https://supabase.com/privacy">supabase.com/privacy</a>).</li>
+      <li><strong>DigitalOcean</strong> hosts haukley.com and stores the video files, and its content delivery network serves the videos (<a href="https://www.digitalocean.com/legal/privacy-policy">digitalocean.com/legal/privacy-policy</a>).</li>
+      <li><strong>Cloudflare</strong> carries the traffic between you and Supabase and delivers the video files, so it sees your IP address in transit (<a href="https://www.cloudflare.com/privacypolicy/">cloudflare.com/privacypolicy</a>).</li>
+      <li><strong>Google Fonts</strong> supplies the typefaces on haukley.com, so your browser requests them from Google, which sees your IP address (<a href="https://policies.google.com/privacy">policies.google.com/privacy</a>).</li>
+      <li><strong>Google</strong> also provides "Continue with Google" sign-in, only if you choose it.</li>
+    </ul>
+
     <h2>Advertising</h2>
-    <p>Ads in the Haukley apps are served by third-party ad technology, including Google's Interactive Media Ads SDK on the web, iPhone, Apple TV, Fire TV and Google TV, and the Roku Advertising Framework on Roku. These partners may collect device information such as an advertising identifier, IP address, and ad-interaction data to deliver and measure ads. Their use of that information is governed by their own privacy policies:</p>
+    <p>Haukley plans to show ads, and the apps and website are built to play them, but <strong>no ads are being shown yet</strong>: today every ad request goes to a placeholder of ours that returns no ad. The ad technology is already built in: Google's Interactive Media Ads SDK on the web, iPhone, Apple TV, Fire TV and Google TV, and the Roku Advertising Framework on Roku. Even with no ads playing, these can contact Google or Roku when a video starts (for example, the website loads Google's SDK from Google's servers). When ads start, these partners may collect device information such as an advertising identifier, IP address, and ad-interaction data to deliver and measure ads, and we will update this policy. Their use of that information is governed by their own privacy policies:</p>
     <ul>
       <li>Google: <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use its services</a></li>
       <li>Roku: <a href="https://docs.roku.com/published/userprivacypolicy/en/us">Roku Privacy Policy</a></li>
@@ -27,19 +41,23 @@
 
     <h2>What we don't do</h2>
     <ul>
-      <li>We don't sell your email address or share it with advertisers.</li>
+      <li>We don't sell your personal information or share your email address with advertisers.</li>
       <li>We don't collect payment information, and the TV and iPhone apps don't require an account.</li>
-      <li>We don't knowingly collect personal information from children under 13. If you believe a child has given us personal information, email <a href="mailto:privacy@haukley.com">privacy@haukley.com</a> and we'll delete it.</li>
+      <li>We don't knowingly collect personal information from children under 13. A Kids profile is a filter set up by the account holder, not an account for a child. If you believe a child has given us personal information, email <a href="mailto:privacy@haukley.com">privacy@haukley.com</a> and we'll delete it.</li>
     </ul>
 
     <h2>How long we keep it</h2>
-    <p>Launch-list emails are kept until you unsubscribe or ask us to delete them. Film submissions are kept while we review them and, for films we don't carry, deleted within 12 months. Ad events are kept as long as needed to calculate and audit filmmaker payments. Account data and web watch progress are kept until you delete your account, which you can do anytime from the account menu on haukley.com/watch; deletion erases them immediately. In the TV and iPhone apps, watch progress stays on your device until you delete the app or clear its data.</p>
+    <p>Launch-list emails are kept until you unsubscribe or ask us to delete them. Film submissions are kept while we review them and, for films we don't carry, deleted within 12 months. Ad events are kept as long as needed to calculate and audit filmmaker payments; the hashed-IP counters are deleted after two days. Account data, profiles and web watch progress are kept until you delete your account, which you can do anytime from the account menu on haukley.com/watch; deletion erases them immediately. In the TV and iPhone apps, profiles and watch progress stay on your device until you delete the app or clear its data.</p>
 
-    <h2>Your choices and rights</h2>
-    <p>You can unsubscribe from any email we send, or ask us to access, correct or delete the information we hold about you, by emailing <a href="mailto:privacy@haukley.com">privacy@haukley.com</a>. Depending on where you live (for example California), you may have additional rights; we'll honor them for everyone.</p>
+    <h2>Your rights</h2>
+    <p>Wherever you live, you can ask us to access, correct or delete the information we hold about you, and you can unsubscribe from any email we send. Email <a href="mailto:privacy@haukley.com">privacy@haukley.com</a>; we'll answer within 30 days and won't treat you differently for asking.</p>
+    <ul>
+      <li><strong>California (CCPA/CPRA)</strong>: you have the right to know, access, correct and delete your personal information, and to opt out of its sale or sharing. We don't sell personal information or share it for cross-context behavioral advertising.</li>
+      <li><strong>EEA and UK (GDPR / UK GDPR)</strong>: we use your account data to provide the service you signed up for (performance of a contract), and launch-list emails with your consent, which you can withdraw anytime. You also have the rights to data portability, to restrict or object to processing, and to complain to your local data-protection authority. Our providers store data in the United States.</li>
+    </ul>
 
     <h2>Security</h2>
-    <p>We use HTTPS, restrict database access so the public apps can only add records (never read them), your account's watch data is readable only when you're signed in,, and limit who can access stored data.</p>
+    <p>We use HTTPS everywhere. The public apps and website can only add records (launch-list sign-ups, film submissions, ad events) and can never read them back; your account's profiles, watch progress and list are readable only by you while you're signed in; and we limit who can access stored data.</p>
 
     <h2>Changes</h2>
     <p>If we change this policy, we'll update the date above, and for material changes we'll give notice on haukley.com.</p>
