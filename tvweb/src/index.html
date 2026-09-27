@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="object-src 'none'; base-uri 'none'">
+  <title>Haukley</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div id="stage">
+    <main id="screen"></main>
+
+    <section id="player" hidden>
+      <video id="video" playsinline preload="auto"></video>
+      <div id="ad-layer"></div>
+      <div id="p-ui">
+        <div id="p-top"><div id="p-title"></div></div>
+        <div id="p-bottom">
+          <div id="p-state"></div>
+          <div id="p-bar"><div id="p-fill"></div><div id="p-knob"></div></div>
+          <div id="p-times"><span id="p-cur">0:00</span><span id="p-dur">0:00</span></div>
+          <div id="p-hint">OK play/pause · ◀ ▶ skip 10s · BACK exit</div>
+        </div>
+      </div>
+      <div id="p-spinner"></div>
+      <div id="p-error" hidden></div>
+    </section>
+
+    <div id="dialog" hidden>
+      <div class="dialog-card">
+        <h2 id="dialog-title"></h2>
+        <p id="dialog-text"></p>
+        <div class="dialog-buttons" id="dialog-buttons"></div>
+      </div>
+    </div>
+  </div>
+  <script src="vendor/hls.light.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

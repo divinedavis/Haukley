@@ -1,0 +1,16 @@
+{
+  "id": "com.haukley.tv",
+  "version": "1.0.0",
+  "vendor": "Haukley",
+  "type": "web",
+  "main": "index.html",
+  "title": "Haukley",
+  "appDescription": "Free movies. No sign-up.",
+  "icon": "icon.png",
+  "largeIcon": "largeIcon.png",
+  "iconColor": "#2b1a55",
+  "splashBackground": "splash.png",
+  "resolution": "1920x1080",
+  "disableBackHistoryAPI": true,
+  "handlesRelaunch": false
+}

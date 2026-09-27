@@ -86,3 +86,6 @@ __pycache__/
 # App Store Connect secrets
 iphone/scripts/asc-config.env
 iphone/build/
+
+# LG/Samsung TV build output (tvweb/build.sh)
+tvweb/dist/

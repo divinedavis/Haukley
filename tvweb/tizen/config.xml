@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Samsung Tizen TV package for Haukley. The package id (10 alphanumerics) and application id
+     must never change once the app is registered in Seller Office. -->
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="https://haukley.com/tv" version="1.0.0" viewmodes="maximized">
+    <tizen:application id="HaukleyTV0.Haukley" package="HaukleyTV0" required_version="6.0"/>
+    <content src="index.html"/>
+    <icon src="icon.png"/>
+    <name>Haukley</name>
+    <author href="https://haukley.com" email="hello@haukley.com">Haukley</author>
+    <description>Free movies. No sign-up.</description>
+    <access origin="*" subdomains="true"/>
+    <feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/>
+    <tizen:privilege name="http://tizen.org/privilege/internet"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/adinfo"/>
+    <tizen:profile name="tv-samsung"/>
+    <tizen:setting screen-orientation="landscape" context-menu="disable" background-support="disable" encryption="disable" install-location="auto" hwkey-event="enable"/>
+</widget>
