@@ -21,7 +21,9 @@ CDN = "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles"
 CLEARED = {
     "apollo-mission-films": dict(
         title="Apollo: The Mission Films", art=4, font="Oswald", layout="bottom", tint=[10, 20, 40], kids=True,
-        tagline="The Moon missions, in NASA's own films."),
+        tagline="The Moon missions, in NASA's own films.",
+        description="NASA's own films of the Apollo flights, from the first crewed test in Earth orbit "
+                    "to the last lunar landing."),
     "sherlock-holmes-1954": dict(
         title="Sherlock Holmes", art=7, font="PlayfairDisplay", layout="bottom", tint=[30, 25, 15], kids=False,
         tagline="The game is afoot, every week."),
@@ -97,7 +99,7 @@ def main():
             "year": s["year"], "rating": s.get("rating", "NR"),
             "seasons": len({x["season"] for x in eps}),
             "font": cfg["font"], "layout": cfg["layout"], "tint": cfg["tint"],
-            "tagline": cfg["tagline"], "description": s["description"], "credits": s["credits"],
+            "tagline": cfg["tagline"], "description": cfg.get("description", s["description"]), "credits": s["credits"],
             "kids": cfg["kids"], "license": license_line(s["rights"]),
             "episodes": eps,
         })
