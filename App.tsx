@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { BackHandler, Platform, StatusBar, StyleSheet, TVEventControl, View } from 'react-native';
+import { BackHandler, Platform, Settings, StatusBar, StyleSheet, TVEventControl, View } from 'react-native';
 import { DetailScreen } from './src/screens/DetailScreen';
 import { HomeScreen } from './src/screens/HomeScreen';
 import { PlayerScreen } from './src/screens/PlayerScreen';
@@ -8,8 +8,23 @@ import type { Route } from './src/types';
 
 // Minimal stack navigator. Home stays mounted (hidden) under other screens so
 // its scroll position and focus survive a round trip to a detail page.
+// Store screenshots: `simctl launch <sim> com.haukley.app -HKOpen detail:<id>` (or player:<id>)
+// opens that screen on top of Home. Launch arguments land in NSUserDefaults, which Settings
+// reads; nothing sets this key otherwise, so normal launches are unaffected.
+function initialStack(): Route[] {
+  const open = Platform.OS === 'ios' ? Settings.get('HKOpen') : undefined;
+  const [screen, id] = typeof open === 'string' ? open.split(':') : [];
+  if (id && screen === 'detail') {
+    return [{ name: 'home' }, { name: 'detail', id }];
+  }
+  if (id && screen === 'player') {
+    return [{ name: 'home' }, { name: 'detail', id }, { name: 'player', id }];
+  }
+  return [{ name: 'home' }];
+}
+
 function App() {
-  const [stack, setStack] = useState<Route[]>([{ name: 'home' }]);
+  const [stack, setStack] = useState<Route[]>(initialStack);
   // Swap in the live catalog saved last launch before the first screen renders, then fetch
   // the next one in the background (it applies on the following launch).
   const [ready, setReady] = useState(false);

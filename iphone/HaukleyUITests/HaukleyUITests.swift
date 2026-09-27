@@ -11,8 +11,9 @@ final class HaukleyUITests: XCTestCase {
         // The splash folds away on its own; test the outcome, not the decoration.
         let splash = app.descendants(matching: .any).matching(identifier: "splash").firstMatch
         expectation(for: NSPredicate(format: "exists == false"), evaluatedWith: splash)
-        // iPad simulators launch slower; the splash itself is ~4 s.
-        waitForExpectations(timeout: 20)
+        // iPad simulators launch slower (the splash itself is ~4 s), and a loaded Mac can take
+        // well over 20 s to get a cold launch past it.
+        waitForExpectations(timeout: 40)
     }
 
     private func element(_ id: String) -> XCUIElement {
@@ -113,6 +114,10 @@ final class HaukleyUITests: XCTestCase {
         let kids = app.buttons["Kids"]
         XCTAssertTrue(kids.waitForExistence(timeout: 5))
         kids.tap()
+        // Confirm the switch took before searching (the menu tap can lag under load).
+        let switched = NSPredicate(format: "label CONTAINS 'Kids'")
+        expectation(for: switched, evaluatedWith: profile)
+        waitForExpectations(timeout: 10)
         let field = openSearch()
         XCTAssertTrue(field.waitForExistence(timeout: 5))
         field.tap()

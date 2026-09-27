@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		12A5E71E25567C5C0796CE87 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39EBCAFFC64BFA998F800ED /* Catalog.swift */; };
 		1DD85483DA2758F0572A337B /* ClipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58ABA389C3C1A29930F04A /* ClipsView.swift */; };
+		4D9DC6BC5D3C101E94D57190 /* HaukleyScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F21EF05C294CC1135BCA2DD /* HaukleyScreenshotTests.swift */; };
 		62966187FAB897D3F1D1EB34 /* GoogleInteractiveMediaAds in Frameworks */ = {isa = PBXBuildFile; productRef = 956D114CC378377B04E132C4 /* GoogleInteractiveMediaAds */; };
 		6EAB80174E1A03C3D6706DCB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496DE25C4FFC66ED749EEEA5 /* HomeView.swift */; };
 		72E45AEA01120D72553701B9 /* HaukleyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1EB57DCFA8C39AD3F9EB3C /* HaukleyUITests.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F21EF05C294CC1135BCA2DD /* HaukleyScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaukleyScreenshotTests.swift; sourceTree = "<group>"; };
 		179200D07C57283A90489669 /* MyHaukleyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHaukleyView.swift; sourceTree = "<group>"; };
 		3AD53E6A9B9EE8DCE6F1F54A /* Catalog */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Catalog; path = Haukley/Resources/Catalog; sourceTree = SOURCE_ROOT; };
 		496DE25C4FFC66ED749EEEA5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		0DC34DCFACFBC6563CABE187 /* HaukleyUITests */ = {
 			isa = PBXGroup;
 			children = (
+				0F21EF05C294CC1135BCA2DD /* HaukleyScreenshotTests.swift */,
 				DB1EB57DCFA8C39AD3F9EB3C /* HaukleyUITests.swift */,
 			);
 			path = HaukleyUITests;
@@ -308,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D9DC6BC5D3C101E94D57190 /* HaukleyScreenshotTests.swift in Sources */,
 				72E45AEA01120D72553701B9 /* HaukleyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
