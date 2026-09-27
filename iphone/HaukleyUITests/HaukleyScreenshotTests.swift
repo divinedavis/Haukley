@@ -44,7 +44,9 @@ final class HaukleyScreenshotTests: XCTestCase {
     }
 
     func testCaptureStoreScreens() {
-        save("home", settle: 5)
+        // Wait for real content, not a clock: under load the first frames are still blank.
+        XCTAssertTrue(element("hero.play").waitForExistence(timeout: 30))
+        save("home", settle: 6)
 
         tab("Search")
         let field = app.searchFields.firstMatch
@@ -73,6 +75,7 @@ final class HaukleyScreenshotTests: XCTestCase {
 
         // Last: scrolling Home shrinks the iOS 26 tab bar, which hides the other tabs.
         tab("Home")
+        XCTAssertTrue(element("hero.play").waitForExistence(timeout: 15))
         app.swipeUp()
         save("rows")
     }
