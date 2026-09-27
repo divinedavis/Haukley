@@ -33,14 +33,13 @@ final class HaukleyScreenshotTests: XCTestCase {
         try? png.write(to: dir.appendingPathComponent("\(name).png"))
     }
 
+    /// Same query the main suite's openSearch uses: the tab-bar lookup by identifier flakes
+    /// on iPhone (the element resolves, then vanishes before the tap).
     private func tab(_ name: String) {
-        var t = app.tabBars.buttons[name]
-        if !t.waitForExistence(timeout: 3) {
-            t = app.buttons.matching(NSPredicate(format: "label == %@", name)).firstMatch
-        }
-        XCTAssertTrue(t.waitForExistence(timeout: 5))
-        t.tap()
-        if !t.isSelected { t.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap() }
+        let t = app.buttons.matching(NSPredicate(format: "label == %@", name)).firstMatch
+        XCTAssertTrue(t.waitForExistence(timeout: 10), "tab \(name) missing")
+        t.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+        sleep(1)
     }
 
     func testCaptureStoreScreens() {
@@ -48,18 +47,23 @@ final class HaukleyScreenshotTests: XCTestCase {
         XCTAssertTrue(element("hero.play").waitForExistence(timeout: 30))
         save("home", settle: 6)
 
-        tab("Search")
         let field = app.searchFields.firstMatch
-        XCTAssertTrue(field.waitForExistence(timeout: 5))
+        for _ in 0..<3 where !field.exists {
+            tab("Search")
+            _ = field.waitForExistence(timeout: 3)
+        }
+        XCTAssertTrue(field.exists)
         field.tap()
         field.typeText("Keaton")
-        app.keyboards.buttons.matching(NSPredicate(format: "label ==[c] 'search'")).firstMatch.tap()
         save("search")
 
         let result = element("search.result.the-general")
         XCTAssertTrue(result.waitForExistence(timeout: 5))
-        result.tap()
-        XCTAssertTrue(element("detail.play").waitForExistence(timeout: 12))
+        for _ in 0..<3 where !element("detail.play").exists {
+            result.tap()
+            _ = element("detail.play").waitForExistence(timeout: 6)
+        }
+        XCTAssertTrue(element("detail.play").exists)
         save("detail")
         element("detail.play").tap()
         save("player", settle: 12)

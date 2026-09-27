@@ -1,0 +1,41 @@
+{
+  "name": "Haukley",
+  "icon": "iphone/Haukley/Resources/Assets.xcassets/AppIcon.appiconset/icon-1024.png",
+  "brand": "#8B6CFF",
+  "raw_dir": "marketing/raw-ipad",
+  "out_dir": "marketing/asc-screenshots-ipad",
+  "masonry": [
+    "home.png",
+    "detail.png",
+    "search.png",
+    "player.png"
+  ],
+  "size": [
+    2064,
+    2752
+  ],
+  "panels": [
+    [
+      "home.png",
+      "Classic movies, free"
+    ],
+    [
+      "search.png",
+      "Find a film in seconds"
+    ],
+    [
+      "detail.png",
+      "Silent comedy to film noir"
+    ],
+    [
+      "rows.png",
+      "A row for every mood"
+    ]
+  ],
+  "stickers": [
+    "🍿",
+    "🎬",
+    "🎞️",
+    "⭐"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Haukley",
+  "icon": "iphone/Haukley/Resources/Assets.xcassets/AppIcon.appiconset/icon-1024.png",
+  "brand": "#8B6CFF",
+  "raw_dir": "marketing/raw-iphone",
+  "out_dir": "marketing/asc-screenshots-iphone",
+  "masonry": ["home.png", "detail.png", "search.png", "player.png"],
+  "panels": [
+    ["home.png", "Classic movies, free"],
+    ["search.png", "Find a film in seconds"],
+    ["detail.png", "Silent comedy to film noir"],
+    ["player.png", "Press play. No subscription."]
+  ],
+  "stickers": ["🍿", "🎬", "🎞️", "⭐"]
+}
