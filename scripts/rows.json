@@ -35,6 +35,21 @@
       ]
     },
     {
+      "key": "tv-shows",
+      "title": "Classic TV & Docuseries",
+      "type": "card",
+      "ids": [
+        "apollo-mission-films",
+        "sherlock-holmes-1954",
+        "one-step-beyond",
+        "rocky-jones-space-ranger",
+        "life-with-elizabeth",
+        "flip-the-frog-1930",
+        "caminandes",
+        "blender-open-shorts"
+      ]
+    },
+    {
       "key": "silent-comedy",
       "title": "Silent Comedy Legends",
       "type": "card",

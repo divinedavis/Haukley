@@ -216,20 +216,18 @@ def make_backdrop(t):
     return darken(img, bottom)
 
 
-# (zoom, x, y) crops of the show's photo so each episode gets its own "still".
-EPISODE_CROPS = [(1.0, 0.5, 0.5), (1.6, 0.2, 0.3), (1.8, 0.8, 0.6), (1.4, 0.5, 0.8),
-                 (2.0, 0.3, 0.7), (1.5, 0.75, 0.25), (1.9, 0.55, 0.45), (1.3, 0.1, 0.5)]
 EPISODE = (640, 360)
 
 
 def make_episode_stills(t):
-    src = grade(photo_for(t, BACKDROP), t["tint"], 0.15)
-    W, H = src.size
-    for i, (zoom, cx, cy) in enumerate(EPISODE_CROPS, start=1):
-        w, h = W / zoom, H / zoom
-        x = min(max(0, cx * W - w / 2), W - w)
-        y = min(max(0, cy * H - h / 2), H - h)
-        yield i, src.crop((int(x), int(y), int(x + w), int(y + h))).resize(EPISODE, Image.LANCZOS)
+    """Each real episode's own frame (grabbed at ingest), cropped to 16:9 and lightly graded."""
+    for e in t["episodes"]:
+        src = Image.open(ROOT / e["still"]).convert("RGB")
+        W, H = src.size
+        h = min(H, int(W * 9 / 16))
+        w = int(h * 16 / 9)
+        frame = src.crop(((W - w) // 2, (H - h) // 2, (W - w) // 2 + w, (H - h) // 2 + h))
+        yield e["number"], grade(frame.resize(EPISODE, Image.LANCZOS), t["tint"], 0.1)
 
 
 ACCENT = (139, 108, 255)
@@ -322,8 +320,10 @@ def main():
             f"backdrop: require('{base}/backdrop.jpg')",
         ]
         if kind == "show":
-            stills = ", ".join(f"require('{base}/ep{i}.jpg')" for i in range(1, len(EPISODE_CROPS) + 1))
+            stills = ", ".join(f"require('{base}/ep{e['number']}.jpg')" for e in t["episodes"])
             props.append(f"stills: [{stills}]")
+            eps = [{k: e[k] for k in ("number", "name", "minutes", "summary", "stream")} for e in t["episodes"]]
+            props.append(f"episodes: {json.dumps(eps, ensure_ascii=False)}")
         out.append("  { " + ", ".join(props) + " },")
     out.append("];")
     (ROOT / "src" / "catalog.generated.ts").write_text("\n".join(out) + "\n")

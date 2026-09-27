@@ -2089,7 +2089,8 @@
      "width": 960,
      "height": 720,
      "has_added_score": false,
-     "notes": "h264/aac (original optical soundtrack); 440s. Early sound cartoon with its original 1930 synchronized soundtrack (no added modern score). 960x720. Opens with ~10s of black, then the original MGM lion and titles (trim the leading black). Verified 2026-09-26: curl -sIL final HTTP 200 + Content-Length; ffprobe headers; frames sampled at 3s, mid-film and last 12s/4s."
+     "notes": "h264/aac (original optical soundtrack); 440s. Early sound cartoon with its original 1930 synchronized soundtrack (no added modern score). 960x720. Opens with ~10s of black, then the original MGM lion and titles (trim the leading black). Verified 2026-09-26: curl -sIL final HTTP 200 + Content-Length; ffprobe headers; frames sampled at 3s, mid-film and last 12s/4s.",
+     "trim_start": 10
     }
    },
    {
@@ -2124,7 +2125,8 @@
      "width": 486,
      "height": 360,
      "has_added_score": false,
-     "notes": "h264/aac (original optical soundtrack); 470s. Early sound cartoon with its original 1930 synchronized soundtrack (no added modern score). TRIM: first ~8s is a modern DVD card reading 'The Ub Iwerks Collection – Things That Go Bump in the Night' (cut 0:00–0:09; original MGM title follows). Only 486x360. Verified 2026-09-26: curl -sIL final HTTP 200 + Content-Length; ffprobe headers; frames sampled at 3s, mid-film and last 12s/4s."
+     "notes": "h264/aac (original optical soundtrack); 470s. Early sound cartoon with its original 1930 synchronized soundtrack (no added modern score). TRIM: first ~8s is a modern DVD card reading 'The Ub Iwerks Collection – Things That Go Bump in the Night' (cut 0:00–0:09; original MGM title follows). Only 486x360. Verified 2026-09-26: curl -sIL final HTTP 200 + Content-Length; ffprobe headers; frames sampled at 3s, mid-film and last 12s/4s.",
+     "trim_start": 9
     }
    },
    {
@@ -2551,7 +2553,9 @@
       "https://catalog.archives.gov/id/1155023",
       "https://archive.org/details/gov.archives.arc.1155023"
      ]
-    }
+    },
+    "skip": true,
+    "skip_reason": "Held back 2026-09-27: embeds network-TV footage (ABC, CBS, NBC, WGN, WTTG credited) that a rights reviewer should clear first."
    },
    {
     "number": 7,
@@ -2584,7 +2588,8 @@
      "width": 854,
      "height": 480,
      "has_added_score": false,
-     "notes": "H.264/AAC 854x480 (4:3 picture pillarboxed). NASA Johnson Space Center video collection upload (JSC-572 = HQ-217). TRIM: 0:00-~0:31 is a digitization vendor card ('Film Roll # JSC 572' + a studio logo, Farmington Hills MI) followed by film leader/flash frames to ~0:45 - start playback at ~0:45 (confirm exact frame). Verified 2026-09-26: curl -sIL final HTTP/2 200 + Content-Length; ffprobe (headers only) for streams; frames sampled at ~5s, end-25s and the first/last ~110s (credits) — no modern distributor logos found unless noted."
+     "notes": "H.264/AAC 854x480 (4:3 picture pillarboxed). NASA Johnson Space Center video collection upload (JSC-572 = HQ-217). TRIM: 0:00-~0:31 is a digitization vendor card ('Film Roll # JSC 572' + a studio logo, Farmington Hills MI) followed by film leader/flash frames to ~0:45 - start playback at ~0:45 (confirm exact frame). Verified 2026-09-26: curl -sIL final HTTP/2 200 + Content-Length; ffprobe (headers only) for streams; frames sampled at ~5s, end-25s and the first/last ~110s (credits) — no modern distributor logos found unless noted.",
+     "trim_start": 45
     }
    },
    {

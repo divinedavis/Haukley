@@ -93,18 +93,19 @@ def main():
                 "poster": f"pkg:/images/titles/{tid}/poster.jpg",
                 "card": f"pkg:/images/titles/{tid}/card.jpg",
                 "backdrop": f"pkg:/images/titles/{tid}/backdrop.jpg",
-                "stream": t.get("stream") or stream_for(streams, tid),
+                "stream": t.get("stream") or (t["episodes"][0]["stream"] if kind == "show" else stream_for(streams, tid)),
                 # Side-loaded caption file (WebVTT/SRT URL) once real titles ship with one.
                 "captions": t.get("captions", ""),
             }
             if kind == "show":
                 eps = []
-                for i, name in enumerate(rows["episodeNames"], start=1):
-                    save(src / f"ep{i}@2x.jpg", IMG / tid / f"ep{i}.jpg", STILL, 60)
+                for e in t["episodes"]:
+                    n = e["number"]
+                    save(src / f"ep{n}@2x.jpg", IMG / tid / f"ep{n}.jpg", STILL, 60)
                     eps.append({
-                        "number": i, "name": name, "minutes": 42 + ((( i - 1) * 7 + len(tid)) % 14),
-                        "still": f"pkg:/images/titles/{tid}/ep{i}.jpg",
-                        "stream": stream_for(streams, tid, i),
+                        "number": n, "name": e["name"], "minutes": e["minutes"], "summary": e["summary"],
+                        "still": f"pkg:/images/titles/{tid}/ep{n}.jpg",
+                        "stream": e["stream"],
                     })
                 entry["episodes"] = eps
             titles[tid] = entry

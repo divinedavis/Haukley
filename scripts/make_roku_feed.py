@@ -87,6 +87,7 @@ def main():
     rows = json.loads((ROOT / "scripts" / "rows.json").read_text())
     schema = json.loads((ROOT / "scripts" / "roku" / "search-feed.schema.json").read_text())
     allowed = set(schema["definitions"]["genre_type"]["enum"])
+    series = json.loads((ROOT / "scripts" / "free_titles_series.json").read_text())
     heights = {t["id"]: t["source"].get("height", 480)
                for t in json.loads((ROOT / "scripts" / "free_titles.json").read_text())}
     shutil.rmtree(WEB / "img" / "feed", ignore_errors=True)
@@ -119,21 +120,24 @@ def main():
                                "content": {"playOptions": [{"license": "free", "quality": quality, "playId": tid}]}})
                 continue
             assets.append({"id": tid, "type": "series", **common})
-            for i, name in enumerate(rows["episodeNames"], start=1):
+            src_eps = {e["number"]: e for x in series if x["id"] == tid for e in x["episodes"]}
+            for e in t["episodes"]:
+                i = e["number"]
                 eid = f"{tid}-e{i}"
-                minutes = 42 + (((i - 1) * 7 + len(tid)) % 14)
+                height = src_eps.get(i, {}).get("source", {}).get("height", 480)
                 assets.append({
                     "id": eid, "type": "episode",
-                    "titles": text(name),
-                    "shortDescriptions": text(f"{t['title']}, episode {i}."),
+                    "titles": text(e["name"]),
+                    "shortDescriptions": text(e["summary"][:200]),
                     "releaseDate": f"{t['year']}-01-01",
                     "genres": genres,
                     "advisoryRatings": rating(kind, t["rating"]),
                     "images": [{"type": "main",
                                 "url": image(src / f"ep{i}@2x.jpg", f"e{i}", (640, 360), tid)}],
-                    "episodeInfo": {"seriesId": tid, "seasonNumber": 1, "episodeNumber": i},
-                    "durationInSeconds": minutes * 60,
-                    "content": {"playOptions": [{"license": "free", "quality": "hd", "playId": eid}]},
+                    "episodeInfo": {"seriesId": tid, "seasonNumber": e.get("season", 1), "episodeNumber": i},
+                    "durationInSeconds": e["minutes"] * 60,
+                    "content": {"playOptions": [{"license": "free", "quality": "hd" if height >= 720 else "sd",
+                                                 "playId": eid}]},
                 })
 
     feed = {"version": "1", "defaultLanguage": "en", "defaultAvailabilityCountries": ["us"], "assets": assets}

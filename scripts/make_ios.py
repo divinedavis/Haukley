@@ -80,21 +80,19 @@ def main():
                 "id": tid, "kind": kind, "title": t["title"], "genre": t["genre"], "year": t["year"],
                 "rating": t["rating"], "tagline": t["tagline"], "description": t["description"],
                 "credits": t["credits"], "runtime": t.get("runtime"), "seasons": t.get("seasons"),
-                "stream": t.get("stream") or stream_for(streams, tid), "badge": badge_for(t, kind),
+                # A show plays its first episode from the title's own Play button.
+                "stream": t.get("stream") or (t["episodes"][0]["stream"] if kind == "show" else stream_for(streams, tid)),
+                "badge": badge_for(t, kind),
                 "heroColor": hero_color(src / "poster@2x.jpg"),
                 "episodes": [],
                 "kids": bool(t.get("kids")),
                 "license": t.get("license"),
             }
             if kind == "show":
-                for i, name in enumerate(rows["episodeNames"], start=1):
-                    save(src / f"ep{i}@2x.jpg", OUT / tid / f"ep{i}.jpg", STILL, 72)
-                    entry["episodes"].append({
-                        "number": i, "name": name, "minutes": 42 + (((i - 1) * 7 + len(tid)) % 14),
-                        "summary": t["description"] if i == 1 else
-                        f"The fallout from last week's discovery forces everyone in {t['title']} to choose a side.",
-                        "stream": stream_for(streams, tid, i),
-                    })
+                for e in t["episodes"]:
+                    n = e["number"]
+                    save(src / f"ep{n}@2x.jpg", OUT / tid / f"ep{n}.jpg", STILL, 72)
+                    entry["episodes"].append({k: e[k] for k in ("number", "name", "minutes", "summary", "stream")})
             titles.append(entry)
 
     out = {

@@ -12,6 +12,11 @@ Stages:
   all       encode -> upload -> delete the local HLS, title by title (keeps disk use low)
 
 Usage: .venv/bin/python scripts/ingest_free_titles.py encode [--only id,id] [--keep-source]
+
+Series: --series reads scripts/free_titles_series.json instead, and --only names shows. Each
+episode is ingested as "<show>/e<N>", so it lands at titles/<show>/e<N>/master.m3u8 on the CDN
+and its still at scripts/stills/<show>/e<N>.jpg. Per-episode trims live in the episode's
+source, exactly like a film's.
 """
 import argparse
 import json
@@ -34,7 +39,14 @@ REGION = "nyc3"
 UA = "Mozilla/5.0 (Macintosh) HaukleyIngest/1.0"
 
 
-def titles(only):
+def titles(only, series=False):
+    if series:
+        shows = json.loads((ROOT / "scripts" / "free_titles_series.json").read_text())
+        if not only:
+            sys.exit("--series needs --only <show ids>: only low-risk shows are cleared for ingest")
+        return [{"id": f"{s['id']}/e{e['number']}", "source": e["source"]}
+                for s in shows if s["id"] in only and s.get("kind") == "show"
+                for e in s["episodes"] if not e.get("skip")]
     data = json.loads((ROOT / "scripts" / "free_titles.json").read_text())
     data = [t for t in data if not t.get("skip")]
     return [t for t in data if not only or t["id"] in only]
@@ -84,7 +96,7 @@ def sheets(t):
     dur = float(probe(src)["format"]["duration"])
     out = WORK / "sheets"
     tmp = WORK / "frames"
-    out.mkdir(parents=True, exist_ok=True)
+    (out / t["id"]).parent.mkdir(parents=True, exist_ok=True)
     for name, start in (("head", 0), ("tail", max(0, dur - 60))):
         # One frame per second over 60 s, 10x6 grid, each labeled with its source timestamp.
         shutil.rmtree(tmp, ignore_errors=True)
@@ -153,7 +165,7 @@ def encode(t, keep_source=False):
     run(cmd)
 
     # Still for key art: a frame about a third of the way in (past the titles).
-    STILLS.mkdir(exist_ok=True)
+    (STILLS / f"{t['id']}.jpg").parent.mkdir(parents=True, exist_ok=True)
     at = start + (end - start) * float(t["source"].get("still_at", 0.33))
     run(["ffmpeg", "-v", "error", "-y", "-ss", f"{at:.1f}", "-i", str(src), "-frames:v", "1",
          "-vf", "scale=1920:-2:flags=lanczos,setsar=1", "-q:v", "3", str(STILLS / f"{t['id']}.jpg")])
@@ -183,8 +195,9 @@ def upload(t):
             "CacheControl": "public, max-age=300" if playlist else "public, max-age=31536000, immutable",
         })
     print(f"upload {t['id']}: {len(files)} files", flush=True)
-    (WORK / "uploaded").mkdir(exist_ok=True)
-    (WORK / "uploaded" / t["id"]).touch()
+    marker = WORK / "uploaded" / t["id"]
+    marker.parent.mkdir(parents=True, exist_ok=True)
+    marker.touch()
 
 
 if __name__ == "__main__":
@@ -192,9 +205,10 @@ if __name__ == "__main__":
     ap.add_argument("stage", choices=["download", "sheets", "encode", "upload", "all"])
     ap.add_argument("--only", default="")
     ap.add_argument("--keep-source", action="store_true")
+    ap.add_argument("--series", action="store_true", help="ingest episodes from free_titles_series.json")
     a = ap.parse_args()
     only = {x for x in a.only.split(",") if x}
-    for t in titles(only):
+    for t in titles(only, a.series):
         if a.stage == "download":
             download(t)
         elif a.stage == "sheets":
@@ -205,6 +219,10 @@ if __name__ == "__main__":
             if (WORK / "uploaded" / t["id"]).exists():
                 print(f"{t['id']}: already uploaded")
                 continue
+            # Head/tail contact sheets first (the source is downloaded anyway), so every
+            # title's opening and closing can be reviewed for modern cards after the run.
+            if not (WORK / "sheets" / f"{t['id']}-head.jpg").exists():
+                sheets(t)
             encode(t, a.keep_source)
             upload(t)
             shutil.rmtree(WORK / "hls" / t["id"])
