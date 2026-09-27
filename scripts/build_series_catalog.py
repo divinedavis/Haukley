@@ -25,9 +25,9 @@ CLEARED = {
     "sherlock-holmes-1954": dict(
         title="Sherlock Holmes", art=7, font="PlayfairDisplay", layout="bottom", tint=[30, 25, 15], kids=False,
         tagline="The game is afoot, every week."),
-    "one-step-beyond": dict(
-        title="One Step Beyond", art=1, font="Cinzel", layout="center", tint=[10, 15, 30], kids=False,
-        tagline="True stories you can't explain."),
+    # One Step Beyond is held back: "Alcoa Presents" bumpers and Alcoa Wrap credit cards
+    # run through each episode (opening, act breaks, end credits), so it needs
+    # frame-accurate multi-point cuts before it can air. Ingested e1-e2 stay unpublished.
     "rocky-jones-space-ranger": dict(
         title="Rocky Jones, Space Ranger", art=1, font="BebasNeue", layout="top", tint=[15, 20, 45], kids=True,
         tagline="Blast off with the Orbit Jet crew."),
