@@ -95,7 +95,8 @@ function fromRemote(remote: RemoteCatalog) {
     const kind = r.kind === 'show' ? 'show' : 'movie';
     return {
       kind, id: r.id, title: r.title, genre: r.genre, year: r.year, rating: r.rating, tagline: r.tagline,
-      description: r.description, credits: r.credits, runtime: r.runtime, seasons: r.seasons ?? undefined,
+      description: r.description, credits: r.credits, license: r.license ?? undefined,
+      runtime: r.runtime, seasons: r.seasons ?? undefined,
       poster: b?.poster ?? art(r.id, 'poster'),
       card: b?.card ?? art(r.id, 'card'),
       backdrop: b?.backdrop ?? art(r.id, 'backdrop'),

@@ -12,7 +12,12 @@ import type { Route } from './src/types';
 // opens that screen on top of Home. Launch arguments land in NSUserDefaults, which Settings
 // reads; nothing sets this key otherwise, so normal launches are unaffected.
 function initialStack(): Route[] {
-  const open = Platform.OS === 'ios' ? Settings.get('HKOpen') : undefined;
+  let open: unknown;
+  try {
+    open = Platform.OS === 'ios' ? Settings.get('HKOpen') : undefined;
+  } catch {
+    // No native Settings module (unit tests): start on Home.
+  }
   const [screen, id] = typeof open === 'string' ? open.split(':') : [];
   if (id && screen === 'detail') {
     return [{ name: 'home' }, { name: 'detail', id }];
