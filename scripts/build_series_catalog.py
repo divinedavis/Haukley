@@ -21,7 +21,7 @@ CDN = "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles"
 CLEARED = {
     "apollo-mission-films": dict(
         title="Apollo: The Mission Films", art=4, font="Oswald", layout="bottom", tint=[10, 20, 40], kids=True,
-        tagline="Every trip to the Moon, as NASA filmed it."),
+        tagline="The Moon missions, in NASA's own films."),
     "sherlock-holmes-1954": dict(
         title="Sherlock Holmes", art=7, font="PlayfairDisplay", layout="bottom", tint=[30, 25, 15], kids=False,
         tagline="The game is afoot, every week."),

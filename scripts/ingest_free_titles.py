@@ -13,6 +13,11 @@ Stages:
 
 Usage: .venv/bin/python scripts/ingest_free_titles.py encode [--only id,id] [--keep-source]
 
+Re-ingesting a title (e.g. a new trim) rewrites the same segment keys, and the CDN caches
+segments for a year: purge titles/<id>/* on the Spaces CDN endpoint afterwards (DELETE
+/v2/cdn/endpoints/<id>/cache with the digitalocean-token-haukley Keychain token), or
+viewers keep getting the old cut. Check the fix against the CDN URL, not the origin.
+
 Series: --series reads scripts/free_titles_series.json instead, and --only names shows. Each
 episode is ingested as "<show>/e<N>", so it lands at titles/<show>/e<N>/master.m3u8 on the CDN
 and its still at scripts/stills/<show>/e<N>.jpg. Per-episode trims live in the episode's

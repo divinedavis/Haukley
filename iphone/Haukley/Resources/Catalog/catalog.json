@@ -1217,6 +1217,89 @@
    "license": "Public domain in the United States"
   },
   {
+   "id": "apollo-mission-films",
+   "kind": "show",
+   "title": "Apollo: The Mission Films",
+   "genre": "Documentary",
+   "year": 1968,
+   "rating": "NR",
+   "tagline": "The Moon missions, in NASA's own films.",
+   "description": "NASA's official films of the Apollo missions, one episode per flight, from the first crewed test in Earth orbit to the last lunar landing.",
+   "credits": "Produced for NASA (NASA Manned Spacecraft Center and A-V Corporation, Houston)",
+   "runtime": null,
+   "seasons": 1,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/apollo-mission-films/e1/master.m3u8",
+   "badge": null,
+   "heroColor": "#3A4268",
+   "episodes": [
+    {
+     "number": 1,
+     "name": "The Flight of Apollo 7",
+     "minutes": 14,
+     "summary": "The first crewed Apollo flight: Schirra, Eisele and Cunningham spend eleven days testing the command module in Earth orbit.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/apollo-mission-films/e1/master.m3u8"
+    },
+    {
+     "number": 2,
+     "name": "Apollo 8: Go for TLI",
+     "minutes": 22,
+     "summary": "Borman, Lovell and Anders become the first humans to leave Earth orbit and circle the Moon on Christmas 1968.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/apollo-mission-films/e2/master.m3u8"
+    },
+    {
+     "number": 3,
+     "name": "Apollo 10: To Sort Out the Unknowns",
+     "minutes": 26,
+     "summary": "The full dress rehearsal for a landing takes the lunar module within nine miles of the Moon's surface.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/apollo-mission-films/e3/master.m3u8"
+    },
+    {
+     "number": 4,
+     "name": "The Eagle Has Landed: The Flight of Apollo 11",
+     "minutes": 28,
+     "summary": "Launch, landing and moonwalk of Armstrong, Aldrin and Collins, told through television, film and photographs from the mission.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/apollo-mission-films/e4/master.m3u8"
+    },
+    {
+     "number": 5,
+     "name": "Apollo 12: Pinpoint for Science",
+     "minutes": 29,
+     "summary": "Conrad and Bean land beside the Surveyor 3 probe and set up the first long-term science station on the Moon.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/apollo-mission-films/e5/master.m3u8"
+    },
+    {
+     "number": 6,
+     "name": "Apollo 14: Mission to Fra Mauro",
+     "minutes": 28,
+     "summary": "Alan Shepard returns to space to explore the Fra Mauro highlands with Edgar Mitchell, while Stuart Roosa orbits above.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/apollo-mission-films/e7/master.m3u8"
+    },
+    {
+     "number": 7,
+     "name": "Apollo 15: In the Mountains of the Moon",
+     "minutes": 29,
+     "summary": "The first lunar rover carries Scott and Irwin across the Hadley-Apennine region beneath the Moon's highest mountains.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/apollo-mission-films/e8/master.m3u8"
+    },
+    {
+     "number": 8,
+     "name": "Apollo 16: Nothing So Hidden",
+     "minutes": 28,
+     "summary": "Young and Duke explore the Descartes highlands by rover while Mission Control and scientists follow every step.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/apollo-mission-films/e9/master.m3u8"
+    },
+    {
+     "number": 9,
+     "name": "Apollo 17: On the Shoulders of Giants",
+     "minutes": 28,
+     "summary": "The last Apollo landing: Cernan and Schmitt spend three days in the Taurus-Littrow valley as the program comes to a close.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/apollo-mission-films/e10/master.m3u8"
+    }
+   ],
+   "kids": true,
+   "license": "U.S. government work \u2014 public domain in the United States"
+  },
+  {
    "id": "sherlock-holmes-1954",
    "kind": "show",
    "title": "Sherlock Holmes",

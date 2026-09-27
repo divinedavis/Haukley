@@ -4870,6 +4870,519 @@
    }
   },
   {
+   "id": "apollo-mission-films",
+   "type": "series",
+   "titles": [
+    {
+     "value": "Apollo: The Mission Films",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The Moon missions, in NASA's own films.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "NASA's official films of the Apollo missions, one episode per flight, from the first crewed test in Earth orbit to the last lunar landing.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1968-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "credits": [
+    {
+     "name": "Produced for NASA (NASA Manned Spacecraft Center and A-V Corporation, Houston)",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/apollo-mission-films-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/apollo-mission-films-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "apollo-mission-films-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Flight of Apollo 7",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The first crewed Apollo flight: Schirra, Eisele and Cunningham spend eleven days testing the command module in Earth orbit.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1968-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/apollo-mission-films-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "apollo-mission-films",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 840,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "apollo-mission-films-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "apollo-mission-films-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Apollo 8: Go for TLI",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Borman, Lovell and Anders become the first humans to leave Earth orbit and circle the Moon on Christmas 1968.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1968-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/apollo-mission-films-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "apollo-mission-films",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 1320,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "apollo-mission-films-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "apollo-mission-films-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Apollo 10: To Sort Out the Unknowns",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The full dress rehearsal for a landing takes the lunar module within nine miles of the Moon's surface.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1968-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/apollo-mission-films-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "apollo-mission-films",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 1560,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "apollo-mission-films-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "apollo-mission-films-e4",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Eagle Has Landed: The Flight of Apollo 11",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Launch, landing and moonwalk of Armstrong, Aldrin and Collins, told through television, film and photographs from the mission.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1968-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/apollo-mission-films-e4.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "apollo-mission-films",
+    "seasonNumber": 1,
+    "episodeNumber": 4
+   },
+   "durationInSeconds": 1680,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "apollo-mission-films-e4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "apollo-mission-films-e5",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Apollo 12: Pinpoint for Science",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Conrad and Bean land beside the Surveyor 3 probe and set up the first long-term science station on the Moon.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1968-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/apollo-mission-films-e5.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "apollo-mission-films",
+    "seasonNumber": 1,
+    "episodeNumber": 5
+   },
+   "durationInSeconds": 1740,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "apollo-mission-films-e5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "apollo-mission-films-e6",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Apollo 14: Mission to Fra Mauro",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Alan Shepard returns to space to explore the Fra Mauro highlands with Edgar Mitchell, while Stuart Roosa orbits above.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1968-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/apollo-mission-films-e6.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "apollo-mission-films",
+    "seasonNumber": 1,
+    "episodeNumber": 6
+   },
+   "durationInSeconds": 1680,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "apollo-mission-films-e6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "apollo-mission-films-e7",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Apollo 15: In the Mountains of the Moon",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The first lunar rover carries Scott and Irwin across the Hadley-Apennine region beneath the Moon's highest mountains.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1968-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/apollo-mission-films-e7.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "apollo-mission-films",
+    "seasonNumber": 1,
+    "episodeNumber": 7
+   },
+   "durationInSeconds": 1740,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "apollo-mission-films-e7"
+     }
+    ]
+   }
+  },
+  {
+   "id": "apollo-mission-films-e8",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Apollo 16: Nothing So Hidden",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Young and Duke explore the Descartes highlands by rover while Mission Control and scientists follow every step.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1968-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/apollo-mission-films-e8.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "apollo-mission-films",
+    "seasonNumber": 1,
+    "episodeNumber": 8
+   },
+   "durationInSeconds": 1680,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "apollo-mission-films-e8"
+     }
+    ]
+   }
+  },
+  {
+   "id": "apollo-mission-films-e9",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Apollo 17: On the Shoulders of Giants",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The last Apollo landing: Cernan and Schmitt spend three days in the Taurus-Littrow valley as the program comes to a close.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1968-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/apollo-mission-films-e9.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "apollo-mission-films",
+    "seasonNumber": 1,
+    "episodeNumber": 9
+   },
+   "durationInSeconds": 1680,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "apollo-mission-films-e9"
+     }
+    ]
+   }
+  },
+  {
    "id": "sherlock-holmes-1954",
    "type": "series",
    "titles": [
