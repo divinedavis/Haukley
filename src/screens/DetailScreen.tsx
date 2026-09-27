@@ -63,7 +63,7 @@ export function DetailScreen({ id, onPlay, onOpen }: Props) {
               </>
             ) : (
               <Button
-                label={isShow ? 'Play S1, E1' : 'Play'}
+                label={isShow ? 'Play E1' : 'Play'}
                 icon="▶"
                 hasTVPreferredFocus
                 onFocus={toTop}

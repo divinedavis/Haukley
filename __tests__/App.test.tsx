@@ -26,8 +26,15 @@ test('every row and featured item points at a real title', () => {
 
 test('titles are unique and shows have episode stills', () => {
   expect(new Set(TITLES.map(t => t.id)).size).toBe(TITLES.length);
-  for (const t of TITLES.filter(x => x.kind === 'show')) {
-    expect(t.stills).toHaveLength(8);
+  const shows = TITLES.filter(x => x.kind === 'show');
+  expect(shows.length).toBeGreaterThan(0);
+  for (const t of shows) {
+    // One real still per real episode, and every episode streams from HTTPS.
+    expect(t.episodes?.length).toBeGreaterThan(0);
+    expect(t.stills).toHaveLength(t.episodes!.length);
+    for (const e of t.episodes!) {
+      expect(e.stream).toMatch(/^https:\/\/.+\/titles\/.+\/e\d+\/master\.m3u8$/);
+    }
   }
 });
 

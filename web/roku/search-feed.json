@@ -4868,6 +4868,2222 @@
      }
     ]
    }
+  },
+  {
+   "id": "sherlock-holmes-1954",
+   "type": "series",
+   "titles": [
+    {
+     "value": "Sherlock Holmes",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The game is afoot, every week.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Ronald Howard plays a young, easygoing Sherlock Holmes solving Victorian London mysteries with Dr. Watson in this 1950s syndicated series.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1954-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "credits": [
+    {
+     "name": "Sheldon Reynolds",
+     "role": "producer"
+    },
+    {
+     "name": "Ronald Howard, Howard Marion-Crawford, Archie Duncan",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/sherlock-holmes-1954-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/sherlock-holmes-1954-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "sherlock-holmes-1954-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Case of the Cunningham Heritage",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Newly returned from Afghanistan, Dr. Watson meets Sherlock Holmes and joins him to clear a young woman found beside a murdered man.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1954-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/sherlock-holmes-1954-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "sherlock-holmes-1954",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 1620,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "sherlock-holmes-1954-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "sherlock-holmes-1954-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Case of Lady Beryl",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Lady Beryl confesses to a murder, but Holmes doubts her story and recreates the crime to find the truth.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1954-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/sherlock-holmes-1954-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "sherlock-holmes-1954",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 1620,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "sherlock-holmes-1954-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "sherlock-holmes-1954-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Case of the Pennsylvania Gun",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Holmes and Watson travel to Sussex to investigate a squire's death by sawn-off shotgun, in a loose adaptation of The Valley of Fear.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1954-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/sherlock-holmes-1954-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "sherlock-holmes-1954",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 1620,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "sherlock-holmes-1954-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "sherlock-holmes-1954-e4",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Case of the Texas Cowgirl",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "A cowgirl from a visiting rodeo show asks Holmes to help her get rid of a dead body in her hotel room.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1954-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/sherlock-holmes-1954-e4.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "sherlock-holmes-1954",
+    "seasonNumber": 1,
+    "episodeNumber": 4
+   },
+   "durationInSeconds": 1620,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "sherlock-holmes-1954-e4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "sherlock-holmes-1954-e5",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Case of the Belligerent Ghost",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Watson claims a dead man attacked him, and Holmes links the 'ghost' to a museum art theft.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1954-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/sherlock-holmes-1954-e5.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "sherlock-holmes-1954",
+    "seasonNumber": 1,
+    "episodeNumber": 5
+   },
+   "durationInSeconds": 1620,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "sherlock-holmes-1954-e5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "sherlock-holmes-1954-e6",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Case of the Shy Ballerina",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "When Watson's hat turns up at a diplomat's murder scene, Lestrade suspects the good doctor.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1954-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/sherlock-holmes-1954-e6.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "sherlock-holmes-1954",
+    "seasonNumber": 1,
+    "episodeNumber": 6
+   },
+   "durationInSeconds": 1560,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "sherlock-holmes-1954-e6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "sherlock-holmes-1954-e7",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Red-Headed League",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "A shopkeeper is paid to copy the encyclopedia for a strange society of red-haired men, and Holmes smells a scheme.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1954-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/sherlock-holmes-1954-e7.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "sherlock-holmes-1954",
+    "seasonNumber": 1,
+    "episodeNumber": 7
+   },
+   "durationInSeconds": 1620,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "sherlock-holmes-1954-e7"
+     }
+    ]
+   }
+  },
+  {
+   "id": "sherlock-holmes-1954-e8",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Case of the Laughing Mummy",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "At a country manor, Holmes investigates an Egyptian mummy said to laugh in the night.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1954-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/sherlock-holmes-1954-e8.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "sherlock-holmes-1954",
+    "seasonNumber": 1,
+    "episodeNumber": 8
+   },
+   "durationInSeconds": 1620,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "sherlock-holmes-1954-e8"
+     }
+    ]
+   }
+  },
+  {
+   "id": "rocky-jones-space-ranger",
+   "type": "series",
+   "titles": [
+    {
+     "value": "Rocky Jones, Space Ranger",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Blast off with the Orbit Jet crew.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Space Ranger Rocky Jones and the crew of the Orbit Jet patrol the United Worlds of the Solar System in this 1950s kids' space adventure.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1954-01-01",
+   "genres": [
+    "science fiction"
+   ],
+   "credits": [
+    {
+     "name": "Created by Roland Reed",
+     "role": "actor"
+    },
+    {
+     "name": "Hollingsworth Morse",
+     "role": "director"
+    },
+    {
+     "name": "Richard Crane, Scotty Beckett, Sally Mansfield",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/rocky-jones-space-ranger-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/rocky-jones-space-ranger-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "rocky-jones-space-ranger-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Beyond the Curtain of Space, Chapter I",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Chapter one of a three-part story: Space Ranger Rocky Jones and the Orbit Jet crew head out beyond a mysterious 'curtain' in space.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1954-01-01",
+   "genres": [
+    "science fiction"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/rocky-jones-space-ranger-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "rocky-jones-space-ranger",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 1560,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "rocky-jones-space-ranger-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "rocky-jones-space-ranger-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Beyond the Curtain of Space, Chapter II",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Chapter two: Rocky and his crew face new perils on the far side of the curtain of space.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1954-01-01",
+   "genres": [
+    "science fiction"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/rocky-jones-space-ranger-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "rocky-jones-space-ranger",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 1620,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "rocky-jones-space-ranger-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "rocky-jones-space-ranger-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Beyond the Curtain of Space, Chapter III",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Chapter three: Rocky races to resolve the crisis and bring his crew home.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1954-01-01",
+   "genres": [
+    "science fiction"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/rocky-jones-space-ranger-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "rocky-jones-space-ranger",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 1560,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "rocky-jones-space-ranger-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "rocky-jones-space-ranger-e4",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Rocky's Odyssey, Chapter I",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Chapter one of a three-part story: Rocky and the Orbit Jet crew set out on a new mission far from Earth.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1954-01-01",
+   "genres": [
+    "science fiction"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/rocky-jones-space-ranger-e4.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "rocky-jones-space-ranger",
+    "seasonNumber": 1,
+    "episodeNumber": 4
+   },
+   "durationInSeconds": 1560,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "rocky-jones-space-ranger-e4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "rocky-jones-space-ranger-e5",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Rocky's Odyssey, Chapter II",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Chapter two: Rocky's odyssey through space grows more dangerous.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1954-01-01",
+   "genres": [
+    "science fiction"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/rocky-jones-space-ranger-e5.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "rocky-jones-space-ranger",
+    "seasonNumber": 1,
+    "episodeNumber": 5
+   },
+   "durationInSeconds": 1560,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "rocky-jones-space-ranger-e5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "rocky-jones-space-ranger-e6",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Rocky's Odyssey, Chapter III",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Chapter three: Rocky's odyssey reaches its climax.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1954-01-01",
+   "genres": [
+    "science fiction"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/rocky-jones-space-ranger-e6.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "rocky-jones-space-ranger",
+    "seasonNumber": 1,
+    "episodeNumber": 6
+   },
+   "durationInSeconds": 1500,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "rocky-jones-space-ranger-e6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "life-with-elizabeth",
+   "type": "series",
+   "titles": [
+    {
+     "value": "Life with Elizabeth",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Aren't you ashamed, Elizabeth?",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Betty White stars as a scatterbrained young wife whose everyday mishaps exasperate her husband in three short comic incidents per episode.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1953-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "credits": [
+    {
+     "name": "Created by George Tibbles",
+     "role": "actor"
+    },
+    {
+     "name": "Betty White, Del Moore",
+     "role": "actor"
+    },
+    {
+     "name": "Jack Narz",
+     "role": "narrator"
+    },
+    {
+     "name": "Bandy Productions / Guild Films",
+     "role": "narrator"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/life-with-elizabeth-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/life-with-elizabeth-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "life-with-elizabeth-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Episode 1",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Elizabeth and her patient husband Alvin stumble through three comic domestic 'incidents', each ending with narrator Jack Narz asking, 'Elizabeth, aren't you ashamed?'",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1953-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/life-with-elizabeth-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "life-with-elizabeth",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 1500,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "life-with-elizabeth-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "life-with-elizabeth-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Episode 2",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Elizabeth and her patient husband Alvin stumble through three comic domestic 'incidents', each ending with narrator Jack Narz asking, 'Elizabeth, aren't you ashamed?'",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1953-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/life-with-elizabeth-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "life-with-elizabeth",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 1500,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "life-with-elizabeth-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "life-with-elizabeth-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Episode 3",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Elizabeth and her patient husband Alvin stumble through three comic domestic 'incidents', each ending with narrator Jack Narz asking, 'Elizabeth, aren't you ashamed?'",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1953-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/life-with-elizabeth-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "life-with-elizabeth",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 1500,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "life-with-elizabeth-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "life-with-elizabeth-e4",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Episode 4",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Elizabeth and her patient husband Alvin stumble through three comic domestic 'incidents', each ending with narrator Jack Narz asking, 'Elizabeth, aren't you ashamed?'",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1953-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/life-with-elizabeth-e4.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "life-with-elizabeth",
+    "seasonNumber": 1,
+    "episodeNumber": 4
+   },
+   "durationInSeconds": 1560,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "life-with-elizabeth-e4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "life-with-elizabeth-e5",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Episode 5",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Elizabeth and her patient husband Alvin stumble through three comic domestic 'incidents', each ending with narrator Jack Narz asking, 'Elizabeth, aren't you ashamed?'",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1953-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/life-with-elizabeth-e5.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "life-with-elizabeth",
+    "seasonNumber": 1,
+    "episodeNumber": 5
+   },
+   "durationInSeconds": 1560,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "life-with-elizabeth-e5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "life-with-elizabeth-e6",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Episode 6",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Elizabeth and her patient husband Alvin stumble through three comic domestic 'incidents', each ending with narrator Jack Narz asking, 'Elizabeth, aren't you ashamed?'",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1953-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/life-with-elizabeth-e6.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "life-with-elizabeth",
+    "seasonNumber": 1,
+    "episodeNumber": 6
+   },
+   "durationInSeconds": 1560,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "life-with-elizabeth-e6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "life-with-elizabeth-e7",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Episode 7",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Elizabeth and her patient husband Alvin stumble through three comic domestic 'incidents', each ending with narrator Jack Narz asking, 'Elizabeth, aren't you ashamed?'",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1953-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/life-with-elizabeth-e7.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "life-with-elizabeth",
+    "seasonNumber": 1,
+    "episodeNumber": 7
+   },
+   "durationInSeconds": 1560,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "life-with-elizabeth-e7"
+     }
+    ]
+   }
+  },
+  {
+   "id": "flip-the-frog-1930",
+   "type": "series",
+   "titles": [
+    {
+     "value": "Flip the Frog",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Ub Iwerks' first star, from 1930.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "The first six cartoons from Ub Iwerks, co-creator of Mickey Mouse, starring his cheerful, rubbery frog in the early days of sound cartoons.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1930-01-01",
+   "genres": [
+    "animated"
+   ],
+   "credits": [
+    {
+     "name": "Produced and drawn by Ub Iwerks",
+     "role": "actor"
+    },
+    {
+     "name": "Celebrity Productions (Pat Powers)",
+     "role": "actor"
+    },
+    {
+     "name": "Released by Metro-Goldwyn-Mayer",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/flip-the-frog-1930-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/flip-the-frog-1930-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "flip-the-frog-1930-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Fiddlesticks",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Flip dances and plays piano with a violin-playing mouse at a woodland concert in the first Flip cartoon.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1930-01-01",
+   "genres": [
+    "animated"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/flip-the-frog-1930-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "flip-the-frog-1930",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 360,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "flip-the-frog-1930-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "flip-the-frog-1930-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Flying Fists",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Flip takes on a much bigger opponent in a knockabout boxing match.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1930-01-01",
+   "genres": [
+    "animated"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/flip-the-frog-1930-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "flip-the-frog-1930",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 420,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "flip-the-frog-1930-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "flip-the-frog-1930-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Village Barber",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Flip's barbershop turns into chaos when his customers get more than a trim.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1930-01-01",
+   "genres": [
+    "animated"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/flip-the-frog-1930-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "flip-the-frog-1930",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 420,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "flip-the-frog-1930-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "flip-the-frog-1930-e4",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Little Orphan Willie",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "A stork leaves a mischievous orphan on Flip's doorstep on a snowy night.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1930-01-01",
+   "genres": [
+    "animated"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/flip-the-frog-1930-e4.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "flip-the-frog-1930",
+    "seasonNumber": 1,
+    "episodeNumber": 4
+   },
+   "durationInSeconds": 360,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "flip-the-frog-1930-e4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "flip-the-frog-1930-e5",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Cuckoo Murder Case",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "A stormy night and a spooky house send Flip on a ghoulish murder mystery.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1930-01-01",
+   "genres": [
+    "animated"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/flip-the-frog-1930-e5.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "flip-the-frog-1930",
+    "seasonNumber": 1,
+    "episodeNumber": 5
+   },
+   "durationInSeconds": 480,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "flip-the-frog-1930-e5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "flip-the-frog-1930-e6",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Puddle Pranks",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Flip woos a sweetheart frog in and around the pond.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1930-01-01",
+   "genres": [
+    "animated"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/flip-the-frog-1930-e6.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "flip-the-frog-1930",
+    "seasonNumber": 1,
+    "episodeNumber": 6
+   },
+   "durationInSeconds": 360,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "flip-the-frog-1930-e6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "caminandes",
+   "type": "series",
+   "titles": [
+    {
+     "value": "Caminandes",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "One llama. Many obstacles.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Koro, a stubborn Patagonian llama, schemes his way past fences, highways and one very pesky penguin in these dialogue-free cartoon shorts inspired by classic Chuck Jones gags.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2013-01-01",
+   "genres": [
+    "animated"
+   ],
+   "credits": [
+    {
+     "name": "Created by Pablo Vazquez",
+     "role": "actor"
+    },
+    {
+     "name": "Blender Institute",
+     "role": "producer"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/caminandes-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/caminandes-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "caminandes-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Llama Drama",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Koro the llama just wants to cross a lonely Patagonian highway, but the road has other ideas.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2013-01-01",
+   "genres": [
+    "animated"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/caminandes-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "caminandes",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 120,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "caminandes-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "caminandes-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Gran Dillama",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Koro spots greener grass on the far side of an electric fence and tries every trick to get there.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2013-01-01",
+   "genres": [
+    "animated"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/caminandes-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "caminandes",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 120,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "caminandes-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "caminandes-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Llamigos",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Winter in Patagonia: Koro battles Oti, a pesky penguin, over the very last tasty berry.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2013-01-01",
+   "genres": [
+    "animated"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/caminandes-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "caminandes",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 180,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "caminandes-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "blender-open-shorts",
+   "type": "series",
+   "titles": [
+    {
+     "value": "Blender Open Shorts",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Animated shorts from Blender Studio.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A collection of award-winning animated shorts from Amsterdam's Blender Studio, from painterly space fables to slapstick rocket rides, each made entirely with free software.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2015-01-01",
+   "genres": [
+    "animated"
+   ],
+   "credits": [
+    {
+     "name": "Blender Studio (Blender Institute / Blender Foundation)",
+     "role": "producer"
+    },
+    {
+     "name": "Beorn Leonard",
+     "role": "director"
+    },
+    {
+     "name": "Hjalti Hjalmarsson",
+     "role": "director"
+    },
+    {
+     "name": "Daniel Martinez Lara",
+     "role": "director"
+    },
+    {
+     "name": "Rik Schutte",
+     "role": "director"
+    },
+    {
+     "name": "Andy Goralczyk",
+     "role": "director"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/blender-open-shorts-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/blender-open-shorts-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "blender-open-shorts-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Glass Half",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Two amateur art critics bicker their way through a gallery, causing chaos for everyone else, until they finally find a piece they both love.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2015-01-01",
+   "genres": [
+    "animated"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/blender-open-shorts-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "blender-open-shorts",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 180,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "blender-open-shorts-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "blender-open-shorts-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Daily Dweebs",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "In 1950s American suburbia, a mischievous pet named Dixey has a very bad day with a backyard chicken.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2015-01-01",
+   "genres": [
+    "animated"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/blender-open-shorts-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "blender-open-shorts",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 60,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "blender-open-shorts-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "blender-open-shorts-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Hero",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Rendered as a living sketchbook, a soldier and a mysterious rival clash in a dazzling 2D-in-3D action showdown.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2015-01-01",
+   "genres": [
+    "animated"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/blender-open-shorts-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "blender-open-shorts",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 240,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "blender-open-shorts-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "blender-open-shorts-e4",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Coffee Run",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Fueled by caffeine, a young woman sprints through the bittersweet memories of a past relationship.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2015-01-01",
+   "genres": [
+    "animated"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/blender-open-shorts-e4.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "blender-open-shorts",
+    "seasonNumber": 1,
+    "episodeNumber": 4
+   },
+   "durationInSeconds": 180,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "blender-open-shorts-e4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "blender-open-shorts-e5",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "WING IT!",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "An uptight engineer's day goes sideways when an overeager wannabe pilot launches them both skyward in an out-of-control space shuttle.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2015-01-01",
+   "genres": [
+    "animated"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/blender-open-shorts-e5.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "blender-open-shorts",
+    "seasonNumber": 1,
+    "episodeNumber": 5
+   },
+   "durationInSeconds": 240,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "blender-open-shorts-e5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "blender-open-shorts-e6",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Singularity",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "When a cosmic event swallows his icy home, a small space critter seeks refuge among luminous creatures watched over by a mysterious celestial being.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "2015-01-01",
+   "genres": [
+    "animated"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/blender-open-shorts-e6.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "blender-open-shorts",
+    "seasonNumber": 1,
+    "episodeNumber": 6
+   },
+   "durationInSeconds": 420,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "hd",
+      "playId": "blender-open-shorts-e6"
+     }
+    ]
+   }
   }
  ]
 }

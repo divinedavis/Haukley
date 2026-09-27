@@ -52,7 +52,7 @@ export function Hero({ items, onPlay, onInfo, onFocus, preferredFocus }: Props) 
       </Animated.View>
 
       <Animated.View style={[styles.info, { opacity: fade }]}>
-        <Text style={styles.eyebrow}>{t.kind === 'show' ? 'NEW SEASON' : 'NOW STREAMING'}</Text>
+        <Text style={styles.eyebrow}>{t.kind === 'show' ? 'SERIES' : 'NOW STREAMING'}</Text>
         <Text style={styles.title} numberOfLines={2}>
           {t.title}
         </Text>
@@ -65,7 +65,7 @@ export function Hero({ items, onPlay, onInfo, onFocus, preferredFocus }: Props) 
         </Text>
         <View style={styles.buttons}>
           <Button
-            label={t.kind === 'show' ? 'Play S1, E1' : 'Play'}
+            label={t.kind === 'show' ? 'Play E1' : 'Play'}
             icon="▶"
             hasTVPreferredFocus={preferredFocus}
             onFocus={onFocus}

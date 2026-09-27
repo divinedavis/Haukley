@@ -114,6 +114,21 @@ final class HaukleyUITests: XCTestCase {
         snap("film-detail")
     }
 
+    func testSeriesDetailListsItsEpisodes() {
+        let field = openSearch()
+        XCTAssertTrue(field.waitForExistence(timeout: 5))
+        focus(field)
+        field.typeText("Sherlock Holmes")
+        let result = element("search.result.sherlock-holmes-1954")
+        XCTAssertTrue(result.waitForExistence(timeout: 5))
+        result.tap()
+        XCTAssertTrue(element("detail.play").waitForExistence(timeout: 12))
+        XCTAssertTrue(app.staticTexts["Episodes"].waitForExistence(timeout: 5))
+        let first = app.staticTexts.matching(NSPredicate(format: "label CONTAINS 'The Case of the Cunningham Heritage'")).firstMatch
+        XCTAssertTrue(first.exists, "first real episode title")
+        snap("series-detail")
+    }
+
     func testKidsProfileOnlyShowsFamilyTitles() {
         tapTab("My Haukley")
         let profile = element("mine.profile")

@@ -42,7 +42,7 @@ sub onData()
     playTitle = t.title
     playEpisode = 0
     if t.kind = "show"
-        playLabel = "Play S1, E1"
+        playLabel = "Play E1"
         playUrl = t.episodes[0].stream
         playTitle = t.title + " · Episode 1"
         playEpisode = 1

@@ -37,5 +37,5 @@ test('labels', () => {
   expect(clock(754)).toBe('12:34');
   expect(clock(3725)).toBe('1:02:05');
   expect(timeLeftLabel({ id: 'x', episode: 0, position: 600, duration: 4920, updatedAt: 0 })).toBe('1 hr 12 min left');
-  expect(timeLeftLabel({ id: 'x', episode: 4, position: 1200, duration: 2520, updatedAt: 0 })).toBe('S1, E4 · 22 min left');
+  expect(timeLeftLabel({ id: 'x', episode: 4, position: 1200, duration: 2520, updatedAt: 0 })).toBe('E4 · 22 min left');
 });

@@ -16,9 +16,9 @@
    "badge": null,
    "heroColor": "#715C31",
    "episodes": [],
-   "font": "Cinzel",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "Cinzel",
    "silent": true
   },
   {
@@ -37,9 +37,9 @@
    "badge": null,
    "heroColor": "#434360",
    "episodes": [],
-   "font": "PlayfairDisplay",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "PlayfairDisplay",
    "silent": true
   },
   {
@@ -58,9 +58,9 @@
    "badge": null,
    "heroColor": "#605142",
    "episodes": [],
-   "font": "AbrilFatface",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "AbrilFatface",
    "silent": true
   },
   {
@@ -79,9 +79,9 @@
    "badge": null,
    "heroColor": "#625A40",
    "episodes": [],
-   "font": "Oswald",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "Oswald",
    "silent": true
   },
   {
@@ -100,9 +100,9 @@
    "badge": null,
    "heroColor": "#5D4545",
    "episodes": [],
-   "font": "Pacifico",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "Pacifico",
    "silent": true
   },
   {
@@ -121,8 +121,9 @@
    "badge": null,
    "heroColor": "#44445E",
    "episodes": [],
-   "font": "PlayfairDisplay",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "PlayfairDisplay"
   },
   {
    "id": "nosferatu",
@@ -140,8 +141,9 @@
    "badge": null,
    "heroColor": "#406262",
    "episodes": [],
-   "font": "Monoton",
+   "kids": false,
    "license": "Public domain in the United States",
+   "font": "Monoton",
    "silent": true
   },
   {
@@ -160,8 +162,9 @@
    "badge": null,
    "heroColor": "#843C1F",
    "episodes": [],
-   "font": "Cinzel",
+   "kids": false,
    "license": "Public domain in the United States",
+   "font": "Cinzel",
    "silent": true
   },
   {
@@ -180,8 +183,9 @@
    "badge": null,
    "heroColor": "#604C42",
    "episodes": [],
-   "font": "BebasNeue",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "BebasNeue"
   },
   {
    "id": "the-little-shop-of-horrors",
@@ -199,8 +203,9 @@
    "badge": null,
    "heroColor": "#3F6348",
    "episodes": [],
-   "font": "ArchivoBlack",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "ArchivoBlack"
   },
   {
    "id": "carnival-of-souls",
@@ -218,8 +223,9 @@
    "badge": null,
    "heroColor": "#494162",
    "episodes": [],
-   "font": "Monoton",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "Monoton"
   },
   {
    "id": "metropolis",
@@ -237,8 +243,9 @@
    "badge": null,
    "heroColor": "#765D2D",
    "episodes": [],
-   "font": "Anton",
+   "kids": false,
    "license": "Public domain in the United States",
+   "font": "Anton",
    "silent": true
   },
   {
@@ -257,9 +264,9 @@
    "badge": null,
    "heroColor": "#445E5E",
    "episodes": [],
-   "font": "Pacifico",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "Pacifico",
    "silent": true
   },
   {
@@ -278,8 +285,9 @@
    "badge": null,
    "heroColor": "#606043",
    "episodes": [],
-   "font": "Oswald",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "Oswald"
   },
   {
    "id": "d-o-a",
@@ -297,8 +305,9 @@
    "badge": null,
    "heroColor": "#5D4545",
    "episodes": [],
-   "font": "BebasNeue",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "BebasNeue"
   },
   {
    "id": "man-with-a-movie-camera",
@@ -316,9 +325,9 @@
    "badge": null,
    "heroColor": "#445F44",
    "episodes": [],
-   "font": "Montserrat",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "Montserrat",
    "silent": true
   },
   {
@@ -337,9 +346,9 @@
    "badge": null,
    "heroColor": "#626240",
    "episodes": [],
-   "font": "ArchivoBlack",
    "kids": true,
-   "license": "(c) copyright 2008, Blender Foundation / www.bigbuckbunny.org \u00b7 https://creativecommons.org/licenses/by/3.0/"
+   "license": "(c) copyright 2008, Blender Foundation / www.bigbuckbunny.org \u00b7 https://creativecommons.org/licenses/by/3.0/",
+   "font": "ArchivoBlack"
   },
   {
    "id": "sintel",
@@ -357,8 +366,9 @@
    "badge": null,
    "heroColor": "#66453C",
    "episodes": [],
-   "font": "Cinzel",
-   "license": "\u00a9 copyright Blender Foundation | durian.blender.org \u00b7 https://creativecommons.org/licenses/by/3.0/"
+   "kids": false,
+   "license": "\u00a9 copyright Blender Foundation | durian.blender.org \u00b7 https://creativecommons.org/licenses/by/3.0/",
+   "font": "Cinzel"
   },
   {
    "id": "tears-of-steel",
@@ -376,8 +386,9 @@
    "badge": null,
    "heroColor": "#67543B",
    "episodes": [],
-   "font": "Anton",
-   "license": "(CC) Blender Foundation | mango.blender.org \u00b7 https://creativecommons.org/licenses/by/3.0/"
+   "kids": false,
+   "license": "(CC) Blender Foundation | mango.blender.org \u00b7 https://creativecommons.org/licenses/by/3.0/",
+   "font": "Anton"
   },
   {
    "id": "elephants-dream",
@@ -395,8 +406,9 @@
    "badge": null,
    "heroColor": "#812821",
    "episodes": [],
-   "font": "Monoton",
-   "license": "(c) copyright 2006, Blender Foundation / Netherlands Media Art Institute / www.elephantsdream.org \u00b7 https://creativecommons.org/licenses/by/2.5/"
+   "kids": false,
+   "license": "(c) copyright 2006, Blender Foundation / Netherlands Media Art Institute / www.elephantsdream.org \u00b7 https://creativecommons.org/licenses/by/2.5/",
+   "font": "Monoton"
   },
   {
    "id": "cosmos-laundromat",
@@ -414,8 +426,9 @@
    "badge": null,
    "heroColor": "#643E57",
    "episodes": [],
-   "font": "Montserrat",
-   "license": "(CC) Blender Foundation | gooseberry.blender.org \u00b7 https://creativecommons.org/licenses/by/3.0/"
+   "kids": false,
+   "license": "(CC) Blender Foundation | gooseberry.blender.org \u00b7 https://creativecommons.org/licenses/by/3.0/",
+   "font": "Montserrat"
   },
   {
    "id": "spring",
@@ -433,9 +446,9 @@
    "badge": null,
    "heroColor": "#396269",
    "episodes": [],
-   "font": "PlayfairDisplay",
    "kids": true,
-   "license": "Spring by Blender Animation Studio, \u00a9 Blender Foundation | studio.blender.org, licensed CC BY 4.0 \u00b7 https://creativecommons.org/licenses/by/4.0/"
+   "license": "Spring by Blender Animation Studio, \u00a9 Blender Foundation | studio.blender.org, licensed CC BY 4.0 \u00b7 https://creativecommons.org/licenses/by/4.0/",
+   "font": "PlayfairDisplay"
   },
   {
    "id": "sprite-fright",
@@ -453,8 +466,9 @@
    "badge": null,
    "heroColor": "#6E6E34",
    "episodes": [],
-   "font": "Pacifico",
-   "license": "Sprite Fright by Blender Studio, \u00a9 Blender Foundation | studio.blender.org, licensed CC BY 4.0 \u00b7 https://creativecommons.org/licenses/by/4.0/"
+   "kids": false,
+   "license": "Sprite Fright by Blender Studio, \u00a9 Blender Foundation | studio.blender.org, licensed CC BY 4.0 \u00b7 https://creativecommons.org/licenses/by/4.0/",
+   "font": "Pacifico"
   },
   {
    "id": "charge",
@@ -472,8 +486,9 @@
    "badge": null,
    "heroColor": "#5F663D",
    "episodes": [],
-   "font": "BebasNeue",
-   "license": "Charge by Blender Studio, \u00a9 Blender Foundation | studio.blender.org, licensed CC BY 4.0 \u00b7 https://creativecommons.org/licenses/by/4.0/"
+   "kids": false,
+   "license": "Charge by Blender Studio, \u00a9 Blender Foundation | studio.blender.org, licensed CC BY 4.0 \u00b7 https://creativecommons.org/licenses/by/4.0/",
+   "font": "BebasNeue"
   },
   {
    "id": "our-hospitality",
@@ -491,9 +506,9 @@
    "badge": null,
    "heroColor": "#625A40",
    "episodes": [],
-   "font": "Cinzel",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "Cinzel",
    "silent": true
   },
   {
@@ -512,9 +527,9 @@
    "badge": null,
    "heroColor": "#5F5143",
    "episodes": [],
-   "font": "PlayfairDisplay",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "PlayfairDisplay",
    "silent": true
   },
   {
@@ -533,9 +548,9 @@
    "badge": null,
    "heroColor": "#5F5F44",
    "episodes": [],
-   "font": "Oswald",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "Oswald",
    "silent": true
   },
   {
@@ -554,9 +569,9 @@
    "badge": null,
    "heroColor": "#3B4D67",
    "episodes": [],
-   "font": "Cinzel",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "Cinzel",
    "silent": true
   },
   {
@@ -575,9 +590,9 @@
    "badge": null,
    "heroColor": "#615642",
    "episodes": [],
-   "font": "Oswald",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "Oswald",
    "silent": true
   },
   {
@@ -596,9 +611,9 @@
    "badge": null,
    "heroColor": "#5D4545",
    "episodes": [],
-   "font": "PlayfairDisplay",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "PlayfairDisplay",
    "silent": true
   },
   {
@@ -617,9 +632,9 @@
    "badge": null,
    "heroColor": "#635A3F",
    "episodes": [],
-   "font": "AbrilFatface",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "AbrilFatface",
    "silent": true
   },
   {
@@ -638,9 +653,9 @@
    "badge": null,
    "heroColor": "#64553E",
    "episodes": [],
-   "font": "Pacifico",
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "font": "Pacifico"
   },
   {
    "id": "it",
@@ -658,8 +673,9 @@
    "badge": null,
    "heroColor": "#624051",
    "episodes": [],
-   "font": "Pacifico",
+   "kids": false,
    "license": "Public domain in the United States",
+   "font": "Pacifico",
    "silent": true
   },
   {
@@ -678,8 +694,9 @@
    "badge": null,
    "heroColor": "#3E4B64",
    "episodes": [],
-   "font": "PlayfairDisplay",
+   "kids": false,
    "license": "Public domain in the United States",
+   "font": "PlayfairDisplay",
    "silent": true
   },
   {
@@ -698,8 +715,9 @@
    "badge": null,
    "heroColor": "#684D3A",
    "episodes": [],
-   "font": "Cinzel",
+   "kids": false,
    "license": "Public domain in the United States",
+   "font": "Cinzel",
    "silent": true
   },
   {
@@ -718,8 +736,9 @@
    "badge": null,
    "heroColor": "#5A3E64",
    "episodes": [],
-   "font": "Cinzel",
+   "kids": false,
    "license": "Public domain in the United States",
+   "font": "Cinzel",
    "silent": true
   },
   {
@@ -738,8 +757,9 @@
    "badge": null,
    "heroColor": "#426042",
    "episodes": [],
-   "font": "Monoton",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "Monoton"
   },
   {
    "id": "the-terror",
@@ -757,8 +777,9 @@
    "badge": null,
    "heroColor": "#673B55",
    "episodes": [],
-   "font": "Cinzel",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "Cinzel"
   },
   {
    "id": "dementia-13",
@@ -776,8 +797,9 @@
    "badge": null,
    "heroColor": "#415762",
    "episodes": [],
-   "font": "BebasNeue",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "BebasNeue"
   },
   {
    "id": "night-tide",
@@ -795,8 +817,9 @@
    "badge": null,
    "heroColor": "#3A5968",
    "episodes": [],
-   "font": "PlayfairDisplay",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "PlayfairDisplay"
   },
   {
    "id": "the-bat",
@@ -814,8 +837,9 @@
    "badge": null,
    "heroColor": "#573F63",
    "episodes": [],
-   "font": "BebasNeue",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "BebasNeue"
   },
   {
    "id": "the-stranger",
@@ -833,8 +857,9 @@
    "badge": null,
    "heroColor": "#5D4545",
    "episodes": [],
-   "font": "Oswald",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "Oswald"
   },
   {
    "id": "scarlet-street",
@@ -852,8 +877,9 @@
    "badge": null,
    "heroColor": "#633F3F",
    "episodes": [],
-   "font": "AbrilFatface",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "AbrilFatface"
   },
   {
    "id": "kansas-city-confidential",
@@ -871,8 +897,9 @@
    "badge": null,
    "heroColor": "#425160",
    "episodes": [],
-   "font": "BebasNeue",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "BebasNeue"
   },
   {
    "id": "the-hitch-hiker",
@@ -890,8 +917,9 @@
    "badge": null,
    "heroColor": "#605642",
    "episodes": [],
-   "font": "ArchivoBlack",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "ArchivoBlack"
   },
   {
    "id": "suddenly",
@@ -909,8 +937,9 @@
    "badge": null,
    "heroColor": "#5F5F43",
    "episodes": [],
-   "font": "BebasNeue",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "BebasNeue"
   },
   {
    "id": "the-big-combo",
@@ -928,8 +957,9 @@
    "badge": null,
    "heroColor": "#43435F",
    "episodes": [],
-   "font": "Anton",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "Anton"
   },
   {
    "id": "blackmail",
@@ -947,8 +977,9 @@
    "badge": null,
    "heroColor": "#5D4545",
    "episodes": [],
-   "font": "Oswald",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "Oswald"
   },
   {
    "id": "the-woman-in-green",
@@ -966,8 +997,9 @@
    "badge": null,
    "heroColor": "#3E6447",
    "episodes": [],
-   "font": "PlayfairDisplay",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "PlayfairDisplay"
   },
   {
    "id": "the-big-trail",
@@ -985,8 +1017,9 @@
    "badge": null,
    "heroColor": "#63553F",
    "episodes": [],
-   "font": "Anton",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "Anton"
   },
   {
    "id": "angel-and-the-badman",
@@ -1004,9 +1037,9 @@
    "badge": null,
    "heroColor": "#605642",
    "episodes": [],
-   "font": "Cinzel",
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "font": "Cinzel"
   },
   {
    "id": "santa-fe-trail",
@@ -1024,8 +1057,9 @@
    "badge": null,
    "heroColor": "#625441",
    "episodes": [],
-   "font": "Oswald",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "Oswald"
   },
   {
    "id": "the-mark-of-zorro",
@@ -1043,9 +1077,9 @@
    "badge": null,
    "heroColor": "#44445E",
    "episodes": [],
-   "font": "AbrilFatface",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "AbrilFatface",
    "silent": true
   },
   {
@@ -1064,9 +1098,9 @@
    "badge": null,
    "heroColor": "#436043",
    "episodes": [],
-   "font": "Cinzel",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "Cinzel",
    "silent": true
   },
   {
@@ -1085,9 +1119,9 @@
    "badge": null,
    "heroColor": "#4C4260",
    "episodes": [],
-   "font": "Pacifico",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "Pacifico",
    "silent": true
   },
   {
@@ -1106,9 +1140,9 @@
    "badge": null,
    "heroColor": "#65543E",
    "episodes": [],
-   "font": "Anton",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "Anton",
    "silent": true
   },
   {
@@ -1127,9 +1161,9 @@
    "badge": null,
    "heroColor": "#887D1B",
    "episodes": [],
-   "font": "ArchivoBlack",
    "kids": true,
    "license": "Public domain in the United States",
+   "font": "ArchivoBlack",
    "silent": true
   },
   {
@@ -1148,8 +1182,9 @@
    "badge": null,
    "heroColor": "#6A5F38",
    "episodes": [],
-   "font": "Anton",
+   "kids": false,
    "license": "Public domain in the United States",
+   "font": "Anton",
    "silent": true
   },
   {
@@ -1168,8 +1203,9 @@
    "badge": null,
    "heroColor": "#333A6F",
    "episodes": [],
-   "font": "BebasNeue",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "BebasNeue"
   },
   {
    "id": "the-big-parade",
@@ -1187,8 +1223,9 @@
    "badge": null,
    "heroColor": "#39416A",
    "episodes": [],
-   "font": "Oswald",
+   "kids": false,
    "license": "Public domain in the United States",
+   "font": "Oswald",
    "silent": true
   },
   {
@@ -1207,8 +1244,9 @@
    "badge": null,
    "heroColor": "#414C61",
    "episodes": [],
-   "font": "PlayfairDisplay",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "PlayfairDisplay"
   },
   {
    "id": "a-star-is-born",
@@ -1226,8 +1264,9 @@
    "badge": null,
    "heroColor": "#6D4835",
    "episodes": [],
-   "font": "Pacifico",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "Pacifico"
   },
   {
    "id": "the-crowd",
@@ -1245,8 +1284,9 @@
    "badge": null,
    "heroColor": "#5D4545",
    "episodes": [],
-   "font": "Montserrat",
+   "kids": false,
    "license": "Public domain in the United States",
+   "font": "Montserrat",
    "silent": true
   },
   {
@@ -1265,8 +1305,387 @@
    "badge": null,
    "heroColor": "#415661",
    "episodes": [],
-   "font": "AbrilFatface",
-   "license": "Public domain in the United States"
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "AbrilFatface"
+  },
+  {
+   "id": "sherlock-holmes-1954",
+   "kind": "show",
+   "title": "Sherlock Holmes",
+   "genre": "Mystery",
+   "year": 1954,
+   "rating": "NR",
+   "tagline": "The game is afoot, every week.",
+   "description": "Ronald Howard plays a young, easygoing Sherlock Holmes solving Victorian London mysteries with Dr. Watson in this 1950s syndicated series.",
+   "credits": "Produced by Sheldon Reynolds \u00b7 Starring Ronald Howard, Howard Marion-Crawford, Archie Duncan",
+   "runtime": null,
+   "seasons": 1,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/sherlock-holmes-1954/e1/master.m3u8",
+   "badge": null,
+   "heroColor": "#626240",
+   "episodes": [
+    {
+     "number": 1,
+     "name": "The Case of the Cunningham Heritage",
+     "minutes": 27,
+     "summary": "Newly returned from Afghanistan, Dr. Watson meets Sherlock Holmes and joins him to clear a young woman found beside a murdered man.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/sherlock-holmes-1954/e1/master.m3u8"
+    },
+    {
+     "number": 2,
+     "name": "The Case of Lady Beryl",
+     "minutes": 27,
+     "summary": "Lady Beryl confesses to a murder, but Holmes doubts her story and recreates the crime to find the truth.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/sherlock-holmes-1954/e2/master.m3u8"
+    },
+    {
+     "number": 3,
+     "name": "The Case of the Pennsylvania Gun",
+     "minutes": 27,
+     "summary": "Holmes and Watson travel to Sussex to investigate a squire's death by sawn-off shotgun, in a loose adaptation of The Valley of Fear.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/sherlock-holmes-1954/e3/master.m3u8"
+    },
+    {
+     "number": 4,
+     "name": "The Case of the Texas Cowgirl",
+     "minutes": 27,
+     "summary": "A cowgirl from a visiting rodeo show asks Holmes to help her get rid of a dead body in her hotel room.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/sherlock-holmes-1954/e4/master.m3u8"
+    },
+    {
+     "number": 5,
+     "name": "The Case of the Belligerent Ghost",
+     "minutes": 27,
+     "summary": "Watson claims a dead man attacked him, and Holmes links the 'ghost' to a museum art theft.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/sherlock-holmes-1954/e5/master.m3u8"
+    },
+    {
+     "number": 6,
+     "name": "The Case of the Shy Ballerina",
+     "minutes": 26,
+     "summary": "When Watson's hat turns up at a diplomat's murder scene, Lestrade suspects the good doctor.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/sherlock-holmes-1954/e6/master.m3u8"
+    },
+    {
+     "number": 7,
+     "name": "The Red-Headed League",
+     "minutes": 27,
+     "summary": "A shopkeeper is paid to copy the encyclopedia for a strange society of red-haired men, and Holmes smells a scheme.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/sherlock-holmes-1954/e7/master.m3u8"
+    },
+    {
+     "number": 8,
+     "name": "The Case of the Laughing Mummy",
+     "minutes": 27,
+     "summary": "At a country manor, Holmes investigates an Egyptian mummy said to laugh in the night.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/sherlock-holmes-1954/e8/master.m3u8"
+    }
+   ],
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "PlayfairDisplay"
+  },
+  {
+   "id": "rocky-jones-space-ranger",
+   "kind": "show",
+   "title": "Rocky Jones, Space Ranger",
+   "genre": "Sci-Fi",
+   "year": 1954,
+   "rating": "NR",
+   "tagline": "Blast off with the Orbit Jet crew.",
+   "description": "Space Ranger Rocky Jones and the crew of the Orbit Jet patrol the United Worlds of the Solar System in this 1950s kids' space adventure.",
+   "credits": "Created by Roland Reed \u00b7 Directed by Hollingsworth Morse \u00b7 Starring Richard Crane, Scotty Beckett, Sally Mansfield",
+   "runtime": null,
+   "seasons": 1,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/rocky-jones-space-ranger/e1/master.m3u8",
+   "badge": null,
+   "heroColor": "#405A62",
+   "episodes": [
+    {
+     "number": 1,
+     "name": "Beyond the Curtain of Space, Chapter I",
+     "minutes": 26,
+     "summary": "Chapter one of a three-part story: Space Ranger Rocky Jones and the Orbit Jet crew head out beyond a mysterious 'curtain' in space.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/rocky-jones-space-ranger/e1/master.m3u8"
+    },
+    {
+     "number": 2,
+     "name": "Beyond the Curtain of Space, Chapter II",
+     "minutes": 27,
+     "summary": "Chapter two: Rocky and his crew face new perils on the far side of the curtain of space.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/rocky-jones-space-ranger/e2/master.m3u8"
+    },
+    {
+     "number": 3,
+     "name": "Beyond the Curtain of Space, Chapter III",
+     "minutes": 26,
+     "summary": "Chapter three: Rocky races to resolve the crisis and bring his crew home.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/rocky-jones-space-ranger/e3/master.m3u8"
+    },
+    {
+     "number": 4,
+     "name": "Rocky's Odyssey, Chapter I",
+     "minutes": 26,
+     "summary": "Chapter one of a three-part story: Rocky and the Orbit Jet crew set out on a new mission far from Earth.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/rocky-jones-space-ranger/e4/master.m3u8"
+    },
+    {
+     "number": 5,
+     "name": "Rocky's Odyssey, Chapter II",
+     "minutes": 26,
+     "summary": "Chapter two: Rocky's odyssey through space grows more dangerous.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/rocky-jones-space-ranger/e5/master.m3u8"
+    },
+    {
+     "number": 6,
+     "name": "Rocky's Odyssey, Chapter III",
+     "minutes": 25,
+     "summary": "Chapter three: Rocky's odyssey reaches its climax.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/rocky-jones-space-ranger/e6/master.m3u8"
+    }
+   ],
+   "kids": true,
+   "license": "Public domain in the United States",
+   "font": "BebasNeue"
+  },
+  {
+   "id": "life-with-elizabeth",
+   "kind": "show",
+   "title": "Life with Elizabeth",
+   "genre": "Comedy",
+   "year": 1953,
+   "rating": "NR",
+   "tagline": "Aren't you ashamed, Elizabeth?",
+   "description": "Betty White stars as a scatterbrained young wife whose everyday mishaps exasperate her husband in three short comic incidents per episode.",
+   "credits": "Created by George Tibbles \u00b7 Starring Betty White, Del Moore \u00b7 Narrated by Jack Narz \u00b7 Bandy Productions / Guild Films",
+   "runtime": null,
+   "seasons": 1,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/life-with-elizabeth/e1/master.m3u8",
+   "badge": null,
+   "heroColor": "#605642",
+   "episodes": [
+    {
+     "number": 1,
+     "name": "Episode 1",
+     "minutes": 25,
+     "summary": "Elizabeth and her patient husband Alvin stumble through three comic domestic 'incidents', each ending with narrator Jack Narz asking, 'Elizabeth, aren't you ashamed?'",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/life-with-elizabeth/e1/master.m3u8"
+    },
+    {
+     "number": 2,
+     "name": "Episode 2",
+     "minutes": 25,
+     "summary": "Elizabeth and her patient husband Alvin stumble through three comic domestic 'incidents', each ending with narrator Jack Narz asking, 'Elizabeth, aren't you ashamed?'",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/life-with-elizabeth/e2/master.m3u8"
+    },
+    {
+     "number": 3,
+     "name": "Episode 3",
+     "minutes": 25,
+     "summary": "Elizabeth and her patient husband Alvin stumble through three comic domestic 'incidents', each ending with narrator Jack Narz asking, 'Elizabeth, aren't you ashamed?'",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/life-with-elizabeth/e3/master.m3u8"
+    },
+    {
+     "number": 4,
+     "name": "Episode 4",
+     "minutes": 26,
+     "summary": "Elizabeth and her patient husband Alvin stumble through three comic domestic 'incidents', each ending with narrator Jack Narz asking, 'Elizabeth, aren't you ashamed?'",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/life-with-elizabeth/e4/master.m3u8"
+    },
+    {
+     "number": 5,
+     "name": "Episode 5",
+     "minutes": 26,
+     "summary": "Elizabeth and her patient husband Alvin stumble through three comic domestic 'incidents', each ending with narrator Jack Narz asking, 'Elizabeth, aren't you ashamed?'",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/life-with-elizabeth/e5/master.m3u8"
+    },
+    {
+     "number": 6,
+     "name": "Episode 6",
+     "minutes": 26,
+     "summary": "Elizabeth and her patient husband Alvin stumble through three comic domestic 'incidents', each ending with narrator Jack Narz asking, 'Elizabeth, aren't you ashamed?'",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/life-with-elizabeth/e6/master.m3u8"
+    },
+    {
+     "number": 7,
+     "name": "Episode 7",
+     "minutes": 26,
+     "summary": "Elizabeth and her patient husband Alvin stumble through three comic domestic 'incidents', each ending with narrator Jack Narz asking, 'Elizabeth, aren't you ashamed?'",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/life-with-elizabeth/e7/master.m3u8"
+    }
+   ],
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "Pacifico"
+  },
+  {
+   "id": "flip-the-frog-1930",
+   "kind": "show",
+   "title": "Flip the Frog",
+   "genre": "Animation",
+   "year": 1930,
+   "rating": "NR",
+   "tagline": "Ub Iwerks' first star, from 1930.",
+   "description": "The first six cartoons from Ub Iwerks, co-creator of Mickey Mouse, starring his cheerful, rubbery frog in the early days of sound cartoons.",
+   "credits": "Produced and drawn by Ub Iwerks \u00b7 Celebrity Productions (Pat Powers) \u00b7 Released by Metro-Goldwyn-Mayer",
+   "runtime": null,
+   "seasons": 1,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/flip-the-frog-1930/e1/master.m3u8",
+   "badge": null,
+   "heroColor": "#685B3A",
+   "episodes": [
+    {
+     "number": 1,
+     "name": "Fiddlesticks",
+     "minutes": 6,
+     "summary": "Flip dances and plays piano with a violin-playing mouse at a woodland concert in the first Flip cartoon.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/flip-the-frog-1930/e1/master.m3u8"
+    },
+    {
+     "number": 2,
+     "name": "Flying Fists",
+     "minutes": 7,
+     "summary": "Flip takes on a much bigger opponent in a knockabout boxing match.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/flip-the-frog-1930/e2/master.m3u8"
+    },
+    {
+     "number": 3,
+     "name": "The Village Barber",
+     "minutes": 7,
+     "summary": "Flip's barbershop turns into chaos when his customers get more than a trim.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/flip-the-frog-1930/e3/master.m3u8"
+    },
+    {
+     "number": 4,
+     "name": "Little Orphan Willie",
+     "minutes": 6,
+     "summary": "A stork leaves a mischievous orphan on Flip's doorstep on a snowy night.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/flip-the-frog-1930/e4/master.m3u8"
+    },
+    {
+     "number": 5,
+     "name": "The Cuckoo Murder Case",
+     "minutes": 8,
+     "summary": "A stormy night and a spooky house send Flip on a ghoulish murder mystery.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/flip-the-frog-1930/e5/master.m3u8"
+    },
+    {
+     "number": 6,
+     "name": "Puddle Pranks",
+     "minutes": 6,
+     "summary": "Flip woos a sweetheart frog in and around the pond.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/flip-the-frog-1930/e6/master.m3u8"
+    }
+   ],
+   "kids": false,
+   "license": "Public domain in the United States",
+   "font": "AbrilFatface"
+  },
+  {
+   "id": "caminandes",
+   "kind": "show",
+   "title": "Caminandes",
+   "genre": "Animation",
+   "year": 2013,
+   "rating": "NR",
+   "tagline": "One llama. Many obstacles.",
+   "description": "Koro, a stubborn Patagonian llama, schemes his way past fences, highways and one very pesky penguin in these dialogue-free cartoon shorts inspired by classic Chuck Jones gags.",
+   "credits": "Created by Pablo Vazquez \u00b7 Produced by Blender Institute \u00b7 Music by Jan Morgenstern (eps 1-2) \u00b7 Torin Borrowdale (ep 3)",
+   "runtime": null,
+   "seasons": 1,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/caminandes/e1/master.m3u8",
+   "badge": null,
+   "heroColor": "#3F5763",
+   "episodes": [
+    {
+     "number": 1,
+     "name": "Llama Drama",
+     "minutes": 2,
+     "summary": "Koro the llama just wants to cross a lonely Patagonian highway, but the road has other ideas.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/caminandes/e1/master.m3u8"
+    },
+    {
+     "number": 2,
+     "name": "Gran Dillama",
+     "minutes": 2,
+     "summary": "Koro spots greener grass on the far side of an electric fence and tries every trick to get there.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/caminandes/e2/master.m3u8"
+    },
+    {
+     "number": 3,
+     "name": "Llamigos",
+     "minutes": 3,
+     "summary": "Winter in Patagonia: Koro battles Oti, a pesky penguin, over the very last tasty berry.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/caminandes/e3/master.m3u8"
+    }
+   ],
+   "kids": true,
+   "license": "Caminandes by Blender Institute / Blender Foundation \u2014 (CC) caminandes.com \u2014 CC BY 3.0 (eps 1-2), CC BY 4.0 (ep 3) \u00b7 https://creativecommons.org/licenses/by/3.0/",
+   "font": "Pacifico"
+  },
+  {
+   "id": "blender-open-shorts",
+   "kind": "show",
+   "title": "Blender Open Shorts",
+   "genre": "Animation",
+   "year": 2015,
+   "rating": "NR",
+   "tagline": "Animated shorts from Blender Studio.",
+   "description": "A collection of award-winning animated shorts from Amsterdam's Blender Studio, from painterly space fables to slapstick rocket rides, each made entirely with free software.",
+   "credits": "Produced by Blender Studio (Blender Institute / Blender Foundation) \u00b7 Directed by Beorn Leonard \u00b7 Hjalti Hjalmarsson \u00b7 Daniel Martinez Lara \u00b7 Rik Schutte \u00b7 Andy Goralczyk",
+   "runtime": null,
+   "seasons": 1,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/blender-open-shorts/e1/master.m3u8",
+   "badge": null,
+   "heroColor": "#76542D",
+   "episodes": [
+    {
+     "number": 1,
+     "name": "Glass Half",
+     "minutes": 3,
+     "summary": "Two amateur art critics bicker their way through a gallery, causing chaos for everyone else, until they finally find a piece they both love.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/blender-open-shorts/e1/master.m3u8"
+    },
+    {
+     "number": 2,
+     "name": "The Daily Dweebs",
+     "minutes": 1,
+     "summary": "In 1950s American suburbia, a mischievous pet named Dixey has a very bad day with a backyard chicken.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/blender-open-shorts/e2/master.m3u8"
+    },
+    {
+     "number": 3,
+     "name": "Hero",
+     "minutes": 4,
+     "summary": "Rendered as a living sketchbook, a soldier and a mysterious rival clash in a dazzling 2D-in-3D action showdown.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/blender-open-shorts/e3/master.m3u8"
+    },
+    {
+     "number": 4,
+     "name": "Coffee Run",
+     "minutes": 3,
+     "summary": "Fueled by caffeine, a young woman sprints through the bittersweet memories of a past relationship.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/blender-open-shorts/e4/master.m3u8"
+    },
+    {
+     "number": 5,
+     "name": "WING IT!",
+     "minutes": 4,
+     "summary": "An uptight engineer's day goes sideways when an overeager wannabe pilot launches them both skyward in an out-of-control space shuttle.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/blender-open-shorts/e5/master.m3u8"
+    },
+    {
+     "number": 6,
+     "name": "Singularity",
+     "minutes": 7,
+     "summary": "When a cosmic event swallows his icy home, a small space critter seeks refuge among luminous creatures watched over by a mysterious celestial being.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/blender-open-shorts/e6/master.m3u8"
+    }
+   ],
+   "kids": true,
+   "license": "\u00a9 Blender Foundation | studio.blender.org \u2014 Creative Commons Attribution 4.0 \u00b7 https://creativecommons.org/licenses/by/4.0/",
+   "font": "Montserrat"
   }
  ],
  "featured": [
@@ -1296,6 +1715,21 @@
     "sintel",
     "phantom-of-the-opera",
     "carnival-of-souls"
+   ]
+  },
+  {
+   "key": "tv-shows",
+   "title": "Classic TV & Docuseries",
+   "type": "card",
+   "ids": [
+    "apollo-mission-films",
+    "sherlock-holmes-1954",
+    "one-step-beyond",
+    "rocky-jones-space-ranger",
+    "life-with-elizabeth",
+    "flip-the-frog-1930",
+    "caminandes",
+    "blender-open-shorts"
    ]
   },
   {

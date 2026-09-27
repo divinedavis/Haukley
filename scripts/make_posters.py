@@ -166,7 +166,7 @@ def make_poster(t, kind):
         cred_f = font("LeagueGothic", int(22 * w * 0.9 / cw), "Regular")
         cw = d.textlength(cred, font=cred_f)
     d.text(((w - cw) / 2, h - 96), cred, font=cred_f, fill=(215, 215, 215))
-    rel = f"{'STREAMING FREE' if kind == 'movie' else 'NEW SEASON'}  ·  ON HAUKLEY"
+    rel = f"{'STREAMING FREE' if kind == 'movie' else 'FREE SERIES'}  ·  ON HAUKLEY"
     rf = body_font(15, "Bold")
     rw = d.textlength(rel, font=rf)
     d.text(((w - rw) / 2, h - 58), rel, font=rf, fill=(255, 255, 255))

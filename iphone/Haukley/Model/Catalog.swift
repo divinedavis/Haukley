@@ -76,10 +76,13 @@ final class Catalog {
 
     private init() {
         let file: CatalogFile
-        if let data = try? Data(contentsOf: CatalogSync.dir.appendingPathComponent("catalog.json")),
+        let cachedURL = CatalogSync.dir.appendingPathComponent("catalog.json")
+        let bundledURL = Bundle.main.url(forResource: "catalog", withExtension: "json", subdirectory: "Catalog")
+        if Self.isNewer(cachedURL, than: bundledURL),
+           let data = try? Data(contentsOf: cachedURL),
            let decoded = try? JSONDecoder().decode(CatalogFile.self, from: data), !decoded.titles.isEmpty {
             file = decoded
-        } else if let url = Bundle.main.url(forResource: "catalog", withExtension: "json", subdirectory: "Catalog"),
+        } else if let url = bundledURL,
            let data = try? Data(contentsOf: url),
            let decoded = try? JSONDecoder().decode(CatalogFile.self, from: data) {
             file = decoded
@@ -93,6 +96,17 @@ final class Catalog {
         featured = file.featured.compactMap { lookup[$0] }
         upNext = file.upNext
         rows = file.rows
+    }
+
+    /// A catalog cached under an older app version must not hide what a newer bundle ships
+    /// (an update that adds series would otherwise show none until the next refresh lands).
+    private static func isNewer(_ cached: URL, than bundled: URL?) -> Bool {
+        let date = { (url: URL) in
+            (try? FileManager.default.attributesOfItem(atPath: url.path)[.modificationDate]) as? Date
+        }
+        guard let cachedDate = date(cached) else { return false }
+        guard let bundled, let bundledDate = date(bundled) else { return true }
+        return cachedDate > bundledDate
     }
 
     func title(_ id: String) -> Title? { byId[id] }

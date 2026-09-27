@@ -47,8 +47,6 @@ def hero_color(path):
 
 
 def badge_for(t, kind):
-    if kind == "show" and t.get("seasons", 1) > 1:
-        return "New Season"
     if t["year"] >= 2026:
         return "Recently Added"
     return None

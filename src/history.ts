@@ -78,7 +78,7 @@ export async function recordWatch(id: string, episode: number, position: number,
 export function timeLeftLabel(w: Watch): string {
   const mins = Math.max(1, Math.round((w.duration - w.position) / 60));
   const left = mins >= 60 ? `${Math.floor(mins / 60)} hr ${mins % 60} min left` : `${mins} min left`;
-  return w.episode > 0 ? `S1, E${w.episode} · ${left}` : left;
+  return w.episode > 0 ? `E${w.episode} · ${left}` : left;
 }
 
 export function clock(seconds: number): string {

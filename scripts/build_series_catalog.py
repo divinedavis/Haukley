@@ -38,7 +38,7 @@ CLEARED = {
         title="Flip the Frog", art=1, font="AbrilFatface", layout="center", tint=[30, 30, 20], kids=False,
         tagline="Ub Iwerks' first star, from 1930."),
     "caminandes": dict(
-        title="Caminandes", art=1, font="Pacifico", layout="top", tint=[20, 30, 20], kids=True,
+        title="Caminandes", art=2, font="Pacifico", layout="top", tint=[20, 30, 20], kids=True,
         tagline="One llama. Many obstacles."),
     "blender-open-shorts": dict(
         title="Blender Open Shorts", art=6, font="Montserrat", layout="center", tint=[25, 15, 40], kids=True,
