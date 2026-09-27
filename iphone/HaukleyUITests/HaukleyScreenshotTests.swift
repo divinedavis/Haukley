@@ -46,12 +46,6 @@ final class HaukleyScreenshotTests: XCTestCase {
     func testCaptureStoreScreens() {
         save("home", settle: 5)
 
-        // Scroll down to show the poster rows.
-        app.swipeUp()
-        save("rows")
-        app.swipeDown()
-        app.swipeDown()
-
         tab("Search")
         let field = app.searchFields.firstMatch
         XCTAssertTrue(field.waitForExistence(timeout: 5))
@@ -76,5 +70,10 @@ final class HaukleyScreenshotTests: XCTestCase {
         save("clips", settle: 6)
         tab("My Haukley")
         save("mine")
+
+        // Last: scrolling Home shrinks the iOS 26 tab bar, which hides the other tabs.
+        tab("Home")
+        app.swipeUp()
+        save("rows")
     }
 }
