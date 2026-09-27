@@ -35,6 +35,22 @@ extension Color {
     static let brand = Color(red: 0.545, green: 0.424, blue: 1.0)
 }
 
+// MARK: Layout
+
+/// Sizes that change between iPhone (compact width) and iPad (regular width), so rows, tiles
+/// and margins scale up the way Netflix's iPad app does instead of showing a stretched phone UI.
+struct Metrics {
+    let wide: Bool
+    init(_ sizeClass: UserInterfaceSizeClass?) { wide = sizeClass == .regular }
+    var gutter: CGFloat { wide ? 32 : 16 }
+    var poster: CGFloat { wide ? 150 : 112 }
+    var tallPoster: CGFloat { wide ? 200 : 150 }
+    var rankedPoster: CGFloat { wide ? 136 : 104 }
+    var rankScale: CGFloat { wide ? 1.3 : 1 }
+    var rowTitle: CGFloat { wide ? 24 : 19 }
+    var rowSpacing: CGFloat { wide ? 12 : 8 }
+}
+
 // MARK: Tiles
 
 /// A 2:3 poster with an optional badge ("New Season", "Recently Added") and Top 10 flag.
@@ -106,11 +122,13 @@ struct RankNumeral: View {
 
 struct RowHeader: View {
     let title: String
+    @Environment(\.horizontalSizeClass) private var sizeClass
     var body: some View {
+        let m = Metrics(sizeClass)
         Text(title)
-            .font(.system(size: 19, weight: .bold))
+            .font(.system(size: m.rowTitle, weight: .bold))
             .foregroundStyle(.white)
-            .padding(.horizontal, 16)
+            .padding(.horizontal, m.gutter)
     }
 }
 
@@ -118,14 +136,16 @@ struct PosterRow: View {
     let title: String
     let titles: [Title]
     var tall = false
+    @Environment(\.horizontalSizeClass) private var sizeClass
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        let m = Metrics(sizeClass)
+        VStack(alignment: .leading, spacing: m.rowSpacing) {
             RowHeader(title: title)
             ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack(spacing: 8) {
-                    ForEach(titles) { PosterTile(title: $0, width: tall ? 150 : 112) }
+                LazyHStack(spacing: m.rowSpacing) {
+                    ForEach(titles) { PosterTile(title: $0, width: tall ? m.tallPoster : m.poster) }
                 }
-                .padding(.horizontal, 16)
+                .padding(.horizontal, m.gutter)
             }
         }
     }
@@ -135,20 +155,24 @@ struct Top10Row: View {
     let title: String
     let titles: [Title]
     @EnvironmentObject private var router: Router
+    @Environment(\.horizontalSizeClass) private var sizeClass
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        let m = Metrics(sizeClass)
+        VStack(alignment: .leading, spacing: m.rowSpacing) {
             RowHeader(title: title)
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 4) {
                     ForEach(Array(titles.prefix(10).enumerated()), id: \.element.id) { i, t in
-                        HStack(alignment: .bottom, spacing: -22) {
-                            RankNumeral(n: i + 1).offset(y: 18)
-                            PosterTile(title: t, width: 104)
+                        HStack(alignment: .bottom, spacing: -22 * m.rankScale) {
+                            RankNumeral(n: i + 1).scaleEffect(m.rankScale, anchor: .bottomTrailing)
+                                .offset(y: 18 * m.rankScale)
+                            PosterTile(title: t, width: m.rankedPoster)
                         }
-                        .padding(.trailing, 6)
+                        .padding(.trailing, 6 * m.rankScale)
+                        .padding(.leading, m.wide ? 20 : 0)
                     }
                 }
-                .padding(.horizontal, 16)
+                .padding(.horizontal, m.gutter)
             }
         }
     }
@@ -158,8 +182,10 @@ struct ContinueRow: View {
     let title: String
     let items: [Library.Watch]
     @EnvironmentObject private var router: Router
+    @Environment(\.horizontalSizeClass) private var sizeClass
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        let m = Metrics(sizeClass)
+        VStack(alignment: .leading, spacing: m.rowSpacing) {
             RowHeader(title: title)
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 8) {
@@ -170,7 +196,7 @@ struct ContinueRow: View {
                                     router.play = PlayRequest(title: t, episode: w.episode > 0 ? w.episode : nil)
                                 } label: {
                                     BundleImage(url: t.poster)
-                                        .frame(width: 112, height: 150)
+                                        .frame(width: m.poster, height: m.poster * 1.34)
                                         .clipped()
                                         .overlay {
                                             Image(systemName: "play.fill")
@@ -203,12 +229,12 @@ struct ContinueRow: View {
                                 .padding(.horizontal, 8).frame(height: 34)
                                 .background(Color(white: 0.14))
                             }
-                            .frame(width: 112)
+                            .frame(width: m.poster)
                             .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))
                         }
                     }
                 }
-                .padding(.horizontal, 16)
+                .padding(.horizontal, m.gutter)
             }
         }
     }

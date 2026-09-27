@@ -9,6 +9,7 @@ struct HomeView: View {
     @EnvironmentObject private var library: Library
     @EnvironmentObject private var router: Router
     @State private var filter: HomeFilter?
+    @Environment(\.horizontalSizeClass) private var sizeClass
 
     private let catalog = Catalog.shared
 
@@ -54,7 +55,7 @@ struct HomeView: View {
                     chips
                 }
                 HeroCard(title: hero, rank: heroRank)
-                    .padding(.horizontal, 16)
+                    .padding(.horizontal, Metrics(sizeClass).gutter)
                 rows
             }
             .padding(.bottom, 40)
@@ -80,7 +81,7 @@ struct HomeView: View {
             Button { router.tab = .mine } label: { ProfileAvatar(profile: library.current, size: 28) }
                 .accessibilityLabel("My Haukley")
         }
-        .padding(.horizontal, 16)
+        .padding(.horizontal, Metrics(sizeClass).gutter)
         .padding(.top, 6)
     }
 
@@ -111,7 +112,7 @@ struct HomeView: View {
                     }
                 }
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, Metrics(sizeClass).gutter)
         }
     }
 
@@ -147,8 +148,66 @@ struct HeroCard: View {
     let rank: String?
     @EnvironmentObject private var library: Library
     @EnvironmentObject private var router: Router
+    @Environment(\.horizontalSizeClass) private var sizeClass
 
     var body: some View {
+        if sizeClass == .regular { billboard } else { card }
+    }
+
+    /// iPad: Netflix's wide billboard — the film's backdrop, title, details and actions on the left.
+    private var billboard: some View {
+        ZStack(alignment: .bottomLeading) {
+            Button { router.detail = title } label: {
+                // Fill the card without letting the image's own width widen the page.
+                Color.clear
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 460)
+                    .overlay { BundleImage(url: title.backdrop) }
+                    .clipped()
+            }
+            .buttonStyle(.plain)
+            .accessibilityIdentifier("hero.poster")
+            LinearGradient(colors: [.black.opacity(0.85), .black.opacity(0.35), .clear],
+                           startPoint: .leading, endPoint: UnitPoint(x: 0.75, y: 0.5))
+                .allowsHitTesting(false)
+            LinearGradient(colors: [.clear, .black.opacity(0.7)], startPoint: UnitPoint(x: 0.5, y: 0.55), endPoint: .bottom)
+                .allowsHitTesting(false)
+            VStack(alignment: .leading, spacing: 12) {
+                if let rank {
+                    HStack(spacing: 6) {
+                        Top10Flag()
+                        Text(rank).font(.system(size: 15, weight: .semibold))
+                    }
+                }
+                Text(title.title).font(.system(size: 44, weight: .heavy)).lineLimit(2).minimumScaleFactor(0.7)
+                Text("\(title.genre) • \(String(title.year)) • \(title.length)")
+                    .font(.system(size: 15, weight: .semibold)).foregroundStyle(.white.opacity(0.85))
+                Text(title.description).font(.system(size: 16)).foregroundStyle(.white.opacity(0.9)).lineLimit(3)
+                HStack(spacing: 12) {
+                    PillButton(title: "Play", systemImage: "play.fill") {
+                        router.play = PlayRequest(title: title, episode: title.isShow ? 1 : nil)
+                    }
+                    .frame(width: 170)
+                    .accessibilityIdentifier("hero.play")
+                    PillButton(title: "My List", systemImage: library.isInMyList(title) ? "checkmark" : "plus", primary: false) {
+                        withAnimation(.snappy) { library.toggleMyList(title) }
+                    }
+                    .frame(width: 170)
+                    .accessibilityIdentifier("hero.mylist")
+                }
+                .padding(.top, 4)
+            }
+            .frame(maxWidth: 520, alignment: .leading)
+            .padding(32)
+        }
+        .frame(height: 460)
+        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous).stroke(Color.white.opacity(0.12), lineWidth: 1))
+        .shadow(color: .black.opacity(0.5), radius: 24, y: 12)
+    }
+
+    /// iPhone: the tall poster card.
+    private var card: some View {
         ZStack(alignment: .bottom) {
             Button { router.detail = title } label: {
                 BundleImage(url: title.poster)

@@ -4,6 +4,7 @@ import SwiftUI
 struct MyHaukleyView: View {
     @EnvironmentObject private var library: Library
     @State private var addingProfile = false
+    @Environment(\.horizontalSizeClass) private var sizeClass
     @State private var newName = ""
 
     var body: some View {
@@ -21,7 +22,7 @@ struct MyHaukleyView: View {
                     } else {
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack(spacing: 8) {
-                                ForEach(library.myList) { PosterTile(title: $0) }
+                                ForEach(library.myList) { PosterTile(title: $0, width: Metrics(sizeClass).poster) }
                             }
                             .padding(.horizontal, 16)
                         }

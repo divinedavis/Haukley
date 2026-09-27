@@ -19,13 +19,14 @@ struct HaukleyApp: App {
     }
 }
 
-/// Portrait everywhere except the player, which unlocks landscape while it's up.
+/// iPhone: portrait everywhere except the player, which unlocks landscape while it's up.
+/// iPad: every orientation, always (required for Split View / Stage Manager).
 final class AppDelegate: NSObject, UIApplicationDelegate {
     static var orientationMask: UIInterfaceOrientationMask = .portrait
 
     func application(_ application: UIApplication,
                      supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        AppDelegate.orientationMask
+        UIDevice.current.userInterfaceIdiom == .pad ? .all : AppDelegate.orientationMask
     }
 }
 
@@ -65,7 +66,8 @@ struct RootView: View {
             }
         }
         .sheet(item: $router.detail) { t in
-            TitleDetailView(title: t)
+            // iPad: a large centered card (Netflix's title sheet); iPhone: the usual sheet.
+            TitleDetailView(title: t).presentationSizing(.page)
         }
         .playerCover(item: $router.play)
         .overlay {

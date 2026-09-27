@@ -1,5 +1,5 @@
 {
- "_note": "Shared ad config for every app. The ad tag is Haukley's own VMAP schedule per title (scripts/make_vmap.py -> haukley.com/ads/vmap/<id>.xml): a pre-roll plus one mid-roll at the halfway point for titles 20+ minutes. Each break currently points at Google's public sample VAST; swap VAST_TAG in make_vmap.py for the Google Ad Manager tag when the account exists.",
+ "_note": "Shared ad config for every app. The ad tag is Haukley's own VMAP schedule per title (scripts/make_vmap.py -> haukley.com/ads/vmap/<id>.xml): a pre-roll plus one mid-roll at the halfway point for titles 20+ minutes. Until the Google Ad Manager account exists each break returns an empty VAST (no fill), so no ads play; set VAST_TAG in make_vmap.py and rerun to turn ads on everywhere without an app update.",
  "adTagTemplate": "https://haukley.com/ads/vmap/{TITLE_ID}.xml?kind={KIND}&c={CORRELATOR}",
  "trackingUrl": "https://axgxpwgbpgcqjxoqwtnv.supabase.co/rest/v1/rpc/log_ad_events",
  "publishableKey": "sb_publishable_9VpZfDWrMK3orLITxhWZJw_kbAFdw90"

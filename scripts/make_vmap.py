@@ -4,9 +4,12 @@ Schedule: a pre-roll at the start, plus one mid-roll at the halfway point for an
 20 minutes or longer. Every app points its ad tag at these files (scripts/ads.json), so
 web, TV, iPhone and Roku break at the same places.
 
-Each break's VAST tag is Google's public sample linear ad until the Google Ad Manager
-account exists; then only VAST_TAG changes. title_id rides along in cust_params so the ad
-server can report revenue per film.
+Until the Google Ad Manager account exists, every break points at NO_AD_TAG, an empty VAST
+(the standard "no fill" answer): players skip the break and keep playing the film. Google's
+public sample ad is NOT used any more: store reviewers treat visible test ads as an
+unfinished app (App Review 2.2 rejected Crease for test-mode content). When the Ad Manager
+tag exists, set VAST_TAG to it and rerun; no app update is needed. title_id rides along in
+cust_params so the ad server can report revenue per film.
 
 Usage: python3 scripts/make_vmap.py
 """
@@ -17,9 +20,8 @@ import urllib.parse
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "web" / "ads" / "vmap"
-VAST_TAG = ("https://pubads.g.doubleclick.net/gampad/ads?iu=/21775744923/external/single_ad_samples"
-            "&sz=640x480&cust_params={cust}&ciu_szs=300x250%2C728x90&gdfp_req=1&output=vast"
-            "&unviewed_position_start=1&env=vp&impl=s&correlator=")
+VAST_TAG = None  # Google Ad Manager VAST tag with a {cust} placeholder, once the account exists
+NO_AD_TAG = "https://haukley.com/ads/no-ad.xml"
 MIDROLL_MIN_MINUTES = 20
 
 
@@ -35,7 +37,7 @@ def hms(seconds):
 
 def ad_break(offset, break_id, title_id, kind):
     cust = urllib.parse.quote(f"sample_ct=linear&title_id={title_id}&kind={kind}&break={break_id}", safe="")
-    tag = VAST_TAG.format(cust=cust)
+    tag = VAST_TAG.format(cust=cust) if VAST_TAG else NO_AD_TAG
     return f"""  <vmap:AdBreak timeOffset="{offset}" breakType="linear" breakId="{break_id}">
     <vmap:AdSource id="{break_id}-ad" allowMultipleAds="false" followRedirects="true">
       <vmap:AdTagURI templateType="vast3"><![CDATA[{tag}]]></vmap:AdTagURI>

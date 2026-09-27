@@ -39,6 +39,15 @@ if [[ "${SHIP_SKIP_TESTS:-0}" != "1" ]]; then
     if ! grep -qE "Executed [1-9][0-9]* tests?, with 0 failures" "$log"; then
         echo "error: UI tests failed or none ran" >&2; exit 1
     fi
+    # The app is universal: run the same suite on an iPad (11-inch) too.
+    IPAD_UDID="${IPAD_UDID:-$(xcrun simctl list devices available | grep 'iPad Air 11-inch (M4)' | grep -oE '[0-9A-F-]{36}' | head -1)}"
+    echo "==> UI tests on iPad ($IPAD_UDID)"
+    xcodebuild -project Haukley.xcodeproj -scheme Haukley \
+        -destination "platform=iOS Simulator,id=$IPAD_UDID" -derivedDataPath build/smoke-ipad \
+        -retry-tests-on-failure -test-iterations 2 test 2>&1 | tee "$log" | grep -E "Test Case .*(passed|failed)|Executed" || true
+    if ! grep -qE "Executed [1-9][0-9]* tests?, with 0 failures" "$log"; then
+        echo "error: iPad UI tests failed or none ran" >&2; exit 1
+    fi
 fi
 
 current=$(grep -m1 'CURRENT_PROJECT_VERSION:' project.yml | sed -E 's/.*"([0-9]+)".*/\1/')

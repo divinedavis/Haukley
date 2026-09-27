@@ -19,7 +19,9 @@ struct ClipsView: View {
             LazyVStack(spacing: 0) {
                 ForEach(clips) { t in
                     ClipPage(title: t, isActive: active && current == t.id, muted: $muted)
-                        .containerRelativeFrame([.horizontal, .vertical])
+                        .containerRelativeFrame([.horizontal, .vertical]) { length, axis in
+                            length  // full page; the ClipPage itself caps its width on iPad
+                        }
                         .id(t.id)
                 }
             }
@@ -42,7 +44,21 @@ private struct ClipPage: View {
     @EnvironmentObject private var library: Library
     @EnvironmentObject private var router: Router
 
+    @Environment(\.horizontalSizeClass) private var sizeClass
+
     var body: some View {
+        if sizeClass == .regular {
+            // iPad: a centred vertical column, like a phone-shaped reel, on black.
+            GeometryReader { g in
+                page.frame(width: min(g.size.width, g.size.height * 9 / 16)).frame(maxWidth: .infinity)
+            }
+            .background(Color.black)
+        } else {
+            page
+        }
+    }
+
+    private var page: some View {
         ZStack(alignment: .bottom) {
             GeometryReader { g in
                 // Backdrop (no baked-in title text) under the full-bleed video, like Netflix Clips.

@@ -44,6 +44,8 @@ struct PlayerScreen: View {
 enum Orientation {
     static func set(_ mask: UIInterfaceOrientationMask, prefer: UIInterfaceOrientationMask) {
         AppDelegate.orientationMask = mask
+        // iPad rotates freely; don't force the player into landscape or back to portrait.
+        if UIDevice.current.userInterfaceIdiom == .pad { return }
         guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
         scene.requestGeometryUpdate(.iOS(interfaceOrientations: prefer)) { _ in }
         scene.keyWindow?.rootViewController?.setNeedsUpdateOfSupportedInterfaceOrientations()

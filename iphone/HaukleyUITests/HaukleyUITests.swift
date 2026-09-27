@@ -11,7 +11,8 @@ final class HaukleyUITests: XCTestCase {
         // The splash folds away on its own; test the outcome, not the decoration.
         let splash = app.descendants(matching: .any).matching(identifier: "splash").firstMatch
         expectation(for: NSPredicate(format: "exists == false"), evaluatedWith: splash)
-        waitForExpectations(timeout: 8)
+        // iPad simulators launch slower; the splash itself is ~4 s.
+        waitForExpectations(timeout: 20)
     }
 
     private func element(_ id: String) -> XCUIElement {
@@ -27,7 +28,12 @@ final class HaukleyUITests: XCTestCase {
 
     /// iOS 26 tab taps can land on nothing; a coordinate tap + isSelected is the reliable pair.
     private func tapTab(_ name: String) {
-        let tab = app.tabBars.buttons[name]
+        // iPhone: bottom tab bar. iPad: the tabs sit in a floating bar at the top, which isn't
+        // always exposed as a tabBar, so fall back to the button with that label.
+        var tab = app.tabBars.buttons[name]
+        if !tab.waitForExistence(timeout: 3) {
+            tab = app.buttons.matching(NSPredicate(format: "label == %@", name)).firstMatch
+        }
         XCTAssertTrue(tab.waitForExistence(timeout: 5), "tab \(name) missing")
         for attempt in 0..<3 {
             if tab.isSelected { return }
@@ -91,8 +97,9 @@ final class HaukleyUITests: XCTestCase {
         let result = element("search.result.nosferatu")
         XCTAssertTrue(result.waitForExistence(timeout: 5))
         snap("search")
+        // Under load (several simulators at once) the sheet can take longer than 5 s to appear.
         result.tap()
-        XCTAssertTrue(element("detail.play").waitForExistence(timeout: 5))
+        XCTAssertTrue(element("detail.play").waitForExistence(timeout: 12))
         snap("film-detail")
     }
 
@@ -114,12 +121,41 @@ final class HaukleyUITests: XCTestCase {
     }
 
     func testPlayerOpensAndCloses() {
-        element("hero.play").tap()
+        let play = element("hero.play")
+        XCTAssertTrue(play.waitForExistence(timeout: 8))
+        // Let the home screen settle (hero fade-in) so the tap isn't swallowed mid-animation.
+        let settled = NSPredicate(format: "isHittable == true")
+        expectation(for: settled, evaluatedWith: play)
+        waitForExpectations(timeout: 8)
+        sleep(1)
+        play.tap()
         let close = element("player.close")
         XCTAssertTrue(close.waitForExistence(timeout: 8))
         sleep(6)
         snap("player")
         close.tap()
         XCTAssertTrue(element("hero.play").waitForExistence(timeout: 8))
+    }
+
+    // iPad only: the app must fill the screen and work in both orientations (Netflix-style
+    // billboard, top tab bar), not run as a stretched phone window.
+    func testIPadLayoutInBothOrientations() throws {
+        try XCTSkipUnless(UIDevice.current.userInterfaceIdiom == .pad, "iPad only")
+        XCUIDevice.shared.orientation = .portrait
+        XCTAssertTrue(element("hero.play").waitForExistence(timeout: 8))
+        let window = app.windows.firstMatch.frame
+        let screen = app.frame
+        XCTAssertGreaterThan(window.width, screen.width * 0.9, "app should fill the iPad screen")
+        snap("ipad-portrait")
+        XCUIDevice.shared.orientation = .landscapeLeft
+        sleep(2)
+        XCTAssertTrue(element("hero.play").exists)
+        XCTAssertTrue(element("hero.play").isHittable)
+        snap("ipad-landscape")
+        element("hero.poster").tap()
+        XCTAssertTrue(element("detail.play").waitForExistence(timeout: 5))
+        snap("ipad-detail")
+        element("detail.close").tap()
+        XCUIDevice.shared.orientation = .portrait
     }
 }
