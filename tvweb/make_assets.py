@@ -22,7 +22,7 @@ ICON = ROOT / "marketing" / "firetv" / "icon-512.png"   # the same "H." mark as 
 FONT = ROOT / "scripts" / "fonts" / "Montserrat.ttf"
 ACCENT = (139, 108, 255)
 # Screens for the store listings, in the order they should appear.
-SHOTS = ["1-home", "2-rows", "3-detail", "4-search", "5-movies", "6-player"]
+SHOTS = ["1-home", "2-rows", "3-detail", "9-episodes", "4-search", "6-player"]
 
 
 def gradient(size, a=None, b=None):

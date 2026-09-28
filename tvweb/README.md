@@ -14,7 +14,8 @@ catalog `https://haukley.com/watch/catalog/catalog.json` (CORS `*`, nginx) with 
 `catalog.json` as the offline fallback; art from `haukley.com/watch/catalog/<id>/`; HLS from the
 DigitalOcean CDN played natively by the TV's `<video>` (hls.js only kicks in on desktop
 browsers); Google IMA HTML5 SDK for ads. Screens: Home (hero + rows + Continue Watching),
-Movies (all titles by genre), Search (on-screen keyboard), title page, player. Back on Home
+Movies and Shows (by genre), Search (on-screen keyboard), title page (episode list for
+shows, content advisory), player (rating + advisory card for the first 5–8 s). Back on Home
 asks "Exit Haukley?" (a certification requirement on both stores). JS is kept to ES2016
 syntax and the CSS avoids flex `gap`/grid/`inset` so 2018+ webOS (Chromium 53) runs it.
 

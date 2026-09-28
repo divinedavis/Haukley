@@ -2998,7 +2998,8 @@
      "width": 1920,
      "height": 1080,
      "has_added_score": false,
-     "notes": "Official Blender Foundation PeerTube (video.blender.org). HEAD returns 403; a normal GET 302-redirects to signed object storage (verified 2026-09-26 with a ranged GET: 206 + Content-Range total = bytes). ffprobe (headers only): H.264 1920x1080 + AAC audio, 193.3 s. Alternate 4K VP9 on Commons (175,136,749 bytes): https://upload.wikimedia.org/wikipedia/commons/0/02/Glass_Half_-_Blender_Open_Movie-full_movie.webm"
+     "notes": "Official Blender Foundation PeerTube (video.blender.org). HEAD returns 403; a normal GET 302-redirects to signed object storage (verified 2026-09-26 with a ranged GET: 206 + Content-Range total = bytes). ffprobe (headers only): H.264 1920x1080 + AAC audio, 193.3 s. Alternate 4K VP9 on Commons (175,136,749 bytes): https://upload.wikimedia.org/wikipedia/commons/0/02/Glass_Half_-_Blender_Open_Movie-full_movie.webm",
+     "still_at": 0.7
     }
    },
    {

@@ -66,7 +66,7 @@ function loadCatalog() {
     .catch(() => fetchJson("catalog.json", 8000))
     .then(cat => {
       if (!valid(cat)) return false;
-      state.titles = cat.titles.filter(t => t.stream);
+      state.titles = cat.titles.filter(t => (t.kind === "show" ? t.episodes && t.episodes.length : t.stream));
       state.byId = new Map(state.titles.map(t => [t.id, t]));
       state.rows = cat.rows
         .map(r => Object.assign({}, r, { items: r.ids.map(id => state.byId.get(id)).filter(Boolean) }))
@@ -80,28 +80,58 @@ function loadCatalog() {
 
 /* ---------- progress (Continue Watching) ---------- */
 
+// Keyed "<title id>:<episode>", episode 0 for a movie. Finished entries stay (p = d) so a show
+// knows which episode comes next.
+const pkey = (id, ep) => `${id}:${ep || 0}`;
+const inProgress = r => Boolean(r) && r.p > 30 && r.p < r.d * 0.95;
+
 function readProgress() {
   try { return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; } catch (e) { return {}; }
 }
-function saveProgress(id, position, duration) {
+function saveProgress(id, ep, position, duration) {
   if (!(duration > 0) || !(position >= 0)) return;
   const all = readProgress();
-  if (position > duration * 0.95) delete all[id];
-  else all[id] = { p: Math.floor(position), d: Math.floor(duration), at: Date.now() };
+  const p = position > duration * 0.95 ? duration : position;
+  all[pkey(id, ep)] = { p: Math.floor(p), d: Math.floor(duration), at: Date.now() };
   try { localStorage.setItem(PROGRESS_KEY, JSON.stringify(all)); } catch (e) {}
   state.homeDirty = true;
 }
-function resumeFor(id) {
-  const r = readProgress()[id];
-  return r && r.p > 30 && r.p < r.d * 0.95 ? r : null;
+// Where Play starts for a title: a movie resumes; a show resumes its latest episode, or moves
+// on to the one after it once that's finished.
+function resumeFor(t) {
+  const all = readProgress();
+  if (t.kind !== "show") {
+    const r = all[pkey(t.id, 0)];
+    return { episode: 0, resume: inProgress(r) ? r : null };
+  }
+  let latest = null, latestEp = 0;
+  t.episodes.forEach(e => {
+    const r = all[pkey(t.id, e.number)];
+    if (r && (!latest || r.at > latest.at)) { latest = r; latestEp = e.number; }
+  });
+  if (!latest) return { episode: t.episodes[0].number, resume: null };
+  if (inProgress(latest)) return { episode: latestEp, resume: latest };
+  const i = t.episodes.findIndex(e => e.number === latestEp);
+  return { episode: t.episodes[Math.min(i + 1, t.episodes.length - 1)].number, resume: null };
 }
+// Latest unfinished movie or episode per title, newest first.
 function continueWatching() {
   const all = readProgress();
-  return Object.keys(all)
-    .map(id => ({ t: state.byId.get(id), r: all[id] }))
-    .filter(x => x.t && x.r.p > 30 && x.r.p < x.r.d * 0.95)
-    .sort((a, b) => b.r.at - a.r.at)
-    .slice(0, 10);
+  const best = new Map();
+  Object.keys(all).forEach(k => {
+    const cut = k.lastIndexOf(":");
+    const id = k.slice(0, cut), r = all[k], t = state.byId.get(id);
+    if (!t || !inProgress(r)) return;
+    const cur = best.get(id);
+    if (!cur || r.at > cur.r.at) best.set(id, { t, r, ep: Number(k.slice(cut + 1)) });
+  });
+  return [...best.values()].sort((a, b) => b.r.at - a.r.at).slice(0, 10);
+}
+function playLabel(t, withTime) {
+  const { episode, resume } = resumeFor(t);
+  const ep = t.kind === "show" ? ` E${episode}` : "";
+  if (resume) return `Resume${ep}${withTime ? ` ${fmt(resume.p)}` : ""}`;
+  return t.kind === "show" && episode !== t.episodes[0].number ? `Play${ep}` : "Play";
 }
 
 /* ---------- rendering ---------- */
@@ -113,7 +143,8 @@ function fmt(s) {
   return h ? `${h}:${pad(m)}:${pad(sec)}` : `${m}:${pad(sec)}`;
 }
 function metaLine(t) {
-  const bits = [t.genre, t.year, t.runtime].filter(Boolean).map(esc).join(" · ");
+  const len = t.kind === "show" ? `${t.seasons || 1} Season${t.seasons > 1 ? "s" : ""} · ${t.episodes.length} Episodes` : t.runtime;
+  const bits = [t.genre, t.year, len].filter(Boolean).map(esc).join(" · ");
   return `${bits}${t.rating ? `<span class="rating">${esc(t.rating === "NR" ? "NR" : t.rating)}</span>` : ""}`;
 }
 const FONTS = ["AbrilFatface", "Anton", "ArchivoBlack", "BebasNeue", "Cinzel", "Monoton", "Montserrat", "Oswald", "Pacifico", "PlayfairDisplay"];
@@ -125,7 +156,7 @@ function artTitle(t, cls) {
 function topbar(active) {
   const tab = (key, label) => `<div class="tab nav${key === active ? " selected" : ""}" data-g="tabs" data-col="*" data-top="1" data-action="tab" data-tab="${key}" data-key="tab:${key}">${label}</div>`;
   return `<div class="topbar"><div class="brand">Haukley<b>.</b></div>
-    <div class="tabs">${tab("home", "Home")}${tab("movies", "Movies")}${tab("search", "Search")}</div></div>`;
+    <div class="tabs">${tab("home", "Home")}${tab("movies", "Movies")}${tab("shows", "Shows")}${tab("search", "Search")}</div></div>`;
 }
 
 function cardHtml(t, type, rowKey, i, extra, group) {
@@ -141,7 +172,8 @@ function cardHtml(t, type, rowKey, i, extra, group) {
       <div class="art" ${bg(art(t.id, "poster"))}></div></div>`;
   }
   const progress = extra.progress != null ? `<div class="progress"><i style="width:${Math.max(3, Math.round(extra.progress * 100))}%"></i></div>` : "";
-  return `<div class="card nav" ${g} data-action="${extra.play ? "play" : "title"}" data-id="${esc(t.id)}" data-key="${esc(key)}">
+  const ep = extra.ep != null ? ` data-ep="${extra.ep}"` : "";
+  return `<div class="card nav" ${g} data-action="${extra.play ? "play" : "title"}" data-id="${esc(t.id)}"${ep} data-key="${esc(key)}">
     <div class="art" ${bg(art(t.id, "card"))}>${progress}</div>
     <div class="label">${esc(t.title)}</div><div class="sub">${esc(extra.sub || `${t.genre} · ${t.year}`)}</div></div>`;
 }
@@ -154,15 +186,15 @@ function rowHtml(key, title, type, items, extra = () => ({})) {
 function cwRowHtml() {
   const cw = continueWatching();
   if (!cw.length) return "";
-  const byT = new Map(cw.map(x => [x.t.id, x.r]));
+  const byT = new Map(cw.map(x => [x.t.id, x]));
   return rowHtml("continue", "Continue Watching", "card", cw.map(x => x.t), t => {
-    const r = byT.get(t.id);
-    return { progress: r.p / r.d, play: true, sub: `${Math.max(1, Math.round((r.d - r.p) / 60))} min left` };
+    const { r, ep } = byT.get(t.id);
+    const left = `${Math.max(1, Math.round((r.d - r.p) / 60))} min left`;
+    return { progress: r.p / r.d, play: true, ep, sub: ep ? `E${ep} · ${left}` : left };
   });
 }
 
 function heroInner(t, index) {
-  const resume = resumeFor(t.id);
   return `<div class="hero-bg" ${bg(art(t.id, "backdrop"))}></div>
     <div class="hero-info">
       <div class="eyebrow">NOW STREAMING FREE</div>
@@ -170,7 +202,7 @@ function heroInner(t, index) {
       <div class="meta">${metaLine(t)}</div>
       <div class="desc">${esc(t.description)}</div>
       <div class="buttons">
-        <div class="btn nav" data-g="hero" data-action="play" data-id="${esc(t.id)}" data-key="hero:play">${ICON.play}${resume ? "Resume" : "Play"}</div>
+        <div class="btn nav" data-g="hero" data-action="play" data-id="${esc(t.id)}" data-key="hero:play">${ICON.play}${playLabel(t, false)}</div>
         <div class="btn nav" data-g="hero" data-action="title" data-id="${esc(t.id)}" data-key="hero:info">${ICON.info}More Info</div>
       </div>
     </div>
@@ -188,9 +220,16 @@ function renderHome() {
   return el;
 }
 
-function renderMovies() {
+const LIBRARY = {
+  movies: { kind: "movie", title: "Movies", blurb: n => `${n} free films, every one ready to stream.` },
+  shows: { kind: "show", title: "TV Shows", blurb: n => `${n} free series, every episode ready to stream.` },
+};
+
+function renderLibrary(name) {
+  const lib = LIBRARY[name];
+  const list = state.titles.filter(t => (t.kind === "show") === (lib.kind === "show"));
   const genres = new Map();
-  for (const t of state.titles) {
+  for (const t of list) {
     if (!genres.has(t.genre)) genres.set(t.genre, []);
     genres.get(t.genre).push(t);
   }
@@ -198,18 +237,33 @@ function renderMovies() {
   const el = document.createElement("div");
   el.className = "scroller";
   el.innerHTML = `<div class="page" data-vscroll>
-      ${topbar("movies")}
-      <div class="page-head"><h1>Movies</h1><p>${state.titles.length} free films, every one ready to stream.</p></div>
-      <div class="rows">${rows.map(([g, list]) => rowHtml(`genre-${g}`, g, "poster", list.sort((a, b) => a.title.localeCompare(b.title)))).join("")}</div>
+      ${topbar(name)}
+      <div class="page-head"><h1>${lib.title}</h1><p>${lib.blurb(list.length)}</p></div>
+      <div class="rows">${rows.map(([g, items]) => rowHtml(`genre-${g}`, g, "poster", items.sort((a, b) => a.title.localeCompare(b.title)))).join("")}</div>
     </div>`;
   return el;
 }
 
+function episodesHtml(t, current) {
+  const all = readProgress();
+  const cards = t.episodes.map(e => {
+    const r = all[pkey(t.id, e.number)];
+    const bar = r ? `<div class="progress"><i style="width:${Math.max(3, Math.round(Math.min(1, r.p / r.d) * 100))}%"></i></div>` : "";
+    return `<div class="card episode nav" data-g="row:eps" data-action="play" data-id="${esc(t.id)}" data-ep="${esc(e.number)}" data-key="ep:${esc(e.number)}">
+      <div class="art" ${bg(`${ART}${encodeURIComponent(t.id)}/ep${e.number}.jpg`)}>${bar}</div>
+      <div class="label">${esc(e.number)}. ${esc(e.name)}</div>
+      <div class="sub">${esc(e.minutes)} min${e.number === current ? " · Up next" : ""}</div>
+      <div class="summary">${esc(e.summary)}</div></div>`;
+  }).join("");
+  return `<section class="row" data-row="eps"><h3>Episodes</h3><div class="track"><div class="cards">${cards}</div></div></section>`;
+}
+
 function renderDetail(id) {
   const t = state.byId.get(id);
-  const resume = resumeFor(id);
-  let more = state.titles.filter(x => x.genre === t.genre && x.id !== id);
-  if (more.length < 4) more = more.concat(state.featured.filter(x => x.id !== id && !more.includes(x)));
+  const { episode, resume } = resumeFor(t);
+  const same = x => x.id !== id && (x.kind === "show") === (t.kind === "show");
+  let more = state.titles.filter(x => same(x) && x.genre === t.genre);
+  if (more.length < 4) more = more.concat(state.titles.filter(x => same(x) && more.indexOf(x) < 0));
   more = more.slice(0, 12);
   const el = document.createElement("div");
   el.className = "scroller";
@@ -221,12 +275,13 @@ function renderDetail(id) {
         <div class="desc">${esc(t.description)}</div>
         ${t.credits ? `<div class="credits">${esc(t.credits)}</div>` : ""}
         <div class="buttons">
-          <div class="btn nav" data-g="detail" data-top="1" data-action="play" data-id="${esc(id)}" data-key="detail:play">${ICON.play}${resume ? `Resume ${fmt(resume.p)}` : "Play"}</div>
-          ${resume ? `<div class="btn nav" data-g="detail" data-top="1" data-action="restart" data-id="${esc(id)}" data-key="detail:restart">${ICON.restart}Start Over</div>` : ""}
+          <div class="btn nav" data-g="detail" data-top="1" data-action="play" data-id="${esc(id)}" data-ep="${episode}" data-key="detail:play">${ICON.play}${playLabel(t, true)}</div>
+          ${resume ? `<div class="btn nav" data-g="detail" data-top="1" data-action="restart" data-id="${esc(id)}" data-ep="${episode}" data-key="detail:restart">${ICON.restart}Start Over</div>` : ""}
         </div>
+        ${t.advisory ? `<div class="advisory"><b>Advisory:</b> ${esc(t.advisory)}</div>` : ""}
         ${t.license ? `<div class="license">${esc(t.license)}</div>` : ""}
       </div></div>
-      <div class="rows">${rowHtml(`more-${id}`, "More Like This", "card", more)}</div>
+      <div class="rows">${t.kind === "show" ? episodesHtml(t, episode) : ""}${rowHtml(`more-${id}`, "More Like This", "card", more)}</div>
     </div>`;
   return el;
 }
@@ -260,7 +315,8 @@ function searchMatches(q) {
   if (!q) return { heading: "Popular on Haukley", list: (state.rows[0] ? state.rows[0].items : state.featured) };
   const words = q.split(/\s+/);
   const list = state.titles.filter(t => {
-    const hay = `${t.title} ${t.genre} ${t.credits || ""} ${t.year}`.toLowerCase();
+    const eps = t.kind === "show" ? t.episodes.map(e => e.name).join(" ") : "";
+    const hay = `${t.title} ${t.genre} ${t.credits || ""} ${t.year} ${eps}`.toLowerCase();
     return words.every(w => hay.includes(w));
   });
   list.sort((a, b) => (b.title.toLowerCase().startsWith(q) ? 1 : 0) - (a.title.toLowerCase().startsWith(q) ? 1 : 0));
@@ -301,13 +357,13 @@ function byKey(root, key) {
 }
 
 function firstFocus(entry) {
-  const pick = { home: '[data-key="hero:play"]', detail: '[data-key="detail:play"]', search: '[data-key="key:A"]', movies: ".rows .nav" }[entry.name];
+  const pick = { home: '[data-key="hero:play"]', detail: '[data-key="detail:play"]', search: '[data-key="key:A"]', movies: ".rows .nav", shows: ".rows .nav" }[entry.name];
   return (pick && entry.el.querySelector(pick)) || entry.el.querySelector(".nav");
 }
 
 function build(name, arg) {
   if (name === "home") return renderHome();
-  if (name === "movies") return renderMovies();
+  if (name === "movies" || name === "shows") return renderLibrary(name);
   if (name === "search") return renderSearch();
   return renderDetail(arg);
 }
@@ -510,8 +566,8 @@ function activate(el) {
     return setRoot(tab);
   }
   if (a === "title") return push("detail", id);
-  if (a === "play") { const r = resumeFor(id); return startPlayback(id, r ? r.p : 0); }
-  if (a === "restart") return startPlayback(id, 0);
+  if (a === "play") return playTitle(id, el.dataset.ep != null ? Number(el.dataset.ep) : null);
+  if (a === "restart") return startPlayback(id, Number(el.dataset.ep) || 0, 0);
   if (a === "key") return typeKey(el.dataset.k);
   if (a === "dialog") return el._run && el._run();
 }
@@ -574,7 +630,7 @@ function exitApp() {
 
 /* ---------- player ---------- */
 
-const player = { el: null, video: null, id: null, ima: null, hls: null, uiTimer: null, saveTimer: null, sessionId: null };
+const player = { el: null, video: null, id: null, episode: 0, ima: null, hls: null, uiTimer: null, saveTimer: null, ratedTimer: null, ratedShown: false, sessionId: null };
 
 function uuid() {
   if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
@@ -601,7 +657,7 @@ function loadIma() {
 
 function logAdEvent(event) {
   if (!PLATFORM) return;
-  const body = JSON.stringify({ title_id: player.id, episode: 0, platform: PLATFORM, event, session_id: player.sessionId });
+  const body = JSON.stringify({ title_id: player.id, episode: player.episode, platform: PLATFORM, event, session_id: player.sessionId });
   const send = () => fetch(ADS.trackingUrl, {
     method: "POST",
     headers: { apikey: ADS.publishableKey, "Content-Type": "application/json", Prefer: "return=minimal" },
@@ -630,20 +686,36 @@ function attachSource(src, startAt) {
   }
 }
 
-function startPlayback(id, startAt) {
+// Play a title from where the viewer left off; ep null = the episode resumeFor picks.
+function playTitle(id, ep) {
   const t = state.byId.get(id);
   if (!t) return;
+  if (t.kind !== "show") ep = 0;
+  else if (ep == null) ep = resumeFor(t).episode;
+  const r = readProgress()[pkey(id, ep)];
+  startPlayback(id, ep, inProgress(r) ? r.p : 0);
+}
+
+function startPlayback(id, ep, startAt) {
+  const t = state.byId.get(id);
+  if (!t) return;
+  const e = t.kind === "show" ? t.episodes.find(x => x.number === ep) : null;
+  if (t.kind === "show" && !e) return;
   stopPlayback();
   stopHeroRotation();
-  Object.assign(player, { id, sessionId: uuid() });
-  $("#p-title").textContent = t.title;
+  Object.assign(player, { id, episode: e ? e.number : 0, sessionId: uuid(), ratedShown: false });
+  $("#p-title").innerHTML = e ? `${esc(t.title)}<span>E${esc(e.number)} “${esc(e.name)}”</span>` : esc(t.title);
+  // A content advisory rides on the rating card at the start of playback, like broadcast TV.
+  $("#rated-label").textContent = t.rating && t.rating !== "NR" ? `RATED ${t.rating}` : "NOT RATED";
+  $("#rated-sub").textContent = t.advisory || (t.silent ? `${t.genre} · Silent film, no soundtrack` : t.genre);
+  $("#rated").hidden = true;
   $("#p-error").hidden = true;
   $("#p-state").textContent = "";
   player.el.hidden = false;
   player.el.classList.add("loading");
   player.el.classList.remove("ad");
   if (state.focused) state.focused.classList.remove("focused");
-  attachSource(t.stream, startAt);
+  attachSource((e || t).stream, startAt);
   loadIma().then(ok => {
     if (player.id !== id || player.el.hidden) return;
     if (ok) startAds(t);
@@ -651,7 +723,7 @@ function startPlayback(id, startAt) {
   });
   player.saveTimer = setInterval(() => {
     const v = player.video;
-    if (!v.paused && !(player.ima && player.ima.adPlaying)) saveProgress(id, v.currentTime, v.duration);
+    if (!v.paused && !(player.ima && player.ima.adPlaying)) saveProgress(id, player.episode, v.currentTime, v.duration);
   }, 10000);
   pokeUi();
 }
@@ -718,9 +790,11 @@ function startAds(t) {
 
 function stopPlayback() {
   const v = player.video;
-  if (player.id && v.duration && !(player.ima && player.ima.adPlaying)) saveProgress(player.id, v.currentTime, v.duration);
+  if (player.id && v.duration && !(player.ima && player.ima.adPlaying)) saveProgress(player.id, player.episode, v.currentTime, v.duration);
   clearInterval(player.saveTimer);
   clearTimeout(player.uiTimer);
+  clearTimeout(player.ratedTimer);
+  $("#rated").hidden = true;
   if (player.ima) {
     clearTimeout(player.ima.timeout);
     try { if (player.ima.manager) player.ima.manager.destroy(); player.ima.loader.destroy(); player.ima.container.destroy(); } catch (e) {}
@@ -845,13 +919,22 @@ function boot() {
   player.video = $("#video");
   const v = player.video;
   v.addEventListener("timeupdate", syncTime);
-  v.addEventListener("playing", () => { player.el.classList.remove("loading"); $("#p-state").textContent = ""; pokeUi(); });
+  v.addEventListener("playing", () => {
+    player.el.classList.remove("loading");
+    $("#p-state").textContent = "";
+    pokeUi();
+    if (player.ratedShown || (player.ima && player.ima.adPlaying) || !player.id) return;
+    player.ratedShown = true;
+    $("#rated").hidden = false;
+    const t = state.byId.get(player.id);
+    player.ratedTimer = setTimeout(() => { $("#rated").hidden = true; }, t && t.advisory ? 8000 : 5000);
+  });
   v.addEventListener("waiting", () => player.el.classList.add("loading"));
   v.addEventListener("pause", () => { if (!(player.ima && player.ima.adPlaying) && player.id) { $("#p-state").textContent = "Paused"; pokeUi(); } });
   v.addEventListener("error", () => { if (player.id && !(player.ima && player.ima.adPlaying)) playerError(); });
   v.addEventListener("ended", () => {
     if (player.ima && player.ima.adPlaying) return;
-    if (player.id) saveProgress(player.id, v.duration, v.duration);
+    if (player.id) saveProgress(player.id, player.episode, v.duration, v.duration);
     // Leave a moment for a post-roll; then return to the page.
     setTimeout(() => { if (player.id && v.ended) closePlayer(); }, 1500);
   });

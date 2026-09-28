@@ -145,7 +145,7 @@ def main():
         # Up to the tab bar, across to Search.
         key("ArrowUp", 6)
         check(focused()["key"].startswith("tab:"), "Up reaches the tab bar")
-        key("ArrowRight", 2)
+        key("ArrowRight", 3)
         check(focused()["key"] == "tab:search", "Right reaches the Search tab")
         key("Enter", wait=1.5)
         key("ArrowDown")
@@ -181,11 +181,72 @@ def main():
         check(focused()["key"] == "tab:movies", "tab bar reaches Movies")
         key("Enter", wait=2)
         ids_movies = set(page.eval_on_selector_all("#screen .scroller:not([hidden]) .card[data-id]", "els => els.map(e => e.dataset.id)"))
-        check(len(ids_movies) == 64, f"Movies tab lists all 64 titles ({len(ids_movies)})")
+        n_movies = page.evaluate("state.titles.filter(t => t.kind !== 'show').length")
+        check(len(ids_movies) == n_movies, f"Movies tab lists all {n_movies} films ({len(ids_movies)})")
+        kinds = set(page.evaluate(f"{sorted(ids_movies)}.map(id => state.byId.get(id).kind)"))
+        check(kinds == {"movie"}, f"Movies tab has no shows ({kinds})")
         key("ArrowDown")
         key("ArrowDown", wait=1.5)
         layout_ok("movies")
         shot("5-movies")
+        key("Escape", wait=1.5)
+
+        # Shows tab -> a series -> its episodes -> play episode 2 -> resume on the title page.
+        key("ArrowUp", 3)
+        key("ArrowRight", 2)
+        check(focused()["key"] == "tab:shows", f"tab bar reaches Shows ({focused()['key']})")
+        key("Enter", wait=2)
+        ids_shows = set(page.eval_on_selector_all("#screen .scroller:not([hidden]) .card[data-id]", "els => els.map(e => e.dataset.id)"))
+        n_shows = page.evaluate("state.titles.filter(t => t.kind === 'show').length")
+        check(n_shows >= 1 and len(ids_shows) == n_shows, f"Shows tab lists all {n_shows} series ({len(ids_shows)})")
+        layout_ok("shows")
+        shot("8-shows")
+        key("ArrowDown")
+        show = focused()["id"]
+        key("Enter", wait=2.5)
+        check(page.inner_text(".detail .meta, .detail-info .meta").find("Episodes") >= 0, f"show page meta counts episodes ({show})")
+        key("ArrowDown", wait=1)
+        check(focused()["key"] == "ep:1", f"Down from Play reaches episode 1 ({focused()['key']})")
+        n_eps = page.eval_on_selector_all(".card.episode", "els => els.length")
+        check(n_eps == page.evaluate(f"state.byId.get('{show}').episodes.length"), f"title page lists every episode ({n_eps})")
+        layout_ok("episodes")
+        time.sleep(1)
+        shot("9-episodes")
+        key("ArrowRight", wait=0.6)
+        check(focused()["key"] == "ep:2", "Right moves to episode 2")
+        key("Enter", wait=1)
+        check("E2" in page.inner_text("#p-title"), f"player shows the episode ({page.inner_text('#p-title')!r})")
+        want = page.evaluate(f"state.byId.get('{show}').episodes[1].stream")
+        t0, playing = time.time(), False
+        while time.time() - t0 < 60:
+            st = page.evaluate("() => { const v = document.getElementById('video'); return {t: v.currentTime, paused: v.paused, ad: document.getElementById('player').classList.contains('ad')}; }")
+            if not st["ad"] and st["t"] > 3 and not st["paused"]:
+                playing = True
+                break
+            time.sleep(1)
+        check(playing, "episode 2 plays")
+        check(page.evaluate("player.episode") == 2, "player tracks episode 2 (ad events + progress)")
+        src = page.evaluate("(player.hls && player.hls.url) || document.getElementById('video').currentSrc")
+        check(src == want, f"episode 2's own stream loads ({src[-40:]})")
+        check(page.is_visible("#rated"), "rating card shows at the start of the episode")
+        # Past the 30 s resume threshold but short of the end, even for a two-minute short.
+        page.evaluate("(() => { const v = document.getElementById('video'); v.currentTime = Math.min(60, Math.max(35, v.duration * 0.5)); })()")
+        time.sleep(2)
+        key("Escape", wait=1.5)
+        label = page.inner_text('[data-key="detail:play"]')
+        check(label.startswith("Resume E2"), f"title page offers Resume E2 ({label!r})")
+        check(page.evaluate(f"!!JSON.parse(localStorage.getItem('haukley.progress.v1'))['{show}:2']"), "progress saved per episode")
+        key("Escape", wait=1.5)
+        key("Escape", wait=1.5)
+        cw = page.eval_on_selector_all('[data-row="continue"] .card', "els => els.map(e => [e.dataset.id, e.dataset.ep])")
+        check([show, "2"] in cw, f"Continue Watching has the show at episode 2 ({cw[:3]})")
+
+        # A title with an advisory shows it on its page.
+        adv = page.evaluate("(state.titles.find(t => t.advisory) || {}).id")
+        page.evaluate(f"push('detail', '{adv}')")
+        time.sleep(1.5)
+        check(page.is_visible(".advisory") and "Advisory" in page.inner_text(".advisory"), f"advisory shown on the title page ({adv})")
+        shot("10-advisory")
         key("Escape", wait=1.5)
 
         # Back on Home = exit confirm (store certification requirement).
