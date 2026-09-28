@@ -50,6 +50,23 @@
       ]
     },
     {
+      "key": "black-cinema",
+      "title": "Pioneers of Black Cinema",
+      "type": "card",
+      "ids": [
+        "the-blood-of-jesus",
+        "murder-in-harlem",
+        "lying-lips",
+        "the-girl-from-chicago",
+        "go-down-death",
+        "dirty-gertie-from-harlem-usa",
+        "souls-of-sin",
+        "juke-joint",
+        "birthright-1938",
+        "veiled-aristocrats"
+      ]
+    },
+    {
       "key": "silent-comedy",
       "title": "Silent Comedy Legends",
       "type": "card",

@@ -1,0 +1,693 @@
+[
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "within-our-gates",
+  "title": "Within Our Gates",
+  "year": 1920,
+  "genre": "Drama",
+  "runtime": "1 hr 12 min",
+  "description": "A Black schoolteacher travels north to raise money for a struggling Southern school for Black children, as the story of her own family's past comes to light. The oldest surviving feature film directed by an African American.",
+  "credits": "Directed by Oscar Micheaux · Starring Evelyn Preer · Floy Clements · James D. Ruffin",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released January 1920 by the Micheaux Book & Film Co. RESTORATION CAVEAT (legal review recommended): the only surviving print (the Spanish release 'La negra') was restored by the Library of Congress in 1993; its English intertitles were re-translated from the Spanish by Scott Simmon, then a Library of Congress curator, 'with Spanish-language assistance from Alex Vargas and a previous translation by Kathleen Newman' (on-screen card). Titles written by LoC staff in the course of employment are US Government works (17 USC 105), but the contribution of the outside prior translation is not documented. Video Yesteryear's 1995 registration PA0000741770 claims only 'editing, musical score' (not the film or titles), and the Kino/DJ Spooky score on this file is muted. No other English-titled print exists.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Within_Our_Gates",
+    "https://www.loc.gov/loc/lcib/94/9410/film.html",
+    "https://www.loc.gov/item/2024600507/",
+    "https://en.wikipedia.org/wiki/Oscar_Micheaux",
+    "https://publicrecords.copyright.gov/",
+    "https://www.law.cornell.edu/uscode/text/17/105"
+   ]
+  },
+  "source": {
+   "archive_identifier": "within-our-gates-1920",
+   "url": "https://archive.org/download/within-our-gates-1920/Within%20Our%20Gates%20%281920%29.mp4",
+   "bytes": 1405916397,
+   "width": 1438,
+   "height": 1080,
+   "has_added_score": true,
+   "notes": "Kino Lorber 'Pioneers of African-American Cinema' (2016) encode of the 1993 Library of Congress restoration (1438x1080, H.264, AAC). Head 0-80 s is modern: LoC logo, two 'About the Restoration' text cards and a 'New Musical Score Composed by Paul D. Miller aka DJ Spooky' card; the film starts on the 'Oscar Micheaux presents Within Our Gates' title at ~80.5 s. Tail from ~4387.3 s is modern (score credits, special thanks). The AAC track is the 2016 DJ Spooky score (copyrighted): MUTE it. Same video without audio: silent-within-our-gates/Within Our Gates.mp4 (640x480, 376,926,032 bytes, same timings minus ~0.1 s). The 2010 'WithinOurGates' item has an uploader-made title card and an unknown score; not used. Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found).",
+   "mute": true,
+   "trim_start": 80.3,
+   "trim_end": 32.7
+  },
+  "advisory": "Depicts a lynching (a Black couple is hanged and burned by a white mob), an attempted rape, and racist violence and language.",
+  "skip": true,
+  "skip_reason": "Held 2026-09-27: the 1993 LoC restoration's re-translated intertitles credit outside translators (Alex Vargas, Kathleen Newman); needs a legal call."
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "body-and-soul-1925",
+  "title": "Body and Soul",
+  "year": 1925,
+  "genre": "Drama",
+  "runtime": "1 hr 19 min",
+  "description": "An escaped convict poses as a preacher in a small Georgia town and preys on his congregation, while his upright twin brother courts the young woman the preacher has set his sights on. Paul Robeson's film debut.",
+  "credits": "Directed by Oscar Micheaux · Starring Paul Robeson · Mercedes Gilbert · Julia Theresa Russell · Lawrence Chenault",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Released November 1925 by Micheaux Film Corp. The surviving print (George Eastman Museum) carries Micheaux's original English intertitles (per the Library of Congress restoration notes for Within Our Gates, Body and Soul is 'his only silent film to survive with its original intertitles'); a faithful photochemical/digital restoration adds no new US copyright. The Criterion-commissioned score on this file is muted. Paul Robeson's name may be used factually in credits; do not imply endorsement in marketing.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Body_and_Soul_(1925_film)",
+    "https://www.loc.gov/loc/lcib/94/9410/film.html",
+    "https://en.wikipedia.org/wiki/Oscar_Micheaux",
+    "https://www.loc.gov/programs/national-film-preservation-board/film-registry/complete-national-film-registry-listing/"
+   ]
+  },
+  "source": {
+   "archive_identifier": "body-and-soul-1925",
+   "url": "https://archive.org/download/body-and-soul-1925/Body%20and%20Soul%20%281925%2C%20Criterion%20Version%29.mp4",
+   "bytes": 2294192458,
+   "width": 1920,
+   "height": 1080,
+   "has_added_score": true,
+   "notes": "Criterion Collection DVD/Blu-ray encode of the George Eastman House restoration (1920x1080 pillarboxed 4:3, H.264, AAC). Head: an uploader 'loading circle' graphic, the Criterion 'C' logo animation and a 'Restored by George Eastman House, Rochester, New York' card run to ~21.3 s; the film starts on the '\"BODY AND SOUL\"' title at ~22-25 s. Ends on the original 'The End' card (~4766 s) followed by black: trim the last 2.5 s. The AAC track (mean -32 dB) is the Criterion-commissioned score (copyrighted): MUTE it. Alternatives: 'Kino Version' in the same item (1620x1080, tinted, Kino score and '© 2016 Kino Lorber' end card) and silent-body-and-soul (Kino tinted transfer, ends on Kino/Subliminal Kid music credits). Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found).",
+   "mute": true,
+   "trim_start": 21.5,
+   "trim_end": 2.5
+  },
+  "advisory": "Implied rape of a young woman by a preacher; drinking, extortion and a killing.",
+  "skip": true,
+  "skip_reason": "Held 2026-09-27: source is a retail-disc encode; wait for an archive master (same rule as the Superman Blu-ray rip)."
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "eleven-pm",
+  "title": "Eleven P.M.",
+  "year": 1928,
+  "genre": "Drama",
+  "runtime": "1 hr 6 min",
+  "description": "A struggling newspaperman dreams up a surreal tale of a poor street violinist who tries to protect an orphaned girl from a small-time hoodlum, a story that ends in one of the strangest twists of the silent era.",
+  "credits": "Directed by Richard D. Maurice · Starring Richard D. Maurice · Orine Johnson · Sammie Fields · Wanda Maurice",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published before 1931; US copyright term for pre-1978 published works is at most 95 years, so every work published in 1930 or earlier is in the US public domain as of 2026-01-01. US-only conclusion: geo-restrict to the US or clear other territories separately. Maurice Film Company, Detroit. Usually dated 1928; Bowser and Musser suggest completion as late as 1929 or 1930 (Wikipedia, Richard D. Maurice) - still 1930 or earlier. Belt-and-braces: no registration or renewal exists in the CCE or online records; and even if the film were treated as never published, the author's life+70 term (Maurice died 1955) expired at the end of 2025 (17 USC 303). Director identity: Richard D. Maurice (1893-1955), Afro-Cuban-born Black filmmaker in Detroit. The intertitles on this print are the original 1920s cards (scratched period titles). The Kino score (Rob Gal) is muted.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Richard_D._Maurice",
+    "https://moviessilently.com/2017/02/19/eleven-p-m-1928-a-silent-film-review/",
+    "https://en.wikipedia.org/wiki/Pioneers_of_African-American_Cinema",
+    "https://www.law.cornell.edu/uscode/text/17/303",
+    "https://publicrecords.copyright.gov/"
+   ]
+  },
+  "source": {
+   "archive_identifier": "eleven-p.m.-1928-by-richard-d.-maurice",
+   "url": "https://archive.org/download/eleven-p.m.-1928-by-richard-d.-maurice/Eleven.P.M..1928.1080p.BluRay.x264.AAC-%5BYTS.MX%5D.mp4",
+   "bytes": 1192640109,
+   "width": 1424,
+   "height": 1072,
+   "has_added_score": true,
+   "notes": "Only copy on archive.org. It is a Blu-ray encode (file name carries a 'YTS.MX' release tag; no tag or watermark is burned into the picture) of the Kino Lorber 'Pioneers of African-American Cinema' (2016) transfer of the Library of Congress restoration. Head: LoC logo to ~3.8 s; the original 'Richard D. Maurice Presents' title fades in at ~4 s. Tail: the film ends on the clock at 12 (~3954 s); after that come 'Music by Rob Gal' and a 'Special contents of this edition © 2016 Kino Lorber' card. The AAC track is the Rob Gal score (copyrighted): MUTE it. Consider sourcing a clean master from the Library of Congress instead of a retail-disc encode. Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found).",
+   "mute": true,
+   "trim_start": 3.9,
+   "trim_end": 47.5
+  },
+  "advisory": "Violence and a killing; a man's spirit returns in a dog's body to take revenge.",
+  "skip": true,
+  "skip_reason": "Held 2026-09-27: source is a retail Blu-ray rip ('YTS'); wait for an archive master."
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-exile-1931",
+  "title": "The Exile",
+  "year": 1931,
+  "genre": "Drama",
+  "runtime": "1 hr 18 min",
+  "description": "A young Black man leaves a Chicago nightclub owner's world to homestead a ranch in South Dakota, and falls for a neighbor he believes he can never marry. Micheaux's first sound feature and the first Black-made talkie.",
+  "credits": "Directed by Oscar Micheaux · Starring Stanley Morrell · Eunice Brooks · Nora Newsome · Carl Mahon",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Published 1931 by Micheaux Film Corp. (on-screen 'Copyright, Micheaux Film Corporation'). Registered as 'The Exile' 9 reels, © Oscar Micheaux, 16May31, LP2489 (CCE Motion Pictures 1912-1939; Copyright Office card catalog record card_catalog_CC18981937MEYER_J-MICHIGAN_K.1321). Renewal search: the Catalog of Copyright Entries (CCE) motion-picture renewal sections for the renewal window (1958-1959) were full-text searched by exact title, alternate titles and claimant names (Micheaux, Sack, Alexander etc.) with no match; the Copyright Office online public records (publicrecords.copyright.gov, 1978+) were searched by exact title with no renewal and no registration claiming the film itself. Not renewed, so the copyright expired after the first 28-year term. US-only conclusion: geo-restrict to the US. Adapted from Micheaux's own novel The Conquest (1913; PD by date). Music: 'Synchronization and Score by Donald Heywood' (on-screen). Heywood renewed some of his stage-show songs (e.g. from Blackberries of 1932, Black Rhythm) in the 1959-1967 CCE music renewals; no renewal was found for songs identified with this film, but the musical numbers were not individually identified or cleared.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Exile_(1931_film)",
+    "https://archive.org/details/Motionpict19121939librrich0010",
+    "https://archive.org/details/catalogofcopyrig3121213li",
+    "https://archive.org/details/catalogofcopyrig3131213li",
+    "https://publicrecords.copyright.gov/",
+    "https://en.wikipedia.org/wiki/Oscar_Micheaux",
+    "https://www.copyright.gov/circs/circ15a.pdf"
+   ]
+  },
+  "source": {
+   "archive_identifier": "the-exile-1931",
+   "url": "https://archive.org/download/the-exile-1931/The%20Exile%20%281931%29.mkv",
+   "bytes": 1197421298,
+   "width": 956,
+   "height": 720,
+   "has_added_score": false,
+   "notes": "Matroska H.264 956x720 24 fps with original 1931 AAC soundtrack; from the Library of Congress restoration. Head: LoC logo to ~4.1 s; the original Frank Schiffman / Micheaux title appears at ~4.3 s. Ends on the original 'A Micheaux Production' and 'The End' cards (~4700 s), then black; no tail trim. The 'the-exile-1931_202601' item is a 25 fps 640x480 speed-up; not used. Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found).",
+   "trim_start": 4.2
+  },
+  "advisory": "A woman is shot to death; period attitudes toward interracial romance.",
+  "skip": true,
+  "skip_reason": "Held 2026-09-27: Donald Heywood music; some of his 1932 songs were renewed (protected to 2027) and weren't ruled out by listening."
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-darktown-revue",
+  "title": "The Darktown Revue",
+  "year": 1931,
+  "genre": "Comedy",
+  "runtime": "18 min",
+  "description": "A filmed stage revue featuring Donald Heywood's choir and the vaudeville comedy team of Tim Moore and Andrew Tribble. Micheaux's first sound short.",
+  "credits": "Directed by Oscar Micheaux · Starring Tim Moore · Andrew Tribble · Amon Davis · Donald Heywood's Choir",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Published 1931 by Micheaux Film Corporation (on-screen 'Copyright Micheaux Film Corporation, New York City'). No registration appears in the CCE Motion Pictures 1912-1939 cumulative catalog. Renewal search: the Catalog of Copyright Entries (CCE) motion-picture renewal sections for the renewal window (1958-1959) were full-text searched by exact title, alternate titles and claimant names (Micheaux, Sack, Alexander etc.) with no match; the Copyright Office online public records (publicrecords.copyright.gov, 1978+) were searched by exact title with no renewal and no registration claiming the film itself. Not renewed, so the copyright expired after the first 28-year term. US-only conclusion: geo-restrict to the US. Music: choral numbers by Donald Heywood's choir, not individually identified; see The Exile note on Heywood renewals. Publication with notice but no registration or renewal means no subsisting copyright.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Darktown_Revue",
+    "https://archive.org/details/Motionpict19121939librrich0010",
+    "https://archive.org/details/catalogofcopyrig3121213li",
+    "https://archive.org/details/catalogofcopyrig3131213li",
+    "https://publicrecords.copyright.gov/",
+    "https://en.wikipedia.org/wiki/Oscar_Micheaux"
+   ]
+  },
+  "source": {
+   "archive_identifier": "the-darktown-revue-by-oscar-micheaux",
+   "url": "https://archive.org/download/the-darktown-revue-by-oscar-micheaux/The%20Darktown%20Revue%20by%20Oscar%20Micheaux.mp4",
+   "bytes": 459689156,
+   "width": 720,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "H.264 720x480 (displayed 4:3) with original 1931 soundtrack. Opens by fading into the original 'Micheaux Films presents Donald Heywood's Choir ... The Darktown Revue' title; ends on the original 'The End' card, then black. No modern logos. Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found)."
+  },
+  "advisory": "Blackface performers and minstrel-show racial caricature.",
+  "skip": true,
+  "skip_reason": "Held 2026-09-27: Donald Heywood music not ruled out; also blackface/minstrel content."
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "ten-minutes-to-live",
+  "title": "Ten Minutes to Live",
+  "year": 1932,
+  "genre": "Thriller",
+  "runtime": "57 min",
+  "description": "Two stories of Harlem night life: a movie producer courts a nightclub singer, and a patron at the club is warned by note that she will be killed ten minutes after the next one arrives.",
+  "credits": "Directed by Oscar Micheaux · Starring Lawrence Chenault · A. B. DeComathiere · Laura Bowman · Willor Lee Guilford",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Published 1932 by Micheaux Pictures Corp. (on-screen 'Copyright MCMXXXII by Micheaux Pictures Corp.'). No registration for this film in the CCE Motion Pictures 1912-1939 (the only 'Ten Minutes to Live' there is a 1922 serial episode). Renewal search: the Catalog of Copyright Entries (CCE) motion-picture renewal sections for the renewal window (1959-1960) were full-text searched by exact title, alternate titles and claimant names (Micheaux, Sack, Alexander etc.) with no match; the Copyright Office online public records (publicrecords.copyright.gov, 1978+) were searched by exact title with no renewal and no registration claiming the film itself. Not renewed, so the copyright expired after the first 28-year term. US-only conclusion: geo-restrict to the US. Chain-of-title note: a 2020 recorded assignment (V9973D833) lists 'Ten Minutes to Live; Feature Film / By Oscar Micheaux' among 1,204 titles in a public-domain film library (with titles such as Radio Ranch and The She Beast); a recordation is not a registration and cannot revive an expired copyright. Adapted by Micheaux from short stories ('Harlem After Midnight'); publication of the film placed the story content it discloses in the public domain with the film (Shoptalk v. Concorde-New Horizons, 2d Cir. 1999). Floor show and 'musical arrangement' by Donald Heywood; Heywood renewed several 1932 songs from his revue Blackberries of 1932 ('The Answer Is No', 'Blackberries', renewed 14Apr59, R235016 etc., protected through 2027). Whether any appear in this film was not verified; music review recommended.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ten_Minutes_to_Live",
+    "https://archive.org/details/Motionpict19121939librrich0010",
+    "https://archive.org/details/catalogofcopyrig3131213li",
+    "https://archive.org/details/catalogofcopyr3141213libr",
+    "https://archive.org/details/catalogofcopyrig3135lib",
+    "https://publicrecords.copyright.gov/",
+    "https://www.courtlistener.com/opinion/762017/shoptalk-ltd-v-concorde-new-horizons-corp/",
+    "https://en.wikipedia.org/wiki/Oscar_Micheaux"
+   ]
+  },
+  "source": {
+   "archive_identifier": "ten-minutes-to-live-1932",
+   "url": "https://archive.org/download/ten-minutes-to-live-1932/Ten%20Minutes%20to%20Live%20%281932%29.mp4",
+   "bytes": 640707833,
+   "width": 986,
+   "height": 720,
+   "has_added_score": false,
+   "notes": "Museum of Modern Art transfer (H.264 986x720 24 fps, original soundtrack). Head: MoMA '80 Years of Film at MoMA / This film is from the collection of The Museum of Modern Art' animation and a 'MoMA © 2015 The Museum of Modern Art' card to ~15.6 s; the original A. Burton Russell / Micheaux title fades in by ~18 s. Tail: after the original 'The End' (~3458 s) the MoMA animation and © 2015 card return; trim from ~3458.5 s. The older 'TenMinutestoLive' IA copy (640x480 29.97, cropped) is a fallback. Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found).",
+   "trim_start": 15.8,
+   "trim_end": 20.1
+  },
+  "advisory": "Death threats and a murder; a sexual-coercion subplot.",
+  "skip": true,
+  "skip_reason": "Held 2026-09-27: Donald Heywood music; renewed songs not ruled out."
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-girl-from-chicago",
+  "title": "The Girl from Chicago",
+  "year": 1932,
+  "genre": "Drama",
+  "runtime": "1 hr 11 min",
+  "description": "A federal agent on assignment in Mississippi falls in love and follows the woman to Harlem, where they are drawn into the numbers racket and the killing of a Cuban racketeer.",
+  "credits": "Directed by Oscar Micheaux · Starring Carl Mahon · Star Calloway · Grace Smith · Juano Hernández",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Published 1932 by Micheaux Pictures Corp. (on-screen 'Copyright MCMXXXII by Micheaux Pictures'). No registration for this film in the CCE Motion Pictures 1912-1939 (the only 'The Girl from Chicago' there is Warner Bros.' unrelated 1927 film, L24589). Renewal search: the Catalog of Copyright Entries (CCE) motion-picture renewal sections for the renewal window (1959-1960) were full-text searched by exact title, alternate titles and claimant names (Micheaux, Sack, Alexander etc.) with no match; the Copyright Office online public records (publicrecords.copyright.gov, 1978+) were searched by exact title with no renewal and no registration claiming the film itself. Not renewed, so the copyright expired after the first 28-year term. US-only conclusion: geo-restrict to the US. Chain-of-title note: 'The Girl From Chicago' appears in a 2025 mortgage/security agreement (V15039D155) covering 2,408 titles of a public-domain film library; the same agreement lists Lying Lips, Go Down Death, The Girl in Room 20 and Dirty Gertie. It is a recorded security interest, not a copyright claim, and cannot revive the expired copyright. Adapted from the story 'Jeff Ballinger's Woman' (see Shoptalk note).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Girl_from_Chicago",
+    "https://archive.org/details/Motionpict19121939librrich0010",
+    "https://archive.org/details/catalogofcopyrig3131213li",
+    "https://archive.org/details/catalogofcopyr3141213libr",
+    "https://publicrecords.copyright.gov/",
+    "https://www.courtlistener.com/opinion/762017/shoptalk-ltd-v-concorde-new-horizons-corp/",
+    "https://en.wikipedia.org/wiki/Oscar_Micheaux"
+   ]
+  },
+  "source": {
+   "archive_identifier": "the-girl-from-chicago-1932",
+   "url": "https://archive.org/download/the-girl-from-chicago-1932/The%20Girl%20from%20Chicago%20%281932%29.mkv",
+   "bytes": 1108137215,
+   "width": 960,
+   "height": 720,
+   "has_added_score": false,
+   "notes": "Matroska H.264 960x720 23.976 fps, original soundtrack; Library of Congress transfer. Head: LoC logo to ~3.6 s; the original A. Burton Russell / Micheaux title fades in at ~4 s. Ends on the original 'The End' card (~4238 s), then black; no tail trim. Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found).",
+   "trim_start": 3.8
+  },
+  "advisory": "Gun violence and a killing; gambling and the numbers racket."
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "veiled-aristocrats",
+  "title": "Veiled Aristocrats",
+  "year": 1932,
+  "genre": "Drama",
+  "runtime": "44 min",
+  "description": "A light-skinned lawyer who has lived for years as a white man returns home and urges his sister to leave the man she loves and pass for white too. The surviving 44-minute portion of the film.",
+  "credits": "Directed by Oscar Micheaux · Starring Lorenzo Tucker · Laura Bowman · Lucille Lewis · Carl Mahon",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Published 1932 by Oscar Micheaux. No registration in the CCE Motion Pictures 1912-1939. Renewal search: the Catalog of Copyright Entries (CCE) motion-picture renewal sections for the renewal window (1959-1960) were full-text searched by exact title, alternate titles and claimant names (Micheaux, Sack, Alexander etc.) with no match; the Copyright Office online public records (publicrecords.copyright.gov, 1978+) were searched by exact title with no renewal and no registration claiming the film itself. Not renewed, so the copyright expired after the first 28-year term. US-only conclusion: geo-restrict to the US. Based on Charles W. Chesnutt's novel The House Behind the Cedars (1900; PD by date). The title may derive from Gertrude Sanborn's 1923 novel Veiled Aristocrats (A766626, 1924; PD by date); only the title is shared. Incomplete: only ~44-48 minutes survive (George Eastman Museum print).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Veiled_Aristocrats",
+    "https://harvardfilmarchive.org/calendar/silent-shorts-2004-02",
+    "https://archive.org/details/Motionpict19121939librrich0010",
+    "https://archive.org/details/catalogofcopyrig3131213li",
+    "https://archive.org/details/catalogofcopyr3141213libr",
+    "https://publicrecords.copyright.gov/",
+    "https://en.wikipedia.org/wiki/Oscar_Micheaux"
+   ]
+  },
+  "source": {
+   "archive_identifier": "oscar-micheaux-filmography",
+   "url": "https://archive.org/download/oscar-micheaux-filmography/7%20Veiled%20Aristocrats%20%281932%29.mp4",
+   "bytes": 145747417,
+   "width": 450,
+   "height": 360,
+   "has_added_score": false,
+   "notes": "Low resolution (H.264 450x360, 23.976 fps, original soundtrack), one file in a hobbyist's multi-film item; the only online copy. Opens on the original damaged 'Veiled Aristocrats ... All Talking ... Colored Cast ... A Micheaux Production' title and an in-period 'Cast of Characters' card; ends on the original 'The End'. Zoomed corner crops on dark frames show no uploader watermark. The same uploader's Underworld and Notorious Elinor Lee files DO carry a watermark, so re-check this file at ingest. Replace with a better source (e.g. George Eastman Museum) when possible. Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found)."
+  },
+  "advisory": "Colorism and themes of passing for white."
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "murder-in-harlem",
+  "title": "Murder in Harlem",
+  "year": 1935,
+  "genre": "Mystery",
+  "runtime": "1 hr 35 min",
+  "description": "When a Black night watchman is charged with the murder of a young white woman found in a factory basement, a novelist-turned-lawyer takes his case and pieces together what really happened. Loosely based on the Leo Frank case.",
+  "credits": "Directed by Oscar Micheaux · Starring Clarence Brooks · Dorothy Van Engle · Andrew S. Bishop · Alec Lovejoy",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Published 1935 by Micheaux Pictures Corporation as 'Lem Hawkins' Confession' (also released as Murder in Harlem and Brand of Cain; on-screen 'Copyright MCMXXXV by Micheaux Pictures Corporation'). Registered as \"Lem Hawkins' Confession\" 10 reels, © Micheaux Pictures Corp., 23Aug35, LP5763 (CCE Motion Pictures 1912-1939; card record card_catalog_CC18981937MEYER_J-MICHIGAN_K.1325). Renewal search: the Catalog of Copyright Entries (CCE) motion-picture renewal sections for the renewal window (1962-1963 (searched under all three titles)) were full-text searched by exact title, alternate titles and claimant names (Micheaux, Sack, Alexander etc.) with no match; the Copyright Office online public records (publicrecords.copyright.gov, 1978+) were searched by exact title with no renewal and no registration claiming the film itself. Not renewed, so the copyright expired after the first 28-year term. US-only conclusion: geo-restrict to the US. Songs 'Harlem Rhythm Dance' and 'Ants in My Pants' (Clarence Williams, per Wikipedia): no renewal found in the 1958-1968 CCE music renewal sections. Based on the Stanfield/Leo Frank case (historical facts, not a copyrighted work).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Murder_in_Harlem",
+    "https://archive.org/details/Motionpict19121939librrich0010",
+    "https://archive.org/details/catalogofcopyr3161213libr",
+    "https://archive.org/details/catalogofcopyr3171213libr",
+    "https://archive.org/details/catalogofcopyrig3165lib",
+    "https://archive.org/details/catalogofcopyrig3175lib",
+    "https://publicrecords.copyright.gov/",
+    "https://en.wikipedia.org/wiki/Oscar_Micheaux"
+   ]
+  },
+  "source": {
+   "archive_identifier": "Murder_in_Harlem",
+   "url": "https://archive.org/download/Murder_in_Harlem/MurderInHarlem.mp4",
+   "bytes": 591959531,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Internet Archive derivative (H.264 640x480 29.97, original soundtrack). Opens on the original A. Burton Russell / 'Murder in Harlem' title; ends on the original 'The End', then black. No modern logos, no watermark. REJECTED: 'murder-in-harlem-1935' / 'murder-in-harlem' (Alpha Video DVD with a burned-in Alpha Video flag logo on the credits), the AI-colorized copy, and the 494x360 'restored' copy. Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found)."
+  },
+  "advisory": "Depicts a murder and a Black man falsely accused of killing a white woman; period comic stereotypes."
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "gods-step-children",
+  "title": "God's Step Children",
+  "year": 1938,
+  "genre": "Drama",
+  "runtime": "1 hr 11 min",
+  "description": "A light-skinned girl raised by a Black foster mother grows up rejecting her family and community, and as an adult abandons her husband and child to live as a white woman.",
+  "credits": "Directed by Oscar Micheaux · Starring Jacqueline Lewis · Ethel Moses · Alice B. Russell · Carman Newsome",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Published 1938 by Micheaux Pictures, distributed by Alfred N. Sack. No registration in the CCE Motion Pictures 1912-1939. Renewal search: the Catalog of Copyright Entries (CCE) motion-picture renewal sections for the renewal window (1965-1966) were full-text searched by exact title, alternate titles and claimant names (Micheaux, Sack, Alexander etc.) with no match; the Copyright Office online public records (publicrecords.copyright.gov, 1978+) were searched by exact title with no renewal and no registration claiming the film itself. Not renewed, so the copyright expired after the first 28-year term. US-only conclusion: geo-restrict to the US. On-screen source 'From the story Naomi, Negress!' (credited to Alice B. Russell); no registration found for the story. Publication of the film put the story content it discloses in the public domain with the film (Shoptalk v. Concorde-New Horizons, 2d Cir. 1999). The film shares only its title with Sarah Gertrude Millin's 1924 novel God's Step-Children (no adaptation). UCLA Film & Television Archive preservation adds no new copyright.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/God%27s_Step_Children",
+    "https://archive.org/details/Motionpict19121939librrich0010",
+    "https://archive.org/details/catalogofc19653191213libr",
+    "https://archive.org/details/catalogofc19663201213libr",
+    "https://publicrecords.copyright.gov/",
+    "https://www.courtlistener.com/opinion/762017/shoptalk-ltd-v-concorde-new-horizons-corp/",
+    "https://en.wikipedia.org/wiki/Oscar_Micheaux"
+   ]
+  },
+  "source": {
+   "archive_identifier": "gods-step-children-1938",
+   "url": "https://archive.org/download/gods-step-children-1938/Gods%20Step%20Children%20%281938%29.mp4",
+   "bytes": 327264489,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Kino Classics DVD encode of the UCLA Film & Television Archive preservation (H.264 640x480, original soundtrack). Head: Kino Classics logo (to ~6.5 s) and UCLA / Packard Humanities Institute / laboratory credit cards (to ~36 s); the original Sack 'Mark of Merit' logo fades in at ~39 s. Ends on the original 'The End' and Sack logo, then black; no tail trim. REJECTED: 'gods-stepchildren' (burned-in corner logo throughout). Fallback: oscar-micheaux-filmography/[12] God's Stepchildren (1938).mp4 (480x360). Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found).",
+   "trim_start": 37.0
+  },
+  "advisory": "Colorism and racist language; a child is spanked; depicts a suicide.",
+  "skip": true,
+  "skip_reason": "Held 2026-09-27: source is a retail-disc encode; wait for an archive master."
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "birthright-1938",
+  "title": "Birthright",
+  "year": 1938,
+  "genre": "Drama",
+  "runtime": "1 hr 11 min",
+  "description": "A Black Harvard graduate returns to his small Tennessee hometown hoping to found a school, and runs into racism from white townspeople and distrust from his own community. The surviving print lacks its first two reels.",
+  "credits": "Directed by Oscar Micheaux · Starring Carman Newsome · Alec Lovejoy · Ethel Moses",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Published 1938 (reported in theaters by March 1939) by Micheaux Pictures. No registration in the CCE Motion Pictures 1912-1939. Renewal search: the Catalog of Copyright Entries (CCE) motion-picture renewal sections for the renewal window (1965-1967) were full-text searched by exact title, alternate titles and claimant names (Micheaux, Sack, Alexander etc.) with no match; the Copyright Office online public records (publicrecords.copyright.gov, 1978+) were searched by exact title with no renewal and no registration claiming the film itself. Not renewed, so the copyright expired after the first 28-year term. US-only conclusion: geo-restrict to the US. Adapted from T. S. Stribling's novel Birthright (1922; PD by date). Incomplete: reels 1-2 (~20 min) are lost. The Library of Congress restoration adds no new copyright; Kino's added explanatory cards are trimmed (see source.notes).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Birthright_(1938_film)",
+    "https://archive.org/details/Motionpict19121939librrich0010",
+    "https://archive.org/details/catalogofc19653191213libr",
+    "https://archive.org/details/catalogofc19663201213libr",
+    "https://archive.org/details/catalogofc19673211213libr",
+    "https://publicrecords.copyright.gov/",
+    "https://en.wikipedia.org/wiki/Oscar_Micheaux",
+    "https://cspd.law.duke.edu/publicdomainday/2026/"
+   ]
+  },
+  "source": {
+   "archive_identifier": "birthright-1938",
+   "url": "https://archive.org/download/birthright-1938/Birthright_%281938%29.mp4",
+   "bytes": 237841739,
+   "width": 474,
+   "height": 360,
+   "has_added_score": false,
+   "notes": "Kino Lorber 'Pioneers' encode (H.264 474x360 29.97, original soundtrack). Head 0-146 s is Kino/LoC material: LoC logo, cards explaining the missing reels, a donor card, then (after the original Micheaux logo and credits at ~38-65 s) Kino-written summary cards of the missing scenes with stills, which are Kino's copyrighted 'special contents'. The only clean cut point is where the surviving footage begins (~146.5 s), so the original opening credits are lost with the trim. Tail: after the original 'A Micheaux Production' (~4410 s) comes 'Special contents of this edition © 2016 Kino Lorber'; trim from ~4410.8 s. Fallback: oscar-micheaux-filmography/[14] Birthright (1939) Incomplete.mp4 (480x360, has an uploader-written text card at the head). Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found).",
+   "trim_start": 146.2,
+   "trim_end": 6.8
+  },
+  "advisory": "Racial slurs, dialect caricature and depictions of Southern racism."
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "lying-lips",
+  "title": "Lying Lips",
+  "year": 1939,
+  "genre": "Mystery",
+  "runtime": "1 hr 8 min",
+  "description": "A nightclub singer who refuses to entertain customers is framed for her aunt's murder and sent to prison, while two detectives who believe her set out to find the real killer.",
+  "credits": "Directed by Oscar Micheaux · Starring Edna Mae Harris · Carman Newsome · Robert Earl Jones",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Published 1939 by Micheaux Pictures, distributed by Alfred N. Sack. No registration in the CCE Motion Pictures 1912-1939 (the only 'Lying Lips' there is Thomas H. Ince's unrelated 1921 film, L16126). Renewal search: the Catalog of Copyright Entries (CCE) motion-picture renewal sections for the renewal window (1966-1967) were full-text searched by exact title, alternate titles and claimant names (Micheaux, Sack, Alexander etc.) with no match; the Copyright Office online public records (publicrecords.copyright.gov, 1978+) were searched by exact title with no renewal and no registration claiming the film itself. Not renewed, so the copyright expired after the first 28-year term. US-only conclusion: geo-restrict to the US. 'Lying Lips' song titles in the online records are unrelated compositions. Listed in the 2025 security agreement V15039D155 (public-domain library; see The Girl from Chicago).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lying_Lips",
+    "https://archive.org/details/Motionpict19121939librrich0010",
+    "https://archive.org/details/catalogofc19663201213libr",
+    "https://archive.org/details/catalogofc19673211213libr",
+    "https://publicrecords.copyright.gov/",
+    "https://en.wikipedia.org/wiki/Oscar_Micheaux"
+   ]
+  },
+  "source": {
+   "archive_identifier": "lying_lips",
+   "url": "https://archive.org/download/lying_lips/lying_lips.mp4",
+   "bytes": 419689739,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Internet Archive derivative (H.264 640x480 29.97, original soundtrack; the MPEG-2 original lying_lips.mpeg is 2,720,722,948 bytes). Opens on the original Sack 'Mark of Merit' logo and 'Alfred N. Sack Presents'; ends on the original 'The End'. No modern logos or watermark. Same transfer at higher bitrate: lying_lips_ipod/lying_lips.mp4 (738,025,970 bytes, mono). Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found)."
+  },
+  "advisory": "Depicts a murder, a wrongful imprisonment and the intimidation of a suspect."
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-blood-of-jesus",
+  "title": "The Blood of Jesus",
+  "year": 1941,
+  "genre": "Fantasy",
+  "runtime": "56 min",
+  "description": "After her husband accidentally shoots her, a devout woman's spirit is led to the crossroads between Heaven and Hell, where Satan's agents try to tempt her into the nightlife of the city.",
+  "credits": "Directed by Spencer Williams · Starring Cathryn Caviness · Spencer Williams · Frank H. McClennan · James B. Jones",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Published 1941 by Amegro Films / Sack Amusement Enterprises. No registration in the CCE Motion Pictures 1940-1949 cumulative catalog. Renewal search: the Catalog of Copyright Entries (CCE) motion-picture renewal sections for the renewal window (1968-1969) were full-text searched by exact title, alternate titles and claimant names (Micheaux, Sack, Alexander etc.) with no match; the Copyright Office online public records (publicrecords.copyright.gov, 1978+) were searched by exact title with no renewal and no registration claiming the film itself. Not renewed, so the copyright expired after the first 28-year term. US-only conclusion: geo-restrict to the US. A 2003 recorded assignment (V3501D018, 'Movies of color & 2 other titles') lists The Blood of Jesus and Go Down, Death 'Directed by Spencer Williams'; it concerns a compilation program and is not a registration of the film. Director: Spencer Williams (1893-1969), African American actor-director. National Film Registry 1991. Spirituals and hymns in the film are traditional; they were not individually cleared. The Tyler, Texas Black Film Collection (SMU) restoration adds no new copyright.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/The_Blood_of_Jesus",
+    "https://en.wikipedia.org/wiki/Spencer_Williams_Jr.",
+    "https://www.loc.gov/programs/national-film-preservation-board/film-registry/complete-national-film-registry-listing/",
+    "https://archive.org/details/Motionpict19401949librrich0010",
+    "https://archive.org/details/catalogofc19683221213libr",
+    "https://archive.org/details/catalogofc19693231213libr",
+    "https://publicrecords.copyright.gov/"
+   ]
+  },
+  "source": {
+   "archive_identifier": "the-blood-of-jesus-1941",
+   "url": "https://archive.org/download/the-blood-of-jesus-1941/The%20Blood%20Of%20Jesus%201941.mp4",
+   "bytes": 1009688385,
+   "width": 1440,
+   "height": 1072,
+   "has_added_score": false,
+   "notes": "High-definition transfer of the Tyler, Texas Black Film Collection print (H.264 1440x1072 23.976 fps, original soundtrack). Head: National Film Registry logo and the Tyler-Texas Black Film Collection logo to ~15 s; the original Sack logo fades in at ~15.5 s into the Amegro Films title. Tail: after the original Sack logo (~3378.8 s) the Tyler-Texas logo returns; trim from ~3378.9 s. Fallback: blood_of_jesus/blood_of_jesus.mp4 (640x480, 354,870,379 bytes, clean, no trims). Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found).",
+   "trim_start": 15.2,
+   "trim_end": 9.0
+  },
+  "advisory": "An accidental shooting; depictions of Satan and a mob chase."
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "wheres-my-man-to-nite",
+  "title": "Where's My Man To-nite?",
+  "year": 1943,
+  "genre": "War",
+  "runtime": "1 hr 18 min",
+  "description": "A young man resists his family's tradition of military service until he is drafted, then proves himself in training and uncovers enemy saboteurs near his Army base. The reissue version of Marching On!, with added musical numbers.",
+  "credits": "Directed by Spencer Williams · Starring Hugo Martin · George T. Sutton · Myra D. Hemmings",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Published 1943 as Marching On! (Sack Amusement Enterprises); later reissued with added musical sequences as Where's My Man To-nite?. No registration under either title in the CCE Motion Pictures 1940-1949. Renewal search: the Catalog of Copyright Entries (CCE) motion-picture renewal sections for the renewal window (1970-1974 (covers the 1943 release and any reissue through 1947, under both titles)) were full-text searched by exact title, alternate titles and claimant names (Micheaux, Sack, Alexander etc.) with no match; the Copyright Office online public records (publicrecords.copyright.gov, 1978+) were searched by exact title with no renewal and no registration claiming the film itself. Not renewed, so the copyright expired after the first 28-year term. US-only conclusion: geo-restrict to the US. The added musical sequences in the reissue were not individually identified; who shot them is undocumented (Wikipedia says only that the film was 'rereleased with additional musical sequences'). The 1928 Fox 'Marching On' renewal (R166117) is an unrelated film.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Marching_On!",
+    "https://en.wikipedia.org/wiki/Spencer_Williams_Jr.",
+    "https://archive.org/details/Motionpict19401949librrich0010",
+    "https://archive.org/details/catalogofc19703241213libr",
+    "https://archive.org/details/catalogofc19713251213libr",
+    "https://archive.org/details/catalogofc19723261213libr",
+    "https://archive.org/details/catalogofc19733271213libr",
+    "https://archive.org/details/catalogofcopyrig3281213li",
+    "https://publicrecords.copyright.gov/"
+   ]
+  },
+  "source": {
+   "archive_identifier": "WheresMyManTonight",
+   "url": "https://archive.org/download/WheresMyManTonight/WheresMyManTonight.mp4",
+   "bytes": 487887970,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Internet Archive derivative (H.264 640x480 29.97, original soundtrack; DivX original WheresMyManTonight.avi 720x576). Opens on the original 'Where's My Man To-nite' title; ends on the original 'The End', then black. No modern logos or watermark. Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found)."
+  },
+  "advisory": "Wartime plot involving Japanese saboteurs.",
+  "skip": true,
+  "skip_reason": "Held 2026-09-27: musical sequences added for the 1943 reissue are undocumented (song rights unknown)."
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "go-down-death",
+  "title": "Go Down, Death!",
+  "year": 1944,
+  "genre": "Drama",
+  "runtime": "54 min",
+  "description": "A juke-joint boss schemes to frame a new preacher who is drawing away his customers, and his foster mother pays the price when she tries to stop him. Inspired by James Weldon Johnson's poem.",
+  "credits": "Directed by Spencer Williams · Starring Myra D. Hemmings · Samuel H. James · Eddye L. Houston · Spencer Williams",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Published 1944 by Harlemwood Studios / Alfred N. Sack. No registration in the CCE Motion Pictures 1940-1949. Renewal search: the Catalog of Copyright Entries (CCE) motion-picture renewal sections for the renewal window (1971-1972) were full-text searched by exact title, alternate titles and claimant names (Micheaux, Sack, Alexander etc.) with no match; the Copyright Office online public records (publicrecords.copyright.gov, 1978+) were searched by exact title with no renewal and no registration claiming the film itself. Not renewed, so the copyright expired after the first 28-year term. US-only conclusion: geo-restrict to the US. Underlying poem 'Go Down Death' from James Weldon Johnson's God's Trombones (1927; PD by date). Hell sequence uses footage from L'Inferno (Italy, 1911; PD by date). The 1994 'Go down death' registration PA0000738512 is an unrelated Billy Budd/Trombone Productions work. Listed in library recordations (2003 V3501D018; 2025 V15039D155); neither is a claim to the film's copyright.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Go_Down,_Death!",
+    "https://en.wikipedia.org/wiki/Spencer_Williams_Jr.",
+    "https://archive.org/details/Motionpict19401949librrich0010",
+    "https://archive.org/details/catalogofc19713251213libr",
+    "https://archive.org/details/catalogofc19723261213libr",
+    "https://publicrecords.copyright.gov/",
+    "https://cspd.law.duke.edu/publicdomainday/2026/"
+   ]
+  },
+  "source": {
+   "archive_identifier": "go_down_death",
+   "url": "https://archive.org/download/go_down_death/go_down_death.mp4",
+   "bytes": 336540272,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Internet Archive derivative (H.264 640x480 29.97, original soundtrack; MPEG-2 original go_down_death.mpeg 2,581,513,148 bytes). Opens on the original 'Alfred N. Sack Reverently Presents Go Down, Death! A Harlemwood Studios Production'; ends on the original 'The End' and cast cards, then a white flash and black. No modern logos or watermark. Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found)."
+  },
+  "advisory": "A fatal assault on an elderly woman; images of Hell with brief nudity (clips from the 1911 Italian film L'Inferno)."
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "dirty-gertie-from-harlem-usa",
+  "title": "Dirty Gertie from Harlem U.S.A.",
+  "year": 1946,
+  "genre": "Drama",
+  "runtime": "1 hr",
+  "description": "A Harlem nightclub star flees to a Caribbean island resort to headline its revue, where she toys with the men around her while missionaries watch her every move and a jilted lover tracks her down.",
+  "credits": "Directed by Spencer Williams · Starring Francine Everett · Don Wilson · Katherine Moore · Spencer Williams",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Published 1946 by Sack Amusement Enterprises. No registration in the CCE Motion Pictures 1940-1949. Renewal search: the Catalog of Copyright Entries (CCE) motion-picture renewal sections for the renewal window (1973-1974) were full-text searched by exact title, alternate titles and claimant names (Micheaux, Sack, Alexander etc.) with no match; the Copyright Office online public records (publicrecords.copyright.gov, 1978+) were searched by exact title with no renewal and no registration claiming the film itself. Not renewed, so the copyright expired after the first 28-year term. US-only conclusion: geo-restrict to the US. Unauthorized loose adaptation of W. Somerset Maugham's story 'Miss Thompson' (1921) / the play Rain (1922); both PD by date, so there is no underlying-work risk. The 1973 'Dirty Gertie' renewal hit is an unrelated Lucille Ball Productions TV episode.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Dirty_Gertie_from_Harlem_U.S.A.",
+    "https://en.wikipedia.org/wiki/Spencer_Williams_Jr.",
+    "https://www.nywift.org/dirty-gertie-from-harlem-usa-1946/",
+    "https://archive.org/details/Motionpict19401949librrich0010",
+    "https://archive.org/details/catalogofc19733271213libr",
+    "https://archive.org/details/catalogofcopyrig3281213li",
+    "https://publicrecords.copyright.gov/",
+    "https://cspd.law.duke.edu/publicdomainday/2026/"
+   ]
+  },
+  "source": {
+   "archive_identifier": "dirty-gertie-from-harlem-usa",
+   "url": "https://archive.org/download/dirty-gertie-from-harlem-usa/Dirty%20Gertie%20From%20Harlem%20U.S.A.%20%281946%29.mp4",
+   "bytes": 633974857,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Tyler, Texas Black Film Collection transfer (H.264 640x480 25 fps, original soundtrack). Head: Tyler-Texas Black Film Collection logo to ~9.3 s; the original 'Alfred N. Sack Presents' title begins at ~10 s. Ends on the original 'The End', then black; no tail trim. Zoomed corner crops show no uploader watermark. Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found).",
+   "trim_start": 9.5
+  },
+  "advisory": "A woman is murdered by a former lover; sexual themes."
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "juke-joint",
+  "title": "Juke Joint",
+  "year": 1947,
+  "genre": "Comedy",
+  "runtime": "59 min",
+  "description": "Two broke con men pose as Hollywood acting coaches to win free room and board, then coach their landlady's daughter for a beauty contest, until her father plans a victory party at a rough juke joint.",
+  "credits": "Directed by Spencer Williams · Starring Spencer Williams · July Jones · Inez Newell",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Published 1947 by Sack Amusement Enterprises. No registration in the CCE Motion Pictures 1940-1949. Renewal search: the Catalog of Copyright Entries (CCE) motion-picture renewal sections for the renewal window (1974-1975) were full-text searched by exact title, alternate titles and claimant names (Micheaux, Sack, Alexander etc.) with no match; the Copyright Office online public records (publicrecords.copyright.gov, 1978+) were searched by exact title with no renewal and no registration claiming the film itself. Not renewed, so the copyright expired after the first 28-year term. US-only conclusion: geo-restrict to the US. Musical numbers by Red Calhoun's band (filmed at the Rose Room, Dallas, and Don's Keyhole, San Antonio) were not individually identified or cleared.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Juke_Joint_(film)",
+    "https://en.wikipedia.org/wiki/Spencer_Williams_Jr.",
+    "https://archive.org/details/Motionpict19401949librrich0010",
+    "https://archive.org/details/catalogofcopyrig3281213li",
+    "https://archive.org/details/catalogofcopyrig3291213libr",
+    "https://publicrecords.copyright.gov/"
+   ]
+  },
+  "source": {
+   "archive_identifier": "JukeJoint",
+   "url": "https://archive.org/download/JukeJoint/JukeJoint.mp4",
+   "bytes": 366215746,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Internet Archive derivative (H.264 640x480 29.97, original soundtrack; DivX original JukeJoint.avi 720x576). Opens on the original Sack 'Mark of Merit' logo; ends on the original 'The End' and Sack logo, then black. No modern logos or watermark. Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found)."
+  },
+  "advisory": null
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "souls-of-sin",
+  "title": "Souls of Sin",
+  "year": 1949,
+  "genre": "Drama",
+  "runtime": "1 hr 3 min",
+  "description": "Three roommates share a Harlem basement apartment: a small-time gambler, a hard-luck writer and a young blues singer from the South, whose fortunes split when the gambler takes a job fencing stolen jewelry.",
+  "credits": "Directed by Powell Lindsay · Starring Savannah Churchill · William Greaves · Jimmy Wright · Powell Lindsay",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Published 1949 by Alexander Productions (William D. Alexander). No registration in the CCE Motion Pictures 1940-1949 (the Alexander entries there are unrelated 1946 Soundies). Renewal search: the Catalog of Copyright Entries (CCE) motion-picture renewal sections for the renewal window (1976-1977) were full-text searched by exact title, alternate titles and claimant names (Micheaux, Sack, Alexander etc.) with no match; the Copyright Office online public records (publicrecords.copyright.gov, 1978+) were searched by exact title with no renewal and no registration claiming the film itself. Not renewed, so the copyright expired after the first 28-year term. US-only conclusion: geo-restrict to the US. Director: Powell Lindsay (1905-1987), African American actor, playwright and director (Wikipedia; BlackPast.org). Songs: 'The Things You Do to Me' (Savannah Churchill & Henry Glover) and 'Disappointment Blues' / 'Lonesome Blues' (William Greaves). No registration or renewal was found for these titles in the online records (1978+); a pre-1978 renewal of a 1949 song would fall in 1976-77, which was not searched in the music CCE. Low-moderate music risk.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Souls_of_Sin",
+    "https://en.wikipedia.org/wiki/Powell_Lindsay",
+    "https://blackpast.org/african-american-history/lindsay-powell-1905-1987/",
+    "https://archive.org/details/Motionpict19401949librrich0010",
+    "https://archive.org/details/1976motionpictur3301213libr",
+    "https://archive.org/details/1977motionpictur3311213libr",
+    "https://publicrecords.copyright.gov/"
+   ]
+  },
+  "source": {
+   "archive_identifier": "SoulsOfSin",
+   "url": "https://archive.org/download/SoulsOfSin/SoulsOfSin.mp4",
+   "bytes": 558603500,
+   "width": 720,
+   "height": 536,
+   "has_added_score": false,
+   "notes": "Alpha Video DVD transfer (H.264 720x536 29.97, original soundtrack), the only online copy. A small Alpha Video flag logo is burned in during the opening credits (0-~51 s) and the end card (~3815 s on), but NOT during the film (checked with zoomed corner crops at 60, 90, 300, 1500, 3000, 3700 and 3810 s). Trim both: the film starts on the aerial Manhattan shots at ~52 s, and ends before the logo reappears. The original opening titles are lost with the trim. Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found).",
+   "trim_start": 51.0,
+   "trim_end": 5.8
+  },
+  "advisory": "Gun violence (a fatal shooting); gambling and crime."
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "wealth-of-a-nation",
+  "title": "Wealth of a Nation",
+  "year": 1964,
+  "genre": "Documentary",
+  "runtime": "21 min",
+  "description": "A fast-cut portrait of American freedom of expression, from dissent and debate to art, music, dance, architecture and science, made for overseas audiences by the U.S. Information Agency.",
+  "credits": "Written, produced and directed by William Greaves · Music by Bill Dixon · A U.S. Information Agency production",
+  "rights": {
+   "basis": "public-domain-no-notice",
+   "notes": "USIA film (NARA 306.3957, NAID 50289). The end credits read 'a production of the motion picture and television service of the United States Information Agency', and no copyright notice appears on screen (head and end credits checked). There is no registration in the 1964-1965 CCE motion-picture volumes and no record in the online public records. Greaves (1926-2014, African American documentarian) made it as an independent contractor, not a federal employee, so 17 USC 105 does not apply directly. The basis is publication without notice before 1978, the same reasoning this catalog uses for contractor-made government films such as Private Snafu. NARA's use restriction cites only Public Law 101-246 (domestic release of USIA films 12 years after overseas dissemination, long satisfied). RESIDUAL RISK (counsel sign-off recommended): if the film was disseminated only abroad, some courts (Twin Books v. Disney, 9th Cir. 1996) have held that publication abroad without notice did not divest US copyright. Bill Dixon's commissioned score was published only as part of the film; no separate registration was found.",
+   "sources": [
+    "https://catalog.archives.gov/id/50289",
+    "https://unwritten-record.blogs.archives.gov/2015/07/14/wealth-comes-in-many-forms-william-greaves-usia-films",
+    "https://en.wikipedia.org/wiki/William_Greaves",
+    "https://archive.org/details/catalogofc19653191213libr",
+    "https://archive.org/details/catalogofc19643181213libr",
+    "https://publicrecords.copyright.gov/",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://www.law.cornell.edu/uscode/text/17/105"
+   ]
+  },
+  "source": {
+   "archive_identifier": "yt_NvPJTC0ND_A",
+   "url": "https://archive.org/download/yt_NvPJTC0ND_A/NvPJTC0ND_A.mp4",
+   "bytes": 229599928,
+   "width": 1280,
+   "height": 720,
+   "has_added_score": false,
+   "notes": "Archive of the National Archives' own YouTube upload (H.264 1280x720 24 fps, original soundtrack), with both reels in one file. Head: NARA eagle logo and a '306.3957 Reels 1 & 2 of 2' slate to ~6.5 s. Tail: 'End of Recording' slate from ~1252.3 s. Original NARA per-reel files: https://catalog.archives.gov/medialive/89/502/50289/content/mopix/306/306-3957-r1_HD_2Mbps.mp4 and ...-r2_HD_2Mbps.mp4 (1920x1080, 181,115,264 + 176,709,632 bytes); use them for a 1080p master if the ingest can concatenate reels. Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found).",
+   "trim_start": 6.5,
+   "trim_end": 2.9
+  },
+  "advisory": null,
+  "skip": true,
+  "skip_reason": "Held 2026-09-27: USIA contractor film; PD rests on publication without notice, possibly abroad only; needs a legal call."
+ }
+]

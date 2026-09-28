@@ -44,7 +44,7 @@ REGION = "nyc3"
 UA = "Mozilla/5.0 (Macintosh) HaukleyIngest/1.0"
 
 
-def titles(only, series=False):
+def titles(only, series=False, listfile="free_titles.json"):
     if series:
         shows = json.loads((ROOT / "scripts" / "free_titles_series.json").read_text())
         if not only:
@@ -52,7 +52,7 @@ def titles(only, series=False):
         return [{"id": f"{s['id']}/e{e['number']}", "source": e["source"]}
                 for s in shows if s["id"] in only and s.get("kind") == "show"
                 for e in s["episodes"] if not e.get("skip")]
-    data = json.loads((ROOT / "scripts" / "free_titles.json").read_text())
+    data = json.loads((ROOT / "scripts" / listfile).read_text())
     data = [t for t in data if not t.get("skip")]
     return [t for t in data if not only or t["id"] in only]
 
@@ -211,9 +211,10 @@ if __name__ == "__main__":
     ap.add_argument("--only", default="")
     ap.add_argument("--keep-source", action="store_true")
     ap.add_argument("--series", action="store_true", help="ingest episodes from free_titles_series.json")
+    ap.add_argument("--list", default="free_titles.json", help="films list in scripts/ (e.g. free_titles_black.json)")
     a = ap.parse_args()
     only = {x for x in a.only.split(",") if x}
-    for t in titles(only, a.series):
+    for t in titles(only, a.series, a.list):
         if a.stage == "download":
             download(t)
         elif a.stage == "sheets":
