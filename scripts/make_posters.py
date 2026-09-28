@@ -264,9 +264,24 @@ def brand_card(size, text_size):
     return img
 
 
+# Launcher tiles sit in a row next to Netflix/YouTube, whose wordmarks span ~80% of the tile;
+# ours at ~60% read as small on the TV, so size the wordmark to a fraction of the tile width.
+TILE_WORDMARK = 0.82
+
+
+def tv_tile(size):
+    w, _ = size
+    return brand_card(size, int(92 * TILE_WORDMARK * w / wordmark_width(92)))
+
+
 def make_banner():
-    """Android TV launcher banner (320x180 xhdpi)."""
-    return brand_card((640, 360), 92).resize((320, 180), Image.LANCZOS)
+    """Android TV / Fire TV launcher banner (320x180 xhdpi), drawn at 2x and scaled down."""
+    return tv_tile((640, 360)).resize((320, 180), Image.LANCZOS)
+
+
+def make_firetv_icon():
+    """Amazon Appstore 'Fire TV icon' (1280x720): the tile on the Fire TV home row."""
+    return tv_tile((1280, 720))
 
 
 def main():
@@ -292,6 +307,7 @@ def main():
             print("ok", t["id"])
 
     make_banner().save(ROOT / "android/app/src/main/res/drawable/tv_banner.png")
+    make_firetv_icon().save(ROOT / "marketing/firetv/firetv-icon-1280x720.png", optimize=True)
 
     # Only bundle films whose stream is already on the CDN (the rest are still ingesting).
     def live(url):
