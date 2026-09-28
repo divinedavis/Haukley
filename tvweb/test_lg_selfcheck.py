@@ -381,10 +381,60 @@ def main():
             tv(KEY["BACK"], wait=1)
         record(47, "N/A", "no live streams; all titles are on-demand HLS")
         record(48, "N/A", "no subtitles; silent films carry their original intertitles")
-        record(50, "PASS", "HLS ladder switches between SD/HD/FHD renditions; no UHD content")
+        record(50, "PASS", "each title's HLS ladder (360p-1080p depending on the source) switches automatically; no UHD content")
         record(51, "PASS", "every title is H.264 + AAC (silent films have no audio track)")
         record(52, "N/A", "no DRM, no paid content")
         record(53, "DEVICE", "factory reset needs a real TV")
+
+        # ---------- 1.5 keys covered above, under LG's own numbers ----------
+        record(31, "PASS", "navigation keys: see 13, 26")
+        record(32, "N/A", "no colour-key functions; colour keys are ignored safely (26)")
+        record(33, "PASS", "OK key: see 26, 29 and the player's OK = play/pause")
+        record(34, "N/A", "the app supports both the Magic Remote and the basic remote")
+        record(35, "N/A", "the app supports both the Magic Remote and the basic remote")
+        record(37, "PASS", "BACK key (461): see 10, 11")
+        record(38, "DEVICE", "EXIT is handled by webOS itself; confirm on a TV")
+        record(39, "N/A", "LIVE key only applies to NetCast 4.5 / webOS 1.0; the app needs webOS 4.0+")
+        record(40, "PASS", "number and other keys: see 26")
+        record(41, "N/A", "English only; no language setting")
+        record(42, "DEVICE", "films' own soundtracks only (no BGM or effects); volume is the TV's; listen on a TV")
+        record(44, "N/A", "no Full/Original screen toggle; the TV's picture settings apply")
+        record(45, "PASS", "no on-screen transport buttons; every remote playback key is mapped (see 1.8 keys); no Previous/Next")
+
+        # 36 HOME: webOS hides the app (visibilitychange) and must find it paused, not playing on.
+        open_title("nosferatu")
+        tv(KEY["OK"], wait=1)
+        if wait_film():
+            page.evaluate("""() => { Object.defineProperty(document, 'hidden', {configurable: true, get: () => true});
+                document.dispatchEvent(new Event('visibilitychange')); }""")
+            time.sleep(0.8)
+            check(36, video()["paused"], "HOME (app hidden) pauses playback; webOS shows its launcher")
+            page.evaluate("() => { delete document.hidden; }")
+        tv(KEY["BACK"], wait=1)
+
+        # 43 Playback at LG's QoS speeds (512 kbps, 1 Mbps, 7 Mbps): measure time spent stalled.
+        cdp = ctx.new_cdp_session(page)
+        for kbps in (512, 1000, 7000):
+            cdp.send("Network.emulateNetworkConditions", {"offline": False, "latency": 40,
+                     "downloadThroughput": kbps * 1000 / 8, "uploadThroughput": kbps * 1000 / 8})
+            open_title("lying-lips")
+            page.evaluate("playTitle('lying-lips', 0)")
+            started = wait_film(90)
+            stalled = 0.0
+            if started:
+                last = video()["t"]
+                for _ in range(40):  # 40 s of watching
+                    time.sleep(1)
+                    t = video()["t"]
+                    if t - last < 0.5:
+                        stalled += 1
+                    last = t
+            h = page.evaluate("(player.hls && player.hls.levels[player.hls.currentLevel]) ? player.hls.levels[player.hls.currentLevel].height : null")
+            check(43, started and stalled <= 6, f"{kbps} kbps: started {started}, stalled {stalled:.0f}/40 s, rendition {h}p")
+            tv(KEY["BACK"], wait=1)
+            home()
+        cdp.send("Network.emulateNetworkConditions", {"offline": False, "latency": 0, "downloadThroughput": -1, "uploadThroughput": -1})
+        record(43, results.get(43, ("PASS", ""))[0], "IPv6: check in the webOS Cloud Test Lab")
 
         # ---------- Network loss (1.4 Abnormal End, network environment) ----------
         home()
