@@ -29,6 +29,8 @@ struct Title: Codable, Hashable, Identifiable {
     let kids: Bool?
     /// Rights line shown on the title page (public domain, or the Creative Commons attribution).
     let license: String?
+    /// Viewer content advisory (e.g. "Depicts a lynching"); shown on the title page and at play start.
+    let advisory: String?
 
     var isShow: Bool { kind == "show" }
     var length: String {

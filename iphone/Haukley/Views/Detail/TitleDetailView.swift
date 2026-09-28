@@ -51,6 +51,11 @@ struct TitleDetailView: View {
 
                     Text(title.tagline).font(.system(size: 15, weight: .semibold))
                     Text(title.description).font(.system(size: 15))
+                    if let advisory = title.advisory {
+                        Label("Advisory: \(advisory)", systemImage: "exclamationmark.triangle")
+                            .font(.system(size: 13, weight: .semibold))
+                            .accessibilityIdentifier("detail.advisory")
+                    }
                     Text(title.credits).font(.system(size: 13)).foregroundStyle(.secondary)
                     if let license = title.license {
                         Text(license).font(.system(size: 12)).foregroundStyle(.tertiary)

@@ -120,8 +120,7 @@ final class PlayerViewController: UIViewController, IMAAdsLoaderDelegate, IMAAds
         if !request.trailer, let tag = Ads.tag(for: request.title) {
             requestAds(tag)
         } else {
-            adContainer.isHidden = true
-            player.play()
+            playContent()
         }
     }
 
@@ -194,5 +193,49 @@ final class PlayerViewController: UIViewController, IMAAdsLoaderDelegate, IMAAds
         adContainer.isHidden = true
         playerVC.showsPlaybackControls = true
         player.play()
+        showAdvisoryOnce()
+    }
+
+    private var advisoryShown = false
+
+    /// The title's content advisory, over the film for 8 s when it first starts (not over ads).
+    private func showAdvisoryOnce() {
+        guard !advisoryShown, !request.trailer, let text = request.title.advisory,
+              let overlay = playerVC.contentOverlayView else { return }
+        advisoryShown = true
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.attributedText = {
+            let s = NSMutableAttributedString(string: "ADVISORY\n", attributes: [
+                .font: UIFont.systemFont(ofSize: 20, weight: .heavy), .foregroundColor: UIColor.white])
+            s.append(NSAttributedString(string: text, attributes: [
+                .font: UIFont.systemFont(ofSize: 15), .foregroundColor: UIColor(white: 0.85, alpha: 1)]))
+            return s
+        }()
+        let card = UIView()
+        card.backgroundColor = UIColor(white: 0, alpha: 0.55)
+        let bar = UIView()
+        bar.backgroundColor = UIColor(red: 0.55, green: 0.42, blue: 1.0, alpha: 1)
+        [card, bar, label].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
+        card.addSubview(bar)
+        card.addSubview(label)
+        overlay.addSubview(card)
+        NSLayoutConstraint.activate([
+            card.leadingAnchor.constraint(equalTo: overlay.safeAreaLayoutGuide.leadingAnchor),
+            card.topAnchor.constraint(equalTo: overlay.topAnchor, constant: overlay.bounds.height * 0.18 + 20),
+            card.widthAnchor.constraint(lessThanOrEqualTo: overlay.widthAnchor, multiplier: 0.7),
+            bar.leadingAnchor.constraint(equalTo: card.leadingAnchor),
+            bar.topAnchor.constraint(equalTo: card.topAnchor),
+            bar.bottomAnchor.constraint(equalTo: card.bottomAnchor),
+            bar.widthAnchor.constraint(equalToConstant: 4),
+            label.leadingAnchor.constraint(equalTo: bar.trailingAnchor, constant: 14),
+            label.trailingAnchor.constraint(equalTo: card.trailingAnchor, constant: -18),
+            label.topAnchor.constraint(equalTo: card.topAnchor, constant: 8),
+            label.bottomAnchor.constraint(equalTo: card.bottomAnchor, constant: -8),
+        ])
+        card.accessibilityIdentifier = "player.advisory"
+        DispatchQueue.main.asyncAfter(deadline: .now() + 8) {
+            UIView.animate(withDuration: 0.4, animations: { card.alpha = 0 }) { _ in card.removeFromSuperview() }
+        }
     }
 }

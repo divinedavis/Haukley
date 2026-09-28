@@ -85,6 +85,7 @@ def main():
                 "episodes": [],
                 "kids": bool(t.get("kids")),
                 "license": t.get("license"),
+                "advisory": t.get("advisory"),
             }
             if kind == "show":
                 for e in t["episodes"]:

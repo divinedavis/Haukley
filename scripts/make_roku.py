@@ -89,6 +89,7 @@ def main():
                 "rating": t["rating"], "tagline": t["tagline"], "description": t["description"],
                 "credits": t["credits"],
                 "license": t.get("license") or "",
+                "advisory": t.get("advisory") or "",
                 "length": t.get("runtime") or f"{t['seasons']} Season{'s' if t['seasons'] != 1 else ''}",
                 "poster": f"pkg:/images/titles/{tid}/poster.jpg",
                 "card": f"pkg:/images/titles/{tid}/card.jpg",

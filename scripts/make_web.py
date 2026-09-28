@@ -43,7 +43,7 @@ if __name__ == "__main__":
     for t in out["titles"]:
         s = src[t["id"]]
         t["font"] = s["font"]
-        for k in ("kids", "license", "silent"):  # web-only extras
+        for k in ("kids", "license", "silent", "advisory"):  # web-only extras
             if s.get(k):
                 t[k] = s[k]
     (OUT / "catalog.json").write_text(json.dumps(out, indent=1))

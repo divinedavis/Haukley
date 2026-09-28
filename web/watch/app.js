@@ -871,6 +871,7 @@ function openTitle(id) {
           <div><b>Genres:</b> ${esc(t.genre)}</div>
           <div><b>Rating:</b> ${t.rating === "NR" ? "Not rated" : esc(t.rating)}</div>
           ${t.silent ? `<div><b>Sound:</b> Silent film (no soundtrack)</div>` : ""}
+          ${t.advisory ? `<div class="advisory"><b>Advisory:</b> ${esc(t.advisory)}</div>` : ""}
           ${t.license ? `<div><b>License:</b> ${esc(t.license)}</div>` : ""}
         </div>
       </div>
@@ -956,7 +957,8 @@ function startPlayback(id, episode) {
   Object.assign(player, { id, episode, sessionId: crypto.randomUUID(), ratedShown: false });
   $("#p-title").innerHTML = e ? `${esc(t.title)}<span>E${e.number} “${esc(e.name)}”</span>` : esc(t.title);
   $("#rated-label").textContent = t.rating === "NR" ? "NOT RATED" : `RATED ${t.rating}`;
-  $("#rated-sub").textContent = t.silent ? `${t.genre} · Silent film, no soundtrack` : t.genre;
+  // A content advisory rides on the rating card at the start of playback, like broadcast TV.
+  $("#rated-sub").textContent = t.advisory || (t.silent ? `${t.genre} · Silent film, no soundtrack` : t.genre);
   $("#p-error").hidden = true;
   player.el.hidden = false;
   player.el.classList.remove("ad");
@@ -1130,7 +1132,7 @@ video.addEventListener("playing", () => {
   if (player.ratedShown || player.ima?.adPlaying) return;
   player.ratedShown = true;
   $("#rated").hidden = false;
-  player.ratedTimer = setTimeout(() => { $("#rated").hidden = true; }, 5000);
+  player.ratedTimer = setTimeout(() => { $("#rated").hidden = true; }, state.byId.get(player.id)?.advisory ? 8000 : 5000);
 });
 video.addEventListener("error", () => { if (player.id && !player.ima?.adPlaying && video.getAttribute("src")) showPlayerError(); });
 video.addEventListener("timeupdate", syncTime);

@@ -42,6 +42,7 @@ export function DetailScreen({ id, onPlay, onOpen }: Props) {
           </View>
           <Text style={styles.tagline}>{t.tagline}</Text>
           <Text style={styles.desc}>{t.description}</Text>
+          {t.advisory ? <Text style={styles.advisory}>Advisory: {t.advisory}</Text> : null}
           <Text style={styles.credits}>{t.credits}</Text>
           {t.license ? <Text style={styles.license} numberOfLines={2}>{t.license}</Text> : null}
           <View style={styles.buttons}>
@@ -136,6 +137,7 @@ const styles = StyleSheet.create({
   tagline: { color: colors.text, fontSize: s(30), fontWeight: '700', marginTop: s(26) },
   desc: { color: colors.text, fontSize: s(28), lineHeight: s(40), marginTop: s(10), opacity: 0.9 },
   credits: { color: colors.textDim, fontSize: s(24), marginTop: s(14) },
+  advisory: { color: colors.text, fontSize: s(22), fontWeight: '600', marginTop: s(12) },
   license: { color: colors.textDim, fontSize: s(18), marginTop: s(6), maxWidth: s(1100) },
   buttons: { flexDirection: 'row', marginTop: s(40) },
   shelfTitle: { color: colors.text, fontSize: s(34), fontWeight: '700', marginLeft: layout.gutter, marginTop: s(40) },

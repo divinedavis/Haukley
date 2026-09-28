@@ -16,6 +16,16 @@ export function PlayerScreen({ id, episode, startAt, onDone }: Props) {
   const t = getTitle(id);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  // Content advisory card, shown for 8 s once the film itself starts (not during an ad).
+  const [advisory, setAdvisory] = useState(false);
+  const advisoryShown = useRef(false);
+  useEffect(() => {
+    if (!advisory) {
+      return;
+    }
+    const timer = setTimeout(() => setAdvisory(false), 8000);
+    return () => clearTimeout(timer);
+  }, [advisory]);
   const isTrailer = episode === TRAILER;
   // One session per playback groups its ad events; the ad tag carries title_id for the ad server's report.
   const sessionId = useMemo(newSessionId, []);
@@ -57,6 +67,10 @@ export function PlayerScreen({ id, episode, startAt, onDone }: Props) {
           // With IMA ads on Android, onLoad never fires for the content, so duration and the
           // resume seek both come from progress events, which do arrive once content plays.
           onProgress={e => {
+            if (t.advisory && !isTrailer && !advisoryShown.current && e.currentTime > 0.5) {
+              advisoryShown.current = true;
+              setAdvisory(true);
+            }
             progress.current.position = e.currentTime;
             if (e.seekableDuration > 0) {
               progress.current.duration = e.seekableDuration;
@@ -87,6 +101,12 @@ export function PlayerScreen({ id, episode, startAt, onDone }: Props) {
           onEnd={onDone}
         />
       )}
+      {advisory && (
+        <View style={styles.advisory} pointerEvents="none">
+          <Text style={styles.advisoryLabel}>ADVISORY</Text>
+          <Text style={styles.advisoryText}>{t.advisory}</Text>
+        </View>
+      )}
       {(loading || error) && (
         <View style={styles.overlay}>
           <Text style={styles.title}>{t.title}</Text>
@@ -107,5 +127,11 @@ const styles = StyleSheet.create({
   overlay: { ...StyleSheet.absoluteFillObject, justifyContent: 'center', paddingLeft: layout.gutter },
   title: { color: colors.text, fontSize: s(72), fontWeight: '800' },
   subtitle: { color: colors.textDim, fontSize: s(30), marginTop: s(6) },
+  advisory: {
+    position: 'absolute', top: '22%', left: 0, paddingVertical: s(10), paddingLeft: s(28), paddingRight: s(36),
+    borderLeftWidth: s(6), borderLeftColor: colors.accent, backgroundColor: 'rgba(0,0,0,0.55)', maxWidth: s(1000),
+  },
+  advisoryLabel: { color: colors.text, fontSize: s(30), fontWeight: '800', letterSpacing: 1 },
+  advisoryText: { color: colors.textDim, fontSize: s(24), marginTop: s(4) },
   error: { color: '#ff8a80', fontSize: s(24), marginTop: s(30), width: s(1200) },
 });

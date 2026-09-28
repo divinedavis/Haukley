@@ -28,7 +28,12 @@ sub onData()
     end if
     m.title.text = t.title
     m.meta.text = metaLine(t)
-    m.tagline.text = t.tagline
+    ' A content advisory takes the tagline's place, so it's the first thing read under the title.
+    if t.advisory <> invalid and t.advisory <> ""
+        m.tagline.text = "Advisory: " + t.advisory
+    else
+        m.tagline.text = t.tagline
+    end if
     m.desc.text = t.description
     ' Creative Commons titles must show their attribution; public domain ones don't need a line.
     credits = t.credits

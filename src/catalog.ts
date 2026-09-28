@@ -96,6 +96,7 @@ function fromRemote(remote: RemoteCatalog) {
     return {
       kind, id: r.id, title: r.title, genre: r.genre, year: r.year, rating: r.rating, tagline: r.tagline,
       description: r.description, credits: r.credits, license: r.license ?? undefined,
+      advisory: r.advisory ?? undefined,
       runtime: r.runtime, seasons: r.seasons ?? undefined,
       poster: b?.poster ?? art(r.id, 'poster'),
       card: b?.card ?? art(r.id, 'card'),

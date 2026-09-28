@@ -275,6 +275,7 @@ svg { display: block; }
 .m-body .desc { margin-top: 8px; }
 .m-side { font-size: 14px; color: var(--faint); display: grid; gap: 10px; align-content: start; }
 .m-side b { color: var(--dim); font-weight: 500; }
+.m-side .advisory { color: var(--text, #fff); }
 .m-body h3 { font-size: 22px; font-weight: 700; margin-top: 36px; }
 .eps { margin-top: 14px; border-top: 1px solid #404040; }
 .ep { display: grid; grid-template-columns: 40px 150px 1fr; gap: 18px; align-items: center; padding: 18px 16px; border-bottom: 1px solid #404040;

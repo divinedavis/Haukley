@@ -12,6 +12,8 @@ export type Title = {
   credits: string;
   /** Rights line: public domain, or the Creative Commons attribution the license requires. */
   license?: string;
+  /** Viewer content advisory (e.g. "Depicts a lynching"), shown on the title page and at play start. */
+  advisory?: string;
   runtime?: string | null;
   seasons?: number;
   poster: ImageSourcePropType;
