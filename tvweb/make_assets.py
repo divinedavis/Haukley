@@ -62,8 +62,26 @@ def wordmark(canvas, height_px, center):
     d.text((x + (wb[2] - wb[0]) + height_px * 0.02 + wb[0] - db[0], y), dot, font=f, fill=ACCENT + (255,))
 
 
+TILE = (0x2B, 0x1A, 0x55)  # appinfo.json iconColor
+
+
 def square_icon(px):
-    return Image.open(ICON).convert("RGB").resize((px, px), Image.LANCZOS)
+    """The "H." mark on a flat TILE background. LG rejects gradient icon backgrounds and wants
+    the icon background to match the tile color, so the store icon can't reuse the gradient one."""
+    src = Image.open(ICON).convert("RGB").resize((1024, 1024), Image.LANCZOS)
+    alpha = Image.new("L", src.size, 0)
+    fg = Image.new("RGB", src.size, (255, 255, 255))
+    spx, apx, fpx = src.load(), alpha.load(), fg.load()
+    for y in range(src.height):
+        for x in range(src.width):
+            # The gradient never gets brighter than ~120 in any channel; the white H and the
+            # purple dot both reach 255, so the brightest channel gives an anti-aliased mask.
+            apx[x, y] = max(0, min(255, int((max(spx[x, y]) - 125) * 255 / 130)))
+            if x > src.width * 0.65:  # the dot sits right of the H
+                fpx[x, y] = ACCENT
+    flat = Image.new("RGB", src.size, TILE)
+    flat.paste(fg, (0, 0), alpha)
+    return flat.resize((px, px), Image.LANCZOS)
 
 
 def splash(size=(1920, 1080), tagline=True):
@@ -104,7 +122,7 @@ def main():
     splash().save(webos / "splash.png", optimize=True)
 
     icon_512x423 = gradient((512, 423))
-    mark = square_icon(512).crop((56, 100, 456, 412))   # the "H." with a little air around it
+    mark = Image.open(ICON).convert("RGB").resize((512, 512), Image.LANCZOS).crop((56, 100, 456, 412))   # the "H." with a little air around it
     mark_mask = Image.new("L", mark.size, 0)
     # Lift the white H and purple dot off the icon's own gradient.
     px, mpx = mark.load(), mark_mask.load()
