@@ -155,7 +155,8 @@ def main():
             save_under(img.resize((1280, 720), Image.LANCZOS), lg / f"screenshot-{i}-1280x720.png", 2000)
             if i <= 4:  # Samsung takes exactly 4
                 save_under(img, sam / f"screenshot-{i}-1920x1080.jpg", 500, "JPEG")
-    for p in sorted([*webos.glob("*.png"), *tizen.glob("*.png"), *lg.glob("*"), *sam.glob("*")]):
+    images = [q for q in [*lg.glob("*"), *sam.glob("*")] if q.suffix in (".png", ".jpg")]  # not the UX PDF
+    for p in sorted([*webos.glob("*.png"), *tizen.glob("*.png"), *images]):
         with Image.open(p) as im:
             print(f"{p.relative_to(ROOT)}  {im.size[0]}x{im.size[1]} {im.mode}  {p.stat().st_size // 1000} KB")
 

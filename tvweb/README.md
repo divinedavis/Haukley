@@ -21,6 +21,18 @@ syntax and the CSS avoids flex `gap`/grid/`inset` so 2018+ webOS (Chromium 53) r
 
 ## Build and test
 
+**Release = `tvweb/release.sh`.** It builds both packages, runs the journey test and the LG
+self-check suite, regenerates the store screenshots and the UX Scenario PDF, and only then copies
+everything to `~/Downloads/Haukley-LG` and `~/Downloads/Haukley-Samsung`. Any failure stops it.
+
+`test_lg_selfcheck.py` walks LG Seller Lounge's self-check list (v5.0) item by item with the TV's
+own key codes (BACK 461, media keys), the Magic Remote pointer/wheel, Google's sample IMA ad, a
+400-press random run, offline playback and a 1280x720 panel, and prints PASS / N/A / DEVICE per
+item: the answers for the Seller Lounge form. DEVICE items (power cycle, Recent List, factory
+reset, flicker) need a real TV or the webOS Cloud Test Lab.
+
+Individual steps:
+
 ```bash
 .venv/bin/python tvweb/make_assets.py                 # icons + splash (+ store art)
 tvweb/build.sh                                        # -> tvweb/dist/*.ipk, *.wgt

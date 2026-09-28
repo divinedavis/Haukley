@@ -328,7 +328,8 @@ function fillResults(el) {
   const q = el.dataset.query;
   const box = $("#results", el);
   const qEl = $("#query", el);
-  qEl.textContent = q || "Search titles, genres, people";
+  // The box fits ~22 letters; a longer query shows its end, where the typing is happening.
+  qEl.textContent = !q ? "Search titles, genres, people" : q.length > 22 ? `…${q.slice(-21)}` : q;
   qEl.classList.toggle("empty", !q);
   const { list } = searchMatches(q);
   if (!list.length) {
