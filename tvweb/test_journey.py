@@ -249,6 +249,55 @@ def main():
         shot("10-advisory")
         key("Escape", wait=1.5)
 
+        # LG Magic Remote pointer: hover focuses, click opens/plays, wheel scrolls, click toggles pause.
+        def center(sel):
+            b = page.locator(sel).first.bounding_box()
+            return b["x"] + b["width"] / 2, b["y"] + b["height"] / 2
+        x, y = page.evaluate("""() => { const c = [...document.querySelectorAll('#screen .scroller:not([hidden]) .rows .card')]
+            .map(e => e.getBoundingClientRect()).find(r => r.top > 0 && r.top < 1000 && r.left >= 0 && r.right <= 1920);
+            return [c.left + c.width / 2, Math.min(c.top + c.height / 2, (c.top + 1080) / 2)]; }""")
+        page.mouse.move(x - 5, y - 5)
+        page.mouse.move(x, y)
+        time.sleep(0.6)
+        hovered = focused()
+        check(hovered["g"].startswith("row:"), f"pointer hover focuses a card ({hovered['key']})")
+
+        def wait_playing():
+            t0 = time.time()
+            while time.time() - t0 < 60:
+                st = page.evaluate("() => { const v = document.getElementById('video'); return {t: v.currentTime, paused: v.paused, ad: document.getElementById('player').classList.contains('ad')}; }")
+                if not st["ad"] and st["t"] > 2 and not st["paused"]:
+                    return True
+                time.sleep(1)
+            return False
+
+        # A Continue Watching card plays straight away; any other card opens its title page.
+        page.mouse.click(x, y)
+        time.sleep(2.5)
+        if hovered["key"].startswith("continue:"):
+            check(page.is_visible("#player") and wait_playing(), "pointer click on Continue Watching resumes playback")
+            key("Escape", wait=1.5)
+            key("ArrowDown", wait=0.5)
+            key("Enter", wait=2.5)
+        check(page.is_visible(".detail-title"), "pointer/OK opens a title page")
+        page.mouse.move(*center('[data-key="detail:play"]'))
+        page.mouse.move(*[v + 3 for v in center('[data-key="detail:play"]')])
+        time.sleep(0.4)
+        check(focused()["key"] == "detail:play", "pointer hover focuses Play")
+        page.mouse.click(*center('[data-key="detail:play"]'))
+        check(wait_playing(), "pointer click on Play starts the film")
+        page.mouse.click(960, 540)
+        time.sleep(0.8)
+        check(page.evaluate("document.getElementById('video').paused"), "pointer click on the picture pauses")
+        key("Escape", wait=1.5)
+        key("Escape", wait=1.5)
+        before = focused()["key"]
+        page.mouse.move(960, 700)
+        page.mouse.wheel(0, 200)
+        time.sleep(1)
+        check(focused()["key"] != before, f"wheel moves between rows ({before} -> {focused()['key']})")
+        key("ArrowUp", 8)
+
         # Back on Home = exit confirm (store certification requirement).
         key("Escape", wait=1)
         check(page.is_visible("#dialog"), "Back on Home asks to exit")

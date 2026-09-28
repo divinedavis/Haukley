@@ -43,6 +43,7 @@ const state = {
   stack: [],          // screens, top = current; each { name, el, focusKey }
   focused: null,
   homeDirty: false,
+  pointer: false,     // LG Magic Remote pointer currently in use
   lastIndex: {},      // group -> index last focused in it
 };
 
@@ -431,13 +432,13 @@ function scope() {
 // Every focusable carries data-g (its row/group) and optionally data-col (which column of
 // groups it belongs to; "*" joins every column, e.g. the tab bar). Left/right walks a group,
 // up/down jumps to the next group in the same column, in DOM order.
-function focus(el, instant) {
+function focus(el, instant, stay) {
   if (!el) return;
   if (state.focused) state.focused.classList.remove("focused");
   state.focused = el;
   el.classList.add("focused");
   state.lastIndex[el.dataset.g] = inGroup(el.dataset.g).indexOf(el);
-  reveal(el, instant);
+  if (!stay) reveal(el, instant); // a pointer hover mustn't slide the item out from under it
 }
 
 const navAll = () => $$(".nav", scope());
@@ -557,8 +558,13 @@ function setTransform(el, value, instant) {
 
 /* ---------- actions ---------- */
 
+let lastActivation = { el: null, at: 0 };
 function activate(el) {
   if (!el) return;
+  // Some webOS versions send both a click and an OK keydown for one press in pointer mode.
+  const now = Date.now();
+  if (lastActivation.el === el && now - lastActivation.at < 400) return;
+  lastActivation = { el, at: now };
   const a = el.dataset.action, id = el.dataset.id;
   if (a === "tab") {
     const tab = el.dataset.tab;
@@ -884,8 +890,38 @@ function playerKey(code) {
 
 /* ---------- input ---------- */
 
+// LG's Magic Remote is also a pointer: hovering an item focuses it, a click activates it and the
+// wheel scrolls like Up/Down. Hover only counts while the pointer is in use (it hides as soon as
+// an arrow key is pressed), so a parked cursor never steals focus from the arrow keys.
+function playerOpen() { return !player.el.hidden && $("#dialog").hidden; }
+
+// Hover is handled on mousemove (not mouseover, which fires first) so the move that wakes the
+// pointer also focuses what it's over.
+function onPointerMove(e) {
+  state.pointer = true;
+  if (playerOpen()) return pokeUi();
+  const el = e.target.closest ? e.target.closest(".nav") : null;
+  if (el && el !== state.focused && scope().contains(el)) focus(el, false, true);
+}
+function onPointerClick(e) {
+  if (playerOpen()) return togglePlay();
+  const el = e.target.closest ? e.target.closest(".nav") : null;
+  if (!el || !scope().contains(el)) return;
+  focus(el, false, true);
+  activate(el);
+}
+let wheelAt = 0;
+function onWheel(e) {
+  e.preventDefault();
+  const now = Date.now();
+  if (playerOpen() || now - wheelAt < 250 || !e.deltaY) return;
+  wheelAt = now;
+  move(e.deltaY > 0 ? "down" : "up");
+}
+
 function onKey(e) {
   const code = e.keyCode;
+  state.pointer = false;
   const handled = [K.LEFT, K.UP, K.RIGHT, K.DOWN, K.ENTER, ...K.BACK, ...K.PLAY, ...K.PAUSE, ...K.PLAYPAUSE, ...K.STOP, ...K.FF, ...K.RW].includes(code);
   if (!handled) return;
   e.preventDefault();
@@ -939,6 +975,11 @@ function boot() {
     setTimeout(() => { if (player.id && v.ended) closePlayer(); }, 1500);
   });
   document.addEventListener("keydown", onKey);
+  document.addEventListener("mousemove", onPointerMove);
+  document.addEventListener("click", onPointerClick);
+  document.addEventListener("wheel", onWheel, { passive: false });
+  // webOS: the Magic Remote pointer appears on motion and hides after a few idle seconds.
+  document.addEventListener("cursorStateChange", e => { state.pointer = Boolean(e.detail && e.detail.visibility); });
   document.addEventListener("visibilitychange", () => { if (document.hidden && player.id) { const s = player.ima; if (!(s && s.adPlaying)) v.pause(); } });
 
   loadCatalog().then(ok => {
