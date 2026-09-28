@@ -4870,6 +4870,794 @@
    }
   },
   {
+   "id": "the-girl-from-chicago",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Girl from Chicago",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "From Mississippi to the Harlem numbers racket.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A federal agent on assignment in Mississippi falls in love and follows the woman to Harlem, where they are drawn into the numbers racket and the killing of a Cuban racketeer.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1932-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Oscar Micheaux",
+     "role": "director"
+    },
+    {
+     "name": "Carl Mahon",
+     "role": "actor"
+    },
+    {
+     "name": "Star Calloway",
+     "role": "actor"
+    },
+    {
+     "name": "Grace Smith",
+     "role": "actor"
+    },
+    {
+     "name": "Juano Hern\u00e1ndez",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-girl-from-chicago-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-girl-from-chicago-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4260,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "the-girl-from-chicago"
+     }
+    ]
+   }
+  },
+  {
+   "id": "veiled-aristocrats",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Veiled Aristocrats",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "A brother who passed for white comes home.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A light-skinned lawyer who has lived for years as a white man returns home and urges his sister to leave the man she loves and pass for white too. The surviving 44-minute portion of the film.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1932-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Oscar Micheaux",
+     "role": "director"
+    },
+    {
+     "name": "Lorenzo Tucker",
+     "role": "actor"
+    },
+    {
+     "name": "Laura Bowman",
+     "role": "actor"
+    },
+    {
+     "name": "Lucille Lewis",
+     "role": "actor"
+    },
+    {
+     "name": "Carl Mahon",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/veiled-aristocrats-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/veiled-aristocrats-background.jpg"
+    }
+   ],
+   "durationInSeconds": 2640,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "veiled-aristocrats"
+     }
+    ]
+   }
+  },
+  {
+   "id": "murder-in-harlem",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Murder in Harlem",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The wrong man, and the lawyer who won't quit.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "When a Black night watchman is charged with the murder of a young white woman found in a factory basement, a novelist-turned-lawyer takes his case and pieces together what really happened. Loosely based on the Leo Frank case.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1935-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "credits": [
+    {
+     "name": "Oscar Micheaux",
+     "role": "director"
+    },
+    {
+     "name": "Clarence Brooks",
+     "role": "actor"
+    },
+    {
+     "name": "Dorothy Van Engle",
+     "role": "actor"
+    },
+    {
+     "name": "Andrew S. Bishop",
+     "role": "actor"
+    },
+    {
+     "name": "Alec Lovejoy",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/murder-in-harlem-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/murder-in-harlem-background.jpg"
+    }
+   ],
+   "durationInSeconds": 5700,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "murder-in-harlem"
+     }
+    ]
+   }
+  },
+  {
+   "id": "birthright-1938",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Birthright",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "A Harvard man comes home to build a school.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A Black Harvard graduate returns to his small Tennessee hometown hoping to found a school, and runs into racism from white townspeople and distrust from his own community. The surviving print lacks its first two reels.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1938-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Oscar Micheaux",
+     "role": "director"
+    },
+    {
+     "name": "Carman Newsome",
+     "role": "actor"
+    },
+    {
+     "name": "Alec Lovejoy",
+     "role": "actor"
+    },
+    {
+     "name": "Ethel Moses",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/birthright-1938-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/birthright-1938-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4260,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "birthright-1938"
+     }
+    ]
+   }
+  },
+  {
+   "id": "lying-lips",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Lying Lips",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Framed for murder. Two detectives believe her.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A nightclub singer who refuses to entertain customers is framed for her aunt's murder and sent to prison, while two detectives who believe her set out to find the real killer.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1939-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "credits": [
+    {
+     "name": "Oscar Micheaux",
+     "role": "director"
+    },
+    {
+     "name": "Edna Mae Harris",
+     "role": "actor"
+    },
+    {
+     "name": "Carman Newsome",
+     "role": "actor"
+    },
+    {
+     "name": "Robert Earl Jones",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/lying-lips-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/lying-lips-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4080,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "lying-lips"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-blood-of-jesus",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Blood of Jesus",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Between Heaven and Hell, the city calls.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "After her husband accidentally shoots her, a devout woman's spirit is led to the crossroads between Heaven and Hell, where Satan's agents try to tempt her into the nightlife of the city.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1941-01-01",
+   "genres": [
+    "fantasy"
+   ],
+   "credits": [
+    {
+     "name": "Spencer Williams",
+     "role": "director"
+    },
+    {
+     "name": "Cathryn Caviness",
+     "role": "actor"
+    },
+    {
+     "name": "Spencer Williams",
+     "role": "actor"
+    },
+    {
+     "name": "Frank H. McClennan",
+     "role": "actor"
+    },
+    {
+     "name": "James B. Jones",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-blood-of-jesus-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-blood-of-jesus-background.jpg"
+    }
+   ],
+   "durationInSeconds": 3360,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "the-blood-of-jesus"
+     }
+    ]
+   }
+  },
+  {
+   "id": "go-down-death",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Go Down, Death!",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Inspired by James Weldon Johnson's poem.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A juke-joint boss schemes to frame a new preacher who is drawing away his customers, and his foster mother pays the price when she tries to stop him. Inspired by James Weldon Johnson's poem.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1944-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Spencer Williams",
+     "role": "director"
+    },
+    {
+     "name": "Myra D. Hemmings",
+     "role": "actor"
+    },
+    {
+     "name": "Samuel H. James",
+     "role": "actor"
+    },
+    {
+     "name": "Eddye L. Houston",
+     "role": "actor"
+    },
+    {
+     "name": "Spencer Williams",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/go-down-death-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/go-down-death-background.jpg"
+    }
+   ],
+   "durationInSeconds": 3240,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "go-down-death"
+     }
+    ]
+   }
+  },
+  {
+   "id": "dirty-gertie-from-harlem-usa",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Dirty Gertie from Harlem U.S.A.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Harlem's hottest star heads for the islands.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A Harlem nightclub star flees to a Caribbean island resort to headline its revue, where she toys with the men around her while missionaries watch her every move and a jilted lover tracks her down.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1946-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Spencer Williams",
+     "role": "director"
+    },
+    {
+     "name": "Francine Everett",
+     "role": "actor"
+    },
+    {
+     "name": "Don Wilson",
+     "role": "actor"
+    },
+    {
+     "name": "Katherine Moore",
+     "role": "actor"
+    },
+    {
+     "name": "Spencer Williams",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/dirty-gertie-from-harlem-usa-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/dirty-gertie-from-harlem-usa-background.jpg"
+    }
+   ],
+   "durationInSeconds": 3600,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "dirty-gertie-from-harlem-usa"
+     }
+    ]
+   }
+  },
+  {
+   "id": "juke-joint",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Juke Joint",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Two con men. One beauty contest. No money.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Two broke con men pose as Hollywood acting coaches to win free room and board, then coach their landlady's daughter for a beauty contest, until her father plans a victory party at a rough juke joint.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1947-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "credits": [
+    {
+     "name": "Spencer Williams",
+     "role": "director"
+    },
+    {
+     "name": "Spencer Williams",
+     "role": "actor"
+    },
+    {
+     "name": "July Jones",
+     "role": "actor"
+    },
+    {
+     "name": "Inez Newell",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/juke-joint-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/juke-joint-background.jpg"
+    }
+   ],
+   "durationInSeconds": 3540,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "juke-joint"
+     }
+    ]
+   }
+  },
+  {
+   "id": "souls-of-sin",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Souls of Sin",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Three roommates, one Harlem basement.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Three roommates share a Harlem basement apartment: a small-time gambler, a hard-luck writer and a young blues singer from the South, whose fortunes split when the gambler takes a job fencing stolen jewelry.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1949-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Powell Lindsay",
+     "role": "director"
+    },
+    {
+     "name": "Savannah Churchill",
+     "role": "actor"
+    },
+    {
+     "name": "William Greaves",
+     "role": "actor"
+    },
+    {
+     "name": "Jimmy Wright",
+     "role": "actor"
+    },
+    {
+     "name": "Powell Lindsay",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/souls-of-sin-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/souls-of-sin-background.jpg"
+    }
+   ],
+   "durationInSeconds": 3780,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "souls-of-sin"
+     }
+    ]
+   }
+  },
+  {
    "id": "apollo-mission-films",
    "type": "series",
    "titles": [

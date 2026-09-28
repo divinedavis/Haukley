@@ -129,6 +129,19 @@ final class HaukleyUITests: XCTestCase {
         snap("series-detail")
     }
 
+    func testTitleWithAdvisoryShowsIt() {
+        let field = openSearch()
+        XCTAssertTrue(field.waitForExistence(timeout: 5))
+        focus(field)
+        field.typeText("Blood of Jesus")
+        let result = element("search.result.the-blood-of-jesus")
+        XCTAssertTrue(result.waitForExistence(timeout: 5))
+        result.tap()
+        XCTAssertTrue(element("detail.play").waitForExistence(timeout: 12))
+        XCTAssertTrue(element("detail.advisory").exists, "content advisory on the title page")
+        snap("advisory-detail")
+    }
+
     func testKidsProfileOnlyShowsFamilyTitles() {
         tapTab("My Haukley")
         let profile = element("mine.profile")

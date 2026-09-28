@@ -17,7 +17,8 @@
    "heroColor": "#715C31",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "sherlock-jr",
@@ -36,7 +37,8 @@
    "heroColor": "#434360",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "safety-last",
@@ -55,7 +57,8 @@
    "heroColor": "#605142",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "the-freshman",
@@ -74,7 +77,8 @@
    "heroColor": "#625A40",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "one-week",
@@ -93,7 +97,8 @@
    "heroColor": "#5D4545",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "his-girl-friday",
@@ -112,7 +117,8 @@
    "heroColor": "#44445E",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "nosferatu",
@@ -131,7 +137,8 @@
    "heroColor": "#406262",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "phantom-of-the-opera",
@@ -150,7 +157,8 @@
    "heroColor": "#843C1F",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "night-of-the-living-dead",
@@ -169,7 +177,8 @@
    "heroColor": "#604C42",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "the-little-shop-of-horrors",
@@ -188,7 +197,8 @@
    "heroColor": "#3F6348",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "carnival-of-souls",
@@ -207,7 +217,8 @@
    "heroColor": "#494162",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "metropolis",
@@ -226,7 +237,8 @@
    "heroColor": "#765D2D",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "a-trip-to-the-moon",
@@ -245,7 +257,8 @@
    "heroColor": "#445E5E",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "all-quiet-on-the-western-front",
@@ -264,7 +277,8 @@
    "heroColor": "#606043",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "d-o-a",
@@ -283,7 +297,8 @@
    "heroColor": "#5D4545",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "man-with-a-movie-camera",
@@ -302,7 +317,8 @@
    "heroColor": "#445F44",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "big-buck-bunny",
@@ -321,7 +337,8 @@
    "heroColor": "#626240",
    "episodes": [],
    "kids": true,
-   "license": "(c) copyright 2008, Blender Foundation / www.bigbuckbunny.org \u00b7 https://creativecommons.org/licenses/by/3.0/"
+   "license": "(c) copyright 2008, Blender Foundation / www.bigbuckbunny.org \u00b7 https://creativecommons.org/licenses/by/3.0/",
+   "advisory": null
   },
   {
    "id": "sintel",
@@ -340,7 +357,8 @@
    "heroColor": "#66453C",
    "episodes": [],
    "kids": false,
-   "license": "\u00a9 copyright Blender Foundation | durian.blender.org \u00b7 https://creativecommons.org/licenses/by/3.0/"
+   "license": "\u00a9 copyright Blender Foundation | durian.blender.org \u00b7 https://creativecommons.org/licenses/by/3.0/",
+   "advisory": null
   },
   {
    "id": "tears-of-steel",
@@ -359,7 +377,8 @@
    "heroColor": "#67543B",
    "episodes": [],
    "kids": false,
-   "license": "(CC) Blender Foundation | mango.blender.org \u00b7 https://creativecommons.org/licenses/by/3.0/"
+   "license": "(CC) Blender Foundation | mango.blender.org \u00b7 https://creativecommons.org/licenses/by/3.0/",
+   "advisory": null
   },
   {
    "id": "elephants-dream",
@@ -378,7 +397,8 @@
    "heroColor": "#812821",
    "episodes": [],
    "kids": false,
-   "license": "(c) copyright 2006, Blender Foundation / Netherlands Media Art Institute / www.elephantsdream.org \u00b7 https://creativecommons.org/licenses/by/2.5/"
+   "license": "(c) copyright 2006, Blender Foundation / Netherlands Media Art Institute / www.elephantsdream.org \u00b7 https://creativecommons.org/licenses/by/2.5/",
+   "advisory": null
   },
   {
    "id": "cosmos-laundromat",
@@ -397,7 +417,8 @@
    "heroColor": "#643E57",
    "episodes": [],
    "kids": false,
-   "license": "(CC) Blender Foundation | gooseberry.blender.org \u00b7 https://creativecommons.org/licenses/by/3.0/"
+   "license": "(CC) Blender Foundation | gooseberry.blender.org \u00b7 https://creativecommons.org/licenses/by/3.0/",
+   "advisory": null
   },
   {
    "id": "spring",
@@ -416,7 +437,8 @@
    "heroColor": "#396269",
    "episodes": [],
    "kids": true,
-   "license": "Spring by Blender Animation Studio, \u00a9 Blender Foundation | studio.blender.org, licensed CC BY 4.0 \u00b7 https://creativecommons.org/licenses/by/4.0/"
+   "license": "Spring by Blender Animation Studio, \u00a9 Blender Foundation | studio.blender.org, licensed CC BY 4.0 \u00b7 https://creativecommons.org/licenses/by/4.0/",
+   "advisory": null
   },
   {
    "id": "sprite-fright",
@@ -435,7 +457,8 @@
    "heroColor": "#6E6E34",
    "episodes": [],
    "kids": false,
-   "license": "Sprite Fright by Blender Studio, \u00a9 Blender Foundation | studio.blender.org, licensed CC BY 4.0 \u00b7 https://creativecommons.org/licenses/by/4.0/"
+   "license": "Sprite Fright by Blender Studio, \u00a9 Blender Foundation | studio.blender.org, licensed CC BY 4.0 \u00b7 https://creativecommons.org/licenses/by/4.0/",
+   "advisory": null
   },
   {
    "id": "charge",
@@ -454,7 +477,8 @@
    "heroColor": "#5F663D",
    "episodes": [],
    "kids": false,
-   "license": "Charge by Blender Studio, \u00a9 Blender Foundation | studio.blender.org, licensed CC BY 4.0 \u00b7 https://creativecommons.org/licenses/by/4.0/"
+   "license": "Charge by Blender Studio, \u00a9 Blender Foundation | studio.blender.org, licensed CC BY 4.0 \u00b7 https://creativecommons.org/licenses/by/4.0/",
+   "advisory": null
   },
   {
    "id": "our-hospitality",
@@ -473,7 +497,8 @@
    "heroColor": "#625A40",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "seven-chances",
@@ -492,7 +517,8 @@
    "heroColor": "#5F5143",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "steamboat-bill-jr",
@@ -511,7 +537,8 @@
    "heroColor": "#5F5F44",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "the-navigator",
@@ -530,7 +557,8 @@
    "heroColor": "#3B4D67",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "college",
@@ -549,7 +577,8 @@
    "heroColor": "#615642",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "the-cameraman",
@@ -568,7 +597,8 @@
    "heroColor": "#5D4545",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "speedy",
@@ -587,7 +617,8 @@
    "heroColor": "#635A3F",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "animal-crackers",
@@ -606,7 +637,8 @@
    "heroColor": "#64553E",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "it",
@@ -625,7 +657,8 @@
    "heroColor": "#624051",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "sunrise",
@@ -644,7 +677,8 @@
    "heroColor": "#3E4B64",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "the-hunchback-of-notre-dame",
@@ -663,7 +697,8 @@
    "heroColor": "#684D3A",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "dr-jekyll-and-mr-hyde",
@@ -682,7 +717,8 @@
    "heroColor": "#5A3E64",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "white-zombie",
@@ -701,7 +737,8 @@
    "heroColor": "#426042",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "the-terror",
@@ -720,7 +757,8 @@
    "heroColor": "#673B55",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "dementia-13",
@@ -739,7 +777,8 @@
    "heroColor": "#415762",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "night-tide",
@@ -758,7 +797,8 @@
    "heroColor": "#3A5968",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "the-bat",
@@ -777,7 +817,8 @@
    "heroColor": "#573F63",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "the-stranger",
@@ -796,7 +837,8 @@
    "heroColor": "#5D4545",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "scarlet-street",
@@ -815,7 +857,8 @@
    "heroColor": "#633F3F",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "kansas-city-confidential",
@@ -834,7 +877,8 @@
    "heroColor": "#425160",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "the-hitch-hiker",
@@ -853,7 +897,8 @@
    "heroColor": "#605642",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "suddenly",
@@ -872,7 +917,8 @@
    "heroColor": "#5F5F43",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "the-big-combo",
@@ -891,7 +937,8 @@
    "heroColor": "#43435F",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "blackmail",
@@ -910,7 +957,8 @@
    "heroColor": "#5D4545",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "the-woman-in-green",
@@ -929,7 +977,8 @@
    "heroColor": "#3E6447",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "the-big-trail",
@@ -948,7 +997,8 @@
    "heroColor": "#63553F",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "angel-and-the-badman",
@@ -967,7 +1017,8 @@
    "heroColor": "#605642",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "santa-fe-trail",
@@ -986,7 +1037,8 @@
    "heroColor": "#625441",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "the-mark-of-zorro",
@@ -1005,7 +1057,8 @@
    "heroColor": "#44445E",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "robin-hood",
@@ -1024,7 +1077,8 @@
    "heroColor": "#436043",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "the-thief-of-bagdad",
@@ -1043,7 +1097,8 @@
    "heroColor": "#4C4260",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "the-black-pirate",
@@ -1062,7 +1117,8 @@
    "heroColor": "#65543E",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "the-lost-world",
@@ -1081,7 +1137,8 @@
    "heroColor": "#887D1B",
    "episodes": [],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "wings",
@@ -1100,7 +1157,8 @@
    "heroColor": "#6A5F38",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "hells-angels",
@@ -1119,7 +1177,8 @@
    "heroColor": "#333A6F",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "the-big-parade",
@@ -1138,7 +1197,8 @@
    "heroColor": "#39416A",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "meet-john-doe",
@@ -1157,7 +1217,8 @@
    "heroColor": "#414C61",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "a-star-is-born",
@@ -1176,7 +1237,8 @@
    "heroColor": "#6D4835",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "the-crowd",
@@ -1195,7 +1257,8 @@
    "heroColor": "#5D4545",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "rain",
@@ -1214,7 +1277,208 @@
    "heroColor": "#415661",
    "episodes": [],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
+  },
+  {
+   "id": "the-girl-from-chicago",
+   "kind": "movie",
+   "title": "The Girl from Chicago",
+   "genre": "Drama",
+   "year": 1932,
+   "rating": "NR",
+   "tagline": "From Mississippi to the Harlem numbers racket.",
+   "description": "A federal agent on assignment in Mississippi falls in love and follows the woman to Harlem, where they are drawn into the numbers racket and the killing of a Cuban racketeer.",
+   "credits": "Directed by Oscar Micheaux \u00b7 Starring Carl Mahon \u00b7 Star Calloway \u00b7 Grace Smith \u00b7 Juano Hern\u00e1ndez",
+   "runtime": "1 hr 11 min",
+   "seasons": null,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-girl-from-chicago/master.m3u8",
+   "badge": null,
+   "heroColor": "#5F5143",
+   "episodes": [],
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": "Gun violence and a killing; gambling and the numbers racket."
+  },
+  {
+   "id": "veiled-aristocrats",
+   "kind": "movie",
+   "title": "Veiled Aristocrats",
+   "genre": "Drama",
+   "year": 1932,
+   "rating": "NR",
+   "tagline": "A brother who passed for white comes home.",
+   "description": "A light-skinned lawyer who has lived for years as a white man returns home and urges his sister to leave the man she loves and pass for white too. The surviving 44-minute portion of the film.",
+   "credits": "Directed by Oscar Micheaux \u00b7 Starring Lorenzo Tucker \u00b7 Laura Bowman \u00b7 Lucille Lewis \u00b7 Carl Mahon",
+   "runtime": "44 min",
+   "seasons": null,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/veiled-aristocrats/master.m3u8",
+   "badge": null,
+   "heroColor": "#615641",
+   "episodes": [],
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": "Colorism and themes of passing for white."
+  },
+  {
+   "id": "murder-in-harlem",
+   "kind": "movie",
+   "title": "Murder in Harlem",
+   "genre": "Mystery",
+   "year": 1935,
+   "rating": "NR",
+   "tagline": "The wrong man, and the lawyer who won't quit.",
+   "description": "When a Black night watchman is charged with the murder of a young white woman found in a factory basement, a novelist-turned-lawyer takes his case and pieces together what really happened. Loosely based on the Leo Frank case.",
+   "credits": "Directed by Oscar Micheaux \u00b7 Starring Clarence Brooks \u00b7 Dorothy Van Engle \u00b7 Andrew S. Bishop \u00b7 Alec Lovejoy",
+   "runtime": "1 hr 35 min",
+   "seasons": null,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/murder-in-harlem/master.m3u8",
+   "badge": null,
+   "heroColor": "#424260",
+   "episodes": [],
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": "Depicts a murder and a Black man falsely accused of killing a white woman; period comic stereotypes."
+  },
+  {
+   "id": "birthright-1938",
+   "kind": "movie",
+   "title": "Birthright",
+   "genre": "Drama",
+   "year": 1938,
+   "rating": "NR",
+   "tagline": "A Harvard man comes home to build a school.",
+   "description": "A Black Harvard graduate returns to his small Tennessee hometown hoping to found a school, and runs into racism from white townspeople and distrust from his own community. The surviving print lacks its first two reels.",
+   "credits": "Directed by Oscar Micheaux \u00b7 Starring Carman Newsome \u00b7 Alec Lovejoy \u00b7 Ethel Moses",
+   "runtime": "1 hr 11 min",
+   "seasons": null,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/birthright-1938/master.m3u8",
+   "badge": null,
+   "heroColor": "#616142",
+   "episodes": [],
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": "Racial slurs, dialect caricature and depictions of Southern racism."
+  },
+  {
+   "id": "lying-lips",
+   "kind": "movie",
+   "title": "Lying Lips",
+   "genre": "Mystery",
+   "year": 1939,
+   "rating": "NR",
+   "tagline": "Framed for murder. Two detectives believe her.",
+   "description": "A nightclub singer who refuses to entertain customers is framed for her aunt's murder and sent to prison, while two detectives who believe her set out to find the real killer.",
+   "credits": "Directed by Oscar Micheaux \u00b7 Starring Edna Mae Harris \u00b7 Carman Newsome \u00b7 Robert Earl Jones",
+   "runtime": "1 hr 8 min",
+   "seasons": null,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/lying-lips/master.m3u8",
+   "badge": null,
+   "heroColor": "#5E4444",
+   "episodes": [],
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": "Depicts a murder, a wrongful imprisonment and the intimidation of a suspect."
+  },
+  {
+   "id": "the-blood-of-jesus",
+   "kind": "movie",
+   "title": "The Blood of Jesus",
+   "genre": "Fantasy",
+   "year": 1941,
+   "rating": "NR",
+   "tagline": "Between Heaven and Hell, the city calls.",
+   "description": "After her husband accidentally shoots her, a devout woman's spirit is led to the crossroads between Heaven and Hell, where Satan's agents try to tempt her into the nightlife of the city.",
+   "credits": "Directed by Spencer Williams \u00b7 Starring Cathryn Caviness \u00b7 Spencer Williams \u00b7 Frank H. McClennan \u00b7 James B. Jones",
+   "runtime": "56 min",
+   "seasons": null,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-blood-of-jesus/master.m3u8",
+   "badge": null,
+   "heroColor": "#43435F",
+   "episodes": [],
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": "An accidental shooting; depictions of Satan and a mob chase."
+  },
+  {
+   "id": "go-down-death",
+   "kind": "movie",
+   "title": "Go Down, Death!",
+   "genre": "Drama",
+   "year": 1944,
+   "rating": "NR",
+   "tagline": "Inspired by James Weldon Johnson's poem.",
+   "description": "A juke-joint boss schemes to frame a new preacher who is drawing away his customers, and his foster mother pays the price when she tries to stop him. Inspired by James Weldon Johnson's poem.",
+   "credits": "Directed by Spencer Williams \u00b7 Starring Myra D. Hemmings \u00b7 Samuel H. James \u00b7 Eddye L. Houston \u00b7 Spencer Williams",
+   "runtime": "54 min",
+   "seasons": null,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/go-down-death/master.m3u8",
+   "badge": null,
+   "heroColor": "#445E5E",
+   "episodes": [],
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": "A fatal assault on an elderly woman; images of Hell with brief nudity (clips from the 1911 Italian film L'Inferno)."
+  },
+  {
+   "id": "dirty-gertie-from-harlem-usa",
+   "kind": "movie",
+   "title": "Dirty Gertie from Harlem U.S.A.",
+   "genre": "Drama",
+   "year": 1946,
+   "rating": "NR",
+   "tagline": "Harlem's hottest star heads for the islands.",
+   "description": "A Harlem nightclub star flees to a Caribbean island resort to headline its revue, where she toys with the men around her while missionaries watch her every move and a jilted lover tracks her down.",
+   "credits": "Directed by Spencer Williams \u00b7 Starring Francine Everett \u00b7 Don Wilson \u00b7 Katherine Moore \u00b7 Spencer Williams",
+   "runtime": "1 hr",
+   "seasons": null,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/dirty-gertie-from-harlem-usa/master.m3u8",
+   "badge": null,
+   "heroColor": "#5F4444",
+   "episodes": [],
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": "A woman is murdered by a former lover; sexual themes."
+  },
+  {
+   "id": "juke-joint",
+   "kind": "movie",
+   "title": "Juke Joint",
+   "genre": "Comedy",
+   "year": 1947,
+   "rating": "NR",
+   "tagline": "Two con men. One beauty contest. No money.",
+   "description": "Two broke con men pose as Hollywood acting coaches to win free room and board, then coach their landlady's daughter for a beauty contest, until her father plans a victory party at a rough juke joint.",
+   "credits": "Directed by Spencer Williams \u00b7 Starring Spencer Williams \u00b7 July Jones \u00b7 Inez Newell",
+   "runtime": "59 min",
+   "seasons": null,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/juke-joint/master.m3u8",
+   "badge": null,
+   "heroColor": "#565F43",
+   "episodes": [],
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": null
+  },
+  {
+   "id": "souls-of-sin",
+   "kind": "movie",
+   "title": "Souls of Sin",
+   "genre": "Drama",
+   "year": 1949,
+   "rating": "NR",
+   "tagline": "Three roommates, one Harlem basement.",
+   "description": "Three roommates share a Harlem basement apartment: a small-time gambler, a hard-luck writer and a young blues singer from the South, whose fortunes split when the gambler takes a job fencing stolen jewelry.",
+   "credits": "Directed by Powell Lindsay \u00b7 Starring Savannah Churchill \u00b7 William Greaves \u00b7 Jimmy Wright \u00b7 Powell Lindsay",
+   "runtime": "1 hr 3 min",
+   "seasons": null,
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/souls-of-sin/master.m3u8",
+   "badge": null,
+   "heroColor": "#5D4545",
+   "episodes": [],
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": "Gun violence (a fatal shooting); gambling and crime."
   },
   {
    "id": "apollo-mission-films",
@@ -1297,7 +1561,8 @@
     }
    ],
    "kids": true,
-   "license": "U.S. government work \u2014 public domain in the United States"
+   "license": "U.S. government work \u2014 public domain in the United States",
+   "advisory": null
   },
   {
    "id": "sherlock-holmes-1954",
@@ -1373,7 +1638,8 @@
     }
    ],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "rocky-jones-space-ranger",
@@ -1435,7 +1701,8 @@
     }
    ],
    "kids": true,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "life-with-elizabeth",
@@ -1504,7 +1771,8 @@
     }
    ],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "flip-the-frog-1930",
@@ -1566,7 +1834,8 @@
     }
    ],
    "kids": false,
-   "license": "Public domain in the United States"
+   "license": "Public domain in the United States",
+   "advisory": null
   },
   {
    "id": "caminandes",
@@ -1607,7 +1876,8 @@
     }
    ],
    "kids": true,
-   "license": "Caminandes by Blender Institute / Blender Foundation \u2014 (CC) caminandes.com \u2014 CC BY 3.0 (eps 1-2), CC BY 4.0 (ep 3) \u00b7 https://creativecommons.org/licenses/by/3.0/"
+   "license": "Caminandes by Blender Institute / Blender Foundation \u2014 (CC) caminandes.com \u2014 CC BY 3.0 (eps 1-2), CC BY 4.0 (ep 3) \u00b7 https://creativecommons.org/licenses/by/3.0/",
+   "advisory": null
   },
   {
    "id": "blender-open-shorts",
@@ -1669,7 +1939,8 @@
     }
    ],
    "kids": true,
-   "license": "\u00a9 Blender Foundation | studio.blender.org \u2014 Creative Commons Attribution 4.0 \u00b7 https://creativecommons.org/licenses/by/4.0/"
+   "license": "\u00a9 Blender Foundation | studio.blender.org \u2014 Creative Commons Attribution 4.0 \u00b7 https://creativecommons.org/licenses/by/4.0/",
+   "advisory": null
   }
  ],
  "featured": [
@@ -1714,6 +1985,23 @@
     "flip-the-frog-1930",
     "caminandes",
     "blender-open-shorts"
+   ]
+  },
+  {
+   "key": "black-cinema",
+   "title": "Pioneers of Black Cinema",
+   "type": "card",
+   "ids": [
+    "the-blood-of-jesus",
+    "murder-in-harlem",
+    "lying-lips",
+    "the-girl-from-chicago",
+    "go-down-death",
+    "dirty-gertie-from-harlem-usa",
+    "souls-of-sin",
+    "juke-joint",
+    "birthright-1938",
+    "veiled-aristocrats"
    ]
   },
   {
