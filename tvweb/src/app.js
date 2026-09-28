@@ -680,7 +680,10 @@ function attachSource(src, startAt) {
   if ((IS_TIZEN || IS_WEBOS || !(window.Hls && Hls.isSupported())) && native) {
     v.src = src;
   } else if (window.Hls && Hls.isSupported()) {
-    player.hls = new Hls({ startPosition: startAt || -1 });
+    // Start from a conservative 500 kbps guess (-> the 240p rung) instead of test-downloading a
+    // segment of the first-listed rendition: that 1 MB 480p segment alone took ~17 s at 512 kbps.
+    // ABR climbs to the top rung within a few segments on a fast line.
+    player.hls = new Hls({ startPosition: startAt || -1, startLevel: -1, testBandwidth: false, abrEwmaDefaultEstimate: 500000 });
     player.hls.on(Hls.Events.ERROR, (_, d) => { if (d.fatal) playerError(); });
     player.hls.loadSource(src);
     player.hls.attachMedia(v);

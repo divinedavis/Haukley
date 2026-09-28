@@ -83,7 +83,10 @@ def process(key, client):
     with tempfile.TemporaryDirectory(prefix="haukley-rung-") as tmp:
         out = pathlib.Path(tmp) / RUNG
         out.mkdir()
-        cmd = ["ffmpeg", "-v", "error", "-y", "-i", CDN + base + "/" + uri.strip(), "-map", "0:v:0"]
+        # A stalled CDN read otherwise hangs ffmpeg forever (two films sat 2.5 h); time out and reconnect.
+        cmd = ["ffmpeg", "-v", "error", "-y", "-rw_timeout", "30000000", "-reconnect", "1",
+               "-reconnect_on_network_error", "1", "-reconnect_delay_max", "10",
+               "-i", CDN + base + "/" + uri.strip(), "-map", "0:v:0"]
         if audio:
             cmd += ["-map", "0:a:0", "-c:a", "aac", "-b:a", f"{AUDIO_KBPS}k", "-ac", "2"]
         cmd += ["-vf", "scale=-2:240:flags=lanczos,setsar=1,format=yuv420p",
@@ -115,6 +118,22 @@ def process(key, client):
     return f"ok   {base}: {w}x{h}, {avg // 1000} kbps avg / {peak // 1000} peak, audio={audio}"
 
 
+def purge(keys):
+    """The CDN keeps playlists for a day regardless of Cache-Control, so a rewritten master
+    stays invisible to viewers until it's purged. The API takes at most ~20 files per call."""
+    token = os.environ.get("DO_TOKEN") or keychain("digitalocean-token-haukley")
+    def api(method, path, body=None):
+        req = urllib.request.Request(f"https://api.digitalocean.com/v2/{path}", method=method,
+                                     data=json.dumps(body).encode() if body else None,
+                                     headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            return json.loads(r.read() or b"{}")
+    ep = next(e["id"] for e in api("GET", "cdn/endpoints")["endpoints"] if BUCKET in e["origin"])
+    for i in range(0, len(keys), 20):
+        api("DELETE", f"cdn/endpoints/{ep}/cache", {"files": keys[i:i + 20]})
+    print(f"purged {len(keys)} playlists from the CDN", flush=True)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", nargs="*")
@@ -134,6 +153,9 @@ def main():
             except Exception as e:  # keep going; rerun picks up what's left
                 failed.append(futs[f])
                 print(f"FAIL {futs[f]}: {e}", flush=True)
+    done = [k for k in keys if k not in failed]
+    if done:
+        purge(done)
     print(f"done, {len(failed)} failed {failed}")
     raise SystemExit(1 if failed else 0)
 
