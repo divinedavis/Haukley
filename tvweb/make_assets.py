@@ -139,9 +139,13 @@ def main():
     save_under(gradient((1920, 1080)), lg / "launcher-bg-1920x1080.png", 2000)
     save_under(splash(), lg / "splash-1920x1080.png", 2000)
 
+    # Samsung composes its home-row tile from this transparent logo over the background below.
+    # The wordmark spans ~75% of the width so it reads as large as Netflix/YouTube tiles next to
+    # it (at 230 px tall it covered ~55% and looked small, as on the Fire TV home row).
     transparent = Image.new("RGBA", (1920, 1080), (0, 0, 0, 0))
-    wordmark(transparent, 230, (960, 540))
+    wordmark(transparent, 330, (960, 540))
     save_under(transparent, sam / "icon-1920x1080.png", 300)
+    save_under(gradient((1920, 1080)), sam / "background-1920x1080.jpg", 300, "JPEG")
     save_under(icon_512x423, sam / "icon-512x423.png", 300)
 
     if a.shots:

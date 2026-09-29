@@ -1,9 +1,12 @@
-"""UX Scenario PDF for LG Seller Lounge QA (Test Info > "Upload a UX Scenario File").
+"""Walkthrough PDF for TV store QA: LG's "UX Scenario" (Test Info) and Samsung's "App Description
+File" (Verification Info). Same screens; the platform picks the remote wording and the cover line.
 
 Built from the journey test's screenshots, so run the test first:
   ~/.venvs/dhcr-map/bin/python tvweb/test_journey.py
   ~/.venvs/dhcr-map/bin/python tvweb/make_ux_scenario.py
+  ~/.venvs/dhcr-map/bin/python tvweb/make_ux_scenario.py --platform samsung
 -> marketing/lg/Haukley-UX-Scenario.pdf (LG's limit is 10 MB)
+-> marketing/samsung/Haukley-App-Description.pdf
 """
 import base64
 import html
@@ -15,7 +18,23 @@ from playwright.sync_api import sync_playwright
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SHOTS = ROOT / "tvweb" / "dist" / "journey"
-OUT = ROOT / "marketing" / "lg" / "Haukley-UX-Scenario.pdf"
+PLATFORMS = {
+    "lg": {
+        "out": ROOT / "marketing" / "lg" / "Haukley-UX-Scenario.pdf",
+        "title": "Haukley — UX Scenario",
+        "sub": "webOS TV app com.haukley.tv, version 1.0.0 · 1920x1080 · webOS 4.0 (2018) and later",
+        "pointer": "Magic Remote: pointing at a poster highlights it, OK/click opens it, the wheel moves between rows.",
+        "remote": "Standard remote (arrows, OK, BACK, media keys) and the Magic Remote pointer and wheel.",
+    },
+    "samsung": {
+        "out": ROOT / "marketing" / "samsung" / "Haukley-App-Description.pdf",
+        "title": "Haukley — App Description",
+        "sub": "Tizen web app (package HaukleyTV0), version 1.0.0 · 1920x1080 · Tizen 6.0 (2021) and later",
+        "pointer": "Samsung Smart Remote: the arrow pad and OK select; BACK (key 10009) goes back one screen.",
+        "remote": "Samsung Smart Remote and standard remote: arrows, OK, BACK (10009), and media keys "
+                  "(play/pause, stop, fast-forward, rewind) registered through tizen.tvinputdevice.",
+    },
+}
 
 # (screenshot, title, what the tester does and sees)
 STEPS = [
@@ -25,7 +44,7 @@ STEPS = [
       "Below it: Continue Watching (after something has been watched) and rows by genre, Top 10 and TV shows."]),
     ("2-rows", "2. Browsing rows",
      ["UP/DOWN moves between the tab bar, the banner and each row; LEFT/RIGHT moves along a row.",
-      "Magic Remote: pointing at a poster highlights it, OK/click opens it, the wheel moves between rows.",
+      "{pointer}",
       "Pressing any arrow key hides the pointer and returns to key navigation."]),
     ("3-detail", "3. Title page",
      ["OK on a poster opens its title page: year, genre, running time, rating, description, credits.",
@@ -61,7 +80,7 @@ NOTES = [
                       "classic horror and war violence)."),
     ("Network", "Needs an internet connection. The catalog loads from haukley.com (a packaged copy is the fallback) "
                 "and video streams over HLS from a DigitalOcean CDN. Without a connection the app says so on launch."),
-    ("Remote", "Standard remote (arrows, OK, BACK, media keys) and the Magic Remote pointer and wheel."),
+    ("Remote", "{remote}"),
     ("Service country", "United States only (the films are public domain in the US)."),
     ("Contact", "support@haukley.com"),
 ]
@@ -76,11 +95,17 @@ def img_data(name):
 
 
 def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--platform", choices=sorted(PLATFORMS), default="lg")
+    P = PLATFORMS[ap.parse_args().platform]
+    OUT = P["out"]
+    fill = lambda text: text.format(pointer=P["pointer"], remote=P["remote"])
     steps = "".join(
         f"""<section><h2>{html.escape(t)}</h2><img src="{img_data(s)}">
-        <ul>{"".join(f"<li>{html.escape(b)}</li>" for b in bullets)}</ul></section>"""
+        <ul>{"".join(f"<li>{html.escape(fill(b))}</li>" for b in bullets)}</ul></section>"""
         for s, t, bullets in STEPS)
-    notes = "".join(f"<tr><th>{html.escape(k)}</th><td>{html.escape(v)}</td></tr>" for k, v in NOTES)
+    notes = "".join(f"<tr><th>{html.escape(k)}</th><td>{html.escape(fill(v))}</td></tr>" for k, v in NOTES)
     doc = f"""<!doctype html><html><head><meta charset="utf-8"><style>
       body {{ font-family: -apple-system, Helvetica, Arial, sans-serif; color: #111; margin: 0; }}
       .cover {{ page-break-after: always; padding: 40px 10px; }}
@@ -94,8 +119,8 @@ def main():
       img {{ display: block; height: 120mm; width: auto; border: 1px solid #ccc; }}  /* one step per landscape page */
       ul {{ font-size: 13px; line-height: 1.5; padding-left: 20px; }}
     </style></head><body>
-      <div class="cover"><h1>Haukley — UX Scenario</h1>
-        <div class="sub">webOS TV app com.haukley.tv, version 1.0.0 · 1920x1080 · webOS 4.0 (2018) and later</div>
+      <div class="cover"><h1>{P["title"]}</h1>
+        <div class="sub">{P["sub"]}</div>
         <p style="font-size:14px;line-height:1.5">Haukley is a free, ad-supported streaming app of classic movies and TV
         shows. This document walks through every screen in the order a viewer meets them, with the remote keys for each.</p>
         <table>{notes}</table></div>
