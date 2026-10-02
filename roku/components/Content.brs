@@ -63,10 +63,13 @@ sub saveBookmark(titleId as string, episode as integer, position as integer, dur
         if now - marks[k].t > 60 * 86400 then marks.Delete(k)
     end for
     if marks.Count() > 150
+        ' Start above "now" and skip the mark just written: saves within the same second all
+        ' share one timestamp, and a strict "< now" never picked any of them, so the cap
+        ' silently stopped holding (caught by tests/bookmarks_test.brs).
         oldestKey = ""
-        oldest = now
+        oldest = now + 1
         for each k in marks
-            if marks[k].t < oldest
+            if k <> key and marks[k].t < oldest
                 oldest = marks[k].t
                 oldestKey = k
             end if

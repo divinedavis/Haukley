@@ -1,0 +1,63 @@
+"""Static checks on the haukley.com docroot (web/) before scripts/deploy_web.sh copies it.
+
+- every shipped page has a viewport meta and a <title> (a missing viewport meta renders
+  the desktop layout shrunk on iPhones and hides behind iframe test harnesses);
+- the subpages built from web/_src are not stale (someone edited a .body.html or head.inc
+  and never ran web/_src/build.py, or hand-edited the output);
+- every local script/stylesheet a page references exists;
+- ads.txt keeps the AdSense seller line; app-ads.txt stays well-formed.
+"""
+import pathlib
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
+import unittest
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+WEB = ROOT / "web"
+PAGES = sorted(p for p in WEB.rglob("*.html") if "_src" not in p.parts)
+PUB = "pub-8077227518694725"
+
+
+class WebPages(unittest.TestCase):
+    def test_pages_found(self):
+        self.assertGreaterEqual(len(PAGES), 6, PAGES)
+
+    def test_viewport_and_title(self):
+        for p in PAGES:
+            html = p.read_text()
+            self.assertRegex(html, r'<meta name="viewport"[^>]*width=device-width', f"{p} has no viewport meta")
+            self.assertRegex(html, r"<title>[^<]+</title>", f"{p} has no <title>")
+
+    def test_local_assets_exist(self):
+        for p in PAGES:
+            for ref in re.findall(r'(?:src|href)="([^"]+\.(?:js|css|png|jpg|woff2))(?:\?[^"]*)?"', p.read_text()):
+                if ref.startswith(("http:", "https:", "//", "data:")):
+                    continue
+                target = (WEB / ref.lstrip("/")) if ref.startswith("/") else (p.parent / ref)
+                self.assertTrue(target.is_file(), f"{p.relative_to(ROOT)} references missing {ref}")
+
+    def test_built_subpages_match_their_source(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            shutil.copytree(WEB / "_src", pathlib.Path(tmp) / "_src")
+            subprocess.run([sys.executable, str(pathlib.Path(tmp) / "_src" / "build.py")],
+                           check=True, capture_output=True)
+            built = [d for d in pathlib.Path(tmp).iterdir() if d.name != "_src"]
+            self.assertTrue(built)
+            for d in built:
+                fresh = (d / "index.html").read_text()
+                live = (WEB / d.name / "index.html").read_text()
+                self.assertTrue(fresh == live, f"web/{d.name}/index.html is stale - run python3 web/_src/build.py")
+
+    def test_ads_txt_seller_lines(self):
+        self.assertIn(PUB, (WEB / "ads.txt").read_text())
+        # app-ads.txt holds the IAB "no authorized sellers" placeholder until Ad Manager
+        # exists; Roku and the app stores only need a well-formed seller line.
+        lines = [l for l in (WEB / "app-ads.txt").read_text().splitlines() if l.strip() and not l.startswith("#")]
+        self.assertTrue(lines and all(len(l.split(",")) >= 3 for l in lines), lines)
+
+
+if __name__ == "__main__":
+    unittest.main()

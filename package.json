@@ -8,6 +8,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
+    "test:fast": "tests/run_fast.sh",
     "postinstall": "patch-package"
   },
   "dependencies": {

@@ -57,17 +57,17 @@ Install on a Roku without a developer account (sideload):
 A Roku beta app (invite link, up to 20 testers) needs a signed `.pkg`, which can only be made on a real
 Roku in developer mode (`genkey`, then the Packager page at `http://<roku-ip>`).
 
-Emulator check: `brs-node` (`npx brs-cli -e -s snap.png roku/dist/Haukley-roku.zip`) runs the SceneGraph UI
+Emulator check: `brs-node` (`npx -p brs-node brs-cli -e -s snap.png roku/dist/Haukley-roku.zip`) runs the SceneGraph UI
 and takes ECP key presses. It has no video output, so playback only shows on a real Roku.
 
 Certification features (Roku requirements):
 - **Deep linking**: `Main(args)` and `roInput` hand `{contentId, mediaType}` to `MainScene.deepLink`.
   contentId is a title id (`night-line`) or an episode id (`borough-e3`). movie / episode /
   shortFormVideo / tvSpecial play directly (resuming any bookmark); series / season open the title
-  page; unknown ids stay on Home. Test in the emulator: `npx brs-cli -k contentId=borough-e3,mediaType=episode <zip>`.
+  page; unknown ids stay on Home. Test in the emulator: `npx -p brs-node brs-cli -k contentId=borough-e3,mediaType=episode <zip>`.
 - **Bookmarks**: position saved per title/episode in the registry, kept 60 days (Roku minimum is 30),
   cleared under 10 s or past 95%. The title page shows "Resume … / Play from Beginning".
-  Unit tests: `npx brs-cli components/Content.brs tests/bookmarks_test.brs` (from `roku/`).
+  Unit tests: `npx -p brs-node brs-cli components/Content.brs tests/bookmarks_test.brs` (from `roku/`).
 - **Captions**: the Video node applies the global caption settings and its options (*) menu covers
   On / Off / On replay / On mute; HLS-embedded captions work as-is, and a title's `captions` URL
   in `scripts/catalog.json` is side-loaded as a SubtitleTrack.

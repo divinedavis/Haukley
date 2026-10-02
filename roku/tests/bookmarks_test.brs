@@ -1,4 +1,5 @@
-' Run: npx brs-cli components/Content.brs tests/bookmarks_test.brs  (from roku/)
+' Run: npx -p brs-node brs-cli components/Content.brs tests/bookmarks_test.brs  (from roku/)
+' or tests/run_fast.sh from the repo root, which fails on any FAIL line.
 sub Main()
     CreateObject("roRegistrySection", "bookmarks").Delete("all")
     check("empty store resumes from 0", bookmarkFor("night-line", 0) = 0)
@@ -14,6 +15,7 @@ sub Main()
         saveBookmark("t" + i.ToStr(), 0, 100, 3600)
     end for
     check("store is capped at 150 entries", loadBookmarks().Count() <= 150)
+    check("the newest mark survives the cap", bookmarkFor("t160", 0) = 100)
     check("formatClock m:ss", formatClock(754) = "12:34")
     check("formatClock h:mm:ss", formatClock(3725) = "1:02:05")
     CreateObject("roRegistrySection", "bookmarks").Delete("all")
