@@ -129,7 +129,25 @@ private struct SideButton: View {
     }
 }
 
-/// A muted, looping AVPlayerLayer. Created only for the visible page and torn down after.
+/// The part of a title the Clips feed loops: under a minute, taken from inside the film so the
+/// feed shows a scene instead of the opening credits.
+enum ClipWindow {
+    static let length: Double = 45
+    /// Fraction of the runtime where a long title's clip starts (past the titles and credits).
+    static let startFraction: Double = 0.2
+
+    /// `end` is nil when the duration is unknown (live or not loaded): play from the top.
+    static func range(duration: Double) -> (start: Double, end: Double?) {
+        guard duration.isFinite, duration > 0 else { return (0, nil) }
+        guard duration > 60 else { return (0, duration) }
+        let start = min(duration * startFraction, duration - length)
+        return (start, start + length)
+    }
+}
+
+/// A looping AVPlayerLayer for one clip. Created only for the visible page and torn down after.
+/// The whole frame is shown (aspect fit) over the page's blurred backdrop: films are 4:3 or
+/// 16:9, so filling a portrait phone used to crop away most of the picture.
 private struct LoopingVideo: UIViewRepresentable {
     let url: URL?
     let muted: Bool
@@ -138,25 +156,40 @@ private struct LoopingVideo: UIViewRepresentable {
         override static var layerClass: AnyClass { AVPlayerLayer.self }
         var playerLayer: AVPlayerLayer { layer as! AVPlayerLayer }
         var looper: NSObjectProtocol?
+        var loopStart: CMTime = .zero
     }
 
     func makeUIView(context: Context) -> PlayerView {
         let v = PlayerView()
+        v.isAccessibilityElement = true
+        v.accessibilityIdentifier = "clip.video"
+        v.accessibilityLabel = "Clip"
+        v.accessibilityValue = "fit"
         guard let url else { return v }
-        let player = AVPlayer(url: url)
+        let item = AVPlayerItem(url: url)
+        let player = AVPlayer(playerItem: item)
         player.isMuted = muted
         v.playerLayer.player = player
-        v.playerLayer.videoGravity = .resizeAspectFill
+        v.playerLayer.videoGravity = .resizeAspect
         v.looper = NotificationCenter.default.addObserver(
-            forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main
-        ) { _ in
-            player.seek(to: .zero)
+            forName: .AVPlayerItemDidPlayToEndTime, object: item, queue: .main
+        ) { [weak v] _ in
+            player.seek(to: v?.loopStart ?? .zero)
             player.play()
         }
-        player.play()
+        Task { @MainActor [weak v] in
+            let duration = (try? await item.asset.load(.duration))?.seconds ?? 0
+            let window = ClipWindow.range(duration: duration)
+            let start = CMTime(seconds: window.start, preferredTimescale: 600)
+            if let end = window.end { item.forwardPlaybackEndTime = CMTime(seconds: end, preferredTimescale: 600) }
+            _ = await player.seek(to: start)
+            // The page may have scrolled away while the duration loaded.
+            guard let v, v.playerLayer.player === player else { return }
+            v.loopStart = start
+            player.play()
+        }
         return v
     }
-
     func updateUIView(_ v: PlayerView, context: Context) {
         v.playerLayer.player?.isMuted = muted
     }

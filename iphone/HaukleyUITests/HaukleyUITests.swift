@@ -170,6 +170,10 @@ final class HaukleyUITests: XCTestCase {
     func testClipsFeedAppears() {
         tapTab("Clips")
         XCTAssertTrue(element("clips.feed").waitForExistence(timeout: 5))
+        // The film is letterboxed (aspect fit), not cropped to fill the portrait page.
+        let video = element("clip.video")
+        XCTAssertTrue(video.waitForExistence(timeout: 5))
+        XCTAssertEqual(video.value as? String, "fit")
         sleep(2)
         snap("clips")
     }
