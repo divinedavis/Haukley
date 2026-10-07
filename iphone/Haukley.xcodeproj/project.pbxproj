@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		12A5E71E25567C5C0796CE87 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39EBCAFFC64BFA998F800ED /* Catalog.swift */; };
+		14082D5E07651F7F7E1B8568 /* AdsTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D75479DC8D23173444A8551 /* AdsTrackerTests.swift */; };
 		1DD85483DA2758F0572A337B /* ClipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58ABA389C3C1A29930F04A /* ClipsView.swift */; };
 		4D9DC6BC5D3C101E94D57190 /* HaukleyScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F21EF05C294CC1135BCA2DD /* HaukleyScreenshotTests.swift */; };
 		62966187FAB897D3F1D1EB34 /* GoogleInteractiveMediaAds in Frameworks */ = {isa = PBXBuildFile; productRef = 956D114CC378377B04E132C4 /* GoogleInteractiveMediaAds */; };
@@ -27,6 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		669F54C226ABCB5A112F3EB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 68AE90A93EA52AA22223E8EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75A78A896C8F633ABCC223AD;
+			remoteInfo = Haukley;
+		};
 		ECF0142BBABDED3D8F237948 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 68AE90A93EA52AA22223E8EB /* Project object */;
@@ -44,10 +52,12 @@
 		4A45F68443BDE471277327D9 /* TitleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDetailView.swift; sourceTree = "<group>"; };
 		4B58ABA389C3C1A29930F04A /* ClipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipsView.swift; sourceTree = "<group>"; };
 		53B1EE39728C356483245B88 /* HaukleyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaukleyApp.swift; sourceTree = "<group>"; };
+		6D75479DC8D23173444A8551 /* AdsTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsTrackerTests.swift; sourceTree = "<group>"; };
 		70B1D05A34E3956A5DC5022B /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		7162A2FC5388F0AA4D44C937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7CB154E56F7B76889E007051 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		9C840BEF3D3786B49DDFED20 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		A35849512E255857D91F4644 /* HaukleyTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = HaukleyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDAD4C39E56E78D346B1F98 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		B8A49C40600459E0CD691E1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCBE691C55E3A3494EF60729 /* Ads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ads.swift; sourceTree = "<group>"; };
@@ -105,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				BD743159958D57B81679C03C /* Haukley */,
+				7790782E4BE6FF99D1C80EDF /* HaukleyTests */,
 				0DC34DCFACFBC6563CABE187 /* HaukleyUITests */,
 				FD90D1E1C735594B008713C3 /* Products */,
 			);
@@ -117,6 +128,14 @@
 				E2C0957A8ACDFF49E48D779F /* Library.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7790782E4BE6FF99D1C80EDF /* HaukleyTests */ = {
+			isa = PBXGroup;
+			children = (
+				6D75479DC8D23173444A8551 /* AdsTrackerTests.swift */,
+			);
+			path = HaukleyTests;
 			sourceTree = "<group>";
 		};
 		7C70A0B11F27A2F731C881B7 /* App */ = {
@@ -210,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				DB93AE60A25F31CE03F8527A /* Haukley.app */,
+				A35849512E255857D91F4644 /* HaukleyTests.xctest */,
 				F2731B2CC23C87DB5F52BFE9 /* HaukleyUITests.xctest */,
 			);
 			name = Products;
@@ -256,6 +276,24 @@
 			productReference = F2731B2CC23C87DB5F52BFE9 /* HaukleyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		DB2F0395D6F2BF6D1A8D883E /* HaukleyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 841151F4B0E4CA02052A3127 /* Build configuration list for PBXNativeTarget "HaukleyTests" */;
+			buildPhases = (
+				306A63C46B204A9D473376B1 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B35DDE7A1053DA9CE2D7EF8B /* PBXTargetDependency */,
+			);
+			name = HaukleyTests;
+			packageProductDependencies = (
+			);
+			productName = HaukleyTests;
+			productReference = A35849512E255857D91F4644 /* HaukleyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -271,6 +309,9 @@
 					D1949C24E6FD4C6A154D6B3D = {
 						DevelopmentTeam = CG89RY4W6R;
 						TestTargetID = 75A78A896C8F633ABCC223AD;
+					};
+					DB2F0395D6F2BF6D1A8D883E = {
+						DevelopmentTeam = CG89RY4W6R;
 					};
 				};
 			};
@@ -292,6 +333,7 @@
 			projectRoot = "";
 			targets = (
 				75A78A896C8F633ABCC223AD /* Haukley */,
+				DB2F0395D6F2BF6D1A8D883E /* HaukleyTests */,
 				D1949C24E6FD4C6A154D6B3D /* HaukleyUITests */,
 			);
 		};
@@ -311,6 +353,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		306A63C46B204A9D473376B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14082D5E07651F7F7E1B8568 /* AdsTrackerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5136D43A6F6222D53A69AB4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,6 +395,11 @@
 			isa = PBXTargetDependency;
 			target = 75A78A896C8F633ABCC223AD /* Haukley */;
 			targetProxy = ECF0142BBABDED3D8F237948 /* PBXContainerItemProxy */;
+		};
+		B35DDE7A1053DA9CE2D7EF8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75A78A896C8F633ABCC223AD /* Haukley */;
+			targetProxy = 669F54C226ABCB5A112F3EB9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -476,6 +531,23 @@
 			};
 			name = Release;
 		};
+		D8797987E97B92B053DE66F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.haukley.app.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Haukley.app/Haukley";
+			};
+			name = Debug;
+		};
 		E529AA1739E68F9D36B87478 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -501,6 +573,23 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
+		};
+		F00FE6EFCA56F299B8F1E9D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.haukley.app.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Haukley.app/Haukley";
+			};
+			name = Release;
 		};
 		F4F8C134D67A988DA4946AB1 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -588,6 +677,15 @@
 			buildConfigurations = (
 				E529AA1739E68F9D36B87478 /* Debug */,
 				8CEB229B0999232FBC6B0EB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		841151F4B0E4CA02052A3127 /* Build configuration list for PBXNativeTarget "HaukleyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8797987E97B92B053DE66F0 /* Debug */,
+				F00FE6EFCA56F299B8F1E9D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

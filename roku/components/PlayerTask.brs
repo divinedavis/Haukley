@@ -10,6 +10,8 @@ sub playWithAds()
     m.pending = []
     m.lastPosition = 0
     m.session = CreateObject("roDeviceInfo").GetRandomUUID()
+    m.ticket = invalid
+    m.seq = 1
 
     adIface = invalid
     if m.top.adUrl <> ""
@@ -27,6 +29,9 @@ sub playWithAds()
             adIface = invalid
         end try
     end if
+
+    ' Only ad events carrying the server-signed ticket count toward filmmaker payouts.
+    if adIface <> invalid then m.ticket = fetchTicket()
 
     keepPlaying = true
     if adIface <> invalid
@@ -111,12 +116,35 @@ sub onAdTracking(obj = invalid as dynamic, eventType = invalid as dynamic, ctx =
     end if
 end sub
 
+' Asks start_playback for a signed playback ticket ({session_id, token}); invalid on any
+' failure or after 3 s, in which case events are still sent (stored, not counted).
+function fetchTicket() as dynamic
+    url = startPlaybackUrl(m.top.trackingUrl)
+    if url = "" then return invalid
+    port = CreateObject("roMessagePort")
+    http = CreateObject("roUrlTransfer")
+    http.SetMessagePort(port)
+    http.SetUrl(url)
+    http.SetCertificatesFile("common:/certs/ca-bundle.crt")
+    http.InitClientCertificates()
+    http.AddHeader("apikey", m.top.apiKey)
+    http.AddHeader("Content-Type", "application/json")
+    if not http.AsyncPostFromString(FormatJson({ title_id: m.top.titleId, episode: m.top.episode, platform: "roku" })) then return invalid
+    msg = wait(3000, port)
+    if type(msg) <> "roUrlEvent" then
+        http.AsyncCancel()
+        return invalid
+    end if
+    if msg.GetResponseCode() < 200 or msg.GetResponseCode() > 299 then return invalid
+    t = ParseJson(msg.GetString())
+    if t = invalid or type(t) <> "roAssociativeArray" or t.session_id = invalid or t.token = invalid then return invalid
+    return t
+end function
+
 sub flushEvents()
     if m.pending.count() = 0 or m.top.trackingUrl = "" then return
-    rows = []
-    for each e in m.pending
-        rows.push({ title_id: m.top.titleId, episode: m.top.episode, platform: "roku", event: e, session_id: m.session })
-    end for
+    rows = adEventRows(m.pending, m.top.titleId, m.top.episode, m.ticket, m.session, m.seq)
+    m.seq = m.seq + m.pending.count()
     m.pending = []
     http = CreateObject("roUrlTransfer")
     http.SetUrl(m.top.trackingUrl)

@@ -637,7 +637,7 @@ function exitApp() {
 
 /* ---------- player ---------- */
 
-const player = { el: null, video: null, id: null, episode: 0, ima: null, hls: null, uiTimer: null, saveTimer: null, ratedTimer: null, ratedShown: false, sessionId: null };
+const player = { el: null, video: null, id: null, episode: 0, ima: null, hls: null, uiTimer: null, saveTimer: null, ratedTimer: null, ratedShown: false, sessionId: null, ticket: null, seq: 0 };
 
 function uuid() {
   if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
@@ -662,15 +662,35 @@ function loadIma() {
   return imaPromise;
 }
 
-function logAdEvent(event) {
-  if (!PLATFORM) return;
-  const body = JSON.stringify({ title_id: player.id, episode: player.episode, platform: PLATFORM, event, session_id: player.sessionId });
-  const send = () => fetch(ADS.trackingUrl, {
+// Only ad events carrying the server-signed playback ticket (start_playback) count toward
+// filmmaker payouts. Each event has its own seq so the one retry can't be counted twice; with
+// no ticket (request failed) events still go out, stored but not counted.
+function adPost(url, body) {
+  return fetch(url, {
     method: "POST",
     headers: { apikey: ADS.publishableKey, "Content-Type": "application/json", Prefer: "return=minimal" },
     body,
-  }).then(r => { if (!r.ok) throw new Error(String(r.status)); });
-  send().catch(() => new Promise(r => setTimeout(r, 3000)).then(send)).catch(() => {});
+  }).then(r => { if (!r.ok) throw new Error(String(r.status)); return r; });
+}
+
+function requestTicket(id, episode) {
+  if (!PLATFORM) return Promise.resolve(null);
+  return adPost(ADS.trackingUrl.replace(/log_ad_events$/, "start_playback"),
+                JSON.stringify({ title_id: id, episode, platform: PLATFORM }))
+    .then(r => r.json()).then(t => (t && t.session_id && t.token ? t : null)).catch(() => null);
+}
+
+function logAdEvent(event) {
+  if (!PLATFORM) return;
+  const id = player.id, episode = player.episode, sessionId = player.sessionId;
+  const seq = ++player.seq;
+  (player.ticket || Promise.resolve(null)).then(t => {
+    const ev = { title_id: id, episode, platform: PLATFORM, event, session_id: t ? t.session_id : sessionId };
+    if (t) { ev.token = t.token; ev.seq = seq; }
+    const body = JSON.stringify(ev);
+    const send = () => adPost(ADS.trackingUrl, body);
+    return send().catch(() => new Promise(r => setTimeout(r, 3000)).then(send));
+  }).catch(() => {});
 }
 
 // TVs play HLS natively in <video>; desktop browsers (used for testing) go through hls.js.
@@ -713,7 +733,7 @@ function startPlayback(id, ep, startAt) {
   if (t.kind === "show" && !e) return;
   stopPlayback();
   stopHeroRotation();
-  Object.assign(player, { id, episode: e ? e.number : 0, sessionId: uuid(), ratedShown: false });
+  Object.assign(player, { id, episode: e ? e.number : 0, sessionId: uuid(), ticket: requestTicket(id, e ? e.number : 0), seq: 0, ratedShown: false });
   $("#p-title").innerHTML = e ? `${esc(t.title)}<span>E${esc(e.number)} “${esc(e.name)}”</span>` : esc(t.title);
   // A content advisory rides on the rating card at the start of playback, like broadcast TV.
   $("#rated-label").textContent = t.rating && t.rating !== "NR" ? `RATED ${t.rating}` : "NOT RATED";

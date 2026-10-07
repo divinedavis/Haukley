@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import Video, { type VideoRef } from 'react-native-video';
-import { TRAILER, adTagFor, logAdEvent, newSessionId } from '../ads';
+import { TRAILER, adTagFor, createAdTracker } from '../ads';
 import { getTitle, streamFor } from '../catalog';
 import { recordWatch } from '../history';
 import { colors, layout, s } from '../theme';
@@ -27,8 +27,9 @@ export function PlayerScreen({ id, episode, startAt, onDone }: Props) {
     return () => clearTimeout(timer);
   }, [advisory]);
   const isTrailer = episode === TRAILER;
-  // One session per playback groups its ad events; the ad tag carries title_id for the ad server's report.
-  const sessionId = useMemo(newSessionId, []);
+  // One server-signed session per playback groups its ad events (only those count toward
+  // payouts); the ad tag carries title_id for the ad server's report. Trailers have no ads.
+  const tracker = useMemo(() => (isTrailer ? null : createAdTracker(id, episode ?? 0)), [id, episode, isTrailer]);
   const adCounted = useRef(false);
   const source = useMemo(
     () => ({
@@ -81,18 +82,17 @@ export function PlayerScreen({ id, episode, startAt, onDone }: Props) {
             }
           }}
           onReceiveAdEvent={e => {
-            const ep = episode ?? 0;
             if (e.event === 'CONTENT_PAUSE_REQUESTED') {
               setLoading(false);
             } else if (e.event === 'STARTED' || e.event === 'FIRST_QUARTILE') {
               // Android drops STARTED for the first ad after a cold start, so FIRST_QUARTILE backs it up.
               if (!adCounted.current) {
                 adCounted.current = true;
-                logAdEvent(id, ep, 'ad_started', sessionId);
+                tracker?.log('ad_started');
               }
             } else if (e.event === 'COMPLETED') {
               adCounted.current = false;
-              logAdEvent(id, ep, 'ad_completed', sessionId);
+              tracker?.log('ad_completed');
             } else if (e.event === 'SKIPPED') {
               adCounted.current = false;
             }

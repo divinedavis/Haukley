@@ -910,7 +910,7 @@ function closeModal(navigate = true) {
 
 const player = {
   el: $("#player"), video: $("#video"), adLayer: $("#ad-layer"),
-  hls: null, ima: null, id: null, episode: 0, sessionId: null, saveTimer: null, idleTimer: null,
+  hls: null, ima: null, id: null, episode: 0, sessionId: null, ticket: null, seq: 0, saveTimer: null, idleTimer: null,
   ratedShown: false, seeking: false,
 };
 const video = player.video;
@@ -932,14 +932,33 @@ function loadIma() {
   return imaPromise;
 }
 
-function logAdEvent(event) {
-  const body = JSON.stringify({ title_id: player.id, episode: player.episode, platform: "web", event, session_id: player.sessionId });
-  const send = () => fetch(state.ads.trackingUrl, {
+// Only ad events carrying the server-signed playback ticket (start_playback) count toward
+// filmmaker payouts. Each event has its own seq so the one retry can't be counted twice; with
+// no ticket (request failed) events still go out, stored but not counted.
+function adPost(url, body) {
+  return fetch(url, {
     method: "POST",
     headers: { apikey: state.ads.publishableKey, "Content-Type": "application/json", Prefer: "return=minimal" },
     body, keepalive: true,
-  }).then(r => { if (!r.ok) throw new Error(String(r.status)); });
-  send().catch(() => new Promise(r => setTimeout(r, 3000)).then(send)).catch(() => {});
+  }).then(r => { if (!r.ok) throw new Error(String(r.status)); return r; });
+}
+
+function requestTicket(id, episode) {
+  if (!state.ads?.trackingUrl) return Promise.resolve(null);
+  return adPost(state.ads.trackingUrl.replace(/log_ad_events$/, "start_playback"),
+                JSON.stringify({ title_id: id, episode, platform: "web" }))
+    .then(r => r.json()).then(t => (t && t.session_id && t.token ? t : null)).catch(() => null);
+}
+
+function logAdEvent(event) {
+  const { id, episode, sessionId, ticket } = player;
+  const seq = ++player.seq;
+  (ticket || Promise.resolve(null)).then(t => {
+    const body = JSON.stringify({ title_id: id, episode, platform: "web", event,
+      session_id: t ? t.session_id : sessionId, ...(t ? { token: t.token, seq } : {}) });
+    const send = () => adPost(state.ads.trackingUrl, body);
+    return send().catch(() => new Promise(r => setTimeout(r, 3000)).then(send));
+  }).catch(() => {});
 }
 
 // Must run inside the click that started playback so browsers allow sound + ads.
@@ -954,7 +973,7 @@ function startPlayback(id, episode) {
   const fromModal = !$("#modal").hidden && location.hash.startsWith("#/title/");
   closeModal(false);
   stopPlayback(false);
-  Object.assign(player, { id, episode, sessionId: crypto.randomUUID(), ratedShown: false });
+  Object.assign(player, { id, episode, sessionId: crypto.randomUUID(), ticket: requestTicket(id, episode), seq: 0, ratedShown: false });
   $("#p-title").innerHTML = e ? `${esc(t.title)}<span>E${e.number} “${esc(e.name)}”</span>` : esc(t.title);
   $("#rated-label").textContent = t.rating === "NR" ? "NOT RATED" : `RATED ${t.rating}`;
   // A content advisory rides on the rating card at the start of playback, like broadcast TV.

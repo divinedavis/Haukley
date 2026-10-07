@@ -54,6 +54,19 @@ targets:
       properties:
         UILaunchScreen:
           UIColorName: LaunchBackground
+  HaukleyTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: HaukleyTests
+    dependencies:
+      - target: Haukley
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.haukley.app.tests
+        GENERATE_INFOPLIST_FILE: YES
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Haukley.app/Haukley"
   HaukleyUITests:
     type: bundle.ui-testing
     platform: iOS
@@ -71,7 +84,9 @@ schemes:
     build:
       targets:
         Haukley: all
+        HaukleyTests: [test]
         HaukleyUITests: [test]
     test:
       targets:
+        - HaukleyTests
         - HaukleyUITests

@@ -29,6 +29,20 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DB2F0395D6F2BF6D1A8D883E"
+               BuildableName = "HaukleyTests.xctest"
+               BlueprintName = "HaukleyTests"
+               ReferencedContainer = "container:Haukley.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "D1949C24E6FD4C6A154D6B3D"
                BuildableName = "HaukleyUITests.xctest"
                BlueprintName = "HaukleyUITests"
@@ -53,6 +67,17 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DB2F0395D6F2BF6D1A8D883E"
+               BuildableName = "HaukleyTests.xctest"
+               BlueprintName = "HaukleyTests"
+               ReferencedContainer = "container:Haukley.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
          <TestableReference
             skipped = "NO"
             parallelizable = "NO">

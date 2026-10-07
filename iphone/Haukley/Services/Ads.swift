@@ -27,25 +27,81 @@ enum Ads {
 
     enum Event: String { case started = "ad_started", completed = "ad_completed" }
 
-    /// Fire-and-forget with one retry; tracking must never interrupt playback.
-    static func log(_ event: Event, title: Title, episode: Int, session: UUID) {
-        guard let config, let url = URL(string: config.trackingUrl) else { return }
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue(config.publishableKey, forHTTPHeaderField: "apikey")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("return=minimal", forHTTPHeaderField: "Prefer")
-        request.httpBody = try? JSONSerialization.data(withJSONObject: [
-            "title_id": title.id, "episode": episode, "platform": "ios",
-            "event": event.rawValue, "session_id": session.uuidString.lowercased(),
-        ])
-        Task.detached {
-            for attempt in 0..<2 {
-                if let (_, response) = try? await URLSession.shared.data(for: request),
-                   let http = response as? HTTPURLResponse, (200..<300).contains(http.statusCode) {
-                    return
+    /// start_playback lives next to log_ad_events in the same API.
+    static func startPlaybackURL(from trackingUrl: String) -> URL? {
+        guard trackingUrl.hasSuffix("log_ad_events") else { return nil }
+        return URL(string: String(trackingUrl.dropLast("log_ad_events".count)) + "start_playback")
+    }
+
+    /// The JSON body of one ad event. With a server ticket it carries the signed token and a
+    /// per-event seq; without one (the ticket request failed) it is stored but never counted.
+    static func eventBody(_ event: Event, titleID: String, episode: Int, session: String,
+                          token: String?, seq: Int) -> [String: Any] {
+        var body: [String: Any] = ["title_id": titleID, "episode": episode, "platform": "ios",
+                                   "event": event.rawValue, "session_id": session]
+        if let token { body["token"] = token; body["seq"] = seq }
+        return body
+    }
+
+    /// One tracker per playback. It asks the server for a signed playback ticket as soon as
+    /// the player opens; only events carrying that ticket count toward filmmaker payouts. Each
+    /// event gets its own seq, so the one retry can never be counted twice.
+    /// Fire-and-forget: tracking must never interrupt playback.
+    actor Tracker {
+        private struct Ticket: Decodable { let session_id: String; let token: String }
+        private let titleID: String
+        private let episode: Int
+        private let fallbackSession = UUID().uuidString.lowercased()
+        private var ticket: Task<Ticket?, Never>?
+        private var seq = 0
+
+        init(title: Title, episode: Int) {
+            titleID = title.id
+            self.episode = episode
+        }
+
+        private static func request(_ url: URL, _ body: [String: Any], key: String) -> URLRequest {
+            var r = URLRequest(url: url)
+            r.httpMethod = "POST"
+            r.setValue(key, forHTTPHeaderField: "apikey")
+            r.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            r.setValue("return=minimal", forHTTPHeaderField: "Prefer")
+            r.httpBody = try? JSONSerialization.data(withJSONObject: body)
+            return r
+        }
+
+        /// Called when the player opens, so the ticket is ready before the first ad.
+        func start() {
+            guard ticket == nil else { return }
+            let titleID = titleID, episode = episode
+            ticket = Task {
+                guard let config, let url = startPlaybackURL(from: config.trackingUrl) else { return nil }
+                let req = Self.request(url, ["title_id": titleID, "episode": episode, "platform": "ios"],
+                                       key: config.publishableKey)
+                guard let (data, response) = try? await URLSession.shared.data(for: req),
+                      let http = response as? HTTPURLResponse, (200..<300).contains(http.statusCode) else { return nil }
+                return try? JSONDecoder().decode(Ticket.self, from: data)
+            }
+        }
+
+        func log(_ event: Event) {
+            start()
+            seq += 1
+            let mySeq = seq, titleID = titleID, episode = episode, fallback = fallbackSession, ticket = ticket
+            Task.detached {
+                guard let config, let url = URL(string: config.trackingUrl) else { return }
+                let t = await ticket?.value
+                let req = Tracker.request(url, eventBody(event, titleID: titleID, episode: episode,
+                                                         session: t?.session_id ?? fallback,
+                                                         token: t?.token, seq: mySeq),
+                                          key: config.publishableKey)
+                for attempt in 0..<2 {
+                    if let (_, response) = try? await URLSession.shared.data(for: req),
+                       let http = response as? HTTPURLResponse, (200..<300).contains(http.statusCode) {
+                        return
+                    }
+                    if attempt == 0 { try? await Task.sleep(for: .seconds(3)) }
                 }
-                if attempt == 0 { try? await Task.sleep(for: .seconds(3)) }
             }
         }
     }

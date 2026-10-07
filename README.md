@@ -88,7 +88,13 @@ Roku gotchas: the emulator ignores `font:BoldSystemFontFile` at custom sizes, so
 - Every ad start/completion is logged to Supabase project `axgxpwgbpgcqjxoqwtnv` (free org
   "StreamTV") in `ad_events`. Apps log via the rate-limited RPC `POST /rest/v1/rpc/log_ad_events`
   (one event or an array; <=20/call, <=100/session, <=300/hour per IP) and cannot touch the
-  table directly; reads and payout math need the secret key
+  table directly. **Only events with a server-signed playback ticket count** (0014): each
+  player calls `POST /rest/v1/rpc/start_playback {title_id, episode, platform}` when it opens
+  (-> `{session_id, token}`, HMAC key in the `private` schema, 120/hour per IP) and sends
+  `token` + a per-event `seq` with every ad event. Verified = valid token < 8 h old, new
+  `(session, event, seq)` (retries dropped), <= 2 + seconds_since_start/10 per event type,
+  <= 150 per IP per title per day. Tokenless events (shipped apps: iPhone 1.0.1, Fire TV 1.0,
+  LG/Samsung 1.0) are stored with `verified = false` and never paid on. Reads and payout math need the secret key
   (macOS Keychain `supabase-secret-streamtv`). Schema: `supabase/migrations/`.
 - Monthly report: `GET /rest/v1/monthly_ad_counts`; estimated payouts:
   `POST /rest/v1/rpc/estimated_payouts {"p_month":"2026-09-01","p_net_cpm":10}`.

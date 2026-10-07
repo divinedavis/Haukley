@@ -93,3 +93,32 @@ function formatClock(seconds as integer) as string
     if h > 0 then return h.ToStr() + ":" + twoDigits(mnt) + ":" + twoDigits(s)
     return mnt.ToStr() + ":" + twoDigits(s)
 end function
+
+' ---- ad tracking (PlayerTask) ----
+' start_playback lives next to log_ad_events; "" when the tracking URL has another shape.
+function startPlaybackUrl(trackingUrl as string) as string
+    suffix = "log_ad_events"
+    if Len(trackingUrl) <= Len(suffix) or Right(trackingUrl, Len(suffix)) <> suffix then return ""
+    return Left(trackingUrl, Len(trackingUrl) - Len(suffix)) + "start_playback"
+end function
+
+' Rows for one log_ad_events batch. With a server ticket each row carries the signed token
+' and its own seq (so a re-sent batch is never counted twice); without one the rows are
+' stored but don't count toward payouts. seqStart is the seq of the first row.
+function adEventRows(pending as object, titleId as string, episode as integer, ticket as dynamic, fallbackSession as string, seqStart as integer) as object
+    rows = []
+    seq = seqStart
+    for each e in pending
+        row = { title_id: titleId, episode: episode, platform: "roku", event: e }
+        if ticket <> invalid
+            row.session_id = ticket.session_id
+            row.token = ticket.token
+            row.seq = seq
+        else
+            row.session_id = fallbackSession
+        end if
+        rows.push(row)
+        seq = seq + 1
+    end for
+    return rows
+end function

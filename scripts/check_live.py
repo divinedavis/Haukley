@@ -143,6 +143,46 @@ def run_http(base, live, match_local):
                   f"live /{rel} matches web/{rel}")
 
 
+def check_ad_ticket(pg):
+    """The /watch player asks start_playback for a signed ticket and sends it (plus a per-event
+    seq) with every ad event. Supabase is stubbed here, so nothing is written to the live DB."""
+    import json as _json
+    sent = []
+
+    def stub(route):
+        req = route.request
+        sent.append((req.url.rsplit("/", 1)[-1], _json.loads(req.post_data or "null")))
+        if req.url.endswith("/rpc/start_playback"):
+            route.fulfill(status=200, content_type="application/json",
+                          body=_json.dumps({"session_id": "00000000-0000-4000-8000-000000000001",
+                                            "token": "1790000000." + "a" * 64}))
+        else:
+            route.fulfill(status=204, body="")
+
+    pg.route("**/rest/v1/rpc/*", stub)
+    try:
+        pg.wait_for_function("() => typeof requestTicket === 'function'", timeout=10000)
+        pg.evaluate("""async () => {
+            if (!state.ads) state.ads = await fetch(ART + 'ads.json').then(r => r.json());  // loads after sign-in
+            Object.assign(player, { id: 'probe', episode: 0, sessionId: crypto.randomUUID(),
+                                    ticket: requestTicket('probe', 0), seq: 0 });
+            logAdEvent('ad_started'); logAdEvent('ad_completed');
+            await player.ticket; await new Promise(r => setTimeout(r, 500)); }""")
+    except Exception as e:
+        check(False, f"/watch/ ad ticket flow ran: {str(e).splitlines()[0]}")
+        return
+    finally:
+        pg.unroute("**/rest/v1/rpc/*")
+    starts = [b for u, b in sent if u == "start_playback"]
+    events = [b for u, b in sent if u == "log_ad_events"]
+    check(starts == [{"title_id": "probe", "episode": 0, "platform": "web"}],
+          f"/watch/ requests a playback ticket ({starts})")
+    check([(e.get("event"), e.get("seq"), bool(e.get("token")), e.get("session_id")) for e in events]
+          == [("ad_started", 1, True, "00000000-0000-4000-8000-000000000001"),
+              ("ad_completed", 2, True, "00000000-0000-4000-8000-000000000001")],
+          f"/watch/ ad events carry the ticket and a seq ({events})")
+
+
 def run_browser(base):
     from playwright.sync_api import sync_playwright
     print(f"== browser {base}")
@@ -160,6 +200,8 @@ def run_browser(base):
             except Exception as e:
                 check(False, f"{path} renders ({wait_for}): {str(e).splitlines()[0]}")
             check(not errors, f"{path} has no uncaught JS errors {errors[:2] if errors else ''}")
+            if path == "/watch/":
+                check_ad_ticket(pg)
             ctx.close()
         browser.close()
 

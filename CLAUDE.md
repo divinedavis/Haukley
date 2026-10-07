@@ -17,6 +17,10 @@ for removed behaviour is deleted, not skipped; a test that never ran is fixed or
     `test_web_pages.py` checks the haukley.com pages (viewport, `web/_src` build not stale).
   - Roku: `roku/tests/*_test.brs` in brs-node (`npx -p brs-node brs-cli`, not `npx brs-cli`).
     brs-cli always exits 0; run_fast.sh fails on any `FAIL` line.
+- Live-DB tests: `python3 tests/db/run_db_tests.py` runs `tests/db/test_*.sql` against the
+  Supabase project (each file is one DO block that raises `ALL_PASS`, so it rolls back). Run
+  after every migration touching what they cover; not in run_fast (network).
+- iPhone unit tests (Swift Testing): `iphone/HaukleyTests`, run by the scheme's test action.
 - **pre-push hook** (`.githooks/pre-push`, enable once per checkout with
   `scripts/install_hooks.sh`): gitleaks over exactly the pushed commits + `tests/run_fast.sh`.
   It is the CI: there are deliberately **no GitHub Actions** (private repo, nothing that can

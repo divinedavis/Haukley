@@ -70,7 +70,7 @@ final class PlayerViewController: UIViewController, IMAAdsLoaderDelegate, IMAAds
     private let player: AVPlayer
     private let playerVC = AVPlayerViewController()
     private let adContainer = UIView()
-    private let session = UUID()
+    private lazy var tracker = Ads.Tracker(title: request.title, episode: request.episode ?? 0)
 
     private var adsLoader: IMAAdsLoader?
     private var adsManager: IMAAdsManager?
@@ -118,6 +118,8 @@ final class PlayerViewController: UIViewController, IMAAdsLoaderDelegate, IMAAds
         guard !started else { return }
         started = true
         if !request.trailer, let tag = Ads.tag(for: request.title) {
+            let tracker = tracker
+            Task { await tracker.start() }
             requestAds(tag)
         } else {
             playContent()
@@ -167,9 +169,11 @@ final class PlayerViewController: UIViewController, IMAAdsLoaderDelegate, IMAAds
         case .LOADED:
             adsManager.start()
         case .STARTED:
-            Ads.log(.started, title: request.title, episode: request.episode ?? 0, session: session)
+            let tracker = tracker
+            Task { await tracker.log(.started) }
         case .COMPLETE:
-            Ads.log(.completed, title: request.title, episode: request.episode ?? 0, session: session)
+            let tracker = tracker
+            Task { await tracker.log(.completed) }
         default:
             break
         }
