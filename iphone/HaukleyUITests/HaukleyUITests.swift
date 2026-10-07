@@ -68,6 +68,19 @@ final class HaukleyUITests: XCTestCase {
         snap("my-haukley")
     }
 
+    /// Any poster in Home's rows opens that title's sheet (ids "poster.<title id>").
+    func testPosterInARowOpensDetail() {
+        let poster = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'poster.'")).firstMatch
+        for _ in 0..<4 where !poster.isHittable { app.swipeUp() }
+        XCTAssertTrue(poster.waitForExistence(timeout: 5), "no poster rows on Home")
+        let name = poster.label
+        poster.tap()
+        let title = element("detail.title")
+        XCTAssertTrue(title.waitForExistence(timeout: 8))
+        XCTAssertEqual(title.label, name)
+        element("detail.close").tap()
+    }
+
     func testDetailSheetOpensAndCloses() {
         element("hero.poster").tap()
         let title = element("detail.title")
