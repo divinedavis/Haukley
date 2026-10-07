@@ -1,7 +1,7 @@
-// Haukley site helpers. The key below is Supabase's publishable key: public by design,
-// and the waitlist table only accepts inserts (no reads) for it.
+// Haukley site helpers. The key below is Supabase's publishable key: public by design; with
+// it the site can only call the rate-limited join_waitlist / submit_film RPCs.
 window.Haukley = {
-  endpoint: "https://axgxpwgbpgcqjxoqwtnv.supabase.co/rest/v1/waitlist",
+  endpoint: "https://axgxpwgbpgcqjxoqwtnv.supabase.co/rest/v1/rpc/join_waitlist",
   key: "sb_publishable_9VpZfDWrMK3orLITxhWZJw_kbAFdw90",
   waitlist(formId, source) {
     const form = document.getElementById(formId);
@@ -22,8 +22,10 @@ window.Haukley = {
           headers: { apikey: this.key, "Content-Type": "application/json", Prefer: "return=minimal" },
           body: JSON.stringify({ email, source }),
         });
-        // 409 = already on the list; treat it the same so the form never reveals who signed up.
-        if (r.ok || r.status === 409) { say("You're on the list. We'll email you once, at launch.", "ok"); input.value = ""; }
+        // The RPC answers the same for an address already on the list, so the form never
+        // reveals who signed up.
+        if (r.ok) { say("You're on the list. We'll email you once, at launch.", "ok"); input.value = ""; }
+        else if (r.status === 400 && (await r.text()).includes("rate limit")) say("Too many signups from this network today. Please try again tomorrow.", "err");
         else say("Something went wrong. Please try again.", "err");
       } catch {
         say("Couldn't reach the server. Check your connection and try again.", "err");
@@ -54,7 +56,7 @@ window.Haukley = {
       button.disabled = true;
       say("Sending…");
       try {
-        const r = await fetch(this.endpoint.replace("/waitlist", "/rpc/submit_film"), {
+        const r = await fetch(this.endpoint.replace("/join_waitlist", "/submit_film"), {
           method: "POST",
           headers: { apikey: this.key, "Content-Type": "application/json" },
           body: JSON.stringify(f),

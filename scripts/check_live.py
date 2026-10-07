@@ -183,6 +183,30 @@ def check_ad_ticket(pg):
           f"/watch/ ad events carry the ticket and a seq ({events})")
 
 
+def check_waitlist_form(pg):
+    """The landing page's "Get notified" form posts to the rate-limited join_waitlist RPC
+    (never the table). Supabase is stubbed, so nothing is written."""
+    import json as _json
+    sent = []
+
+    def stub(route):
+        sent.append((route.request.url.rsplit("/", 1)[-1], _json.loads(route.request.post_data or "null")))
+        route.fulfill(status=204, body="")
+
+    pg.route("**/rest/v1/**", stub)
+    try:
+        form = pg.locator("#notify-hero")
+        form.locator("input[type=email]").fill("probe@example.com")
+        form.locator("button").click()
+        pg.wait_for_selector("#notify-hero .note.ok", timeout=10000)
+        check(sent == [("join_waitlist", {"email": "probe@example.com", "source": "web"})],
+              f"/ waitlist form posts to rpc/join_waitlist ({sent})")
+    except Exception as e:
+        check(False, f"/ waitlist form: {str(e).splitlines()[0]}")
+    finally:
+        pg.unroute("**/rest/v1/**")
+
+
 def run_browser(base):
     from playwright.sync_api import sync_playwright
     print(f"== browser {base}")
@@ -202,6 +226,8 @@ def run_browser(base):
             check(not errors, f"{path} has no uncaught JS errors {errors[:2] if errors else ''}")
             if path == "/watch/":
                 check_ad_ticket(pg)
+            if path == "/":
+                check_waitlist_form(pg)
             ctx.close()
         # A Google sign-in the DB refused (0015: Google onto a password account) explains itself.
         ctx = browser.new_context(viewport={"width": 390, "height": 844}, is_mobile=True)
