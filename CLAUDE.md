@@ -53,3 +53,25 @@ Submit only on the owner's explicit go.
 - Password changes need a fresh session (`security_update_password_require_reauthentication`):
   the reset-link session is fresh, so recovery still works without a nonce email.
 - Captcha: not set up (needs an hCaptcha/Turnstile account from the owner).
+
+## Video delivery (DO Spaces CDN `haukley-media`, audit 2026-10-07 L3)
+
+- Streams are public, unsigned HLS on `haukley-media.nyc3.cdn.digitaloceanspaces.com`; bucket
+  CORS allows only `https://haukley.com`, so other websites can't play them in a browser, but
+  anyone can download them directly. There is **no geo limit**, although the public-domain
+  rights are US-only (the apps are US-only in every store).
+- Why not fixed: Spaces CDN serves only public objects (pre-signed URLs work on the origin
+  endpoint, not the CDN) and has no geo rules. Signing would mean a proxy that rewrites every
+  playlist and presigns each segment, on every platform (Roku/LG/Samsung/iPhone/TV apps
+  cache the catalog's stream URLs), and would lose CDN caching. Revisit before licensed
+  (non-PD) content: put the bucket behind Cloudflare (or a droplet nginx with GeoIP2 +
+  `secure_link`) and ship clients that ask the API for a short-lived playback URL.
+- Don't widen the bucket CORS (`*`): the TV apps don't need it (native players send no Origin).
+
+## Email (audit L2)
+
+- No custom SMTP: haukley.com mail is Namecheap forwarding only (no mailbox to send from), so
+  Supabase's default sender only reaches project team members - **password-reset emails don't
+  reach real viewers**. Owner action: a sending mailbox/provider for haukley.com (e.g. Resend,
+  Zoho, Namecheap Private Email) + SPF/DKIM DNS, then set smtp_* via the Management API
+  (`PATCH /v1/projects/axgxpwgbpgcqjxoqwtnv/config/auth`, port 465).
