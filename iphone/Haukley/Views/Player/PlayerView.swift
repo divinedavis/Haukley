@@ -26,7 +26,7 @@ struct PlayerScreen: View {
         .background(Color.black)
         .overlay(alignment: .topLeading) {
             Button { dismiss() } label: {
-                Image(systemName: "xmark").font(.system(size: 16, weight: .bold))
+                Image(systemName: "xmark").scaledFont(16, weight: .bold)
                     .frame(width: 40, height: 40)
                     .background(.black.opacity(0.45), in: Circle())
             }

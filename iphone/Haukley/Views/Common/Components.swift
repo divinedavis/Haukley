@@ -82,7 +82,7 @@ struct BadgeLabel: View {
     let text: String
     var body: some View {
         Text(text)
-            .font(.system(size: 9, weight: .bold))
+            .scaledFont(9, weight: .bold)
             .foregroundStyle(.white)
             .padding(.horizontal, 6).padding(.vertical, 3)
             .background(Color.brand, in: RoundedRectangle(cornerRadius: 2))
@@ -99,6 +99,7 @@ struct Top10Flag: View {
         .foregroundStyle(.white)
         .frame(width: 20, height: 24)
         .background(Color.brand, in: RoundedRectangle(cornerRadius: 2))
+        .accessibilityHidden(true)   // fixed-size art; the poster/hero label carries the rank
     }
 }
 
@@ -115,6 +116,7 @@ struct RankNumeral: View {
             text.foregroundStyle(.black)
         }
         .fixedSize()
+        .accessibilityHidden(true)   // artwork; the poster beside it carries the title
     }
 }
 
@@ -126,7 +128,7 @@ struct RowHeader: View {
     var body: some View {
         let m = Metrics(sizeClass)
         Text(title)
-            .font(.system(size: m.rowTitle, weight: .bold))
+            .scaledFont(m.rowTitle, weight: .bold)
             .foregroundStyle(.white)
             .padding(.horizontal, m.gutter)
     }
@@ -200,7 +202,7 @@ struct ContinueRow: View {
                                         .clipped()
                                         .overlay {
                                             Image(systemName: "play.fill")
-                                                .font(.system(size: 18))
+                                                .scaledFont(18)
                                                 .foregroundStyle(.white)
                                                 .frame(width: 44, height: 44)
                                                 .background(.black.opacity(0.55), in: Circle())
@@ -221,10 +223,10 @@ struct ContinueRow: View {
                                         .accessibilityLabel("Details for \(t.title)")
                                     Spacer()
                                     if w.episode > 0 {
-                                        Text("E\(w.episode)").font(.system(size: 11, weight: .semibold)).foregroundStyle(.secondary)
+                                        Text("E\(w.episode)").scaledFont(11, weight: .semibold).foregroundStyle(.secondary)
                                     }
                                 }
-                                .font(.system(size: 17))
+                                .scaledFont(17)
                                 .foregroundStyle(.white)
                                 .padding(.horizontal, 8).frame(height: 34)
                                 .background(Color(white: 0.14))
@@ -250,7 +252,7 @@ struct PillButton: View {
     var body: some View {
         Button(action: action) {
             Label(title, systemImage: systemImage)
-                .font(.system(size: 16, weight: .semibold))
+                .scaledFont(16, weight: .semibold)
                 .frame(maxWidth: .infinity, minHeight: 42)
                 .foregroundStyle(primary ? .black : .white)
                 .background(primary ? Color.white : Color.white.opacity(0.2), in: RoundedRectangle(cornerRadius: 6))
@@ -267,5 +269,48 @@ struct ProfileAvatar: View {
             .fill(Avatar.colors[profile.color % Avatar.colors.count].gradient)
             .frame(width: size, height: size)
             .overlay(Text(String(profile.name.prefix(1))).font(.system(size: size * 0.5, weight: .heavy)).foregroundStyle(.white))
+            .accessibilityHidden(true)   // the profile name is shown (and read) next to it
+    }
+}
+
+// MARK: Dynamic Type
+
+/// The app's point sizes, scaled with the reader's text size (Dynamic Type). Each size grows
+/// relative to the text style it sits closest to, so 13 pt footnotes and 28 pt titles keep
+/// their proportions. Use instead of `.font(.system(size:))`, which never scales; only fixed-
+/// frame artwork (Top 10 flag, rank numerals, avatar initials) keeps a fixed size, and it is
+/// hidden from VoiceOver because a label next to it already says the same thing.
+struct ScaledFont: ViewModifier {
+    @ScaledMetric private var size: CGFloat
+    private let weight: Font.Weight
+    private let design: Font.Design
+
+    init(size: CGFloat, weight: Font.Weight, design: Font.Design) {
+        _size = ScaledMetric(wrappedValue: size, relativeTo: Self.style(for: size))
+        self.weight = weight
+        self.design = design
+    }
+
+    static func style(for size: CGFloat) -> Font.TextStyle {
+        switch size {
+        case 30...: .largeTitle
+        case 24..<30: .title
+        case 20..<24: .title2
+        case 17..<20: .body
+        case 15..<17: .subheadline
+        case 13..<15: .footnote
+        case 12..<13: .caption
+        default: .caption2
+        }
+    }
+
+    func body(content: Content) -> some View {
+        content.font(.system(size: size, weight: weight, design: design))
+    }
+}
+
+extension View {
+    func scaledFont(_ size: CGFloat, weight: Font.Weight = .regular, design: Font.Design = .default) -> some View {
+        modifier(ScaledFont(size: size, weight: weight, design: design))
     }
 }

@@ -13,10 +13,10 @@ struct MyHaukleyView: View {
                 header
 
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("My List").font(.system(size: 19, weight: .bold)).padding(.horizontal, 16)
+                    Text("My List").scaledFont(19, weight: .bold).padding(.horizontal, 16)
                     if library.myList.isEmpty {
                         Text("Tap + My List on anything you want to watch later and it shows up here.")
-                            .font(.system(size: 14)).foregroundStyle(.secondary)
+                            .scaledFont(14).foregroundStyle(.secondary)
                             .padding(.horizontal, 16)
                             .accessibilityIdentifier("mine.mylist.empty")
                     } else {
@@ -61,8 +61,8 @@ struct MyHaukleyView: View {
                 Button { addingProfile = true } label: { Label("Add Profile", systemImage: "plus") }
             } label: {
                 HStack(spacing: 6) {
-                    Text(library.current.name).font(.system(size: 28, weight: .bold))
-                    Image(systemName: "chevron.down").font(.system(size: 15, weight: .bold))
+                    Text(library.current.name).scaledFont(28, weight: .bold)
+                    Image(systemName: "chevron.down").scaledFont(15, weight: .bold)
                 }
                 .foregroundStyle(.white)
             }

@@ -13,11 +13,12 @@ struct TitleDetailView: View {
             VStack(alignment: .leading, spacing: 14) {
                 ZStack {
                     BundleImage(url: title.backdrop)
+                        .accessibilityHidden(true)   // key art; the title is the next element
                         .aspectRatio(16 / 9, contentMode: .fit)
                 }
                 .overlay(alignment: .topTrailing) {
                     Button { dismiss() } label: {
-                        Image(systemName: "xmark").font(.system(size: 14, weight: .bold))
+                        Image(systemName: "xmark").scaledFont(14, weight: .bold)
                             .frame(width: 32, height: 32).background(.black.opacity(0.6), in: Circle())
                     }
                     .buttonStyle(.plain)
@@ -30,35 +31,36 @@ struct TitleDetailView: View {
                     HStack(spacing: 6) {
                         Image("LogoMark").resizable().scaledToFit().frame(width: 14, height: 14)
                         Text(title.isShow ? "SERIES" : "FILM")
-                            .font(.system(size: 12, weight: .bold)).kerning(2).foregroundStyle(.secondary)
+                            .scaledFont(12, weight: .bold).kerning(2).foregroundStyle(.secondary)
                     }
-                    Text(title.title).font(.system(size: 26, weight: .bold))
+                    Text(title.title).scaledFont(26, weight: .bold)
                         .accessibilityIdentifier("detail.title")
                     HStack(spacing: 8) {
                         Text(String(title.year))
                         Text(title.rating).padding(.horizontal, 4).padding(.vertical, 1)
+                            .foregroundStyle(.white)
                             .background(Color(white: 0.3), in: RoundedRectangle(cornerRadius: 2))
                         Text(title.length)
-                        Text("HD").font(.system(size: 10, weight: .bold)).padding(.horizontal, 3)
+                        Text("HD").scaledFont(10, weight: .bold).padding(.horizontal, 3)
                             .overlay(RoundedRectangle(cornerRadius: 2).stroke(Color.secondary))
                     }
-                    .font(.system(size: 14)).foregroundStyle(.secondary)
+                    .scaledFont(14).foregroundStyle(.secondary)
 
                     PillButton(title: title.isShow ? "Play S1:E1" : "Play", systemImage: "play.fill") {
                         play = PlayRequest(title: title, episode: title.isShow ? 1 : nil)
                     }
                     .accessibilityIdentifier("detail.play")
 
-                    Text(title.tagline).font(.system(size: 15, weight: .semibold))
-                    Text(title.description).font(.system(size: 15))
+                    Text(title.tagline).scaledFont(15, weight: .semibold)
+                    Text(title.description).scaledFont(15)
                     if let advisory = title.advisory {
                         Label("Advisory: \(advisory)", systemImage: "exclamationmark.triangle")
-                            .font(.system(size: 13, weight: .semibold))
+                            .scaledFont(13, weight: .semibold)
                             .accessibilityIdentifier("detail.advisory")
                     }
-                    Text(title.credits).font(.system(size: 13)).foregroundStyle(.secondary)
+                    Text(title.credits).scaledFont(13).foregroundStyle(.secondary)
                     if let license = title.license {
-                        Text(license).font(.system(size: 12)).foregroundStyle(.tertiary)
+                        Text(license).scaledFont(12).foregroundStyle(.secondary)
                             .accessibilityIdentifier("detail.license")
                     }
 
@@ -69,8 +71,8 @@ struct TitleDetailView: View {
                         .accessibilityIdentifier("detail.mylist")
                         ShareLink(item: URL(string: "https://haukley.com")!, message: Text("Watch \(title.title) free on Haukley")) {
                             VStack(spacing: 6) {
-                                Image(systemName: "paperplane").font(.system(size: 22))
-                                Text("Share").font(.system(size: 11))
+                                Image(systemName: "paperplane").scaledFont(22)
+                                Text("Share").scaledFont(11)
                             }
                             .foregroundStyle(.white)
                         }
@@ -92,7 +94,7 @@ struct TitleDetailView: View {
 
     private var episodes: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Episodes").font(.system(size: 17, weight: .bold)).padding(.horizontal, 16)
+            Text("Episodes").scaledFont(17, weight: .bold).padding(.horizontal, 16)
             ForEach(title.episodes) { ep in
                 Button { play = PlayRequest(title: title, episode: ep.number) } label: {
                     VStack(alignment: .leading, spacing: 8) {
@@ -100,14 +102,14 @@ struct TitleDetailView: View {
                             BundleImage(url: title.still(ep.number))
                                 .frame(width: 130, height: 73)
                                 .clipShape(RoundedRectangle(cornerRadius: 4))
-                                .overlay { Image(systemName: "play.circle").font(.system(size: 26)) }
+                                .overlay { Image(systemName: "play.circle").scaledFont(26) }
                             VStack(alignment: .leading, spacing: 3) {
-                                Text("\(ep.number). \(ep.name)").font(.system(size: 15, weight: .semibold))
-                                Text("\(ep.minutes)m").font(.system(size: 13)).foregroundStyle(.secondary)
+                                Text("\(ep.number). \(ep.name)").scaledFont(15, weight: .semibold)
+                                Text("\(ep.minutes)m").scaledFont(13).foregroundStyle(.secondary)
                             }
                             Spacer(minLength: 0)
                         }
-                        Text(ep.summary).font(.system(size: 13)).foregroundStyle(.secondary).lineLimit(3)
+                        Text(ep.summary).scaledFont(13).foregroundStyle(.secondary).lineLimit(3)
                     }
                     .contentShape(Rectangle())
                 }
@@ -121,7 +123,7 @@ struct TitleDetailView: View {
 
     private var moreLike: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("More Like This").font(.system(size: 17, weight: .bold))
+            Text("More Like This").scaledFont(17, weight: .bold)
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 110, maximum: 170), spacing: 8)], spacing: 8) {
                 ForEach(Catalog.shared.moreLike(title).filter(library.allows).prefix(9)) { t in
                     Button { router.detail = t } label: {
@@ -146,8 +148,8 @@ private struct ActionButton: View {
     var body: some View {
         Button(action: action) {
             VStack(spacing: 6) {
-                Image(systemName: systemImage).font(.system(size: 22)).frame(height: 24)
-                Text(label).font(.system(size: 11))
+                Image(systemName: systemImage).scaledFont(22).frame(height: 24)
+                Text(label).scaledFont(11)
             }
             .foregroundStyle(.white)
         }

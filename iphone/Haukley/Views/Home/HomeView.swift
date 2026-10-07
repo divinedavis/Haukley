@@ -76,11 +76,14 @@ struct HomeView: View {
         HStack(spacing: 8) {
             Image("LogoMark").resizable().scaledToFit().frame(width: 26, height: 26)
             Text(filter?.rawValue ?? "Home")
-                .font(.system(size: 26, weight: .bold))
+                .scaledFont(26, weight: .bold)
                 .contentTransition(.opacity)
             Spacer()
             Button { router.tab = .mine } label: { ProfileAvatar(profile: library.current, size: 28) }
+                // One element: the fixed-size initial inside is artwork, not text to scale.
+                .accessibilityElement(children: .ignore)
                 .accessibilityLabel("My Haukley")
+                .accessibilityAddTraits(.isButton)
         }
         .padding(.horizontal, Metrics(sizeClass).gutter)
         .padding(.top, 6)
@@ -91,7 +94,7 @@ struct HomeView: View {
             HStack(spacing: 8) {
                 if filter != nil {
                     Button { withAnimation(.snappy) { filter = nil } } label: {
-                        Image(systemName: "xmark").font(.system(size: 13, weight: .bold))
+                        Image(systemName: "xmark").scaledFont(13, weight: .bold)
                             .frame(width: 34, height: 34)
                             .overlay(Circle().stroke(Color.white.opacity(0.45), lineWidth: 1))
                     }
@@ -103,9 +106,10 @@ struct HomeView: View {
                     if filter == nil || filter == f {
                         Button { withAnimation(.snappy) { filter = f } } label: {
                             Text(f.rawValue)
-                                .font(.system(size: 14, weight: .semibold))
+                                .scaledFont(14, weight: .semibold)
                                 .padding(.horizontal, 14).frame(height: 34)
-                                .background(filter == f ? Color.white.opacity(0.22) : .clear, in: Capsule())
+                                // Unselected chips sit over the hero art: a dark fill keeps the label readable.
+                                .background(filter == f ? Color.white.opacity(0.22) : Color.black.opacity(0.75), in: Capsule())
                                 .overlay(Capsule().stroke(Color.white.opacity(0.45), lineWidth: 1))
                         }
                         .buttonStyle(.plain)
@@ -167,6 +171,7 @@ struct HeroCard: View {
                     .clipped()
             }
             .buttonStyle(.plain)
+            .accessibilityLabel("\(title.title), more info")
             .accessibilityIdentifier("hero.poster")
             LinearGradient(colors: [.black.opacity(0.85), .black.opacity(0.35), .clear],
                            startPoint: .leading, endPoint: UnitPoint(x: 0.75, y: 0.5))
@@ -177,13 +182,13 @@ struct HeroCard: View {
                 if let rank {
                     HStack(spacing: 6) {
                         Top10Flag()
-                        Text(rank).font(.system(size: 15, weight: .semibold))
+                        Text(rank).scaledFont(15, weight: .semibold)
                     }
                 }
-                Text(title.title).font(.system(size: 44, weight: .heavy)).lineLimit(2).minimumScaleFactor(0.7)
+                Text(title.title).scaledFont(44, weight: .heavy).lineLimit(2).minimumScaleFactor(0.7)
                 Text("\(title.genre) • \(String(title.year)) • \(title.length)")
-                    .font(.system(size: 15, weight: .semibold)).foregroundStyle(.white.opacity(0.85))
-                Text(title.description).font(.system(size: 16)).foregroundStyle(.white.opacity(0.9)).lineLimit(3)
+                    .scaledFont(15, weight: .semibold).foregroundStyle(.white.opacity(0.85))
+                Text(title.description).scaledFont(16).foregroundStyle(.white.opacity(0.9)).lineLimit(3)
                 HStack(spacing: 12) {
                     PillButton(title: "Play", systemImage: "play.fill") {
                         router.play = PlayRequest(title: title, episode: title.isShow ? 1 : nil)
@@ -215,6 +220,7 @@ struct HeroCard: View {
                     .aspectRatio(2 / 3, contentMode: .fit)
             }
             .buttonStyle(.plain)
+            .accessibilityLabel("\(title.title), more info")
             .accessibilityIdentifier("hero.poster")
             // Dark enough at the bottom to hide the poster's billing block behind the buttons.
             LinearGradient(stops: [.init(color: .clear, location: 0.5),
@@ -226,7 +232,7 @@ struct HeroCard: View {
                 if let rank {
                     HStack(spacing: 6) {
                         Top10Flag()
-                        Text(rank).font(.system(size: 15, weight: .semibold))
+                        Text(rank).scaledFont(15, weight: .semibold)
                     }
                 }
                 HStack(spacing: 10) {

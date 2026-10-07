@@ -65,6 +65,7 @@ private struct ClipPage: View {
             GeometryReader { g in
                 // Backdrop (no baked-in title text) under the full-bleed video, like Netflix Clips.
                 BundleImage(url: title.backdrop)
+                    .accessibilityHidden(true)   // blurred backdrop behind the clip
                     .frame(width: g.size.width, height: g.size.height)
                     .blur(radius: 18)
                     .overlay(Color.black.opacity(0.35))
@@ -76,15 +77,17 @@ private struct ClipPage: View {
                         }
                     }
             }
-            LinearGradient(colors: [.clear, .black.opacity(0.92)], startPoint: UnitPoint(x: 0.5, y: 0.45), endPoint: .bottom)
+            // Dark enough under the caption for its text to pass contrast over any frame.
+            LinearGradient(colors: [.clear, .black.opacity(0.75), .black.opacity(0.95)], startPoint: UnitPoint(x: 0.5, y: 0.4), endPoint: .bottom)
                 .allowsHitTesting(false)
 
             HStack(alignment: .bottom, spacing: 14) {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(title.title).font(.system(size: 24, weight: .bold)).lineLimit(2)
+                    Text(title.title).scaledFont(24, weight: .bold).lineLimit(2)
                     Text("\(title.genre) • \(String(title.year)) • \(title.rating)")
-                        .font(.system(size: 13, weight: .semibold)).foregroundStyle(.white.opacity(0.85))
-                    Text(title.description).font(.system(size: 14)).foregroundStyle(.white.opacity(0.85)).lineLimit(3)
+                        .scaledFont(13, weight: .semibold).foregroundStyle(.white)
+                    Text(title.description).scaledFont(14).foregroundStyle(.white).lineLimit(3)
+                        .shadow(color: .black.opacity(0.8), radius: 3)
                 }
                 Spacer(minLength: 0)
                 VStack(spacing: 20) {
@@ -94,7 +97,7 @@ private struct ClipPage: View {
                         withAnimation(.snappy) { library.toggleMyList(title) }
                     }
                     ShareLink(item: URL(string: "https://haukley.com")!, message: Text("Watch \(title.title) free on Haukley")) {
-                        Image(systemName: "paperplane.fill").font(.system(size: 20))
+                        Image(systemName: "paperplane.fill").scaledFont(20)
                             .frame(width: 46, height: 46).background(.white.opacity(0.18), in: Circle())
                     }
                     .accessibilityLabel("Share")
@@ -121,7 +124,7 @@ private struct SideButton: View {
     let action: () -> Void
     var body: some View {
         Button(action: action) {
-            Image(systemName: systemImage).font(.system(size: 20))
+            Image(systemName: systemImage).scaledFont(20)
                 .frame(width: 46, height: 46).background(.white.opacity(0.18), in: Circle())
         }
         .buttonStyle(.plain)

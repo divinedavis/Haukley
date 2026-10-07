@@ -37,7 +37,7 @@ struct SearchView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
                 Text(query.isEmpty ? "Recommended TV Shows & Movies" : "Top Results")
-                    .font(.system(size: 22, weight: .bold))
+                    .scaledFont(22, weight: .bold)
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 240), spacing: 12)], spacing: 16) {
                     ForEach(results) { t in
                         Button { router.detail = t } label: {
@@ -45,7 +45,7 @@ struct SearchView: View {
                                 BundleImage(url: t.card)
                                     .aspectRatio(16 / 9, contentMode: .fill)
                                     .clipShape(RoundedRectangle(cornerRadius: 6))
-                                Text(t.title).font(.system(size: 15, weight: .semibold)).lineLimit(1)
+                                Text(t.title).scaledFont(15, weight: .semibold).lineLimit(1)
                             }
                             .contentShape(Rectangle())
                         }
@@ -71,9 +71,9 @@ struct SearchView: View {
                                 BundleImage(url: t.card)
                                     .frame(width: 136, height: 76)
                                     .clipShape(RoundedRectangle(cornerRadius: 4))
-                                Text(t.title).font(.system(size: 15, weight: .semibold)).lineLimit(2)
+                                Text(t.title).scaledFont(15, weight: .semibold).lineLimit(2)
                                 Spacer(minLength: 0)
-                                Image(systemName: "play.circle").font(.system(size: 28, weight: .light))
+                                Image(systemName: "play.circle").scaledFont(28, weight: .light)
                             }
                             .contentShape(Rectangle())
                         }
@@ -84,7 +84,7 @@ struct SearchView: View {
                     }
                 } header: {
                     Text(query.isEmpty ? "Recommended TV Shows & Movies" : "Top Results")
-                        .font(.system(size: 19, weight: .bold)).foregroundStyle(.white).textCase(nil)
+                        .scaledFont(19, weight: .bold).foregroundStyle(.white).textCase(nil)
                 }
                 if results.isEmpty {
                     Text("No matches for “\(query)”. Try a title, genre or actor.")
