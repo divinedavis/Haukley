@@ -75,3 +75,16 @@ Submit only on the owner's explicit go.
   reach real viewers**. Owner action: a sending mailbox/provider for haukley.com (e.g. Resend,
   Zoho, Namecheap Private Email) + SPF/DKIM DNS, then set smtp_* via the Management API
   (`PATCH /v1/projects/axgxpwgbpgcqjxoqwtnv/config/auth`, port 465).
+
+## /watch/ CSP (audit L4, 2026-10-07)
+
+- `deploy/nginx-haukley.conf` location /watch/: no `'unsafe-inline'` scripts, connect-src pinned
+  to Supabase, the stream CDN and Google ad hosts. `tests/test_web_pages.py` enforces it;
+  `check_live.py` checks the live header equals the repo file (nginx is deployed by scp +
+  `nginx -t` + reload, not by deploy_web.sh). Keep /watch/index.html free of inline scripts.
+- Trade-off: IMA injects a same-origin `about:srcdoc` frame with an inline Open Measurement
+  (Active View) bootstrap; it is blocked (hash changes per load; `omidAccessModeRules` LIMITED
+  didn't move it). Ads + film still play (26/26 Playwright runs with Google's sample pre-roll).
+  **When real GAM ads go live, check viewability in Ad Manager**; if Active View shows no
+  data, that frame is why. New ad server hosts in VAST wrappers may also need connect-src
+  entries (look for CSP violations in the console).

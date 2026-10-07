@@ -61,3 +61,39 @@ class WebPages(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def _watch_csp():
+    import re
+    conf = (ROOT / "deploy" / "nginx-haukley.conf").read_text()
+    block = conf[conf.index("location /watch/ {"):]
+    block = block[:block.index("}")]
+    m = re.search(r'Content-Security-Policy "([^"]+)"', block)
+    assert m, "no CSP in location /watch/"
+    return {d.split()[0]: d.split()[1:] for d in (x.strip() for x in m.group(1).split(";")) if d}
+
+
+def test_watch_csp_has_no_inline_scripts_or_open_connect():
+    csp = _watch_csp()
+    assert "'unsafe-inline'" not in csp["script-src"] and "'unsafe-eval'" not in csp["script-src"]
+    assert "https:" not in csp["connect-src"] and "*" not in csp["connect-src"]
+    for host in ("https://axgxpwgbpgcqjxoqwtnv.supabase.co", "https://haukley-media.nyc3.cdn.digitaloceanspaces.com",
+                 "https://imasdk.googleapis.com"):
+        assert host in csp["connect-src"], host
+
+
+def test_watch_page_has_no_inline_script():
+    import re
+    html = (ROOT / "web" / "watch" / "index.html").read_text()
+    assert not re.search(r"<script(?![^>]*\bsrc=)[^>]*>", html), "inline <script> in /watch/ (CSP blocks it)"
+    assert not re.search(r"\son[a-z]+=", html), "inline event handler in /watch/ (CSP blocks it)"
+
+
+def test_catalog_streams_are_on_the_csp_cdn():
+    import json
+    csp = _watch_csp()
+    cat = json.loads((ROOT / "web" / "watch" / "catalog" / "catalog.json").read_text())
+    urls = [t["stream"] for t in cat["titles"] if t.get("stream")]
+    urls += [e["stream"] for t in cat["titles"] for e in t.get("episodes", []) if e.get("stream")]
+    hosts = {"/".join(u.split("/")[:3]) for u in urls}
+    assert hosts and hosts <= set(csp["connect-src"]), hosts - set(csp["connect-src"])

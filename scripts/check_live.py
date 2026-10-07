@@ -86,6 +86,13 @@ def run_http(base, live, match_local):
                  ("/terms/", "Terms of Use"), ("/support/", "Support")]:
         page(base, p, [m, 'name="viewport"'], live)
     watch = page(base, "/watch/", ['id="app"', 'id="player"'], live)
+    if live:
+        # The live /watch/ CSP must be the one in deploy/nginx-haukley.conf (strict script/connect).
+        conf = (ROOT / "deploy" / "nginx-haukley.conf").read_text()
+        want = re.search(r'Content-Security-Policy "([^"]+)"', conf[conf.index("location /watch/ {"):]).group(1)
+        _, headers, _ = get(base + "/watch/")
+        got = {k.lower(): v for k, v in headers.items()}.get("content-security-policy", "")
+        check(got == want, "/watch/ CSP header matches deploy/nginx-haukley.conf")
     js = re.search(r'src="(app\.js\?v=[^"]+)"', watch)
     css = re.search(r'href="(app\.css\?v=[^"]+)"', watch)
     if check(bool(js and css), "/watch/ references versioned app.js and app.css"):
