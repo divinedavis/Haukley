@@ -88,3 +88,11 @@ Submit only on the owner's explicit go.
   **When real GAM ads go live, check viewability in Ad Manager**; if Active View shows no
   data, that frame is why. New ad server hosts in VAST wrappers may also need connect-src
   entries (look for CSP violations in the console).
+
+## npm audit (audit L6, 2026-10-07)
+
+- `shell-quote` is pinned `^1.11.0` via package.json `overrides` (critical command-injection,
+  pulled in by react-devtools-core / launch-editor). Remaining advisories are build/test tooling
+  only, never shipped in an app bundle: `braces` <=3.0.3 and `sprintf-js` <=1.1.3 have **no
+  patched release**; the rest resolve only through jest 30 / RN CLI majors that
+  react-native-tvos 0.83 doesn't support. Re-check when react-native-tvos moves up.

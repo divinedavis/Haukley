@@ -46,6 +46,7 @@
   "overrides": {
     "@react-native-async-storage/async-storage": {
       "react-native": "$react-native"
-    }
+    },
+    "shell-quote": "^1.11.0"
   }
 }
