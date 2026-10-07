@@ -40,3 +40,16 @@ for removed behaviour is deleted, not skipped; a test that never ran is fixed or
 `iphone/scripts/submit_for_review.py --platform IOS|TV_OS` is a dry run unless `--submit`;
 with it, every update gets a 7-day phased release (INACTIVE until Apple releases it).
 Submit only on the owner's explicit go.
+
+## Auth (Supabase, web /watch only)
+
+- Sign-up is autoconfirmed and there is **no email verification** (owner rule) - so never let
+  a second sign-in method attach itself to an existing account by email match. Migration
+  0015's trigger on `auth.identities` refuses any non-email identity for a user who already
+  has an email/password identity (GoTrue's automatic linking can't be switched off on hosted
+  Supabase). Keep `security_manual_linking_enabled` OFF. Before enabling Google: create a
+  Haukley-only OAuth client, run `tests/db/run_db_tests.py`, and test that a password
+  account's address gets the "already has a Haukley password" message on /watch.
+- Password changes need a fresh session (`security_update_password_require_reauthentication`):
+  the reset-link session is fresh, so recovery still works without a nonce email.
+- Captcha: not set up (needs an hCaptcha/Turnstile account from the owner).

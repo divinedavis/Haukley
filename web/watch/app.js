@@ -1295,12 +1295,24 @@ function toast(text) {
 
 // ---------- boot ----------
 
+// A failed OAuth sign-in comes back as #error=…&error_description=… (or ?error=…). The
+// database refuses to attach Google to an address that already has a Haukley password
+// (migration 0015, account-takeover guard), which GoTrue reports as a server error.
+function oauthErrorMessage() {
+  const p = new URLSearchParams(location.hash.slice(1) || location.search.slice(1));
+  if (!p.get("error")) return "";
+  history.replaceState(null, "", "/watch/");
+  return /database error|server_error/i.test(`${p.get("error")} ${p.get("error_description")}`)
+    ? "This email already has a Haukley password. Sign in with your email and password (or reset it) instead of Google."
+    : "Google sign-in didn't finish. Try again or use email.";
+}
+
 async function boot() {
   const { data } = await sb.auth.getSession();
   state.user = data.session?.user || null;
   if (!state.user || state.recovering) {
     stopPlayback(false);
-    return renderAuth(state.recovering ? "recover" : "signin");
+    return renderAuth(state.recovering ? "recover" : "signin", state.recovering ? "" : oauthErrorMessage());
   }
   renderSkeleton();
   await Promise.all([state.catalog ? null : loadCatalog(), loadProfiles()]);

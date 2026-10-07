@@ -203,6 +203,17 @@ def run_browser(base):
             if path == "/watch/":
                 check_ad_ticket(pg)
             ctx.close()
+        # A Google sign-in the DB refused (0015: Google onto a password account) explains itself.
+        ctx = browser.new_context(viewport={"width": 390, "height": 844}, is_mobile=True)
+        pg = ctx.new_page()
+        try:
+            pg.goto(base + "/watch/#error=server_error&error_code=unexpected_failure"
+                    "&error_description=Database+error+saving+new+user", wait_until="domcontentloaded", timeout=30000)
+            pg.wait_for_selector("text=already has a Haukley password", timeout=20000)
+            check("#error" not in pg.url, "/watch/ refused Google link: explains + cleans the URL")
+        except Exception as e:
+            check(False, f"/watch/ refused Google link message: {str(e).splitlines()[0]}")
+        ctx.close()
         browser.close()
 
 
