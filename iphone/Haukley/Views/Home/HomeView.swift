@@ -109,7 +109,7 @@ struct HomeView: View {
                                 .scaledFont(14, weight: .semibold)
                                 .padding(.horizontal, 14).frame(height: 34)
                                 // Unselected chips sit over the hero art: a dark fill keeps the label readable.
-                                .background(filter == f ? Color.white.opacity(0.22) : Color.black.opacity(0.75), in: Capsule())
+                                .background(filter == f ? Color.white.opacity(0.22) : Color(white: 0.1), in: Capsule())
                                 .overlay(Capsule().stroke(Color.white.opacity(0.45), lineWidth: 1))
                         }
                         .buttonStyle(.plain)

@@ -89,6 +89,12 @@ final class AccessibilityAuditTests: XCTestCase {
             // drawn over whatever scrolls beneath; the audit samples the content behind it.
             let bar = app.tabBars.firstMatch
             if bar.exists, e.frame.intersects(bar.frame.insetBy(dx: 0, dy: -64)) { return true }
+            // Clips captions sit over the playing clip (AVPlayerLayer). The audit can't sample
+            // a video layer and reports white-on-near-black text as failing (seen 2026-10-07:
+            // the screenshot attached to this test shows white text on a ~95% black gradient,
+            // and the larger title, held to 3:1, passes). Only static text, only over the clip.
+            let clip = app.descendants(matching: .any).matching(identifier: "clip.video").firstMatch
+            if e.elementType == .staticText, clip.exists, clip.frame.contains(e.frame) { return true }
         }
         return false
     }
@@ -102,6 +108,10 @@ final class AccessibilityAuditTests: XCTestCase {
     }
 
     private func audit(_ screen: String) {
+        let shot = XCTAttachment(screenshot: app.screenshot())
+        shot.name = screen
+        shot.lifetime = .keepAlways
+        add(shot)
         var found: [String] = []
         do {
             // Text Clipped fires on labels with room to spare mid-animation.

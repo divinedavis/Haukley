@@ -268,8 +268,17 @@ struct ProfileAvatar: View {
         RoundedRectangle(cornerRadius: size * 0.18)
             .fill(Avatar.colors[profile.color % Avatar.colors.count].gradient)
             .frame(width: size, height: size)
-            .overlay(Text(String(profile.name.prefix(1))).font(.system(size: size * 0.5, weight: .heavy)).foregroundStyle(.white))
-            .accessibilityHidden(true)   // the profile name is shown (and read) next to it
+            // Drawn, not laid out as Text: the initial is fixed-size artwork inside a fixed-size
+            // tile (the profile name is shown and read next to it), so it must not be exposed
+            // as text that ought to scale with Dynamic Type.
+            .overlay {
+                Canvas { ctx, box in
+                    let letter = ctx.resolve(Text(String(profile.name.prefix(1)))
+                        .font(.system(size: size * 0.5, weight: .heavy)).foregroundStyle(.white))
+                    ctx.draw(letter, at: CGPoint(x: box.width / 2, y: box.height / 2))
+                }
+            }
+            .accessibilityHidden(true)
     }
 }
 
