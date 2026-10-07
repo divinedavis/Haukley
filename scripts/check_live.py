@@ -93,6 +93,9 @@ def run_http(base, live, match_local):
         _, headers, _ = get(base + "/watch/")
         got = {k.lower(): v for k, v in headers.items()}.get("content-security-policy", "")
         check(got == want, "/watch/ CSP header matches deploy/nginx-haukley.conf")
+        # The old sideload zip (audit L7) must stay gone.
+        status, _, _ = get(base + "/beta/gI6hDsWGGN/Haukley-roku.zip")
+        check(status == 404, f"old /beta/ Roku zip is gone ({status})")
     js = re.search(r'src="(app\.js\?v=[^"]+)"', watch)
     css = re.search(r'href="(app\.css\?v=[^"]+)"', watch)
     if check(bool(js and css), "/watch/ references versioned app.js and app.css"):

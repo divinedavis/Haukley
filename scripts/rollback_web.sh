@@ -5,7 +5,7 @@
 #   scripts/rollback_web.sh 20261001T1830Z     # restore one (whole docroot, --delete)
 #
 # deploy_web.sh calls this on its own when the live checks fail twice. Snapshots hold the
-# whole docroot (including the server-only beta/), so a restore is byte-identical.
+# whole docroot, so a restore is byte-identical.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 HOST=root@104.236.120.144

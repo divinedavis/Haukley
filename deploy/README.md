@@ -8,7 +8,7 @@
 - **Deploy the site (landing, subpages, /watch player, catalogs, /roku, /ads): `scripts/deploy_web.sh`.**
   It runs `tests/run_fast.sh` and `scripts/check_live.py --local --browser`, snapshots the whole
   live docroot to `/var/backups/haukley-web/<UTC ts>` (15 kept, hard-linked), rsyncs `web/`
-  (`--delete`; `web/_src` and the server-only `beta/` excluded), chowns root:root, then runs
+  (`--delete`; `web/_src` excluded), chowns root:root, then runs
   `scripts/check_live.py --match-local --browser` against https://haukley.com and rolls back on
   its own if that fails twice. Never scp single files by hand any more.
 - Regenerate before deploying when the catalog changed: `.venv/bin/python scripts/make_web.py`

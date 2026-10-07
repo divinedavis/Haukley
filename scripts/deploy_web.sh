@@ -9,8 +9,8 @@
 #    on localhost (content checks + headless Chromium: / and /watch/ render, no JS errors).
 # 2. Snapshot the WHOLE live docroot to $BACKUPS/<UTC timestamp> (rsync --link-dest against
 #    the previous snapshot, so unchanged files cost no disk; newest $KEEP kept).
-# 3. rsync web/ -> docroot (--delete, --delay-updates; web/_src and the server-only beta/
-#    are excluded and never deleted), chown root:root.
+# 3. rsync web/ -> docroot (--delete, --delay-updates; web/_src is excluded; anything on the
+#    server that isn't in web/ is deleted), chown root:root.
 # 4. scripts/check_live.py --match-local --browser against https://haukley.com (live bytes
 #    must equal web/, stream + Supabase + ad endpoints answer). One re-run for network flake;
 #    still failing = scripts/rollback_web.sh <snapshot> and exit 1.
@@ -46,7 +46,7 @@ ssh "$HOST" "set -e; mkdir -p $BACKUPS; chmod 700 $BACKUPS; prev=\$(ls -1d $BACK
 echo "   $BACKUPS/$SNAP (scripts/rollback_web.sh $SNAP)"
 
 echo "== deploying"
-rsync -a --delete --delay-updates --exclude _src --exclude beta --exclude .DS_Store web/ "$HOST:$DOC/"
+rsync -a --delete --delay-updates --exclude _src --exclude .DS_Store web/ "$HOST:$DOC/"
 ssh "$HOST" "chown -R root:root $DOC"
 
 echo "== checks against the live site"
