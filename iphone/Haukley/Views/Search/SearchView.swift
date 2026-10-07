@@ -50,6 +50,7 @@ struct SearchView: View {
                             .contentShape(Rectangle())
                         }
                         .buttonStyle(.plain)
+                        .accessibilityLabel(t.spokenTitle)
                         .accessibilityIdentifier("search.result.\(t.id)")
                     }
                 }
@@ -80,6 +81,7 @@ struct SearchView: View {
                         .buttonStyle(.plain)
                         .listRowInsets(EdgeInsets(top: 3, leading: 0, bottom: 3, trailing: 16))
                         .listRowBackground(Color(white: 0.1))
+                        .accessibilityLabel(t.spokenTitle)
                         .accessibilityIdentifier("search.result.\(t.id)")
                     }
                 } header: {

@@ -171,3 +171,13 @@ enum CatalogSync {
         }
     }
 }
+
+extension Title {
+    /// The title as VoiceOver should say it: initialisms like "D.O.A." become "D O A" (the
+    /// accessibility audit flags dotted initialisms as not human-readable).
+    var spokenTitle: String {
+        title.range(of: #"^([A-Z]\.){2,}$"#, options: .regularExpression) != nil
+            ? title.split(separator: ".").joined(separator: " ")
+            : title
+    }
+}

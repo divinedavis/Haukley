@@ -16,6 +16,7 @@
 		72E45AEA01120D72553701B9 /* HaukleyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1EB57DCFA8C39AD3F9EB3C /* HaukleyUITests.swift */; };
 		79517D15FE6806D2782F4028 /* TitleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A45F68443BDE471277327D9 /* TitleDetailView.swift */; };
 		900D8D10601E143F8CCCA44C /* Ads.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBE691C55E3A3494EF60729 /* Ads.swift */; };
+		9CFFD0494205512931967388 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89E141E7E0B26D985F7E9E9 /* PerformanceTests.swift */; };
 		A261594CB2F76CF979779A68 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDAD4C39E56E78D346B1F98 /* PlayerView.swift */; };
 		B9BA8468B53B7B60E9FF3652 /* Catalog in Resources */ = {isa = PBXBuildFile; fileRef = 3AD53E6A9B9EE8DCE6F1F54A /* Catalog */; };
 		C41F85949E865D3199AF904C /* HaukleyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B1EE39728C356483245B88 /* HaukleyApp.swift */; };
@@ -69,6 +70,7 @@
 		DB93AE60A25F31CE03F8527A /* Haukley.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Haukley.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C0957A8ACDFF49E48D779F /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		E39EBCAFFC64BFA998F800ED /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
+		E89E141E7E0B26D985F7E9E9 /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 		F2731B2CC23C87DB5F52BFE9 /* HaukleyUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = HaukleyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 				77906B4976E85833FD781D76 /* AccessibilityAuditTests.swift */,
 				0F21EF05C294CC1135BCA2DD /* HaukleyScreenshotTests.swift */,
 				DB1EB57DCFA8C39AD3F9EB3C /* HaukleyUITests.swift */,
+				E89E141E7E0B26D985F7E9E9 /* PerformanceTests.swift */,
 			);
 			path = HaukleyUITests;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				E897459BB0BE4D87F88720A1 /* AccessibilityAuditTests.swift in Sources */,
 				4D9DC6BC5D3C101E94D57190 /* HaukleyScreenshotTests.swift in Sources */,
 				72E45AEA01120D72553701B9 /* HaukleyUITests.swift in Sources */,
+				9CFFD0494205512931967388 /* PerformanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

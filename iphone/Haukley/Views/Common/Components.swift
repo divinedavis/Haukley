@@ -73,7 +73,7 @@ struct PosterTile: View {
                 }
         }
         .buttonStyle(.plain)
-        .accessibilityLabel(title.title)
+        .accessibilityLabel(title.spokenTitle)
         .accessibilityIdentifier("poster.\(title.id)")
     }
 }
@@ -103,20 +103,31 @@ struct Top10Flag: View {
     }
 }
 
-/// The big outlined rank numeral from the Top 10 rows.
+/// The big outlined rank numeral from the Top 10 rows. Drawn in a Canvas, not laid out as
+/// Text: it is fixed-size artwork beside a poster that carries the title, so it must not be
+/// exposed as text that ought to scale with Dynamic Type (the accessibility audit flags it).
 struct RankNumeral: View {
     let n: Int
+    private static let font = UIFont.systemFont(ofSize: 116, weight: .black)
+
+    private var size: CGSize {
+        let s = NSAttributedString(string: "\(n)", attributes: [.font: Self.font, .kern: -8]).size()
+        return CGSize(width: ceil(s.width) + 4, height: ceil(s.height) + 4)
+    }
+
     var body: some View {
-        let text = Text("\(n)").font(.system(size: 116, weight: .black, design: .default)).kerning(-8)
-        ZStack {
-            ForEach(0..<8, id: \.self) { i in
+        Canvas { ctx, box in
+            let center = CGPoint(x: box.width / 2, y: box.height / 2)
+            let text = Text("\(n)").font(.system(size: 116, weight: .black, design: .default)).kerning(-8)
+            let outline = ctx.resolve(text.foregroundStyle(Color(white: 0.55)))
+            for i in 0..<8 {
                 let a = Double(i) * .pi / 4
-                text.foregroundStyle(Color(white: 0.55)).offset(x: cos(a) * 1.6, y: sin(a) * 1.6)
+                ctx.draw(outline, at: CGPoint(x: center.x + cos(a) * 1.6, y: center.y + sin(a) * 1.6))
             }
-            text.foregroundStyle(.black)
+            ctx.draw(ctx.resolve(text.foregroundStyle(.black)), at: center)
         }
-        .fixedSize()
-        .accessibilityHidden(true)   // artwork; the poster beside it carries the title
+        .frame(width: size.width, height: size.height)
+        .accessibilityHidden(true)
     }
 }
 

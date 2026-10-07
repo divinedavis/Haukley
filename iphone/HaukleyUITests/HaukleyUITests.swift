@@ -77,7 +77,9 @@ final class HaukleyUITests: XCTestCase {
         poster.tap()
         let title = element("detail.title")
         XCTAssertTrue(title.waitForExistence(timeout: 8))
-        XCTAssertEqual(title.label, name)
+        // The poster speaks the title (initialisms spaced out: "D O A" for "D.O.A.").
+        let spoken = title.label.replacingOccurrences(of: ".", with: " ").trimmingCharacters(in: .whitespaces)
+        XCTAssertTrue(title.label == name || spoken == name, "opened \(title.label), tapped \(name)")
         element("detail.close").tap()
     }
 

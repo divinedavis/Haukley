@@ -173,8 +173,12 @@ struct HeroCard: View {
             .buttonStyle(.plain)
             .accessibilityLabel("\(title.title), more info")
             .accessibilityIdentifier("hero.poster")
-            LinearGradient(colors: [.black.opacity(0.85), .black.opacity(0.35), .clear],
-                           startPoint: .leading, endPoint: UnitPoint(x: 0.75, y: 0.5))
+            // Dark enough behind the left-hand text for it to pass contrast over any backdrop.
+            LinearGradient(stops: [.init(color: .black.opacity(0.92), location: 0),
+                                   .init(color: .black.opacity(0.85), location: 0.55),
+                                   .init(color: .black.opacity(0.3), location: 0.8),
+                                   .init(color: .clear, location: 1)],
+                           startPoint: .leading, endPoint: .trailing)
                 .allowsHitTesting(false)
             LinearGradient(colors: [.clear, .black.opacity(0.7)], startPoint: UnitPoint(x: 0.5, y: 0.55), endPoint: .bottom)
                 .allowsHitTesting(false)
@@ -187,8 +191,13 @@ struct HeroCard: View {
                 }
                 Text(title.title).scaledFont(44, weight: .heavy).lineLimit(2).minimumScaleFactor(0.7)
                 Text("\(title.genre) • \(String(title.year)) • \(title.length)")
-                    .scaledFont(15, weight: .semibold).foregroundStyle(.white.opacity(0.85))
-                Text(title.description).scaledFont(16).foregroundStyle(.white.opacity(0.9)).lineLimit(3)
+                    .scaledFont(15, weight: .semibold).foregroundStyle(.white)
+                Text(title.description).scaledFont(16).foregroundStyle(.white).lineLimit(3)
+                    .frame(maxWidth: 440, alignment: .leading)
+                    // A solid backing: the synopsis spans the bright middle of the backdrop.
+                    .padding(.horizontal, 10).padding(.vertical, 8)
+                    .background(.black, in: RoundedRectangle(cornerRadius: 8))
+                    .padding(.horizontal, -10)
                 HStack(spacing: 12) {
                     PillButton(title: "Play", systemImage: "play.fill") {
                         router.play = PlayRequest(title: title, episode: title.isShow ? 1 : nil)

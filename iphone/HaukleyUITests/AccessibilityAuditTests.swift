@@ -74,6 +74,8 @@ final class AccessibilityAuditTests: XCTestCase {
 
     private func excused(_ issue: XCUIAccessibilityAuditIssue) -> Bool {
         guard let e = issue.element else { return true }   // nothing to point at
+        // The search field (and its placeholder) is UIKit's own control.
+        if e.elementType == .searchField { return true }
         // The system keyboard is not ours.
         let kb = app.keyboards.firstMatch
         if kb.exists, e.frame.minY >= kb.frame.minY - 50 { return true }
