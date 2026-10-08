@@ -22,6 +22,16 @@ find dist -name .DS_Store -delete
 
 npx -y -p @webos-tools/cli@3 ares-package dist/webos -o dist --no-minify >/dev/null
 IPK=$(ls dist/*.ipk)
+# LG also needs a 1280x720 build (a 1080-only submission excludes FHD/HD models): same app,
+# appinfo resolution 1280x720, packaged into dist/720/.
+rm -rf dist/webos720 && cp -R dist/webos dist/webos720
+python3 - <<'PY'
+import json; p = "dist/webos720/appinfo.json"; a = json.load(open(p)); a["resolution"] = "1280x720"
+json.dump(a, open(p, "w"), indent=2)
+PY
+mkdir -p dist/720
+npx -y -p @webos-tools/cli@3 ares-package dist/webos720 -o dist/720 --no-minify >/dev/null
+rm -rf dist/webos720
 
 (cd dist/tizen && rm -f "../Haukley-$VERSION-unsigned.wgt" && zip -qr -X "../Haukley-$VERSION-unsigned.wgt" .)
 echo "built $IPK ($(du -h "$IPK" | cut -f1)) and dist/Haukley-$VERSION-unsigned.wgt ($(du -h "dist/Haukley-$VERSION-unsigned.wgt" | cut -f1))"

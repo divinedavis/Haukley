@@ -17,6 +17,8 @@ sed -n '/LG self-check answers:/,$p' /tmp/haukley-selfcheck.log
 .venv/bin/python tvweb/make_assets.py --shots tvweb/dist/journey > /dev/null
 $PY tvweb/make_ux_scenario.py
 mkdir -p ~/Downloads/Haukley-LG ~/Downloads/Haukley-Samsung
+rm -rf ~/Downloads/Haukley-LG/720 && mkdir -p ~/Downloads/Haukley-LG/720
 cp tvweb/dist/*.ipk marketing/lg/* ~/Downloads/Haukley-LG/
+cp tvweb/dist/720/*.ipk ~/Downloads/Haukley-LG/720/
 cp tvweb/dist/*-unsigned.wgt marketing/samsung/* ~/Downloads/Haukley-Samsung/
 echo "released to ~/Downloads/Haukley-LG and ~/Downloads/Haukley-Samsung"
