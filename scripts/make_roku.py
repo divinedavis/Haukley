@@ -75,8 +75,9 @@ def main():
     shutil.rmtree(IMG, ignore_errors=True)
 
     titles = {}
-    for kind, key in (("movie", "movies"), ("show", "shows")):
-        for t in cat[key]:
+    # kind "live": a 24/7 channel (live HLS from haukley.com/live/; no runtime, bookmark or ads).
+    for kind, key in (("movie", "movies"), ("show", "shows"), ("live", "live")):
+        for t in cat.get(key, []):
             tid = t["id"]
             src = ART / tid
             if not (src / "poster@2x.jpg").exists() or (t.get("stream") and not live(t["stream"])):
@@ -90,7 +91,8 @@ def main():
                 "credits": t["credits"],
                 "license": t.get("license") or "",
                 "advisory": t.get("advisory") or "",
-                "length": t.get("runtime") or f"{t['seasons']} Season{'s' if t['seasons'] != 1 else ''}",
+                "length": "Live 24/7" if kind == "live" else
+                          t.get("runtime") or f"{t['seasons']} Season{'s' if t['seasons'] != 1 else ''}",
                 "poster": f"pkg:/images/titles/{tid}/poster.jpg",
                 "card": f"pkg:/images/titles/{tid}/card.jpg",
                 "backdrop": f"pkg:/images/titles/{tid}/backdrop.jpg",

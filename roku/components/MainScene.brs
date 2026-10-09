@@ -77,7 +77,9 @@ sub showHero(id as string)
     if id = m.heroId then return
     m.heroId = id
     t = m.titles[id]
-    if t.kind = "show"
+    if isLive(t)
+        m.heroEyebrow.text = "LIVE NOW"
+    else if t.kind = "show"
         m.heroEyebrow.text = "NEW SEASON"
     else
         m.heroEyebrow.text = "NOW STREAMING"
@@ -150,6 +152,7 @@ end sub
 
 ' The details page offers "Resume" for the most recently bookmarked movie or episode.
 function resumeTarget(t as object) as dynamic
+    if isLive(t) then return invalid
     if t.kind <> "show"
         at = bookmarkFor(t.id, 0)
         if at > 0 then return { episode: 0, at: at, url: t.stream, title: t.title }
@@ -168,10 +171,12 @@ end function
 
 sub playVideo(url as string, title as string, titleId as string, episode as integer, withAds as boolean, startAt = 0 as integer)
     t = m.titles[titleId]
-    c = CreateObject("roSGNode", "ContentNode")
-    c.url = url
-    c.title = title
-    c.streamFormat = "hls"
+    live = isLive(t)
+    if live
+        withAds = false
+        startAt = 0
+    end if
+    c = videoContent(url, title, live)
     ' Bookmark resume (Roku certification: long-form VOD resumes where the viewer stopped).
     if startAt > 0 then c.PlayStart = startAt
     ' Side-loaded captions when the catalog has them; HLS-embedded captions are picked up by
@@ -194,8 +199,8 @@ sub playVideo(url as string, title as string, titleId as string, episode as inte
     m.player.titleId = titleId
     m.player.genre = t.genre
     m.player.episode = episode
-    ' Trailers don't leave a bookmark.
-    m.player.bookmark = withAds
+    ' Trailers and live channels don't leave a bookmark.
+    m.player.bookmark = withAds and not live
     m.player.trackingUrl = m.catalog.ads.trackingUrl
     m.player.apiKey = m.catalog.ads.publishableKey
     m.player.observeField("done", "onPlayerDone")
@@ -241,7 +246,9 @@ sub handleDeepLink(link as object)
         return
     end if
 
-    if t.kind = "show"
+    if isLive(t)
+        playVideo(t.stream, t.title, t.id, 0, false, 0)
+    else if t.kind = "show"
         if episode < 1 or episode > t.episodes.Count() then episode = 1
         ep = t.episodes[episode - 1]
         playVideo(ep.stream, t.title + " · Episode " + episode.ToStr(), t.id, episode, true, bookmarkFor(t.id, episode))

@@ -149,6 +149,11 @@ img { display: block; }
 #p-fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent); border-radius: 5px; width: 0; }
 #p-knob { position: absolute; top: -9px; width: 28px; height: 28px; margin-left: -14px; border-radius: 14px; background: #fff; left: 0; }
 #p-times { display: flex; justify-content: space-between; font-size: 24px; color: var(--dim); margin-top: 16px; }
+/* Live channels: a LIVE tag instead of the seek bar and times. */
+#p-live { display: none; background: #e63946; color: #fff; font-size: 24px; font-weight: 800; letter-spacing: 2px; padding: 4px 14px; border-radius: 6px; margin-bottom: 14px; }
+#player.live #p-live { display: inline-block; }
+#player.live #p-bar, #player.live #p-times { display: none; }
+.live-tag { display: inline-block; background: #e63946; color: #fff; font-weight: 800; letter-spacing: 2px; border-radius: 6px; padding: 0 10px; margin-right: 12px; }
 #p-hint { font-size: 22px; color: var(--faint); margin-top: 10px; text-align: center; }
 #p-spinner { position: absolute; left: 50%; top: 50%; width: 90px; height: 90px; margin: -45px 0 0 -45px; border: 8px solid rgba(255,255,255,0.2); border-top-color: #fff; border-radius: 50%; animation: spin 0.9s linear infinite; display: none; }
 #player.loading #p-spinner { display: block; }

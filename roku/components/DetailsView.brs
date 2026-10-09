@@ -21,7 +21,9 @@ sub onData()
     m.backdrop.uri = t.backdrop
     ' These titles aren't exclusive, and they stream in HD/SD without captions yet: no
     ' "Original", 4K, HDR or CC claims.
-    if t.kind = "show"
+    if isLive(t)
+        m.eyebrow.text = "LIVE CHANNEL · FREE"
+    else if t.kind = "show"
         m.eyebrow.text = "STREAMING FREE · SERIES"
     else
         m.eyebrow.text = "STREAMING FREE"
@@ -42,16 +44,7 @@ sub onData()
     end if
     m.credits.text = credits
 
-    playLabel = "Play"
-    playUrl = t.stream
-    playTitle = t.title
-    playEpisode = 0
-    if t.kind = "show"
-        playLabel = "Play E1"
-        playUrl = t.episodes[0].stream
-        playTitle = t.title + " · Episode 1"
-        playEpisode = 1
-    end if
+    primary = primaryPlay(t)
     r = d.resume
     if r <> invalid
         ' Bookmarked: Resume first, then start over from the same item.
@@ -63,16 +56,17 @@ sub onData()
         ]
         buildButtons([resumeLabel, "Play from Beginning"])
     else
-        m.actions = [
-            { type: "play", url: playUrl, title: playTitle, id: t.id, episode: playEpisode, ads: true, startAt: 0 }
-        ]
-        buildButtons([playLabel])
+        m.actions = [primary.action]
+        buildButtons([primary.label])
     end if
 
     root = CreateObject("roSGNode", "ContentNode")
     row = root.createChild("ContentNode")
     if t.kind = "show"
         row.title = "Episodes"
+        m.shelf.rowItemSize = [[400, 225]]
+    else if isLive(t)
+        row.title = "More to Watch"
         m.shelf.rowItemSize = [[400, 225]]
     else
         row.title = "More Like This"

@@ -21,7 +21,36 @@ function addTile(row as object, poster as string, fields as object) as object
 end function
 
 function metaLine(t as object) as string
+    if isLive(t) then return "LIVE  ·  " + t.genre + "  ·  " + t.rating + "  ·  24/7"
     return t.genre + "  ·  " + t.year.ToStr() + "  ·  " + t.rating + "  ·  " + t.length
+end function
+
+' ---- Live channels (kind "live": 24/7 HLS from haukley.com/live/) ----------------------
+' No runtime, no bookmark/resume and no RAF ads: a live window has no fixed position to
+' resume, and VMAP cue points are timed for films.
+function isLive(t as object) as boolean
+    return t.kind = "live"
+end function
+
+' The details page's first button: label + the play action MainScene acts on.
+function primaryPlay(t as object) as object
+    if isLive(t)
+        return { label: "Watch Live", action: { type: "play", url: t.stream, title: t.title, id: t.id, episode: 0, ads: false, startAt: 0 } }
+    else if t.kind = "show"
+        return { label: "Play E1", action: { type: "play", url: t.episodes[0].stream, title: t.title + " · Episode 1", id: t.id, episode: 1, ads: true, startAt: 0 } }
+    end if
+    return { label: "Play", action: { type: "play", url: t.stream, title: t.title, id: t.id, episode: 0, ads: true, startAt: 0 } }
+end function
+
+' Video content for a title: live streams set Live so the Video node shows a LIVE badge
+' and no seek bar.
+function videoContent(url as string, title as string, live as boolean) as object
+    c = CreateObject("roSGNode", "ContentNode")
+    c.url = url
+    c.title = title
+    c.streamFormat = "hls"
+    if live then c.Live = true
+    return c
 end function
 
 ' ---- Bookmarks (resume position) -------------------------------------------------------

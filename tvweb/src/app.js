@@ -81,6 +81,10 @@ function loadCatalog() {
 
 /* ---------- progress (Continue Watching) ---------- */
 
+// kind "live": a 24/7 channel (live HLS from haukley.com/live/). No resume point, no
+// Continue Watching, no ads and no seek bar.
+const isLive = t => Boolean(t) && t.kind === "live";
+
 // Keyed "<title id>:<episode>", episode 0 for a movie. Finished entries stay (p = d) so a show
 // knows which episode comes next.
 const pkey = (id, ep) => `${id}:${ep || 0}`;
@@ -90,7 +94,7 @@ function readProgress() {
   try { return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; } catch (e) { return {}; }
 }
 function saveProgress(id, ep, position, duration) {
-  if (!(duration > 0) || !(position >= 0)) return;
+  if (isLive(state.byId.get(id)) || !(duration > 0) || !(position >= 0) || duration === Infinity) return;
   const all = readProgress();
   const p = position > duration * 0.95 ? duration : position;
   all[pkey(id, ep)] = { p: Math.floor(p), d: Math.floor(duration), at: Date.now() };
@@ -101,6 +105,7 @@ function saveProgress(id, ep, position, duration) {
 // on to the one after it once that's finished.
 function resumeFor(t) {
   const all = readProgress();
+  if (isLive(t)) return { episode: 0, resume: null };
   if (t.kind !== "show") {
     const r = all[pkey(t.id, 0)];
     return { episode: 0, resume: inProgress(r) ? r : null };
@@ -129,6 +134,7 @@ function continueWatching() {
   return [...best.values()].sort((a, b) => b.r.at - a.r.at).slice(0, 10);
 }
 function playLabel(t, withTime) {
+  if (isLive(t)) return "Watch Live";
   const { episode, resume } = resumeFor(t);
   const ep = t.kind === "show" ? ` E${episode}` : "";
   if (resume) return `Resume${ep}${withTime ? ` ${fmt(resume.p)}` : ""}`;
@@ -144,6 +150,9 @@ function fmt(s) {
   return h ? `${h}:${pad(m)}:${pad(sec)}` : `${m}:${pad(sec)}`;
 }
 function metaLine(t) {
+  if (isLive(t)) {
+    return `<span class="live-tag">LIVE</span>${esc(t.genre)} · 24/7${t.rating ? `<span class="rating">${esc(t.rating)}</span>` : ""}`;
+  }
   const len = t.kind === "show" ? `${t.seasons || 1} Season${t.seasons > 1 ? "s" : ""} · ${t.episodes.length} Episodes` : t.runtime;
   const bits = [t.genre, t.year, len].filter(Boolean).map(esc).join(" · ");
   return `${bits}${t.rating ? `<span class="rating">${esc(t.rating === "NR" ? "NR" : t.rating)}</span>` : ""}`;
@@ -176,7 +185,7 @@ function cardHtml(t, type, rowKey, i, extra, group) {
   const ep = extra.ep != null ? ` data-ep="${extra.ep}"` : "";
   return `<div class="card nav" ${g} data-action="${extra.play ? "play" : "title"}" data-id="${esc(t.id)}"${ep} data-key="${esc(key)}">
     <div class="art" ${bg(art(t.id, "card"))}>${progress}</div>
-    <div class="label">${esc(t.title)}</div><div class="sub">${esc(extra.sub || `${t.genre} · ${t.year}`)}</div></div>`;
+    <div class="label">${esc(t.title)}</div><div class="sub">${esc(extra.sub || (isLive(t) ? `Live · ${t.genre}` : `${t.genre} · ${t.year}`))}</div></div>`;
 }
 
 function rowHtml(key, title, type, items, extra = () => ({})) {
@@ -198,7 +207,7 @@ function cwRowHtml() {
 function heroInner(t, index) {
   return `<div class="hero-bg" ${bg(art(t.id, "backdrop"))}></div>
     <div class="hero-info">
-      <div class="eyebrow">NOW STREAMING FREE</div>
+      <div class="eyebrow">${isLive(t) ? "LIVE NOW" : "NOW STREAMING FREE"}</div>
       ${artTitle(t, "hero-title")}
       <div class="meta">${metaLine(t)}</div>
       <div class="desc">${esc(t.description)}</div>
@@ -228,7 +237,7 @@ const LIBRARY = {
 
 function renderLibrary(name) {
   const lib = LIBRARY[name];
-  const list = state.titles.filter(t => (t.kind === "show") === (lib.kind === "show"));
+  const list = state.titles.filter(t => t.kind === lib.kind);
   const genres = new Map();
   for (const t of list) {
     if (!genres.has(t.genre)) genres.set(t.genre, []);
@@ -262,7 +271,8 @@ function episodesHtml(t, current) {
 function renderDetail(id) {
   const t = state.byId.get(id);
   const { episode, resume } = resumeFor(t);
-  const same = x => x.id !== id && (x.kind === "show") === (t.kind === "show");
+  // A live channel's "More to Watch" shelf shows films.
+  const same = x => x.id !== id && (isLive(t) ? x.kind === "movie" : (x.kind === "show") === (t.kind === "show"));
   let more = state.titles.filter(x => same(x) && x.genre === t.genre);
   if (more.length < 4) more = more.concat(state.titles.filter(x => same(x) && more.indexOf(x) < 0));
   more = more.slice(0, 12);
@@ -282,7 +292,7 @@ function renderDetail(id) {
         ${t.advisory ? `<div class="advisory"><b>Advisory:</b> ${esc(t.advisory)}</div>` : ""}
         ${t.license ? `<div class="license">${esc(t.license)}</div>` : ""}
       </div></div>
-      <div class="rows">${t.kind === "show" ? episodesHtml(t, episode) : ""}${rowHtml(`more-${id}`, "More Like This", "card", more)}</div>
+      <div class="rows">${t.kind === "show" ? episodesHtml(t, episode) : ""}${rowHtml(`more-${id}`, isLive(t) ? "More to Watch" : "More Like This", "card", more)}</div>
     </div>`;
   return el;
 }
@@ -703,7 +713,11 @@ function attachSource(src, startAt) {
     // Start from a conservative 500 kbps guess (-> the 240p rung) instead of test-downloading a
     // segment of the first-listed rendition: that 1 MB 480p segment alone took ~17 s at 512 kbps.
     // ABR climbs to the top rung within a few segments on a fast line.
-    player.hls = new Hls({ startPosition: startAt || -1, startLevel: -1, testBandwidth: false, abrEwmaDefaultEstimate: 500000 });
+    const cfg = { startPosition: startAt || -1, startLevel: -1, testBandwidth: false, abrEwmaDefaultEstimate: 500000 };
+    // Live: each segment's audio starts ~0.1 s off the video, and hls.js only jumps holes up to
+    // 0.1 s by default, so playback could sit on the first hole for 20 s or more.
+    if (player.live) cfg.maxBufferHole = 0.5;
+    player.hls = new Hls(cfg);
     player.hls.on(Hls.Events.ERROR, (_, d) => { if (d.fatal) playerError(); });
     player.hls.loadSource(src);
     player.hls.attachMedia(v);
@@ -723,7 +737,7 @@ function playTitle(id, ep) {
   if (t.kind !== "show") ep = 0;
   else if (ep == null) ep = resumeFor(t).episode;
   const r = readProgress()[pkey(id, ep)];
-  startPlayback(id, ep, inProgress(r) ? r.p : 0);
+  startPlayback(id, ep, !isLive(t) && inProgress(r) ? r.p : 0);
 }
 
 function startPlayback(id, ep, startAt) {
@@ -733,7 +747,12 @@ function startPlayback(id, ep, startAt) {
   if (t.kind === "show" && !e) return;
   stopPlayback();
   stopHeroRotation();
-  Object.assign(player, { id, episode: e ? e.number : 0, sessionId: uuid(), ticket: requestTicket(id, e ? e.number : 0), seq: 0, ratedShown: false });
+  const live = isLive(t);
+  // Live: no ad ticket (no ads), and startAt is ignored (always the live edge).
+  Object.assign(player, { id, live, episode: e ? e.number : 0, sessionId: uuid(), ticket: live ? null : requestTicket(id, e ? e.number : 0), seq: 0, ratedShown: false });
+  if (live) startAt = 0;
+  player.el.classList.toggle("live", live);
+  $("#p-hint").textContent = live ? "OK play/pause · BACK exit" : "OK play/pause · ◀ ▶ skip 10s · BACK exit";
   $("#p-title").innerHTML = e ? `${esc(t.title)}<span>E${esc(e.number)} “${esc(e.name)}”</span>` : esc(t.title);
   // A content advisory rides on the rating card at the start of playback, like broadcast TV.
   $("#rated-label").textContent = t.rating && t.rating !== "NR" ? `RATED ${t.rating}` : "NOT RATED";
@@ -746,6 +765,26 @@ function startPlayback(id, ep, startAt) {
   player.el.classList.remove("ad");
   if (state.focused) state.focused.classList.remove("focused");
   attachSource((e || t).stream, startAt);
+  if (live) {
+    player.video.play().catch(() => {});
+    // A live start can land before the first buffered range (a fragment load aborted while the
+    // window slid), and the player then sits still until a watchdog fires ~20 s later. If
+    // the picture hasn't moved for 3 s, jump to the next buffered range or the live edge.
+    let last = -1, still = 0;
+    player.saveTimer = setInterval(() => {
+      const v = player.video;
+      if (v.paused || v.currentTime !== last) { last = v.currentTime; still = 0; return; }
+      if (++still < 3) return;
+      still = 0;
+      const b = v.buffered;
+      for (let i = 0; i < b.length; i++) {
+        if (b.end(i) > v.currentTime + 1) { v.currentTime = Math.max(v.currentTime, b.start(i)) + 0.2; return; }
+      }
+      if (player.hls && player.hls.liveSyncPosition) v.currentTime = player.hls.liveSyncPosition;
+    }, 1000);
+    pokeUi();
+    return;
+  }
   loadIma().then(ok => {
     if (player.id !== id || player.el.hidden) return;
     if (ok) startAds(t);
@@ -893,7 +932,7 @@ function togglePlay() {
 }
 
 function seek(delta) {
-  if (player.ima && player.ima.adPlaying) return;
+  if (player.live || (player.ima && player.ima.adPlaying)) return;
   const v = player.video;
   if (!v.duration) return;
   v.currentTime = Math.max(0, Math.min(v.duration - 1, v.currentTime + delta));

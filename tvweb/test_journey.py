@@ -74,6 +74,11 @@ def main():
         def shot(name):
             page.screenshot(path=str(out / f"{name}.png"))
 
+        # Serve the packaged catalog for the live one so the journey tests this build's catalog
+        # (it equals the live copy once scripts/deploy_web.sh has run).
+        page.route("https://haukley.com/watch/catalog/catalog.json",
+                   lambda r: r.fulfill(path=str(ROOT / "dist" / "webos" / "catalog.json"),
+                                       headers={"Access-Control-Allow-Origin": "*"}))
         page.goto(url)
         page.wait_for_selector(".card", timeout=20000)
         time.sleep(3)  # hero + first rows' art
@@ -82,6 +87,45 @@ def main():
         check(focused()["key"] == "hero:play", "focus starts on the hero Play button")
         layout_ok("home")
         shot("1-home")
+
+        # Live TV: the first row is the live channel (catalog kind "live").
+        key("ArrowDown")
+        fl = focused()
+        check(fl["g"] == "row:live" and fl["id"] == "haukley-weather", f"Down reaches the Live TV row ({fl['key']})")
+        key("Enter", wait=2.5)
+        meta = page.inner_text(".detail-info .meta")
+        play_label = page.inner_text('[data-key="detail:play"]')
+        check(meta.startswith("LIVE"), f"live title page says LIVE instead of a runtime ({meta!r})")
+        check("Watch Live" in play_label, f"live title page offers Watch Live ({play_label!r})")
+        check(page.query_selector('[data-key="detail:restart"]') is None, "no Start Over on a live channel")
+        shot("2b-live-detail")
+        key("Enter", wait=1)
+        check(page.is_visible("#player"), "Watch Live opens the player")
+        live_t, t0, lst = None, time.time(), {}
+        while time.time() - t0 < 60:
+            lst = page.evaluate("""() => { const v = document.getElementById('video'); const p = document.getElementById('player');
+                return {t: v.currentTime, paused: v.paused, ad: p.classList.contains('ad'), live: p.classList.contains('live'),
+                        err: !document.getElementById('p-error').hidden}; }""")
+            if lst["err"]:
+                break
+            if not lst["paused"] and lst["t"] > 0:
+                if live_t is None:
+                    live_t = lst["t"]
+                elif lst["t"] - live_t >= 2:
+                    break
+            time.sleep(1)
+        check(live_t is not None and lst["t"] - live_t >= 2, f"the live channel plays (currentTime {live_t} -> {lst.get('t')}, error={lst.get('err')})")
+        check(lst.get("live") and not lst.get("ad"), "player is in live mode with no ad")
+        check(not page.is_visible("#p-bar") and page.is_visible("#p-live"), "LIVE tag replaces the seek bar")
+        check(page.evaluate("player.ticket") is None, "no ad ticket requested for live")
+        shot("6b-live-player")
+        key("Escape", wait=1.5)
+        check(not page.is_visible("#player"), "Back closes the live player")
+        check(not any(k.startswith("haukley-weather:") for k in page.evaluate(
+            "Object.keys(JSON.parse(localStorage.getItem('haukley.progress.v1') || '{}'))")),
+            "live playback saves no progress (no Continue Watching entry)")
+        key("Escape", wait=1.5)
+        check(focused()["id"] == "haukley-weather", "Back returns Home to the Live TV tile")
 
         key("ArrowDown")
         f1 = focused()
@@ -181,7 +225,7 @@ def main():
         check(focused()["key"] == "tab:movies", "tab bar reaches Movies")
         key("Enter", wait=2)
         ids_movies = set(page.eval_on_selector_all("#screen .scroller:not([hidden]) .card[data-id]", "els => els.map(e => e.dataset.id)"))
-        n_movies = page.evaluate("state.titles.filter(t => t.kind !== 'show').length")
+        n_movies = page.evaluate("state.titles.filter(t => t.kind === 'movie').length")
         check(len(ids_movies) == n_movies, f"Movies tab lists all {n_movies} films ({len(ids_movies)})")
         kinds = set(page.evaluate(f"{sorted(ids_movies)}.map(id => state.byId.get(id).kind)"))
         check(kinds == {"movie"}, f"Movies tab has no shows ({kinds})")
