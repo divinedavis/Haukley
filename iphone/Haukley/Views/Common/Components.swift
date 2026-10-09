@@ -33,8 +33,9 @@ extension Color {
         self.init(red: Double((v >> 16) & 0xFF) / 255, green: Double((v >> 8) & 0xFF) / 255, blue: Double(v & 0xFF) / 255)
     }
     static let brand = Color(red: 0.545, green: 0.424, blue: 1.0)
-    /// The LIVE tag red (#E63946), same as the channel's own on-air tag and every platform.
-    static let live = Color(red: 0.902, green: 0.224, blue: 0.275)
+    /// The LIVE tag red. Darker than the channel's on-air #E63946 so the small white "LIVE"
+    /// text passes the accessibility audit's contrast check (#C8102E: 5.9:1 on white).
+    static let live = Color(red: 0.784, green: 0.063, blue: 0.180)
 }
 
 // MARK: Layout
