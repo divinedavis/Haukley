@@ -30,23 +30,31 @@ struct TitleDetailView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     HStack(spacing: 6) {
                         Image("LogoMark").resizable().scaledToFit().frame(width: 14, height: 14)
-                        Text(title.isShow ? "SERIES" : "FILM")
+                        Text(title.isLive ? "LIVE CHANNEL" : title.isShow ? "SERIES" : "FILM")
                             .scaledFont(12, weight: .bold).kerning(2).foregroundStyle(.secondary)
                     }
                     Text(title.title).scaledFont(26, weight: .bold)
                         .accessibilityIdentifier("detail.title")
                     HStack(spacing: 8) {
-                        Text(String(title.year))
+                        if title.isLive {
+                            Text("LIVE").scaledFont(12, weight: .heavy).foregroundStyle(.white)
+                                .padding(.horizontal, 6).padding(.vertical, 2)
+                                .background(Color.live, in: RoundedRectangle(cornerRadius: 3))
+                                .accessibilityIdentifier("detail.live")
+                        } else {
+                            Text(String(title.year))
+                        }
                         Text(title.rating).padding(.horizontal, 4).padding(.vertical, 1)
                             .foregroundStyle(.white)
                             .background(Color(white: 0.3), in: RoundedRectangle(cornerRadius: 2))
-                        Text(title.length)
+                        if !title.isLive { Text(title.length) }
                         Text("HD").scaledFont(10, weight: .bold).padding(.horizontal, 3)
                             .overlay(RoundedRectangle(cornerRadius: 2).stroke(Color.secondary))
                     }
                     .scaledFont(14).foregroundStyle(.secondary)
 
-                    PillButton(title: title.isShow ? "Play S1:E1" : "Play", systemImage: "play.fill") {
+                    PillButton(title: title.isLive ? "Watch Live" : title.isShow ? "Play S1:E1" : "Play",
+                               systemImage: "play.fill") {
                         play = PlayRequest(title: title, episode: title.isShow ? 1 : nil)
                     }
                     .accessibilityIdentifier("detail.play")
@@ -81,7 +89,7 @@ struct TitleDetailView: View {
                 }
                 .padding(.horizontal, 16)
 
-                if title.isShow { episodes } else { moreLike }
+                if title.isShow { episodes } else if !title.isLive { moreLike }
             }
             .padding(.bottom, 30)
         }

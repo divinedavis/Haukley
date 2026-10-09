@@ -11,6 +11,7 @@
 		14082D5E07651F7F7E1B8568 /* AdsTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D75479DC8D23173444A8551 /* AdsTrackerTests.swift */; };
 		1DD85483DA2758F0572A337B /* ClipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58ABA389C3C1A29930F04A /* ClipsView.swift */; };
 		4D9DC6BC5D3C101E94D57190 /* HaukleyScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F21EF05C294CC1135BCA2DD /* HaukleyScreenshotTests.swift */; };
+		541F44A751BD0487F3603294 /* LiveChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8D4E26E5D2D1060D7B343F /* LiveChannelTests.swift */; };
 		62966187FAB897D3F1D1EB34 /* GoogleInteractiveMediaAds in Frameworks */ = {isa = PBXBuildFile; productRef = 956D114CC378377B04E132C4 /* GoogleInteractiveMediaAds */; };
 		6EAB80174E1A03C3D6706DCB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496DE25C4FFC66ED749EEEA5 /* HomeView.swift */; };
 		72E45AEA01120D72553701B9 /* HaukleyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1EB57DCFA8C39AD3F9EB3C /* HaukleyUITests.swift */; };
@@ -64,6 +65,7 @@
 		9C840BEF3D3786B49DDFED20 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		A35849512E255857D91F4644 /* HaukleyTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = HaukleyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDAD4C39E56E78D346B1F98 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		AF8D4E26E5D2D1060D7B343F /* LiveChannelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChannelTests.swift; sourceTree = "<group>"; };
 		B8A49C40600459E0CD691E1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCBE691C55E3A3494EF60729 /* Ads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ads.swift; sourceTree = "<group>"; };
 		DB1EB57DCFA8C39AD3F9EB3C /* HaukleyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaukleyUITests.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				6D75479DC8D23173444A8551 /* AdsTrackerTests.swift */,
+				AF8D4E26E5D2D1060D7B343F /* LiveChannelTests.swift */,
 			);
 			path = HaukleyTests;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14082D5E07651F7F7E1B8568 /* AdsTrackerTests.swift in Sources */,
+				541F44A751BD0487F3603294 /* LiveChannelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

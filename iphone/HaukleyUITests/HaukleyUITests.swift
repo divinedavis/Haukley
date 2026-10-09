@@ -203,6 +203,27 @@ final class HaukleyUITests: XCTestCase {
         XCTAssertTrue(element("chip.movies").exists)
     }
 
+    /// The Live TV row leads Home; the weather channel's page offers "Watch Live" and plays.
+    func testLiveTVRowOpensWeatherChannel() {
+        // The row sits under the tall hero card on iPhone: scroll it into view first.
+        XCTAssertTrue(element("hero.play").waitForExistence(timeout: 8))
+        let tile = element("poster.haukley-weather")
+        for _ in 0..<5 where !(tile.exists && tile.isHittable) { app.swipeUp() }
+        XCTAssertTrue(tile.waitForExistence(timeout: 5), "Live TV row missing")
+        XCTAssertTrue(app.staticTexts["Live TV"].exists, "Live TV row header missing")
+        snap("home-live-row")
+        tile.tap()
+        let play = element("detail.play")
+        XCTAssertTrue(play.waitForExistence(timeout: 12))
+        XCTAssertEqual(play.label, "Watch Live")
+        XCTAssertTrue(element("detail.live").exists, "LIVE badge on the channel page")
+        play.tap()
+        XCTAssertTrue(element("player.live").waitForExistence(timeout: 15), "LIVE tag in the player")
+        sleep(8)
+        snap("live-player")
+        element("player.close").tap()
+    }
+
     func testPlayerOpensAndCloses() {
         let play = element("hero.play")
         XCTAssertTrue(play.waitForExistence(timeout: 8))

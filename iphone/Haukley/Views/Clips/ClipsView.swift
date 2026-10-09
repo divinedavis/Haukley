@@ -12,8 +12,9 @@ struct ClipsView: View {
 
     private var clips: [Title] {
         let c = Catalog.shared
-        let lead = c.featured.filter(library.allows)
-        return lead + c.titles.filter { t in library.allows(t) && !lead.contains(t) }
+        // Clips are previews cut from a film's runtime; a live channel has none.
+        let lead = c.featured.filter { library.allows($0) && !$0.isLive }
+        return lead + c.titles.filter { t in library.allows(t) && !t.isLive && !lead.contains(t) }
     }
 
     var body: some View {

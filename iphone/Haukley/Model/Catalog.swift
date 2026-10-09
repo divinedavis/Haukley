@@ -33,7 +33,12 @@ struct Title: Codable, Hashable, Identifiable {
     let advisory: String?
 
     var isShow: Bool { kind == "show" }
+    /// A 24/7 channel (kind "live", e.g. Haukley Weather): live HLS, no runtime, no resume point.
+    var isLive: Bool { kind == "live" }
+    /// Films only: anything that is neither a series nor a live channel (unknown kinds play as films).
+    var isMovie: Bool { !isShow && !isLive }
     var length: String {
+        if isLive { return "Live" }
         if isShow, let seasons { return "\(seasons) Season\(seasons == 1 ? "" : "s")" }
         return runtime ?? ""
     }
@@ -79,6 +84,10 @@ final class Catalog {
     private init() {
         let file: CatalogFile
         let cachedURL = CatalogSync.dir.appendingPathComponent("catalog.json")
+        // UI tests start from the bundled catalog, not whatever haukley.com served on a past run.
+        if ProcessInfo.processInfo.arguments.contains("-uitest-reset") {
+            try? FileManager.default.removeItem(at: cachedURL)
+        }
         let bundledURL = Bundle.main.url(forResource: "catalog", withExtension: "json", subdirectory: "Catalog")
         if Self.isNewer(cachedURL, than: bundledURL),
            let data = try? Data(contentsOf: cachedURL),
@@ -114,11 +123,15 @@ final class Catalog {
     func title(_ id: String) -> Title? { byId[id] }
     func titles(_ ids: [String]) -> [Title] { ids.compactMap { byId[$0] } }
 
-    var movies: [Title] { titles.filter { !$0.isShow } }
+    var movies: [Title] { titles.filter(\.isMovie) }
     var shows: [Title] { titles.filter(\.isShow) }
 
-    func moreLike(_ t: Title) -> [Title] {
-        titles.filter { $0.id != t.id && $0.kind == t.kind }
+    func moreLike(_ t: Title) -> [Title] { Self.moreLike(t, in: titles) }
+
+    /// Same kind, same genre first. Live channels have no "more like this".
+    static func moreLike(_ t: Title, in titles: [Title]) -> [Title] {
+        guard !t.isLive else { return [] }
+        return titles.filter { $0.id != t.id && $0.kind == t.kind }
             .sorted { ($0.genre == t.genre ? 0 : 1, $0.title) < ($1.genre == t.genre ? 0 : 1, $1.title) }
     }
 

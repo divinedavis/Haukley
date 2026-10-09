@@ -33,6 +33,8 @@ extension Color {
         self.init(red: Double((v >> 16) & 0xFF) / 255, green: Double((v >> 8) & 0xFF) / 255, blue: Double(v & 0xFF) / 255)
     }
     static let brand = Color(red: 0.545, green: 0.424, blue: 1.0)
+    /// The LIVE tag red (#E63946), same as the channel's own on-air tag and every platform.
+    static let live = Color(red: 0.902, green: 0.224, blue: 0.275)
 }
 
 // MARK: Layout
@@ -66,7 +68,7 @@ struct PosterTile: View {
                 .frame(width: width, height: width * 1.5)
                 .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))
                 .overlay(alignment: .bottom) {
-                    if let badge = title.badge { BadgeLabel(text: badge) }
+                    if let badge = title.badge { BadgeLabel(text: badge, live: title.isLive) }
                 }
                 .overlay(alignment: .topTrailing) {
                     if top10 { Top10Flag().padding(3) }
@@ -80,12 +82,13 @@ struct PosterTile: View {
 
 struct BadgeLabel: View {
     let text: String
+    var live = false
     var body: some View {
-        Text(text)
+        Text(live ? "LIVE" : text)
             .scaledFont(9, weight: .bold)
             .foregroundStyle(.white)
             .padding(.horizontal, 6).padding(.vertical, 3)
-            .background(Color.brand, in: RoundedRectangle(cornerRadius: 2))
+            .background(live ? Color.live : Color.brand, in: RoundedRectangle(cornerRadius: 2))
             .offset(y: 1)
     }
 }

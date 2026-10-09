@@ -112,6 +112,8 @@ final class Library: ObservableObject {
     }
 
     func record(_ t: Title, episode: Int, progress: Double) {
+        // A live channel has no position to resume: never in Continue Watching.
+        guard !t.isLive else { return }
         var list = store.watched[store.currentId] ?? []
         list.removeAll { $0.titleId == t.id }
         list.insert(Watch(titleId: t.id, episode: episode, progress: min(max(progress, 0), 1), date: Date()), at: 0)

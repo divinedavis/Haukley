@@ -17,8 +17,8 @@ struct HomeView: View {
         guard library.allows(t) else { return false }
         switch filter {
         case .shows: return t.isShow
-        case .movies: return !t.isShow
-        case .new: return t.badge != nil
+        case .movies: return t.isMovie
+        case .new: return t.badge != nil && !t.isLive
         case nil: return true
         }
     }
@@ -43,7 +43,7 @@ struct HomeView: View {
             switch f {
             case .shows: return !catalog.shows.isEmpty
             case .movies: return !catalog.movies.isEmpty
-            case .new: return catalog.titles.contains { $0.badge != nil }
+            case .new: return catalog.titles.contains { $0.badge != nil && !$0.isLive }
             }
         }
     }

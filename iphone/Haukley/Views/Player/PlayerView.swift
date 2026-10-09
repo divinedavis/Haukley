@@ -18,7 +18,7 @@ struct PlayerScreen: View {
 
     var body: some View {
         PlayerContainer(request: request) { progress in
-            if !request.trailer {
+            if !request.trailer, !request.title.isLive {
                 library.record(request.title, episode: request.episode ?? 0, progress: progress)
             }
         }
@@ -94,6 +94,10 @@ final class PlayerViewController: UIViewController, IMAAdsLoaderDelegate, IMAAds
         view.backgroundColor = .black
         playerVC.player = player
         playerVC.allowsPictureInPicturePlayback = false
+        if request.title.isLive {
+            // AVKit shows live HLS without a scrubber or duration; also forbid seeking and tag it.
+            playerVC.requiresLinearPlayback = true
+        }
         addChild(playerVC)
         playerVC.view.frame = view.bounds
         playerVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -117,7 +121,8 @@ final class PlayerViewController: UIViewController, IMAAdsLoaderDelegate, IMAAds
         super.viewDidAppear(animated)
         guard !started else { return }
         started = true
-        if !request.trailer, let tag = Ads.tag(for: request.title) {
+        // Live channels play without IMA ads (no VMAP schedule against an endless stream).
+        if !request.trailer, !request.title.isLive, let tag = Ads.tag(for: request.title) {
             let tracker = tracker
             Task { await tracker.start() }
             requestAds(tag)
@@ -130,7 +135,7 @@ final class PlayerViewController: UIViewController, IMAAdsLoaderDelegate, IMAAds
         super.viewWillDisappear(animated)
         let duration = player.currentItem?.duration.seconds ?? 0
         let position = player.currentTime().seconds
-        if duration.isFinite, duration > 0 { onFinish(position / duration) }
+        if !request.title.isLive, duration.isFinite, duration > 0 { onFinish(position / duration) }
         player.pause()
         adsManager?.destroy()
         if let endObserver { NotificationCenter.default.removeObserver(endObserver) }
@@ -198,6 +203,32 @@ final class PlayerViewController: UIViewController, IMAAdsLoaderDelegate, IMAAds
         playerVC.showsPlaybackControls = true
         player.play()
         showAdvisoryOnce()
+        showLiveTag()
+    }
+
+    private var liveTagShown = false
+
+    /// A red LIVE tag in the top-right corner for the whole time a live channel plays.
+    private func showLiveTag() {
+        guard request.title.isLive, !liveTagShown, let overlay = playerVC.contentOverlayView else { return }
+        liveTagShown = true
+        let tag = UILabel()
+        tag.text = "  LIVE  "
+        tag.font = UIFont.systemFont(ofSize: 13, weight: .heavy)
+        tag.textColor = .white
+        tag.backgroundColor = UIColor(red: 0.902, green: 0.224, blue: 0.275, alpha: 1)
+        tag.layer.cornerRadius = 4
+        tag.layer.masksToBounds = true
+        tag.translatesAutoresizingMaskIntoConstraints = false
+        tag.isAccessibilityElement = true
+        tag.accessibilityLabel = "Live"
+        tag.accessibilityIdentifier = "player.live"
+        overlay.addSubview(tag)
+        NSLayoutConstraint.activate([
+            tag.trailingAnchor.constraint(equalTo: overlay.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            tag.topAnchor.constraint(equalTo: overlay.safeAreaLayoutGuide.topAnchor, constant: 14),
+            tag.heightAnchor.constraint(equalToConstant: 24),
+        ])
     }
 
     private var advisoryShown = false
