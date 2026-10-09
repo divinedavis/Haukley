@@ -25,7 +25,7 @@ if __name__ == "__main__":
     make_ios.main()
 
     cat = json.loads((ROOT / "scripts" / "catalog.json").read_text())
-    src = {t["id"]: t for key in ("movies", "shows") for t in cat[key]}
+    src = {t["id"]: t for key in ("movies", "shows", "live") for t in cat.get(key, [])}
     fonts = {i: t["font"] for i, t in src.items()}
     out = json.loads((OUT / "catalog.json").read_text())
     # Only publish titles whose stream is actually on the CDN (the rest are still ingesting).

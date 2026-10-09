@@ -18,6 +18,14 @@
   "upNext": [],
   "home": [
     {
+      "key": "live",
+      "title": "Live TV",
+      "type": "card",
+      "ids": [
+        "haukley-weather"
+      ]
+    },
+    {
       "key": "picks",
       "title": "Haukley's Top 10 Picks",
       "type": "ranked",

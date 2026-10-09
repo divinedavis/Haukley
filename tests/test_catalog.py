@@ -21,7 +21,10 @@ def load(rel):
 
 SOURCE = load("scripts/catalog.json")
 ROWS = load("scripts/rows.json")
-SRC_TITLES = {t["id"]: t for key in ("movies", "shows") for t in SOURCE[key]}
+SRC_TITLES = {t["id"]: t for key in ("movies", "shows", "live") for t in SOURCE.get(key, [])}
+LIVE_IDS = {t["id"] for t in SOURCE.get("live", [])}
+# Live channels are encoded on the droplet (live/, deploy/deploy_weather.sh), not the CDN.
+LIVE_HOST, LIVE_PREFIX = "haukley.com", "/live/"
 # Titles sourced in scripts/free_titles*.json but held back (rights review, sponsor cuts).
 # rows.json may already list one so it shows up the day it is cleared; the apps skip ids
 # they don't have. Any OTHER unknown row id is a typo and leaves a hole in the row.
@@ -54,7 +57,7 @@ def streams(title):
 
 class SourceCatalog(unittest.TestCase):
     def test_ids_unique_across_movies_and_shows(self):
-        ids = [t["id"] for key in ("movies", "shows") for t in SOURCE[key]]
+        ids = [t["id"] for key in ("movies", "shows", "live") for t in SOURCE.get(key, [])]
         self.assertEqual(len(ids), len(set(ids)), "duplicate title id in scripts/catalog.json")
 
     def test_every_title_has_rights_line_and_text(self):
@@ -65,6 +68,9 @@ class SourceCatalog(unittest.TestCase):
     def test_movies_stream_and_shows_have_episode_streams(self):
         for t in SOURCE["movies"]:
             self.assertTrue(t.get("stream"), f'{t["id"]} has no stream')
+        for t in SOURCE.get("live", []):
+            self.assertTrue(t.get("stream"), f'{t["id"]} has no stream')
+            self.assertFalse(t.get("episodes") or t.get("runtime"), f'{t["id"]}: live has no runtime/episodes')
         for t in SOURCE["shows"]:
             self.assertTrue(t.get("episodes"), f'{t["id"]} has no episodes')
             for ep in t["episodes"]:
@@ -118,6 +124,10 @@ class PlatformCopies(unittest.TestCase):
                 for label, url in streams(t):
                     u = urlparse(url)
                     self.assertEqual(u.scheme, "https", f"{name} {label}: {url}")
+                    if tid in LIVE_IDS:
+                        self.assertEqual(u.netloc, LIVE_HOST, f"{name} {label}: {url}")
+                        self.assertTrue(u.path.startswith(LIVE_PREFIX), f"{name} {label}: {url}")
+                        continue
                     self.assertEqual(u.netloc, CDN, f"{name} {label}: stream off the CDN: {url}")
                     self.assertTrue(u.path.endswith(".m3u8"), f"{name} {label}: not HLS: {url}")
 
@@ -141,3 +151,11 @@ class PlatformCopies(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+    def test_live_channels_are_kind_live_in_every_copy(self):
+        for name, copy in COPIES.items():
+            titles = titles_of(copy)
+            for tid in LIVE_IDS:
+                self.assertIn(tid, titles, f"{name}: live channel {tid} missing")
+                self.assertEqual(titles[tid].get("kind"), "live", f"{name}: {tid} is not kind live")
+

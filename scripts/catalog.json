@@ -2236,5 +2236,28 @@
     }
    ]
   }
+ ],
+ "live": [
+  {
+   "id": "haukley-weather",
+   "title": "Haukley Weather",
+   "still": "scripts/stills/haukley-weather.jpg",
+   "genre": "Weather",
+   "year": 2026,
+   "rating": "TV-G",
+   "font": "Oswald",
+   "layout": "center",
+   "tint": [
+    43,
+    26,
+    85
+   ],
+   "tagline": "Live national weather, around the clock.",
+   "description": "A 24/7 live channel: the national radar loop, GOES satellite, active severe weather alerts and forecasts for 16 major U.S. cities, refreshed every 15 minutes from the National Weather Service.",
+   "credits": "Data: NOAA / National Weather Service",
+   "stream": "https://haukley.com/live/weather/index.m3u8",
+   "kids": true,
+   "license": "Built from NOAA / National Weather Service data (U.S. government work, public domain)"
+  }
  ]
 }

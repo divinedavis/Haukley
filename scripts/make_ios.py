@@ -47,6 +47,8 @@ def hero_color(path):
 
 
 def badge_for(t, kind):
+    if kind == "live":
+        return "Live"
     if t["year"] >= 2026:
         return "Recently Added"
     return None
@@ -59,14 +61,15 @@ def main():
     streams = rows["streams"]
 
     # Drop art for titles no longer in the catalog so removed titles don't ship in the bundle.
-    keep = {t["id"] for key in ("movies", "shows") for t in cat[key]}
+    keep = {t["id"] for key in ("movies", "shows", "live") for t in cat.get(key, [])}
     for d in OUT.glob("*/"):
         if d.name not in keep:
             shutil.rmtree(d)
 
     titles = []
-    for kind, key in (("movie", "movies"), ("show", "shows")):
-        for t in cat[key]:
+    # kind "live": a 24/7 channel (live HLS, no runtime or resume point; see live/).
+    for kind, key in (("movie", "movies"), ("show", "shows"), ("live", "live")):
+        for t in cat.get(key, []):
             tid = t["id"]
             src = ART / tid
             if not (src / "poster@2x.jpg").exists():

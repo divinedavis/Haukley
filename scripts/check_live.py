@@ -114,6 +114,23 @@ def run_http(base, live, match_local):
         if first:
             status, headers, body = get(f"{base}/watch/catalog/{first['id']}/poster.jpg")
             check(status == 200 and body[:2] == b"\xff\xd8", f"poster art for {first['id']} is a JPEG")
+        # Live channels (kind "live", live/ + deploy/deploy_weather.sh): a sliding-window
+        # playlist that is still moving, readable cross-origin (LG/Samsung apps run from file://).
+        for lt in [t for t in titles.values() if t.get("kind") == "live"]:
+            status, headers, body = get(lt["stream"])
+            check(status == 200 and b"#EXT-X-STREAM-INF" in body, f"live {lt['id']}: master playlist -> {status}")
+            check((headers.get("Access-Control-Allow-Origin") or "") == "*", f"live {lt['id']}: CORS *")
+            variant = urllib.parse.urljoin(lt["stream"], body.decode().strip().splitlines()[-1]) if status == 200 else None
+            if variant:
+                status, _, body = get(variant)
+                text = body.decode(errors="replace")
+                seq = re.search(r"#EXT-X-MEDIA-SEQUENCE:(\d+)", text)
+                check(status == 200 and "#EXTINF" in text and "#EXT-X-ENDLIST" not in text and seq,
+                      f"live {lt['id']}: live media playlist (no ENDLIST)")
+                seg = [l for l in text.splitlines() if l.endswith(".ts")]
+                if seg:
+                    status, _, body = get(urllib.parse.urljoin(variant, seg[-1]))
+                    check(status == 200 and body[:1] == b"\x47", f"live {lt['id']}: newest segment is MPEG-TS")
     roku = json_at(base, "/roku/catalog.json")
     if roku:
         check(len(roku.get("titles", {})) >= 50 and roku.get("rows"), f"roku catalog has {len(roku.get('titles', {}))} titles + rows")
@@ -193,6 +210,43 @@ def check_ad_ticket(pg):
           f"/watch/ ad events carry the ticket and a seq ({events})")
 
 
+def check_live_channel(pg):
+    """A live channel plays in the /watch player as LIVE (no scrubber), with no ad ticket and
+    no watch_progress writes. Supabase is stubbed; the stream itself is the real one."""
+    sent = []
+
+    def stub(route):
+        sent.append(route.request.url.split("/rest/v1/", 1)[-1].split("?")[0])
+        route.fulfill(status=204, body="")
+
+    pg.route("**/rest/v1/**", stub)
+    try:
+        lid = pg.evaluate("""async () => {
+            if (!state.catalog) state.catalog = await fetch(ART + 'catalog.json').then(r => r.json());
+            state.byId = new Map(state.catalog.titles.map(t => [t.id, t]));
+            const t = state.catalog.titles.find(t => t.kind === 'live');
+            if (!t) return null;
+            state.user = { id: 'probe' }; state.profile = { id: 'probe', name: 'Probe' };
+            video.muted = true;
+            startPlayback(t.id, 0);
+            return t.id; }""")
+        if not check(bool(lid), "/watch/ catalog has a live channel"):
+            return
+        pg.wait_for_function("() => video.currentTime > 2", timeout=45000)
+        got = pg.evaluate("""() => { saveProgress(player.id, 0, video.currentTime, 600);
+            return { live: player.el.classList.contains('live'), label: $('#p-remaining').textContent,
+                     seekDisabled: $('#p-seek').disabled }; }""")
+        pg.wait_for_timeout(500)
+        check(got == {"live": True, "label": "LIVE", "seekDisabled": True}, f"/watch/ {lid} plays as LIVE ({got})")
+        check(not any(u.startswith(("rpc/start_playback", "watch_progress")) for u in sent),
+              f"/watch/ {lid}: no ad ticket or progress writes ({sent})")
+        pg.evaluate("() => stopPlayback(false)")
+    except Exception as e:
+        check(False, f"/watch/ live channel plays: {str(e).splitlines()[0]}")
+    finally:
+        pg.unroute("**/rest/v1/**")
+
+
 def check_waitlist_form(pg):
     """The landing page's "Get notified" form posts to the rate-limited join_waitlist RPC
     (never the table). Supabase is stubbed, so nothing is written."""
@@ -236,6 +290,7 @@ def run_browser(base):
             check(not errors, f"{path} has no uncaught JS errors {errors[:2] if errors else ''}")
             if path == "/watch/":
                 check_ad_ticket(pg)
+                check_live_channel(pg)
             if path == "/":
                 check_waitlist_form(pg)
             ctx.close()

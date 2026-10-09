@@ -397,3 +397,10 @@ svg { display: block; }
 .match { font-size: 13px; min-height: 18px; margin-top: -8px; color: var(--faint); }
 .match.ok { color: var(--ok); }
 .match.err { color: var(--err); }
+
+/* Live channels (kind "live"): red LIVE tag, and no scrubbing, skipping or speed in the player. */
+.live-tag { display: inline-block; padding: 1px 7px; border-radius: 4px; background: #e63946; color: #fff; font-size: 0.78em; font-weight: 800; letter-spacing: 0.04em; }
+.chip i.live { background: #e63946; }
+.player.live .p-scrub input, .player.live #p-back10, .player.live #p-fwd10, .player.live .p-speed { display: none; }
+.player.live #p-remaining { margin-left: auto; padding: 2px 10px; border-radius: 4px; background: #e63946; color: #fff; font-size: 13px; font-weight: 800; letter-spacing: 0.05em; }
+

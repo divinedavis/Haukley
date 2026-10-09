@@ -166,11 +166,25 @@ def make_poster(t, kind):
         cred_f = font("LeagueGothic", int(22 * w * 0.9 / cw), "Regular")
         cw = d.textlength(cred, font=cred_f)
     d.text(((w - cw) / 2, h - 96), cred, font=cred_f, fill=(215, 215, 215))
-    rel = f"{'STREAMING FREE' if kind == 'movie' else 'FREE SERIES'}  ·  ON HAUKLEY"
+    rel = {"movie": "STREAMING FREE", "show": "FREE SERIES", "live": "LIVE 24/7"}[kind] + "  ·  ON HAUKLEY"
     rf = body_font(15, "Bold")
     rw = d.textlength(rel, font=rf)
     d.text(((w - rw) / 2, h - 58), rel, font=rf, fill=(255, 255, 255))
+    if kind == "live":  # centered between the title and the billing block
+        live_pill(d, (w - 92) / 2, h - 160, 24)
     return img
+
+
+LIVE_RED = (230, 57, 70)
+
+
+def live_pill(d, x, y, size):
+    """The red LIVE tag on live channels' art (same red as the channel's own on-air tag)."""
+    f = body_font(size, "Bold")
+    tw = d.textlength("LIVE", font=f)
+    pad = size * 0.55
+    d.rounded_rectangle([x, y, x + tw + 2 * pad, y + size * 1.7], size * 0.3, fill=LIVE_RED)
+    d.text((x + pad, y + size * 0.85), "LIVE", font=f, fill="white", anchor="lm")
 
 
 def wrap_fit_body(draw, text, max_w, size):
@@ -187,7 +201,7 @@ def wrap_fit_body(draw, text, max_w, size):
     return f, lines[:2]
 
 
-def make_card(t):
+def make_card(t, kind="movie"):
     w, h = CARD
     img = grade(photo_for(t, (w * 2, h * 2)).resize(CARD, Image.LANCZOS), t["tint"], 0.22)
     img = darken(img, vertical_gradient(CARD, 0, 210, 0.4))
@@ -195,6 +209,8 @@ def make_card(t):
     f, lines = wrap_fit(d, t["title"], t["font"], w * 0.8, 96, 2, uses_upper(t))
     th = block_height(lines, f)
     draw_lines(d, lines, f, w / 2, h - 40 - th)
+    if kind == "live":
+        live_pill(d, 28, 28, 30)
     return img
 
 
@@ -290,15 +306,15 @@ def main():
     entries = []
     # Files are @2x so Android files them under drawable-xhdpi. Plain names land in
     # drawable-mdpi and get upscaled 2x on 320dpi Fire TVs (a 33 MB bitmap per backdrop).
-    for kind, key in (("movie", "movies"), ("show", "shows")):
-        for t in cat[key]:
+    for kind, key in (("movie", "movies"), ("show", "shows"), ("live", "live")):
+        for t in cat.get(key, []):
             if t.get("still") and not (ROOT / t["still"]).exists():
                 print("skip (no still yet)", t["id"])
                 continue
             d = OUT / t["id"]
             d.mkdir(exist_ok=True)
             make_poster(t, kind).save(d / "poster@2x.jpg", quality=86, optimize=True, progressive=True)
-            make_card(t).save(d / "card@2x.jpg", quality=84, optimize=True, progressive=True)
+            make_card(t, kind).save(d / "card@2x.jpg", quality=84, optimize=True, progressive=True)
             make_backdrop(t).save(d / "backdrop@2x.jpg", quality=78, optimize=True, progressive=True)
             if kind == "show":
                 for i, still in make_episode_stills(t):
@@ -328,7 +344,10 @@ def main():
     ]
     for kind, t in entries:
         props = [f"kind: '{kind}'"] + [f"{k}: {json.dumps(t[k])}" for k in fields if t.get(k) is not None]
-        props.append(f"runtime: {json.dumps(t.get('runtime'))}" if kind == "movie" else f"seasons: {t['seasons']}")
+        if kind == "movie":
+            props.append(f"runtime: {json.dumps(t.get('runtime'))}")
+        elif kind == "show":
+            props.append(f"seasons: {t['seasons']}")
         base = f"./assets/titles/{t['id']}"
         props += [
             f"poster: require('{base}/poster.jpg')",

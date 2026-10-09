@@ -17,3 +17,16 @@
 - Roll back: `scripts/rollback_web.sh` lists snapshots; `scripts/rollback_web.sh <ts>` restores one
   byte-for-byte and re-runs the live checks.
 - Health check any time (read-only): `~/.venvs/dhcr-map/bin/python scripts/check_live.py --browser`.
+
+## Live channels (Haukley Weather)
+
+- `deploy/deploy_weather.sh`: installs ffmpeg/Pillow if missing, the `haukleylive` system user,
+  code in `/opt/haukley-live/weather` (root-owned), unit `haukley-weather` (`systemctl restart
+  haukley-weather`, logs `journalctl -u haukley-weather`), then waits for the live playlist.
+- Output `/var/www/haukley-live/weather` → https://haukley.com/live/weather/index.m3u8 (nginx
+  `location /live/` in nginx-haukley.conf). State (`timeline.json`, cached NWS grid points) in
+  `/var/lib/haukley-live`. Keeps the 3 newest cycles (~20 MB each).
+- A render every 15 min costs ~2 CPU-minutes at nice 15. If NOAA is down the previous cycle
+  keeps playing (the "Updated" time on screen shows how old it is).
+- NCEP hosts (wpc/nhc/spc.noaa.gov, graphical.weather.gov) answer 403 to this droplet's IP;
+  use NESDIS (cdn.star.nesdis.noaa.gov), CPC and api.weather.gov, which don't.

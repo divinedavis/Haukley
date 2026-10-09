@@ -96,4 +96,6 @@ def test_catalog_streams_are_on_the_csp_cdn():
     urls = [t["stream"] for t in cat["titles"] if t.get("stream")]
     urls += [e["stream"] for t in cat["titles"] for e in t.get("episodes", []) if e.get("stream")]
     hosts = {"/".join(u.split("/")[:3]) for u in urls}
-    assert hosts and hosts <= set(csp["connect-src"]), hosts - set(csp["connect-src"])
+    # /watch/ is served from haukley.com, so 'self' covers the live channels (/live/).
+    allowed = set(csp["connect-src"]) | ({"https://haukley.com"} if "'self'" in csp["connect-src"] else set())
+    assert hosts and hosts <= allowed, hosts - allowed

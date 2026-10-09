@@ -117,8 +117,11 @@ async function loadViewerData() {
   state.myList = new Set((l.data || []).map(r => r.title_id));
 }
 
+// A live channel (kind "live") has no resume point, so it never writes watch progress.
+const isLive = t => t?.kind === "live";
+
 async function saveProgress(id, episode, position, duration) {
-  if (!state.user || !state.profile || !(duration > 0)) return;
+  if (!state.user || !state.profile || !(duration > 0) || isLive(state.byId.get(id))) return;
   const row = {
     title_id: id, episode, position_s: Math.floor(position), duration_s: Math.max(1, Math.floor(duration)),
     updated_at: new Date().toISOString(),
@@ -559,7 +562,7 @@ function wireHeader() {
 
 function flagFor(t) {
   const r = continueWatching().find(x => x.title_id === t.id);
-  if (r) return "";
+  if (r || isLive(t)) return "";
   return t.badge ? `<span class="flag">${esc(t.badge)}</span>` : "";
 }
 const top10Badge = t => (state.rank.has(t.id) ? `<span class="top10" aria-label="Top 10">TOP<b>10</b></span>` : "");
@@ -603,16 +606,20 @@ function wireRows() {
   });
 }
 
+const lengthOf = t => (t.kind === "movie" ? esc(t.runtime) : isLive(t) ? `<span class="live-tag">LIVE</span>`
+  : esc(`${t.seasons} Season${t.seasons === 1 ? "" : "s"}`));
+
 function metaLine(t, withKind = false) {
-  const len = t.kind === "movie" ? t.runtime : `${t.seasons} Season${t.seasons === 1 ? "" : "s"}`;
-  const parts = [withKind ? (t.kind === "movie" ? "Movie" : "Series") : null, withKind ? esc(t.genre) : null, t.year, esc(len),
+  const kindName = { movie: "Movie", show: "Series", live: "Live channel" }[t.kind];
+  const parts = [withKind ? kindName : null, withKind ? esc(t.genre) : null, isLive(t) ? null : t.year, lengthOf(t),
     `<span class="rating">${esc(t.rating)}</span>`, t.silent ? "Silent" : null].filter(Boolean);
   return parts.join(`<span class="dot" aria-hidden="true">•</span>`);
 }
 
 function chipsFor(t) {
   const c = [];
-  if (t.badge) c.push(`<span class="chip"><i>NEW</i>${esc(t.badge)}</span>`);
+  if (isLive(t)) c.push(`<span class="chip"><i class="live">LIVE</i>24/7</span>`);
+  else if (t.badge) c.push(`<span class="chip"><i>NEW</i>${esc(t.badge)}</span>`);
   const rk = state.rank.get(t.id);
   if (rk) c.push(`<span class="chip"><i>TOP 10</i>#${rk.n} in ${esc(rk.label)}</span>`);
   return c.join("");
@@ -620,7 +627,7 @@ function chipsFor(t) {
 
 function hero(t) {
   const { resume, episode } = resumeFor(t);
-  const label = resume ? (t.kind === "show" ? `Resume E${episode}` : "Resume") : "Play";
+  const label = isLive(t) ? "Watch Live" : resume ? (t.kind === "show" ? `Resume E${episode}` : "Resume") : "Play";
   return `
     <div class="hero-wrap"><section class="hero">
       <div class="hero-bg" style="background-image:url('${img(t, "backdrop")}')"></div>
@@ -781,7 +788,6 @@ function showPreview(tileEl) {
   const top = Math.max(scrollY + 70, rect.top + scrollY + rect.height / 2 - picH / 2 - 10);
   const { episode, resume } = resumeFor(t);
   const inList = state.myList.has(t.id);
-  const len = t.kind === "movie" ? t.runtime : `${t.seasons} Season${t.seasons === 1 ? "" : "s"}`;
   const prog = resume ? `<div class="prog"><div class="bar"><i style="width:${Math.round(pct(resume) * 100)}%"></i></div>
     ${Math.round(resume.position_s / 60)} of ${Math.round(resume.duration_s / 60)}m</div>` : "";
   const el = document.createElement("div");
@@ -791,12 +797,12 @@ function showPreview(tileEl) {
     <div class="pic" data-title="${esc(t.id)}"><img src="${img(t, "card")}" alt=""></div>
     <div class="body">
       <div class="btns">
-        <button class="circle solid" data-play="${esc(t.id)}" data-ep="${episode}" aria-label="${resume ? "Resume" : "Play"} ${esc(t.title)}">${ICON.play}</button>
+        <button class="circle solid" data-play="${esc(t.id)}" data-ep="${episode}" aria-label="${isLive(t) ? "Watch" : resume ? "Resume" : "Play"} ${esc(t.title)}">${ICON.play}</button>
         <button class="circle" data-toggle-list="${esc(t.id)}" aria-label="${inList ? "Remove from" : "Add to"} My List">${inList ? ICON.check : ICON.plus}</button>
         <button class="circle push" data-title="${esc(t.id)}" aria-label="More info">${ICON.down}</button>
       </div>
-      <div class="meta"><span class="rating">${esc(t.rating)}</span> ${esc(len)}</div>
-      <div class="tags"><span>${esc(t.genre)}</span><span>${t.year}</span>${t.silent ? "<span>Silent film</span>" : ""}${state.rank.has(t.id) ? `<span>Top 10 pick #${state.rank.get(t.id).n}</span>` : ""}</div>
+      <div class="meta"><span class="rating">${esc(t.rating)}</span> ${lengthOf(t)}</div>
+      <div class="tags"><span>${esc(t.genre)}</span>${isLive(t) ? "<span>24/7</span>" : `<span>${t.year}</span>`}${t.silent ? "<span>Silent film</span>" : ""}${state.rank.has(t.id) ? `<span>Top 10 pick #${state.rank.get(t.id).n}</span>` : ""}</div>
       ${prog}
     </div>`;
   el.addEventListener("mouseleave", hidePreview);
@@ -836,7 +842,7 @@ function openTitle(id) {
   const box = $(".modal-box", modal);
   const { episode, resume } = resumeFor(t);
   const inList = state.myList.has(t.id);
-  const playLabel = resume ? (t.kind === "show" ? `Resume E${episode}` : "Resume") : t.kind === "show" && episode > 1 ? `Play E${episode}` : "Play";
+  const playLabel = isLive(t) ? "Watch Live" : resume ? (t.kind === "show" ? `Resume E${episode}` : "Resume") : t.kind === "show" && episode > 1 ? `Play E${episode}` : "Play";
   const eps = t.kind === "show" ? `<h3>Episodes</h3><div class="eps">${t.episodes.map(e => {
     const r = state.progress.get(`${t.id}:${e.number}`);
     return `<button class="ep${e.number === episode ? " current" : ""}" data-play="${esc(t.id)}" data-ep="${e.number}">
@@ -867,7 +873,7 @@ function openTitle(id) {
           <p class="desc">${esc(t.description)}</p>
         </div>
         <div class="m-side">
-          <div><b>Cast:</b> ${esc(t.credits.replace(/^Starring\s*/, "").replace(/ · /g, ", "))}</div>
+          <div><b>${isLive(t) ? "Source" : "Cast"}:</b> ${esc(t.credits.replace(/^Starring\s*/, "").replace(/ · /g, ", "))}</div>
           <div><b>Genres:</b> ${esc(t.genre)}</div>
           <div><b>Rating:</b> ${t.rating === "NR" ? "Not rated" : esc(t.rating)}</div>
           ${t.silent ? `<div><b>Sound:</b> Silent film (no soundtrack)</div>` : ""}
@@ -876,7 +882,7 @@ function openTitle(id) {
         </div>
       </div>
       ${eps}
-      <h3>More Like This</h3>
+      ${more.length ? "<h3>More Like This</h3>" : ""}
       <div class="more">${more.map(x => `<button class="more-card" data-title="${esc(x.id)}">
         <img src="${img(x, "card")}" alt="" loading="lazy">
         <div><div class="meta">${metaLine(x)}</div><p>${esc(x.description)}</p></div></button>`).join("")}</div>
@@ -966,14 +972,18 @@ function startPlayback(id, episode) {
   const t = state.byId.get(id);
   if (!visible(t)) return;
   if (t.kind === "show" && !(episode >= 1)) episode = resumeFor(t).episode;
-  if (t.kind === "movie") episode = 0;
+  if (t.kind !== "show") episode = 0;
+  const live = isLive(t);
   const e = episode ? t.episodes.find(x => x.number === episode) : null;
   const src = (e || t).stream;
   hidePreview();
   const fromModal = !$("#modal").hidden && location.hash.startsWith("#/title/");
   closeModal(false);
   stopPlayback(false);
-  Object.assign(player, { id, episode, sessionId: crypto.randomUUID(), ticket: requestTicket(id, episode), seq: 0, ratedShown: false });
+  // Live channels run without ads for now, so they need no ad ticket.
+  Object.assign(player, { id, episode, live, sessionId: crypto.randomUUID(), ticket: live ? null : requestTicket(id, episode), seq: 0, ratedShown: false });
+  player.el.classList.toggle("live", live);
+  $("#p-seek").disabled = live;
   $("#p-title").innerHTML = e ? `${esc(t.title)}<span>E${e.number} “${esc(e.name)}”</span>` : esc(t.title);
   $("#rated-label").textContent = t.rating === "NR" ? "NOT RATED" : `RATED ${t.rating}`;
   // A content advisory rides on the rating card at the start of playback, like broadcast TV.
@@ -988,7 +998,7 @@ function startPlayback(id, episode) {
   else if (location.hash !== target) history.pushState(null, "", target);
 
   const r = state.progress.get(`${id}:${episode}`);
-  const resumeAt = inProgress(r) ? r.position_s : 0;
+  const resumeAt = !live && inProgress(r) ? r.position_s : 0;
   video.controls = false;
   // Safari plays HLS natively (and needs to for AirPlay/iPhone full screen). Newer Chrome also
   // claims native HLS but fails on fMP4 streams, so everything else goes through hls.js.
@@ -1006,10 +1016,10 @@ function startPlayback(id, episode) {
   }
   if (resumeAt) video.addEventListener("loadedmetadata", () => { if (video.currentTime < 1) video.currentTime = resumeAt; }, { once: true });
 
-  if (window.google?.ima) startAds(t);
+  if (window.google?.ima && !live) startAds(t);
   else video.play().catch(() => {});
 
-  player.saveTimer = setInterval(() => {
+  if (!live) player.saveTimer = setInterval(() => {
     if (!video.paused && !player.ima?.adPlaying) saveProgress(id, episode, video.currentTime, video.duration);
   }, 15000);
   poke();
@@ -1126,14 +1136,14 @@ function syncTime() {
     seek.value = String(Math.round((video.currentTime / d) * 1000));
     setPct(seek, video.currentTime / d);
   }
-  $("#p-remaining").textContent = d ? fmt(d - video.currentTime) : "0:00";
+  $("#p-remaining").textContent = player.live ? "LIVE" : d ? fmt(d - video.currentTime) : "0:00";
 }
 
 function togglePlay() {
   if (player.ima?.adPlaying) return;
   video.paused ? video.play().catch(() => {}) : video.pause();
 }
-const skip = s => { if (!player.ima?.adPlaying && video.duration) video.currentTime = Math.max(0, Math.min(video.duration - 1, video.currentTime + s)); poke(); };
+const skip = s => { if (!player.live && !player.ima?.adPlaying && video.duration) video.currentTime = Math.max(0, Math.min(video.duration - 1, video.currentTime + s)); poke(); };
 
 function toggleFullscreen() {
   if (document.fullscreenElement) return document.exitFullscreen?.();
