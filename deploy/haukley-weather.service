@@ -1,0 +1,25 @@
+# Haukley Weather live channel (live/weather/channel.py). Installed by deploy/deploy_weather.sh.
+[Unit]
+Description=Haukley Weather live channel (NOAA data -> HLS)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=haukleylive
+Group=haukleylive
+ExecStart=/usr/bin/python3 /opt/haukley-live/weather/channel.py run --out /var/www/haukley-live/weather --state /var/lib/haukley-live
+StateDirectory=haukley-live
+Restart=always
+RestartSec=10
+# One shared vCPU: renders run at the lowest priority and can't starve the other sites.
+Nice=15
+CPUQuota=70%
+MemoryMax=600M
+ProtectSystem=full
+ProtectHome=true
+PrivateTmp=true
+NoNewPrivileges=true
+ReadWritePaths=/var/www/haukley-live
+
+[Install]
+WantedBy=multi-user.target
