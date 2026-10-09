@@ -19,6 +19,9 @@ export function PlayerScreen({ id, episode, startAt, onDone }: Props) {
   // Content advisory card, shown for 8 s once the film itself starts (not during an ad).
   const [advisory, setAdvisory] = useState(false);
   const advisoryShown = useRef(false);
+  // The LIVE tag shows for the first seconds of a live channel, then gets out of the way
+  // (the channel's own picture carries its on-air tag).
+  const [liveTag, setLiveTag] = useState(true);
   useEffect(() => {
     if (!advisory) {
       return;
@@ -27,28 +30,40 @@ export function PlayerScreen({ id, episode, startAt, onDone }: Props) {
     return () => clearTimeout(timer);
   }, [advisory]);
   const isTrailer = episode === TRAILER;
+  // A live channel: no ads, no resume seek, no saved position, and no scrubber.
+  const live = t.kind === 'live';
+  const noAds = isTrailer || live;
   // One server-signed session per playback groups its ad events (only those count toward
-  // payouts); the ad tag carries title_id for the ad server's report. Trailers have no ads.
-  const tracker = useMemo(() => (isTrailer ? null : createAdTracker(id, episode ?? 0)), [id, episode, isTrailer]);
+  // payouts); the ad tag carries title_id for the ad server's report. Trailers and live
+  // channels have no ads.
+  const tracker = useMemo(() => (noAds ? null : createAdTracker(id, episode ?? 0)), [id, episode, noAds]);
   const adCounted = useRef(false);
   const source = useMemo(
     () => ({
       uri: streamFor(id, episode),
-      ...(isTrailer ? {} : { ad: { type: 'csai' as const, adTagUrl: adTagFor(t) } }),
+      ...(noAds ? {} : { ad: { type: 'csai' as const, adTagUrl: adTagFor(t) } }),
     }),
-    [id, episode, isTrailer, t],
+    [id, episode, noAds, t],
   );
   useEffect(() => {
     // The ref object itself is stable; read its latest value when the player closes.
     const last = progress;
     return () => {
-      if (!isTrailer) {
+      if (!isTrailer && !live) {
         recordWatch(id, episode ?? 0, last.current.position, last.current.duration);
       }
     };
-  }, [id, episode, isTrailer]);
+  }, [id, episode, isTrailer, live]);
 
-  const subtitle = isTrailer ? 'Official Trailer' : episode ? `Episode ${episode}` : t.genre;
+  useEffect(() => {
+    if (!live || loading) {
+      return;
+    }
+    const timer = setTimeout(() => setLiveTag(false), 6000);
+    return () => clearTimeout(timer);
+  }, [live, loading]);
+
+  const subtitle = isTrailer ? 'Official Trailer' : live ? 'Live' : episode ? `Episode ${episode}` : t.genre;
 
   return (
     <View style={styles.screen}>
@@ -57,7 +72,9 @@ export function PlayerScreen({ id, episode, startAt, onDone }: Props) {
           source={source}
           style={StyleSheet.absoluteFill}
           resizeMode="contain"
-          controls
+          controls={!live}
+          // ExoPlayer pins its own LIVE label over the picture; ours times out instead.
+          controlsStyles={{ hideLiveBadge: true }}
           ref={video}
           onLoad={e => {
             setLoading(false);
@@ -76,7 +93,7 @@ export function PlayerScreen({ id, episode, startAt, onDone }: Props) {
             if (e.seekableDuration > 0) {
               progress.current.duration = e.seekableDuration;
             }
-            if (startAt && startAt > 0 && !resumed.current) {
+            if (!live && startAt && startAt > 0 && !resumed.current) {
               resumed.current = true;
               video.current?.seek(startAt);
             }
@@ -100,6 +117,11 @@ export function PlayerScreen({ id, episode, startAt, onDone }: Props) {
           onError={e => setError(JSON.stringify(e.error?.errorString ?? e.error ?? e).slice(0, 200))}
           onEnd={onDone}
         />
+      )}
+      {live && liveTag && !loading && !error && (
+        <View style={styles.live} pointerEvents="none" testID="live-badge">
+          <Text style={styles.liveText}>LIVE</Text>
+        </View>
       )}
       {advisory && (
         <View style={styles.advisory} pointerEvents="none">
@@ -133,5 +155,7 @@ const styles = StyleSheet.create({
   },
   advisoryLabel: { color: colors.text, fontSize: s(30), fontWeight: '800', letterSpacing: 1 },
   advisoryText: { color: colors.textDim, fontSize: s(24), marginTop: s(4) },
+  live: { position: 'absolute', top: s(48), right: s(64), backgroundColor: colors.live, borderRadius: s(8), paddingHorizontal: s(16), paddingVertical: s(6) },
+  liveText: { color: '#fff', fontSize: s(26), fontWeight: '800', letterSpacing: s(2) },
   error: { color: '#ff8a80', fontSize: s(24), marginTop: s(30), width: s(1200) },
 });

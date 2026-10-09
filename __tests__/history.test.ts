@@ -39,3 +39,9 @@ test('labels', () => {
   expect(timeLeftLabel({ id: 'x', episode: 0, position: 600, duration: 4920, updatedAt: 0 })).toBe('1 hr 12 min left');
   expect(timeLeftLabel({ id: 'x', episode: 4, position: 1200, duration: 2520, updatedAt: 0 })).toBe('E4 · 22 min left');
 });
+
+test('a live channel never gets a resume point or a Continue Watching entry', async () => {
+  await recordWatch('haukley-weather', 0, 754, 3600);
+  expect(resumeAt('haukley-weather')).toBe(0);
+  expect((await loadHistory()).some(w => w.id === 'haukley-weather')).toBe(false);
+});

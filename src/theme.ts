@@ -11,6 +11,8 @@ export const colors = {
   bg: '#000000',
   text: '#FFFFFF',
   accent: '#8B6CFF',
+  /** The red LIVE tag (same red as the channel's on-air tag and the tile art). */
+  live: '#E63946',
   textDim: 'rgba(255,255,255,0.62)',
   textFaint: 'rgba(255,255,255,0.4)',
   pill: 'rgba(255,255,255,0.16)',

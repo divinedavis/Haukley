@@ -1,6 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from 'react';
 import rows from '../scripts/rows.json';
+import { isLive } from './catalog';
 
 /** Where a viewer stopped in a movie (episode 0) or an episode, kept on the device. */
 export type Watch = { id: string; episode: number; position: number; duration: number; updatedAt: number };
@@ -64,7 +65,8 @@ export function lastEpisode(id: string): Watch | undefined {
 }
 
 export async function recordWatch(id: string, episode: number, position: number, duration: number) {
-  if (!(duration > 0) || !(position >= 0)) {
+  // Live channels have no resume point and never join Continue Watching.
+  if (isLive(id) || !(duration > 0) || !(position >= 0)) {
     return;
   }
   const list = (await loadHistory()).filter(w => !(w.id === id && w.episode === episode));

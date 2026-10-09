@@ -16,8 +16,11 @@ export function DetailScreen({ id, onPlay, onOpen }: Props) {
   const t = getTitle(id);
   const scroll = useRef<ScrollView>(null);
   const isShow = t.kind === 'show';
+  const isLive = t.kind === 'live';
   useContinueWatching(); // re-render when progress changes
-  const resume = isShow
+  const resume = isLive
+    ? undefined
+    : isShow
     ? lastEpisode(t.id)
     : resumeAt(t.id) > 0
       ? { episode: 0, position: resumeAt(t.id) }
@@ -32,12 +35,19 @@ export function DetailScreen({ id, onPlay, onOpen }: Props) {
 
       <ScrollView ref={scroll} scrollEnabled={false} showsVerticalScrollIndicator={false}>
         <View style={styles.top}>
-          <Text style={styles.eyebrow}>{isShow ? 'STREAMING FREE · SERIES' : 'STREAMING FREE'}</Text>
+          <Text style={styles.eyebrow}>{isLive ? 'LIVE CHANNEL · 24/7' : isShow ? 'STREAMING FREE · SERIES' : 'STREAMING FREE'}</Text>
           <Text style={styles.title}>{t.title}</Text>
           <View style={styles.metaRow}>
+            {isLive ? (
+              <View style={styles.liveBadge} testID="live-badge">
+                <Text style={styles.liveBadgeText}>LIVE</Text>
+              </View>
+            ) : null}
             <Badge text={t.rating} />
             <Text style={styles.meta}>
-              {t.genre} · {t.year} · {isShow ? `${t.seasons} Season${t.seasons === 1 ? '' : 's'}` : t.runtime}
+              {isLive
+                ? t.genre
+                : `${t.genre} · ${t.year} · ${isShow ? `${t.seasons} Season${t.seasons === 1 ? '' : 's'}` : t.runtime}`}
             </Text>
           </View>
           <Text style={styles.tagline}>{t.tagline}</Text>
@@ -64,7 +74,7 @@ export function DetailScreen({ id, onPlay, onOpen }: Props) {
               </>
             ) : (
               <Button
-                label={isShow ? 'Play E1' : 'Play'}
+                label={isLive ? 'Watch Live' : isShow ? 'Play E1' : 'Play'}
                 icon="▶"
                 hasTVPreferredFocus
                 onFocus={toTop}
@@ -74,8 +84,8 @@ export function DetailScreen({ id, onPlay, onOpen }: Props) {
           </View>
         </View>
 
-        <Text style={styles.shelfTitle}>{isShow ? 'Episodes' : 'More Like This'}</Text>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.shelf} style={styles.visible}>
+        {isLive ? null : <Text style={styles.shelfTitle}>{isShow ? 'Episodes' : 'More Like This'}</Text>}
+        {isLive ? null : <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.shelf} style={styles.visible}>
           {isShow
             ? episodesFor(t).map(ep => (
                 <View key={ep.number} style={styles.item}>
@@ -101,7 +111,7 @@ export function DetailScreen({ id, onPlay, onOpen }: Props) {
                   />
                 </View>
               ))}
-        </ScrollView>
+        </ScrollView>}
         <View style={{ height: s(80) }} />
       </ScrollView>
     </View>
@@ -134,6 +144,8 @@ const styles = StyleSheet.create({
     marginRight: s(12),
   },
   badgeText: { color: colors.textDim, fontSize: s(18), fontWeight: '800' },
+  liveBadge: { backgroundColor: colors.live, borderRadius: s(6), paddingHorizontal: s(10), paddingVertical: s(3), marginRight: s(12) },
+  liveBadgeText: { color: '#fff', fontSize: s(18), fontWeight: '800', letterSpacing: s(1) },
   tagline: { color: colors.text, fontSize: s(30), fontWeight: '700', marginTop: s(26) },
   desc: { color: colors.text, fontSize: s(28), lineHeight: s(40), marginTop: s(10), opacity: 0.9 },
   credits: { color: colors.textDim, fontSize: s(24), marginTop: s(14) },

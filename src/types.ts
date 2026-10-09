@@ -1,7 +1,8 @@
 import type { ImageSourcePropType } from 'react-native';
 
 export type Title = {
-  kind: 'movie' | 'show';
+  /** 'live': a 24/7 channel (live HLS: no runtime, resume point, ads or episodes). */
+  kind: 'movie' | 'show' | 'live';
   id: string;
   title: string;
   genre: string;

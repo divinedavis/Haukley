@@ -50,7 +50,7 @@ export function Shelf({ row, onSelect, onFocusRow }: Props) {
               height={h}
               rank={row.type === 'ranked' ? index + 1 : undefined}
               label={row.type === 'ranked' || landscape ? item.title : undefined}
-              sublabel={landscape ? `${item.genre} · ${item.year}` : row.type === 'ranked' ? item.genre : undefined}
+              sublabel={landscape ? (item.kind === 'live' ? `Live 24/7 · ${item.genre}` : `${item.genre} · ${item.year}`) : row.type === 'ranked' ? item.genre : undefined}
               onFocus={onFocusRow}
               onPress={() => onSelect(item.id)}
             />

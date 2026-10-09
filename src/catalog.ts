@@ -48,6 +48,7 @@ function apply(titles: Title[], featured: string[], homeRows: RemoteRow[], strea
   TITLES = titles;
   byId = new Map(titles.map(t => [t.id, t]));
   streams = streamById;
+  // Live channels appear only in the rows that name them (the Live TV row).
   MOVIES = titles.filter(t => t.kind === 'movie');
   SHOWS = titles.filter(t => t.kind === 'show');
   FEATURED = pick(featured);
@@ -76,7 +77,8 @@ function apply(titles: Title[], featured: string[], homeRows: RemoteRow[], strea
 
 function fromBundle() {
   const s = new Map<string, string>();
-  for (const t of [...catalog.movies, ...catalog.shows] as { id: string; stream?: string }[]) {
+  const live = (catalog as { live?: { id: string; stream?: string }[] }).live ?? [];
+  for (const t of [...catalog.movies, ...catalog.shows, ...live] as { id: string; stream?: string }[]) {
     if (t.stream) {
       s.set(t.id, t.stream);
     }
@@ -92,7 +94,7 @@ function fromRemote(remote: RemoteCatalog) {
   const titles = remote.titles.map((r): Title => {
     s.set(r.id, r.stream);
     const b = bundled.get(r.id);
-    const kind = r.kind === 'show' ? 'show' : 'movie';
+    const kind = r.kind === 'show' || r.kind === 'live' ? r.kind : 'movie';
     return {
       kind, id: r.id, title: r.title, genre: r.genre, year: r.year, rating: r.rating, tagline: r.tagline,
       description: r.description, credits: r.credits, license: r.license ?? undefined,
@@ -170,4 +172,6 @@ export const episodesFor = (t: Title): Episode[] =>
     summary: i === 0 ? t.description : `The fallout from last week's discovery forces everyone in ${t.title} to choose a side.`,
   }));
 
-export const moreLike = (t: Title) => TITLES.filter(x => x.id !== t.id && x.kind === t.kind).slice(0, 8);
+export const moreLike = (t: Title) =>
+  t.kind === 'live' ? [] : TITLES.filter(x => x.id !== t.id && x.kind === t.kind).slice(0, 8);
+export const isLive = (id: string) => byId.get(id)?.kind === 'live';
