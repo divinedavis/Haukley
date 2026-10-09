@@ -1,0 +1,10 @@
+# gitleaks config for the pre-push hook (.githooks/pre-push). Default rules, plus one
+# allowlist: Supabase *publishable* keys are client keys meant to ship inside apps (they're
+# in web/watch/app.js and every platform's ads config; RLS + RPCs guard the data). Secret
+# keys (sb_secret_...) and service_role JWTs are still caught by the default rules.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Supabase publishable (client) key"
+regexes = ['''sb_publishable_[A-Za-z0-9_-]+''']
