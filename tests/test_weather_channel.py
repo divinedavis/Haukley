@@ -40,14 +40,14 @@ class Timeline(unittest.TestCase):
 
     def test_cycle_wrap_switches_to_newest_with_discontinuity(self):
         tl = ch.Timeline()
-        tl.tick(0.0, {"1": [SEG] * 6}, "1")
-        cycles = {"1": [SEG] * 6, "2": [SEG] * 20}
+        tl.tick(0.0, {"1": [SEG] * 10}, "1")
+        cycles = {"1": [SEG] * 10, "2": [SEG] * 20}
         tl.tick(3 * SEG, cycles, "2")
         pl = tl.playlist()
         self.assertIn("#EXT-X-DISCONTINUITY\n#EXTINF:6.000,\nc2/seg000.ts", pl)
         # the old cycle is still referenced until it leaves the window
         self.assertEqual(tl.referenced(), {"1", "2"})
-        tl.tick(8 * SEG, cycles, "2")
+        tl.tick(3 * SEG + ch.WINDOW * SEG, cycles, "2")
         head, segs = parse(tl.playlist())
         self.assertEqual(tl.referenced(), {"2"})
         self.assertEqual(int(head["DISCONTINUITY-SEQUENCE"]), 1)
@@ -58,9 +58,8 @@ class Timeline(unittest.TestCase):
         cycles = {"1": [SEG] * 3}
         tl.tick(0.0, cycles, "1")
         _, segs = parse(tl.playlist())
-        self.assertEqual(segs, ["c1/seg000.ts", "c1/seg001.ts", "c1/seg002.ts",
-                                "c1/seg000.ts", "c1/seg001.ts"])
-        self.assertEqual(tl.playlist().count("#EXT-X-DISCONTINUITY\n"), 1)
+        self.assertEqual(segs, [f"c1/seg{i % 3:03d}.ts" for i in range(ch.WINDOW)])
+        self.assertEqual(tl.playlist().count("#EXT-X-DISCONTINUITY\n"), (ch.WINDOW - 1) // 3)
 
     def test_state_round_trip_and_outage_restart(self):
         tl = ch.Timeline()
@@ -84,6 +83,7 @@ class Timeline(unittest.TestCase):
 
     def test_master_playlist_points_at_live(self):
         m = ch.master_playlist()
+        self.assertNotIn("mp4a", m)   # video-only: the CODECS list must match the segments
         self.assertIn("#EXT-X-STREAM-INF:BANDWIDTH=", m)
         self.assertTrue(m.rstrip().endswith("live.m3u8"))
 

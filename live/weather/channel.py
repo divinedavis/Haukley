@@ -34,7 +34,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 SEG = 6                      # seconds per HLS segment; every slide lasts a multiple of it
-WINDOW = 5                   # segments listed in the live playlist
+WINDOW = 8                   # segments listed in the live playlist (48 s of slack for slow starts)
 RENDER_EVERY = 15 * 60       # seconds between renders (NWS updates hourly at most)
 KEEP_CYCLES = 3
 FPS = 15
@@ -136,7 +136,7 @@ class Timeline:
 def master_playlist() -> str:
     return ("#EXTM3U\n#EXT-X-VERSION:3\n"
             f'#EXT-X-STREAM-INF:BANDWIDTH={BANDWIDTH},RESOLUTION={W}x{H},'
-            f'FRAME-RATE={FPS}.000,CODECS="avc1.64001f,mp4a.40.2"\nlive.m3u8\n')
+            f'FRAME-RATE={FPS}.000,CODECS="avc1.64001f"\nlive.m3u8\n')
 
 
 def write_atomic(path: Path, text: str) -> None:
@@ -435,13 +435,14 @@ def encode(prog: list[tuple[Path, float]], work: Path, dest: Path) -> list[float
     dest.mkdir(parents=True, exist_ok=True)
     cmd = ["nice", "-n", "19", "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
            "-f", "concat", "-safe", "0", "-i", str(work / "list.txt"),
-           "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=48000",
            "-t", f"{total:.3f}", "-r", str(FPS), "-vf", "format=yuv420p",
            "-c:v", "libx264", "-preset", "veryfast", "-tune", "stillimage",
            "-profile:v", "high", "-level", "3.1", "-b:v", "700k", "-maxrate", "800k",
            "-bufsize", "1600k", "-g", str(SEG * FPS), "-keyint_min", str(SEG * FPS),
            "-sc_threshold", "0", "-force_key_frames", f"expr:gte(t,n_forced*{SEG})",
-           "-c:a", "aac", "-b:a", "64k", "-threads", "1",
+           # Video only, no B-frames: AAC frames can't land on 6 s cuts, and the ~0.1 s
+           # audio/video offsets per segment stalled hls.js at live start (the channel is silent).
+           "-bf", "0", "-an", "-threads", "1",
            "-f", "hls", "-hls_time", str(SEG), "-hls_playlist_type", "vod",
            "-hls_segment_filename", str(dest / "seg%03d.ts"), str(dest / "cycle.m3u8")]
     subprocess.run(cmd, check=True, cwd=work, timeout=1800)
