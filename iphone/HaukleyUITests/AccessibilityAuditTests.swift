@@ -19,7 +19,7 @@ final class AccessibilityAuditTests: XCTestCase {
 
     private func launch(_ extra: [String] = []) {
         app = XCUIApplication()
-        app.launchArguments = ["-uitest-reset"] + extra
+        app.launchArguments = ["-uitest-reset", "-uitest-weather-stub"] + extra
         app.launch()
         let splash = app.descendants(matching: .any).matching(identifier: "splash").firstMatch
         expectation(for: NSPredicate(format: "exists == false"), evaluatedWith: splash)
@@ -152,6 +152,24 @@ final class AccessibilityAuditTests: XCTestCase {
         XCTAssertTrue(element("detail.title").waitForExistence(timeout: 5))
         sleep(1)
         audit("title detail")
+    }
+
+    /// Haukley Weather's page carries the "Your weather" card and the location sheet.
+    func testWeatherChannelAndLocationSheet() {
+        launch()
+        XCTAssertTrue(element("hero.play").waitForExistence(timeout: 8))
+        let tile = element("poster.haukley-weather")
+        for _ in 0..<5 where !(tile.exists && tile.isHittable) { app.swipeUp() }
+        tile.tap()
+        let card = element("weather.card")
+        for _ in 0..<3 where !(card.exists && card.isHittable) { app.swipeUp() }
+        XCTAssertTrue(element("weather.place").waitForExistence(timeout: 8))
+        sleep(1)
+        audit("weather channel page")
+        element("weather.change").tap()
+        XCTAssertTrue(element("weather.useLocation").waitForExistence(timeout: 5))
+        sleep(1)
+        audit("weather location sheet")
     }
 
     /// The real Dynamic Type check: at the largest accessibility size every tab still opens

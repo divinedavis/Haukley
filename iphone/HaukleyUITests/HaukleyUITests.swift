@@ -6,7 +6,8 @@ final class HaukleyUITests: XCTestCase {
     override func setUp() {
         continueAfterFailure = false
         app = XCUIApplication()
-        app.launchArguments = ["-uitest-reset"]
+        // -uitest-weather-stub: Haukley Weather's local forecast comes from a fixture, not the network.
+        app.launchArguments = ["-uitest-reset", "-uitest-weather-stub"]
         app.launch()
         // The splash folds away on its own; test the outcome, not the decoration.
         let splash = app.descendants(matching: .any).matching(identifier: "splash").firstMatch
@@ -217,8 +218,21 @@ final class HaukleyUITests: XCTestCase {
         XCTAssertTrue(play.waitForExistence(timeout: 12))
         XCTAssertEqual(play.label, "Watch Live")
         XCTAssertTrue(element("detail.live").exists, "LIVE badge on the channel page")
+        let card = element("weather.card")
+        for _ in 0..<3 where !card.exists { app.swipeUp() }
+        XCTAssertTrue(card.waitForExistence(timeout: 8), "Your weather card on the channel page")
+        XCTAssertTrue(element("weather.place").waitForExistence(timeout: 8), "forecast place shown")
+        snap("weather-card")
+        element("weather.change").tap()
+        XCTAssertTrue(element("weather.useLocation").waitForExistence(timeout: 5), "location sheet opens")
+        XCTAssertTrue(element("weather.city.chicago").waitForExistence(timeout: 5), "city list shown")
+        snap("weather-location-sheet")
+        element("weather.city.chicago").tap()
+        XCTAssertTrue(element("weather.card").waitForExistence(timeout: 5))
+        for _ in 0..<3 where !play.isHittable { app.swipeDown() }
         play.tap()
         XCTAssertTrue(element("player.live").waitForExistence(timeout: 15), "LIVE tag in the player")
+        XCTAssertTrue(element("player.weatherChip").waitForExistence(timeout: 8), "local temperature chip over the player")
         sleep(8)
         snap("live-player")
         element("player.close").tap()

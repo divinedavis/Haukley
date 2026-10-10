@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090CEBB61D236EFBF80F90FD /* WeatherCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF58D91C1B119F8C9C4EC4D /* WeatherCard.swift */; };
 		12A5E71E25567C5C0796CE87 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39EBCAFFC64BFA998F800ED /* Catalog.swift */; };
 		14082D5E07651F7F7E1B8568 /* AdsTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D75479DC8D23173444A8551 /* AdsTrackerTests.swift */; };
 		1DD85483DA2758F0572A337B /* ClipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58ABA389C3C1A29930F04A /* ClipsView.swift */; };
+		2AA8D6FBAB54C8D95FD616DD /* LocalWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F684E2EAF23D2204AB0D41 /* LocalWeatherTests.swift */; };
 		4D9DC6BC5D3C101E94D57190 /* HaukleyScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F21EF05C294CC1135BCA2DD /* HaukleyScreenshotTests.swift */; };
 		541F44A751BD0487F3603294 /* LiveChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8D4E26E5D2D1060D7B343F /* LiveChannelTests.swift */; };
+		575046BC6964FE857D43033E /* LocalWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A080BC0A25985BB95813E4 /* LocalWeather.swift */; };
 		62966187FAB897D3F1D1EB34 /* GoogleInteractiveMediaAds in Frameworks */ = {isa = PBXBuildFile; productRef = 956D114CC378377B04E132C4 /* GoogleInteractiveMediaAds */; };
 		6EAB80174E1A03C3D6706DCB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496DE25C4FFC66ED749EEEA5 /* HomeView.swift */; };
 		72E45AEA01120D72553701B9 /* HaukleyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1EB57DCFA8C39AD3F9EB3C /* HaukleyUITests.swift */; };
@@ -63,7 +66,9 @@
 		77906B4976E85833FD781D76 /* AccessibilityAuditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityAuditTests.swift; sourceTree = "<group>"; };
 		7CB154E56F7B76889E007051 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		9C840BEF3D3786B49DDFED20 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		A1F684E2EAF23D2204AB0D41 /* LocalWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalWeatherTests.swift; sourceTree = "<group>"; };
 		A35849512E255857D91F4644 /* HaukleyTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = HaukleyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3A080BC0A25985BB95813E4 /* LocalWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalWeather.swift; sourceTree = "<group>"; };
 		ADDAD4C39E56E78D346B1F98 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		AF8D4E26E5D2D1060D7B343F /* LiveChannelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChannelTests.swift; sourceTree = "<group>"; };
 		B8A49C40600459E0CD691E1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +79,7 @@
 		E39EBCAFFC64BFA998F800ED /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 		E89E141E7E0B26D985F7E9E9 /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 		F2731B2CC23C87DB5F52BFE9 /* HaukleyUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = HaukleyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDF58D91C1B119F8C9C4EC4D /* WeatherCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				4A45F68443BDE471277327D9 /* TitleDetailView.swift */,
+				FDF58D91C1B119F8C9C4EC4D /* WeatherCard.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -145,6 +152,7 @@
 			children = (
 				6D75479DC8D23173444A8551 /* AdsTrackerTests.swift */,
 				AF8D4E26E5D2D1060D7B343F /* LiveChannelTests.swift */,
+				A1F684E2EAF23D2204AB0D41 /* LocalWeatherTests.swift */,
 			);
 			path = HaukleyTests;
 			sourceTree = "<group>";
@@ -232,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				CCBE691C55E3A3494EF60729 /* Ads.swift */,
+				A3A080BC0A25985BB95813E4 /* LocalWeather.swift */,
 				5BB16CFAAF1925510611189B /* MetricsReporter.swift */,
 			);
 			path = Services;
@@ -371,6 +380,7 @@
 			files = (
 				14082D5E07651F7F7E1B8568 /* AdsTrackerTests.swift in Sources */,
 				541F44A751BD0487F3603294 /* LiveChannelTests.swift in Sources */,
+				2AA8D6FBAB54C8D95FD616DD /* LocalWeatherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,11 +406,13 @@
 				C41F85949E865D3199AF904C /* HaukleyApp.swift in Sources */,
 				6EAB80174E1A03C3D6706DCB /* HomeView.swift in Sources */,
 				DF8075C9BD174B29F3F9774F /* Library.swift in Sources */,
+				575046BC6964FE857D43033E /* LocalWeather.swift in Sources */,
 				F591E50DEFE503F3429FAA02 /* MetricsReporter.swift in Sources */,
 				C9840625F349E2F2AD6E27CF /* MyHaukleyView.swift in Sources */,
 				A261594CB2F76CF979779A68 /* PlayerView.swift in Sources */,
 				CCF0BFCB0B1DD5FBDA96CC0A /* SearchView.swift in Sources */,
 				79517D15FE6806D2782F4028 /* TitleDetailView.swift in Sources */,
+				090CEBB61D236EFBF80F90FD /* WeatherCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

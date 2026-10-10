@@ -18,6 +18,8 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Haukley uses your approximate location to show your local forecast on Haukley Weather. It's only used when you tap Use my current location.</string>
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>

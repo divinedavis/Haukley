@@ -35,6 +35,12 @@ struct PlayerScreen: View {
             .accessibilityLabel("Close player")
             .accessibilityIdentifier("player.close")
         }
+        .overlay(alignment: .bottomLeading) {
+            // The weather channel is one national stream; the viewer's own temperature rides on top.
+            if request.title.isLive {
+                WeatherChip().padding(.leading, 16).padding(.bottom, 64)
+            }
+        }
         .statusBarHidden()
         .onAppear { Orientation.set(.allButUpsideDown, prefer: .landscapeRight) }
         .onDisappear { Orientation.set(.portrait, prefer: .portrait) }

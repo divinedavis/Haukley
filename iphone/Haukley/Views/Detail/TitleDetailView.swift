@@ -59,6 +59,8 @@ struct TitleDetailView: View {
                     }
                     .accessibilityIdentifier("detail.play")
 
+                    if title.isLive { WeatherCard() }
+
                     Text(title.tagline).scaledFont(15, weight: .semibold)
                     Text(title.description).scaledFont(15)
                     if let advisory = title.advisory {
