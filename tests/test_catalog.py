@@ -159,3 +159,14 @@ if __name__ == "__main__":
                 self.assertIn(tid, titles, f"{name}: live channel {tid} missing")
                 self.assertEqual(titles[tid].get("kind"), "live", f"{name}: {tid} is not kind live")
 
+
+
+def test_every_catalog_title_is_seeded_in_a_migration():
+    # start_playback refuses ids missing from public.titles (no ad ticket, no play logged), and
+    # ad_events.title_id references that table. 34 titles shipped unseeded until 0017.
+    import re
+    seeded = set()
+    for p in sorted((ROOT / "supabase" / "migrations").glob("*.sql")):
+        seeded |= set(re.findall(r"\(\s*'([a-z0-9-]+)',\s*'(?:movie|show)'", p.read_text()))
+    missing = sorted(tid for key in ("movies", "shows") for tid in (t["id"] for t in SOURCE[key]) if tid not in seeded)
+    assert not missing, f"add these to a supabase migration's titles insert (then apply it): {missing}"
