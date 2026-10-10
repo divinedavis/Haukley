@@ -1667,6 +1667,331 @@
    "kids": false,
    "license": "Public domain in the United States",
    "advisory": "Gun violence (a fatal shooting); gambling and crime."
+  },
+  {
+   "id": "go-west",
+   "title": "Go West",
+   "still": "scripts/stills/go-west.jpg",
+   "genre": "Comedy",
+   "year": 1925,
+   "rating": "NR",
+   "runtime": "1 hr 8 min",
+   "font": "BebasNeue",
+   "layout": "bottom",
+   "tint": [
+    35,
+    25,
+    10
+   ],
+   "tagline": "A drifter, a cow and a thousand steers.",
+   "description": "A drifter with no luck heads west, takes a ranch job and befriends a cow named Brown Eyes, then has to herd a thousand steers through downtown Los Angeles.",
+   "credits": "Directed by Buster Keaton · Starring Buster Keaton · Howard Truesdale · Kathleen Myers",
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/go-west/master.m3u8",
+   "kids": true,
+   "license": "Public domain in the United States",
+   "advisory": null,
+   "silent": true
+  },
+  {
+   "id": "battling-butler",
+   "title": "Battling Butler",
+   "still": "scripts/stills/battling-butler.jpg",
+   "genre": "Comedy",
+   "year": 1926,
+   "rating": "NR",
+   "runtime": "1 hr 16 min",
+   "font": "Anton",
+   "layout": "bottom",
+   "tint": [
+    30,
+    20,
+    15
+   ],
+   "tagline": "He's not a boxer. He just plays one.",
+   "description": "A pampered rich kid pretends to be a champion boxer to win a mountain girl's family over, until he has to step into the ring for real.",
+   "credits": "Directed by Buster Keaton · Starring Buster Keaton · Sally O'Neil · Snitz Edwards",
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/battling-butler/master.m3u8",
+   "kids": true,
+   "license": "Public domain in the United States",
+   "advisory": null,
+   "silent": true
+  },
+  {
+   "id": "topper-returns",
+   "title": "Topper Returns",
+   "still": "scripts/stills/topper-returns.jpg",
+   "genre": "Comedy",
+   "year": 1941,
+   "rating": "NR",
+   "runtime": "1 hr 28 min",
+   "font": "PlayfairDisplay",
+   "layout": "center",
+   "tint": [
+    20,
+    20,
+    35
+   ],
+   "tagline": "The victim wants her killer caught.",
+   "description": "A murdered heiress's ghost drags the timid Cosmo Topper into solving her own killing in a spooky mansion full of trapdoors and suspects.",
+   "credits": "Directed by Roy Del Ruth · Starring Joan Blondell · Roland Young · Carole Landis · Eddie \"Rochester\" Anderson",
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/topper-returns/master.m3u8",
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": "Period racial stereotyping in the comic scenes with the chauffeur."
+  },
+  {
+   "id": "made-for-each-other",
+   "title": "Made for Each Other",
+   "still": "scripts/stills/made-for-each-other.jpg",
+   "genre": "Drama",
+   "year": 1939,
+   "rating": "NR",
+   "runtime": "1 hr 32 min",
+   "font": "PlayfairDisplay",
+   "layout": "bottom",
+   "tint": [
+    30,
+    20,
+    25
+   ],
+   "tagline": "Married in a week. Tested for a lifetime.",
+   "description": "A young lawyer and the woman he marries after a whirlwind week face money troubles, a meddling mother and a desperate race to save their baby's life.",
+   "credits": "Directed by John Cromwell · Starring Carole Lombard · James Stewart · Charles Coburn",
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/made-for-each-other/master.m3u8",
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": null
+  },
+  {
+   "id": "quicksand",
+   "title": "Quicksand",
+   "still": "scripts/stills/quicksand.jpg",
+   "genre": "Film Noir",
+   "year": 1950,
+   "rating": "NR",
+   "runtime": "1 hr 19 min",
+   "font": "Oswald",
+   "layout": "bottom",
+   "tint": [
+    15,
+    15,
+    20
+   ],
+   "tagline": "Twenty dollars. One bad night. No way out.",
+   "description": "A garage mechanic borrows twenty dollars from the till to impress a girl, and every lie he tells to cover it sinks him deeper into crime.",
+   "credits": "Directed by Irving Pichel · Starring Mickey Rooney · Jeanne Cagney · Peter Lorre",
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/quicksand/master.m3u8",
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": null
+  },
+  {
+   "id": "terror-by-night",
+   "title": "Terror by Night",
+   "still": "scripts/stills/terror-by-night.jpg",
+   "genre": "Mystery",
+   "year": 1946,
+   "rating": "NR",
+   "runtime": "58 min",
+   "font": "Cinzel",
+   "layout": "bottom",
+   "tint": [
+    20,
+    20,
+    25
+   ],
+   "tagline": "A diamond, a night train, a killer aboard.",
+   "description": "Sherlock Holmes and Dr. Watson guard a priceless diamond on the overnight express to Edinburgh, but a killer is already aboard.",
+   "credits": "Directed by Roy William Neill · Starring Basil Rathbone · Nigel Bruce · Alan Mowbray",
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/terror-by-night/master.m3u8",
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": null
+  },
+  {
+   "id": "captain-kidd",
+   "title": "Captain Kidd",
+   "still": "scripts/stills/captain-kidd.jpg",
+   "genre": "Adventure",
+   "year": 1945,
+   "rating": "NR",
+   "runtime": "1 hr 29 min",
+   "font": "Cinzel",
+   "layout": "center",
+   "tint": [
+    30,
+    20,
+    10
+   ],
+   "tagline": "The King's pirate has his own plans.",
+   "description": "The notorious pirate William Kidd talks his way into the King's service as a treasure-ship escort, planning to rob it, but one of his crew has a score to settle.",
+   "credits": "Directed by Rowland V. Lee · Starring Charles Laughton · Randolph Scott · Barbara Britton",
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/captain-kidd/master.m3u8",
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": null
+  },
+  {
+   "id": "of-human-bondage",
+   "title": "Of Human Bondage",
+   "still": "scripts/stills/of-human-bondage.jpg",
+   "genre": "Drama",
+   "year": 1934,
+   "rating": "NR",
+   "runtime": "1 hr 23 min",
+   "font": "PlayfairDisplay",
+   "layout": "bottom",
+   "tint": [
+    25,
+    20,
+    20
+   ],
+   "tagline": "The role that made Bette Davis a star.",
+   "description": "A shy medical student with a club foot falls hopelessly for a cruel London waitress in the role that made Bette Davis a star.",
+   "credits": "Directed by John Cromwell · Starring Leslie Howard · Bette Davis · Frances Dee",
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/of-human-bondage/master.m3u8",
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": null
+  },
+  {
+   "id": "the-blue-angel",
+   "title": "The Blue Angel",
+   "still": "scripts/stills/the-blue-angel.jpg",
+   "genre": "Drama",
+   "year": 1930,
+   "rating": "NR",
+   "runtime": "1 hr 40 min",
+   "font": "AbrilFatface",
+   "layout": "center",
+   "tint": [
+    35,
+    15,
+    20
+   ],
+   "tagline": "Falling in love again, with Marlene Dietrich.",
+   "description": "A strict schoolteacher goes to a cabaret to catch his students and falls for its singer, Lola Lola, a love that costs him everything. Marlene Dietrich's breakthrough.",
+   "credits": "Directed by Josef von Sternberg · Starring Emil Jannings · Marlene Dietrich",
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-blue-angel/master.m3u8",
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": null
+  },
+  {
+   "id": "nanook-of-the-north",
+   "title": "Nanook of the North",
+   "still": "scripts/stills/nanook-of-the-north.jpg",
+   "genre": "Documentary",
+   "year": 1922,
+   "rating": "NR",
+   "runtime": "1 hr 17 min",
+   "font": "Oswald",
+   "layout": "top",
+   "tint": [
+    20,
+    25,
+    35
+   ],
+   "tagline": "A year at the edge of the Arctic.",
+   "description": "Robert Flaherty's landmark portrait of an Inuit family's year on the Hudson Bay coast: hunting, travel and building an igloo against the Arctic cold.",
+   "credits": "Directed by Robert J. Flaherty · Featuring Allakariallak",
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/nanook-of-the-north/master.m3u8",
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": "Real animal hunting; some scenes were staged by the filmmaker.",
+   "silent": true
+  },
+  {
+   "id": "reefer-madness",
+   "title": "Reefer Madness",
+   "still": "scripts/stills/reefer-madness.jpg",
+   "genre": "Drama",
+   "year": 1936,
+   "rating": "NR",
+   "runtime": "1 hr 8 min",
+   "font": "Monoton",
+   "layout": "center",
+   "tint": [
+    30,
+    30,
+    10
+   ],
+   "tagline": "The scare film that became a cult comedy.",
+   "description": "A school principal warns parents about 'the burning weed' in the cult-classic scare film that became a midnight-movie comedy.",
+   "credits": "Directed by Louis J. Gasnier · Starring Dorothy Short · Kenneth Craig · Lillian Miles",
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/reefer-madness/master.m3u8",
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": "Drug use, a killing, a suicide and an attempted sexual assault."
+  },
+  {
+   "id": "salt-of-the-earth",
+   "title": "Salt of the Earth",
+   "still": "scripts/stills/salt-of-the-earth.jpg",
+   "genre": "Drama",
+   "year": 1954,
+   "rating": "NR",
+   "runtime": "1 hr 32 min",
+   "font": "ArchivoBlack",
+   "layout": "bottom",
+   "tint": [
+    30,
+    20,
+    10
+   ],
+   "tagline": "When the miners can't strike, their wives do.",
+   "description": "When Mexican-American zinc miners in New Mexico strike and an injunction bars them from the picket line, their wives take their place.",
+   "credits": "Directed by Herbert J. Biberman · Starring Rosaura Revueltas · Juan Chacón · Will Geer",
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/salt-of-the-earth/master.m3u8",
+   "kids": false,
+   "license": "Public domain in the United States",
+   "advisory": null
+  },
+  {
+   "id": "let-there-be-light",
+   "title": "Let There Be Light",
+   "still": "scripts/stills/let-there-be-light.jpg",
+   "genre": "Documentary",
+   "year": 1946,
+   "rating": "NR",
+   "runtime": "58 min",
+   "font": "Oswald",
+   "layout": "bottom",
+   "tint": [
+    20,
+    20,
+    25
+   ],
+   "tagline": "John Huston's long-suppressed film on war trauma.",
+   "description": "John Huston follows soldiers treated for psychological trauma at an Army hospital after World War II, a film the Army withheld from the public until 1980.",
+   "credits": "Directed by John Huston · Narrated by Walter Huston · Music by Dimitri Tiomkin · Produced by the U.S. Army Signal Corps",
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/let-there-be-light/master.m3u8",
+   "kids": false,
+   "license": "U.S. government work — public domain in the United States",
+   "advisory": "Real psychiatric patients describing wartime trauma."
+  },
+  {
+   "id": "the-negro-soldier",
+   "title": "The Negro Soldier",
+   "still": "scripts/stills/the-negro-soldier.jpg",
+   "genre": "Documentary",
+   "year": 1944,
+   "rating": "NR",
+   "runtime": "40 min",
+   "font": "Cinzel",
+   "layout": "bottom",
+   "tint": [
+    25,
+    20,
+    15
+   ],
+   "tagline": "Black Americans in every war the nation fought.",
+   "description": "Framed as a church sermon, this Army film traces Black Americans' service from the Revolution to World War II and follows a recruit through training.",
+   "credits": "Directed by Stuart Heisler · Written by Carlton Moss · Produced by Frank Capra for the U.S. War Department",
+   "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/the-negro-soldier/master.m3u8",
+   "kids": false,
+   "license": "U.S. government work — public domain in the United States",
+   "advisory": "Depicts the segregated wartime Army; real combat footage."
   }
  ],
  "shows": [
@@ -2106,6 +2431,198 @@
      "summary": "Flip woos a sweetheart frog in and around the pond.",
      "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/flip-the-frog-1930/e6/master.m3u8",
      "still": "scripts/stills/flip-the-frog-1930/e6.jpg"
+    }
+   ]
+  },
+  {
+   "id": "why-we-fight",
+   "title": "Why We Fight",
+   "still": "scripts/stills/why-we-fight/e4.jpg",
+   "genre": "Documentary",
+   "year": 1942,
+   "rating": "NR",
+   "seasons": 1,
+   "font": "Oswald",
+   "layout": "bottom",
+   "tint": [
+    30,
+    25,
+    15
+   ],
+   "tagline": "Frank Capra's wartime series for the U.S. Army.",
+   "description": "Frank Capra's seven-film U.S. Army series explaining the road to World War II, built from newsreels, captured footage and animated maps.",
+   "credits": "Directed by Frank Capra, Anatole Litvak · Narrated by Walter Huston · Music by Dimitri Tiomkin · Produced by the U.S. War Department",
+   "kids": false,
+   "license": "U.S. government work — public domain in the United States",
+   "advisory": "Wartime propaganda with racist caricatures of Japanese people; real combat footage.",
+   "episodes": [
+    {
+     "number": 1,
+     "season": 1,
+     "name": "Prelude to War",
+     "minutes": 52,
+     "summary": "Capra frames the war as a clash between a free world and a slave world, tracing how fascism rose in Germany, Italy and Japan.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/why-we-fight/e1/master.m3u8",
+     "still": "scripts/stills/why-we-fight/e1.jpg"
+    },
+    {
+     "number": 2,
+     "season": 1,
+     "name": "The Nazis Strike",
+     "minutes": 41,
+     "summary": "Germany's rearmament and expansion from the Rhineland to the invasion of Poland, told through newsreels and animated maps.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/why-we-fight/e2/master.m3u8",
+     "still": "scripts/stills/why-we-fight/e2.jpg"
+    },
+    {
+     "number": 3,
+     "season": 1,
+     "name": "Divide and Conquer",
+     "minutes": 56,
+     "summary": "The 1940 campaigns in Denmark, Norway, the Low Countries and France, ending with the fall of Paris.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/why-we-fight/e3/master.m3u8",
+     "still": "scripts/stills/why-we-fight/e3.jpg"
+    },
+    {
+     "number": 4,
+     "season": 1,
+     "name": "The Battle of Britain",
+     "minutes": 52,
+     "summary": "Outnumbered, the Royal Air Force and Britain's civilians withstand the Luftwaffe's 1940 air campaign.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/why-we-fight/e4/master.m3u8",
+     "still": "scripts/stills/why-we-fight/e4.jpg"
+    },
+    {
+     "number": 5,
+     "season": 1,
+     "name": "The Battle of Russia, Part 1",
+     "minutes": 35,
+     "summary": "Russia's history of repelling invaders sets up Germany's 1941 assault and the defense of Moscow.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/why-we-fight/e5/master.m3u8",
+     "still": "scripts/stills/why-we-fight/e5.jpg"
+    },
+    {
+     "number": 6,
+     "season": 1,
+     "name": "The Battle of Russia, Part 2",
+     "minutes": 47,
+     "summary": "The siege of Leningrad and the turning point at Stalingrad.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/why-we-fight/e6/master.m3u8",
+     "still": "scripts/stills/why-we-fight/e6.jpg"
+    },
+    {
+     "number": 7,
+     "season": 1,
+     "name": "The Battle of China",
+     "minutes": 62,
+     "summary": "Japan's invasion of China, the bombing of cities and the long Chinese resistance.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/why-we-fight/e7/master.m3u8",
+     "still": "scripts/stills/why-we-fight/e7.jpg"
+    },
+    {
+     "number": 8,
+     "season": 1,
+     "name": "War Comes to America",
+     "minutes": 65,
+     "summary": "How American public opinion moved from isolationism to war between 1931 and Pearl Harbor.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/why-we-fight/e8/master.m3u8",
+     "still": "scripts/stills/why-we-fight/e8.jpg"
+    }
+   ]
+  },
+  {
+   "id": "wwii-combat-reports",
+   "title": "WWII Combat Reports",
+   "still": "scripts/stills/wwii-combat-reports/e1.jpg",
+   "genre": "Documentary",
+   "year": 1942,
+   "rating": "NR",
+   "seasons": 1,
+   "font": "BebasNeue",
+   "layout": "bottom",
+   "tint": [
+    25,
+    25,
+    20
+   ],
+   "tagline": "Filmed under fire by the men who were there.",
+   "description": "Official combat documentaries shot by U.S. service cameramen, from Midway and Tarawa to Iwo Jima, including John Ford's and John Huston's war films.",
+   "credits": "Directed by John Ford, John Huston, William Wyler and U.S. armed-forces combat cameramen",
+   "kids": false,
+   "license": "U.S. government work — public domain in the United States",
+   "advisory": "Real combat footage, including the dead and wounded.",
+   "episodes": [
+    {
+     "number": 1,
+     "season": 1,
+     "name": "The Battle of Midway",
+     "minutes": 18,
+     "summary": "Shot by John Ford's Navy camera crew during the Japanese attack on Midway Island in June 1942, in Technicolor.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/wwii-combat-reports/e1/master.m3u8",
+     "still": "scripts/stills/wwii-combat-reports/e1.jpg"
+    },
+    {
+     "number": 2,
+     "season": 1,
+     "name": "Report from the Aleutians",
+     "minutes": 43,
+     "summary": "John Huston records the building of an airfield on Adak and bombing missions against Japanese-held Kiska.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/wwii-combat-reports/e2/master.m3u8",
+     "still": "scripts/stills/wwii-combat-reports/e2.jpg"
+    },
+    {
+     "number": 3,
+     "season": 1,
+     "name": "The Memphis Belle: A Story of a Flying Fortress",
+     "minutes": 40,
+     "summary": "William Wyler flies with a B-17 crew on its 25th and final mission over Germany.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/wwii-combat-reports/e3/master.m3u8",
+     "still": "scripts/stills/wwii-combat-reports/e3.jpg"
+    },
+    {
+     "number": 4,
+     "season": 1,
+     "name": "With the Marines at Tarawa",
+     "minutes": 19,
+     "summary": "Marine combat cameramen film the bloody November 1943 assault on Betio atoll; Academy Award winner.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/wwii-combat-reports/e4/master.m3u8",
+     "still": "scripts/stills/wwii-combat-reports/e4.jpg"
+    },
+    {
+     "number": 5,
+     "season": 1,
+     "name": "Attack! The Battle for New Britain",
+     "minutes": 56,
+     "summary": "Army Signal Corps photographers follow the December 1943 landings at Arawe and Cape Gloucester in New Britain.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/wwii-combat-reports/e5/master.m3u8",
+     "still": "scripts/stills/wwii-combat-reports/e5.jpg"
+    },
+    {
+     "number": 6,
+     "season": 1,
+     "name": "The Battle of San Pietro",
+     "minutes": 32,
+     "summary": "John Huston's unflinching record of the costly December 1943 fight for an Italian hill village.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/wwii-combat-reports/e6/master.m3u8",
+     "still": "scripts/stills/wwii-combat-reports/e6.jpg"
+    },
+    {
+     "number": 7,
+     "season": 1,
+     "name": "To the Shores of Iwo Jima",
+     "minutes": 19,
+     "summary": "Navy, Marine and Coast Guard cameramen cover the invasion of Iwo Jima in color, including the flag raising.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/wwii-combat-reports/e7/master.m3u8",
+     "still": "scripts/stills/wwii-combat-reports/e7.jpg"
+    },
+    {
+     "number": 8,
+     "season": 1,
+     "name": "Fury in the Pacific",
+     "minutes": 20,
+     "summary": "Joint Army-Navy-Marine film of the 1944 assaults on Peleliu and Angaur, shot by combat cameramen landing with the troops.",
+     "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/wwii-combat-reports/e8/master.m3u8",
+     "still": "scripts/stills/wwii-combat-reports/e8.jpg"
     }
    ]
   },

@@ -43,6 +43,29 @@
       ]
     },
     {
+      "key": "new",
+      "title": "Recently Added",
+      "type": "card",
+      "ids": [
+        "topper-returns",
+        "the-blue-angel",
+        "made-for-each-other",
+        "quicksand",
+        "go-west",
+        "captain-kidd",
+        "of-human-bondage",
+        "why-we-fight",
+        "terror-by-night",
+        "battling-butler",
+        "salt-of-the-earth",
+        "nanook-of-the-north",
+        "reefer-madness",
+        "wwii-combat-reports",
+        "the-negro-soldier",
+        "let-there-be-light"
+      ]
+    },
+    {
       "key": "tv-shows",
       "title": "Classic TV & Docuseries",
       "type": "card",
@@ -54,7 +77,9 @@
         "life-with-elizabeth",
         "flip-the-frog-1930",
         "caminandes",
-        "blender-open-shorts"
+        "blender-open-shorts",
+        "why-we-fight",
+        "wwii-combat-reports"
       ]
     },
     {
@@ -90,7 +115,9 @@
         "college",
         "the-cameraman",
         "speedy",
-        "seven-chances"
+        "seven-chances",
+        "go-west",
+        "battling-butler"
       ]
     },
     {
@@ -126,7 +153,9 @@
         "d-o-a",
         "suddenly",
         "blackmail",
-        "the-woman-in-green"
+        "the-woman-in-green",
+        "quicksand",
+        "terror-by-night"
       ]
     },
     {
@@ -138,7 +167,8 @@
         "robin-hood",
         "the-thief-of-bagdad",
         "the-black-pirate",
-        "the-lost-world"
+        "the-lost-world",
+        "captain-kidd"
       ]
     },
     {
@@ -167,7 +197,11 @@
         "meet-john-doe",
         "a-star-is-born",
         "sunrise",
-        "rain"
+        "rain",
+        "topper-returns",
+        "made-for-each-other",
+        "of-human-bondage",
+        "the-blue-angel"
       ]
     },
     {
@@ -178,7 +212,9 @@
         "wings",
         "hells-angels",
         "the-big-parade",
-        "all-quiet-on-the-western-front"
+        "all-quiet-on-the-western-front",
+        "the-negro-soldier",
+        "let-there-be-light"
       ]
     },
     {
@@ -217,7 +253,10 @@
         "nosferatu",
         "wings",
         "sunrise",
-        "the-crowd"
+        "the-crowd",
+        "nanook-of-the-north",
+        "the-blue-angel",
+        "salt-of-the-earth"
       ]
     },
     {

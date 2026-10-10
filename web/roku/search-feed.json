@@ -5658,6 +5658,1054 @@
    }
   },
   {
+   "id": "go-west",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Go West",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "A drifter, a cow and a thousand steers.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A drifter with no luck heads west, takes a ranch job and befriends a cow named Brown Eyes, then has to herd a thousand steers through downtown Los Angeles.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1925-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "credits": [
+    {
+     "name": "Buster Keaton",
+     "role": "director"
+    },
+    {
+     "name": "Buster Keaton",
+     "role": "actor"
+    },
+    {
+     "name": "Howard Truesdale",
+     "role": "actor"
+    },
+    {
+     "name": "Kathleen Myers",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/go-west-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/go-west-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4080,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "go-west"
+     }
+    ]
+   }
+  },
+  {
+   "id": "battling-butler",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Battling Butler",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "He's not a boxer. He just plays one.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A pampered rich kid pretends to be a champion boxer to win a mountain girl's family over, until he has to step into the ring for real.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1926-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "credits": [
+    {
+     "name": "Buster Keaton",
+     "role": "director"
+    },
+    {
+     "name": "Buster Keaton",
+     "role": "actor"
+    },
+    {
+     "name": "Sally O'Neil",
+     "role": "actor"
+    },
+    {
+     "name": "Snitz Edwards",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/battling-butler-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/battling-butler-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4560,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "battling-butler"
+     }
+    ]
+   }
+  },
+  {
+   "id": "topper-returns",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Topper Returns",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The victim wants her killer caught.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A murdered heiress's ghost drags the timid Cosmo Topper into solving her own killing in a spooky mansion full of trapdoors and suspects.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1941-01-01",
+   "genres": [
+    "comedy"
+   ],
+   "credits": [
+    {
+     "name": "Roy Del Ruth",
+     "role": "director"
+    },
+    {
+     "name": "Joan Blondell",
+     "role": "actor"
+    },
+    {
+     "name": "Roland Young",
+     "role": "actor"
+    },
+    {
+     "name": "Carole Landis",
+     "role": "actor"
+    },
+    {
+     "name": "Eddie \"Rochester\" Anderson",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/topper-returns-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/topper-returns-background.jpg"
+    }
+   ],
+   "durationInSeconds": 5280,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "topper-returns"
+     }
+    ]
+   }
+  },
+  {
+   "id": "made-for-each-other",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Made for Each Other",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Married in a week. Tested for a lifetime.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A young lawyer and the woman he marries after a whirlwind week face money troubles, a meddling mother and a desperate race to save their baby's life.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1939-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "John Cromwell",
+     "role": "director"
+    },
+    {
+     "name": "Carole Lombard",
+     "role": "actor"
+    },
+    {
+     "name": "James Stewart",
+     "role": "actor"
+    },
+    {
+     "name": "Charles Coburn",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/made-for-each-other-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/made-for-each-other-background.jpg"
+    }
+   ],
+   "durationInSeconds": 5520,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "made-for-each-other"
+     }
+    ]
+   }
+  },
+  {
+   "id": "quicksand",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Quicksand",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Twenty dollars. One bad night. No way out.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A garage mechanic borrows twenty dollars from the till to impress a girl, and every lie he tells to cover it sinks him deeper into crime.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1950-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Irving Pichel",
+     "role": "director"
+    },
+    {
+     "name": "Mickey Rooney",
+     "role": "actor"
+    },
+    {
+     "name": "Jeanne Cagney",
+     "role": "actor"
+    },
+    {
+     "name": "Peter Lorre",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/quicksand-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/quicksand-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4740,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "quicksand"
+     }
+    ]
+   }
+  },
+  {
+   "id": "terror-by-night",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Terror by Night",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "A diamond, a night train, a killer aboard.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Sherlock Holmes and Dr. Watson guard a priceless diamond on the overnight express to Edinburgh, but a killer is already aboard.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1946-01-01",
+   "genres": [
+    "mystery"
+   ],
+   "credits": [
+    {
+     "name": "Roy William Neill",
+     "role": "director"
+    },
+    {
+     "name": "Basil Rathbone",
+     "role": "actor"
+    },
+    {
+     "name": "Nigel Bruce",
+     "role": "actor"
+    },
+    {
+     "name": "Alan Mowbray",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/terror-by-night-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/terror-by-night-background.jpg"
+    }
+   ],
+   "durationInSeconds": 3480,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "terror-by-night"
+     }
+    ]
+   }
+  },
+  {
+   "id": "captain-kidd",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Captain Kidd",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The King's pirate has his own plans.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "The notorious pirate William Kidd talks his way into the King's service as a treasure-ship escort, planning to rob it, but one of his crew has a score to settle.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1945-01-01",
+   "genres": [
+    "adventure"
+   ],
+   "credits": [
+    {
+     "name": "Rowland V. Lee",
+     "role": "director"
+    },
+    {
+     "name": "Charles Laughton",
+     "role": "actor"
+    },
+    {
+     "name": "Randolph Scott",
+     "role": "actor"
+    },
+    {
+     "name": "Barbara Britton",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/captain-kidd-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/captain-kidd-background.jpg"
+    }
+   ],
+   "durationInSeconds": 5340,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "captain-kidd"
+     }
+    ]
+   }
+  },
+  {
+   "id": "of-human-bondage",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Of Human Bondage",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The role that made Bette Davis a star.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A shy medical student with a club foot falls hopelessly for a cruel London waitress in the role that made Bette Davis a star.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1934-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "John Cromwell",
+     "role": "director"
+    },
+    {
+     "name": "Leslie Howard",
+     "role": "actor"
+    },
+    {
+     "name": "Bette Davis",
+     "role": "actor"
+    },
+    {
+     "name": "Frances Dee",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/of-human-bondage-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/of-human-bondage-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4980,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "of-human-bondage"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-blue-angel",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Blue Angel",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Falling in love again, with Marlene Dietrich.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A strict schoolteacher goes to a cabaret to catch his students and falls for its singer, Lola Lola, a love that costs him everything. Marlene Dietrich's breakthrough.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1930-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Josef von Sternberg",
+     "role": "director"
+    },
+    {
+     "name": "Emil Jannings",
+     "role": "actor"
+    },
+    {
+     "name": "Marlene Dietrich",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-blue-angel-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-blue-angel-background.jpg"
+    }
+   ],
+   "durationInSeconds": 6000,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "the-blue-angel"
+     }
+    ]
+   }
+  },
+  {
+   "id": "nanook-of-the-north",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Nanook of the North",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "A year at the edge of the Arctic.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Robert Flaherty's landmark portrait of an Inuit family's year on the Hudson Bay coast: hunting, travel and building an igloo against the Arctic cold.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1922-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "credits": [
+    {
+     "name": "Robert J. Flaherty",
+     "role": "director"
+    },
+    {
+     "name": "Featuring Allakariallak",
+     "role": "director"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/nanook-of-the-north-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/nanook-of-the-north-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4620,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "nanook-of-the-north"
+     }
+    ]
+   }
+  },
+  {
+   "id": "reefer-madness",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Reefer Madness",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The scare film that became a cult comedy.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "A school principal warns parents about 'the burning weed' in the cult-classic scare film that became a midnight-movie comedy.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1936-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Louis J. Gasnier",
+     "role": "director"
+    },
+    {
+     "name": "Dorothy Short",
+     "role": "actor"
+    },
+    {
+     "name": "Kenneth Craig",
+     "role": "actor"
+    },
+    {
+     "name": "Lillian Miles",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/reefer-madness-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/reefer-madness-background.jpg"
+    }
+   ],
+   "durationInSeconds": 4080,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "reefer-madness"
+     }
+    ]
+   }
+  },
+  {
+   "id": "salt-of-the-earth",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Salt of the Earth",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "When the miners can't strike, their wives do.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "When Mexican-American zinc miners in New Mexico strike and an injunction bars them from the picket line, their wives take their place.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1954-01-01",
+   "genres": [
+    "drama"
+   ],
+   "credits": [
+    {
+     "name": "Herbert J. Biberman",
+     "role": "director"
+    },
+    {
+     "name": "Rosaura Revueltas",
+     "role": "actor"
+    },
+    {
+     "name": "Juan Chac\u00f3n",
+     "role": "actor"
+    },
+    {
+     "name": "Will Geer",
+     "role": "actor"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/salt-of-the-earth-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/salt-of-the-earth-background.jpg"
+    }
+   ],
+   "durationInSeconds": 5520,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "salt-of-the-earth"
+     }
+    ]
+   }
+  },
+  {
+   "id": "let-there-be-light",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "Let There Be Light",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "John Huston's long-suppressed film on war trauma.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "John Huston follows soldiers treated for psychological trauma at an Army hospital after World War II, a film the Army withheld from the public until 1980.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1946-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "credits": [
+    {
+     "name": "John Huston",
+     "role": "director"
+    },
+    {
+     "name": "Walter Huston",
+     "role": "narrator"
+    },
+    {
+     "name": "the U.S. Army Signal Corps",
+     "role": "producer"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/let-there-be-light-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/let-there-be-light-background.jpg"
+    }
+   ],
+   "durationInSeconds": 3480,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "let-there-be-light"
+     }
+    ]
+   }
+  },
+  {
+   "id": "the-negro-soldier",
+   "type": "movie",
+   "titles": [
+    {
+     "value": "The Negro Soldier",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Black Americans in every war the nation fought.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Framed as a church sermon, this Army film traces Black Americans' service from the Revolution to World War II and follows a recruit through training.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1944-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "credits": [
+    {
+     "name": "Stuart Heisler",
+     "role": "director"
+    },
+    {
+     "name": "Written by Carlton Moss",
+     "role": "director"
+    },
+    {
+     "name": "Frank Capra for the U.S. War Department",
+     "role": "producer"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "MPAA",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/the-negro-soldier-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/the-negro-soldier-background.jpg"
+    }
+   ],
+   "durationInSeconds": 2400,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "the-negro-soldier"
+     }
+    ]
+   }
+  },
+  {
    "id": "apollo-mission-films",
    "type": "series",
    "titles": [
@@ -7791,6 +8839,938 @@
       "license": "free",
       "quality": "hd",
       "playId": "flip-the-frog-1930-e6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "why-we-fight",
+   "type": "series",
+   "titles": [
+    {
+     "value": "Why We Fight",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Frank Capra's wartime series for the U.S. Army.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Frank Capra's seven-film U.S. Army series explaining the road to World War II, built from newsreels, captured footage and animated maps.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1942-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "credits": [
+    {
+     "name": "Frank Capra, Anatole Litvak",
+     "role": "director"
+    },
+    {
+     "name": "Walter Huston",
+     "role": "narrator"
+    },
+    {
+     "name": "the U.S. War Department",
+     "role": "producer"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/why-we-fight-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/why-we-fight-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "why-we-fight-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Prelude to War",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Capra frames the war as a clash between a free world and a slave world, tracing how fascism rose in Germany, Italy and Japan.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1942-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/why-we-fight-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "why-we-fight",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 3120,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "why-we-fight-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "why-we-fight-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Nazis Strike",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Germany's rearmament and expansion from the Rhineland to the invasion of Poland, told through newsreels and animated maps.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1942-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/why-we-fight-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "why-we-fight",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 2460,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "why-we-fight-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "why-we-fight-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Divide and Conquer",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The 1940 campaigns in Denmark, Norway, the Low Countries and France, ending with the fall of Paris.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1942-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/why-we-fight-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "why-we-fight",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 3360,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "why-we-fight-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "why-we-fight-e4",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Battle of Britain",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Outnumbered, the Royal Air Force and Britain's civilians withstand the Luftwaffe's 1940 air campaign.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1942-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/why-we-fight-e4.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "why-we-fight",
+    "seasonNumber": 1,
+    "episodeNumber": 4
+   },
+   "durationInSeconds": 3120,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "why-we-fight-e4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "why-we-fight-e5",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Battle of Russia, Part 1",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Russia's history of repelling invaders sets up Germany's 1941 assault and the defense of Moscow.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1942-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/why-we-fight-e5.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "why-we-fight",
+    "seasonNumber": 1,
+    "episodeNumber": 5
+   },
+   "durationInSeconds": 2100,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "why-we-fight-e5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "why-we-fight-e6",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Battle of Russia, Part 2",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "The siege of Leningrad and the turning point at Stalingrad.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1942-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/why-we-fight-e6.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "why-we-fight",
+    "seasonNumber": 1,
+    "episodeNumber": 6
+   },
+   "durationInSeconds": 2820,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "why-we-fight-e6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "why-we-fight-e7",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Battle of China",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Japan's invasion of China, the bombing of cities and the long Chinese resistance.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1942-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/why-we-fight-e7.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "why-we-fight",
+    "seasonNumber": 1,
+    "episodeNumber": 7
+   },
+   "durationInSeconds": 3720,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "why-we-fight-e7"
+     }
+    ]
+   }
+  },
+  {
+   "id": "why-we-fight-e8",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "War Comes to America",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "How American public opinion moved from isolationism to war between 1931 and Pearl Harbor.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1942-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/why-we-fight-e8.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "why-we-fight",
+    "seasonNumber": 1,
+    "episodeNumber": 8
+   },
+   "durationInSeconds": 3900,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "why-we-fight-e8"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wwii-combat-reports",
+   "type": "series",
+   "titles": [
+    {
+     "value": "WWII Combat Reports",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Filmed under fire by the men who were there.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "longDescriptions": [
+    {
+     "value": "Official combat documentaries shot by U.S. service cameramen, from Midway and Tarawa to Iwo Jima, including John Ford's and John Huston's war films.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1942-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "credits": [
+    {
+     "name": "John Ford, John Huston, William Wyler and U.S. armed-forces combat cameramen",
+     "role": "director"
+    }
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wwii-combat-reports-poster.jpg"
+    },
+    {
+     "type": "background",
+     "url": "https://haukley.com/img/feed/wwii-combat-reports-background.jpg"
+    }
+   ]
+  },
+  {
+   "id": "wwii-combat-reports-e1",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Battle of Midway",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Shot by John Ford's Navy camera crew during the Japanese attack on Midway Island in June 1942, in Technicolor.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1942-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wwii-combat-reports-e1.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "wwii-combat-reports",
+    "seasonNumber": 1,
+    "episodeNumber": 1
+   },
+   "durationInSeconds": 1080,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "wwii-combat-reports-e1"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wwii-combat-reports-e2",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Report from the Aleutians",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "John Huston records the building of an airfield on Adak and bombing missions against Japanese-held Kiska.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1942-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wwii-combat-reports-e2.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "wwii-combat-reports",
+    "seasonNumber": 1,
+    "episodeNumber": 2
+   },
+   "durationInSeconds": 2580,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "wwii-combat-reports-e2"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wwii-combat-reports-e3",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Memphis Belle: A Story of a Flying Fortress",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "William Wyler flies with a B-17 crew on its 25th and final mission over Germany.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1942-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wwii-combat-reports-e3.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "wwii-combat-reports",
+    "seasonNumber": 1,
+    "episodeNumber": 3
+   },
+   "durationInSeconds": 2400,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "wwii-combat-reports-e3"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wwii-combat-reports-e4",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "With the Marines at Tarawa",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Marine combat cameramen film the bloody November 1943 assault on Betio atoll; Academy Award winner.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1942-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wwii-combat-reports-e4.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "wwii-combat-reports",
+    "seasonNumber": 1,
+    "episodeNumber": 4
+   },
+   "durationInSeconds": 1140,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "wwii-combat-reports-e4"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wwii-combat-reports-e5",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Attack! The Battle for New Britain",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Army Signal Corps photographers follow the December 1943 landings at Arawe and Cape Gloucester in New Britain.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1942-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wwii-combat-reports-e5.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "wwii-combat-reports",
+    "seasonNumber": 1,
+    "episodeNumber": 5
+   },
+   "durationInSeconds": 3360,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "wwii-combat-reports-e5"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wwii-combat-reports-e6",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "The Battle of San Pietro",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "John Huston's unflinching record of the costly December 1943 fight for an Italian hill village.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1942-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wwii-combat-reports-e6.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "wwii-combat-reports",
+    "seasonNumber": 1,
+    "episodeNumber": 6
+   },
+   "durationInSeconds": 1920,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "wwii-combat-reports-e6"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wwii-combat-reports-e7",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "To the Shores of Iwo Jima",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Navy, Marine and Coast Guard cameramen cover the invasion of Iwo Jima in color, including the flag raising.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1942-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wwii-combat-reports-e7.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "wwii-combat-reports",
+    "seasonNumber": 1,
+    "episodeNumber": 7
+   },
+   "durationInSeconds": 1140,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "wwii-combat-reports-e7"
+     }
+    ]
+   }
+  },
+  {
+   "id": "wwii-combat-reports-e8",
+   "type": "episode",
+   "titles": [
+    {
+     "value": "Fury in the Pacific",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "shortDescriptions": [
+    {
+     "value": "Joint Army-Navy-Marine film of the 1944 assaults on Peleliu and Angaur, shot by combat cameramen landing with the troops.",
+     "languages": [
+      "en"
+     ]
+    }
+   ],
+   "releaseDate": "1942-01-01",
+   "genres": [
+    "documentary"
+   ],
+   "advisoryRatings": [
+    {
+     "source": "USA_PR",
+     "value": "NR"
+    }
+   ],
+   "images": [
+    {
+     "type": "main",
+     "url": "https://haukley.com/img/feed/wwii-combat-reports-e8.jpg"
+    }
+   ],
+   "episodeInfo": {
+    "seriesId": "wwii-combat-reports",
+    "seasonNumber": 1,
+    "episodeNumber": 8
+   },
+   "durationInSeconds": 1200,
+   "content": {
+    "playOptions": [
+     {
+      "license": "free",
+      "quality": "sd",
+      "playId": "wwii-combat-reports-e8"
      }
     ]
    }

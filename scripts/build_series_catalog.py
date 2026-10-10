@@ -1,7 +1,8 @@
 """Write the cleared TV series from free_titles_series.json into catalog.json's "shows".
 
-Only low-risk series are cleared (see docs/content/free-series-notes.md): no content
-advisory, no separately renewed theme music, no protected character or trademark. Each
+Only low-risk series are cleared (see docs/content/free-series-notes.md): no separately
+renewed theme music, no protected character or trademark. A show that needs a content
+advisory carries it in its "advisory" (shown on the title page and at play start). Each
 show keeps only the episodes whose HLS stream is live on the CDN, so it can run while an
 ingest is still going. Run make_posters.py / make_ios.py / make_web.py / make_roku.py /
 make_vmap.py afterwards, like any catalog edit.
@@ -39,6 +40,17 @@ CLEARED = {
     "flip-the-frog-1930": dict(
         title="Flip the Frog", art=1, font="AbrilFatface", layout="center", tint=[30, 30, 20], kids=False,
         tagline="Ub Iwerks' first star, from 1930."),
+    # U.S. government works (17 USC 105), added 2026-10-09. Wartime films: advisories required.
+    "why-we-fight": dict(
+        title="Why We Fight", art=4, font="Oswald", layout="bottom", tint=[30, 25, 15], kids=False,
+        tagline="Frank Capra's wartime series for the U.S. Army.",
+        advisory="Wartime propaganda with racist caricatures of Japanese people; real combat footage."),
+    "wwii-combat-reports": dict(
+        title="WWII Combat Reports", art=1, font="BebasNeue", layout="bottom", tint=[25, 25, 20], kids=False,
+        tagline="Filmed under fire by the men who were there.",
+        description="Official combat documentaries shot by U.S. service cameramen, from Midway and "
+                    "Tarawa to Iwo Jima, including John Ford's and John Huston's war films.",
+        advisory="Real combat footage, including the dead and wounded."),
     "caminandes": dict(
         title="Caminandes", art=2, font="Pacifico", layout="top", tint=[20, 30, 20], kids=True,
         tagline="One llama. Many obstacles."),
@@ -101,6 +113,7 @@ def main():
             "font": cfg["font"], "layout": cfg["layout"], "tint": cfg["tint"],
             "tagline": cfg["tagline"], "description": cfg.get("description", s["description"]), "credits": s["credits"],
             "kids": cfg["kids"], "license": license_line(s["rights"]),
+            **({"advisory": cfg["advisory"]} if cfg.get("advisory") else {}),
             "episodes": eps,
         })
         print(f"{sid}: {len(eps)}/{len(s['episodes'])} episodes live")
