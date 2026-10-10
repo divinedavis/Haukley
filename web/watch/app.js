@@ -119,6 +119,7 @@ async function loadViewerData() {
 
 // A live channel (kind "live") has no resume point, so it never writes watch progress.
 const isLive = t => t?.kind === "live";
+const isWeather = t => isLive(t) && t.genre === "Weather";
 
 async function saveProgress(id, episode, position, duration) {
   if (!state.user || !state.profile || !(duration > 0) || isLive(state.byId.get(id))) return;
@@ -590,6 +591,7 @@ function row(title, items) {
 }
 
 function wireRows() {
+  fillWeather(app);
   app.querySelectorAll(".strip-wrap").forEach(w => {
     const strip = $(".strip", w);
     const l = $(".pager.l", w);
@@ -635,6 +637,7 @@ function hero(t) {
         ${artTitle(t)}
         <div class="meta">${metaLine(t, true)}</div>
         <p class="desc">${esc(t.description)}</p>
+        ${isWeather(t) ? `<p class="wx-line" data-wx="line"></p>` : ""}
         <div class="actions">
           <button class="btn btn-primary" data-playtitle="${esc(t.id)}">${ICON.play} ${label}</button>
           <button class="btn btn-ghost" data-title="${esc(t.id)}">${ICON.info} More Info</button>
@@ -871,6 +874,7 @@ function openTitle(id) {
           ${state.rank.has(t.id) ? `<div class="meta" style="margin-top:10px;color:#fff"><span class="chip"><i>TOP 10</i>#${state.rank.get(t.id).n} in ${esc(state.rank.get(t.id).label)}</span></div>` : ""}
           <p class="tagline">${esc(t.tagline)}</p>
           <p class="desc">${esc(t.description)}</p>
+          ${isWeather(t) ? `<section class="wx-card" data-wx="card" aria-live="polite"><p class="wx-msg">Loading your weather…</p></section>` : ""}
         </div>
         <div class="m-side">
           <div><b>${isLive(t) ? "Source" : "Cast"}:</b> ${esc(t.credits.replace(/^Starring\s*/, "").replace(/ · /g, ", "))}</div>
@@ -899,6 +903,7 @@ function openTitle(id) {
     b.setAttribute("aria-label", `${on ? "Remove from" : "Add to"} My List`);
   });
   $(".m-close", box).focus({ preventScroll: true });
+  fillWeather(box);
 }
 
 function closeModal(navigate = true) {
@@ -911,6 +916,163 @@ function closeModal(navigate = true) {
   else location.replace(state.page || "#/"); // opened from a deep link: nothing to go back to
   state.modalPushed = false;
 }
+
+// ---------- local weather (Haukley Weather) ----------
+// /api/weather/local finds the viewer's city from their connection (city level, never stored).
+// They can pick a city, type a ZIP, or share their exact location: the browser is asked for
+// location ONLY when they click that button (owner rule: no unsolicited prompts). The choice
+// lives in this browser's localStorage, nowhere else.
+
+const WX_KEY = "haukley.weather.place";
+const wx = { data: null, at: 0, pending: null, cities: null };
+
+function wxChoice() {
+  try { return JSON.parse(localStorage.getItem(WX_KEY) || "null"); } catch { return null; }
+}
+function wxSave(choice) {
+  try { choice ? localStorage.setItem(WX_KEY, JSON.stringify(choice)) : localStorage.removeItem(WX_KEY); } catch {}
+  wx.data = null;
+  wx.at = 0;
+}
+function wxQuery(c) {
+  if (c?.type === "city") return `?city=${encodeURIComponent(c.slug)}`;
+  if (c?.type === "zip") return `?zip=${encodeURIComponent(c.zip)}`;
+  if (c?.type === "gps") return `?lat=${encodeURIComponent(c.lat)}&lon=${encodeURIComponent(c.lon)}`;
+  return "";
+}
+function wxLoad() {
+  if (wx.data && Date.now() - wx.at < 600000) return Promise.resolve(wx.data);
+  if (!wx.pending) {
+    wx.pending = fetch(`/api/weather/local${wxQuery(wxChoice())}`)
+      .then(async r => {
+        const b = await r.json().catch(() => ({}));
+        if (!r.ok) throw Object.assign(new Error(b.error || String(r.status)), { status: r.status });
+        wx.data = b;
+        wx.at = Date.now();
+        return b;
+      })
+      .finally(() => { wx.pending = null; });
+  }
+  return wx.pending;
+}
+
+function wxSourceLabel(d) {
+  const c = wxChoice();
+  return { ip: "Near you · approximate, from your connection", zip: `ZIP ${c?.zip || ""}`,
+           city: "Your city pick", gps: "Your exact location" }[d.place.source] || "";
+}
+
+function wxCardHtml(d) {
+  const alerts = (d.alerts || []).map(a =>
+    `<div class="wx-alert"><b>${esc(a.event)}</b>${a.headline ? ` · ${esc(a.headline)}` : ""}</div>`).join("");
+  return `
+    <div class="wx-head">
+      <div><h3 class="wx-place">${esc(d.place.name)}</h3><div class="wx-src">${esc(wxSourceLabel(d))}</div></div>
+      <button class="btn btn-ghost wx-change" type="button" data-wx-change aria-expanded="false">Change city</button>
+    </div>
+    <div class="wx-now"><span class="wx-temp">${esc(d.now.temp)}°</span>
+      <span>${esc(d.now.text)}${d.now.wind ? `<small>Wind ${esc(d.now.wind)}</small>` : ""}</span></div>
+    <div class="wx-periods">${(d.periods || []).map(p => `
+      <div class="wx-p${p.day ? "" : " night"}"><b>${esc(p.name)}</b><span>${esc(p.temp)}°</span><small>${esc(p.text)}</small></div>`).join("")}</div>
+    ${alerts ? `<div class="wx-alerts">${alerts}</div>` : ""}
+    <div class="wx-attr">${esc(d.attribution || "")}</div>
+    <div class="wx-pick" hidden></div>`;
+}
+
+function wxErrorHtml(err) {
+  const msg = err?.status === 422
+    ? (wxChoice() ? "We don't have a forecast for that place. Pick a U.S. city or ZIP code."
+                  : "We couldn't tell where you are. Pick a city or enter a ZIP code.")
+    : "Your local forecast isn't available right now. Try again in a few minutes.";
+  return `<p class="wx-msg">${esc(msg)}</p>
+    <button class="btn btn-ghost wx-change" type="button" data-wx-change aria-expanded="false">Choose a city</button>
+    <div class="wx-pick" hidden></div>`;
+}
+
+async function fillWeather(root) {
+  const els = [...(root || document).querySelectorAll("[data-wx]")];
+  if (!els.length) return;
+  try {
+    const d = await wxLoad();
+    els.forEach(el => {
+      if (el.dataset.wx === "card") el.innerHTML = wxCardHtml(d);
+      else el.textContent = `Now in ${d.place.name}: ${d.now.temp}° and ${d.now.text.toLowerCase()}`;
+    });
+  } catch (err) {
+    els.forEach(el => { if (el.dataset.wx === "card") el.innerHTML = wxErrorHtml(err); else el.textContent = ""; });
+  }
+}
+
+function wxPickerHtml() {
+  return `
+    <label class="wx-label" for="wx-search">Pick a city</label>
+    <input id="wx-search" class="wx-search" type="search" placeholder="Search U.S. cities" autocomplete="off">
+    <div class="wx-list" role="listbox" aria-label="Cities"></div>
+    <form class="wx-zip">
+      <label class="wx-label" for="wx-zip">Or a ZIP code</label>
+      <div><input id="wx-zip" inputmode="numeric" maxlength="5" placeholder="e.g. 11201" autocomplete="postal-code">
+      <button class="btn btn-ghost" type="submit">Show</button></div>
+    </form>
+    <div class="wx-actions">
+      <button class="btn btn-ghost" type="button" data-wx-gps>Use my exact location</button>
+      ${wxChoice() ? `<button class="btn btn-ghost" type="button" data-wx-auto>Use my area automatically</button>` : ""}
+    </div>`;
+}
+
+function wxListHtml(q) {
+  const term = q.trim().toLowerCase();
+  const list = (wx.cities || []).filter(c => !term || c.name.toLowerCase().includes(term)).slice(0, 40);
+  return list.length ? list.map(c => `<button type="button" class="wx-city" role="option" data-wx-city="${esc(c.slug)}">${esc(c.name)}</button>`).join("")
+    : `<p class="wx-msg">No match. Try a ZIP code.</p>`;
+}
+
+async function wxOpenPicker(card, btn) {
+  const pick = $(".wx-pick", card);
+  const open = pick.hidden;
+  pick.hidden = !open;
+  btn.setAttribute("aria-expanded", String(open));
+  if (!open) return;
+  pick.innerHTML = wxPickerHtml();
+  if (!wx.cities) {
+    wx.cities = await fetch("/api/weather/cities").then(r => r.json()).then(b => b.cities || []).catch(() => []);
+  }
+  $(".wx-list", pick).innerHTML = wxListHtml("");
+  $(".wx-search", pick).focus();
+}
+
+function wxChoose(choice) {
+  wxSave(choice);
+  fillWeather(document);
+}
+
+document.addEventListener("click", e => {
+  const card = e.target.closest(".wx-card");
+  if (!card) return;
+  const change = e.target.closest("[data-wx-change]");
+  if (change) return wxOpenPicker(card, change);
+  const city = e.target.closest("[data-wx-city]");
+  if (city) return wxChoose({ type: "city", slug: city.dataset.wxCity });
+  if (e.target.closest("[data-wx-auto]")) return wxChoose(null);
+  if (e.target.closest("[data-wx-gps]")) {
+    if (!navigator.geolocation) return toast("This browser can't share its location. Pick a city instead.");
+    navigator.geolocation.getCurrentPosition(
+      pos => wxChoose({ type: "gps", lat: pos.coords.latitude.toFixed(2), lon: pos.coords.longitude.toFixed(2) }),
+      () => toast("Location wasn't shared. Pick a city or enter a ZIP code instead."),
+      { maximumAge: 600000, timeout: 15000 });
+  }
+});
+document.addEventListener("input", e => {
+  if (!e.target.matches(".wx-search")) return;
+  const list = $(".wx-list", e.target.closest(".wx-pick"));
+  list.innerHTML = wxListHtml(e.target.value);
+});
+document.addEventListener("submit", e => {
+  if (!e.target.matches(".wx-zip")) return;
+  e.preventDefault();
+  const zip = $("input", e.target).value.trim();
+  if (!/^\d{5}$/.test(zip)) return toast("Enter a 5-digit U.S. ZIP code.");
+  wxChoose({ type: "zip", zip });
+});
 
 // ---------- player ----------
 
@@ -985,6 +1147,12 @@ function startPlayback(id, episode) {
   player.el.classList.toggle("live", live);
   $("#p-seek").disabled = live;
   $("#p-title").innerHTML = e ? `${esc(t.title)}<span>E${e.number} “${esc(e.name)}”</span>` : esc(t.title);
+  $("#p-wx").hidden = true;
+  if (isWeather(t)) wxLoad().then(d => {
+    if (player.id !== id) return;
+    $("#p-wx").textContent = `${d.now.temp}° · ${d.place.name}`;
+    $("#p-wx").hidden = false;
+  }).catch(() => {});
   $("#rated-label").textContent = t.rating === "NR" ? "NOT RATED" : `RATED ${t.rating}`;
   // A content advisory rides on the rating card at the start of playback, like broadcast TV.
   $("#rated-sub").textContent = t.advisory || (t.silent ? `${t.genre} · Silent film, no soundtrack` : t.genre);
@@ -1104,6 +1272,7 @@ function stopPlayback(navigate = true) {
   video.removeAttribute("src");
   video.load();
   $("#rated").hidden = true;
+  $("#p-wx").hidden = true;
   $("#p-speed-menu").hidden = true;
   if (document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
   const wasOpen = !player.el.hidden;

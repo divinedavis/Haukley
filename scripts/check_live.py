@@ -131,6 +131,7 @@ def run_http(base, live, match_local):
                 if seg:
                     status, _, body = get(urllib.parse.urljoin(variant, seg[-1]))
                     check(status == 200 and body[:1] == b"\x47", f"live {lt['id']}: newest segment is MPEG-TS")
+    check_weather_api()
     roku = json_at(base, "/roku/catalog.json")
     if roku:
         check(len(roku.get("titles", {})) >= 50 and roku.get("rows"), f"roku catalog has {len(roku.get('titles', {}))} titles + rows")
@@ -208,6 +209,29 @@ def check_ad_ticket(pg):
           == [("ad_started", 1, True, "00000000-0000-4000-8000-000000000001"),
               ("ad_completed", 2, True, "00000000-0000-4000-8000-000000000001")],
           f"/watch/ ad events carry the ticket and a seq ({events})")
+
+
+def check_weather_api(api="https://haukley.com/api/weather"):
+    """Local weather API (live/weather/api.py): always the live host, it isn't part of web/."""
+    status, headers, body = get(f"{api}/cities")
+    try:
+        cities = json.loads(body).get("cities", []) if status == 200 else []
+    except ValueError:
+        cities = []
+    check(len(cities) >= 100 and any(c.get("slug") == "new-york-ny" for c in cities),
+          f"weather API /cities -> {status}, {len(cities)} cities")
+    status, headers, body = get(f"{api}/local?zip=11201")
+    try:
+        b = json.loads(body) if status == 200 else {}
+    except ValueError:
+        b = {}
+    check(status == 200 and set(b) >= {"place", "now", "periods", "alerts", "updated", "attribution"}
+          and isinstance((b.get("now") or {}).get("temp"), (int, float)),
+          f"weather API /local?zip=11201 -> {status} with the contract fields")
+    check((headers.get("Access-Control-Allow-Origin") or "") == "*" and "Set-Cookie" not in headers,
+          "weather API: CORS * and no cookie")
+    status, _, body = get(f"{api}/local?lat=51.5&lon=-0.12")
+    check(status == 422 and b"unknown_location" in body, f"weather API outside the US -> {status} unknown_location")
 
 
 def check_live_channel(pg):

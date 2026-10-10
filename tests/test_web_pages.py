@@ -99,3 +99,22 @@ def test_catalog_streams_are_on_the_csp_cdn():
     # /watch/ is served from haukley.com, so 'self' covers the live channels (/live/).
     allowed = set(csp["connect-src"]) | ({"https://haukley.com"} if "'self'" in csp["connect-src"] else set())
     assert hosts and hosts <= allowed, hosts - allowed
+
+
+def test_local_weather_privacy_rules():
+    """/watch local weather: same-origin API, location asked only from the explicit button,
+    nginx logs nothing for /api/weather/ and never forwards a client X-Forwarded-For, and the
+    privacy policy says so (owner rule 2026-10-10)."""
+    js = (WEB / "watch" / "app.js").read_text()
+    assert 'fetch(`/api/weather/local' in js and 'fetch("/api/weather/cities")' in js
+    assert js.count("getCurrentPosition") == 1, "geolocation must only be requested in one place"
+    gps = js[js.index('e.target.closest("[data-wx-gps]")'):]
+    assert gps.index("getCurrentPosition") < 400, "geolocation must sit inside the [data-wx-gps] click branch"
+    assert "toFixed(2)" in gps[:600], "device location is rounded before it leaves the browser"
+    conf = (ROOT / "deploy" / "nginx-haukley.conf").read_text()
+    loc = conf[conf.index("location /api/weather/ {"):]
+    loc = loc[:loc.index("}")]
+    assert "access_log off;" in loc and 'proxy_set_header X-Forwarded-For "";' in loc
+    assert "proxy_set_header X-Real-IP $remote_addr;" in loc
+    privacy = (WEB / "privacy" / "index.html").read_text()
+    assert "Use my exact location" in privacy and "DB-IP" in privacy and "Not stored and not logged" in privacy
