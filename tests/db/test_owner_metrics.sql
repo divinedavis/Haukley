@@ -49,6 +49,14 @@ begin
     raise exception 'excluded address still counted: %', r -> 'top_titles';
   end if;
   if (r ->> 'plays_excluded')::int < 1 then raise exception 'plays_excluded not reported: %', r; end if;
+
+  -- 0019: an exact start day; tomorrow's window holds none of today's plays
+  r := public.owner_metrics('test-key-0017', null, '{}', (now() at time zone 'UTC')::date + 1);
+  if jsonb_array_length(r -> 'plays_daily') <> 0 then raise exception 'p_since ignored: %', r -> 'plays_daily'; end if;
+  r := public.owner_metrics('test-key-0017', null, '{}', (now() at time zone 'UTC')::date);
+  if not exists (select 1 from jsonb_array_elements(r -> 'top_titles') t where t ->> 'title_id' = 'go-west') then
+    raise exception 'p_since today misses today''s play: %', r -> 'top_titles';
+  end if;
   if (r ->> 'internal_accounts') is null or (r ->> 'ads_unverified') is null then
     raise exception 'owner_metrics missing 0018 fields: %', r;
   end if;
@@ -57,7 +65,7 @@ begin
   end if;
 
   -- anon can call it, but cannot read the tables behind it
-  if not has_function_privilege('anon', 'public.owner_metrics(text, integer, text[])', 'execute') then
+  if not has_function_privilege('anon', 'public.owner_metrics(text, integer, text[], date)', 'execute') then
     raise exception 'anon cannot execute owner_metrics';
   end if;
   if has_table_privilege('anon', 'public.playback_starts', 'select') then
