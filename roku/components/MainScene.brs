@@ -52,14 +52,17 @@ sub buildRows()
             else if r.type = "ranked"
                 addTile(row, t.poster, { titleId: t.id, label: t.title, subLabel: t.genre, rank: rank })
             else if landscape
-                addTile(row, t.card, { titleId: t.id, label: t.title, subLabel: t.genre + " · " + t.year.ToStr() })
+                subLabel = t.genre + " · " + t.year.ToStr()
+                if isLive(t) then subLabel = "Live 24/7 · " + t.genre
+                addTile(row, t.card, { titleId: t.id, label: t.title, subLabel: subLabel })
             else
                 addTile(row, t.poster, { titleId: t.id })
             end if
         end for
         if landscape
             sizes.push([440, 248])
-            heights.push(400)
+            ' 248 tile + title + caption + gap: at 400 the caption sat on the next row's heading
+            heights.push(440)
         else if r.type = "ranked"
             sizes.push([240, 360])
             heights.push(520)
