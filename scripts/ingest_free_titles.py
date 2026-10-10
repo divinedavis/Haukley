@@ -163,6 +163,51 @@ def check_aspect(out, dar, label):
         sys.exit(f"{label}: encoded {w}x{h} ({w / h:.3f}) but the display aspect is {dar:.3f}")
 
 
+# Silent stereo AAC for sources with no usable audio (silent films, muted tracks). Every rung
+# must carry an audio track: Roku's player never starts an HLS stream without one (verified
+# 2026-10-10 on a Streaming Stick: video-only titles sat in "buffering" at position 0).
+SILENT_INPUT = ["-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=48000"]
+
+
+def ladder_cmd(src, out, rungs, start, end, dar, real_audio):
+    """The ffmpeg command for one title's HLS ladder. Pure, so tests can check its shape."""
+    n = len(rungs)
+    # Square pixels at the display aspect before the ladder (see display_aspect), or every rung
+    # plays stretched or squeezed.
+    split = f"[0:v]{square_pixels(dar)},split={n}" + "".join(f"[s{i}]" for i in range(n)) + ";"
+    # Square pixels, even dimensions, capped to each rung's height.
+    scales = ";".join(f"[s{i}]scale=-2:'min({h},ih)':flags=lanczos,setsar=1,format=yuv420p[v{i}]" for i, (h, _) in enumerate(rungs))
+    cmd = ["ffmpeg", "-v", "error", "-stats", "-y", "-ss", f"{start:.3f}", "-to", f"{end:.3f}", "-i", str(src)]
+    if not real_audio:
+        cmd += SILENT_INPUT
+    cmd += ["-filter_complex", split + scales]
+    for i, (h, kbps) in enumerate(rungs):
+        cmd += ["-map", f"[v{i}]", f"-c:v:{i}", "h264_videotoolbox", f"-b:v:{i}", f"{kbps}k",
+                f"-maxrate:v:{i}", f"{int(kbps * 1.4)}k", f"-bufsize:v:{i}", f"{kbps * 2}k", f"-profile:v:{i}", "high"]
+        if real_audio:
+            cmd += ["-map", "0:a:0", f"-c:a:{i}", "aac", f"-b:a:{i}", "128k", f"-ac:a:{i}", "2"]
+        else:
+            cmd += ["-map", "1:a:0", f"-c:a:{i}", "aac", f"-b:a:{i}", "64k", f"-ac:a:{i}", "2", f"-ar:a:{i}", "48000"]
+    if not real_audio:
+        cmd += ["-shortest"]  # the silent source never ends
+    cmd += ["-force_key_frames", f"expr:gte(t,n_forced*{SEG})", "-sc_threshold", "0"]
+    vsm = " ".join(f"v:{i},a:{i}" for i in range(n))
+    cmd += ["-f", "hls", "-hls_time", str(SEG), "-hls_playlist_type", "vod", "-hls_flags", "independent_segments",
+            "-hls_segment_type", "mpegts", "-hls_segment_filename", str(out / "v%v" / "seg%04d.ts"),
+            "-master_pl_name", "master.m3u8", "-var_stream_map", vsm, str(out / "v%v" / "index.m3u8")]
+    return cmd
+
+
+def check_audio(out, label):
+    """Fail the ingest if a rung came out without an audio stream (Roku won't play it)."""
+    for rung in sorted(p for p in out.iterdir() if p.is_dir()):
+        seg = next(rung.glob("*.ts"))
+        kinds = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "stream=codec_type", "-of", "csv=p=0",
+                                str(seg)], check=True, capture_output=True, text=True).stdout.split()
+        if "audio" not in kinds:
+            sys.exit(f"{label}: {rung.name} has no audio track")
+
+
 def encode(t, keep_source=False):
     if (WORK / "hls" / t["id"] / "master.m3u8").exists():
         print(f"encode {t['id']}: already done")
@@ -185,28 +230,12 @@ def encode(t, keep_source=False):
     shutil.rmtree(out, ignore_errors=True)
     out.mkdir(parents=True)
 
-    n = len(rungs)
-    # Square pixels at the display aspect before the ladder (see display_aspect), or every rung
-    # plays stretched or squeezed.
     dar = display_aspect(t, v)
-    split = f"[0:v]{square_pixels(dar)},split={n}" + "".join(f"[s{i}]" for i in range(n)) + ";"
-    # Square pixels, even dimensions, capped to each rung's height.
-    scales = ";".join(f"[s{i}]scale=-2:'min({h},ih)':flags=lanczos,setsar=1,format=yuv420p[v{i}]" for i, (h, _) in enumerate(rungs))
-    cmd = ["ffmpeg", "-v", "error", "-stats", "-y", "-ss", f"{start:.3f}", "-to", f"{end:.3f}", "-i", str(src),
-           "-filter_complex", split + scales]
-    for i, (h, kbps) in enumerate(rungs):
-        cmd += ["-map", f"[v{i}]", f"-c:v:{i}", "h264_videotoolbox", f"-b:v:{i}", f"{kbps}k",
-                f"-maxrate:v:{i}", f"{int(kbps * 1.4)}k", f"-bufsize:v:{i}", f"{kbps * 2}k", f"-profile:v:{i}", "high"]
-        if audio:
-            cmd += ["-map", "0:a:0", f"-c:a:{i}", "aac", f"-b:a:{i}", "128k", f"-ac:a:{i}", "2"]
-    cmd += ["-force_key_frames", f"expr:gte(t,n_forced*{SEG})", "-sc_threshold", "0"]
-    vsm = " ".join(f"v:{i},a:{i}" if audio else f"v:{i}" for i in range(n))
-    cmd += ["-f", "hls", "-hls_time", str(SEG), "-hls_playlist_type", "vod", "-hls_flags", "independent_segments",
-            "-hls_segment_type", "mpegts", "-hls_segment_filename", str(out / "v%v" / "seg%04d.ts"),
-            "-master_pl_name", "master.m3u8", "-var_stream_map", vsm, str(out / "v%v" / "index.m3u8")]
+    cmd = ladder_cmd(src, out, rungs, start, end, dar, audio)
     print(f"encode {t['id']}: {src_h}p source, rungs {[h for h, _ in rungs]}, audio={audio}, {start:.1f}-{end:.1f}s", flush=True)
     run(cmd)
     check_aspect(out, dar, t["id"])
+    check_audio(out, t["id"])
 
     # Still for key art: a frame about a third of the way in (past the titles).
     (STILLS / f"{t['id']}.jpg").parent.mkdir(parents=True, exist_ok=True)
