@@ -1,9 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { episodesFor, getTitle, moreLike } from '../catalog';
 import { Button } from '../components/Button';
 import { clock, lastEpisode, resumeAt, useContinueWatching } from '../history';
 import { FocusCard } from '../components/FocusCard';
+import { CityPicker } from '../components/CityPicker';
+import { WeatherCard } from '../components/WeatherCard';
+import { useLocalWeather } from '../weather';
 import { colors, layout, s } from '../theme';
 
 type Props = {
@@ -17,6 +20,8 @@ export function DetailScreen({ id, onPlay, onOpen }: Props) {
   const scroll = useRef<ScrollView>(null);
   const isShow = t.kind === 'show';
   const isLive = t.kind === 'live';
+  // The weather channel also shows the viewer's own forecast and a city chooser.
+  const isWeather = isLive && t.genre === 'Weather';
   useContinueWatching(); // re-render when progress changes
   const resume = isLive
     ? undefined
@@ -27,6 +32,10 @@ export function DetailScreen({ id, onPlay, onOpen }: Props) {
       : undefined;
   const toTop = () => scroll.current?.scrollTo({ y: 0, animated: true });
   const toShelf = () => scroll.current?.scrollToEnd({ animated: true });
+
+  if (isWeather) {
+    return <WeatherDetail id={id} onPlay={onPlay} />;
+  }
 
   return (
     <View style={styles.screen}>
@@ -118,6 +127,57 @@ export function DetailScreen({ id, onPlay, onOpen }: Props) {
   );
 }
 
+// The Haukley Weather title page: the national channel plus "Your weather" for the
+// viewer's city (automatic by default) and a full-screen city chooser.
+function WeatherDetail({ id, onPlay }: { id: string; onPlay: Props['onPlay'] }) {
+  const t = getTitle(id);
+  const local = useLocalWeather();
+  const [picking, setPicking] = useState(false);
+  const close = React.useCallback(() => setPicking(false), []);
+
+  if (picking) {
+    return (
+      <CityPicker
+        current={local.place}
+        onClose={close}
+        onPick={p => {
+          local.setPlace(p);
+          setPicking(false);
+        }}
+      />
+    );
+  }
+
+  return (
+    <View style={styles.screen}>
+      <Image source={t.backdrop} style={styles.backdrop} resizeMethod="resize" />
+      <View style={styles.scrim} />
+      <View style={styles.weatherRow}>
+        <View style={styles.weatherLeft}>
+          <Text style={styles.eyebrow}>LIVE CHANNEL · 24/7</Text>
+          <Text style={styles.title}>{t.title}</Text>
+          <View style={styles.metaRow}>
+            <View style={styles.liveBadge} testID="live-badge">
+              <Text style={styles.liveBadgeText}>LIVE</Text>
+            </View>
+            <Badge text={t.rating} />
+            <Text style={styles.meta}>{t.genre}</Text>
+          </View>
+          <Text style={styles.tagline}>{t.tagline}</Text>
+          <Text style={styles.desc}>{t.description}</Text>
+          <Text style={styles.credits}>{t.credits}</Text>
+          {t.license ? <Text style={styles.license} numberOfLines={2}>{t.license}</Text> : null}
+          <View style={styles.buttons}>
+            <Button label="Watch Live" icon="▶" hasTVPreferredFocus onPress={() => onPlay(t.id)} />
+            <Button label="Change city" icon="⌖" onPress={() => setPicking(true)} />
+          </View>
+        </View>
+        <WeatherCard place={local.place} weather={local.weather} error={local.error} loading={local.loading} />
+      </View>
+    </View>
+  );
+}
+
 function Badge({ text }: { text: string }) {
   return (
     <View style={styles.badge}>
@@ -156,4 +216,6 @@ const styles = StyleSheet.create({
   visible: { overflow: 'visible' },
   shelf: { paddingHorizontal: layout.gutter, paddingTop: s(30), paddingBottom: s(20) },
   item: { marginRight: s(40) },
+  weatherRow: { flexDirection: 'row', alignItems: 'flex-start', paddingTop: s(200), paddingHorizontal: layout.gutter },
+  weatherLeft: { flex: 1, marginRight: s(60) },
 });

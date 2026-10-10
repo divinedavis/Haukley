@@ -5,6 +5,7 @@ import { TRAILER, adTagFor, createAdTracker } from '../ads';
 import { getTitle, streamFor } from '../catalog';
 import { recordWatch } from '../history';
 import { colors, layout, s } from '../theme';
+import { useLocalWeather } from '../weather';
 
 type Props = { id: string; episode?: number; startAt?: number; onDone: () => void };
 
@@ -33,6 +34,12 @@ export function PlayerScreen({ id, episode, startAt, onDone }: Props) {
   // A live channel: no ads, no resume seek, no saved position, and no scrubber.
   const live = t.kind === 'live';
   const noAds = isTrailer || live;
+  // On the weather channel the LIVE tag also carries the viewer's own temperature and city.
+  const weatherChannel = live && t.genre === 'Weather';
+  const local = useLocalWeather(weatherChannel);
+  const chip = weatherChannel && local.weather
+    ? `${Math.round(local.weather.now.temp)}° ${local.weather.place.name}`
+    : null;
   // One server-signed session per playback groups its ad events (only those count toward
   // payouts); the ad tag carries title_id for the ad server's report. Trailers and live
   // channels have no ads.
@@ -121,6 +128,7 @@ export function PlayerScreen({ id, episode, startAt, onDone }: Props) {
       {live && liveTag && !loading && !error && (
         <View style={styles.live} pointerEvents="none" testID="live-badge">
           <Text style={styles.liveText}>LIVE</Text>
+          {chip ? <Text style={styles.chipText} testID="weather-chip">{chip}</Text> : null}
         </View>
       )}
       {advisory && (
@@ -155,7 +163,9 @@ const styles = StyleSheet.create({
   },
   advisoryLabel: { color: colors.text, fontSize: s(30), fontWeight: '800', letterSpacing: 1 },
   advisoryText: { color: colors.textDim, fontSize: s(24), marginTop: s(4) },
-  live: { position: 'absolute', top: s(48), right: s(64), backgroundColor: colors.live, borderRadius: s(8), paddingHorizontal: s(16), paddingVertical: s(6) },
+  // Below the channel's own header bar (top ~9% of the frame), so it never covers it.
+  live: { position: 'absolute', top: s(118), right: s(64), flexDirection: 'row', alignItems: 'center', backgroundColor: colors.live, borderRadius: s(8), paddingHorizontal: s(16), paddingVertical: s(6) },
   liveText: { color: '#fff', fontSize: s(26), fontWeight: '800', letterSpacing: s(2) },
+  chipText: { color: '#fff', fontSize: s(24), fontWeight: '600', marginLeft: s(14) },
   error: { color: '#ff8a80', fontSize: s(24), marginTop: s(30), width: s(1200) },
 });
