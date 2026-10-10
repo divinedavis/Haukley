@@ -1,6 +1,7 @@
 """Haukley Weather live channel (live/weather/channel.py): the live playlist logic and the
 NWS parsing, stdlib only (rendering needs Pillow + ffmpeg and is checked on the droplet)."""
 import importlib.util
+import math
 import pathlib
 import re
 import unittest
@@ -27,7 +28,7 @@ class Timeline(unittest.TestCase):
         self.assertEqual(len(segs), ch.WINDOW)
         self.assertEqual(segs[0], "c1/seg000.ts")
         self.assertNotIn("#EXT-X-ENDLIST", tl.playlist())   # live, not VOD
-        self.assertEqual(head["TARGETDURATION"], str(SEG))
+        self.assertEqual(head["TARGETDURATION"], str(math.ceil(SEG)))
 
     def test_sequence_counts_dropped_segments(self):
         tl = ch.Timeline()
@@ -44,7 +45,7 @@ class Timeline(unittest.TestCase):
         cycles = {"1": [SEG] * 10, "2": [SEG] * 20}
         tl.tick(3 * SEG, cycles, "2")
         pl = tl.playlist()
-        self.assertIn("#EXT-X-DISCONTINUITY\n#EXTINF:6.000,\nc2/seg000.ts", pl)
+        self.assertIn(f"#EXT-X-DISCONTINUITY\n#EXTINF:{SEG:.3f},\nc2/seg000.ts", pl)
         # the old cycle is still referenced until it leaves the window
         self.assertEqual(tl.referenced(), {"1", "2"})
         tl.tick(3 * SEG + ch.WINDOW * SEG, cycles, "2")
@@ -83,7 +84,7 @@ class Timeline(unittest.TestCase):
 
     def test_master_playlist_points_at_live(self):
         m = ch.master_playlist()
-        self.assertNotIn("mp4a", m)   # video-only: the CODECS list must match the segments
+        self.assertIn("mp4a.40.2", m)  # Roku won't play video-only HLS
         self.assertIn("#EXT-X-STREAM-INF:BANDWIDTH=", m)
         self.assertTrue(m.rstrip().endswith("live.m3u8"))
 
@@ -104,9 +105,11 @@ class Parsing(unittest.TestCase):
         self.assertEqual(a["total"], 4)
         self.assertEqual(a["top"][0], ("Flood Warning", 3))
 
-    def test_every_slide_is_whole_segments(self):
-        # the program builder gives every still a multiple of SEG; keep the constants honest
-        self.assertEqual(ch.RENDER_EVERY % SEG, 0)
+    def test_segment_is_whole_video_and_audio_frames(self):
+        # audio and video must cut on the same instant (no per-segment A/V offset)
+        self.assertAlmostEqual(SEG * ch.FPS, round(SEG * ch.FPS), places=9)
+        aac_frames = SEG * ch.AUDIO_RATE / 1024
+        self.assertAlmostEqual(aac_frames, round(aac_frames), places=9)
         self.assertGreaterEqual(len(ch.CITIES), 10)
 
 

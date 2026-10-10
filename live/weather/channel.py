@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import os
 import shutil
 import subprocess
@@ -33,11 +34,18 @@ from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-SEG = 6                      # seconds per HLS segment; every slide lasts a multiple of it
+# Seconds per HLS segment; every slide lasts a multiple of it. 6.4 s because it is a whole
+# number of video frames (96 at 15 fps) AND of AAC frames (300 x 1024 samples at 48 kHz), so
+# audio and video cut on the same instant: Roku won't play video-only HLS (it buffers
+# forever, verified on a Streaming Stick 2026-10-10), and at 6 s the audio landed up to 0.13 s
+# off each cut, which stalled hls.js at live start.
+SEG = 6.4
+AUDIO_RATE = 48000
 WINDOW = 8                   # segments listed in the live playlist (48 s of slack for slow starts)
 RENDER_EVERY = 15 * 60       # seconds between renders (NWS updates hourly at most)
 KEEP_CYCLES = 3
 FPS = 15
+GOP = round(SEG * FPS)
 W, H = 1280, 720
 BANDWIDTH = 900_000
 UA = "Haukley Weather (hello@haukley.com)"   # api.weather.gov asks for a contact UA
@@ -123,7 +131,7 @@ class Timeline:
         return {e["cycle"] for e in self.entries} | {self.cycle}
 
     def playlist(self) -> str:
-        lines = ["#EXTM3U", "#EXT-X-VERSION:3", f"#EXT-X-TARGETDURATION:{SEG}",
+        lines = ["#EXTM3U", "#EXT-X-VERSION:3", f"#EXT-X-TARGETDURATION:{math.ceil(SEG)}",
                  f"#EXT-X-MEDIA-SEQUENCE:{self.seq}",
                  f"#EXT-X-DISCONTINUITY-SEQUENCE:{self.disc_seq}"]
         for e in self.entries:
@@ -136,7 +144,7 @@ class Timeline:
 def master_playlist() -> str:
     return ("#EXTM3U\n#EXT-X-VERSION:3\n"
             f'#EXT-X-STREAM-INF:BANDWIDTH={BANDWIDTH},RESOLUTION={W}x{H},'
-            f'FRAME-RATE={FPS}.000,CODECS="avc1.64001f"\nlive.m3u8\n')
+            f'FRAME-RATE={FPS}.000,CODECS="avc1.64001f,mp4a.40.2"\nlive.m3u8\n')
 
 
 def write_atomic(path: Path, text: str) -> None:
@@ -435,14 +443,18 @@ def encode(prog: list[tuple[Path, float]], work: Path, dest: Path) -> list[float
     dest.mkdir(parents=True, exist_ok=True)
     cmd = ["nice", "-n", "19", "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
            "-f", "concat", "-safe", "0", "-i", str(work / "list.txt"),
+           "-f", "lavfi", "-i", f"anullsrc=channel_layout=stereo:sample_rate={AUDIO_RATE}",
            "-t", f"{total:.3f}", "-r", str(FPS), "-vf", "format=yuv420p",
            "-c:v", "libx264", "-preset", "veryfast", "-tune", "stillimage",
            "-profile:v", "high", "-level", "3.1", "-b:v", "700k", "-maxrate", "800k",
-           "-bufsize", "1600k", "-g", str(SEG * FPS), "-keyint_min", str(SEG * FPS),
-           "-sc_threshold", "0", "-force_key_frames", f"expr:gte(t,n_forced*{SEG})",
-           # Video only, no B-frames: AAC frames can't land on 6 s cuts, and the ~0.1 s
-           # audio/video offsets per segment stalled hls.js at live start (the channel is silent).
-           "-bf", "0", "-an", "-threads", "1",
+           "-bufsize", "1600k", "-g", str(GOP), "-keyint_min", str(GOP),
+           "-sc_threshold", "0", "-force_key_frames", f"expr:eq(mod(n,{GOP}),0)",
+           # Silent stereo AAC (Roku needs an audio track); no B-frames so the first video
+           # frame of every segment is at its cut. muxdelay 0 keeps both streams starting together.
+           "-bf", "0", "-c:a", "aac", "-b:a", "64k", "-ar", str(AUDIO_RATE), "-ac", "2",
+           # max_interleave_delta 0: the still-image video runs far ahead of the audio, and the
+           # default 10 s interleave window let audio fall behind (37 s by segment 50).
+           "-muxdelay", "0", "-muxpreload", "0", "-max_interleave_delta", "0", "-threads", "1",
            "-f", "hls", "-hls_time", str(SEG), "-hls_playlist_type", "vod",
            "-hls_segment_filename", str(dest / "seg%03d.ts"), str(dest / "cycle.m3u8")]
     subprocess.run(cmd, check=True, cwd=work, timeout=1800)
