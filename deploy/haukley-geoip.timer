@@ -1,0 +1,10 @@
+[Unit]
+Description=Refresh DB-IP City Lite monthly (it is published at the start of each month)
+
+[Timer]
+OnCalendar=*-*-03 04:20:00
+Persistent=true
+RandomizedDelaySec=1h
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,31 @@
+# Haukley local weather API (live/weather/api.py). Installed by deploy/deploy_weather_api.sh.
+# nginx proxies https://haukley.com/api/weather/ here with access_log off; the service logs
+# no requests (privacy: the caller's IP is used in memory for a city-level lookup only).
+[Unit]
+Description=Haukley local weather API (NWS forecast for the viewer's city)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=haukleylive
+Group=haukleylive
+ExecStart=/usr/bin/python3 /opt/haukley-live/weather/api.py serve --port 8131
+StateDirectory=haukley-live
+Environment=PYTHONDONTWRITEBYTECODE=1
+Restart=always
+RestartSec=5
+MemoryMax=300M
+CPUQuota=50%
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+NoNewPrivileges=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+LockPersonality=true
+
+[Install]
+WantedBy=multi-user.target

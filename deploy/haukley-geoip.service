@@ -1,0 +1,17 @@
+# Monthly DB-IP City Lite refresh (CC BY 4.0) for the local weather API's IP -> city lookup.
+[Unit]
+Description=Refresh DB-IP City Lite for the Haukley weather API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=haukleylive
+Group=haukleylive
+StateDirectory=haukley-live
+ExecStart=/usr/bin/python3 /opt/haukley-live/weather/api.py refresh-db
+ExecStartPost=+/bin/systemctl try-restart haukley-weather-api.service
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+NoNewPrivileges=true
