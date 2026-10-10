@@ -292,7 +292,8 @@
    "width": 450,
    "height": 360,
    "has_added_score": false,
-   "notes": "Low resolution (H.264 450x360, 23.976 fps, original soundtrack), one file in a hobbyist's multi-film item; the only online copy. Opens on the original damaged 'Veiled Aristocrats ... All Talking ... Colored Cast ... A Micheaux Production' title and an in-period 'Cast of Characters' card; ends on the original 'The End'. Zoomed corner crops on dark frames show no uploader watermark. The same uploader's Underworld and Notorious Elinor Lee files DO carry a watermark, so re-check this file at ingest. Replace with a better source (e.g. George Eastman Museum) when possible. Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found)."
+   "notes": "Low resolution (H.264 450x360, 23.976 fps, original soundtrack), one file in a hobbyist's multi-film item; the only online copy. Opens on the original damaged 'Veiled Aristocrats ... All Talking ... Colored Cast ... A Micheaux Production' title and an in-period 'Cast of Characters' card; ends on the original 'The End'. Zoomed corner crops on dark frames show no uploader watermark. The same uploader's Underworld and Notorious Elinor Lee files DO carry a watermark, so re-check this file at ingest. Replace with a better source (e.g. George Eastman Museum) when possible. Verified 2026-09-27: curl -sIL final HTTP/2 200 and Content-Length = bytes; ffprobe (headers only) for streams; frames sampled at ~5 s, ~60 s, end-25 s plus 15 evenly spaced frames and zoomed corner crops on dark frames (no burned-in watermark found). 2026-10-10: 450x360 square-pixel upload of a 4:3 film: squeezed 6% narrow in the file itself, so it's resampled to 4:3.",
+   "display_aspect": "4:3"
   },
   "advisory": "Colorism and themes of passing for white."
  },

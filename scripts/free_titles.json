@@ -1936,7 +1936,8 @@
    "width": 540,
    "height": 360,
    "has_added_score": false,
-   "notes": "Internet Archive Feature Films copy. It opens on the original Joseph M. Schenck / Joan Crawford title and ends on the original 'The End' card. Original soundtrack. Low resolution (540x360), so upscale on ingest or look for a better source later ('rain-with-joan-crawford-1932-1080p-hd-film', 1080x720, not verified)."
+   "notes": "Internet Archive Feature Films copy. It opens on the original Joseph M. Schenck / Joan Crawford title and ends on the original 'The End' card. Original soundtrack. Low resolution (540x360), so upscale on ingest or look for a better source later ('rain-with-joan-crawford-1932-1080p-hd-film', 1080x720, not verified). 2026-10-10: 540x360 square-pixel upload of a 4:3 (Academy) film: the picture is stretched 12.5% wide in the file itself (faces visibly broad), so it's resampled to 4:3.",
+   "display_aspect": "4:3"
   }
  }
 ]

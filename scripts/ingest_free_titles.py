@@ -128,6 +128,38 @@ def has_real_audio(t, info):
     return bool(audio) and not t["source"].get("silent_audio")
 
 
+def display_aspect(t, v):
+    """The width/height the picture should be shown at. A source's "display_aspect" ("4:3")
+    overrides it for files whose pixels are already distorted with no SAR to say so (e.g. a
+    4:3 film uploaded at 540x360); otherwise it is the probed size times the SAR, so DVD/NARA
+    transfers (720x480 at 8:9, 720x576 at 16:15) come out 4:3 rather than 3:2 or 5:4."""
+    override = t["source"].get("display_aspect")
+    if override:
+        a, b = override.split(":")
+        return int(a) / int(b)
+    sar = v.get("sample_aspect_ratio") or "1:1"
+    n, d = (int(x) for x in sar.split(":")) if ":" in sar else (1, 1)
+    if n <= 0 or d <= 0:
+        n, d = 1, 1
+    return int(v["width"]) * n / d / int(v["height"])
+
+
+def square_pixels(dar):
+    """ffmpeg filter: resample to square pixels at the display aspect, keeping the height."""
+    return f"scale='trunc(ih*{dar:.6f}/2)*2':ih:flags=lanczos,setsar=1"
+
+
+def check_aspect(out, dar, label):
+    """Fail the ingest if the top rung isn't shown at the display aspect (2% slack for even
+    rounding). This is the check that would have caught 720x480 8:9 sources playing at 3:2."""
+    seg = next((out / "v0").glob("*.ts"))
+    w, h = (int(x) for x in subprocess.run(
+        ["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height",
+         "-of", "csv=p=0", str(seg)], check=True, capture_output=True, text=True).stdout.strip().split(",")[:2])
+    if abs(w / h - dar) / dar > 0.02:
+        sys.exit(f"{label}: encoded {w}x{h} ({w / h:.3f}) but the display aspect is {dar:.3f}")
+
+
 def encode(t, keep_source=False):
     if (WORK / "hls" / t["id"] / "master.m3u8").exists():
         print(f"encode {t['id']}: already done")
@@ -151,7 +183,10 @@ def encode(t, keep_source=False):
     out.mkdir(parents=True)
 
     n = len(rungs)
-    split = f"[0:v]split={n}" + "".join(f"[s{i}]" for i in range(n)) + ";"
+    # Square pixels at the display aspect before the ladder (see display_aspect), or every rung
+    # plays stretched or squeezed.
+    dar = display_aspect(t, v)
+    split = f"[0:v]{square_pixels(dar)},split={n}" + "".join(f"[s{i}]" for i in range(n)) + ";"
     # Square pixels, even dimensions, capped to each rung's height.
     scales = ";".join(f"[s{i}]scale=-2:'min({h},ih)':flags=lanczos,setsar=1,format=yuv420p[v{i}]" for i, (h, _) in enumerate(rungs))
     cmd = ["ffmpeg", "-v", "error", "-stats", "-y", "-ss", f"{start:.3f}", "-to", f"{end:.3f}", "-i", str(src),
@@ -168,12 +203,13 @@ def encode(t, keep_source=False):
             "-master_pl_name", "master.m3u8", "-var_stream_map", vsm, str(out / "v%v" / "index.m3u8")]
     print(f"encode {t['id']}: {src_h}p source, rungs {[h for h, _ in rungs]}, audio={audio}, {start:.1f}-{end:.1f}s", flush=True)
     run(cmd)
+    check_aspect(out, dar, t["id"])
 
     # Still for key art: a frame about a third of the way in (past the titles).
     (STILLS / f"{t['id']}.jpg").parent.mkdir(parents=True, exist_ok=True)
     at = start + (end - start) * float(t["source"].get("still_at", 0.33))
     run(["ffmpeg", "-v", "error", "-y", "-ss", f"{at:.1f}", "-i", str(src), "-frames:v", "1",
-         "-vf", "scale=1920:-2:flags=lanczos,setsar=1", "-q:v", "3", str(STILLS / f"{t['id']}.jpg")])
+         "-vf", f"{square_pixels(dar)},scale=1920:-2:flags=lanczos,setsar=1", "-q:v", "3", str(STILLS / f"{t['id']}.jpg")])
     size = sum(p.stat().st_size for p in out.rglob("*") if p.is_file())
     print(f"  -> {out} ({size / 1e6:.0f} MB)")
     if not keep_source:
