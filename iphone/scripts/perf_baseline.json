@@ -2,42 +2,48 @@
   "PerformanceTests/testHomeScroll() :: Absolute Memory Physical (app)": {
     "history": [
       125700.52,
-      132598.76
+      132598.76,
+      142937.064
     ],
     "unit": "kB"
   },
   "PerformanceTests/testHomeScroll() :: Duration (Scroll_Deceleration)": {
     "history": [
       2.4333,
-      2.4334
+      2.4334,
+      2.4335
     ],
     "unit": "s"
   },
   "PerformanceTests/testHomeScroll() :: Memory Peak Physical (app)": {
     "history": [
       125847.976,
-      133106.664
+      133106.664,
+      143526.888
     ],
     "unit": "kB"
   },
   "PerformanceTests/testHomeScroll() :: Memory Physical (app)": {
     "history": [
       0,
-      16.384
+      16.384,
+      0
     ],
     "unit": "kB"
   },
   "PerformanceTests/testLaunch() :: Duration (ApplicationFirstFramePresentationResponsive)": {
     "history": [
       0.939,
-      0.9003
+      0.9003,
+      0.9585
     ],
     "unit": "s"
   },
   "PerformanceTests/testLaunchToHome() :: Clock Monotonic Time": {
     "history": [
       4.0232,
-      4.0015
+      4.0015,
+      4.0187
     ],
     "unit": "s"
   }
