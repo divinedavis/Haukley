@@ -1,0 +1,373 @@
+[
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "go-west",
+  "title": "Go West",
+  "year": 1925,
+  "genre": "Comedy",
+  "runtime": "1 hr 8 min",
+  "description": "A drifter with no luck heads west, takes a ranch job and befriends a cow named Brown Eyes, then has to herd a thousand steers through downtown Los Angeles.",
+  "credits": "Directed by Buster Keaton · Starring Buster Keaton · Howard Truesdale · Kathleen Myers",
+  "kids": true,
+  "advisory": null,
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published 1925 (Metro-Goldwyn); every US work published in 1930 or earlier is public domain as of 2026-01-01. US-only conclusion.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Go_West_(1925_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "my-movie_202111",
+   "url": "https://archive.org/download/my-movie_202111/My%20Movie.mp4",
+   "bytes": 610863640,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Silent Hall of Fame upload; silent audio track. Last ~3 s is a plain modern-font 'The End' (trim). Verified 2026-09-26 and re-checked 2026-10-09 (ffprobe over HTTP: size, dimensions, duration). Sheets 2026-10-10: original M-G titles; volumedetect -90 dB (silent track, not encoded); trimmed the plain modern 'The End' (last 4 s).",
+   "silent_audio": true,
+   "trim_end": 4
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "battling-butler",
+  "title": "Battling Butler",
+  "year": 1926,
+  "genre": "Comedy",
+  "runtime": "1 hr 16 min",
+  "description": "A pampered rich kid pretends to be a champion boxer to win a mountain girl's family over, until he has to step into the ring for real.",
+  "credits": "Directed by Buster Keaton · Starring Buster Keaton · Sally O'Neil · Snitz Edwards",
+  "kids": true,
+  "advisory": null,
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published 1926 (MGM); PD since 2022 per Wikipedia. Based on the 1922 stage musical Battling Buttler (also PD by date). US-only conclusion.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Battling_Butler"
+   ]
+  },
+  "source": {
+   "archive_identifier": "my-movie_202212",
+   "url": "https://archive.org/download/my-movie_202212/My%20Movie.mp4",
+   "bytes": 700219123,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Silent Hall of Fame upload; silent audio track. Verified 2026-09-26 and re-checked 2026-10-09 (ffprobe over HTTP: size, dimensions, duration). Sheets 2026-10-10: original MGM titles (1926 lion) to 'The End'; volumedetect -90 dB (silent track, not encoded).",
+   "silent_audio": true
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "topper-returns",
+  "title": "Topper Returns",
+  "year": 1941,
+  "genre": "Comedy",
+  "runtime": "1 hr 28 min",
+  "description": "A murdered heiress's ghost drags the timid Cosmo Topper into solving her own killing in a spooky mansion full of trapdoors and suspects.",
+  "credits": "Directed by Roy Del Ruth · Starring Joan Blondell · Roland Young · Carole Landis · Eddie \"Rochester\" Anderson",
+  "kids": false,
+  "advisory": "Period racial stereotyping in the comic scenes with the chauffeur.",
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Copyright not renewed; entered the US public domain in 1969 (Wikipedia, citing Pierce 2007 p.128). Topper characters come from Thorne Smith's 1926 novel, PD by date. US-only conclusion.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Topper_Returns",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "TopperReturns_201409",
+   "url": "https://archive.org/download/TopperReturns_201409/Topper%20Returns.mp4",
+   "bytes": 630177922,
+   "width": 720,
+   "height": 540,
+   "has_added_score": false,
+   "notes": "Clean transfer, original UA titles. Verified 2026-09-26 and re-checked 2026-10-09 (ffprobe over HTTP: size, dimensions, duration). Sheets 2026-10-10: original head/tail cards, no modern logos."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "made-for-each-other",
+  "title": "Made for Each Other",
+  "year": 1939,
+  "genre": "Drama",
+  "runtime": "1 hr 32 min",
+  "description": "A young lawyer and the woman he marries after a whirlwind week face money troubles, a meddling mother and a desperate race to save their baby's life.",
+  "credits": "Directed by John Cromwell · Starring Carole Lombard · James Stewart · Charles Coburn",
+  "kids": false,
+  "advisory": null,
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Wikipedia: 'Made for Each Other is in the public domain in the United States' (listed on the US PD film list, Erickson citation). Original screenplay (Jo Swerling, story by Rose Franken written for the film). US-only conclusion.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Made_for_Each_Other_(1939_film)",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "madeforeachother1939carolelombard",
+   "url": "https://archive.org/download/madeforeachother1939carolelombard/Made%20for%20Each%20Other%20%281939%29%20CAROLE%20LOMBARD.mp4",
+   "bytes": 337729722,
+   "width": 658,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Clean, original Selznick titles. Verified 2026-09-26 and re-checked 2026-10-09 (ffprobe over HTTP: size, dimensions, duration). Sheets 2026-10-10: original head/tail cards, no modern logos."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "quicksand",
+  "title": "Quicksand",
+  "year": 1950,
+  "genre": "Film Noir",
+  "runtime": "1 hr 19 min",
+  "description": "A garage mechanic borrows twenty dollars from the till to impress a girl, and every lie he tells to cover it sinks him deeper into crime.",
+  "credits": "Directed by Irving Pichel · Starring Mickey Rooney · Jeanne Cagney · Peter Lorre",
+  "kids": false,
+  "advisory": null,
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Listed on Wikipedia's List of films in the public domain in the United States (book citation). Original screenplay by Robert Smith. US-only conclusion.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States",
+    "https://en.wikipedia.org/wiki/Quicksand_(1950_film)"
+   ]
+  },
+  "source": {
+   "archive_identifier": "quicksand-1950_202403",
+   "url": "https://archive.org/download/quicksand-1950_202403/Quicksand%20%281950%29.mp4",
+   "bytes": 803144485,
+   "width": 960,
+   "height": 720,
+   "has_added_score": false,
+   "notes": "Clean 960x720 transfer. Verified 2026-09-26 and re-checked 2026-10-09 (ffprobe over HTTP: size, dimensions, duration). Sheets 2026-10-10: original head/tail cards, no modern logos."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "terror-by-night",
+  "title": "Terror by Night",
+  "year": 1946,
+  "genre": "Mystery",
+  "runtime": "58 min",
+  "description": "Sherlock Holmes and Dr. Watson guard a priceless diamond on the overnight express to Edinburgh, but a killer is already aboard.",
+  "credits": "Directed by Roy William Neill · Starring Basil Rathbone · Nigel Bruce · Alan Mowbray",
+  "kids": false,
+  "advisory": null,
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Wikipedia: one of four Rathbone Holmes films in the public domain. Mostly original story using elements of Conan Doyle tales, all PD in the US (the last Holmes stories entered PD 2023). US-only conclusion.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Terror_by_Night",
+    "https://en.wikipedia.org/wiki/Klinger_v._Conan_Doyle_Estate,_Ltd."
+   ]
+  },
+  "source": {
+   "archive_identifier": "Terror_By_Night",
+   "url": "https://archive.org/download/Terror_By_Night/Terror_By_Night.mp4",
+   "bytes": 364687110,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Clean, 58 min. Verified 2026-09-26 and re-checked 2026-10-09 (ffprobe over HTTP: size, dimensions, duration). Sheets 2026-10-10: original head/tail cards, no modern logos."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "captain-kidd",
+  "title": "Captain Kidd",
+  "year": 1945,
+  "genre": "Adventure",
+  "runtime": "1 hr 29 min",
+  "description": "The notorious pirate William Kidd talks his way into the King's service as a treasure-ship escort, planning to rob it, but one of his crew has a score to settle.",
+  "credits": "Directed by Rowland V. Lee · Starring Charles Laughton · Randolph Scott · Barbara Britton",
+  "kids": false,
+  "advisory": null,
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Wikipedia: entered the public domain because the producers neglected to renew the copyright in 1972; on the US PD film list. US-only conclusion.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Captain_Kidd_(film)",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "CaptainKidd_",
+   "url": "https://archive.org/download/CaptainKidd_/CaptainKidd.mp4",
+   "bytes": 553819773,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Original UA titles; slightly greenish transfer. Verified 2026-09-26 and re-checked 2026-10-09 (ffprobe over HTTP: size, dimensions, duration). Sheets 2026-10-10: original head/tail cards, no modern logos."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "of-human-bondage",
+  "title": "Of Human Bondage",
+  "year": 1934,
+  "genre": "Drama",
+  "runtime": "1 hr 23 min",
+  "description": "A shy medical student with a club foot falls hopelessly for a cruel London waitress in the role that made Bette Davis a star.",
+  "credits": "Directed by John Cromwell · Starring Leslie Howard · Bette Davis · Frances Dee",
+  "kids": false,
+  "advisory": null,
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Copyright not renewed (Wikipedia, Pierce 2007 pp.131-134); PD since 1962. Based on W. Somerset Maugham's 1915 novel, itself PD by date, which clears Wikipedia's 'literary rights' caveat. US-only conclusion.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Of_Human_Bondage_(1934_film)",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "humanbondage",
+   "url": "https://archive.org/download/humanbondage/HUMANBONDAGE.mp4",
+   "bytes": 515574647,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Clean, original RKO titles. Verified 2026-09-26 and re-checked 2026-10-09 (ffprobe over HTTP: size, dimensions, duration). Sheets 2026-10-10: original head/tail cards, no modern logos."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "the-blue-angel",
+  "title": "The Blue Angel",
+  "year": 1930,
+  "genre": "Drama",
+  "runtime": "1 hr 40 min",
+  "description": "A strict schoolteacher goes to a cabaret to catch his students and falls for its singer, Lola Lola, a love that costs him everything. Marlene Dietrich's breakthrough.",
+  "credits": "Directed by Josef von Sternberg · Starring Emil Jannings · Marlene Dietrich",
+  "kids": false,
+  "advisory": null,
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "English-language version, published 1930 (UFA/Paramount); PD by date in the US as of 2026-01-01. Based on Heinrich Mann's 1905 novel Professor Unrat (PD). The songs were published in 1930 and are PD too. US-only conclusion.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/The_Blue_Angel"
+   ]
+  },
+  "source": {
+   "archive_identifier": "theblueangel1930",
+   "url": "https://archive.org/download/theblueangel1930/TheBlueAngel.mp4",
+   "bytes": 624199447,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Clean, UFA titles to 'The End'. Verified 2026-09-26 and re-checked 2026-10-09 (ffprobe over HTTP: size, dimensions, duration). Sheets 2026-10-10: 11 s of black before the UFA card (trimmed); the closing 'The End.' card in a non-period script font is trimmed (last 7 s).",
+   "trim_start": 11,
+   "trim_end": 7
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "nanook-of-the-north",
+  "title": "Nanook of the North",
+  "year": 1922,
+  "genre": "Documentary",
+  "runtime": "1 hr 17 min",
+  "description": "Robert Flaherty's landmark portrait of an Inuit family's year on the Hudson Bay coast: hunting, travel and building an igloo against the Arctic cold.",
+  "credits": "Directed by Robert J. Flaherty · Featuring Allakariallak",
+  "kids": false,
+  "advisory": "Real animal hunting; some scenes were staged by the filmmaker.",
+  "rights": {
+   "basis": "public-domain-date",
+   "notes": "Published 1922 (Pathé); PD by date in the US. The upload carries an added music score, so the audio is muted. US-only conclusion.",
+   "sources": [
+    "https://cspd.law.duke.edu/publicdomainday/2026/",
+    "https://www.copyright.gov/circs/circ15a.pdf",
+    "https://en.wikipedia.org/wiki/Nanook_of_the_North"
+   ]
+  },
+  "source": {
+   "archive_identifier": "NanookOfTheNorth",
+   "url": "https://archive.org/download/NanookOfTheNorth/Nanook%20of%20the%20North.mp4",
+   "bytes": 846486734,
+   "width": 1280,
+   "height": 720,
+   "has_added_score": true,
+   "notes": "Original Flaherty titles; scored upload, so MUTE. Verified 2026-09-26 and re-checked 2026-10-09 (ffprobe over HTTP: size, dimensions, duration). Sheets 2026-10-10: original head/tail cards, no modern logos.",
+   "mute": true
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "reefer-madness",
+  "title": "Reefer Madness",
+  "year": 1936,
+  "genre": "Drama",
+  "runtime": "1 hr 8 min",
+  "description": "A school principal warns parents about 'the burning weed' in the cult-classic scare film that became a midnight-movie comedy.",
+  "credits": "Directed by Louis J. Gasnier · Starring Dorothy Short · Kenneth Craig · Lillian Miles",
+  "kids": false,
+  "advisory": "Drug use, a killing, a suicide and an attempted sexual assault.",
+  "rights": {
+   "basis": "public-domain-improper-notice",
+   "notes": "Wikipedia: in the US public domain due to an improper copyright notice; on the US PD film list. US-only conclusion.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Reefer_Madness",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "reefer_madness1938",
+   "url": "https://archive.org/download/reefer_madness1938/reefer_madness1938.mp4",
+   "bytes": 426811156,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Clean. Verified 2026-09-26 and re-checked 2026-10-09 (ffprobe over HTTP: size, dimensions, duration). Sheets 2026-10-10: original head/tail cards, no modern logos."
+  }
+ },
+ {
+  "kind": "movie",
+  "rating": "NR",
+  "id": "salt-of-the-earth",
+  "title": "Salt of the Earth",
+  "year": 1954,
+  "genre": "Drama",
+  "runtime": "1 hr 32 min",
+  "description": "When Mexican-American zinc miners in New Mexico strike and an injunction bars them from the picket line, their wives take their place.",
+  "credits": "Directed by Herbert J. Biberman · Starring Rosaura Revueltas · Juan Chacón · Will Geer",
+  "kids": false,
+  "advisory": null,
+  "rights": {
+   "basis": "public-domain-no-renewal",
+   "notes": "Wikipedia: copyright not renewed in 1982, so the film is in the public domain; on the US PD film list. Original screenplay by Michael Wilson. National Film Registry 1992. US-only conclusion.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Salt_of_the_Earth_(1954_film)",
+    "https://en.wikipedia.org/wiki/List_of_films_in_the_public_domain_in_the_United_States"
+   ]
+  },
+  "source": {
+   "archive_identifier": "clacinonl_SaltOfTheEarth",
+   "url": "https://archive.org/download/clacinonl_SaltOfTheEarth/salt_of_the_earth.mp4",
+   "bytes": 576128178,
+   "width": 640,
+   "height": 480,
+   "has_added_score": false,
+   "notes": "Clean but a soft transfer. Verified 2026-09-26 and re-checked 2026-10-09 (ffprobe over HTTP: size, dimensions, duration). Sheets 2026-10-10: 2 s grey leader trimmed; original 1953 IPC titles.",
+   "trim_start": 2
+  }
+ }
+]

@@ -2716,7 +2716,9 @@
      "width": 720,
      "height": 480,
      "has_added_score": false,
-     "notes": "NARA transfer, MPEG-2 720x480 + AC-3 (transcode needed). TRIM: first ~1-3 s is a NARA typed slate 'With the Marines at Tarawa, 1944'; last ~2-5 s is film runout (orange leader). Title card: official U.S. Marine Corps picture, released via OWI/War Activities Committee (Warner Bros./Universal handled release) - no copyright notice. Verified 2026-09-26: curl -sIL final HTTP/2 200 + Content-Length; ffprobe (headers only) for streams; frames sampled at ~5s, end-25s and the first/last ~110s (credits) — no modern distributor logos found unless noted."
+     "notes": "NARA transfer, MPEG-2 720x480 + AC-3 (transcode needed). TRIM: first ~1-3 s is a NARA typed slate 'With the Marines at Tarawa, 1944'; last ~2-5 s is film runout (orange leader). Title card: official U.S. Marine Corps picture, released via OWI/War Activities Committee (Warner Bros./Universal handled release) - no copyright notice. Verified 2026-09-26: curl -sIL final HTTP/2 200 + Content-Length; ffprobe (headers only) for streams; frames sampled at ~5s, end-25s and the first/last ~110s (credits) — no modern distributor logos found unless noted.",
+     "trim_start": 3,
+     "trim_end": 5
     }
    },
    {
@@ -3172,6 +3174,8 @@
    "height": 1080,
    "has_added_score": false,
    "notes": "archive.org item uploaded by Morevna Project itself (morevna.project@gmail.com; item label says BY-SA 3.0, the project page says 4.0 — use 4.0). English version, high-quality master. Ranged GET 206, Content-Range total 584,177,991. ffprobe: H.264 1920x1080 + AAC audio, 454.9 s. End credits sampled: English, CC BY-SA 4.0 card, Ethic Cinema / Adamant / Krita sponsor logos (part of the film; keep). Alternates: https://archive.org/download/peppercarrot-ep6/pepper-en-basic.mp4 (239,749,688 bytes); official Morevna PeerTube account https://peertube.touhoppai.moe/download/web-videos/79ff0983-3f55-4111-9f7d-f3d3feeefb69-1080.mp4 (107,142,963 bytes, 1920x1080, 206 verified)."
-  }
+  },
+  "skip": true,
+  "skip_reason": "Held 2026-10-10: the end credits list stock music tracks licensed from pond5 ('A Butterfly's Life' etc.); the uploader's CC BY-SA label can't cover third-party music it doesn't own, so commercial reuse isn't clean."
  }
 ]
