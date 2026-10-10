@@ -8,7 +8,7 @@ on their own when the connection is slow; nothing in the apps changes.
 
 Idempotent: a master that already lists v240/ is skipped.
 
-Usage:  scripts/add_low_rung.py [--only <title id> ...] [--jobs 3]
+Usage:  scripts/add_low_rung.py [--only <title id or show/eN> ...] [--jobs 3] [--redo]
 Keys:   SPACES_KEY / SPACES_SECRET env, else Keychain haukley-spaces-key / haukley-spaces-secret.
 """
 import argparse
@@ -52,7 +52,8 @@ def streams(only):
         items = [e["stream"] for e in t["episodes"]] if t["kind"] == "show" else [t["stream"]]
         for url in items:
             key = url[len(CDN):]  # titles/<id>[/eN]/master.m3u8
-            if not only or t["id"] in only:
+            # --only takes title ids, or "<show>/eN" for single episodes.
+            if not only or t["id"] in only or any(key == f"titles/{o}/master.m3u8" for o in only):
                 out.append(key)
     return out
 
@@ -71,11 +72,14 @@ def codecs_for(path, audio):
     return f"{avc},mp4a.40.2" if audio else avc
 
 
-def process(key, client):
+def process(key, client, redo=False):
     base = key.rsplit("/", 1)[0]
     master = get(ORIGIN + key)
     if f"{RUNG}/index.m3u8" in master:
-        return f"skip {base} (has {RUNG})"
+        if not redo:
+            return f"skip {base} (has {RUNG})"
+        # --redo (after a re-ingest): drop the old rung's entry and build it again.
+        master = re.sub(rf"\n*#EXT-X-STREAM-INF:[^\n]+\n{RUNG}/index\.m3u8\n?", "\n", master).rstrip("\n") + "\n"
     # The lowest existing rung is the encode source (smallest BANDWIDTH).
     entries = re.findall(r"#EXT-X-STREAM-INF:([^\n]+)\n([^\n#]+)", master)
     attrs, uri = min(entries, key=lambda e: int(re.search(r"BANDWIDTH=(\d+)", e[0]).group(1)))
@@ -86,10 +90,14 @@ def process(key, client):
         # A stalled CDN read otherwise hangs ffmpeg forever (two films sat 2.5 h); time out and reconnect.
         cmd = ["ffmpeg", "-v", "error", "-y", "-rw_timeout", "30000000", "-reconnect", "1",
                "-reconnect_on_network_error", "1", "-reconnect_delay_max", "10",
-               "-i", CDN + base + "/" + uri.strip(), "-map", "0:v:0"]
+               # Read the origin, not the CDN: after a re-ingest the CDN can still serve the old
+               # segments (cached a year), and the new rung would copy the old picture.
+               "-i", ORIGIN + base + "/" + uri.strip(), "-map", "0:v:0"]
         if audio:
             cmd += ["-map", "0:a:0", "-c:a", "aac", "-b:a", f"{AUDIO_KBPS}k", "-ac", "2"]
-        cmd += ["-vf", "scale=-2:240:flags=lanczos,setsar=1,format=yuv420p",
+        # setparams: some NARA MPEG-2 transfers carry a log100 transfer tag the scaler refuses.
+        cmd += ["-vf", "setparams=color_trc=bt709:colorspace=bt709:color_primaries=bt709,"
+                       "scale=-2:240:flags=lanczos,setsar=1,format=yuv420p",
                 "-c:v", "h264_videotoolbox", "-profile:v", "high", "-b:v", f"{VIDEO_KBPS}k",
                 "-maxrate", f"{int(VIDEO_KBPS * 1.4)}k", "-bufsize", f"{VIDEO_KBPS * 2}k",
                 "-force_key_frames", f"expr:gte(t,n_forced*{SEG})", "-sc_threshold", "0",
@@ -138,6 +146,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", nargs="*")
     ap.add_argument("--jobs", type=int, default=3)
+    ap.add_argument("--redo", action="store_true", help="rebuild an existing 240p rung (after a re-ingest)")
     a = ap.parse_args()
     if not shutil.which("ffmpeg"):
         raise SystemExit("ffmpeg not found")
@@ -146,7 +155,7 @@ def main():
     print(f"{len(keys)} streams", flush=True)
     failed = []
     with concurrent.futures.ThreadPoolExecutor(a.jobs) as pool:
-        futs = {pool.submit(process, k, client): k for k in keys}
+        futs = {pool.submit(process, k, client, a.redo): k for k in keys}
         for f in concurrent.futures.as_completed(futs):
             try:
                 print(f.result(), flush=True)

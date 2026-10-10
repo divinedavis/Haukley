@@ -146,7 +146,10 @@ def display_aspect(t, v):
 
 def square_pixels(dar):
     """ffmpeg filter: resample to square pixels at the display aspect, keeping the height."""
-    return f"scale='trunc(ih*{dar:.6f}/2)*2':ih:flags=lanczos,setsar=1"
+    # setparams first: some NARA MPEG-2 transfers carry a log100 transfer tag that the scaler
+    # refuses and that would otherwise ride into every rung.
+    return ("setparams=color_trc=bt709:colorspace=bt709:color_primaries=bt709,"
+            f"scale='trunc(ih*{dar:.6f}/2)*2':ih:flags=lanczos,setsar=1")
 
 
 def check_aspect(out, dar, label):
@@ -155,7 +158,7 @@ def check_aspect(out, dar, label):
     seg = next((out / "v0").glob("*.ts"))
     w, h = (int(x) for x in subprocess.run(
         ["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height",
-         "-of", "csv=p=0", str(seg)], check=True, capture_output=True, text=True).stdout.strip().split(",")[:2])
+         "-of", "csv=p=0", str(seg)], check=True, capture_output=True, text=True).stdout.split()[0].split(",")[:2])
     if abs(w / h - dar) / dar > 0.02:
         sys.exit(f"{label}: encoded {w}x{h} ({w / h:.3f}) but the display aspect is {dar:.3f}")
 
