@@ -21,7 +21,10 @@ sub playWithAds()
             adIface = Roku_Ads()
             adIface.setAdUrl(m.top.adUrl)
             adIface.setContentId(m.top.titleId)
-            adIface.setContentGenre(m.top.genre)
+            ' General audience measurement (certification RAF 1.3, non-child-directed US
+            ' channel): measurements on, genre with kidsContent=false, content length.
+            adIface.setContentGenre(m.top.genre, false)
+            if m.top.contentLength > 0 then adIface.setContentLength(m.top.contentLength)
             adIface.enableAdMeasurements(true)
             adIface.setTrackingCallback(onAdTracking, m)
         catch e

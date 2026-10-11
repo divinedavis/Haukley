@@ -16,6 +16,11 @@ sub Main()
     check("live plays the channel stream", p.action.url = live.stream)
     check("film button is Play with ads", primaryPlay(film).label = "Play" and primaryPlay(film).action.ads = true)
     check("show button is Play E1", primaryPlay(show).label = "Play E1" and primaryPlay(show).action.url = "https://cdn/e1.m3u8")
+    ' RAF setContentLength (certification RAF 1.3)
+    check("film length in seconds", contentSeconds(film, 0) = 2 * 3600 + 33 * 60)
+    check("minutes-only length", contentSeconds({ length: "46 min" }, 0) = 46 * 60)
+    check("episode uses its minutes", contentSeconds({ length: "1 Season", episodes: [{ minutes: 25 }] }, 1) = 1500)
+    check("live has no length", contentSeconds(live, 0) = 0)
     print "LIVE TESTS DONE"
 end sub
 

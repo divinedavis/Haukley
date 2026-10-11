@@ -27,6 +27,8 @@ sub init()
 
     showHero(m.catalog.rows[0].items[0].id)
     m.rows.setFocus(true)
+    ' Certification 3.2: tell the OS the home screen is up (launch-time measurement).
+    m.top.signalBeacon("AppLaunchComplete")
 end sub
 
 sub buildRows()
@@ -201,6 +203,7 @@ sub playVideo(url as string, title as string, titleId as string, episode as inte
     m.player.adUrl = adUrl
     m.player.titleId = titleId
     m.player.genre = t.genre
+    m.player.contentLength = contentSeconds(t, episode)
     m.player.episode = episode
     ' Trailers and live channels don't leave a bookmark.
     m.player.bookmark = withAds and not live

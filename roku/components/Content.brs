@@ -151,3 +151,22 @@ function adEventRows(pending as object, titleId as string, episode as integer, t
     end for
     return rows
 end function
+
+' Seconds of content for RAF's setContentLength: an episode's minutes, or a movie's
+' "1 hr 19 min" / "46 min" length line. 0 when unknown (live channels).
+function contentSeconds(t as object, episode as integer) as integer
+    if episode > 0 and t.episodes <> invalid and episode <= t.episodes.count()
+        ep = t.episodes[episode - 1]
+        if ep.minutes <> invalid then return ep.minutes * 60
+    end if
+    if t.length = invalid then return 0
+    total = 0
+    parts = t.length.Split(" ")
+    for i = 0 to parts.count() - 2
+        n = parts[i].ToInt()
+        if parts[i + 1] = "hr" then total = total + n * 3600
+        if parts[i + 1] = "min" then total = total + n * 60
+    end for
+    return total
+end function
+
