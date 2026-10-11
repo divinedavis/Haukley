@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Plays one title with RAF-rendered pre/mid/post-roll ads and logs ad events
-     for the filmmaker revenue split. RAF must run on a Task thread. -->
+<!-- Plays one title. RAF ads (pre/mid/post-roll + ad events for the filmmaker split) are
+     off while the Roku listing is non-monetized; see PlayerTask.brs. -->
 <component name="PlayerTask" extends="Task">
     <interface>
         <field id="video" type="node" />

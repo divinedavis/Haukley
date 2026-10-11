@@ -1,5 +1,3 @@
-Library "Roku_Ads.brs"
-
 sub init()
     m.top.functionName = "playWithAds"
 end sub
@@ -13,25 +11,11 @@ sub playWithAds()
     m.ticket = invalid
     m.seq = 1
 
+    ' No ads on Roku while the store listing is non-monetized (2026-10-11: Roku blocks
+    ' publishing a monetized app until Partner Payouts enrollment works, and its payout page
+    ' errors). To bring ads back: restore the RAF block from git history (commit 30d81eb),
+    ' Library "Roku_Ads.brs", bs_libs_required=roku_ads_lib, and set Monetization to ads.
     adIface = invalid
-    if m.top.adUrl <> ""
-        ' If RAF can't start (or isn't present, as in desktop emulators), play without ads
-        ' rather than failing the title.
-        try
-            adIface = Roku_Ads()
-            adIface.setAdUrl(m.top.adUrl)
-            adIface.setContentId(m.top.titleId)
-            ' General audience measurement (certification RAF 1.3, non-child-directed US
-            ' channel): measurements on, genre with kidsContent=false, content length.
-            adIface.setContentGenre(m.top.genre, false)
-            if m.top.contentLength > 0 then adIface.setContentLength(m.top.contentLength)
-            adIface.enableAdMeasurements(true)
-            adIface.setTrackingCallback(onAdTracking, m)
-        catch e
-            print "RAF unavailable, playing without ads: "; e.message
-            adIface = invalid
-        end try
-    end if
 
     ' Only ad events carrying the server-signed ticket count toward filmmaker payouts.
     if adIface <> invalid then m.ticket = fetchTicket()

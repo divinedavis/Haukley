@@ -55,7 +55,7 @@ Install on a Roku without a developer account (sideload):
 3. Upload `Haukley-roku.zip` and click **Install with zip**.
 
 A Roku beta app (invite link, up to 20 testers) needs a signed `.pkg`, which can only be made on a real
-Roku in developer mode (`genkey`, then the Packager page at `http://<roku-ip>`).
+Roku in developer mode (`genkey`, then the Packager page at `http://<roku-ip>`). `scripts/roku_package.sh` does install + package + download with the key already on the owner's Streaming Stick.
 
 Emulator check: `brs-node` (`npx -p brs-node brs-cli -e -s snap.png roku/dist/Haukley-roku.zip`) runs the SceneGraph UI
 and takes ECP key presses. It has no video output, so playback only shows on a real Roku.
@@ -71,7 +71,7 @@ Certification features (Roku requirements):
 - **Captions**: the Video node applies the global caption settings and its options (*) menu covers
   On / Off / On replay / On mute; HLS-embedded captions work as-is, and a title's `captions` URL
   in `scripts/catalog.json` is side-loaded as a SubtitleTrack.
-- **RAF** is wrapped so a title still plays (without ads) if RAF can't start.
+- **RAF is OFF** (1.0.3, 2026-10-11): the store listing is non-monetized until Partner Payouts enrollment works; restore from commit 30d81eb (see PlayerTask.brs) and set Monetization back to ads.
 
 Roku gotchas: the emulator ignores `font:BoldSystemFontFile` at custom sizes, so the app bundles Poppins
 (OFL) in `roku/fonts`; `scaleToZoom` crops the pre-faded backdrops, so posters use `scaleToFill`.
