@@ -49,6 +49,40 @@ final class HaukleyUITests: XCTestCase {
         XCTFail("tab \(name) never became selected")
     }
 
+    /// In-App Event deep link: haukley://row/horror lands on Home with Classic Horror on screen.
+    func testRowDeepLinkScrollsToClassicHorror() {
+        XCTAssertTrue(element("hero.play").waitForExistence(timeout: 5))
+        tapTab("My Haukley")
+        XCUIDevice.shared.system.open(URL(string: "haukley://row/horror")!)
+        // A link to the app's own scheme can raise SpringBoard's "Open in Haukley?" confirmation.
+        let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+        let openButton = springboard.buttons["Open"]
+        if openButton.waitForExistence(timeout: 3) { openButton.tap() }
+        let row = app.staticTexts["Classic Horror"]
+        XCTAssertTrue(row.waitForExistence(timeout: 10), "Classic Horror row not found")
+        let deadline = Date().addingTimeInterval(5)
+        while !row.isHittable && Date() < deadline { RunLoop.current.run(until: Date().addingTimeInterval(0.2)) }
+        XCTAssertTrue(row.isHittable, "Classic Horror row not scrolled on screen")
+        XCTAssertTrue(app.tabBars.buttons["Home"].exists ? app.tabBars.buttons["Home"].isSelected : true)
+        snap("deeplink-row-horror")
+    }
+
+    /// Same link from a cold start (app not running): the splash folds away onto Classic Horror.
+    func testRowDeepLinkColdLaunch() {
+        app.terminate()
+        XCUIDevice.shared.system.open(URL(string: "haukley://row/horror")!)
+        let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+        let openButton = springboard.buttons["Open"]
+        if openButton.waitForExistence(timeout: 5) { openButton.tap() }
+        XCTAssertTrue(app.wait(for: .runningForeground, timeout: 15))
+        let row = app.staticTexts["Classic Horror"]
+        XCTAssertTrue(row.waitForExistence(timeout: 40), "Classic Horror row not found after cold launch")
+        let deadline = Date().addingTimeInterval(8)
+        while !row.isHittable && Date() < deadline { RunLoop.current.run(until: Date().addingTimeInterval(0.2)) }
+        XCTAssertTrue(row.isHittable, "Classic Horror row not scrolled on screen after cold launch")
+        snap("deeplink-row-horror-cold")
+    }
+
     // No prompt, sheet or alert between launch and the Home screen (see feedback: no unsolicited prompts).
     func testLaunchLandsOnHomeWithNoPrompt() {
         XCTAssertTrue(element("hero.play").waitForExistence(timeout: 5))

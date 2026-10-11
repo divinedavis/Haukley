@@ -55,6 +55,10 @@ targets:
         UILaunchScreen:
           UIColorName: LaunchBackground
         # Asked only when the viewer taps "Use my current location" on Haukley Weather.
+        # haukley://row/<key> and haukley://title/<id> (In-App Event deep links).
+        CFBundleURLTypes:
+          - CFBundleURLName: com.haukley.app
+            CFBundleURLSchemes: [haukley]
         NSLocationWhenInUseUsageDescription: "Haukley uses your approximate location to show your local forecast on Haukley Weather. It's only used when you tap Use my current location."
   HaukleyTests:
     type: bundle.unit-test

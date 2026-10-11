@@ -49,6 +49,7 @@ struct HomeView: View {
     }
 
     var body: some View {
+        ScrollViewReader { proxy in
         ScrollView {
             VStack(alignment: .leading, spacing: 26) {
                 VStack(alignment: .leading, spacing: 14) {
@@ -62,6 +63,9 @@ struct HomeView: View {
             .padding(.bottom, 40)
         }
         .scrollIndicators(.hidden)
+        .onAppear { scrollToLinkedRow(proxy) }
+        .onChange(of: router.scrollToRow) { scrollToLinkedRow(proxy) }
+        .onChange(of: router.homeReady) { scrollToLinkedRow(proxy) }
         .background(alignment: .top) {
             LinearGradient(colors: [Color(hex: hero.heroColor), Color(hex: hero.heroColor).opacity(0.55), .black],
                            startPoint: .top, endPoint: UnitPoint(x: 0.5, y: 0.62))
@@ -70,6 +74,19 @@ struct HomeView: View {
                 .animation(.easeInOut(duration: 0.5), value: hero.id)
         }
         .background(Color.black)
+        }
+    }
+
+    /// A haukley://row/<key> link: clear any filter so the row is there, then bring it to the top.
+    private func scrollToLinkedRow(_ proxy: ScrollViewProxy) {
+        // A cold-launch link arrives while the splash is up; wait for it to finish.
+        guard let key = router.scrollToRow, router.homeReady else { return }
+        filter = nil
+        // Let the filter change lay the rows out before scrolling.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+            withAnimation(.snappy) { proxy.scrollTo("row.\(key)", anchor: .top) }
+            router.scrollToRow = nil
+        }
     }
 
     private var header: some View {
@@ -129,11 +146,14 @@ struct HomeView: View {
         ForEach(Array(catalog.rows.enumerated()), id: \.element.key) { i, spec in
             let titles = catalog.titles(spec.ids).filter(keep)
             if !titles.isEmpty {
-                if spec.type == "ranked" {
-                    Top10Row(title: spec.title, titles: titles)
-                } else {
-                    PosterRow(title: spec.title, titles: titles)
+                Group {
+                    if spec.type == "ranked" {
+                        Top10Row(title: spec.title, titles: titles)
+                    } else {
+                        PosterRow(title: spec.title, titles: titles)
+                    }
                 }
+                .id("row.\(spec.key)")
             }
             // A tall "Haukley Picks" row sits after the second row (these films aren't exclusive,
             // so no "Only on Haukley").

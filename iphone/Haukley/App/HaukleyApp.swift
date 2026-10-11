@@ -48,12 +48,32 @@ final class Router: ObservableObject {
     @Published var detail: Title?
     @Published var play: PlayRequest?
     @Published var tab: AppTab = .home
+    /// Catalog row key Home should scroll to (set by a haukley://row link, cleared by Home).
+    @Published var scrollToRow: String?
+    /// False until the launch splash has gone: a cold-launch link waits for Home to be laid out.
+    @Published var homeReady = false
+
+    /// Routes a haukley:// link. Unknown rows/titles, and titles the current (Kids) profile
+    /// can't see, land on Home.
+    func open(_ url: URL, library: Library) {
+        guard let link = DeepLink(url: url) else { return }
+        play = nil
+        detail = nil
+        tab = .home
+        switch link {
+        case .row(let key):
+            scrollToRow = Catalog.shared.rows.contains { $0.key == key } ? key : nil
+        case .title(let id):
+            if let t = Catalog.shared.title(id), library.allows(t) { detail = t }
+        }
+    }
 }
 
 enum AppTab: Hashable { case home, clips, search, mine }
 
 struct RootView: View {
     @EnvironmentObject private var router: Router
+    @EnvironmentObject private var library: Library
     @State private var splash = true
 
     var body: some View {
@@ -76,8 +96,9 @@ struct RootView: View {
             TitleDetailView(title: t).presentationSizing(.page)
         }
         .playerCover(item: $router.play)
+        .onOpenURL { router.open($0, library: library) }
         .overlay {
-            if splash { SplashView { splash = false } }
+            if splash { SplashView { splash = false; router.homeReady = true } }
         }
     }
 }
