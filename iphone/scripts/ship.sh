@@ -132,7 +132,10 @@ xcodebuild -project Haukley.xcodeproj -scheme Haukley -configuration Release \
     -allowProvisioningUpdates "${AUTH[@]}" DEVELOPMENT_TEAM="$ASC_TEAM_ID" -quiet archive
 
 echo "==> exporting IPA"
-xcodebuild -exportArchive -archivePath build/release/Haukley.xcarchive \
+# Apple's tools first (2026-10-12): Xcode's IPA step runs /usr/bin/rsync, which
+# starts the rsync on PATH as its receiving side. A Homebrew rsync 3.x there
+# rejects --extended-attributes and the export dies with just "Copy failed".
+PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH" xcodebuild -exportArchive -archivePath build/release/Haukley.xcarchive \
     -exportPath build/release/export -exportOptionsPlist ExportOptions.plist \
     -allowProvisioningUpdates "${AUTH[@]}"
 
