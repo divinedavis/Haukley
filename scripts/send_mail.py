@@ -3,6 +3,7 @@
 
     python3 scripts/send_mail.py --to someone@studio.com --subject "..." --body-file pitch.txt
     python3 scripts/send_mail.py --to a@x.com --cc b@x.com --subject "..." --body "..." [--dry-run]
+    python3 scripts/send_mail.py ... --in-reply-to "<msgid@x.com>" [--references "<a> <b>"]   # reply in-thread
 
 Owner rule (2026-10-09): Haukley outreach goes out from the haukley.com mailbox, never the
 owner's personal Gmail (the Gmail connector can't set a From address). The message is sent
@@ -37,6 +38,9 @@ def build(args, user):
     m["Reply-To"] = user
     m["Subject"] = args.subject
     m["Message-ID"] = make_msgid(domain="haukley.com")
+    if args.in_reply_to:
+        m["In-Reply-To"] = args.in_reply_to
+        m["References"] = " ".join(filter(None, [args.references, args.in_reply_to]))
     m.set_content(body)
     return m
 
@@ -49,6 +53,8 @@ def main():
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--body")
     g.add_argument("--body-file")
+    ap.add_argument("--in-reply-to", help="Message-ID being replied to, so it threads")
+    ap.add_argument("--references", help="the parent's References header, if any")
     ap.add_argument("--dry-run", action="store_true", help="print the message, send nothing")
     a = ap.parse_args()
     c = json.loads(CONF.read_text())
