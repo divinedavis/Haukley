@@ -1,14 +1,12 @@
-"""Submit the editable Haukley App Store version (iOS or tvOS) for App Review, with a
-7-day phased release on every update.
+"""Submit the editable Haukley App Store version (iOS or tvOS) for App Review. Updates
+release to everyone at once — never a phased rollout (owner, 2026-10-17).
 
     ~/.venvs/marracat/bin/python iphone/scripts/submit_for_review.py --platform IOS            # dry run (GETs only)
     ~/.venvs/marracat/bin/python iphone/scripts/submit_for_review.py --platform TV_OS --submit # writes to ASC
 
 Default is a DRY RUN: it only reads App Store Connect and prints what it would do. With
---submit it (1) attaches an INACTIVE phased release to the version, so an approved update
-rolls out over Apple's 7 days and can be paused if it crashes (App Store Connect > the
-version > Phased Release); Apple only offers this for updates, so it is skipped while the
-platform has never had a version on sale; then (2) creates or reuses a review submission,
+--submit it (1) removes any phased release on the version, so an approved update goes to
+everyone at once; then (2) creates or reuses a review submission,
 adds the version and submits it. --stage does all of that except the final submit, so another
 item (an In-App Event, custom product page) can join the same review submission first; run
 --submit afterwards to send it. --create VERSION --build N --whats-new TEXT creates the next
@@ -37,23 +35,28 @@ def resolve(token, app_id, platform):
     return editable, bool(states & LIVE), versions
 
 
-def ensure_phased_release(token, version, has_live_version, submit):
-    """INACTIVE phased release on the version; Apple flips it ACTIVE on release."""
-    vid, vs = version["id"], version["attributes"]["versionString"]
-    if not has_live_version:
-        print(f"  phased release: skipped ({vs} would be the first release on this platform)")
-        return
+def ensure_no_phased_release(token, version, submit):
+    """Release to everyone at once — never Apple's 7-day phased rollout, on
+    any of our apps (owner, 2026-10-17). A phased release left on the version
+    (dashboard, or an older run of this script) is deleted; one already
+    rolling out is completed, which releases it to everyone."""
+    vid = version["id"]
     _, have = asc.api(token, "GET", f"/appStoreVersions/{vid}/appStoreVersionPhasedRelease", ok_statuses=(404,))
-    if have.get("data"):
-        print("  phased release:", have["data"]["attributes"]["phasedReleaseState"])
+    pr = have.get("data")
+    if not pr:
+        print("  phased release: off (releases to everyone at once)")
         return
+    state = pr["attributes"]["phasedReleaseState"]
     if not submit:
-        print("  phased release: WOULD create (INACTIVE, 7-day rollout once approved)")
+        print(f"  phased release: WOULD remove ({state})")
         return
-    asc.api(token, "POST", "/appStoreVersionPhasedReleases", body={"data": {
-        "type": "appStoreVersionPhasedReleases", "attributes": {"phasedReleaseState": "INACTIVE"},
-        "relationships": {"appStoreVersion": {"data": {"type": "appStoreVersions", "id": vid}}}}})
-    print("  phased release: on (7-day rollout once approved)")
+    if state in ("ACTIVE", "PAUSED"):
+        asc.api(token, "PATCH", f"/appStoreVersionPhasedReleases/{pr['id']}", body={"data": {
+            "type": "appStoreVersionPhasedReleases", "id": pr["id"], "attributes": {"phasedReleaseState": "COMPLETE"}}})
+        print("  phased release: completed (now released to everyone)")
+    else:
+        asc.api(token, "DELETE", f"/appStoreVersionPhasedReleases/{pr['id']}")
+        print("  phased release: removed (releases to everyone at once)")
 
 
 def prepare_version(token, app_id, platform, version_string, build_number, whats_new, write):
@@ -148,7 +151,7 @@ def main():
     print(f"==> {a.platform} {vs} (build {build or 'NONE ATTACHED'})")
     if not build:
         raise SystemExit("attach a build to the version first")
-    ensure_phased_release(token, version, has_live, write)
+    ensure_no_phased_release(token, version, write)
     if not write:
         print("dry run - nothing written; rerun with --stage / --submit (owner's explicit go only)")
         return 0
