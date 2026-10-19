@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /ads/
+Disallow: /api/
+
+Sitemap: https://haukley.com/sitemap.xml

@@ -4,19 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Haukley — Free movies and shows. No subscription.</title>
-  <meta name="description" content="Haukley is a free, ad-supported streaming service for independent movies, documentaries and series. No subscription, no credit card. Coming to Roku, Fire TV, Google TV, Apple TV and iPhone.">
+  <meta name="description" content="Haukley is a free, ad-supported streaming service for classic movies, silent comedy, film noir, Pioneers of Black Cinema and NASA documentaries. No subscription. Watch on the web, iPhone, Apple TV and Fire TV.">
   <meta property="og:title" content="Haukley — Free movies and shows. No subscription.">
-  <meta property="og:description" content="Hand-picked independent film and series, free with ads. Coming to Roku, Fire TV, Google TV, Apple TV and iPhone.">
+  <meta property="og:description" content="Nearly 100 hand-picked classic films and series, free with ads. On the web, iPhone, Apple TV and Fire TV.">
   <meta property="og:image" content="https://haukley.com/og.jpg">
   <meta property="og:url" content="https://haukley.com/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0b0a10">
+  <meta name="google-adsense-account" content="ca-pub-8077227518694725">
   <link rel="icon" href="/favicon.png">
   <link rel="canonical" href="https://haukley.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/site.css?v=20260926">
+  <link rel="stylesheet" href="/site.css?v=20261019">
   <style>
     .hero { position: relative; min-height: min(92vh, 900px); display: flex; align-items: flex-end; overflow: hidden; padding: 0; border: 0; }
     .wall { position: absolute; inset: -12% -6%; display: grid; grid-template-columns: repeat(9, 1fr); gap: 14px;
@@ -41,6 +42,7 @@
     .strip { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(120px, 160px); gap: 12px; overflow-x: auto;
       padding-bottom: 6px; scrollbar-width: none; }
     .strip::-webkit-scrollbar { display: none; }
+    .strip .tile span { display: none; }
     .strip img { aspect-ratio: 2 / 3; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); }
     .split { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
     @media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
@@ -56,7 +58,7 @@
     <div class="wrap">
       <a class="wordmark" href="/">Haukley<span>.</span></a>
       <nav class="nav" aria-label="Main">
-        <a class="hide-sm" href="#browse">Browse</a>
+        <a class="hide-sm" href="/films/">Browse</a>
         <a class="hide-sm" href="#devices">Devices</a>
         <a href="/filmmakers/">For filmmakers</a>
         <a class="cta" href="/watch/">Watch now</a>
@@ -70,18 +72,17 @@
       <div class="shade" aria-hidden="true"></div>
       <div class="wrap">
         <div class="hero-copy">
-          <p class="eyebrow">Free streaming · Now on the web</p>
+          <p class="eyebrow">Free streaming · Web, iPhone, Apple TV &amp; Fire TV</p>
           <h1>Free movies and shows. No subscription.</h1>
-          <p class="lede">Hand-picked independent films, documentaries and series — on the web today, and soon on your TV and phone. No subscription, no credit card, ever.</p>
+          <p class="lede">Buster Keaton, Fritz Lang, Oscar Micheaux, film noir, classic horror and NASA's Apollo films: nearly 100 hand-picked movies and series, free to watch. No subscription, no credit card, ever.</p>
           <p class="hero-watch"><a class="btn btn-primary" href="/watch/">Start watching free</a></p>
           <form class="signup" id="notify-hero" novalidate>
             <input type="email" name="email" placeholder="Your email" autocomplete="email" required aria-label="Email address">
-            <button class="btn btn-ghost" type="submit">Tell me when the TV apps launch</button>
+            <button class="btn btn-ghost" type="submit">Tell me when Roku &amp; smart TV apps launch</button>
             <p class="note" role="status"></p>
           </form>
           <div class="badges" aria-label="Available on">
-            <span class="badge">Roku</span><span class="badge">Fire TV</span><span class="badge">Google TV</span>
-            <span class="badge">Apple TV</span><span class="badge">iPhone</span><span class="badge">Web</span>
+            <span class="badge">Web</span><span class="badge">iPhone</span><span class="badge">Apple TV</span><span class="badge">Fire TV</span>
           </div>
         </div>
       </div>
@@ -102,15 +103,73 @@
 
     <section id="browse">
       <div class="wrap">
-        <p class="eyebrow">A preview of what's coming</p>
-        <h2>Stories you won't find everywhere else.</h2>
-        <p class="lede">Thrillers, dramas, documentaries, comedies and binge-worthy series — chosen by people, not an algorithm.</p>
+        <p class="eyebrow">Now streaming</p>
+        <h2>Stories that built the movies.</h2>
+        <p class="lede">Silent comedy, noir, horror, swashbucklers, early TV and the first films made by Black directors for Black audiences: chosen by people, not an algorithm. Every title is in the public domain or shared under Creative Commons, and each page says why.</p>
+        <!-- rows:start (scripts/make_site_pages.py) -->
         <div class="rows">
-          <div class="row"><h3>Edge of your seat</h3><div class="strip" data-titles="night-line,headlights,ghost-light,harbor-nine,saltwater-hymn,iron-meridian,last-train-to-halden"></div></div>
-          <div class="row"><h3>Binge-worthy series</h3><div class="strip" data-titles="borough,signal,tidewater,commonwealth,lighthouse-row,wildwood,after-hours"></div></div>
-          <div class="row"><h3>Feel-good favorites</h3><div class="strip" data-titles="paper-kites,sparks,chrome,salt-and-sand,northbound,the-long-quiet,glass-city"></div></div>
+          <div class="row"><h3><a href="/collections/picks/">Haukley&#x27;s Top 10 Picks</a></h3><div class="strip">
+            <a class="tile" href="/films/metropolis/"><img src="/watch/catalog/metropolis/poster.jpg" alt="Metropolis" width="200" height="300" loading="lazy"><span>Metropolis</span></a>
+            <a class="tile" href="/films/the-general/"><img src="/watch/catalog/the-general/poster.jpg" alt="The General" width="200" height="300" loading="lazy"><span>The General</span></a>
+            <a class="tile" href="/films/nosferatu/"><img src="/watch/catalog/nosferatu/poster.jpg" alt="Nosferatu" width="200" height="300" loading="lazy"><span>Nosferatu</span></a>
+            <a class="tile" href="/films/night-of-the-living-dead/"><img src="/watch/catalog/night-of-the-living-dead/poster.jpg" alt="Night of the Living Dead" width="200" height="300" loading="lazy"><span>Night of the Living Dead</span></a>
+            <a class="tile" href="/films/his-girl-friday/"><img src="/watch/catalog/his-girl-friday/poster.jpg" alt="His Girl Friday" width="200" height="300" loading="lazy"><span>His Girl Friday</span></a>
+            <a class="tile" href="/films/safety-last/"><img src="/watch/catalog/safety-last/poster.jpg" alt="Safety Last!" width="200" height="300" loading="lazy"><span>Safety Last!</span></a>
+            <a class="tile" href="/films/sherlock-jr/"><img src="/watch/catalog/sherlock-jr/poster.jpg" alt="Sherlock Jr." width="200" height="300" loading="lazy"><span>Sherlock Jr.</span></a>
+            <a class="tile" href="/films/sintel/"><img src="/watch/catalog/sintel/poster.jpg" alt="Sintel" width="200" height="300" loading="lazy"><span>Sintel</span></a>
+            <a class="tile" href="/films/phantom-of-the-opera/"><img src="/watch/catalog/phantom-of-the-opera/poster.jpg" alt="The Phantom of the Opera" width="200" height="300" loading="lazy"><span>The Phantom of the Opera</span></a>
+            <a class="tile" href="/films/carnival-of-souls/"><img src="/watch/catalog/carnival-of-souls/poster.jpg" alt="Carnival of Souls" width="200" height="300" loading="lazy"><span>Carnival of Souls</span></a>
+          </div></div>
+          <div class="row"><h3><a href="/collections/black-cinema/">Pioneers of Black Cinema</a></h3><div class="strip">
+            <a class="tile" href="/films/the-blood-of-jesus/"><img src="/watch/catalog/the-blood-of-jesus/poster.jpg" alt="The Blood of Jesus" width="200" height="300" loading="lazy"><span>The Blood of Jesus</span></a>
+            <a class="tile" href="/films/murder-in-harlem/"><img src="/watch/catalog/murder-in-harlem/poster.jpg" alt="Murder in Harlem" width="200" height="300" loading="lazy"><span>Murder in Harlem</span></a>
+            <a class="tile" href="/films/lying-lips/"><img src="/watch/catalog/lying-lips/poster.jpg" alt="Lying Lips" width="200" height="300" loading="lazy"><span>Lying Lips</span></a>
+            <a class="tile" href="/films/the-girl-from-chicago/"><img src="/watch/catalog/the-girl-from-chicago/poster.jpg" alt="The Girl from Chicago" width="200" height="300" loading="lazy"><span>The Girl from Chicago</span></a>
+            <a class="tile" href="/films/go-down-death/"><img src="/watch/catalog/go-down-death/poster.jpg" alt="Go Down, Death!" width="200" height="300" loading="lazy"><span>Go Down, Death!</span></a>
+            <a class="tile" href="/films/dirty-gertie-from-harlem-usa/"><img src="/watch/catalog/dirty-gertie-from-harlem-usa/poster.jpg" alt="Dirty Gertie from Harlem U.S.A." width="200" height="300" loading="lazy"><span>Dirty Gertie from Harlem U.S.A.</span></a>
+            <a class="tile" href="/films/souls-of-sin/"><img src="/watch/catalog/souls-of-sin/poster.jpg" alt="Souls of Sin" width="200" height="300" loading="lazy"><span>Souls of Sin</span></a>
+            <a class="tile" href="/films/juke-joint/"><img src="/watch/catalog/juke-joint/poster.jpg" alt="Juke Joint" width="200" height="300" loading="lazy"><span>Juke Joint</span></a>
+            <a class="tile" href="/films/birthright-1938/"><img src="/watch/catalog/birthright-1938/poster.jpg" alt="Birthright" width="200" height="300" loading="lazy"><span>Birthright</span></a>
+            <a class="tile" href="/films/veiled-aristocrats/"><img src="/watch/catalog/veiled-aristocrats/poster.jpg" alt="Veiled Aristocrats" width="200" height="300" loading="lazy"><span>Veiled Aristocrats</span></a>
+          </div></div>
+          <div class="row"><h3><a href="/collections/silent-comedy/">Silent Comedy Legends</a></h3><div class="strip">
+            <a class="tile" href="/films/the-general/"><img src="/watch/catalog/the-general/poster.jpg" alt="The General" width="200" height="300" loading="lazy"><span>The General</span></a>
+            <a class="tile" href="/films/sherlock-jr/"><img src="/watch/catalog/sherlock-jr/poster.jpg" alt="Sherlock Jr." width="200" height="300" loading="lazy"><span>Sherlock Jr.</span></a>
+            <a class="tile" href="/films/safety-last/"><img src="/watch/catalog/safety-last/poster.jpg" alt="Safety Last!" width="200" height="300" loading="lazy"><span>Safety Last!</span></a>
+            <a class="tile" href="/films/the-freshman/"><img src="/watch/catalog/the-freshman/poster.jpg" alt="The Freshman" width="200" height="300" loading="lazy"><span>The Freshman</span></a>
+            <a class="tile" href="/films/one-week/"><img src="/watch/catalog/one-week/poster.jpg" alt="One Week" width="200" height="300" loading="lazy"><span>One Week</span></a>
+            <a class="tile" href="/films/our-hospitality/"><img src="/watch/catalog/our-hospitality/poster.jpg" alt="Our Hospitality" width="200" height="300" loading="lazy"><span>Our Hospitality</span></a>
+            <a class="tile" href="/films/steamboat-bill-jr/"><img src="/watch/catalog/steamboat-bill-jr/poster.jpg" alt="Steamboat Bill, Jr." width="200" height="300" loading="lazy"><span>Steamboat Bill, Jr.</span></a>
+            <a class="tile" href="/films/the-navigator/"><img src="/watch/catalog/the-navigator/poster.jpg" alt="The Navigator" width="200" height="300" loading="lazy"><span>The Navigator</span></a>
+            <a class="tile" href="/films/college/"><img src="/watch/catalog/college/poster.jpg" alt="College" width="200" height="300" loading="lazy"><span>College</span></a>
+            <a class="tile" href="/films/the-cameraman/"><img src="/watch/catalog/the-cameraman/poster.jpg" alt="The Cameraman" width="200" height="300" loading="lazy"><span>The Cameraman</span></a>
+          </div></div>
+          <div class="row"><h3><a href="/collections/horror/">Classic Horror</a></h3><div class="strip">
+            <a class="tile" href="/films/nosferatu/"><img src="/watch/catalog/nosferatu/poster.jpg" alt="Nosferatu" width="200" height="300" loading="lazy"><span>Nosferatu</span></a>
+            <a class="tile" href="/films/night-of-the-living-dead/"><img src="/watch/catalog/night-of-the-living-dead/poster.jpg" alt="Night of the Living Dead" width="200" height="300" loading="lazy"><span>Night of the Living Dead</span></a>
+            <a class="tile" href="/films/phantom-of-the-opera/"><img src="/watch/catalog/phantom-of-the-opera/poster.jpg" alt="The Phantom of the Opera" width="200" height="300" loading="lazy"><span>The Phantom of the Opera</span></a>
+            <a class="tile" href="/films/carnival-of-souls/"><img src="/watch/catalog/carnival-of-souls/poster.jpg" alt="Carnival of Souls" width="200" height="300" loading="lazy"><span>Carnival of Souls</span></a>
+            <a class="tile" href="/films/the-little-shop-of-horrors/"><img src="/watch/catalog/the-little-shop-of-horrors/poster.jpg" alt="The Little Shop of Horrors" width="200" height="300" loading="lazy"><span>The Little Shop of Horrors</span></a>
+            <a class="tile" href="/films/sprite-fright/"><img src="/watch/catalog/sprite-fright/poster.jpg" alt="Sprite Fright" width="200" height="300" loading="lazy"><span>Sprite Fright</span></a>
+            <a class="tile" href="/films/the-hunchback-of-notre-dame/"><img src="/watch/catalog/the-hunchback-of-notre-dame/poster.jpg" alt="The Hunchback of Notre Dame" width="200" height="300" loading="lazy"><span>The Hunchback of Notre Dame</span></a>
+            <a class="tile" href="/films/dr-jekyll-and-mr-hyde/"><img src="/watch/catalog/dr-jekyll-and-mr-hyde/poster.jpg" alt="Dr. Jekyll and Mr. Hyde" width="200" height="300" loading="lazy"><span>Dr. Jekyll and Mr. Hyde</span></a>
+            <a class="tile" href="/films/white-zombie/"><img src="/watch/catalog/white-zombie/poster.jpg" alt="White Zombie" width="200" height="300" loading="lazy"><span>White Zombie</span></a>
+            <a class="tile" href="/films/the-bat/"><img src="/watch/catalog/the-bat/poster.jpg" alt="The Bat" width="200" height="300" loading="lazy"><span>The Bat</span></a>
+          </div></div>
+          <div class="row"><h3><a href="/collections/tv-shows/">Classic TV &amp; Docuseries</a></h3><div class="strip">
+            <a class="tile" href="/films/apollo-mission-films/"><img src="/watch/catalog/apollo-mission-films/poster.jpg" alt="Apollo: The Mission Films" width="200" height="300" loading="lazy"><span>Apollo: The Mission Films</span></a>
+            <a class="tile" href="/films/sherlock-holmes-1954/"><img src="/watch/catalog/sherlock-holmes-1954/poster.jpg" alt="Sherlock Holmes" width="200" height="300" loading="lazy"><span>Sherlock Holmes</span></a>
+            <a class="tile" href="/films/rocky-jones-space-ranger/"><img src="/watch/catalog/rocky-jones-space-ranger/poster.jpg" alt="Rocky Jones, Space Ranger" width="200" height="300" loading="lazy"><span>Rocky Jones, Space Ranger</span></a>
+            <a class="tile" href="/films/life-with-elizabeth/"><img src="/watch/catalog/life-with-elizabeth/poster.jpg" alt="Life with Elizabeth" width="200" height="300" loading="lazy"><span>Life with Elizabeth</span></a>
+            <a class="tile" href="/films/flip-the-frog-1930/"><img src="/watch/catalog/flip-the-frog-1930/poster.jpg" alt="Flip the Frog" width="200" height="300" loading="lazy"><span>Flip the Frog</span></a>
+            <a class="tile" href="/films/caminandes/"><img src="/watch/catalog/caminandes/poster.jpg" alt="Caminandes" width="200" height="300" loading="lazy"><span>Caminandes</span></a>
+            <a class="tile" href="/films/blender-open-shorts/"><img src="/watch/catalog/blender-open-shorts/poster.jpg" alt="Blender Open Shorts" width="200" height="300" loading="lazy"><span>Blender Open Shorts</span></a>
+            <a class="tile" href="/films/why-we-fight/"><img src="/watch/catalog/why-we-fight/poster.jpg" alt="Why We Fight" width="200" height="300" loading="lazy"><span>Why We Fight</span></a>
+            <a class="tile" href="/films/wwii-combat-reports/"><img src="/watch/catalog/wwii-combat-reports/poster.jpg" alt="WWII Combat Reports" width="200" height="300" loading="lazy"><span>WWII Combat Reports</span></a>
+          </div></div>
         </div>
-        <p class="muted" style="margin-top:18px;font-size:14px">Artwork shown is a preview of the Haukley experience; the launch lineup will be announced soon.</p>
+        <!-- rows:end -->
+        <p style="margin-top:22px"><a class="btn btn-ghost" href="/films/">See all films &amp; shows</a></p>
       </div>
     </section>
 
@@ -118,13 +177,13 @@
       <div class="wrap center">
         <p class="eyebrow">Watch anywhere</p>
         <h2>On the screens you already have.</h2>
-        <p class="lede">One free app for your TV and your phone, with the same lineup everywhere.</p>
+        <p class="lede">One free app for your TV and your phone, with the same lineup everywhere. Live now on the web, iPhone, Apple TV and Amazon Fire TV; Roku, LG and Samsung TVs are on the way.</p>
         <div class="devices">
-          <div class="device"><strong>Roku</strong><span>TVs &amp; players</span></div>
+          <div class="device"><strong>Roku</strong><span>Coming soon</span></div>
           <div class="device"><strong>Fire TV</strong><span>Sticks &amp; smart TVs</span></div>
-          <div class="device"><strong>Google TV</strong><span>&amp; Android TV</span></div>
+          <div class="device"><strong>LG &amp; Samsung</strong><span>Coming soon</span></div>
           <div class="device"><strong>Apple TV</strong><span>tvOS</span></div>
-          <div class="device"><strong>iPhone</strong><span>iOS</span></div>
+          <div class="device"><strong>iPhone</strong><span><a href="https://apps.apple.com/us/app/haukley/id6815405240">App Store</a></span></div>
         </div>
       </div>
     </section>
@@ -152,9 +211,10 @@
         <div class="faq">
           <details><summary>Is Haukley really free?</summary><p>Yes. Haukley is supported by ads, like broadcast TV, so there's no subscription and no credit card. You'll see a few short ad breaks during a film or episode.</p></details>
           <details><summary>Do I need an account?</summary><p>No. You can start watching without signing up. Your place in each film is remembered on your device.</p></details>
-          <details><summary>What can I watch on Haukley?</summary><p>Independent films, documentaries and series across genres like thriller, drama, comedy and true stories. We're building the launch lineup now — join the list to hear first.</p></details>
-          <details><summary>Where can I watch?</summary><p>Haukley is coming to Roku, Amazon Fire TV, Google TV and Android TV, Apple TV, and iPhone.</p></details>
-          <details><summary>When does Haukley launch?</summary><p>Soon. Leave your email and we'll send one note when Haukley is live on your devices — nothing else.</p></details>
+          <details><summary>What can I watch on Haukley?</summary><p>Classic films and series: Buster Keaton and Harold Lloyd comedies, Metropolis and Nosferatu, film noir, classic horror, swashbucklers, Pioneers of Black Cinema, NASA's Apollo mission films, early TV and modern animated shorts. <a href="/films/" style="color:var(--accent-2)">Browse the full library</a>.</p></details>
+          <details><summary>How can these films be free?</summary><p>Every title on Haukley is in the U.S. public domain or released by its makers under a Creative Commons license. We research the rights of each film before it goes up, and each film's page explains why it is free. Short ads pay for the streaming.</p></details>
+          <details><summary>Where can I watch?</summary><p>On the web at <a href="/watch/" style="color:var(--accent-2)">haukley.com/watch</a>, on iPhone and Apple TV from the App Store, and on Amazon Fire TV. Roku, LG and Samsung TV apps are on the way. Haukley is available in the United States.</p></details>
+          <details><summary>When is Haukley coming to my TV?</summary><p>Leave your email and we'll send one note when Haukley is live on Roku, LG or Samsung, nothing else.</p></details>
           <details><summary>I made a film. Can it be on Haukley?</summary><p>Yes — see <a href="/filmmakers/" style="color:var(--accent-2)">For filmmakers</a>. There's no fee, the deal is non-exclusive, and you earn half of the ad revenue your film generates.</p></details>
           <details><summary>How do I get help?</summary><p>Email <a href="mailto:support@haukley.com" style="color:var(--accent-2)">support@haukley.com</a> or visit <a href="/support/" style="color:var(--accent-2)">Support</a>.</p></details>
         </div>
@@ -164,7 +224,7 @@
     <section id="notify" class="final">
       <div class="wrap center">
         <h2>Be first to watch.</h2>
-        <p class="lede">One email when Haukley launches on your devices. No spam, unsubscribe anytime.</p>
+        <p class="lede">One email when Haukley arrives on Roku and smart TVs. No spam, unsubscribe anytime.</p>
         <form class="signup" id="notify-footer" style="margin-left:auto;margin-right:auto" novalidate>
           <input type="email" name="email" placeholder="Your email" autocomplete="email" required aria-label="Email address">
           <button class="btn btn-primary" type="submit">Notify me</button>
@@ -178,40 +238,31 @@
     <div class="wrap">
       <div class="foot-grid">
         <div><a class="wordmark" href="/">Haukley<span>.</span></a><p style="margin-top:10px;max-width:280px">Free movies and shows for everyone, and a fair deal for the people who make them.</p></div>
-        <div><h4>Watch</h4><a href="#browse">Browse</a><a href="#devices">Devices</a><a href="#faq">FAQ</a></div>
-        <div><h4>Company</h4><a href="/filmmakers/">For filmmakers</a><a href="mailto:ads@haukley.com">Advertise</a><a href="mailto:hello@haukley.com">Contact</a></div>
+        <div><h4>Watch</h4><a href="/films/">All films &amp; shows</a><a href="#devices">Devices</a><a href="#faq">FAQ</a></div>
+        <div><h4>Company</h4><a href="/filmmakers/">For filmmakers</a><a href="mailto:ads@haukley.com">Advertise</a><a href="/about/">About</a><a href="/contact/">Contact</a></div>
         <div><h4>Help &amp; legal</h4><a href="/support/">Support</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></div>
       </div>
-      <div class="legal-line"><span>© 2026 Haukley</span><span>Artwork shown is a preview.</span></div>
+      <div class="legal-line"><span>© 2026 Haukley</span><span>Films are public domain in the U.S. or Creative Commons licensed.</span></div>
     </div>
   </footer>
 
   <script src="/site.js?v=20261007"></script>
   <script>
-    // Poster wall: 9 columns of preview art, reshuffled per column.
-    const titles = ["night-line","glass-city","borough","signal","harbor-nine","ghost-light","the-long-quiet","headlights","after-hours","tidewater","iron-meridian","paper-kites","lighthouse-row","saltwater-hymn","wildwood","sparks","commonwealth","northbound"];
+    // Poster wall: 9 columns of real Haukley posters, reshuffled per column.
+    const titles = ["metropolis","the-general","nosferatu","his-girl-friday","the-blood-of-jesus","safety-last","night-of-the-living-dead","the-mark-of-zorro","sherlock-jr","scarlet-street","wings","apollo-mission-films","murder-in-harlem","the-thief-of-bagdad","carnival-of-souls","it","the-big-trail","sintel"];
     const wall = document.getElementById("wall");
     for (let c = 0; c < 9; c++) {
       const col = document.createElement("div");
       col.className = "col";
       for (let r = 0; r < 9; r++) {
         const img = document.createElement("img");
-        img.src = "/img/" + titles[(c * 5 + r * 7) % titles.length] + ".jpg";
+        img.src = "/watch/catalog/" + titles[(c * 5 + r * 7) % titles.length] + "/poster.jpg";
         img.alt = "";
         img.loading = c < 5 ? "eager" : "lazy";
         col.appendChild(img);
       }
       wall.appendChild(col);
     }
-    document.querySelectorAll(".strip").forEach(strip => {
-      strip.dataset.titles.split(",").forEach(id => {
-        const img = document.createElement("img");
-        img.src = "/img/" + id + ".jpg";
-        img.alt = "";
-        img.loading = "lazy";
-        strip.appendChild(img);
-      });
-    });
     Haukley.waitlist("notify-hero", "web");
     Haukley.waitlist("notify-footer", "web");
   </script>

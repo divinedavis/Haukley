@@ -11,6 +11,8 @@ PAGES = {
     "privacy": ("Privacy Policy — Haukley", "How Haukley collects, uses and protects information.", ""),
     "terms": ("Terms of Use — Haukley", "The terms for using haukley.com and the Haukley apps.", ""),
     "support": ("Support — Haukley", "Get help with the Haukley apps.", ""),
+    "about": ("About Haukley — Free classic movies and shows", "Haukley is a free streaming service for public-domain and Creative Commons films and series, chosen and rights-checked by people.", ""),
+    "contact": ("Contact — Haukley", "How to reach Haukley: general questions, app support, filmmakers, advertising and privacy.", ""),
 }
 head = (SRC / "head.inc").read_text()
 foot = (SRC / "foot.inc").read_text()
