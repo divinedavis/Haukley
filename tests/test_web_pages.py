@@ -17,7 +17,8 @@ import unittest
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 WEB = ROOT / "web"
-PAGES = sorted(p for p in WEB.rglob("*.html") if "_src" not in p.parts)
+# google<token>.html is Search Console's one-line verification file, not a page.
+PAGES = sorted(p for p in WEB.rglob("*.html") if "_src" not in p.parts and not p.name.startswith("google"))
 PUB = "pub-8077227518694725"
 
 
