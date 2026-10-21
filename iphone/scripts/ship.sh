@@ -102,6 +102,9 @@ if [[ "${SHIP_SKIP_TESTS:-0}" != "1" ]]; then
         grep -q "AccessibilityAuditTests testEveryTab\]' passed" "$log" \
             || { echo "error: the accessibility audit did not pass on $name" >&2; exit 1; }
         swift_testing_passed "$GATES/$name.xcresult" || { echo "error: no Swift Testing tests ran on $name" >&2; exit 1; }
+        # One simulator at a time, shut down when its pass ends (owner rule for all apps,
+        # 2026-10-21: a Find A Crib ship was killed for low memory on this 16 GB Mac).
+        xcrun simctl shutdown "$udid" 2>/dev/null || true
     done
 
     echo "==> performance (iPhone)"
@@ -111,6 +114,7 @@ if [[ "${SHIP_SKIP_TESTS:-0}" != "1" ]]; then
         -only-testing:HaukleyUITests/PerformanceTests -resultBundlePath "$GATES/Perf.xcresult" test >/dev/null 2>&1 \
         || { echo "error: PerformanceTests failed (see $GATES/Perf.xcresult)" >&2; exit 1; }
     python3 scripts/perf_gate.py "$GATES/Perf.xcresult" --record
+    xcrun simctl shutdown "$SIM_UDID" 2>/dev/null || true
 fi
 
 echo "==> Xcode Organizer: what real phones reported for recent builds"
