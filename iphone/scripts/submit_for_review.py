@@ -26,6 +26,17 @@ LIVE = {"READY_FOR_SALE", "READY_FOR_DISTRIBUTION", "REPLACED_WITH_NEW_VERSION",
         "DEVELOPER_REMOVED_FROM_SALE", "REMOVED_FROM_SALE"}
 
 
+def as_paragraphs(text):
+    """Release notes as short paragraphs with a blank line between them, never
+    bullets (owner, 2026-10-31: "line breaks with a space in between the
+    sentences instead of bullets ... do this for all our apps")."""
+    import re
+    if not text:
+        return text
+    lines = (line.strip() for line in str(text).replace("\r\n", "\n").split("\n"))
+    return "\n\n".join(re.sub(r"^[•●▪◦·\-\*–]\s+", "", line) for line in lines if line)
+
+
 def resolve(token, app_id, platform):
     _, d = asc.api(token, "GET", f"/apps/{app_id}/appStoreVersions",
                    {"filter[platform]": platform, "limit": 50})
@@ -86,7 +97,7 @@ def prepare_version(token, app_id, platform, version_string, build_number, whats
         _, loc = asc.api(token, "GET", f"/appStoreVersions/{version['id']}/appStoreVersionLocalizations")
         en = next(l for l in loc["data"] if l["attributes"]["locale"] == "en-US")
         asc.api(token, "PATCH", f"/appStoreVersionLocalizations/{en['id']}", body={"data": {
-            "type": "appStoreVersionLocalizations", "id": en["id"], "attributes": {"whatsNew": whats_new}}})
+            "type": "appStoreVersionLocalizations", "id": en["id"], "attributes": {"whatsNew": as_paragraphs(whats_new)}}})
     print(f"  {'attached' if write else 'WOULD attach'} build {build_number}; What's New: {whats_new!r}")
     return version
 
