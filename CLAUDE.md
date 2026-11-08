@@ -104,6 +104,24 @@ Submit only on the owner's explicit go.
   data, that frame is why. New ad server hosts in VAST wrappers may also need connect-src
   entries (look for CSP violations in the console).
 
+## Kids content and ads (COPPA) / fonts (GDPR), 2026-11-07
+
+- **Child-directed titles never get ads.** `scripts/make_vmap.py` writes every title whose
+  `kids` flag is set (shows cover their episodes, which play under the show's id), any episode
+  flagged `kids`, and anything rated TV-Y/TV-Y7 with the no-fill `NO_AD_TAG` only, **even
+  after `VAST_TAG` is set**; `main()` aborts if a kids VMAP would reference anything else and
+  `tests/test_vmap_kids.py` fails the push. This is server-side, so it covers every app.
+  The /watch player also requests no ads (and never loads IMA) on a Kids profile.
+- Client-side defence in depth (needs store builds, not done yet): the iPhone (Ads.swift /
+  PlayerView), tvOS + Fire TV/Android TV (src/ads.ts, PlayerScreen) and LG/Samsung
+  (tvweb/src/app.js) apps still start the IMA SDK and fetch the (empty) VMAP for kids titles.
+  Content is covered by the server rule (iPhone Kids profiles only list `kids` titles; the TV
+  apps have no Kids profiles), but skip IMA entirely for `kids` titles / Kids profiles in the
+  next build of each, before real GAM ads go live, and add a profile guard if a TV app ever
+  gets Kids profiles. Roku has no ads at all (1.0.3).
+- **No Google Fonts, ever**: Inter is self-hosted in web/fonts/ (OFL); both CSPs say
+  `font-src 'self'`. `tests/test_no_google_fonts.py` fails if a Google font host comes back.
+
 ## npm audit (audit L6, 2026-10-07)
 
 - `shell-quote` is pinned `^1.11.0` via package.json `overrides` (critical command-injection,

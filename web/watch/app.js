@@ -147,6 +147,12 @@ async function toggleList(id) {
 }
 
 const visible = t => t && (!state.profile?.is_kids || t.kids || KIDS_RATINGS.has(t.rating));
+// COPPA: a Kids profile never requests ads and never even loads Google's IMA SDK (it sets
+// identifiers), whatever it watches; kids-flagged titles get no ad request in any profile.
+// The server is the backstop for every app: scripts/make_vmap.py writes kids titles' VMAPs
+// with the no-ad tag only. tests/test_vmap_kids.py checks both.
+const onKidsProfile = () => Boolean(state.profile?.is_kids);
+const adFree = t => onKidsProfile() || Boolean(t?.kids);
 const titles = () => state.catalog.titles.filter(visible);
 const pct = r => (r && r.duration_s ? r.position_s / r.duration_s : 0);
 const inProgress = r => pct(r) > 0.02 && pct(r) < 0.95;
@@ -466,7 +472,7 @@ async function chooseProfile(p) {
   state.heroIds = {};
   renderSkeleton();
   await loadViewerData();
-  loadIma(); // warm up so the first Play click can start ads within the gesture
+  if (!onKidsProfile()) loadIma(); // warm up so the first Play click can start ads within the gesture
   state.page = null;
   if (!location.hash || location.hash === "#/") route();
   else location.hash = "#/";
@@ -1184,7 +1190,7 @@ function startPlayback(id, episode) {
   }
   if (resumeAt) video.addEventListener("loadedmetadata", () => { if (video.currentTime < 1) video.currentTime = resumeAt; }, { once: true });
 
-  if (window.google?.ima && !live) startAds(t);
+  if (window.google?.ima && !live && !adFree(t)) startAds(t);
   else video.play().catch(() => {});
 
   if (!live) player.saveTimer = setInterval(() => {
@@ -1500,7 +1506,7 @@ async function boot() {
   if (saved || state.profiles.length === 1) {
     state.profile = saved || state.profiles[0];
     await loadViewerData();
-    loadIma();
+    if (!onKidsProfile()) loadIma();
     route();
   } else {
     renderWho(false);

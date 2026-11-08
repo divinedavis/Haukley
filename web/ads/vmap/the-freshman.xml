@@ -5,9 +5,4 @@
       <vmap:AdTagURI templateType="vast3"><![CDATA[https://haukley.com/ads/no-ad.xml]]></vmap:AdTagURI>
     </vmap:AdSource>
   </vmap:AdBreak>
-  <vmap:AdBreak timeOffset="00:38:30.000" breakType="linear" breakId="midroll-1">
-    <vmap:AdSource id="midroll-1-ad" allowMultipleAds="false" followRedirects="true">
-      <vmap:AdTagURI templateType="vast3"><![CDATA[https://haukley.com/ads/no-ad.xml]]></vmap:AdTagURI>
-    </vmap:AdSource>
-  </vmap:AdBreak>
 </vmap:VMAP>
