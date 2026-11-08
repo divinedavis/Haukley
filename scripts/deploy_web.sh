@@ -31,6 +31,18 @@ if [ -n "$(git status --porcelain -- web)" ] && [ "${ALLOW_DIRTY:-}" != 1 ]; the
   exit 1
 fi
 
+# Refuse to deploy a checkout that is behind origin/main: it would silently roll
+# back fixes other sessions already shipped (on 11/7 a stale main checkout would
+# have put Google Fonts back on the live site). ALLOW_BEHIND=1 to override.
+if [ "${ALLOW_BEHIND:-}" != 1 ]; then
+  git fetch -q origin main || { echo "!! git fetch failed; cannot confirm this checkout is current (ALLOW_BEHIND=1 to override)" >&2; exit 1; }
+  behind=$(git rev-list --count HEAD..origin/main)
+  if [ "$behind" -gt 0 ]; then
+    echo "!! this checkout is $behind commit(s) behind origin/main - pull/rebase first (ALLOW_BEHIND=1 to override)" >&2
+    exit 1
+  fi
+fi
+
 if [ "$SKIP" != "--skip-tests" ]; then
   echo "== fast tests"
   tests/run_fast.sh
