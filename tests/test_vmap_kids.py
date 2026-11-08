@@ -49,6 +49,12 @@ class KidsTitlesGetNoAds(unittest.TestCase):
             self.assertTrue(MV.child_directed({"id": "x", "rating": rating, "kids": False}))
         self.assertTrue(MV.child_directed({"id": "x", "kids": False, "episodes": [{"kids": True}]}))
 
+    def test_owner_designated_cartoons_are_child_directed(self):
+        # Owner, 2026-11-08: the 1930 Flip the Frog cartoons count as kids content
+        # (Kids profiles + never any ads). Don't flip this back without asking.
+        kids_ids = {t["id"] for t in KIDS}
+        self.assertIn("flip-the-frog-1930", kids_ids)
+
     def test_deployed_kids_vmaps_reference_only_the_no_ad_tag(self):
         """web/ads/vmap is what deploy_web.sh ships: check the real files."""
         for t in KIDS:

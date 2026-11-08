@@ -2375,7 +2375,7 @@
    "tagline": "Ub Iwerks' first star, from 1930.",
    "description": "The first six cartoons from Ub Iwerks, co-creator of Mickey Mouse, starring his cheerful, rubbery frog in the early days of sound cartoons.",
    "credits": "Produced and drawn by Ub Iwerks · Celebrity Productions (Pat Powers) · Released by Metro-Goldwyn-Mayer",
-   "kids": false,
+   "kids": true,
    "license": "Public domain in the United States",
    "episodes": [
     {

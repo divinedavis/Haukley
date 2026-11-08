@@ -38,7 +38,7 @@ CLEARED = {
         title="Life with Elizabeth", art=1, font="Pacifico", layout="bottom", tint=[35, 25, 25], kids=False,
         tagline="Aren't you ashamed, Elizabeth?"),
     "flip-the-frog-1930": dict(
-        title="Flip the Frog", art=1, font="AbrilFatface", layout="center", tint=[30, 30, 20], kids=False,
+        title="Flip the Frog", art=1, font="AbrilFatface", layout="center", tint=[30, 30, 20], kids=True,
         tagline="Ub Iwerks' first star, from 1930."),
     # U.S. government works (17 USC 105), added 2026-10-09. Wartime films: advisories required.
     "why-we-fight": dict(

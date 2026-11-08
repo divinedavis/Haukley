@@ -2237,7 +2237,7 @@
      "stream": "https://haukley-media.nyc3.cdn.digitaloceanspaces.com/titles/flip-the-frog-1930/e6/master.m3u8"
     }
    ],
-   "kids": false,
+   "kids": true,
    "license": "Public domain in the United States",
    "advisory": null,
    "font": "AbrilFatface"
