@@ -9,6 +9,16 @@
 #   SHIP_SKIP_TESTS=1 iphone/scripts/ship.sh     # smoke launch only
 set -euo pipefail
 cd "$(dirname "$0")/.."
+# A ship started by hand had nothing keeping this Mac awake (it idle-sleeps on
+# battery after a minute); the nightly jobs already run under caffeinate.
+# Ends with this script; a closed lid still sleeps the Mac (2026-11-09).
+[[ -n "${DAILY_SHIP_AWAKE:-}" ]] || /usr/bin/caffeinate -i -w $$ &
+# Stage times, memory peaks and one SHIP SUMMARY line per run, pass or fail
+# (scripts/ship_log.sh, scripts/ship_summary.py; history in build/ship-history.jsonl).
+SHIP_LOG_DIR=build
+# shellcheck disable=SC1091
+source scripts/ship_log.sh
+ship_log_start
 
 PY="${PY:-$HOME/.venvs/marracat/bin/python}"
 # shellcheck disable=SC1091
@@ -45,19 +55,19 @@ mkdir -p "$GATES"
 
 # Regenerate BEFORE testing: a Swift file added since the last generate is in no target,
 # and its tests silently never run (Marracat, 2026-10-03).
-echo "==> regenerating xcodeproj"
+stage "regenerating xcodeproj"
 xcodegen generate --quiet
 
-echo "==> MetricKit still wired (metrics + diagnostics)"
+stage "MetricKit still wired (metrics + diagnostics)"
 grep -q "MXMetricManager.shared.add" Haukley/Services/MetricsReporter.swift \
   && grep -q "\[MXDiagnosticPayload\]" Haukley/Services/MetricsReporter.swift \
   && grep -q "MetricsReporter.shared.start()" Haukley/App/HaukleyApp.swift \
   || { echo "error: MetricsReporter (MetricKit) is no longer subscribed at launch" >&2; exit 1; }
 
-echo "==> every screen is reached by a UI test"
+stage "every screen is reached by a UI test"
 python3 scripts/check_test_coverage.py
 
-echo "==> smoke-testing a cold launch on $SIM_UDID"
+stage "smoke-testing a cold launch on $SIM_UDID"
 ./scripts/smoke_test.sh
 
 # xcodebuild prints an "Executed" summary per test class and per bundle, so one green
@@ -89,7 +99,7 @@ if [[ "${SHIP_SKIP_TESTS:-0}" != "1" ]]; then
     log=$(mktemp)
     for dev in "iPhone:$SIM_UDID" "iPad:$IPAD_UDID"; do
         name=${dev%%:*}; udid=${dev#*:}
-        echo "==> unit + UI tests incl. the accessibility audit on $name ($udid)"
+        stage "unit + UI tests incl. the accessibility audit on $name ($udid)"
         rm -rf "$GATES/$name.xcresult"
         xcodebuild -project Haukley.xcodeproj -scheme Haukley \
             -destination "platform=iOS Simulator,id=$udid" -derivedDataPath "build/smoke-$name" \
@@ -107,7 +117,7 @@ if [[ "${SHIP_SKIP_TESTS:-0}" != "1" ]]; then
         xcrun simctl shutdown "$udid" 2>/dev/null || true
     done
 
-    echo "==> performance (iPhone)"
+    stage "performance (iPhone)"
     rm -rf "$GATES/Perf.xcresult"
     xcodebuild -project Haukley.xcodeproj -scheme Haukley \
         -destination "platform=iOS Simulator,id=$SIM_UDID" -derivedDataPath build/smoke-iPhone \
@@ -117,25 +127,25 @@ if [[ "${SHIP_SKIP_TESTS:-0}" != "1" ]]; then
     xcrun simctl shutdown "$SIM_UDID" 2>/dev/null || true
 fi
 
-echo "==> Xcode Organizer: what real phones reported for recent builds"
+stage "Xcode Organizer: what real phones reported for recent builds"
 "$PY" scripts/organizer_report.py || echo "warning: Organizer report unavailable"
 
 current=$(grep -m1 'CURRENT_PROJECT_VERSION:' project.yml | sed -E 's/.*"([0-9]+)".*/\1/')
 next=$((current + 1))
-echo "==> bumping build $current -> $next"
+stage "bumping build $current -> $next"
 sed -i '' "s/CURRENT_PROJECT_VERSION: \"$current\"/CURRENT_PROJECT_VERSION: \"$next\"/" project.yml
 xcodegen generate --quiet
 
 AUTH=(-authenticationKeyPath "$ASC_KEY_PATH" -authenticationKeyID "$ASC_KEY_ID"
       -authenticationKeyIssuerID "$ASC_ISSUER_ID")
 
-echo "==> archiving"
+stage "archiving"
 rm -rf build/release
 xcodebuild -project Haukley.xcodeproj -scheme Haukley -configuration Release \
     -destination "generic/platform=iOS" -archivePath build/release/Haukley.xcarchive \
     -allowProvisioningUpdates "${AUTH[@]}" DEVELOPMENT_TEAM="$ASC_TEAM_ID" -quiet archive
 
-echo "==> exporting IPA"
+stage "exporting IPA"
 # Apple's tools first (2026-10-12): Xcode's IPA step runs /usr/bin/rsync, which
 # starts the rsync on PATH as its receiving side. A Homebrew rsync 3.x there
 # rejects --extended-attributes and the export dies with just "Copy failed".
@@ -144,14 +154,17 @@ PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH" xcodebuild -exportArchive -archivePat
     -allowProvisioningUpdates "${AUTH[@]}"
 
 if [[ "${SHIP_NO_UPLOAD:-0}" == "1" ]]; then
-    echo "==> SHIP_NO_UPLOAD=1 — built build/release/export/Haukley.ipa, not uploading"; exit 0
+    stage "SHIP_NO_UPLOAD=1 — built build/release/export/Haukley.ipa, not uploading"; ship_done; exit 0
 fi
 
-echo "==> uploading to TestFlight"
+stage "uploading to TestFlight"
 xcrun altool --upload-app -f build/release/export/Haukley.ipa -t ios \
     --apiKey "$ASC_KEY_ID" --apiIssuer "$ASC_ISSUER_ID"
 
-echo "==> internal TestFlight group"
+stage "internal TestFlight group"
 "$PY" scripts/configure_internal_testers.py
 
-echo "==> shipped build $next to TestFlight (App Store untouched). Apple takes a few minutes to process it."
+stage "shipped build $next to TestFlight (App Store untouched). Apple takes a few minutes to process it."
+
+# Reached the end: the summary line reports this ship as ok.
+ship_done
