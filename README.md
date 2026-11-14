@@ -115,8 +115,9 @@ Email forwards (Namecheap) to the owner's Gmail: hello@, support@, films@, priva
 validated against Roku's schema (`scripts/roku/search-feed.schema.json`). Ids match the Roku app's
 deep links. Placeholder content: don't register it with Roku until real titles are in.
 
-Content acquisition drafts (Filmhub outreach, FilmFreeway call, license term sheet) are in
-`docs/content/`.
+Content acquisition notes (outreach, licensing research, term sheet) are business-private and
+are not part of this repository; scripts that read or write them use a local, git-ignored
+`docs/content/` folder.
 
 ## Art
 
